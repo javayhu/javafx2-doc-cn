@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Why Use FXML &middot; Getting Started with FXML &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Getting Started with FXML</h1>
+     <p class=" lead">Why Use FXML</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="jfxpub-fxml_get_started.htm">←上一篇</a></li>
+      <li class=" next"><a href="whats_new.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CHDCHIBE" name="CHDCHIBE"></a>
+     <a id="JFXMG137" name="JFXMG137"></a>  
+     <p>FXML is an XML-based language that provides the structure for building a user interface separate from the application logic of your code. This separation of the presentation and application logic is attractive to web developers because they can assemble a user interface that leverages Java components without mastering the code for fetching and filling in the data.</p> 
+     <p>The following sections provide more information about FXML, and when you would choose FXML over other methods of creating a user interface.</p> 
+     <ul> 
+      <li> <p><a href="#CIHJCABJ">Introduction to FXML</a></p> </li> 
+      <li> <p><a href="#CHDGAFHF">Simple Example of FXML</a></p> </li> 
+      <li> <p><a href="#CHDIEGBB">Benefits of FXML</a></p> </li> 
+      <li> <p><a href="#BABIECHG">FXML and Scene Builder</a></p> </li> 
+     </ul> 
+     <a id="CIHJCABJ" name="CIHJCABJ"></a>
+     <a id="JFXMG138" name="JFXMG138"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1">Introduction to FXML</h2> 
+      <p>FXML does not have a schema, but it does have a basic predefined structure. What you can express in FXML, and how it applies to constructing a scene graph, depends on the API of the objects you are constructing. Because FXML maps directly to Java, you can use the API documentation to understand what elements and attributes are allowed. In general, most JavaFX classes can be used as elements, and most Bean properties can be used as attributes.</p> 
+      <p>From a Model View Controller (MVC) perspective, the FXML file that contains the description of the user interface is the view. The controller is a Java class, optionally implementing the <code>Initializable</code> class, which is declared as the controller for the FXML file. The model consists of domain objects, defined on the Java side, that you connect to the view through the controller. An example of this structure is in the tutorial <a href="fxml_tutorial_intermediate.htm#CACFEHBI">Creating an Address Book with FXML</a>.</p> 
+      <p>While you can use FXML to create any user interface, FXML is particularly useful for user interfaces that have large, complex scene graphs, forms, data entry, or complex animation. FXML is also well suited for defining static layouts such as forms, controls, and tables. In addition, you can use FXML to construct dynamic layouts by including scripts.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="CHDGAFHF" name="CHDGAFHF"></a>
+     <a id="JFXMG139" name="JFXMG139"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1">Simple Example of FXML</h2> 
+      <p>The easiest way to show the advantages of FXML is with an example. Take a look at <a href="#CHDJCIFB">Figure 1-1</a>, which shows a user interface that includes a border pane layout that has a top and center region, each of which contains a label.</p> 
+      <div class="figure">
+       <a id="CHDJCIFB" name="CHDJCIFB"></a>
+       <a id="JFXMG126" name="JFXMG126"></a> 
+       <p class="titleinfigure">Figure 1-1 Border Pane Simple Example</p> 
+       <img src="img/borderpane_simple_example.png" alt="Description of Figure 1-1 follows" title="Description of Figure 1-1 follows" longdesc="img_text/borderpane_simple_example.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>First, look at how the user interface is constructed and built directly in the source code, as shown in <a href="#CHDGCFJJ">Example 1-1</a>.</p> 
+      <div class="example">
+       <a id="CHDGCFJJ" name="CHDGCFJJ"></a>
+       <a id="JFXMG102" name="JFXMG102"></a> 
+       <p class="titleinexample">Example 1-1 Java Code for a User Interface</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+BorderPane border = new BorderPane();
+Label toppanetext = new Label(&quot;Page Title&quot;);
+border.setTop(toppanetext);
+Label centerpanetext = new Label (&quot;Some data here&quot;);
+border.setCenter(centerpanetext);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Now look at <a href="#CHDBCBEG">Example 1-2</a>, which shows the same user interface, but in FXML markup. Here you can see the hierarchical structure of the user interface, which in turn makes it easier to add components and build upon the user interface.</p> 
+      <div class="example">
+       <a id="CHDBCBEG" name="CHDBCBEG"></a>
+       <a id="JFXMG103" name="JFXMG103"></a> 
+       <p class="titleinexample">Example 1-2 FXML Markup for a User Interface</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;BorderPane&gt;
+    &lt;top&gt;
+        &lt;Label text=&quot;Page Title&quot;/&gt;
+    &lt;/top&gt;
+    &lt;center&gt;
+        &lt;Label text=&quot;Some data here&quot;/&gt;
+    &lt;/center&gt;
+&lt;/BorderPane&gt;
+</pre>
+      </div> 
+      <!-- class="example" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="CHDIEGBB" name="CHDIEGBB"></a>
+     <a id="JFXMG140" name="JFXMG140"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1">Benefits of FXML</h2> 
+      <p>In addition to providing web developers a familiar approach to designing user interfaces, FXML offers these benefits:</p> 
+      <ul> 
+       <li> <p>Because the scene graph is more transparent in FXML, it is easy for a development team to create and maintain a testable user interface.</p> </li> 
+       <li> <p>FXML is not a compiled language; you do not need to recompile the code to see the changes.</p> </li> 
+       <li> <p>The content of an FXML file can be localized as the file is read. For example, if an FXML file is loaded using the en_US locale, it produces the string &quot;First Name&quot; for a label based on the following resource string:</p> <p><code>&lt;Label text=&quot;%firstName&quot;/&gt;</code></p> <p>If the locale is changed to fr_FR and the FXML file is reloaded, the label shows &quot;Pr&eacute;nom&quot;.</p> <p>The same is not true for Java code, because you must manually update the content of every element of your user interface by obtaining a reference to it and calling the appropriate setter (such as <code>setText()</code>).</p> </li> 
+       <li> <p>You can use FXML with any Java Virtual Machine (JVM) language, such as Java, Scala, or Clojure.</p> </li> 
+       <li> <p>FXML is not limited to the view portion of the MVC model. You can construct services or tasks or domain objects, and you can use JavaScript or other scripting languages in FXML. For an example of using JavaScript, see <a href="../get_started/fxml_tutorial.htm#JFXGS213">Use a Scripting Language to Handle Events</a> in the FXML tutorial of the Getting Started guide.</p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXMG152" name="JFXMG152"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="BABIECHG" name="BABIECHG"></a> 
+      <h2 class="sect1">FXML and Scene Builder</h2> 
+      <p>Just as some developers prefer to work directly in the XML code, other developers prefer to use a tool to author their XML. The same is true with FXML.</p> 
+      <p>If you prefer to use a tool, or if you want to create a quick prototype for purposes such as getting feedback, then you might prefer to use JavaFX Scene Builder. Scene Builder is a design tool that generates the FXML source code as you define the user interface for your application. Scene Builder can help you to quickly prototype an interactive application that connect components to the application logic. For more information, see <a href="../../scenebuilder/1/get_started/jsbpub-get_started.htm">Getting Started with JavaFX Scene Builder</a>.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-fxml_get_started.htm">About this Tutorial</a></li>
+      <li class=" active"><a href="why_use_fxml.htm">Why Use FXML</a></li>
+      <li><a href="whats_new.htm">FXML—What's New in JavaFX 2.1</a></li>
+      <li><a href="fxml_tutorial_intermediate.htm">Creating an Address Book with FXML</a></li>
+      <li><a href="fxml_deployment.htm">Deployment of FXML Applications</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/fxml_get_started/FXMLTableView.zip">FXMLTableView.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

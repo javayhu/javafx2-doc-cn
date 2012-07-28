@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Bar Chart &middot; Using JavaFX Charts &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX Charts</h1>
+     <p class=" lead">Bar Chart</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="scatter-chart.htm">←上一篇</a></li>
+      <li class=" next"><a href="css-styles.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="JFXCH120" name="JFXCH120"></a>
+     <a id="CIHJFHDE" name="CIHJFHDE"></a>  
+     <p>The bar chart is a two-axis chart with rectangular bars that can be either vertical or horizontal. The length of each bar is proportional to a particular value that the chart presents. Typically, bar charts are used to display discrete data. You can use groups of bars as categories to plot data, as shown in <a href="#CHDHJCAF">Figure 7-1</a>.</p> 
+     <div class="figure">
+      <a id="CHDHJCAF" name="CHDHJCAF"></a>
+      <a id="JFXCH187" name="JFXCH187"></a> 
+      <p class="titleinfigure">Figure 7-1 Sample Bar Chart</p> 
+      <img src="img/bar-sample.png" alt="Description of Figure 7-1 follows" title="Description of Figure 7-1 follows" longdesc="img_text/bar-sample.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <a id="JFXCH121" name="JFXCH121"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref68" name="sthref68"></a> 
+      <h2 class="sect1">Creating a Bar Chart</h2> 
+      <p>To build a bar chart in your JavaFX application, create two axes, instantiate the <code>BarChar</code> class, define the series of data, and assign the data to the chart. <a href="#CIHBEDDD">Example 7-1</a> creates a bar chart with three series of data to present financial information about five countries. Each country is presented as a category that is a group of bars on the horizontal axis.</p> 
+      <div class="example">
+       <a id="CIHBEDDD" name="CIHBEDDD"></a>
+       <a id="JFXCH188" name="JFXCH188"></a> 
+       <p class="titleinexample">Example 7-1 Creating a Bar Chart with Three Series of Data</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.stage.Stage;
+ 
+public class BarChartSample extends Application {
+    final static String austria = &quot;Austria&quot;;
+    final static String brazil = &quot;Brazil&quot;;
+    final static String france = &quot;France&quot;;
+    final static String italy = &quot;Italy&quot;;
+    final static String usa = &quot;USA&quot;;
+ 
+    @Override public void start(Stage stage) {
+        stage.setTitle(&quot;Bar Chart Sample&quot;);
+        final CategoryAxis xAxis = new CategoryAxis();
+        final NumberAxis yAxis = new NumberAxis();
+        final BarChart&lt;String,Number&gt; bc = 
+            new BarChart&lt;String,Number&gt;(xAxis,yAxis);
+        bc.setTitle(&quot;Country Summary&quot;);
+        xAxis.setLabel(&quot;Country&quot;);       
+        yAxis.setLabel(&quot;Value&quot;);
+ 
+        XYChart.Series series1 = new XYChart.Series();
+        series1.setName(&quot;2003&quot;);       
+        series1.getData().add(new XYChart.Data(austria, 25601.34));
+        series1.getData().add(new XYChart.Data(brazil, 20148.82));
+        series1.getData().add(new XYChart.Data(france, 10000));
+        series1.getData().add(new XYChart.Data(italy, 35407.15));
+        series1.getData().add(new XYChart.Data(usa, 12000));      
+        
+        XYChart.Series series2 = new XYChart.Series();
+        series2.setName(&quot;2004&quot;);
+        series2.getData().add(new XYChart.Data(austria, 57401.85));
+        series2.getData().add(new XYChart.Data(brazil, 41941.19));
+        series2.getData().add(new XYChart.Data(france, 45263.37));
+        series2.getData().add(new XYChart.Data(italy, 117320.16));
+        series2.getData().add(new XYChart.Data(usa, 14845.27));  
+        
+        XYChart.Series series3 = new XYChart.Series();
+        series3.setName(&quot;2005&quot;);
+        series3.getData().add(new XYChart.Data(austria, 45000.65));
+        series3.getData().add(new XYChart.Data(brazil, 44835.76));
+        series3.getData().add(new XYChart.Data(france, 18722.18));
+        series3.getData().add(new XYChart.Data(italy, 17557.31));
+        series3.getData().add(new XYChart.Data(usa, 92633.68));  
+        
+        Scene scene  = new Scene(bc,800,600);
+        bc.getData().addAll(series1, series2, series3);
+        stage.setScene(scene);
+        stage.show();
+    }
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p><a href="#CIHDDCED">Figure 7-2</a> shows the expected output of this application when you compile and run it.</p> 
+      <div class="figure">
+       <a id="CIHDDCED" name="CIHDDCED"></a>
+       <a id="JFXCH189" name="JFXCH189"></a> 
+       <p class="titleinfigure">Figure 7-2 Creating a Bar Chart with Three Series of Data</p> 
+       <img src="img/bar-vertical.png" alt="Description of Figure 7-2 follows" title="Description of Figure 7-2 follows" longdesc="img_text/bar-vertical.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Two properties of the <code>BarChart</code> class enable managing space between categories of data and between bars within the same category. Use the <code>barGap</code> and <code>categoryGap</code> properties to better distribute bars in the chart plot. <a href="#CIHIIIGE">Example 7-2</a> uses the <code>setBarGap</code> and <code>setCategoryGap</code> methods to set specific values for these properties.</p> 
+      <div class="example">
+       <a id="CIHIIIGE" name="CIHIIIGE"></a>
+       <a id="JFXCH190" name="JFXCH190"></a> 
+       <p class="titleinexample">Example 7-2 Setting Gaps Between Bars and Categories</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+bc.setBarGap(3);
+bc.setCategoryGap(20);
+</pre>
+      </div> 
+      <!-- class="example" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCH191" name="JFXCH191"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref70" name="sthref70"></a> 
+      <h2 class="sect1">Horizontal Bar Chart</h2> 
+      <p>You can change the orientation of the bar chart from vertical to horizontal by defining the category for the vertical axis. <a href="#CIHDBIJG">Example 7-3</a> implements this for the Country Summary application. Declare the horizontal axis of the <code>NumberAxis</code> type and the vertical axis of the <code>CategoryAxis</code> type. Do not forget to modify the declaration of the <code>BarChart</code> object.</p> 
+      <div class="example">
+       <a id="CIHDBIJG" name="CIHDBIJG"></a>
+       <a id="JFXCH192" name="JFXCH192"></a> 
+       <p class="titleinexample">Example 7-3 Changing Orientation of the Bar Chart</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.stage.Stage;
+ 
+public class BarChartSample extends Application {
+    final static String austria = &quot;Austria&quot;;
+    final static String brazil = &quot;Brazil&quot;;
+    final static String france = &quot;France&quot;;
+    final static String italy = &quot;Italy&quot;;
+    final static String usa = &quot;USA&quot;;
+ 
+    @Override public void start(Stage stage) {
+        stage.setTitle(&quot;Bar Chart Sample&quot;);
+        <span class="bold">final NumberAxis xAxis = new NumberAxis();</span>
+        <span class="bold">final CategoryAxis yAxis = new CategoryAxis();</span>
+        <span class="bold">final BarChart&lt;Number,String&gt; bc = </span>
+            <span class="bold">new BarChart&lt;Number,String&gt;(xAxis,yAxis);</span>
+        bc.setTitle(&quot;Country Summary&quot;);
+        <span class="bold">xAxis.setLabel(&quot;Value&quot;);</span>  
+        <span class="bold">xAxis.setTickLabelRotation(90);</span>
+        <span class="bold">yAxis.setLabel(&quot;Country&quot;);</span>        
+ 
+        XYChart.Series series1 = new XYChart.Series();
+        series1.setName(&quot;2003&quot;);       
+        series1.getData().add(new XYChart.Data(<span class="bold">25601.34, austria</span>));
+        series1.getData().add(new XYChart.Data(<span class="bold">20148.82, brazil</span>));
+        series1.getData().add(new XYChart.Data(<span class="bold">10000, france</span>));
+        series1.getData().add(new XYChart.Data(<span class="bold">35407.15, italy</span>));
+        series1.getData().add(new XYChart.Data(<span class="bold">12000, usa</span>));      
+        
+        XYChart.Series series2 = new XYChart.Series();
+        series2.setName(&quot;2004&quot;);
+        series2.getData().add(new XYChart.Data(<span class="bold">57401.85, austria</span>));
+        series2.getData().add(new XYChart.Data(<span class="bold">41941.19, brazil</span>));
+        series2.getData().add(new XYChart.Data(<span class="bold">45263.37, france</span>));
+        series2.getData().add(new XYChart.Data(<span class="bold">117320.16, italy</span>));
+        series2.getData().add(new XYChart.Data(<span class="bold">14845.27, usa</span>));  
+        
+        XYChart.Series series3 = new XYChart.Series();
+        series3.setName(&quot;2005&quot;);
+        series3.getData().add(new XYChart.Data(<span class="bold">45000.65, austria</span>));
+        series3.getData().add(new XYChart.Data(<span class="bold">44835.76, brazil</span>));
+        series3.getData().add(new XYChart.Data(<span class="bold">18722.18, france</span>));
+        series3.getData().add(new XYChart.Data(<span class="bold">17557.31, italy</span>));
+        series3.getData().add(new XYChart.Data(<span class="bold">92633.68, usa</span>));  
+        
+        Scene scene  = new Scene(bc,800,600);
+        bc.getData().addAll(series1, series2, series3);
+        stage.setScene(scene);
+        stage.show();
+    }
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Note that the <code>setTickLabelRotation</code> method is called on the horizontal axis to rotate labels and make the value captions easier to read.</p> 
+      <p>The result of compiling and running the modified application is shown in <a href="#CIHIEAAG">Figure 7-3</a>.</p> 
+      <div class="figure">
+       <a id="CIHIEAAG" name="CIHIEAAG"></a>
+       <a id="JFXCH193" name="JFXCH193"></a> 
+       <p class="titleinfigure">Figure 7-3 Horizontal Bar Chart</p> 
+       <img src="img/bar-horizontal.png" alt="Description of Figure 7-3 follows" title="Description of Figure 7-3 follows" longdesc="img_text/bar-horizontal.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Horizontal bar charts can be particularly helpful when you want to represent data as ranked lists.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref72" name="sthref72"></a> 
+      <h2 class="sect1">Creating a Stacked Bar Chart</h2> 
+      <p>You can represent data in a bar chart so that the bars in a category are stacked. Use the <code>StackedBarChart</code> class available in the JavaFX API, as shown in <a href="#CHDIAADF">Example 7-4</a>.</p> 
+      <div class="example">
+       <a id="CHDIAADF" name="CHDIAADF"></a> 
+       <p class="titleinexample">Example 7-4 Creating a Stacked Bar Chart</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import java.util.Arrays;
+import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.scene.Scene;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.StackedBarChart;
+import javafx.scene.chart.XYChart;
+import javafx.stage.Stage;
+ 
+public class StackedBarChartSample extends Application {
+ 
+    final static String austria = &quot;Austria&quot;;
+    final static String brazil = &quot;Brazil&quot;;
+    final static String france = &quot;France&quot;;
+    final static String italy = &quot;Italy&quot;;
+    final static String usa = &quot;USA&quot;;
+    final CategoryAxis xAxis = new CategoryAxis();
+    final NumberAxis yAxis = new NumberAxis();
+    final StackedBarChart&lt;String, Number&gt; sbc =
+            new StackedBarChart&lt;String, Number&gt;(xAxis, yAxis);
+    final XYChart.Series&lt;String, Number&gt; series1 =
+            new XYChart.Series&lt;String, Number&gt;();
+    final XYChart.Series&lt;String, Number&gt; series2 =
+            new XYChart.Series&lt;String, Number&gt;();
+    final XYChart.Series&lt;String, Number&gt; series3 =
+            new XYChart.Series&lt;String, Number&gt;();
+ 
+    @Override
+    public void start(Stage stage) {
+        stage.setTitle(&quot;Bar Chart Sample&quot;);
+        sbc.setTitle(&quot;Country Summary&quot;);
+        xAxis.setLabel(&quot;Country&quot;);
+        xAxis.setCategories(FXCollections.&lt;String&gt;observableArrayList(
+                Arrays.asList(austria, brazil, france, italy, usa)));
+        yAxis.setLabel(&quot;Value&quot;);
+        series1.setName(&quot;2003&quot;);
+        series1.getData().add(new XYChart.Data&lt;String, Number&gt;(austria, 25601.34));
+        series1.getData().add(new XYChart.Data&lt;String, Number&gt;(brazil, 20148.82));
+        series1.getData().add(new XYChart.Data&lt;String, Number&gt;(france, 10000));
+        series1.getData().add(new XYChart.Data&lt;String, Number&gt;(italy, 35407.15));
+        series1.getData().add(new XYChart.Data&lt;String, Number&gt;(usa, 12000));
+        series2.setName(&quot;2004&quot;);
+        series2.getData().add(new XYChart.Data&lt;String, Number&gt;(austria, 57401.85));
+        series2.getData().add(new XYChart.Data&lt;String, Number&gt;(brazil, 41941.19));
+        series2.getData().add(new XYChart.Data&lt;String, Number&gt;(france, 45263.37));
+        series2.getData().add(new XYChart.Data&lt;String, Number&gt;(italy, 117320.16));
+        series2.getData().add(new XYChart.Data&lt;String, Number&gt;(usa, 14845.27));
+        series3.setName(&quot;2005&quot;);
+        series3.getData().add(new XYChart.Data&lt;String, Number&gt;(austria, 45000.65));
+        series3.getData().add(new XYChart.Data&lt;String, Number&gt;(brazil, 44835.76));
+        series3.getData().add(new XYChart.Data&lt;String, Number&gt;(france, 18722.18));
+        series3.getData().add(new XYChart.Data&lt;String, Number&gt;(italy, 17557.31));
+        series3.getData().add(new XYChart.Data&lt;String, Number&gt;(usa, 92633.68));
+        Scene scene = new Scene(sbc, 800, 600);
+        sbc.getData().addAll(series1, series2, series3);
+        stage.setScene(scene);
+        stage.show();
+    }
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When you define axes for a stacked bar chart in your application, you must explicitly assign the categories of data to a particular axis. In <a href="#CHDIAADF">Example 7-4</a>, the categories are assigned to the horizontal axis by using the <code>setCategories</code> method. The bar chart produced by this application is shown in <a href="#CHDDEIGC">Figure 7-4</a>.</p> 
+      <div class="figure">
+       <a id="CHDDEIGC" name="CHDDEIGC"></a> 
+       <p class="titleinfigure">Figure 7-4 Stacked Bar Chart with Five Categories of Data</p> 
+       <img src="img/bar-stacked1.png" alt="Description of Figure 7-4 follows" title="Description of Figure 7-4 follows" longdesc="img_text/bar-stacked1.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Compare the data shown in <a href="#CIHIEAAG">Figure 7-3</a> with the same data in <a href="#CHDDEIGC">Figure 7-4</a>. The areas in the stacked bar chart show cumulative values on the vertical axis at any given point along the horizontal axis. For example, on the vertical axis of <a href="#CHDDEIGC">Figure 7-4</a>, the 2004 values for Austria range from approximately 25,000 to approximately 85,000. However, the data in <a href="#CHDIAADF">Example 7-4</a> indicates a value of 57,401.85 for Austria in 2004. The 2004 high value of approximately 85,000 in <a href="#CHDDEIGC">Figure 7-4</a> represents the cumulative results for Austria in 2003 and 2004.</p> 
+      <p>When you develop bar charts in your JavaFX application, remember that data on the vertical axes are interpreted differently for a <code>BarChart</code> than for a <code>StackedBarChart</code>. Choose the type of chart that best illustrates the task of the application.</p> 
+      <p>You can specify the distance between the stacked categories by setting the value in the <code>setCategoryGap</code> method. For example, you can set the distance of 50 pixels for the Country Summary bar chart: <code>sbc.setCategoryGap(50);</code></p> 
+      <p>When you apply this method to the stacked bar chart in <a href="#CHDIAADF">Example 7-4</a>, the bar categories look as shown in <a href="#CHDHJBFJ">Figure 7-5</a>.</p> 
+      <div class="figure">
+       <a id="CHDHJBFJ" name="CHDHJBFJ"></a> 
+       <p class="titleinfigure">Figure 7-5 Stacked Bar Chart with the Specified Gap Between the Categories</p> 
+       <img src="img/bar-stacked2.png" alt="Description of Figure 7-5 follows" title="Description of Figure 7-5 follows" longdesc="img_text/bar-stacked2.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCH194" name="JFXCH194"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref75" name="sthref75"></a> 
+      <h2 class="sect1">Animating Data in Charts</h2> 
+      <p>You can implement animated charts to illustrate dynamic behavior of financial activities. <a href="#CIHBBEIF">Example 7-5</a> defines an animation timeline and creates key frames to randomly set the X value for the data of the bar chart. The timeline starts when the application does and continues indefinitely in the auto-reverse mode.</p> 
+      <div class="example">
+       <a id="CIHBBEIF" name="CIHBBEIF"></a>
+       <a id="JFXCH195" name="JFXCH195"></a> 
+       <p class="titleinexample">Example 7-5 Animating Data in a Bar Chart</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Timeline tl = new Timeline();
+tl.getKeyFrames().add(
+new KeyFrame(Duration.millis(500), 
+    new EventHandler&lt;ActionEvent&gt;() {
+        @Override public void handle(ActionEvent actionEvent) {
+            for (XYChart.Series&lt;Number, String&gt; series : bc.getData()) {
+                for (XYChart.Data&lt;Number, String&gt; data : series.getData()) {
+                    data.setXValue(Math.random() * 1000);
+                }
+            }
+        }
+     }
+));
+tl.setCycleCount(Animation.INDEFINITE);
+tl.setAutoReverse(true);
+tl.play();
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When you add this code fragment to the Country Summary application in <a href="#CIHDBIJG">Example 7-3</a>, and then compile and run the modified code, you will notice that both the axis and the chart plot change smoothly to accommodate new values in ranges and new lengths of the bars. This is because of the <code>animated</code> properties of the <code>Chart</code> and <code>Axis</code> classes. By default, they set to <code>true</code> to animate any data changes.</p> 
+      <p>For the Country Summary application, you can prohibit animating data along the vertical axis when the data on this axis is presented in categories and does not change. To avoid undesirable flickering of the country labels, use the <code>setAnimated</code> method as shown in <a href="#CIHGHAIF">Example 7-6</a>.</p> 
+      <div class="example">
+       <a id="CIHGHAIF" name="CIHGHAIF"></a>
+       <a id="JFXCH196" name="JFXCH196"></a> 
+       <p class="titleinexample">Example 7-6 Managing Animation of Data Changes</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+yAxis.setAnimated(false);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>See the <code>Ensemble</code> application and the API documentation for more information about the features and capabilities of JavaFX charts.</p> 
+      <p class="itemizedlisttitle">Related API Documentation&nbsp;</p> 
+      <ul> 
+       <li> <p><code>BarChart</code></p> </li> 
+       <li> <p><code>Chart</code></p> </li> 
+       <li> <p><code>XYChart</code></p> </li> 
+       <li> <p><code>XYChart.Data</code></p> </li> 
+       <li> <p><code>XYChart.Series</code></p> </li> 
+       <li> <p><code>Axis</code></p> </li> 
+       <li> <p><code>NumberAxis</code></p> </li> 
+       <li> <p><code>CategoryAxis</code></p> </li> 
+       <li> <p><code>Timeline</code></p> </li> 
+       <li> <p><code>KeyFrame</code></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-charts.htm">About This Tutorial</a></li>
+      <li><a href="chart-overview.htm">Introduction to JavaFX Charts</a></li>
+      <li><a href="pie-chart.htm">Pie Chart</a></li>
+      <li><a href="line-chart.htm">Line Chart</a></li>
+      <li><a href="area-chart.htm">Area Chart</a></li>
+      <li><a href="bubble-chart.htm">Bubble Chart</a></li>
+      <li><a href="scatter-chart.htm">Scatter Chart</a></li>
+      <li class=" active"><a href="bar-chart.htm">Bar Chart</a></li>
+      <li><a href="css-styles.htm">Styling Charts with CSS</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/AreaChartSample.zip">AreaChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/BarChartSample.zip">BarChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/BubbleChartSample.zip">BubbleChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/LineChartSample.zip">LineChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/PieChartSample.zip">PieChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/ScatterChartSample.zip">ScatterChartSample.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

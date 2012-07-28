@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>HTML Editor &middot; Using JavaFX UI Controls &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX UI Controls</h1>
+     <p class=" lead">HTML Editor</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="tooltip.htm">←上一篇</a></li>
+      <li class=" next"><a href="accordion-titledpane.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CHDBEGDD" name="CHDBEGDD"></a>
+     <a id="JFXUC346" name="JFXUC346"></a>  
+     <p>The <code>HTMLEditor</code> control is a full functional rich text editor. Its implementation is based on the document editing feature of HTML5 and includes the following editing functions:</p> 
+     <ul> 
+      <li> <p>Text formatting including bold, italic, underline, and strike though styles</p> </li> 
+      <li> <p>Paragraph settings such as format, font family, and font size</p> </li> 
+      <li> <p>Foreground and background colors</p> </li> 
+      <li> <p>Text indent</p> </li> 
+      <li> <p>Bulleted and numbered lists</p> </li> 
+      <li> <p>Text alignment</p> </li> 
+      <li> <p>Adding a horizontal rule</p> </li> 
+      <li> <p>Copying and pasting text fragments</p> </li> 
+     </ul> 
+     <p><a href="#BGBJFHDD">Figure 21-1</a> shows a rich text editor added to a JavaFX application.</p> 
+     <div class="figure">
+      <a id="BGBJFHDD" name="BGBJFHDD"></a>
+      <a id="JFXUC339" name="JFXUC339"></a> 
+      <p class="titleinfigure">Figure 21-1 HTML Editor</p> 
+      <img src="img/editor-sample.png" alt="Description of Figure 21-1 follows" title="Description of Figure 21-1 follows" longdesc="img_text/editor-sample.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <p>The <code>HTMLEditor</code> class presents the editing content in the form of an HTML string. For example, the content typed in the editor in <a href="#BGBJFHDD">Figure 21-1</a> is presented by the following string: &quot;<code>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;h1&gt;Heading&lt;/h1&gt;&lt;div&gt;&lt;u&gt;Text&lt;/u&gt;, some text&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</code>.&quot;</p> 
+     <p>Because the <code>HTMLEditor</code> class is an extension of the <code>Node</code> class, you can apply visual effects or transformations to its instances.</p> 
+     <a id="JFXUC340" name="JFXUC340"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref178" name="sthref178"></a> 
+      <h2 class="sect1">Adding an HTML Editor</h2> 
+      <p>Like any other UI control, the <code>HTMLEditor</code> component must be added the scene so that it can appear in your application. You can add it directly to the scene as shown in <a href="#BGBGAGHB">Example 21-1</a> or through a layout container as done in other examples.</p> 
+      <div class="example">
+       <a id="BGBGAGHB" name="BGBGAGHB"></a>
+       <a id="JFXUC347" name="JFXUC347"></a> 
+       <p class="titleinexample">Example 21-1 Adding an HTML Editor to a JavaFX Application</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.web.HTMLEditor;
+import javafx.stage.Stage;
+ 
+public class HTMLEditorSample extends Application {
+ 
+    @Override
+    public void start(Stage stage) {
+        stage.setTitle(&quot;HTMLEditor Sample&quot;);
+        stage.setWidth(400);
+        stage.setHeight(300);   
+        final HTMLEditor htmlEditor = new HTMLEditor();
+        htmlEditor.setPrefHeight(245);
+        Scene scene = new Scene(htmlEditor);       
+        stage.setScene(scene);
+        stage.show();
+    }
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Compiling and running this code fragment produces the window shown in <a href="#BGBFGCEE">Figure 21-2</a>.</p> 
+      <div class="figure">
+       <a id="BGBFGCEE" name="BGBFGCEE"></a>
+       <a id="JFXUC348" name="JFXUC348"></a> 
+       <p class="titleinfigure">Figure 21-2 Initial View of the HTMLEditor Component</p> 
+       <img src="img/editor-initial.png" alt="Description of Figure 21-2 follows" title="Description of Figure 21-2 follows" longdesc="img_text/editor-initial.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>The formatting toolbars are provided in the implementation of the component. You cannot toggle their visibility. However, you still can customize the appearance of the editor by applying CSS style, as shown in <a href="#BGBBGFGH">Example 21-2</a>.</p> 
+      <div class="example">
+       <a id="BGBBGFGH" name="BGBBGFGH"></a>
+       <a id="JFXUC349" name="JFXUC349"></a> 
+       <p class="titleinexample">Example 21-2 Styling the HTMLEditor</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+htmlEditor.setStyle(
+    &quot;-fx-font: 12 cambria;&quot;
+    + &quot;-fx-border-color: brown; &quot;
+    + &quot;-fx-border-style: dotted;&quot;
+    + &quot;-fx-border-width: 2;&quot;
+);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When this code line is added to <a href="#BGBGAGHB">Example 21-1</a>, the editor changes, as shown in <a href="#BGBFFBFD">Figure 21-3</a>.</p> 
+      <div class="figure">
+       <a id="BGBFFBFD" name="BGBFFBFD"></a>
+       <a id="JFXUC350" name="JFXUC350"></a> 
+       <p class="titleinfigure">Figure 21-3 Alternative View of the HTMLEditor Component</p> 
+       <img src="img/editor-cssstyle.png" alt="Description of Figure 21-3 follows" title="Description of Figure 21-3 follows" longdesc="img_text/editor-cssstyle.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>The applied style changes the border of the component and the font of the formatting toolbars.</p> 
+      <p>The <code>HTMLEditor</code> class provides a method to define the content that appears in the editing area when the application starts. Use the <code>setHtmlText</code> method, as shown in <a href="#CHDHEBCC">Example 21-3</a> to set the initial text for the editor.</p> 
+      <div class="example">
+       <a id="CHDHEBCC" name="CHDHEBCC"></a>
+       <a id="JFXUC351" name="JFXUC351"></a> 
+       <p class="titleinexample">Example 21-3 Setting the Text Content</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+private final String INITIAL_TEXT = &quot;&lt;html&gt;&lt;body&gt;Lorem ipsum dolor sit &quot;
+    + &quot;amet, consectetur adipiscing elit. Nam tortor felis, pulvinar &quot;
+    + &quot;in scelerisque cursus, pulvinar at ante. Nulla consequat&quot;
+    + &quot;congue lectus in sodales. Nullam eu est a felis ornare &quot;
+    + &quot;bibendum et nec tellus. Vivamus non metus tempus augue auctor &quot;
+    + &quot;ornare. Duis pulvinar justo ac purus adipiscing pulvinar. &quot;
+    + &quot;Integer congue faucibus dapibus. Integer id nisl ut elit &quot;
+    + &quot;aliquam sagittis gravida eu dolor. Etiam sit amet ipsum &quot;
+    + &quot;sem.&lt;/body&gt;&lt;/html&gt;&quot;;
+
+htmlEditor.setHtmlText(INITIAL_TEXT);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p><a href="#BGBJBHAF">Figure 21-4</a> demonstrates the text editor with the text set by using the <code>setHTMLText</code> method.</p> 
+      <div class="figure">
+       <a id="BGBJBHAF" name="BGBJBHAF"></a>
+       <a id="JFXUC352" name="JFXUC352"></a> 
+       <p class="titleinfigure">Figure 21-4 HTMLEditor with the Predefined Text Content</p> 
+       <img src="img/editor-text.png" alt="Description of Figure 21-4 follows" title="Description of Figure 21-4 follows" longdesc="img_text/editor-text.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>You can use the HTML tags in this string to apply specific formatting for the initially rendered content.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC341" name="JFXUC341"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref182" name="sthref182"></a> 
+      <h2 class="sect1">Using an HTML Editor to Build the User Interface</h2> 
+      <p>You can use the <code>HTMLEditor</code> control to implement typical user interfaces (UIs) in your JavaFX applications. For example, you can implement instant messenger services, email clients, or even content management systems.</p> 
+      <p>presents the user interface of a message composing window that you can find in many email client applications.</p> 
+      <div class="example">
+       <a id="BGBICEHD" name="BGBICEHD"></a>
+       <a id="JFXUC353" name="JFXUC353"></a> 
+       <p class="titleinexample">Example 21-4 HTMLEditor Added to the Email Client UI</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.web.HTMLEditor;
+import javafx.stage.Stage;
+ 
+public class HTMLEditorSample extends Application {
+    
+    @Override
+    public void start(Stage stage) {
+        stage.setTitle(&quot;Message Composing&quot;);
+        stage.setWidth(500);
+        stage.setHeight(500);
+        Scene scene = new Scene(new Group());
+    
+        final VBox root = new VBox();        
+        root.setPadding(new Insets(8, 8, 8, 8));
+        root.setSpacing(5);
+        root.setAlignment(Pos.BOTTOM_LEFT);
+        
+        final GridPane grid = new GridPane();
+        grid.setVgap(5);
+        grid.setHgap(10);
+              
+        final ChoiceBox sendTo = 
+            new ChoiceBox(FXCollections.observableArrayList(
+                &quot;To:&quot;, &quot;Cc:&quot;, &quot;Bcc:&quot;)
+        );
+        
+        sendTo.setPrefWidth(100);                
+        GridPane.setConstraints(sendTo, 0, 0);
+        grid.getChildren().add(sendTo);
+        
+        final TextField tbTo = new TextField();
+        tbTo.setPrefWidth(400);
+        GridPane.setConstraints(tbTo, 1, 0);
+        grid.getChildren().add(tbTo);
+        
+        final Label subjectLabel = new Label(&quot;Subject:&quot;);
+        GridPane.setConstraints(subjectLabel, 0, 1);
+        grid.getChildren().add(subjectLabel);        
+        
+        final TextField tbSubject = new TextField();
+        tbTo.setPrefWidth(400);
+        GridPane.setConstraints(tbSubject, 1, 1);
+        grid.getChildren().add(tbSubject);
+        
+        root.getChildren().add(grid);
+        
+        final HTMLEditor htmlEditor = new HTMLEditor();
+        htmlEditor.setPrefHeight(370);
+ 
+        root.getChildren().addAll(htmlEditor, new Button(&quot;Send&quot;));        
+      
+        final Label htmlLabel = new Label();
+        htmlLabel.setWrapText(true);
+                      
+        scene.setRoot(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The user interface includes a choice box to select a type of recipient, two text fields to enter the email address and the subject of the message, a label to indicate the subject field, the editor, and the Send button.</p> 
+      <p>The UI controls are arranged on the application scene by using the <code>Grid</code> and <code>VBox</code> layout containers. When you compile and run this application, the window shown in <a href="#BGBBJHBB">Figure 21-5</a> shows the output of this application when a user is composing a weekly report.</p> 
+      <div class="figure">
+       <a id="BGBBJHBB" name="BGBBJHBB"></a>
+       <a id="JFXUC342" name="JFXUC342"></a> 
+       <p class="titleinfigure">Figure 21-5 Email Client User Interface</p> 
+       <img src="img/editor-email.png" alt="Description of Figure 21-5 follows" title="Description of Figure 21-5 follows" longdesc="img_text/editor-email.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>You can set the specific width and height values for the <code>HTMLEditor</code> object by calling the <code>setPrefWidth</code> or <code>setPrefHeight</code> methods, or you can leave its width and height unspecified. <a href="#BGBICEHD">Example 21-4</a> specifies the height of the component. Its width is defined by the <code>VBox</code> layout container. When the text content exceeds the height of the editing area, the vertical scroll bar appears.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC343" name="JFXUC343"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref184" name="sthref184"></a> 
+      <h2 class="sect1">Obtaining HTML Content</h2> 
+      <p>With the JavaFX <code>HTMLEditor</code> control, you can edit text and set the initial content. In addition, you can obtain the entered and edited text in HTML format. The application shown in <a href="#BGBJDIGD">Example 21-5</a> implements this task.</p> 
+      <div class="example">
+       <a id="BGBJDIGD" name="BGBJDIGD"></a>
+       <a id="JFXUC354" name="JFXUC354"></a> 
+       <p class="titleinexample">Example 21-5 Retrieving HTML Code</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
+import javafx.scene.web.HTMLEditor;
+import javafx.stage.Stage;
+ 
+public class HTMLEditorSample extends Application {    
+    private final String INITIAL_TEXT = &quot;Lorem ipsum dolor sit &quot;
+            + &quot;amet, consectetur adipiscing elit. Nam tortor felis, pulvinar &quot;
+            + &quot;in scelerisque cursus, pulvinar at ante. Nulla consequat&quot;
+            + &quot;congue lectus in sodales. Nullam eu est a felis ornare &quot;
+            + &quot;bibendum et nec tellus. Vivamus non metus tempus augue auctor &quot;
+            + &quot;ornare. Duis pulvinar justo ac purus adipiscing pulvinar. &quot;
+            + &quot;Integer congue faucibus dapibus. Integer id nisl ut elit &quot;
+            + &quot;aliquam sagittis gravida eu dolor. Etiam sit amet ipsum &quot;
+            + &quot;sem.&quot;;
+ 
+    @Override
+    public void start(Stage stage) {
+        stage.setTitle(&quot;HTMLEditor Sample&quot;);
+        stage.setWidth(500);
+        stage.setHeight(500);
+        Scene scene = new Scene(new Group());
+    
+        VBox root = new VBox();      
+        root.setPadding(new Insets(8, 8, 8, 8));
+        root.setSpacing(5);
+        root.setAlignment(Pos.BOTTOM_LEFT);
+              
+        final HTMLEditor htmlEditor = new HTMLEditor();
+        htmlEditor.setPrefHeight(245);
+        htmlEditor.setHtmlText(INITIAL_TEXT);       
+ 
+        final TextArea htmlCode = new TextArea();
+        htmlCode.setWrapText(true);
+    
+        ScrollPane scrollPane = new ScrollPane();
+        scrollPane.getStyleClass().add(&quot;noborder-scroll-pane&quot;);
+        scrollPane.setContent(htmlCode);
+        scrollPane.setFitToWidth(true);
+        scrollPane.setPrefHeight(180);
+ 
+        Button showHTMLButton = new Button(&quot;Produce HTML Code&quot;);
+        root.setAlignment(Pos.CENTER);
+        showHTMLButton.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+            @Override public void handle(ActionEvent arg0) {
+                <span class="bold">htmlCode.setText(htmlEditor.getHtmlText());</span>
+            }
+        });
+        
+        root.getChildren().addAll(htmlEditor, showHTMLButton, scrollPane);
+        scene.setRoot(root);
+ 
+        stage.setScene(scene);
+        stage.show();
+    }
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The <code>getHTMLText</code> method called on the <code>HTMLEditor</code> object derives the edited content and presents it as an HTML string. This information is passed to the text area, so that you can observe, copy, and paste the produced HTML code. <a href="#BGBDEDII">Figure 21-6</a> shows an HTML code of the text is being edited in the HTMLEditor sample.</p> 
+      <div class="figure">
+       <a id="BGBDEDII" name="BGBDEDII"></a>
+       <a id="JFXUC344" name="JFXUC344"></a> 
+       <p class="titleinfigure">Figure 21-6 Obtaining the HTML Content</p> 
+       <img src="img/editor-get-content.png" alt="Description of Figure 21-6 follows" title="Description of Figure 21-6 follows" longdesc="img_text/editor-get-content.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Similarly, you can obtain HTML code and save it in the file or send it to the <code>WebView</code> object to synchronize content in the editor and the embedded browser. See how this task is implemented in <a href="#BGBHCDHG">Example 21-6</a>.</p> 
+      <div class="example">
+       <a id="BGBHCDHG" name="BGBHCDHG"></a>
+       <a id="JFXUC355" name="JFXUC355"></a> 
+       <p class="titleinexample">Example 21-6 Rendering Edited HTML Content in a Browser</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
+import javafx.scene.web.HTMLEditor;
+<span class="bold">import javafx.scene.web.WebEngine;</span>
+<span class="bold">import javafx.scene.web.WebView;</span>
+import javafx.stage.Stage;
+ 
+public class HTMLEditorSample extends Application {
+    private final String INITIAL_TEXT = &quot;Lorem ipsum dolor sit &quot;
+            + &quot;amet, consectetur adipiscing elit. Nam tortor felis, pulvinar &quot;
+            + &quot;in scelerisque cursus, pulvinar at ante. Nulla consequat&quot;
+            + &quot;congue lectus in sodales. Nullam eu est a felis ornare &quot;
+            + &quot;bibendum et nec tellus. Vivamus non metus tempus augue auctor &quot;
+            + &quot;ornare. Duis pulvinar justo ac purus adipiscing pulvinar. &quot;
+            + &quot;Integer congue faucibus dapibus. Integer id nisl ut elit &quot;
+            + &quot;aliquam sagittis gravida eu dolor. Etiam sit amet ipsum &quot;
+            + &quot;sem.&quot;;
+ 
+    @Override
+    public void start(Stage stage) {
+        stage.setTitle(&quot;HTMLEditor Sample&quot;);
+        stage.setWidth(500);
+        stage.setHeight(500);
+        Scene scene = new Scene(new Group());
+    
+        VBox root = new VBox();     
+        root.setPadding(new Insets(8, 8, 8, 8));
+        root.setSpacing(5);
+        root.setAlignment(Pos.BOTTOM_LEFT);
+ 
+        final HTMLEditor htmlEditor = new HTMLEditor();
+        htmlEditor.setPrefHeight(245);
+        htmlEditor.setHtmlText(INITIAL_TEXT);
+        
+        <span class="bold">final WebView browser = new WebView();</span>
+        <span class="bold">final WebEngine webEngine = browser.getEngine();</span>
+     
+        ScrollPane scrollPane = new ScrollPane();
+        scrollPane.getStyleClass().add(&quot;noborder-scroll-pane&quot;);
+        scrollPane.setStyle(&quot;-fx-background-color: white&quot;);
+        scrollPane.setContent(browser);
+        scrollPane.setFitToWidth(true);
+        scrollPane.setPrefHeight(180);
+ 
+        Button showHTMLButton = new Button(&quot;Load Content in Browser&quot;);
+        root.setAlignment(Pos.CENTER);
+        showHTMLButton.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+            @Override public void handle(ActionEvent arg0) {                
+                <span class="bold">webEngine.loadContent(htmlEditor.getHtmlText());</span>
+            }
+        });
+        
+        root.getChildren().addAll(htmlEditor, showHTMLButton, scrollPane);
+        scene.setRoot(root);
+ 
+        stage.setScene(scene);
+        stage.show();
+    }
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>HTML code received from the <code>htmlEditor</code> component is loaded in the <code>WebEngine</code> object that specifies the content for the embedded browser. Each time a user clicks the Load Content in Browser button, the edited content is updated in the browser. <a href="#BGBDBIHA">Figure 21-7</a> demonstrates <a href="#BGBHCDHG">Example 21-6</a> in action.</p> 
+      <div class="figure">
+       <a id="BGBDBIHA" name="BGBDBIHA"></a>
+       <a id="JFXUC345" name="JFXUC345"></a> 
+       <p class="titleinfigure">Figure 21-7 Loading Content in a Browser</p> 
+       <img src="img/editor-browser.png" alt="Description of Figure 21-7 follows" title="Description of Figure 21-7 follows" longdesc="img_text/editor-browser.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>You can use the <code>Text</code> component to add non-editing text content to your UI. See <a href="../text/jfxpub-text.htm">Using Text and Text Effects in JavaFX</a> for more information about the <code>Text</code> component.</p> 
+      <p class="itemizedlisttitle">Related API Documentation&nbsp;</p> 
+      <ul> 
+       <li> <p><code>HTMLEditor</code></p> </li> 
+       <li> <p><code>WebView</code></p> </li> 
+       <li> <p><code>WebEngine</code></p> </li> 
+       <li> <p><code>Label</code></p> </li> 
+       <li> <p><code>Button</code></p> </li> 
+       <li> <p><code>TextField</code></p> </li> 
+       <li> <p><code>ChoiceBox</code></p> </li> 
+       <li> <p><code>ScrollPane</code></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-ui_controls.htm">About This Tutorial</a></li>
+      <li><a href="overview.htm">JavaFX UI Controls</a></li>
+      <li><a href="label.htm">Label</a></li>
+      <li><a href="button.htm">Button</a></li>
+      <li><a href="radio-button.htm">Radio Button</a></li>
+      <li><a href="toggle-button.htm">Toggle Button</a></li>
+      <li><a href="checkbox.htm">Checkbox</a></li>
+      <li><a href="choice-box.htm">Choice Box</a></li>
+      <li><a href="text-field.htm">Text Field</a></li>
+      <li><a href="password-field.htm">Password Field</a></li>
+      <li><a href="scrollbar.htm">Scroll Bar</a></li>
+      <li><a href="scrollpane.htm">Scroll Pane</a></li>
+      <li><a href="list-view.htm">List View</a></li>
+      <li><a href="table-view.htm">Table View</a></li>
+      <li><a href="tree-view.htm">Tree View</a></li>
+      <li><a href="combo-box.htm">Combo Box</a></li>
+      <li><a href="separator.htm">Separator</a></li>
+      <li><a href="slider.htm">Slider</a></li>
+      <li><a href="progress.htm">Progress Bar and Progress Indicator</a></li>
+      <li><a href="hyperlink.htm">Hyperlink</a></li>
+      <li><a href="tooltip.htm">Tooltip</a></li>
+      <li class=" active"><a href="editor.htm">HTML Editor</a></li>
+      <li><a href="accordion-titledpane.htm">Titled Pane and Accordion</a></li>
+      <li><a href="menu_controls.htm">Menu</a></li>
+      <li><a href="custom.htm">Customization of UI Controls</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/ui_controls/UIControlSamples.zip">UIControlSamples.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

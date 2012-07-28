@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Adding HTML Content to JavaFX Applications &middot; Adding HTML Content to JavaFX Applications &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Adding HTML Content to JavaFX Applications</h1>
+     <p class=" lead">Adding HTML Content to JavaFX Applications</p>
+     <ul class=" pager"></ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="JFXWN101" name="JFXWN101"></a>
+     <a id="sthref2" name="sthref2"></a>  
+     <p>JavaFX SDK introduces the embedded browser, a user interface component that provides a web viewer and full browsing functionality through its API. The embedded browser component is based on <a href="../../../../www.webkit.org/default.htm">WebKit</a>, an open source web browser engine. It supports Cascading Style Sheets (CSS), JavaScript, Document Object Model (DOM), and HTML5.</p> 
+     <p>The embedded browser enables you to perform the following tasks in your JavaFX applications:</p> 
+     <ul> 
+      <li> <p>Render HTML content from local and remote URLs</p> </li> 
+      <li> <p>Execute JavaScript commands</p> </li> 
+      <li> <p>Perform upcalls from JavaScript to JavaFX.</p> </li> 
+      <li> <p>Manage web pop-up windows</p> </li> 
+      <li> <p>Apply effects to the embedded browser</p> </li> 
+     </ul> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref3" name="sthref3"></a> 
+      <h2 class="sect1">Supported Features of HTML5</h2> 
+      <p>The current implementation of the WebView component supports the following HTML5 features:</p> 
+      <ul> 
+       <li> <p>Canvas</p> </li> 
+       <li> <p>Media Playback</p> </li> 
+       <li> <p>Form controls (except for <code>&lt;input type=&quot;color&quot;&gt;</code> )</p> </li> 
+       <li> <p>Editable content</p> </li> 
+       <li> <p>History maintenance</p> </li> 
+       <li> <p>Support for the <code>&lt;meter&gt;</code> and <code>&lt;progress&gt;</code> tags.</p> </li> 
+       <li> <p>DOM</p> </li> 
+       <li> <p>SVG</p> </li> 
+       <li> <p>Support for domain names written in national languages</p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXWN102" name="JFXWN102"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref4" name="sthref4"></a> 
+      <h2 class="sect1">Embedded Browser API</h2> 
+      <p>The embedded browser inherits all fields and methods from the <code>Node</code> class, and therefore, it has all its features.</p> 
+      <p>The classes that constitute the embedded browser reside in the <code>javafx.scene.web</code> package. <a href="#BABCFHBC">Figure 1</a> shows the architecture of the embedded browser and how it relates to other JavaFX classes.</p> 
+      <div class="figure">
+       <a id="BABCFHBC" name="BABCFHBC"></a>
+       <a id="JFXWN103" name="JFXWN103"></a> 
+       <p class="titleinfigure">Figure 1 Architecture of the Embedded Browser</p> 
+       <img src="img/webview-structure.png" alt="Architecture of the WebView component" title="Architecture of the WebView component" longdesc="img_text/webview-structure.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <a id="JFXWN104" name="JFXWN104"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref6" name="sthref6"></a> 
+       <h3 class="sect2">WebEngine Class</h3> 
+       <p>The <code>WebEngine</code> class provides basic web page functionality. It supports user interaction such as navigating links and submitting HTML forms, although it does not interact with users directly. The <code>WebEngine</code> class handles one web page at a time. It supports the basic browsing features of loading HTML content and accessing the DOM as well as executing JavaScript commands.</p> 
+       <p>Two constructors enable you to create a <code>WebEngine</code> object: an empty constructor and a constructor with the specified URL. If you instantiate an empty constructor, the URL can be passed to a <code>WebEngine</code> object through the <code>load</code> method.</p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXWN105" name="JFXWN105"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref7" name="sthref7"></a> 
+       <h3 class="sect2">WebView Class</h3> 
+       <p>The <code>WebView</code> class is an extension of the <code>Node</code> class. It encapsulates a <code>WebEngine</code> object, incorporates HTML content into an application's scene, and provides properties and methods to apply effects and transformations. The <code>getEngine()</code> method called on a <code>WebView</code> object returns a web engine associated with it.</p> 
+       <p><a href="#BABFDEIG">Example 1</a> shows the typical way to create <code>WebView</code> and <code>WebEngine</code> objects in your application.</p> 
+       <div class="example">
+        <a id="BABFDEIG" name="BABFDEIG"></a>
+        <a id="JFXWN106" name="JFXWN106"></a> 
+        <p class="titleinexample">Example 1 Creating WebView and WebEngine Objects</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+WebView browser = new WebView();
+WebEngine webEngine = browser.getEngine();
+webEngine.load(&quot;http://mySite.com&quot;);
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXWN120" name="JFXWN120"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref8" name="sthref8"></a> 
+       <h3 class="sect2">PopupFeatures Class</h3> 
+       <p>The <code>PopupFeatures</code> class describes the features of a web pop-up window as defined by the JavaScript specification. When you need to open a new browser window in your application, the instances of this class are passed into pop-up handlers registered on a <code>WebEngine</code> object by using the <code>setCreatePopupHandler</code> method as shown in <a href="#CEGFCBEG">Example 2</a>.</p> 
+       <div class="example">
+        <a id="CEGFCBEG" name="CEGFCBEG"></a>
+        <a id="JFXWN121" name="JFXWN121"></a> 
+        <p class="titleinexample">Example 2 Creating a Pop-Up Handler</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+webEngine.setCreatePopupHandler(new Callback&lt;PopupFeatures, WebEngine&gt;() {
+    @Override public WebEngine call(PopupFeatures config) {                
+        // do something
+        // return a web engine for the new browser window
+    }
+});
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>If the method returns the web engine of the same <code>WebView</code> object, the target document is opened in the same browser window. To open the target document in another window, specify the <code>WebEngine</code> object of another web view. When you need to block the pop-up windows, return the <code>null</code> value.</p> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXWN107" name="JFXWN107"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref9" name="sthref9"></a> 
+      <h2 class="sect1">Adding WebView to the Application Scene</h2> 
+      <p>The WebViewSample application creates the <code>Browser</code> class that encapsulates both the <code>WebView</code> object and the toolbar with UI controls. The <code>Main</code> class of the application creates the scene and adds a <code>Browser</code> object to the scene.</p> 
+      <p><a href="#BABICIEG">Example 3</a> shows how to add the <code>WebView</code> component to the application scene.</p> 
+      <div class="example">
+       <a id="BABICIEG" name="BABICIEG"></a>
+       <a id="JFXWN108" name="JFXWN108"></a> 
+       <p class="titleinexample">Example 3 Creating a Browser</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.geometry.HPos;
+import javafx.geometry.VPos;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
+import javafx.scene.paint.Color;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
+import javafx.stage.Stage;
+ 
+ 
+public class Main extends Application {
+    private Scene scene;
+    @Override public void start(Stage stage) {
+        // create the scene
+        stage.setTitle(&quot;Web View&quot;);
+        scene = new Scene(new Browser(),750,500, Color.web(&quot;#666970&quot;));
+        stage.setScene(scene);
+        scene.getStylesheets().add(&quot;webviewsample/BrowserToolbar.css&quot;);        
+        stage.show();
+    }
+ 
+    public static void main(String[] args){
+        launch(args);
+    }
+}
+class Browser extends Region {
+ 
+    <span class="bold">final WebView browser = new WebView();</span>
+    <span class="bold">final WebEngine webEngine = browser.getEngine();</span>
+     
+    public Browser() {
+        //apply the styles
+        getStyleClass().add(&quot;browser&quot;);
+        // load the web page
+        <span class="bold">webEngine.load(&quot;http://www.oracle.com&quot;);</span>
+        //add the web view to the scene
+        <span class="bold">getChildren().add(browser);</span>
+ 
+    }
+    private Node createSpacer() {
+        Region spacer = new Region();
+        HBox.setHgrow(spacer, Priority.ALWAYS);
+        return spacer;
+    }
+ 
+    @Override protected void layoutChildren() {
+        double w = getWidth();
+        double h = getHeight();
+        layoutInArea(browser,0,0,w,h,0, HPos.CENTER, VPos.CENTER);
+    }
+ 
+    @Override protected double computePrefWidth(double height) {
+        return 750;
+    }
+ 
+    @Override protected double computePrefHeight(double width) {
+        return 500;
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>In this code, the web engine loads a URL that points to the Oracle corporate web site. The <code>WebView</code> object receives this <code>webEngine</code> value when it is initialized. The <code>getChildren</code> and <code>add</code> methods add the <code>WebView</code> object to the application scene.</p> 
+      <p>The <code>createSpacer</code>, <code>layoutChildren</code>, <code>computePrefWidth</code>, and <code>computePrefHeight</code> methods perform layout of the <code>WebView</code> object and the control elements in the application toolbar.</p> 
+      <p>When you add, compile, and run this code fragment, it produces the application window shown in <a href="#BABECICE">Figure 2</a>.</p> 
+      <div class="figure">
+       <a id="BABECICE" name="BABECICE"></a>
+       <a id="JFXWN109" name="JFXWN109"></a> 
+       <p class="titleinfigure">Figure 2 WebView Object in an Application Scene</p> 
+       <img src="img/webview-add.png" alt="WebView object" title="WebView object" longdesc="img_text/webview-add.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Add a toolbar with four <code>Hyperlink</code> objects to switch between different Oracle web resources. Study the modified code of the <code>Browser</code> class shown in <a href="#BABJFAGE">Example 4</a>. It adds URLs for alternative web resources including Oracle products, developer forums, blogs, and the partner network. The code fragment also creates a toolbar and adds the hyperlinks to it.</p> 
+      <div class="example">
+       <a id="BABJFAGE" name="BABJFAGE"></a>
+       <a id="JFXWN110" name="JFXWN110"></a> 
+       <p class="titleinexample">Example 4 Creating a Toolbar</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.HPos;
+import javafx.geometry.VPos;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
+import javafx.scene.paint.Color;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
+import javafx.stage.Stage;
+ 
+public class Main extends Application {
+ 
+    private Scene scene;
+ 
+    @Override public void start(Stage stage) {
+        // create scene
+        stage.setTitle(&quot;Web View&quot;);
+        scene = new Scene(new Browser(),750,500, Color.web(&quot;#666970&quot;));
+        stage.setScene(scene);
+        scene.getStylesheets().add(&quot;webviewsample/BrowserToolbar.css&quot;);
+        // show stage
+        stage.show();
+    }
+ 
+    public static void main(String[] args){
+        launch(args);
+    }
+}
+class Browser extends Region {
+   private HBox toolBar;
+ 
+   private static String[] imageFiles = new String[]{
+        &quot;product.png&quot;,
+        &quot;blog.png&quot;,
+        &quot;forum.png&quot;,
+        &quot;partners.png&quot;
+    };
+    private static String[] captions = new String[]{
+        &quot;Products&quot;,
+        &quot;Blogs&quot;,
+        &quot;Forums&quot;,
+        &quot;Partners&quot;
+    };
+ 
+    private static String[] urls = new String[]{
+        &quot;http://www.oracle.com/products/index.html&quot;,
+        &quot;http://blogs.oracle.com/&quot;,
+        &quot;http://forums.oracle.com/forums/&quot;,
+        &quot;http://www.oracle.com/partners/index.html&quot;
+    };
+ 
+    final ImageView selectedImage = new ImageView();
+    final Hyperlink[] hpls = new Hyperlink[captions.length];
+    final Image[] images = new Image[imageFiles.length];
+    final WebView browser = new WebView();
+    final WebEngine webEngine = browser.getEngine();
+ 
+    public Browser() {       
+        //apply the styles
+        getStyleClass().add(&quot;browser&quot;);
+ 
+        // load the home page        
+        webEngine.load(&quot;http://www.oracle.com/products/index.html&quot;);
+        
+        <span class="bold">for (int i = 0; i &lt; captions.length; i++) {</span>
+            <span class="bold">final Hyperlink hpl = hpls[i] = new Hyperlink(captions[i]);</span>
+            <span class="bold">Image image = images[i] =</span>
+                <span class="bold">new Image(getClass().getResourceAsStream(imageFiles[i]));</span>
+            <span class="bold">hpl.setGraphic(new ImageView (image));</span>
+            <span class="bold">final String url = urls[i];</span>
+ 
+            <span class="bold">hpl.setOnAction(new EventHandler&lt;ActionEvent&gt;() {</span>
+                <span class="bold">@Override</span>
+                <span class="bold">public void handle(ActionEvent e) {</span>
+                    <span class="bold">webEngine.load(url);</span>                    
+                <span class="bold">}</span>
+            <span class="bold">});</span>
+        <span class="bold">}</span>        
+        // create the toolbar
+        <span class="bold">toolBar = new HBox();</span>
+        <span class="bold">toolBar.getStyleClass().add(&quot;browser-toolbar&quot;);</span>
+        <span class="bold">toolBar.getChildren().addAll(hpls);</span>        
+    
+        //add components
+        getChildren().add(toolBar);
+        getChildren().add(browser); 
+    }
+ 
+    private Node createSpacer() {
+        Region spacer = new Region();
+        HBox.setHgrow(spacer, Priority.ALWAYS);
+        return spacer;
+    }
+ 
+    @Override protected void layoutChildren() {
+        double w = getWidth();
+        double h = getHeight();
+        double tbHeight = toolBar.prefHeight(w);
+        layoutInArea(browser,0,0,w,h-tbHeight,0, HPos.CENTER, VPos.CENTER);
+        layoutInArea(toolBar,0,h-tbHeight,w,tbHeight,0,HPos.CENTER,VPos.CENTER);
+    }
+ 
+    @Override protected double computePrefWidth(double height) {
+        return 750;
+    }
+ 
+    @Override protected double computePrefHeight(double width) {
+        return 500;
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>This code uses a <code>for</code> loop to create the hyperlinks. The <code>setOnAction</code> method defines the behavior of the hyperlinks. When a user clicks a link, the corresponding URL value is passed to the <code>load</code> method of the <code>webEngine</code>. When you compile and run the modified application, the application window changes as shown in <a href="#BABCHDBG">Figure 3</a>.</p> 
+      <div class="figure">
+       <a id="BABCHDBG" name="BABCHDBG"></a>
+       <a id="JFXWN111" name="JFXWN111"></a> 
+       <p class="titleinfigure">Figure 3 Embedded Browser With a Navigation Toolbar</p> 
+       <img src="img/webview-partner.png" alt="Description of Figure 3 follows" title="Description of Figure 3 follows" longdesc="img_text/webview-partner.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref12" name="sthref12"></a> 
+      <h2 class="sect1">Processing JavaScript Commands</h2> 
+      <p>The <code>WebEngine</code> class provides the <code>executeScript</code> method to run a particular JavaScript command for the document currently loaded into the browser.</p> 
+      <p>The modified application code in <a href="#BABHCBJJ">Example 5</a> creates two additional buttons to hide and show the content of the Forums page. The buttons are added to the toolbar only when the Forums page is selected.</p> 
+      <div class="example">
+       <a id="BABHCBJJ" name="BABHCBJJ"></a>
+       <a id="JFXWN113" name="JFXWN113"></a> 
+       <p class="titleinexample">Example 5 Adding the Hide All and Show All Buttons</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.concurrent.Worker.State;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.geometry.HPos;
+import javafx.geometry.Pos;
+import javafx.geometry.VPos;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
+import javafx.scene.paint.Color;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
+import javafx.stage.Stage;
+ 
+public class Main extends Application {
+ 
+    private Scene scene;
+ 
+    @Override public void start(Stage stage) {
+        // create scene
+        stage.setTitle(&quot;Web View&quot;);
+        scene = new Scene(new Browser(),750,500, Color.web(&quot;#666970&quot;));
+        stage.setScene(scene);
+        scene.getStylesheets().add(&quot;webviewsample/BrowserToolbar.css&quot;);
+        // show stage
+        stage.show();
+    }
+ 
+    public static void main(String[] args){
+        launch(args);
+    }
+}
+class Browser extends Region {
+   private HBox toolBar;
+ 
+   private static String[] imageFiles = new String[]{
+        &quot;product.png&quot;,
+        &quot;blog.png&quot;,
+        &quot;forum.png&quot;,
+        &quot;partners.png&quot;        
+    };
+    private static String[] captions = new String[]{
+        &quot;Products&quot;,
+        &quot;Blogs&quot;,
+        &quot;Forums&quot;,
+        &quot;Partners&quot;
+        
+    };
+ 
+    private static String[] urls = new String[]{
+        &quot;http://www.oracle.com/products/index.html&quot;,
+        &quot;http://blogs.oracle.com/&quot;,
+        &quot;http://forums.oracle.com/forums/&quot;,
+        &quot;http://www.oracle.com/partners/index.html&quot;        
+    };
+ 
+    final ImageView selectedImage = new ImageView();
+    final Hyperlink[] hpls = new Hyperlink[captions.length];
+    final Image[] images = new Image[imageFiles.length];
+    final WebView browser = new WebView();
+    final WebEngine webEngine = browser.getEngine();
+    <span class="bold">final Button hideAll = new Button(&quot;Hide All&quot;);</span>
+    <span class="bold">final Button showAll = new Button(&quot;ShowAll&quot;);</span>
+ 
+    public Browser() {       
+        //apply the styles
+        getStyleClass().add(&quot;browser&quot;);
+        
+ 
+        // load the home page        
+        webEngine.load(&quot;http://www.oracle.com/products/index.html&quot;);
+        
+        for (int i = 0; i &lt; captions.length; i++) {
+            final Hyperlink hpl = hpls[i] = new Hyperlink(captions[i]);
+ 
+            Image image = images[i] =
+                    new Image(getClass().getResourceAsStream(imageFiles[i]));
+            hpl.setGraphic(new ImageView (image));
+            final String url = urls[i];
+
+            hpl.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+                @Override public void handle(ActionEvent e) {
+                    webEngine.load(url);
+                    <span class="bold">webEngine.getLoadWorker().stateProperty().addListener(</span>
+                        <span class="bold">new ChangeListener&lt;State&gt;() {</span>  
+                            <span class="bold">@Override</span>
+                            <span class="bold">public void changed(ObservableValue&lt;? extends State&gt;</span>
+                               <span class="bold"> ov, State oldState, State newState) {</span>
+                                <span class="bold">if (!hpl.getText().equals(&quot;Forums&quot;)) {</span> 
+                                    <span class="bold">toolBar.getChildren().removeAll(showAll,</span> 
+                                            <span class="bold">hideAll); }</span>
+                                <span class="bold">if (newState == State.SUCCEEDED) {</span>
+                                    <span class="bold">if (hpl.getText().equals(&quot;Forums&quot;)) {</span>
+                                        <span class="bold">toolBar.getChildren().removeAll(showAll,</span> 
+                                                <span class="bold">hideAll);</span>
+                                        <span class="bold">toolBar.getChildren().addAll(showAll,</span> 
+                                                <span class="bold">h</span><span class="bold">ideAll);</span>
+                                    <span class="bold">}</span>
+                                <span class="bold">}</span>
+                            <span class="bold">}</span>
+                        <span class="bold">});</span>
+                }
+            });
+        }      
+        
+        // create the toolbar
+        toolBar = new HBox();
+        toolBar.setAlignment(Pos.CENTER);
+        toolBar.getStyleClass().add(&quot;browser-toolbar&quot;);
+        toolBar.getChildren().addAll(hpls);
+ 
+        toolBar.getChildren().add(createSpacer());
+ 
+        <span class="bold">hideAll.setOnAction(new EventHandler() {</span>
+            <span class="bold">@Override public void handle(Event t) {</span>
+                <span class="bold">webEngine.executeScript(&quot;hideAll()&quot;);</span>                
+            <span class="bold">}</span>
+        <span class="bold">});</span>
+ 
+        <span class="bold">showAll.setOnAction(new EventHandler() {</span>
+            <span class="bold">@Override public void handle(Event t) {</span>
+                <span class="bold">webEngine.executeScript(&quot;showAll()&quot;);</span>
+            <span class="bold">}</span>
+        <span class="bold">});</span>
+    
+        //add components
+        getChildren().add(toolBar);
+        getChildren().add(browser); 
+    }
+ 
+    private Node createSpacer() {
+        Region spacer = new Region();
+        HBox.setHgrow(spacer, Priority.ALWAYS);
+        return spacer;
+    }
+ 
+    @Override protected void layoutChildren() {
+        double w = getWidth();
+        double h = getHeight();
+        double tbHeight = toolBar.prefHeight(w);
+        layoutInArea(browser,0,0,w,h-tbHeight,0, HPos.CENTER, VPos.CENTER);
+        layoutInArea(toolBar,0,h-tbHeight,w,tbHeight,0,HPos.CENTER,VPos.CENTER);
+    }
+ 
+    @Override protected double computePrefWidth(double height) {
+        return 750;
+    }
+ 
+    @Override protected double computePrefHeight(double width) {
+        return 500;
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Loading always happens on a background thread. Methods that initiate loading return immediately after scheduling a background job. The <code>getLoadWorker()</code> method provides an instance of the <code>Worker</code> interface to track the loading progress. If the progress status of the Forums page is <code>SUCCEEDED</code>, the Show All and Hide All buttons are added to the toolbar, as shown in <a href="#BABFEHJE">Figure 4</a>.</p> 
+      <div class="figure">
+       <a id="BABFEHJE" name="BABFEHJE"></a>
+       <a id="JFXWN114" name="JFXWN114"></a> 
+       <p class="titleinfigure">Figure 4 Hide All and Show All Buttons</p> 
+       <img src="img/webview-forums.png" alt="Embedded browser with the navigation toolbar" title="Embedded browser with the navigation toolbar" longdesc="img_text/webview-forums.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>The <code>setOnAction</code> method shown in <a href="#BABBFFED">Example 6</a> defines behavior for the Hide All and Show All buttons.</p> 
+      <div class="example">
+       <a id="BABBFFED" name="BABBFFED"></a>
+       <a id="JFXWN115" name="JFXWN115"></a> 
+       <p class="titleinexample">Example 6 Executing JavaScript Commands</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+ hideAll.setOnAction(new EventHandler() {
+     @Override 
+     public void handle(Event t) {
+         <span class="bold">webEngine.executeScript(&quot;hideAll()&quot;)</span>;                
+     }
+ });
+
+showAll.setOnAction(new EventHandler() {
+    @Override 
+    public void handle(Event t) {
+        <span class="bold">webEngine.executeScript(&quot;showAll()&quot;);</span>
+    }
+});
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When the user clicks the Hide All button, the <code>executeScript</code> method runs the <code>hideAll()</code> JavaScript function for the Forums page. When the user clicks the Show All button, the <code>executeScript</code> method runs the <code>showAll()</code> function, and the forum topics are expanded as shown in <a href="#CEGCJCED">Figure 5</a>.</p> 
+      <div class="figure">
+       <a id="CEGCJCED" name="CEGCJCED"></a> 
+       <p class="titleinfigure">Figure 5 Showing the Oracle Forum Topics</p> 
+       <img src="img/webview-show-all.png" alt="Description of Figure 5 follows" title="Description of Figure 5 follows" longdesc="img_text/webview-show-all.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref15" name="sthref15"></a> 
+      <h2 class="sect1">Making Upcalls from JavaScript to JavaFX</h2> 
+      <p>Now that you know how to invoke JavaScript from JavaFX, you can explore the opposite functionality — calling from web content to JavaFX. The general concept is to create an interface object in the JavaFX application and make it known to JavaScript by calling the <code>JSObject.setMember()</code> method. After that, you can call public methods and access public fields of this object from JavaScript.</p> 
+      <p>For the WebViewSample application, you create the Help toolbar item that leads to the help.html file, where a user can preview reference material about Oracle websites. By clicking the Exit the Application link in the help.html file, the user exits the WebViewSample application. Modify the application, as shown in <a href="#CEGIHFFA">Example 7</a>, to implement this functionality.</p> 
+      <div class="example">
+       <a id="CEGIHFFA" name="CEGIHFFA"></a> 
+       <p class="titleinexample">Example 7 Closing JavaFX Application by Using JavaScript</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.concurrent.Worker.State;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.geometry.HPos;
+import javafx.geometry.Pos;
+import javafx.geometry.VPos;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
+import javafx.scene.paint.Color;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
+import javafx.stage.Stage;
+import netscape.javascript.JSObject;
+ 
+public class Main extends Application {
+ 
+    private Scene scene;
+ 
+    @Override public void start(Stage stage) {
+        // create scene
+        stage.setTitle(&quot;Web View&quot;);
+        scene = new Scene(new Browser(),750, 500, Color.web(&quot;#666970&quot;));
+        stage.setScene(scene);
+        scene.getStylesheets().add(&quot;webviewsample/BrowserToolbar.css&quot;);
+        // show stage
+        stage.show();
+    }
+ 
+    public static void main(String[] args){
+        launch(args);
+    }
+}
+class Browser extends Region {
+   private HBox toolBar;
+ 
+   private static String[] imageFiles = new String[]{
+        &quot;product.png&quot;,
+        &quot;blog.png&quot;,
+        &quot;forum.png&quot;,
+        &quot;partners.png&quot;,
+        <span class="bold">&quot;help.png&quot;</span>
+    };
+    private static String[] captions = new String[]{
+        &quot;Products&quot;,
+        &quot;Blogs&quot;,
+        &quot;Forums&quot;,
+        &quot;Partners&quot;,
+        <span class="bold">&quot;Help&quot;</span>    
+        
+    };
+ 
+    private static String[] urls = new String[]{
+        &quot;http://www.oracle.com/products/index.html&quot;,
+        &quot;http://blogs.oracle.com/&quot;,
+        &quot;http://forums.oracle.com/forums/&quot;,
+        &quot;http://www.oracle.com/partners/index.html&quot;,
+        <span class="bold">Main.class.getResource(&quot;help.html&quot;).toExternalForm()</span>
+            
+    };
+ 
+    final ImageView selectedImage = new ImageView();
+    final Hyperlink[] hpls = new Hyperlink[captions.length];
+    final Image[] images = new Image[imageFiles.length];
+    final WebView browser = new WebView();
+    final WebEngine webEngine = browser.getEngine();
+    final Button hideAll = new Button(&quot;Hide All&quot;);
+    final Button showAll = new Button(&quot;ShowAll&quot;);
+         
+    public Browser() {       
+        //apply the styles
+        getStyleClass().add(&quot;browser&quot;);
+ 
+        // load the home page        
+        webEngine.load(&quot;http://www.oracle.com/products/index.html&quot;);
+        
+        for (int i = 0; i &lt; captions.length; i++) {
+            final Hyperlink hpl = hpls[i] = new Hyperlink(captions[i]);
+            //final Hyperlink hpl = hpls[i] = new Hyperlink();
+            Image image = images[i] =
+                    new Image(getClass().getResourceAsStream(imageFiles[i]));
+            hpl.setGraphic(new ImageView (image));
+            final String url = urls[i];
+            hpl.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+                @Override public void handle(ActionEvent e) {
+                    webEngine.load(url);
+                    webEngine.getLoadWorker().stateProperty().addListener(
+                        new ChangeListener&lt;State&gt;() {  
+                            @Override
+                            public void changed(ObservableValue&lt;? extends State&gt;
+                                ov, State oldState, State newState) {
+                                if (!hpl.getText().equals(&quot;Forums&quot;)) { 
+                                    toolBar.getChildren().removeAll(showAll, 
+                                            hideAll); }
+                                if (newState == State.SUCCEEDED) {
+                                    <span class="bold">JSObject win = (JSObject)</span> 
+                                    <span class="bold">webEngine.executeScript(&quot;window&quot;);</span>
+                                    <span class="bold">win.setMember(&quot;app&quot;, new JavaApp());</span>
+                                    if (hpl.getText().equals(&quot;Forums&quot;)) {
+                                        toolBar.getChildren().removeAll(showAll, 
+                                                hideAll);
+                                        toolBar.getChildren().addAll(showAll, 
+                                                hideAll);
+                                    }
+                                }
+                            }
+                        });
+                }
+            });
+        }      
+        
+        // create the toolbar
+        toolBar = new HBox();
+        toolBar.setAlignment(Pos.CENTER);
+        toolBar.getStyleClass().add(&quot;browser-toolbar&quot;);
+        toolBar.getChildren().addAll(hpls);
+ 
+        toolBar.getChildren().add(createSpacer());
+ 
+        hideAll.setOnAction(new EventHandler() {
+            @Override public void handle(Event t) {
+                webEngine.executeScript(&quot;hideAll()&quot;);                
+            }
+        });
+        
+ 
+        showAll.setOnAction(new EventHandler() {
+            @Override public void handle(Event t) {
+                webEngine.executeScript(&quot;showAll()&quot;);
+            }
+        });   
+        
+       
+
+        //add components
+        getChildren().add(toolBar);
+        getChildren().add(browser); 
+    }
+ 
+    // JavaScript interface object
+    <span class="bold">private class JavaApp {</span>
+        <span class="bold">public void exit() {</span>
+            <span class="bold">Platform.exit();</span>
+        <span class="bold">}</span>
+    <span class="bold">}</span>
+    
+    private Node createSpacer() {
+        Region spacer = new Region();
+        HBox.setHgrow(spacer, Priority.ALWAYS);
+        return spacer;
+    }
+ 
+    @Override protected void layoutChildren() {
+        double w = getWidth();
+        double h = getHeight();
+        double tbHeight = toolBar.prefHeight(w);
+        layoutInArea(browser,0,0,w,h-tbHeight,0, HPos.CENTER, VPos.CENTER);
+        layoutInArea(toolBar,0,h-tbHeight,w,tbHeight,0,HPos.CENTER,VPos.CENTER);
+    }
+ 
+    @Override protected double computePrefWidth(double height) {
+        return 750;
+    }
+ 
+    @Override protected double computePrefHeight(double width) {
+        return 600;
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Examine the bold lines in <a href="#CEGIHFFA">Example 7</a>. The <code>exit()</code> method of the <code>JavaApp</code> interface is public; therefore, it can be accessed externally. When this method is called, it causes the JavaFX application to terminate.</p> 
+      <p>The <code>JavaApp</code> interface is set as a member of the <code>JSObject</code> instance, so that JavaScript becomes aware of that interface. It becomes known to JavaScript under the name <code>window.app</code>, or just <code>app</code>, and its only method can be called from JavaScript as <code>app.exit()</code>. See <a href="#CEGFBEJG">Example 8</a> to evaluate how this call is implemented in the help.html file.</p> 
+      <div class="example">
+       <a id="CEGFBEJG" name="CEGFBEJG"></a> 
+       <p class="titleinexample">Example 8 Making a Call to the WebViewSample Application from the Help File</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;html lang=&quot;en&quot;&gt;
+&lt;body&gt;
+&lt;p&gt;Help&lt;/p&gt;    
+&lt;ul&gt;
+  &lt;li&gt;Products - Extensive overview of Oracle hardware and software products, 
+      and summary Oracle consulting, support, and educational services. &lt;/li&gt;
+  &lt;li&gt;Blogs - Oracle blogging community (use the Hide All and Show All buttons 
+      to collapse and expand the list of topics).&lt;/li&gt;
+  &lt;li&gt;Forums - OTN discussion forums with numerous discussion threads cover 
+      various Oracle products and solution.&lt;/li&gt;
+  &lt;li&gt;Partners - Oracle partner solutions and programs. Popular resources and 
+      membership opportunities.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;about:blank&quot; onclick=&quot;<span class="bold">app.exit()</span>&quot;&gt;Exit the Application&lt;/a&gt;&lt;/p&gt;    
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When you compile and run the WebViewSample application, the new icon appears, as shown in <a href="#CEGCJBJA">Figure 6</a>.</p> 
+      <div class="figure">
+       <a id="CEGCJBJA" name="CEGCJBJA"></a> 
+       <p class="titleinfigure">Figure 6 Help Icon</p> 
+       <img src="img/webview-help.png" alt="Description of Figure 6 follows" title="Description of Figure 6 follows" longdesc="img_text/webview-help.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Click Help to load the help.html file. Examine the content of the file, then click the Exit the Application link, shown in <a href="#CEGFEFEA">Figure 7</a>, to close the WebViewSample application.</p> 
+      <div class="figure">
+       <a id="CEGFEFEA" name="CEGFEFEA"></a> 
+       <p class="titleinfigure">Figure 7 Help.html file</p> 
+       <img src="img/webview-exit.png" alt="Description of Figure 7 follows" title="Description of Figure 7 follows" longdesc="img_text/webview-exit.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXWN122" name="JFXWN122"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref18" name="sthref18"></a> 
+      <h2 class="sect1">Managing Web Pop-Up Windows</h2> 
+      <p>You can set an alternative <code>WebView</code> object for the documents that will be opened in a separate window. <a href="#CEGCDHJH">Figure 8</a> shows a context menu a user can open by right-clicking any link.</p> 
+      <div class="figure">
+       <a id="CEGCDHJH" name="CEGCDHJH"></a>
+       <a id="JFXWN123" name="JFXWN123"></a> 
+       <p class="titleinfigure">Figure 8 Pop-Up Window</p> 
+       <img src="img/webview-popup.png" alt="Description of Figure 8 follows" title="Description of Figure 8 follows" longdesc="img_text/webview-popup.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>To specify a new browser window for the target document, use the <code>PopupFeatures</code> instance as shown in the modified application code in <a href="#CEGBGEJD">Example 9</a>.</p> 
+      <div class="example">
+       <a id="CEGBGEJD" name="CEGBGEJD"></a>
+       <a id="JFXWN124" name="JFXWN124"></a> 
+       <p class="titleinexample">Example 9 Processing a Command of a Pop-Up Window</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.concurrent.Worker.State;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.geometry.HPos;
+import javafx.geometry.Pos;
+import javafx.geometry.VPos;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
+import javafx.scene.paint.Color;
+import javafx.scene.web.PopupFeatures;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
+import javafx.stage.Stage;
+import javafx.util.Callback;
+import netscape.javascript.JSObject;
+ 
+public class Main extends Application {
+ 
+    private Scene scene;
+ 
+    @Override
+    public void start(Stage stage) {
+        // create scene
+        stage.setTitle(&quot;Web View&quot;);
+        scene = new Scene(new Browser(), 750, 500, Color.web(&quot;#666970&quot;));
+        stage.setScene(scene);
+        scene.getStylesheets().add(&quot;webviewsample/BrowserToolbar.css&quot;);
+        // show stage
+        stage.show();
+    }
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+ 
+class Browser extends Region {
+ 
+    private HBox toolBar;
+    private static String[] imageFiles = new String[]{
+        &quot;product.png&quot;,
+        &quot;blog.png&quot;,
+        &quot;forum.png&quot;,
+        &quot;partners.png&quot;,
+        &quot;help.png&quot;
+    };
+    private static String[] captions = new String[]{
+        &quot;Products&quot;,
+        &quot;Blogs&quot;,
+        &quot;Forums&quot;,
+        &quot;Partners&quot;,
+        &quot;Help&quot;
+    };
+    private static String[] urls = new String[]{
+        &quot;http://www.oracle.com/products/index.html&quot;,
+        &quot;http://blogs.oracle.com/&quot;,
+        &quot;http://forums.oracle.com/forums/&quot;,
+        &quot;http://www.oracle.com/partners/index.html&quot;,
+        Main.class.getResource(&quot;help.html&quot;).toExternalForm()
+    };
+    final ImageView selectedImage = new ImageView();
+    final Hyperlink[] hpls = new Hyperlink[captions.length];
+    final Image[] images = new Image[imageFiles.length];
+    final WebView browser = new WebView();
+    final WebEngine webEngine = browser.getEngine();
+    final Button hideAll = new Button(&quot;Hide All&quot;);
+    final Button showAll = new Button(&quot;ShowAll&quot;);
+    <span class="bold">final WebView smallView = new WebView();</span>
+ 
+    public Browser() {
+        //apply the styles
+        getStyleClass().add(&quot;browser&quot;);
+ 
+        // load the home page        
+        webEngine.load(&quot;http://www.oracle.com/products/index.html&quot;);
+ 
+        for (int i = 0; i &lt; captions.length; i++) {
+            final Hyperlink hpl = hpls[i] = new Hyperlink(captions[i]);
+            Image image = images[i] =
+                new Image(getClass().getResourceAsStream(imageFiles[i]));
+            hpl.setGraphic(new ImageView(image));
+            final String url = urls[i];
+            hpl.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+                @Override public void handle(ActionEvent e) {
+                    webEngine.load(url);
+                    webEngine.getLoadWorker().stateProperty().addListener(
+                        new ChangeListener&lt;State&gt;() {  
+                            @Override
+                            public void changed(ObservableValue&lt;? extends State&gt;
+                                ov, State oldState, State newState) {                                
+                                if (newState == State.SUCCEEDED) {
+                                    JSObject win = (JSObject) 
+                                    webEngine.executeScript(&quot;window&quot;);
+                                    win.setMember(&quot;app&quot;, new JavaApp());
+                                    if (hpl.getText().equals(&quot;Forums&quot;)) {
+                                        toolBar.getChildren().removeAll(showAll, 
+                                            hideAll);
+                                        toolBar.getChildren().addAll(showAll, 
+                                            hideAll);
+                                    }
+                                }
+                                if (!hpl.getText().equals(&quot;Forums&quot;)) { 
+                                    toolBar.getChildren().removeAll(showAll, 
+                                        hideAll); 
+                                }
+                            }
+                        });
+                }
+            });
+        }
+        // create the toolbar
+        toolBar = new HBox();
+        toolBar.setAlignment(Pos.CENTER);
+        toolBar.getStyleClass().add(&quot;browser-toolbar&quot;);
+        toolBar.getChildren().addAll(hpls);
+        toolBar.getChildren().add(createSpacer());
+ 
+        hideAll.setOnAction(new EventHandler() {
+            @Override
+            public void handle(Event t) {
+                webEngine.executeScript(&quot;hideAll()&quot;);
+            }
+        });
+ 
+        showAll.setOnAction(new EventHandler() {
+            @Override
+            public void handle(Event t) {
+                webEngine.executeScript(&quot;showAll()&quot;);
+            }
+        });
+ 
+        <span class="bold">smallView.setPrefSize(120, 80);</span>
+        <span class="bold">webEngine.setCreatePopupHandler(</span>
+            <span class="bold">new Callback&lt;PopupFeatures, WebEngine&gt;() {</span>
+                <span class="bold">@Override</span>
+                <span class="bold">public WebEngine call(PopupFeatures config) {</span>
+                    <span class="bold">smallView.setFontScale(0.8);</span>
+                    <span class="bold">if (!toolBar.getChildren().contains(smallView)) {</span>
+                       <span class="bold"> toolBar.getChildren().add(smallView);</span>
+                    <span class="bold">}</span>
+                    <span class="bold">return smallView.getEngine();</span>
+                <span class="bold">}</span>
+        <span class="bold">});</span>
+        //add components
+        getChildren().add(toolBar);
+        getChildren().add(browser);
+    }
+ 
+    // JavaScript interface object
+    private class JavaApp {
+        public void exit() {
+            Platform.exit();
+        }
+    }
+ 
+    private Node createSpacer() {
+        Region spacer = new Region();
+        HBox.setHgrow(spacer, Priority.ALWAYS);
+        return spacer;
+    }
+ 
+    @Override
+    protected void layoutChildren() {
+        double w = getWidth();
+        double h = getHeight();
+        double tbHeight = toolBar.prefHeight(w);
+        layoutInArea(browser,0,0,w,h-tbHeight,0,HPos.CENTER, VPos.CENTER);
+        layoutInArea(toolBar,0,h-tbHeight,w,tbHeight,0,HPos.CENTER, VPos.CENTER);
+    }
+ 
+    @Override
+    protected double computePrefWidth(double height) {
+        return 750;
+    }
+ 
+    @Override
+    protected double computePrefHeight(double width) {
+        return 600;
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When a user selects the Open option from the pop-up window, the <code>smallView</code> browser is added to the application toolbar. This behavior is defined by the <code>setCreatePopupHandler</code> method, which returns the web engine of an alternative browser to notify the application where to render the target page. The result of compiling and running the modified application is shown in <a href="#CEGDIHBG">Figure 9</a>.</p> 
+      <div class="figure">
+       <a id="CEGDIHBG" name="CEGDIHBG"></a>
+       <a id="JFXWN125" name="JFXWN125"></a> 
+       <p class="titleinfigure">Figure 9 Small Preview Browser</p> 
+       <img src="img/webview-small.png" alt="Description of Figure 9 follows" title="Description of Figure 9 follows" longdesc="img_text/webview-small.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>In your JavaFX application, you can implement browser tabs by using the <code>TabPane</code> class and create a new <code>WebView</code> object when a user adds a new tab.</p> 
+      <p>To further enhance this application, you can apply effects, transformations and animated transitions, and even add more <code>WebView</code> instances.</p> 
+      <p>See the JavaFX API documentation and the JavaFX CSS specification for more information about available features. You can also study the <a href="../swing/jfxpub-swing.htm">JavaFX in Swing</a> tutorial to learn how to add a <code>WebView</code> component in your existing Swing application.</p> 
+      <p class="itemizedlisttitle">Related API Documentation&nbsp;</p> 
+      <ul> 
+       <li> <p><code>WebView</code></p> </li> 
+       <li> <p><code>WebEngine</code></p> </li> 
+       <li> <p><code>Region</code></p> </li> 
+       <li> <p><code>Hyperlink</code></p> </li> 
+       <li> <p><code>Worker</code></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li class=" active"><a href="jfxpub-webview.htm">Adding HTML Content to JavaFX Applications</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/webview/WebViewSample.zip">WebViewSample.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

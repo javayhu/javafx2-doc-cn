@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Animation Basics &middot; Creating Transitions and Timeline Animation in JavaFX &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Creating Transitions and Timeline Animation in JavaFX</h1>
+     <p class=" lead">Animation Basics</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="jfxpub-animations.htm">←上一篇</a></li>
+      <li class=" next"><a href="tree-animation.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CIHHAACG" name="CIHHAACG"></a>
+     <a id="JFXAN101" name="JFXAN101"></a>
+     <a id="CIHFGFED" name="CIHFGFED"></a>  
+     <p>Animation in JavaFX can be divided into timeline animation and transitions. This chapter provides examples of each animation type.</p> 
+     <ul> 
+      <li> <p><a href="#CJAJJAGI">Transitions</a></p> </li> 
+      <li> <p><a href="#CJAFADFJ">Timeline Animation</a></p> </li> 
+      <li> <p><a href="#CIHDHJHC">Interpolators</a></p> </li> 
+     </ul> 
+     <p><code>Timeline</code> and <code>Transition</code> are subclasses of the <code>javafx.animation.Animation</code> class. For more information about particular classes, methods, or additional features, see the API documentation.</p> 
+     <a id="CJAJJAGI" name="CJAJJAGI"></a>
+     <a id="JFXAN102" name="JFXAN102"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1">Transitions</h2> 
+      <p>Transitions in JavaFX provide the means to incorporate animations in an internal timeline. Transitions can be composed to create multiple animations that are executed in parallel or sequentially. See the <a href="#CJAECHJG">Parallel Transition</a> and <a href="#CJAIHDCG">Sequential Transition</a> sections for details. The following sections provide some transition animation examples.</p> 
+      <a id="JFXAN103" name="JFXAN103"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref3" name="sthref3"></a> 
+       <h3 class="sect2">Fade Transition</h3> 
+       <p>A fade transition changes the opacity of a node over a given time.</p> 
+       <p><a href="#CHDEBGBG">Example 1-1</a> shows a code snippet for a fade transition that is applied to a rectangle. First a rectangle with rounded corners is created, and then a fade transition is applied to it.</p> 
+       <div class="example">
+        <a id="CHDEBGBG" name="CHDEBGBG"></a>
+        <a id="JFXAN104" name="JFXAN104"></a> 
+        <p class="titleinexample">Example 1-1 Fade Transition</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+final Rectangle rect1 = new Rectangle(10, 10, 100, 100);
+rect1.setArcHeight(20);
+rect1.setArcWidth(20);
+rect1.setFill(Color.RED);
+...
+FadeTransition ft = new FadeTransition(Duration.millis(3000), rect1);
+ft.setFromValue(1.0);
+ft.setToValue(0.1);
+ft.setCycleCount(Timeline.INDEFINITE);
+ft.setAutoReverse(true);
+ft.play();
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXAN105" name="JFXAN105"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref4" name="sthref4"></a> 
+       <h3 class="sect2">Path Transition</h3> 
+       <p>A path transition moves a node along a path from one end to the other over a given time.</p> 
+       <div class="figure">
+        <a id="JFXAN106" name="JFXAN106"></a>
+        <a id="sthref5" name="sthref5"></a> 
+        <p class="titleinfigure">Figure 1-1 Path Transition</p> 
+        <img src="img/path.jpg" alt="Description of Figure 1-1 follows" title="Description of Figure 1-1 follows" longdesc="img_text/path.htm" />
+        <br /> 
+        <br /> 
+        <br />
+       </div> 
+       <!-- class="figure" --> 
+       <p><a href="#CJAFDCGH">Example 1-2</a> shows a code snippet for a path transition that is applied to a rectangle. The animation is reversed when the rectangle reaches the end of the path. In code, first a rectangle with rounded corners is created, and then a new path animation is created and applied to the rectangle.</p> 
+       <div class="example">
+        <a id="CJAFDCGH" name="CJAFDCGH"></a>
+        <a id="JFXAN107" name="JFXAN107"></a> 
+        <p class="titleinexample">Example 1-2 Path Transition</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+final Rectangle rectPath = new Rectangle (0, 0, 40, 40);
+rectPath.setArcHeight(10);
+rectPath.setArcWidth(10);
+rectPath.setFill(Color.ORANGE);
+...
+Path path = new Path();
+path.getElements().add(new MoveTo(20,20));
+path.getElements().add(new CubicCurveTo(380, 0, 380, 120, 200, 120));
+path.getElements().add(new CubicCurveTo(0, 120, 0, 240, 380, 240));
+PathTransition pathTransition = new PathTransition();
+pathTransition.setDuration(Duration.millis(4000));
+pathTransition.setPath(path);
+pathTransition.setNode(rectPath);
+pathTransition.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
+pathTransition.setCycleCount(Timeline.INDEFINITE);
+pathTransition.setAutoReverse(true);
+pathTransition.play();
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="CJAECHJG" name="CJAECHJG"></a>
+      <a id="JFXAN108" name="JFXAN108"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2">Parallel Transition</h3> 
+       <p>A parallel transition executes several transitions simultaneously.</p> 
+       <p><a href="#CJACJAJG">Example 1-3</a> shows the code snippet for the parallel transition that executes fade, translate, rotate, and scale transitions applied to a rectangle.</p> 
+       <div class="figure">
+        <a id="JFXAN109" name="JFXAN109"></a>
+        <a id="sthref7" name="sthref7"></a> 
+        <p class="titleinfigure">Figure 1-2 Parallel Transition</p> 
+        <img src="img/parallel.jpg" alt="Description of Figure 1-2 follows" title="Description of Figure 1-2 follows" longdesc="img_text/parallel.htm" />
+        <br /> 
+        <br /> 
+        <br />
+       </div> 
+       <!-- class="figure" --> 
+       <div class="example">
+        <a id="CJACJAJG" name="CJACJAJG"></a>
+        <a id="JFXAN110" name="JFXAN110"></a> 
+        <p class="titleinexample">Example 1-3 Parallel Transition</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Rectangle rectParallel = new Rectangle(10,200,50, 50);
+rectParallel.setArcHeight(15);
+rectParallel.setArcWidth(15);
+rectParallel.setFill(Color.DARKBLUE);
+rectParallel.setTranslateX(50);
+rectParallel.setTranslateY(75);
+...
+        FadeTransition fadeTransition = 
+            new FadeTransition(Duration.millis(3000), rectParallel);
+        fadeTransition.setFromValue(1.0f);
+        fadeTransition.setToValue(0.3f);
+        fadeTransition.setCycleCount(2);
+        fadeTransition.setAutoReverse(true);
+        TranslateTransition translateTransition =
+            new TranslateTransition(Duration.millis(2000), rectParallel);
+        translateTransition.setFromX(50);
+        translateTransition.setToX(350);
+        translateTransition.setCycleCount(2);
+        translateTransition.setAutoReverse(true);
+        RotateTransition rotateTransition = 
+            new RotateTransition(Duration.millis(3000), rectParallel);
+        rotateTransition.setByAngle(180f);
+        rotateTransition.setCycleCount(4);
+        rotateTransition.setAutoReverse(true);
+        ScaleTransition scaleTransition = 
+            new ScaleTransition(Duration.millis(2000), rectParallel);
+        scaleTransition.setToX(2f);
+        scaleTransition.setToY(2f);
+        scaleTransition.setCycleCount(2);
+        scaleTransition.setAutoReverse(true);
+        
+        parallelTransition = new ParallelTransition();
+        parallelTransition.getChildren().addAll(
+                fadeTransition,
+                translateTransition,
+                rotateTransition,
+                scaleTransition
+        );
+        parallelTransition.setCycleCount(Timeline.INDEFINITE);
+        parallelTransition.play();
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="CJAIHDCG" name="CJAIHDCG"></a>
+      <a id="JFXAN111" name="JFXAN111"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2">Sequential Transition</h3> 
+       <p>A sequential transition executes several transitions one after another.</p> 
+       <p><a href="#CJADHACC">Example 1-4</a> shows the code for the sequential transition that executes one after another. Fade, translate, rotate, and scale transitions that are applied to a rectangle.</p> 
+       <div class="example">
+        <a id="CJADHACC" name="CJADHACC"></a>
+        <a id="JFXAN112" name="JFXAN112"></a> 
+        <p class="titleinexample">Example 1-4 Sequential Transition</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Rectangle rectSeq = new Rectangle(25,25,50,50);
+rectSeq.setArcHeight(15);
+rectSeq.setArcWidth(15);
+rectSeq.setFill(Color.CRIMSON);
+rectSeq.setTranslateX(50);
+rectSeq.setTranslateY(50);
+
+...
+
+         FadeTransition fadeTransition = 
+            new FadeTransition(Duration.millis(1000), rectSeq);
+        fadeTransition.setFromValue(1.0f);
+        fadeTransition.setToValue(0.3f);
+        fadeTransition.setCycleCount(1);
+        fadeTransition.setAutoReverse(true);
+ 
+        TranslateTransition translateTransition =
+            new TranslateTransition(Duration.millis(2000), rectSeq);
+        translateTransition.setFromX(50);
+        translateTransition.setToX(375);
+        translateTransition.setCycleCount(1);
+        translateTransition.setAutoReverse(true);
+ 
+        RotateTransition rotateTransition = 
+            new RotateTransition(Duration.millis(2000), rectSeq);
+        rotateTransition.setByAngle(180f);
+        rotateTransition.setCycleCount(4);
+        rotateTransition.setAutoReverse(true);
+ 
+        ScaleTransition scaleTransition = 
+            new ScaleTransition(Duration.millis(2000), rectSeq);
+        scaleTransition.setFromX(1);
+        scaleTransition.setFromY(1);
+        scaleTransition.setToX(2);
+        scaleTransition.setToY(2);
+        scaleTransition.setCycleCount(1);
+        scaleTransition.setAutoReverse(true);
+
+sequentialTransition = new SequentialTransition();
+sequentialTransition.getChildren().addAll(
+        fadeTransition,
+        translateTransition,
+        rotateTransition,
+        scaleTransition);
+sequentialTransition.setCycleCount(Timeline.INDEFINITE);
+sequentialTransition.setAutoReverse(true);
+
+sequentialTransition.play();
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>For more information about animation and transitions, see the API documentation and the Animation section in the Ensemble project in the SDK.</p> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="CJAFADFJ" name="CJAFADFJ"></a>
+     <a id="JFXAN113" name="JFXAN113"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1">Timeline Animation</h2> 
+      <p>An animation is driven by its associated properties, such as size, location, and color etc. <code>Timeline</code> provides the capability to update the property values along the progression of time. JavaFX supports key frame animation. In key frame animation, the animated state transitions of the graphical scene are declared by start and end snapshots (key frames) of the state of the scene at certain times. The system can automatically perform the animation. It can stop, pause, resume, reverse, or repeat movement when requested.</p> 
+      <a id="JFXAN114" name="JFXAN114"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref9" name="sthref9"></a> 
+       <h3 class="sect2">Basic Timeline Animation</h3> 
+       <p>The code in <a href="#CHDGDFCB">Example 1-5</a> animates a rectangle horizontally and moves it from its original position <code>X=100</code> to <code>X=300</code> in 500 ms. To animate an object horizontally, alter the x-coordinates and leave the y-coordinates unchanged.</p> 
+       <div class="figure">
+        <a id="JFXAN115" name="JFXAN115"></a>
+        <a id="sthref10" name="sthref10"></a> 
+        <p class="titleinfigure">Figure 1-3 Horizontal Movement</p> 
+        <img src="img/basic-timeline.jpg" alt="Description of Figure 1-3 follows" title="Description of Figure 1-3 follows" longdesc="img_text/basic-timeline.htm" />
+        <br /> 
+        <br /> 
+        <br />
+       </div> 
+       <!-- class="figure" --> 
+       <p><a href="#CHDGDFCB">Example 1-5</a> shows the code snippet for the basic timeline animation.</p> 
+       <div class="example">
+        <a id="CHDGDFCB" name="CHDGDFCB"></a>
+        <a id="JFXAN116" name="JFXAN116"></a> 
+        <p class="titleinexample">Example 1-5 Timeline Animation</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+final Rectangle rectBasicTimeline = new Rectangle(100, 50, 100, 50);
+rectBasicTimeline.setFill(Color.RED);
+...
+final Timeline timeline = new Timeline();
+timeline.setCycleCount(Timeline.INDEFINITE);
+timeline.setAutoReverse(true);
+final KeyValue kv = new KeyValue(rectBasicTimeline.xProperty(), 300);
+final KeyFrame kf = new KeyFrame(Duration.millis(500), kv);
+timeline.getKeyFrames().add(kf);
+timeline.play();
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXAN117" name="JFXAN117"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref12" name="sthref12"></a> 
+       <h3 class="sect2">Timeline Events</h3> 
+       <p>JavaFX provides the means to incorporate events that can be triggered during the timeline play. The code in <a href="#CJAGCHCF">Example 1-6</a> changes the radius of the circle in the specified range, and <code>KeyFrame</code> triggers the random transition of the circle in the x-coordinate of the scene.</p> 
+       <div class="example">
+        <a id="CJAGCHCF" name="CJAGCHCF"></a>
+        <a id="JFXAN118" name="JFXAN118"></a> 
+        <p class="titleinexample">Example 1-6 Timeline Events</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.stage.Stage;
+import javafx.animation.AnimationTimer;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.effect.Lighting;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
+import javafx.util.Duration;
+ 
+public class TimelineEvents extends Application {
+    
+    //main timeline
+    private Timeline timeline;
+    private AnimationTimer timer;
+ 
+    //variable for storing actual frame
+    private Integer i=0;
+ 
+    @Override public void start(Stage stage) {
+        Group p = new Group();
+        Scene scene = new Scene(p);
+        stage.setScene(scene);
+        stage.setWidth(500);
+        stage.setHeight(500);
+        p.setTranslateX(80);
+        p.setTranslateY(80);
+ 
+        //create a circle with effect
+        final Circle circle = new Circle(20,  Color.rgb(156,216,255));
+        circle.setEffect(new Lighting());
+        //create a text inside a circle
+        final Text text = new Text (i.toString());
+        text.setStroke(Color.BLACK);
+        //create a layout for circle with text inside
+        final StackPane stack = new StackPane();
+        stack.getChildren().addAll(circle, text);
+        stack.setLayoutX(30);
+        stack.setLayoutY(30);
+ 
+        p.getChildren().add(stack);
+        stage.show();
+ 
+        //create a timeline for moving the circle
+        timeline = new Timeline();
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.setAutoReverse(true);
+ 
+//You can add a specific action when each frame is started.
+        timer = new AnimationTimer() {
+            @Override
+            public void handle(long l) {
+                text.setText(i.toString());
+                i++;
+            }
+ 
+        };
+ 
+        //create a keyValue with factory: scaling the circle 2times
+        KeyValue keyValueX = new KeyValue(stack.scaleXProperty(), 2);
+        KeyValue keyValueY = new KeyValue(stack.scaleYProperty(), 2);
+ 
+        //create a keyFrame, the keyValue is reached at time 2s
+        Duration duration = Duration.millis(2000);
+        //one can add a specific action when the keyframe is reached
+        EventHandler onFinished = new EventHandler&lt;ActionEvent&gt;() {
+            public void handle(ActionEvent t) {
+                 stack.setTranslateX(java.lang.Math.random()*200-100);
+                 //reset counter
+                 i = 0;
+            }
+        };
+ 
+  KeyFrame keyFrame = new KeyFrame(duration, onFinished , keyValueX, keyValueY);
+ 
+        //add the keyframe to the timeline
+        timeline.getKeyFrames().add(keyFrame);
+ 
+        timeline.play();
+        timer.start();
+    }
+        
+        
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+  } 
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="CIHDHJHC" name="CIHDHJHC"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1">Interpolators</h2> 
+      <p>Interpolation defines positions of the object between the start and end points of the movement. You can use various built-in implementations of the Interpolator class or you can implement your own Interpolator to achieve custom interpolation behavior.</p> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref13" name="sthref13"></a> 
+       <h3 class="sect2">Built-in Interpolators</h3> 
+       <p>JavaFX provides several built-in interpolators that you can use to create different effects in your animation. By default, JavaFX uses linear interpolation to calculate the coordinates.</p> 
+       <p><a href="#CJAFHJEH">Example 1-7</a> shows a code snippet where the EASE_BOTH interpolator instance is added to the KeyValue in the basic timeline animation. This interpolator creates a spring effect when the object reaches its start point and its end point.</p> 
+       <div class="example">
+        <a id="CJAFHJEH" name="CJAFHJEH"></a> 
+        <p class="titleinexample">Example 1-7 Built-in Interpolator</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+final Rectangle rectBasicTimeline = new Rectangle(100, 50, 100, 50);
+rectBasicTimeline.setFill(Color.BROWN);
+...
+final Timeline timeline = new Timeline();
+timeline.setCycleCount(Timeline.INDEFINITE);
+timeline.setAutoReverse(true);
+final KeyValue kv = new KeyValue(rectBasicTimeline.xProperty(), 300,<br /> Interpolator.EASE_BOTH);
+final KeyFrame kf = new KeyFrame(Duration.millis(500), kv);
+timeline.getKeyFrames().add(kf);
+timeline.play();
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref14" name="sthref14"></a> 
+       <h3 class="sect2">Custom Interpolators</h3> 
+       <p>Apart from built-in interpolators, you can implement your own interpolator to achieve custom interpolation behavior. A custom interpolator example consists of two java files. <a href="#CJACJIJB">Example 1-8</a> shows a custom interpolator that is used to calculate the y-coordinate for the animation. <a href="#CJABHEEF">Example 1-9</a> shows the code snippet of the animation where the AnimationBooleanInterpolator is used.</p> 
+       <div class="example">
+        <a id="CJACJIJB" name="CJACJIJB"></a> 
+        <p class="titleinexample">Example 1-8 Custom Interpolator</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public class AnimationBooleanInterpolator extends Interpolator {
+    @Override
+    protected double curve(double t) {
+        return Math.abs(0.5-t)*2 ;
+    }
+}
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <div class="example">
+        <a id="CJABHEEF" name="CJABHEEF"></a> 
+        <p class="titleinexample">Example 1-9 Animation with Custom Interpolator</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+ final KeyValue keyValue1 = new KeyValue(rect.xProperty(), 300);
+ AnimationBooleanInterpolator yInterp = new AnimationBooleanInterpolator();
+ final KeyValue keyValue2 = new KeyValue(rect.yProperty(), 0., yInterp);
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-animations.htm">About This Document</a></li>
+      <li class=" active"><a href="basics.htm">Animation Basics</a></li>
+      <li><a href="tree-animation.htm">Tree Animation Example</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/animations/animations.zip">animations.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/animations/tree_animation.zip">tree_animation.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

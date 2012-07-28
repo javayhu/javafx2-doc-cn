@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Titled Pane and Accordion &middot; Using JavaFX UI Controls &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX UI Controls</h1>
+     <p class=" lead">Titled Pane and Accordion</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="editor.htm">←上一篇</a></li>
+      <li class=" next"><a href="menu_controls.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CACGBAHI" name="CACGBAHI"></a>
+     <a id="JFXUC356" name="JFXUC356"></a>  
+     <p>A titled pane is a panel with a title. It can be opened and closed, and it can encapsulate any <code>Node</code> such as UI controls or images, and groups of elements added to a layout container.</p> 
+     <p>Titled panes can be grouped by using the accordion control, which enables you to create multiple panes and display them one at a time. <a href="#CACEHJFI">Figure 22-1</a> shows an accordion control that combines three titled panes.</p> 
+     <div class="figure">
+      <a id="CACEHJFI" name="CACEHJFI"></a>
+      <a id="JFXUC357" name="JFXUC357"></a> 
+      <p class="titleinfigure">Figure 22-1 Accordion with Three Titled Panes</p> 
+      <img src="img/accordion-apples.png" alt="Description of Figure 22-1 follows" title="Description of Figure 22-1 follows" longdesc="img_text/accordion-apples.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <p>Use the <code>Accordion</code> and <code>TitledPane</code> classes in the JavaFX SDK API to implement these controls in your applications.</p> 
+     <a id="JFXUC358" name="JFXUC358"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref189" name="sthref189"></a> 
+      <h2 class="sect1">Creating Titled Panes</h2> 
+      <p>To create a <code>TitledPane</code> control define a title and some content. You can do this by using the two-parameter constructor of the <code>TitledPane</code> class, or by applying the <code>setText</code> and <code>setContent</code> methods. Both ways are shown in <a href="#CACIFAAE">Example 22-1</a>.</p> 
+      <div class="example">
+       <a id="CACIFAAE" name="CACIFAAE"></a>
+       <a id="JFXUC359" name="JFXUC359"></a> 
+       <p class="titleinexample">Example 22-1 Declaring a TitledPane Object</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+//using a two-parameter constructor
+TitledPane tp = new TitledPane(&quot;My Titled Pane&quot;, new Button(&quot;Button&quot;));
+//applying methods
+TitledPane tp = new TitledPane();
+tp.setText(&quot;My Titled Pane&quot;);
+tp.setContent(new Button(&quot;Button&quot;));
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Compiling and running an application with either of the code fragments produces the control shown in <a href="#CACJCABB">Figure 22-2</a>.</p> 
+      <div class="figure">
+       <a id="CACJCABB" name="CACJCABB"></a>
+       <a id="JFXUC360" name="JFXUC360"></a> 
+       <p class="titleinfigure">Figure 22-2 Titled Pane with a Button</p> 
+       <img src="img/accordion-button.png" alt="Description of Figure 22-2 follows" title="Description of Figure 22-2 follows" longdesc="img_text/accordion-button.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>The titled pane is resized to accommodate the preferred size of its content. You can add multi-line text and evaluate the result as shown in <a href="#CACCDAJB">Figure 22-3</a>.</p> 
+      <div class="figure">
+       <a id="CACCDAJB" name="CACCDAJB"></a>
+       <a id="JFXUC361" name="JFXUC361"></a> 
+       <p class="titleinfigure">Figure 22-3 Titled Pane with Some Text</p> 
+       <img src="img/accordion-text.png" alt="Description of Figure 22-3 follows" title="Description of Figure 22-3 follows" longdesc="img_text/accordion-text.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Do not explicitly set the minimal, maximum, or preferred height of a titled pane, as this may lead to unexpected behavior when the titled pane is opened or closed.</p> 
+      <p>The code fragment shown in <a href="#CACFJEAD">Example 22-2</a> adds several controls to the titled pane by putting them into the <code>GridPane</code> layout container.</p> 
+      <div class="example">
+       <a id="CACFJEAD" name="CACFJEAD"></a>
+       <a id="JFXUC362" name="JFXUC362"></a> 
+       <p class="titleinexample">Example 22-2 Titled Pane with the GridPane Layout Container</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+<span class="bold">TitledPane gridTitlePane = new TitledPane();</span>
+GridPane grid = new GridPane();
+grid.setVgap(4);
+grid.setPadding(new Insets(5, 5, 5, 5));
+grid.add(new Label(&quot;First Name: &quot;), 0, 0);
+grid.add(new TextField(), 1, 0);
+grid.add(new Label(&quot;Last Name: &quot;), 0, 1);
+grid.add(new TextField(), 1, 1);
+grid.add(new Label(&quot;Email: &quot;), 0, 2);
+grid.add(new TextField(), 1, 2);        
+<span class="bold">gridTitlePane.setText(&quot;Grid&quot;);</span>
+<span class="bold">gridTitlePane.setContent(grid);</span>
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When you run and compile an application with this code fragment, the output shown in <a href="#CACCEAHI">Figure 22-4</a> appears.</p> 
+      <div class="figure">
+       <a id="CACCEAHI" name="CACCEAHI"></a>
+       <a id="JFXUC363" name="JFXUC363"></a> 
+       <p class="titleinfigure">Figure 22-4 Titled Pane that Contains Several Controls</p> 
+       <img src="img/accordion-grid.png" alt="Description of Figure 22-4 follows" title="Description of Figure 22-4 follows" longdesc="img_text/accordion-grid.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>You can define the way a titled pane opens and closes. By default, all titled panes are collapsible and their movements are animated. If your application prohibits closing a titled pane, use the <code>setCollapsible</code> method with the <code>false</code> value. You can also disable animated opening by applying the <code>setAnimated</code> method with the <code>false</code> value. The code fragment shown in <a href="#CACBHDAE">Example 22-3</a> implements these tasks.</p> 
+      <div class="example">
+       <a id="CACBHDAE" name="CACBHDAE"></a>
+       <a id="JFXUC364" name="JFXUC364"></a> 
+       <p class="titleinexample">Example 22-3 Adjusting the Style of a Titled Pane</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+TitledPane tp = new TitledPane();
+//prohibit closing
+tp.setCollapsible(false);
+//prohibit animating
+tp.setAnimated(false);
+</pre>
+      </div> 
+      <!-- class="example" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC365" name="JFXUC365"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref193" name="sthref193"></a> 
+      <h2 class="sect1">Adding Titled Panes to an Accordion</h2> 
+      <p>In your applications, you can use titled panes as standalone elements, or you can combine them in a group by using the <code>Accordion</code> control. Do not explicitly set the minimal, maximum, or preferred height of an accordion, as this may lead to unexpected behavior when one of its titled pane is opened.</p> 
+      <p>Adding several titled panes to an accordion is similar to adding toggle buttons to a toggle group: only one titled pane can be opened in an accordion at a time. <a href="#CACBGCIJ">Example 22-4</a> creates three titled panes and adds them to an accordion.</p> 
+      <div class="example">
+       <a id="CACBGCIJ" name="CACBGCIJ"></a>
+       <a id="JFXUC366" name="JFXUC366"></a> 
+       <p class="titleinexample">Example 22-4 Accordion and Three Titled Panes</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.Accordion;
+import javafx.scene.control.TitledPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+ 
+public class TitledPaneSample extends Application {
+    final String[] imageNames = new String[]{&quot;Apples&quot;, &quot;Flowers&quot;, &quot;Leaves&quot;};
+    final Image[] images = new Image[imageNames.length];
+    final ImageView[] pics = new ImageView[imageNames.length];
+    final TitledPane[] tps = new TitledPane[imageNames.length];
+           
+    public static void main(String[] args) {
+        launch(args);
+    }
+ 
+    @Override public void start(Stage stage) {
+        stage.setTitle(&quot;TitledPane&quot;);
+        Scene scene = new Scene(new Group(), 80, 180);
+        scene.setFill(Color.GHOSTWHITE);
+                               
+        <span class="bold">final Accordion accordion = new Accordion ();</span>        
+        
+        <span class="bold">for (int i = 0; i &lt; imageNames.length; i++) {</span>           
+            <span class="bold">images[i] = new </span>
+                <span class="bold">Image(getClass().getResourceAsStream(imageNames[i] + &quot;.jpg&quot;));</span>
+            <span class="bold">pics[i] = new ImageView(images[i]);</span>
+            <span class="bold">tps[i] = new TitledPane(imageNames[i],pics[i]);</span> 
+        }   
+        <span class="bold">accordion.getPanes().addAll(tps);</span>
+        <span class="bold">accordion.setExpandedPane(tps[0]);</span>
+ 
+        Group root = (Group)scene.getRoot();
+        root.getChildren().add(accordion);
+        stage.setScene(scene);
+        stage.show();
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Three titled panes are created within the loop. Content for each titled pane is defined as an <code>ImageView</code> object. The titled panes are added to the accordion by using the <code>getPanes</code> and <code>addAll</code> methods. You can use the <code>add</code> method instead of the <code>addAll</code> method to add a single titled pane.</p> 
+      <p>By default, all the titled panes are closed when the application starts. The <code>setExpandedPane</code> method in <a href="#CACBGCIJ">Example 22-4</a> specifies that the titled pane with the Apples picture will be opened when you run the sample, as shown in <a href="#CACHIGCC">Figure 22-5</a>.</p> 
+      <div class="figure">
+       <a id="CACHIGCC" name="CACHIGCC"></a>
+       <a id="JFXUC367" name="JFXUC367"></a> 
+       <p class="titleinfigure">Figure 22-5 Accordion with Three Titled Panes</p> 
+       <img src="img/accordion-apples.png" alt="Description of Figure 22-5 follows" title="Description of Figure 22-5 follows" longdesc="img_text/accordion-apples.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC368" name="JFXUC368"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref195" name="sthref195"></a> 
+      <h2 class="sect1">Processing Events for an Accordion with Titled Panes</h2> 
+      <p>You can use titled panes and accordions to present different data in your applications. <a href="#CACEADDB">Example 22-5</a> creates a standalone titled pane with the <code>GridPane</code> layout container and three titled panes combined by using the accordion. The standalone titled pane contains UI elements of an email client. The accordion enables the selection of an image to appear in the Attachment field of the Grid titled pane.</p> 
+      <div class="example">
+       <a id="CACEADDB" name="CACEADDB"></a>
+       <a id="JFXUC369" name="JFXUC369"></a> 
+       <p class="titleinexample">Example 22-5 Implementing ChangeListener for an Accordion</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.geometry.Insets;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.Accordion;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TitledPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+ 
+public class TitledPaneSample extends Application {
+    final String[] imageNames = new String[]{&quot;Apples&quot;, &quot;Flowers&quot;, &quot;Leaves&quot;};
+    final Image[] images = new Image[imageNames.length];
+    final ImageView[] pics = new ImageView[imageNames.length];
+    final TitledPane[] tps = new TitledPane[imageNames.length];
+    final Label label = new Label(&quot;N/A&quot;);
+       
+    public static void main(String[] args) {
+        launch(args);
+    }
+ 
+    @Override public void start(Stage stage) {
+        stage.setTitle(&quot;TitledPane&quot;);
+        Scene scene = new Scene(new Group(), 800, 250);
+        scene.setFill(Color.GHOSTWHITE);
+        
+        // --- GridPane container
+        TitledPane gridTitlePane = new TitledPane();
+        GridPane grid = new GridPane();
+        grid.setVgap(4);
+        grid.setPadding(new Insets(5, 5, 5, 5));
+        grid.add(new Label(&quot;To: &quot;), 0, 0);
+        grid.add(new TextField(), 1, 0);
+        grid.add(new Label(&quot;Cc: &quot;), 0, 1);
+        grid.add(new TextField(), 1, 1);
+        grid.add(new Label(&quot;Subject: &quot;), 0, 2);
+        grid.add(new TextField(), 1, 2);        
+        grid.add(new Label(&quot;Attachment: &quot;), 0, 3);
+        grid.add(label,1, 3);
+        gridTitlePane.setText(&quot;Grid&quot;);
+        gridTitlePane.setContent(grid);
+        
+        // --- Accordion
+        final Accordion accordion = new Accordion ();                
+        for (int i = 0; i &lt; imageNames.length; i++) {
+            images[i] = new 
+                Image(getClass().getResourceAsStream(imageNames[i] + &quot;.jpg&quot;));
+            pics[i] = new ImageView(images[i]);
+            tps[i] = new TitledPane(imageNames[i],pics[i]); 
+        }   
+        accordion.getPanes().addAll(tps);        
+        <span class="bold">accordion.expandedPaneProperty().addListener(new</span> 
+            <span class="bold">ChangeListener&lt;TitledPane&gt;() {</span>
+                <span class="bold">public void changed(ObservableValue&lt;? extends TitledPane&gt; ov,</span>
+                    <span class="bold">TitledPane old_val, TitledPane new_val) {</span>
+                        <span class="bold">if (new_val != null) {</span>
+                            <span class="bold">label.setText(accordion.getExpandedPane().getText() + </span>
+                                <span class="bold">&quot;.jpg&quot;);</span>
+                        <span class="bold">}</span>
+              <span class="bold">}</span>
+        <span class="bold">});</span>
+        
+        HBox hbox = new HBox(10);
+        hbox.setPadding(new Insets(20, 0, 0, 20));
+        hbox.getChildren().setAll(gridTitlePane, accordion);
+ 
+        Group root = (Group)scene.getRoot();
+        root.getChildren().add(hbox);
+        stage.setScene(scene);
+        stage.show();
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When a user opens a titled pane in the accordion, the <code>expandedPaneProperty</code> of the accordion changes. The <code>ChangeListener</code> object is notified about this change, and the expanded titled pane in the accordion is used to construct a file name of the attachment. This file name is set as text of the corresponding <code>Label</code> object.</p> 
+      <p><a href="#CACEAFDJ">Figure 22-6</a> shows how the application looks after its start. The Attachment label contains &quot;N/A,&quot; because none of the titled panes are selected.</p> 
+      <div class="figure">
+       <a id="CACEAFDJ" name="CACEAFDJ"></a>
+       <a id="JFXUC370" name="JFXUC370"></a> 
+       <p class="titleinfigure">Figure 22-6 Initial View of the TitledPaneSample Application</p> 
+       <img src="img/accordion-sample1.png" alt="Description of Figure 22-6 follows" title="Description of Figure 22-6 follows" longdesc="img_text/accordion-sample1.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>If you expand the Leaves titled pane, the Attachment label will contain &quot;Leaves.jpg,&quot; as shown in <a href="#CACJAHFH">Figure 22-7</a>.</p> 
+      <div class="figure">
+       <a id="CACJAHFH" name="CACJAHFH"></a>
+       <a id="JFXUC371" name="JFXUC371"></a> 
+       <p class="titleinfigure">Figure 22-7 TitledPaneSample Application with the Leaves Titled Pane Expanded</p> 
+       <img src="img/accordion-sample2.png" alt="Description of Figure 22-7 follows" title="Description of Figure 22-7 follows" longdesc="img_text/accordion-sample2.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Because the <code>TitledPane</code> and <code>Accordion</code> classes are both extensions of the <code>Node</code> class, you can apply visual effects or transformations to them. You can also change the appearance of the controls by applying CSS styles.</p> 
+      <p class="itemizedlisttitle">Related API Documentation&nbsp;</p> 
+      <ul> 
+       <li> <p><code>TitledPane</code></p> </li> 
+       <li> <p><code>Accordion</code></p> </li> 
+       <li> <p><code>Label</code></p> </li> 
+       <li> <p><code>GridPane</code></p> </li> 
+       <li> <p><code>TextField</code></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-ui_controls.htm">About This Tutorial</a></li>
+      <li><a href="overview.htm">JavaFX UI Controls</a></li>
+      <li><a href="label.htm">Label</a></li>
+      <li><a href="button.htm">Button</a></li>
+      <li><a href="radio-button.htm">Radio Button</a></li>
+      <li><a href="toggle-button.htm">Toggle Button</a></li>
+      <li><a href="checkbox.htm">Checkbox</a></li>
+      <li><a href="choice-box.htm">Choice Box</a></li>
+      <li><a href="text-field.htm">Text Field</a></li>
+      <li><a href="password-field.htm">Password Field</a></li>
+      <li><a href="scrollbar.htm">Scroll Bar</a></li>
+      <li><a href="scrollpane.htm">Scroll Pane</a></li>
+      <li><a href="list-view.htm">List View</a></li>
+      <li><a href="table-view.htm">Table View</a></li>
+      <li><a href="tree-view.htm">Tree View</a></li>
+      <li><a href="combo-box.htm">Combo Box</a></li>
+      <li><a href="separator.htm">Separator</a></li>
+      <li><a href="slider.htm">Slider</a></li>
+      <li><a href="progress.htm">Progress Bar and Progress Indicator</a></li>
+      <li><a href="hyperlink.htm">Hyperlink</a></li>
+      <li><a href="tooltip.htm">Tooltip</a></li>
+      <li><a href="editor.htm">HTML Editor</a></li>
+      <li class=" active"><a href="accordion-titledpane.htm">Titled Pane and Accordion</a></li>
+      <li><a href="menu_controls.htm">Menu</a></li>
+      <li><a href="custom.htm">Customization of UI Controls</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/ui_controls/UIControlSamples.zip">UIControlSamples.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

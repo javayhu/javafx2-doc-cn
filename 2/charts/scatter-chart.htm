@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Scatter Chart &middot; Using JavaFX Charts &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX Charts</h1>
+     <p class=" lead">Scatter Chart</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="bubble-chart.htm">←上一篇</a></li>
+      <li class=" next"><a href="bar-chart.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="JFXCH112" name="JFXCH112"></a>
+     <a id="CIHDEACI" name="CIHDEACI"></a>  
+     <p>The scatter chart is a two-axis chart that presents its data as a set of points. Each point is defined by an X and Y value. Similar to any other two-axis chart, you can create one or several series of data. <a href="#CIHDDIAA">Figure 6-1</a> illustrates a scatter chart with three series of data.</p> 
+     <div class="figure">
+      <a id="CIHDDIAA" name="CIHDDIAA"></a>
+      <a id="JFXCH176" name="JFXCH176"></a> 
+      <p class="titleinfigure">Figure 6-1 Sample of the Scatter Chart</p> 
+      <img src="img/scatter-sample.png" alt="Description of Figure 6-1 follows" title="Description of Figure 6-1 follows" longdesc="img_text/scatter-sample.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <a id="JFXCH113" name="JFXCH113"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref58" name="sthref58"></a> 
+      <h2 class="sect1">Creating a Scatter Chart</h2> 
+      <p>To create a scatter chart, define at least one series of data, set horizontal and vertical axes, create the chart by instantiating the <code>ScatterChart</code> class, and assign data to the chart. <a href="#CIHCCEBH">Example 6-1</a> demonstrates how to create a simple scatter charts with two series of data.</p> 
+      <div class="example">
+       <a id="CIHCCEBH" name="CIHCCEBH"></a>
+       <a id="JFXCH177" name="JFXCH177"></a> 
+       <p class="titleinexample">Example 6-1 Scatter Chart with Two Series of Data</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.ScatterChart;
+import javafx.scene.chart.XYChart;
+import javafx.stage.Stage;
+ 
+ 
+public class ScatterChartSample extends Application {
+ 
+    @Override public void start(Stage stage) {
+        stage.setTitle(&quot;Scatter Chart Sample&quot;);
+        final NumberAxis xAxis = new NumberAxis(0, 10, 1);
+        final NumberAxis yAxis = new NumberAxis(-100, 500, 100);        
+        final ScatterChart&lt;Number,Number&gt; sc = new
+            ScatterChart&lt;Number,Number&gt;(xAxis,yAxis);
+        xAxis.setLabel(&quot;Age (years)&quot;);                
+        yAxis.setLabel(&quot;Returns to date&quot;);
+        sc.setTitle(&quot;Investment Overview&quot;);
+       
+        XYChart.Series series1 = new XYChart.Series();
+        series1.setName(&quot;Equities&quot;);
+        series1.getData().add(new XYChart.Data(4.2, 193.2));
+        series1.getData().add(new XYChart.Data(2.8, 33.6));
+        series1.getData().add(new XYChart.Data(6.2, 24.8));
+        series1.getData().add(new XYChart.Data(1, 14));
+        series1.getData().add(new XYChart.Data(1.2, 26.4));
+        series1.getData().add(new XYChart.Data(4.4, 114.4));
+        series1.getData().add(new XYChart.Data(8.5, 323));
+        series1.getData().add(new XYChart.Data(6.9, 289.8));
+        series1.getData().add(new XYChart.Data(9.9, 287.1));
+        series1.getData().add(new XYChart.Data(0.9, -9));
+        series1.getData().add(new XYChart.Data(3.2, 150.8));
+        series1.getData().add(new XYChart.Data(4.8, 20.8));
+        series1.getData().add(new XYChart.Data(7.3, -42.3));
+        series1.getData().add(new XYChart.Data(1.8, 81.4));
+        series1.getData().add(new XYChart.Data(7.3, 110.3));
+        series1.getData().add(new XYChart.Data(2.7, 41.2));
+        
+        XYChart.Series series2 = new XYChart.Series();
+        series2.setName(&quot;Mutual funds&quot;);
+        series2.getData().add(new XYChart.Data(5.2, 229.2));
+        series2.getData().add(new XYChart.Data(2.4, 37.6));
+        series2.getData().add(new XYChart.Data(3.2, 49.8));
+        series2.getData().add(new XYChart.Data(1.8, 134));
+        series2.getData().add(new XYChart.Data(3.2, 236.2));
+        series2.getData().add(new XYChart.Data(7.4, 114.1));
+        series2.getData().add(new XYChart.Data(3.5, 323));
+        series2.getData().add(new XYChart.Data(9.3, 29.9));
+        series2.getData().add(new XYChart.Data(8.1, 287.4));
+ 
+        sc.getData().addAll(series1, series2);
+        Scene scene  = new Scene(sc, 500, 400);
+        stage.setScene(scene);
+        stage.show();
+    }
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>In this example, the <code>ScatterChart</code> object is created with two <code>Number</code> axes to present numerical data for years and amounts of returns. The range of the data and the tick unit are defined within constructors of the <code>NumberAxis</code> class.</p> 
+      <p>The result of compiling and running this application is shown in <a href="#CIHJIACD">Figure 6-2</a>.</p> 
+      <div class="figure">
+       <a id="CIHJIACD" name="CIHJIACD"></a>
+       <a id="JFXCH178" name="JFXCH178"></a> 
+       <p class="titleinfigure">Figure 6-2 Scatter Chart with Two Series to Display Investment Overview</p> 
+       <img src="img/scatter-create.png" alt="Description of Figure 6-2 follows" title="Description of Figure 6-2 follows" longdesc="img_text/scatter-create.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCH179" name="JFXCH179"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref60" name="sthref60"></a> 
+      <h2 class="sect1">Managing Chart Data</h2> 
+      <p><a href="#CIHCCEBH">Example 6-1</a> creates a scatter chart whose data is coded into the application and cannot be changed from its user interface. Use UI controls in your application to manage the set of data presented by the chart, for example, adding and removing a series of data.</p> 
+      <p>Examine the code shown in <a href="#CIHIDHJH">Example 6-2</a>. It creates two buttons, Add Series and Remove Series, to alter the set of data.</p> 
+      <div class="example">
+       <a id="CIHIDHJH" name="CIHIDHJH"></a>
+       <a id="JFXCH180" name="JFXCH180"></a> 
+       <p class="titleinexample">Example 6-2 Using Buttons to Manager Chart Data</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.ScatterChart;
+import javafx.scene.chart.XYChart;
+import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+ 
+ 
+public class ScatterChartSample extends Application {
+ 
+    @Override public void start(Stage stage) {
+        stage.setTitle(&quot;Scatter Chart Sample&quot;);
+        final NumberAxis xAxis = new NumberAxis(0, 10, 1);
+        final NumberAxis yAxis = new NumberAxis(-100, 500, 100);        
+        final ScatterChart&lt;Number,Number&gt; sc = 
+            new ScatterChart&lt;Number,Number&gt;(xAxis,yAxis);
+        xAxis.setLabel(&quot;Age (years)&quot;);                
+        yAxis.setLabel(&quot;Returns to date&quot;);
+        sc.setTitle(&quot;Investment Overview&quot;);
+       
+        XYChart.Series series1 = new XYChart.Series();
+ 
+        series1.setName(&quot;<span class="bold">Option 1</span>&quot;);
+        series1.getData().add(new XYChart.Data(4.2, 193.2));
+        series1.getData().add(new XYChart.Data(2.8, 33.6));
+        series1.getData().add(new XYChart.Data(6.2, 24.8));
+        series1.getData().add(new XYChart.Data(1, 14));
+        series1.getData().add(new XYChart.Data(1.2, 26.4));
+        series1.getData().add(new XYChart.Data(4.4, 114.4));
+        series1.getData().add(new XYChart.Data(8.5, 323));
+        series1.getData().add(new XYChart.Data(6.9, 289.8));
+        series1.getData().add(new XYChart.Data(9.9, 287.1));
+        series1.getData().add(new XYChart.Data(0.9, -9));
+        series1.getData().add(new XYChart.Data(3.2, 150.8));
+        series1.getData().add(new XYChart.Data(4.8, 20.8));
+        series1.getData().add(new XYChart.Data(7.3, -42.3));
+        series1.getData().add(new XYChart.Data(1.8, 81.4));
+        series1.getData().add(new XYChart.Data(7.3, 110.3));
+        series1.getData().add(new XYChart.Data(2.7, 41.2));
+                      
+        sc.setPrefSize(500, 400);
+        sc.getData().addAll(series1);
+        Scene scene  = new Scene(new Group());
+        <span class="bold">final VBox vbox = new VBox();</span>
+        <span class="bold">final HBox hbox = new HBox();</span>
+        
+        <span class="bold">final Button add = new Button(&quot;Add Series&quot;)</span>;               
+        <span class="bold">final Button remove = new Button(&quot;Remove Series&quot;);</span>
+       
+        <span class="bold">hbox.setSpacing(10);</span>
+        <span class="bold">hbox.getChildren().addAll(add, remove);</span>
+        
+        <span class="bold">vbox.getChildren().addAll(sc, hbox);</span>
+        <span class="bold">hbox.setPadding(new Insets(10, 10, 10, 50));</span>
+        
+        ((Group)scene.getRoot()).getChildren().add(vbox);
+        stage.setScene(scene);
+        stage.show();
+    }
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Whereas <a href="#CIHCCEBH">Example 6-1</a> adds the scatter chart directly to the scene, <a href="#CIHIDHJH">Example 6-2</a> uses <code>VBox</code> and <code>HBox</code> layout containers to arrange components in the application scene.</p> 
+      <p>Define the <code>setOnAction</code> methods for the Add Series button as shown in <a href="#CIHEGJBI">Example 6-3</a>. It creates a new series of data by populating the <code>XYChart.Series</code> objects with randomly calculated values. Each new series is assigned to the chart by using the <code>add(series)</code> method.</p> 
+      <div class="example">
+       <a id="CIHEGJBI" name="CIHEGJBI"></a>
+       <a id="JFXCH181" name="JFXCH181"></a> 
+       <p class="titleinexample">Example 6-3 Adding Series of Data</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+add.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+    @Override public void handle(ActionEvent e) {
+        if (sc.getData() == null) 
+            sc.setData(
+                FXCollections.&lt;XYChart.Series&lt;Number,
+                    Number&gt;&gt;observableArrayList());
+        ScatterChart.Series&lt;Number, Number&gt; series = 
+            new ScatterChart.Series&lt;Number, Number&gt;();
+        series.setName(&quot;Option &quot;+(sc.getData().size()+1));
+        for (int i=0; i&lt;100; i++) series.getData().add(
+            new ScatterChart.Data&lt;Number, 
+                Number&gt;(Math.random()*100, Math.random()*500));
+        sc.getData().add(series);
+    }
+});
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>To remove a data series from the chart, define the <code>setOnAction</code> method for the Remove Series button as shown in <a href="#CIHCGIHE">Example 6-4</a>. The <code>remove(int)</code> method called on the scatter chart removes a series of data by using a randomly generated index.</p> 
+      <div class="example">
+       <a id="CIHCGIHE" name="CIHCGIHE"></a>
+       <a id="JFXCH182" name="JFXCH182"></a> 
+       <p class="titleinexample">Example 6-4 Removing Series of Data</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+remove.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+    @Override public void handle(ActionEvent e) {
+        if (!sc.getData().isEmpty()) 
+            sc.getData().remove((int)(Math.random()*(sc.getData().size()-1)));
+    }
+});
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When you add <a href="#CIHEGJBI">Example 6-3</a> and <a href="#CIHCGIHE">Example 6-4</a> into the application in <a href="#CIHIDHJH">Example 6-2</a>, the output shown in <a href="#CIHBIBED">Figure 6-3</a> appears. It captures the moment when five series are added to the Option 1 series.</p> 
+      <div class="figure">
+       <a id="CIHBIBED" name="CIHBIBED"></a>
+       <a id="JFXCH183" name="JFXCH183"></a> 
+       <p class="titleinfigure">Figure 6-3 Added Series of Data</p> 
+       <img src="img/scatter-add.png" alt="Description of Figure 6-3 follows" title="Description of Figure 6-3 follows" longdesc="img_text/scatter-add.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>The symbols used to indicate a series of data are coded into the implementation of the <code>ScatterChart</code> class. <a href="#CIHIJDIJ">Example 6-5</a> shows the default styles for one of the scatter chart symbols.</p> 
+      <div class="example">
+       <a id="CIHIJDIJ" name="CIHIJDIJ"></a>
+       <a id="JFXCH197" name="JFXCH197"></a> 
+       <p class="titleinexample">Example 6-5 Styling a ScatterChart Symbol</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.default-color5.chart-symbol { /* hollow circle */
+    -fx-background-color: #860061, white;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>You can change the styles for this symbol by setting the alternative values for the <code>.default-color5.chart-symbol</code> property. See the JavaFX CSS Reference Guide for more information.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCH184" name="JFXCH184"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref62" name="sthref62"></a> 
+      <h2 class="sect1">Adding Effects to Charts</h2> 
+      <p>All the chart classes available in the <code>javafx.scene.chart</code> are extensions of the <code>Node</code> class. Therefore, you can apply visual effects or transformation to every type of charts. Examine the code fragment in <a href="#CIHDDIJD">Example 6-6</a>. It creates and applies a drop shadow effect to the scatter chart.</p> 
+      <div class="example">
+       <a id="CIHDDIJD" name="CIHDDIJD"></a>
+       <a id="JFXCH185" name="JFXCH185"></a> 
+       <p class="titleinexample">Example 6-6 Creating and Applying a Drop Shadow</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+final DropShadow shadow = new DropShadow();
+shadow.setOffsetX(2);
+shadow.setColor(Color.GREY);
+sc.setEffect(shadow);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When you add this code fragment to the Investment Overview application, then compile and run it, the scatter chart is highlighted by the shadow as shown in <a href="#CIHCFABB">Figure 6-4</a>.</p> 
+      <div class="figure">
+       <a id="CIHCFABB" name="CIHCFABB"></a>
+       <a id="JFXCH186" name="JFXCH186"></a> 
+       <p class="titleinfigure">Figure 6-4 Scatter Chart with a Drop Shadow</p> 
+       <img src="img/scatter-shadow.png" alt="Description of Figure 6-4 follows" title="Description of Figure 6-4 follows" longdesc="img_text/scatter-shadow.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Note that the visual effect of the drop shadow is applied to all elements of the chart including axes, tick marks, and tick labels.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCH205" name="JFXCH205"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref64" name="sthref64"></a> 
+      <h2 class="sect1">Changing the Chart Symbol</h2> 
+      <p>Each data series in a scatter chart is represented by the symbols defined in the <code>caspian.css</code>, the default style sheet for JavaFX applications. However, you can change the chart symbol by implementing your own style sheet.</p> 
+      <p>Create the <code>Chart.css</code> file and save it in the same directory as the main class of the <code>AreaChartSample</code> application. Add the lines shown in <a href="#BABGEGED">Example 6-7</a> to the <code>Chart.css</code> file.</p> 
+      <div class="example">
+       <a id="BABGEGED" name="BABGEGED"></a>
+       <a id="JFXCH206" name="JFXCH206"></a> 
+       <p class="titleinexample">Example 6-7 Creating a New Chart Symbol with CSS</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.chart-symbol{ 
+    -fx-stroke: #a9e200;
+    -fx-shape: &quot;M0,4 L2,4 L4,8 L7,0 L9,0 L4,11 Z&quot;;
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>This code fragment creates the symbol shape by defining its SVG path in the <code>-fx-shape</code> parameter and sets the stroke color for the symbol.</p> 
+      <p>Use the <code>getStylesheets()</code> method of the <code>Scene</code> class to apply the style sheet to the application, as shown in <a href="#BABJICAB">Example 6-8</a>.</p> 
+      <div class="example">
+       <a id="BABJICAB" name="BABJICAB"></a>
+       <a id="JFXCH207" name="JFXCH207"></a> 
+       <p class="titleinexample">Example 6-8 Applying a CSS Style to the Scene</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+scene.getStylesheets().add(&quot;scaterchartsample/Chart.css&quot;);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Compiling and running this application produces the modified appearance of the area chart shown in <a href="#CHDDBDBA">Figure 6-5</a>.</p> 
+      <div class="figure">
+       <a id="CHDDBDBA" name="CHDDBDBA"></a>
+       <a id="JFXCH208" name="JFXCH208"></a> 
+       <p class="titleinfigure">Figure 6-5 Scatter Chart with the Modified Chart Symbol</p> 
+       <img src="img/scatter-css.png" alt="Description of Figure 6-5 follows" title="Description of Figure 6-5 follows" longdesc="img_text/scatter-css.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>You can learn more about using CSS styles in JavaFX applications from the <a href="../api/javafx/scene/doc-files/cssref.html">JavaFX CSS Reference Guide</a> and the <a href="../css_tutorial/jfxpub-css_tutorial.htm">Skinning JavaFX Applications with CSS</a> tutorial.</p> 
+      <p class="itemizedlisttitle">Related API Documentation&nbsp;</p> 
+      <ul> 
+       <li> <p><code>ScatterChart</code></p> </li> 
+       <li> <p><code>Chart</code></p> </li> 
+       <li> <p><code>XYChart</code></p> </li> 
+       <li> <p><code>XYChart.Data</code></p> </li> 
+       <li> <p><code>XYChart.Series</code></p> </li> 
+       <li> <p><code>NumberAxis</code></p> </li> 
+       <li> <p><code>Button</code></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-charts.htm">About This Tutorial</a></li>
+      <li><a href="chart-overview.htm">Introduction to JavaFX Charts</a></li>
+      <li><a href="pie-chart.htm">Pie Chart</a></li>
+      <li><a href="line-chart.htm">Line Chart</a></li>
+      <li><a href="area-chart.htm">Area Chart</a></li>
+      <li><a href="bubble-chart.htm">Bubble Chart</a></li>
+      <li class=" active"><a href="scatter-chart.htm">Scatter Chart</a></li>
+      <li><a href="bar-chart.htm">Bar Chart</a></li>
+      <li><a href="css-styles.htm">Styling Charts with CSS</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/AreaChartSample.zip">AreaChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/BarChartSample.zip">BarChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/BubbleChartSample.zip">BubbleChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/LineChartSample.zip">LineChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/PieChartSample.zip">PieChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/ScatterChartSample.zip">ScatterChartSample.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

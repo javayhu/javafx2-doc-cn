@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>JavaFX and JavaScript &middot; Deploying JavaFX Applications &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Deploying JavaFX Applications</h1>
+     <p class=" lead">JavaFX and JavaScript</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="deployment_toolkit.htm">←上一篇</a></li>
+      <li class=" next"><a href="preloaders.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="BCEBDHIF" name="BCEBDHIF"></a>
+     <a id="JFXDP174" name="JFXDP174"></a>  
+     <p>A JavaFX application can communicate with the web page in which it is embedded by using a JavaScript engine. The host web page can also communicate to embedded JavaFX applications using JavaScript.</p> 
+     <div align="center"> 
+      <div class="inftblnote">
+       <br /> 
+       <table class="Note oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+        <tbody> 
+         <tr> 
+          <td align="left"> <p class="notep1">Note:</p> <p>To a large extent, this functionality is based on the Java-to-JavaScript communication bridge that is implemented in the Java plug-in. Therefore most of the available documentation and examples for Java applets are also applicable to JavaFX applications. For more information about the Java implementation, see the Java <a href="../../../../jdk6.java.net/plugin2/liveconnect/#INTRODUCTION">LiveConnect documentation</a>.</p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="inftblnote" -->
+     </div> 
+     <p>This page shows how JavaFX applications can be accessed from JavaScript and vice versa. It contains the following sections.</p> 
+     <ul> 
+      <li> <p><a href="#BCEIBFGD">Section 6.1, &quot;Accessing a JavaFX Application from a Web Page&quot;</a></p> </li> 
+      <li> <p><a href="#BCEIAGHE">Section 6.2, &quot;Accessing the Host Web Page from an Embedded JavaFX Application&quot;</a></p> </li> 
+      <li> <p><a href="#BCEGAGEB">Section 6.3, &quot;Advanced topics&quot;</a></p> </li> 
+      <li> <p><a href="#BCEDIFAH">Section 6.4, &quot;Threading&quot;</a></p> </li> 
+      <li> <p><a href="#BCEJDEJG">Section 6.5, &quot;Security&quot;</a></p> </li> 
+      <li> <p><a href="#BCEBGCGD">Section 6.6, &quot;Tab Pane Example&quot;</a></p> </li> 
+     </ul> 
+     <a id="BCEIBFGD" name="BCEIBFGD"></a>
+     <a id="JFXDP445" name="JFXDP445"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">6.1</span> Accessing a JavaFX Application from a Web Page</h2> 
+      <p>To access a JavaFX application from JavaScript, the first step is to get a reference to a JavaScript object representing the JavaFX application. The easiest way to get the reference is to use a standard JavaScript <code>getElementById()</code> function, using the identifier that was specified in the <code>id</code> attribute of the Ant <a href="javafx_ant_task_reference001.htm#CIABIFCI">&lt;fx:deploy&gt;</a>, as shown in <a href="#BCEFHHIJ">Example 6-1</a>.</p> 
+      <div class="example">
+       <a id="BCEFHHIJ" name="BCEFHHIJ"></a>
+       <a id="JFXDP446" name="JFXDP446"></a> 
+       <p class="titleinexample">Example 6-1 Use JavaScript to Access an Application Object ID</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+var fxapp = document.getElementById(&quot;myMapApp&quot;) 
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The result corresponds to the main class of the JavaFX application.</p> 
+      <p>By getting the reference to a JavaScript object, you can use JavaScript code to access any public methods and fields of a Java object by referencing them as fields of the corresponding JavaScript object. After you have the <code>fxapp</code> reference, you can do something similar to the following:</p> 
+      <p><code>var r = fxapp.doSomething()</code></p> 
+      <p>The implementation of the <code>doSomething()</code> method in Java code returns a Java object. The variable <code>r</code> becomes a reference to the Java object. You can then use code such as <code>r.doSomethingElse()</code> or <code>fxapp.dosomethingWithR(r)</code>.</p> 
+      <p>You can access static fields or invoke static methods for classes loaded by a given application, by using a synthetic <code>Packages</code> keyword attached to the application object. You can use the same approach to create new instances of Java objects. For example, <a href="#BCECDGIJ">Example 6-2</a> contains Java code, and <a href="#BCEEJBGC">Example 6-3</a> contains JavaScript that interacts with that code. Look at both examples to see how they work together.</p> 
+      <div class="example">
+       <a id="BCECDGIJ" name="BCECDGIJ"></a>
+       <a id="JFXDP447" name="JFXDP447"></a> 
+       <p class="titleinexample">Example 6-2 Java Code Example</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package testapp;
+ 
+public class MapApp extends Application {
+    public static int ZOOM_STREET = 10;
+
+    public static class City {
+        public City(String name) {...}
+        ...
+    }
+ 
+    public int currentZipCode;
+ 
+    public void navigateTo(City location, int zoomLevel) {...}
+    ....
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The JavaScript snippet in <a href="#BCEEJBGC">Example 6-3</a> passes several values to the Java code in <a href="#BCECDGIJ">Example 6-2</a>. Before these values are used in the Java code, they are automatically converted to the closest Java type.</p> 
+      <div class="example">
+       <a id="BCEEJBGC" name="BCEEJBGC"></a>
+       <a id="JFXDP448" name="JFXDP448"></a> 
+       <p class="titleinexample">Example 6-3 JavaScript Code for <a href="#BCECDGIJ">Example 6-2</a></p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+function navigateTo(cityName) {
+    //Assumes that the Ant task uses &quot;myMapApp&quot; as id for this application
+    var mapApp = document.getElementById(&quot;myMapApp&quot;);
+    if (mapApp != null) {
+        //City is nested class. Therefore classname uses $ char 
+        var city = new mapApp.Packages.testapp.MapApp$City(cityName);
+        mapApp.navigateTo(city, mapApp.Packages.testapp.MapApp.ZOOM_STREET);
+        return mapApp.currentZipCode;
+    }
+    return &quot;unknown&quot;;
+}
+window.alert(&quot;Area zip: &quot; + navigateTo(&quot;San Francisco&quot;));
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The JavaScript string, numeric, and Boolean objects can be converted into most of the Java primitive types—Boolean, byte, char, short, int, long, float, and double—and j<code>ava.lang.String</code>.</p> 
+      <p>For JavaScript objects representing Java objects (in other words, objects that have previously been returned from Java), conversion results in extracting a reference to that Java object.</p> 
+      <p>Conversion into one and multidimensional arrays is supported according to rules similar to rules for conversion of individual objects. If conversion cannot be performed successfully, then the JavaScript engine raises an exception.</p> 
+      <p>All Java objects returned to the web browser are associated with a particular JavaFX application instance. References held by the JavaScript engine to a Java objects act as persistent references, preventing that Java object from being garbage-collected in the hosting JVM. However, if a particular application is destroyed, for example by leaving the web page hosting the application or by detaching the application from the HTML DOM tree, then references are immediately invalidated and further attempts to use those object in JavaScript will raise exceptions.</p> 
+      <p>For more information about data type conversion and object lifetimes, see</p> 
+      <p><code><a href="../../../../jdk6.java.net/plugin2/liveconnect/#JS_JAVA_CONVERSIONS">http://jdk6.java.net/plugin2/liveconnect/#JS_JAVA_CONVERSIONS</a></code></p> 
+      <div align="center"> 
+       <div class="inftblnote">
+        <br /> 
+        <table class="Note oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+         <tbody> 
+          <tr> 
+           <td align="left"> <p class="notep1">Note:</p> <p>If a Java object has overloaded methods, in other words if it has multiple methods with the same name, but different sets of argument types, then the heuristic will be adopted of using the method with the closest types. For information, see the following section of the Java LiveConnect documentation: <code><a href="../../../../jdk6.java.net/plugin2/liveconnect/#OVERLOADED_METHODS">http://jdk6.java.net/plugin2/liveconnect/#OVERLOADED_METHODS</a></code></p> <p>The general recommendation is to avoid overloaded methods if you plan to use them from JavaScript code.</p> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <br />
+       </div> 
+       <!-- class="inftblnote" -->
+      </div> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BCEIAGHE" name="BCEIAGHE"></a>
+     <a id="JFXDP449" name="JFXDP449"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">6.2</span> Accessing the Host Web Page from an Embedded JavaFX Application</h2> 
+      <p>JavaFX applications can call the following JavaScript components:</p> 
+      <ul> 
+       <li> <p>Functions</p> </li> 
+       <li> <p>The <code>get</code>, <code>set</code>, and <code>remove</code> fields of JavaScript objects</p> </li> 
+       <li> <p>The <code>get</code> and <code>set</code> elements of JavaScript arrays</p> </li> 
+      </ul> 
+      <p>JavaFX applications can also evaluate snippets of JavaScript code. Through the JavaScript DOM APIs, JavaFX applications can modify the web page dynamically by adding, removing and moving HTML elements.</p> 
+      <p>To bootstrap JavaFX-to-JavaScript communication, the JavaFX application must get a reference to the JavaScript window object containing the application. This reference can be used for subsequent operations such as evaluation, function calls, and fetches of variables.</p> 
+      <p>Both the main and preloader application can get this reference by accessing the <code>HostServices</code> class in the JavaFX API and requesting <code>getWebContext()</code>, as shown in <a href="#BCEDIIIF">Example 6-4</a>.</p> 
+      <div class="example">
+       <a id="BCEDIIIF" name="BCEDIIIF"></a>
+       <a id="JFXDP450" name="JFXDP450"></a> 
+       <p class="titleinexample">Example 6-4 Access the HostServices Class from JavaFX Code</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public class MyApp extends Application {
+    private void communicateToHostPage() { 
+        JSObject jsWin = getHostServices().getWebContext();  
+        //null for non-embedded applications
+        if (jsWin != null) {
+            //use js
+            ...      
+        }
+    }
+    ...
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>All instances of JavaScript objects, including references to the DOM window, appear within Java code as instances of <code>netscape.javascript.JSObject.</code></p> 
+      <p><a href="#CIHHECHA">Example 6-5</a> shows how to use JavaScript to implement a function to resize an embedded application with <code>id='myMapApp'</code> at runtime.</p> 
+      <div class="example">
+       <a id="CIHHECHA" name="CIHHECHA"></a>
+       <a id="JFXDP451" name="JFXDP451"></a> 
+       <p class="titleinexample">Example 6-5 Use JavaScript to Resize an Application in the Browser</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public void resizeMyself(int w, int h) {
+    JSObject jsWin = getHostServices().getWebContext();
+    if (jsWin != null) {
+        jsWin.eval(&quot;var m = document.getElementById('myMapApp');&quot; +
+            &quot;m.width=&quot; + w + &quot;; m.height=&quot; + h + &quot;;&quot;);
+    } else {
+        // running as non embedded =&gt; use Stage's setWidth()/setHeight()
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BCEGAGEB" name="BCEGAGEB"></a>
+     <a id="JFXDP452" name="JFXDP452"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">6.3</span> Advanced topics</h2> 
+      <p>JavaFX applications embedded in a web page can call JavaScript methods in a web page after the <code>init()</code> method is called for the preloader or main application class.</p> 
+      <p>JavaScript can access JavaFX applications at any time, but if the application is not ready yet, then this request may be blocked until the application is ready. Specifically, this will happen if the <code>init()</code> method of the main application class has not finished yet and the main application did not perform calls to the web page itself. A JavaScript call from the preloader does not fully unblock JavaScript-to-Java communication.</p> 
+      <p>Most browsers use single-threaded JavaScript engines. This means that when blocking occurs, the host web page and the browser appear to be frozen.</p> 
+      <p>To access a JavaFX application from the host web page early and avoid blocking, either notify the web page when the application is ready by calling a Java function from the application, or use an <code>onJavascriptReady</code> callback in the Ant task.</p> 
+      <p><a href="#BCEHIBFH">Example 6-6</a> shows an HTML template for an Ant task that uses an <code>onJavascriptReady</code> callback to call the <code>doSomething()</code> method in the main application without blocking the browser.</p> 
+      <div class="example">
+       <a id="BCEHIBFH" name="BCEHIBFH"></a>
+       <a id="JFXDP453" name="JFXDP453"></a> 
+       <p class="titleinexample">Example 6-6 HTML Input Template for an Ant Task</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;!-- template: code to load DT JavaScript will be inserted here --&gt;
+        #DT.SCRIPT.CODE#
+        &lt;!-- template: code to insert application on page load will be 
+         inserted here --&gt;
+        #DT.EMBED.CODE.ONLOAD#
+ 
+        &lt;script&gt;
+            function earlyCallFunction(id) {
+                //it is safe to call application now
+                var a = document.getElementById(id);
+                if (a != null) a.doSomething();
+            }
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- application is inserted here --&gt;
+        &lt;div id=&quot;ZZZ&quot;&gt;&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p><a href="#BCEJCBII">Example 6-7</a> shows the relevant part of the Ant task used to generate an HTML page from the template in <a href="#BCEHIBFH">Example 6-6</a>. For this example, it is assumed that the template has the path src/web/test_template.html.</p> 
+      <div class="example">
+       <a id="BCEJCBII" name="BCEJCBII"></a>
+       <a id="JFXDP454" name="JFXDP454"></a> 
+       <p class="titleinexample">Example 6-7 Ant &lt;fx:deploy&gt; Task to Generate an HTML Page from a Template</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:deploy placeholderId=&quot;ZZZ&quot; ...&gt;
+    ....
+    &lt;fx:template file=&quot;src/web/test_template.html&quot;
+            tofile=&quot;dist/test.html&quot;/&gt;
+    &lt;fx:callbacks&gt;
+        &lt;fx:callback name=&quot;onJavascriptReady&quot;&gt;earlyCallFunction&lt;/fx:callback&gt;
+    &lt;/fx:callbacks&gt;
+&lt;/fx:deploy&gt;
+</pre>
+      </div> 
+      <!-- class="example" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BCEDIFAH" name="BCEDIFAH"></a>
+     <a id="JFXDP455" name="JFXDP455"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">6.4</span> Threading</h2> 
+      <p>Java code called from JavaScript is executed on a special thread that is not the JavaFX application thread. Use the <code>Platform.runLater()</code> method in the JavaFX code to ensure that something is executed on the JavaFX application thread.</p> 
+      <p>In general, return as quickly as possible from functions that are called from JavaScript. In most modern browsers, JavaScript engines are single-threaded. If the call sticks, then the web page can appear frozen, and the browser will be unresponsive. In particular, it is recommended that you avoid writing code to wait for work to be done on a JavaFX application thread. If JavaScript code depends on the result of this work, then it is recommended that you use a callback from Java to notify the JavaScript code of the result of the execution of the work.</p> 
+      <p><a href="#BCEGHEDI">Example 6-8</a> shows an example of code to avoid in JavaScript.</p> 
+      <div class="example">
+       <a id="BCEGHEDI" name="BCEGHEDI"></a>
+       <a id="JFXDP456" name="JFXDP456"></a> 
+       <p class="titleinexample">Example 6-8 Naive implementation Blocking JavaScript Thread</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+function process(r) {
+    window.alert(&quot;Result: &quot;+r);
+}
+ 
+var result = myApp.doSomethingLong();
+process(result);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p><a href="#BCEBCCJB">Example 6-9</a> shows a better pattern to follow in JavaScript code.</p> 
+      <div class="example">
+       <a id="BCEBCCJB" name="BCEBCCJB"></a>
+       <a id="JFXDP457" name="JFXDP457"></a> 
+       <p class="titleinexample">Example 6-9 A Better Implementation of <a href="#BCEGHEDI">Example 6-8</a></p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+function process(r) {
+    window.alert(&quot;Result: &quot;+r);
+}
+  
+myApp.doSomethingLong(function(r) {process(r);});
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p><a href="#BCEBJCFI">Example 6-10</a> shows a better example in Java code.</p> 
+      <div class="example">
+       <a id="BCEBJCFI" name="BCEBJCFI"></a>
+       <a id="JFXDP458" name="JFXDP458"></a> 
+       <p class="titleinexample">Example 6-10 Java Code Using a Callback</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public void doSomethingLong(JSObject callback) {
+    Object result;
+    //do whatever is needed to get result
+ 
+    //Invoke callback 
+    //  callback is a function object, and every function object 
+    // has a &quot;call&quot; method
+    Object f[] = new Object[2];
+    f[0] = null; //first element is object instance but this is global function
+                 //not applying it to any specific object
+    f[1] = new String(result); //real argument
+    callback.call(&quot;call&quot;, f);
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Java code can call JavaScript from any thread, including the JavaFX application thread. However, if the JavaScript engine in the browser is busy, then a call to JavaScript may stick for some time. If there is a call on the JavaFX application thread, then it may make your application appear frozen, because it will not be able to update the screen and handle user events. It is recommended that you offload execution of LiveConnect calls from the JavaFX application thread.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BCEJDEJG" name="BCEJDEJG"></a>
+     <a id="JFXDP459" name="JFXDP459"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">6.5</span> Security</h2> 
+      <p>JavaScript code on the web page can always make JavaScript-to-Java calls against an application on the page, and it can access all public methods and fields of Java classes loaded by the application. However, when a JavaScript-to-Java call is made, it is treated as called from the sandbox environment. Moreover, if the HTML document and the application originate from different sites, then JavaScript on the web page cannot cause any network connections to be made on its behalf.</p> 
+      <p>Aside from this restriction, calling Java from JavaScript does not have any other consequences if the application is running in the sandbox. However, if the application is signed and trusted and therefore can request elevated permissions, then a call to a Java method from JavaScript is executed in the sandbox without elevated permissions. If elevated permissions are needed, then <code>AccessController.doPrivileged</code> in the Java API can be used to request them in the trusted code.</p> 
+      <p>Developers should be careful not to expose APIs in their applications that would accidentally confer additional privileges on untrusted JavaScript code. Developers who must grant elevated privileges to JavaScript code are encouraged to serve their applications over verifiable HTTPS connections, and perform checks to ensure that the document base of the web page hosting the application is the same as the expected origin of the application's code.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BCEBGCGD" name="BCEBGCGD"></a>
+     <a id="JFXDP460" name="JFXDP460"></a> 
+     <div class="sect1"> 
+      <h2 class="sect1"><span class="secnum">6.6</span> Tab Pane Example</h2> 
+      <p>This section contains a sample that demonstrates how to use communication between JavaFX and JavaScript to integrate JavaFX web applications with the browser. <a href="#BCEGICBD">Example 6-11</a> shows a JavaFX application that creates a tab pane on a web page, with 20 tabs.</p> 
+      <div class="example">
+       <a id="BCEGICBD" name="BCEGICBD"></a>
+       <a id="JFXDP461" name="JFXDP461"></a> 
+       <p class="titleinexample">Example 6-11 Create Tabs on the Embedding Web Page</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public class TabbedApp extends Application {
+    Group root = new Group();
+    TabPane tabPane = new TabPane();
+            
+    public void init() {
+        // Prepare tab pane with set of tabs        
+        BorderPane borderPane = new BorderPane();
+        tabPane.setPrefSize(400, 400);
+        tabPane.setSide(Side.TOP);
+        tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
+        
+        for(int i=1; i&lt;=20; i++) {
+            final Tab t = new Tab(&quot;T&quot; + i);
+            t.setId(&quot;&quot;+i);            
+            Text text = new Text(&quot;Tab &quot;+i);
+            text.setFont(new Font(100));
+            BorderPane p = new BorderPane();
+            p.setCenter(text);
+            t.setContent(p);
+            tabPane.getTabs().add(t);
+        }
+        borderPane.setCenter(tabPane);
+        root.getChildren().add(borderPane);        
+    }
+ 
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>This application can be further improved to save the history of visited tabs into the browser history. This enables users to click the Back and Forward buttons in the browser to move between tabs.</p> 
+      <p>The implementation is based on the <code>onhashchange</code> event introduced in HTML 5 and described at</p> 
+      <p><code><a href="../../../../www.whatwg.org/specs/web-apps/current-work/#event-hashchange">http://www.whatwg.org/specs/web-apps/current-work/#event-hashchange</a></code></p> 
+      <p>The JavaScript technique used by AJAX applications to achieve a similar effect is to save a reference to the current selection in the hash part of the document URL. When the user clicks the Back button, the URL is updated, and a selection state can be extracted that must be restored.</p> 
+      <p>To implement this solution, two new methods are added to the sample: <code>onNavigate()</code> and <code>navigateTo()</code>. The <code>onNavigate()</code> method is called whenever a new tab is selected. It delivers information about the new selection to the web page by calling the JavaScript method <code>navigateTo()</code> and passing the tab ID to it. The JavaScript code saves the tab ID in the URL hash.</p> 
+      <p>The <code>navigateTo()</code> method is responsible for reverse synchronization. After the web page URL is changed, this method is called with the ID of the tab to be selected.</p> 
+      <p><a href="#BCEGDEBD">Example 6-12</a> shows the updated code of the application. The code that is different from <a href="#BCEGICBD">Example 6-11</a> appears in bold.</p> 
+      <div class="example">
+       <a id="BCEGDEBD" name="BCEGDEBD"></a>
+       <a id="JFXDP462" name="JFXDP462"></a> 
+       <p class="titleinexample">Example 6-12 Improved Application that Saves Tab History</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public class TabbedApp extends Application {
+    Group root = new Group();
+    TabPane tabPane = new TabPane();
+            
+    public void init() {
+        // Prepare tab pane with set of tabs        
+        BorderPane borderPane = new BorderPane();
+        tabPane.setPrefSize(400, 400);
+        tabPane.setSide(Side.TOP);
+        tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
+        
+        for(int i=1; i&lt;=20; i++) {
+            final Tab t = new Tab(&quot;T&quot; + i);
+            t.setId(&quot;&quot;+i);            
+            Text text = new Text(&quot;Tab &quot;+i);
+            text.setFont(new Font(100));
+            BorderPane p = new BorderPane();
+            p.setCenter(text);
+            t.setContent(p);
+            
+<span class="bold">            // When tab is selected, notify web page to save this in the</span>
+<span class="bold">            // browser history</span>
+<span class="bold">            t.selectedProperty().addListener(new ChangeListener&lt;Boolean&gt;() {</span>
+<span class="bold">                public void changed(ObservableValue&lt;? extends Boolean&gt; ov,</span>
+<span class="bold">                        Boolean tOld, Boolean tNew) {</span>
+<span class="bold">                    if (Boolean.TRUE.equals((tNew))) {</span>
+<span class="bold">                        onNavigate(t.getId());                                        </span>
+<span class="bold">                    }</span>
+<span class="bold">                }                </span>
+<span class="bold">            });</span>
+            tabPane.getTabs().add(t);
+        }
+        borderPane.setCenter(tabPane);
+        root.getChildren().add(borderPane);        
+}
+ 
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
+    }
+ 
+<span class="bold">    public void navigateTo(String tab) {</span>
+<span class="bold">        for (Tab t: tabPane.getTabs()) {</span>
+<span class="bold">            if (tab.equals(&quot;#&quot;+t.getId())) {</span>
+<span class="bold">                tabPane.getSelectionModel().select(t);</span>
+<span class="bold">                return;</span>
+<span class="bold">            }</span>
+<span class="bold">        }</span>
+<span class="bold">    }</span>
+    
+<span class="bold">    private void onNavigate(String tab) {</span>
+<span class="bold">      JSObject jsWin = getHostServices().getWebContext();  </span>
+<span class="bold">      // Null for nonembedded applications</span>
+<span class="bold">      if (jsWin != null) {</span>
+<span class="bold">          //use js</span>
+<span class="bold">          jsWin.eval(&quot;navigateTo('&quot; + tab + &quot;')&quot;);</span>
+<span class="bold">      }</span>
+<span class="bold">    }    </span>
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Part of the implementation logic is in the HTML page. <a href="#BCEJHJJC">Example 6-13</a> shows a page that is used as an input template in an Ant script. When the Ant script is run, it inserts code to embed the JavaFX application next to the custom JavaScript code. For more information about input templates, see <a href="javafx_ant_task_reference002.htm#CIACACDA">&lt;fx:template&gt;</a>.</p> 
+      <p>The implementation of JavaScript functions is straightforward. The <code>onhashchange</code> attribute of the <code>&lt;body&gt;</code> tag is used to subscribe to notifications of updates of the hash part of the URL. After the event is obtained, the JavaFX application is embedded in the web page, and the <code>navigateTo()</code> method is called.</p> 
+      <p>If the application calls with an update on the selected tab, it is saved to the hash part of the URL.</p> 
+      <div class="example">
+       <a id="BCEJHJJC" name="BCEJHJJC"></a>
+       <a id="JFXDP463" name="JFXDP463"></a> 
+       <p class="titleinexample">Example 6-13 HTML Template Used as Input to the Ant Script</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;!-- template: code to load DT javascript will be inserted here --&gt;
+        #DT.SCRIPT.CODE#
+        &lt;!-- template: code to insert application on page load will be 
+            inserted here --&gt;
+        #DT.EMBED.CODE.ONLOAD#
+ 
+        &lt;script&gt;
+            function hashchanged(event) {
+                var a = document.getElementById('tabbedApp');
+                if (a != null) {
+                    try {
+                        a.navigateTo(location.hash);                
+                    } catch (err) {
+                        alert(&quot;JS Exception: &quot; + err);
+                    }
+                }
+            }
+ 
+            function navigateTo(newtab) {
+                if (window.location.hash != newtab) {
+                    window.location.hash = newtab;                    
+                }
+            } 
+        &lt;/script&gt; 
+    &lt;/head&gt;
+    &lt;body onhashchange=&quot;hashchanged(event)&quot;&gt;
+        &lt;h2&gt;Test page&lt;/h2&gt;
+        &lt;!-- Application will be inserted here --&gt;
+        &lt;div id='javafx-app-placeholder'&gt;&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>For completeness, <a href="#BCEEEJED">Example 6-14</a> shows the Ant script used to deploy this sample. The application is created with the ID <code>tabbedApp</code>. The JavaScript code uses this ID to find the application on the page. and the HTML template uses it to embed the application into the custom HTML page that is produced by the Ant task.</p> 
+      <div class="example">
+       <a id="BCEEEJED" name="BCEEEJED"></a>
+       <a id="JFXDP464" name="JFXDP464"></a> 
+       <p class="titleinexample">Example 6-14 Ant Script to Package the Application</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:application id=&quot;tabbedApp&quot;
+        name=&quot;Example of browser integration&quot;
+        mainClass=&quot;docsamples.TabbedApp&quot;/&gt;
+        
+&lt;fx:jar destfile=&quot;dist/docsamples/tabbedapp.jar&quot;&gt;
+    &lt;fx:application refid=&quot;tabbedApp&quot;/&gt;
+    &lt;fileset refid=&quot;appclasses&quot;/&gt;
+&lt;/fx:jar&gt;
+        
+&lt;fx:deploy width=&quot;400&quot; height=&quot;400&quot;
+        outdir=&quot;dist-web&quot;
+        outfile=&quot;BrowserIntegrationApp&quot;&gt;
+    &lt;fx:info title=&quot;Doc sample&quot;/&gt;
+    &lt;fx:application refid=&quot;tabbedApp&quot;/&gt;
+    &lt;fx:template
+            file=&quot;src/template/TabbedApp_template.html&quot;
+            tofile=&quot;dist-web/TabbedApp.html&quot;/&gt;
+    &lt;fx:resources&gt;
+        &lt;fx:fileset requiredFor=&quot;startup&quot; dir=&quot;dist/docsamples&quot;&gt;
+            &lt;include name=&quot;tabbedapp.jar&quot;/&gt;
+        &lt;/fx:fileset&gt;
+    &lt;/fx:resources&gt;
+&lt;/fx:deploy&gt;
+</pre>
+      </div> 
+      <!-- class="example" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-deployment.htm">About This Guide</a></li>
+      <li><a href="deploy_quick_start.htm">Getting Started</a></li>
+      <li><a href="deploy_overview.htm">Application Execution Modes</a></li>
+      <li><a href="deploy_user_experience.htm">Application Startup</a></li>
+      <li><a href="packaging.htm">Packaging</a></li>
+      <li><a href="deployment_toolkit.htm">Deployment in the Browser</a></li>
+      <li class=" active"><a href="javafx_javascript.htm">JavaFX and JavaScript</a></li>
+      <li><a href="preloaders.htm">Preloaders</a></li>
+      <li><a href="deploy_swing_apps.htm">JavaFX in Swing Applications</a></li>
+      <li><a href="packager.htm">The JavaFX Packager Tool</a></li>
+      <li><a href="packager001.htm">JavaFX Packager Command-Line Syntax</a></li>
+      <li><a href="javafx_ant_task_reference.htm">JavaFX Ant Tasks</a></li>
+      <li><a href="javafx_ant_task_reference001.htm">Reference: JavaFX Ant Tasks</a></li>
+      <li><a href="javafx_ant_task_reference002.htm">Reference: JavaFX Ant Helper Parameters</a></li>
+      <li><a href="troubleshooting.htm">Troubleshooting</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

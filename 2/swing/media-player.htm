@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Leveraging Applications with Media Features &middot; JavaFX for Swing Developers &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>JavaFX for Swing Developers</h1>
+     <p class=" lead">Leveraging Applications with Media Features</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="jtable-barchart.htm">←上一篇</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="BGBDICDI" name="BGBDICDI"></a>  
+     <p>JavaFX SDK provides the <code>javafx.scene.media</code> package that enables developers to create media applications. In this chapter you review a Media Player application that plays a video file and has controls typical for a video player such as a start/pause button, sliders to show playback progress and adjust volume, and a check box that turns repeat on.</p> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref22" name="sthref22"></a> 
+      <h2 class="sect1">About Media Integration</h2> 
+      <p>Any JavaFX media application can be built using the following key classes:</p> 
+      <ul> 
+       <li> <p><code>Media</code> class: Represents a media resource</p> </li> 
+       <li> <p><code>MediaPlayer</code> class: Provides the controls for playing the specified resource</p> </li> 
+       <li> <p><code>MediaView</code> class: Provides a view of the media resource played by a MediaPlayer object</p> </li> 
+      </ul> 
+      <p>Because the <code>MediaView</code> class is a subclass of the <code>Node</code> class, the MediaView object can be added to a JavaFX scene. This is the principal factor that provides a foundation for integration of the JavaFX media functionality into desktop and web applications. Now that you know how to embed the JavaFX scene into Swing applications, you can further leverage your applications by integrating the Media Player component. You can animate the MediaView object, transform it, and apply effects to it, just as you can with any other node. In this way, you can support numerous creative tasks.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <a id="sthref23" name="sthref23"></a> 
+      <h2 class="sect1">Building the Media Player Application</h2> 
+      <p>The <a href="../media/jfxpub-media.htm">Incorporating Media Assets Into JavaFX Applications</a> document provides step-by-step instructions on how to create the <code>EmbeddedMediaPlayer</code> application. It also provides the Netbeans project source. Follow the detailed instructions to build the application or download the source project using the link on the sidebar.</p> 
+      <p>The <code>MediaPlayer</code> application discussed in this chapter is based on the <code>EmbeddedMediaPlayer</code> application but is slightly improved as follows:</p> 
+      <ul> 
+       <li> <p>As a best programming practice, the application uses an external CSS file.</p> </li> 
+       <li> <p>The control bar contains the <code>Loop</code> check box to turn repeat on.</p> </li> 
+      </ul> 
+      <p>The application window is shown in <a href="#CCHBFCAA">Figure 4-1</a>.</p> 
+      <div class="figure">
+       <a id="CCHBFCAA" name="CCHBFCAA"></a> 
+       <p class="titleinfigure">Figure 4-1 Media Player Application Window</p> 
+       <img src="img/media_player.jpg" alt="Description of Figure 4-1 follows" title="Description of Figure 4-1 follows" longdesc="img_text/media_player.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>You can modify the EmbeddeMediaPlayer project or save its copy with a different name and modify the new project.</p> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref25" name="sthref25"></a> 
+       <h3 class="sect2">Skinning the Application with CSS</h3> 
+       <p>To skin the application with CSS, first create the <code>mediaplayer.css</code> file and save it in the folder with the source files of your application. Add the style rules shown in <a href="#CCHFCAFC">Example 4-1</a>.</p> 
+       <div class="example">
+        <a id="CCHFCAFC" name="CCHFCAFC"></a> 
+        <p class="titleinexample">Example 4-1</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+#mediaControl {
+    -fx-background-color: #bfc2c7;
+}
+#mediaViewPane {
+    -fx-background-color: black;;
+}
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>Next, open the <code>MediaControl.java</code> file and remove from the <code>MediaControl</code> constructor the lines shown in <a href="#CCHHHCAJ">Example 4-2</a>.</p> 
+       <div class="example">
+        <a id="CCHHHCAJ" name="CCHHHCAJ"></a> 
+        <p class="titleinexample">Example 4-2</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+setStyle(&quot;-fx-background-color: #bfc2c7;&quot;);
+mvPane.setStyle(&quot;-fx-background-color: black;&quot;);
+
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>Then modify the <code>MediaControl</code> constructor by adding the lines shown in bold in <a href="#CCHHHBBH">Example 4-3</a>.</p> 
+       <div class="example">
+        <a id="CCHHHBBH" name="CCHHHBBH"></a> 
+        <p class="titleinexample">Example 4-3</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public MediaControl(final MediaPlayer mp) {
+    this.mp = mp;
+    <span class="bold">setId(&quot;mediaControl&quot;);</span>
+
+    mediaView = new MediaView(mp);
+    Pane mvPane = new Pane();
+    mvPane.getChildren().add(mediaView);
+    <span class="bold">mvPane.setId(&quot;mediaViewPane&quot;);</span>
+    setCenter(mvPane);
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref26" name="sthref26"></a> 
+       <h3 class="sect2">Adding a New Control to the Control Bar</h3> 
+       <p>Adding a new control to the control bar requires only a few steps. In the section where you define the <code>MediaControl</code> class instance variables, remove the definition of the <code>repeat</code> variable shown in <a href="#CCHFGFCC">Example 4-4</a>.</p> 
+       <div class="example">
+        <a id="CCHFGFCC" name="CCHFGFCC"></a> 
+        <p class="titleinexample">Example 4-4</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+private final boolean repeat = false;
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>In the <code>MediaControl</code> class, remove the code that used the <code>repeat</code> instance variable shown in <a href="#CCHJIIFD">Example 4-5</a>.</p> 
+       <div class="example">
+        <a id="CCHJIIFD" name="CCHJIIFD"></a> 
+        <p class="titleinexample">Example 4-5</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+mp.setCycleCount(repeat ? MediaPlayer.INDEFINITE : 1);
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>Now add the class variable <code>repeatBox</code> as shown in <a href="#CCHGEGEB">Example 4-6</a>.</p> 
+       <div class="example">
+        <a id="CCHGEGEB" name="CCHGEGEB"></a> 
+        <p class="titleinexample">Example 4-6</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+private CheckBox repeatBox;
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>Add a label and the check box to the control bar of your Media Player. Place the following code in the <code>MediaControl</code> constructor after the lines that added the <code>volumeSlider</code> to the bar, as shown in <a href="#CCHHJGEB">Example 4-7</a>.</p> 
+       <div class="example">
+        <a id="CCHHJGEB" name="CCHHJGEB"></a> 
+        <p class="titleinexample">Example 4-7</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+mediaBar.getChildren().add(volumeSlider);
+
+Label repeatLabel = new Label(&quot;  Loop: &quot;);
+repeatLabel.setPrefWidth(50);
+repeatLabel.setMinWidth(25);
+mediaBar.getChildren().add(repeatLabel);
+
+repeatBox = new CheckBox();
+repeatBox.setSelected(true);
+mediaBar.getChildren().add(repeatBox);
+
+setBottom(mediaBar);
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>Implement the logic of using the check box in the <code>setOnEndOfMedia</code> method, as shown in <a href="#CCHDGBBD">Example 4-8</a>.</p> 
+       <div class="example">
+        <a id="CCHDGBBD" name="CCHDGBBD"></a> 
+        <p class="titleinexample">Example 4-8</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+mp.setOnEndOfMedia(new Runnable() {
+
+    public void run() {
+        if (repeatBox.isSelected()) {
+            mp.seek(mp.getStartTime());
+        } else {
+            playButton.setText(&quot;&gt;&quot;);
+            stopRequested = true;
+            atEndOfMedia = true;
+
+        }
+    }
+});
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>You can view the source files and download the MediaPlayer.zip file with the NetBeans project by using the links on the sidebar.</p> 
+       <p>To enable the Media Player access a remote media resource when running from behind a firewall, provide the proxy settings in the following format: <code>-Dhttp.proxyHost=yourproxyhost.com -Dhttp.proxyPort=portNumber.</code> In this example, <code>yourproxyhost.com</code> is your proxy and <code>portNumber</code> is a port number to use.</p> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-swing.htm">About This Tutorial</a></li>
+      <li><a href="overview.htm">The JavaFX Advantage for Swing Developers</a></li>
+      <li><a href="swing-fx-interoperability.htm">Integrating JavaFX into Swing Applications</a></li>
+      <li><a href="jtable-barchart.htm">Enriching Swing Applications with JavaFX Functionality</a></li>
+      <li class=" active"><a href="media-player.htm">Leveraging Applications with Media Features</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/swing/SimpleSwingBrowser.zip">SimpleSwingBrowser.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/swing/SwingInterop.zip">SwingInterop.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/swing/MediaPlayer.zip">MediaPlayer.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

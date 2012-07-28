@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Controlling Media Player &middot; Incorporating Media Assets Into JavaFX Applications &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Incorporating Media Assets Into JavaFX Applications</h1>
+     <p class=" lead">Controlling Media Player</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="simpleplayer.htm">←上一篇</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CMHEJIBA" name="CMHEJIBA"></a>
+     <a id="JFXMD130" name="JFXMD130"></a>  
+     <p>In this section you create a full-functional media player with graphical UI elements that control the playback.</p> 
+     <p>To create a media player you need to implement the structure of the three nested media objects, encode graphical controls, and add some logic for playback functions, as illustrated in the <a href="#BABJHHCI">Figure 3-1</a> below.</p> 
+     <div class="figure">
+      <a id="BABJHHCI" name="BABJHHCI"></a>
+      <a id="JFXMD132" name="JFXMD132"></a> 
+      <p class="titleinfigure">Figure 3-1 Structure of Media Player with Playback Controls</p> 
+      <img src="img/control-structure.jpg" alt="Logical structure of a media player with UI controls." title="Logical structure of a media player with UI controls." longdesc="img_text/control-structure.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <p>You step through adding playback controls to the media player that you created in <a href="simpleplayer.htm#CCHEJIBE">Lesson 2, &quot;Embedding Media Into a Web Page&quot;</a>. If you haven't already done so, complete that media player application before proceeding with the rest of this chapter. The media control panel you add consists of three elements: playButton, progress, and volumeControl.</p> 
+     <a id="JFXMD133" name="JFXMD133"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref11" name="sthref11"></a> 
+      <h2 class="sect1">Creating Controls</h2> 
+      <p>In this section you create a new JavaFX source file, MediaControl.java, that will contain the pane and UI controls for the play/pause, progress, and volume features.</p> 
+      <ol> 
+       <li> <p>With the EmbeddedMediaPlayer opened as the main project in the NetBeans IDE, create a new JavaFX file to add to the project.</p> 
+        <ol> 
+         <li> <p>Use Ctrl+N or select File &gt; New File from the IDE's main menu.</p> </li> 
+         <li> <p>Select Category JavaFX and file type JavaFX Main class. Click Next.</p> </li> 
+         <li> <p>In the Name and Location dialog, type <code>MediaControl</code> in the Class Name field.</p> </li> 
+         <li> <p>In the Package field, select embeddedmediaplayer from the drop-down list and click Finish.</p> </li> 
+        </ol> </li> 
+       <li> <p>Delete all the lines after <code>package embeddedmediaplayer</code> line.</p> </li> 
+       <li> <p>Add the import statements that are shown in <a href="#BABDBAGC">Example 3-1</a> to the top of the file.</p> 
+        <div class="example">
+         <a id="BABDBAGC" name="BABDBAGC"></a>
+         <a id="JFXMD135" name="JFXMD135"></a> 
+         <p class="titleinexample">Example 3-1 Import Statements to Add</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
+import javafx.util.Duration;
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Copy and paste the lines of code in <a href="#BABFAAHG">Example 3-2</a> to create the BorderPane that will hold the controls.</p> 
+        <div class="example">
+         <a id="BABFAAHG" name="BABFAAHG"></a>
+         <a id="JFXMD134" name="JFXMD134"></a> 
+         <p class="titleinexample">Example 3-2 Add MediaControl Class Code</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public class MediaControl extends BorderPane {<br />    private MediaPlayer mp;
+    private MediaView mediaView;
+    private final boolean repeat = false;
+    private boolean stopRequested = false;
+    private boolean atEndOfMedia = false;
+    private Duration duration;
+    private Slider timeSlider;
+    private Label playTime;
+    private Slider volumeSlider;
+    private HBox mediaBar;
+
+    public MediaControl(final MediaPlayer mp) {
+        this.mp = mp;
+        setStyle(&quot;-fx-background-color: #bfc2c7;&quot;);
+        mediaView = new MediaView(mp);
+        Pane mvPane = new Pane() {                };
+        mvPane.getChildren().add(mediaView);
+        mvPane.setStyle(&quot;-fx-background-color: black;&quot;); 
+        setCenter(mvPane);
+     }
+}
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Copy the lines of code in <a href="#BABFFHCC">Example 3-3</a> and paste them immediately after the line that says <code>setCenter(mvPane)</code>. This code adds the Media toolbar and the Play button.</p> 
+        <div class="example">
+         <a id="BABFFHCC" name="BABFFHCC"></a>
+         <a id="JFXMD136" name="JFXMD136"></a> 
+         <p class="titleinexample">Example 3-3 Add Media Toolbar and Play Button</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+        mediaBar = new HBox();
+        mediaBar.setAlignment(Pos.CENTER);
+        mediaBar.setPadding(new Insets(5, 10, 5, 10));
+        BorderPane.setAlignment(mediaBar, Pos.CENTER);
+ 
+        final Button playButton  = new Button(&quot;&gt;&quot;);
+        mediaBar.getChildren().add(playButton);
+        setBottom(mediaBar); 
+     }
+}
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Add the import statements shown in <a href="#BABJIFFJ">Example 3-4</a> to the top of the list of import statements.</p> 
+        <div class="example">
+         <a id="BABJIFFJ" name="BABJIFFJ"></a>
+         <a id="JFXMD137" name="JFXMD137"></a> 
+         <p class="titleinexample">Example 3-4 Add More Import Statements</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Add the remainder of the UI controls to the control pane. Put the lines of code in <a href="#BABJHJJJ">Example 3-5</a> after the <code>mediaBar.getChildren().add(playButton</code>); line and before the <code>setBottom(mediaBar)</code> line.</p> 
+        <div class="example">
+         <a id="BABJHJJJ" name="BABJHJJJ"></a>
+         <a id="JFXMD138" name="JFXMD138"></a> 
+         <p class="titleinexample">Example 3-5 Add the Rest of the UI Controls</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+// Add spacer<br />Label spacer = new Label(&quot;   &quot;);<br />mediaBar.getChildren().add(spacer);
+ 
+// Add Time label<br />Label timeLabel = new Label(&quot;Time: &quot;);<br />mediaBar.getChildren().add(timeLabel);
+ 
+// Add time slider
+timeSlider = new Slider();<br />HBox.setHgrow(timeSlider,Priority.ALWAYS);<br />timeSlider.setMinWidth(50);<br />timeSlider.setMaxWidth(Double.MAX_VALUE);<br />mediaBar.getChildren().add(timeSlider);
+
+// Add Play label
+playTime = new Label();
+playTime.setPrefWidth(130);
+playTime.setMinWidth(50);
+mediaBar.getChildren().add(playTime);
+ 
+// Add the volume label
+Label volumeLabel = new Label(&quot;Vol: &quot;);
+mediaBar.getChildren().add(volumeLabel);
+ 
+// Add Volume slider
+volumeSlider = new Slider();        
+volumeSlider.setPrefWidth(70);
+volumeSlider.setMaxWidth(Region.USE_PREF_SIZE);
+volumeSlider.setMinWidth(30);
+ 
+mediaBar.getChildren().add(volumeSlider);
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Add more import statements shown in Example 3-6 to the top of the file.</p> 
+        <div class="example">
+         <a id="JFXMD139" name="JFXMD139"></a>
+         <a id="sthref12" name="sthref12"></a> 
+         <p class="titleinexample">Example 3-6 Add More Import Statements</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+      </ol> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXMD140" name="JFXMD140"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref13" name="sthref13"></a> 
+      <h2 class="sect1">Add the Functional Logic Code</h2> 
+      <p>After all the controls have been created and added to the control panel, add the functional logic to manage the media playback and make your application interactive.</p> 
+      <ol> 
+       <li> <p>Add the event handler and listener for the Play button. Copy and paste the lines of code in <a href="#BABHHBEB">Example 3-7</a> after the <code>final Button playButton = new Button(&quot;&gt;&quot;)</code> line and before the <code>mediaBar.getChildren().add(playButton)</code> line.</p> 
+        <div class="example">
+         <a id="BABHHBEB" name="BABHHBEB"></a>
+         <a id="JFXMD141" name="JFXMD141"></a> 
+         <p class="titleinexample">Example 3-7 Add Play Button's Event Handler and Listener</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+playButton.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+    public void handle(ActionEvent e) {
+        Status status = mp.getStatus();
+ 
+        if (status == Status.UNKNOWN  || status == Status.HALTED)
+        {
+           // don't do anything in these states
+           return;
+<span class="bold">        }</span>
+ 
+          if ( status == Status.PAUSED
+             || status == Status.READY
+             || status == Status.STOPPED)
+          {
+             // rewind the movie if we're sitting at the end
+             if (atEndOfMedia) {
+                mp.seek(mp.getStartTime());
+                atEndOfMedia = false;
+             }
+             mp.play();
+             } else {
+               mp.pause();
+             }
+         }
+   });
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>The import statements used by the code you just added from <a href="#BABHHBEB">Example 3-7</a> could have been added beforehand to avoid getting errors. But this time, to eliminate all of marked errors, press Ctrl+Shift+I or right-click anywhere and select Fix Imports. From the Fix All Imports dialog, select <code>javafx.event.ActionEvent</code>, <code>javafx.scene.media.MediaPlayer.Status</code>, and <code>javafx.event.EventHandler</code> from the drop-down menus. Click OK.</p> </li> 
+       <li> <p>Add the following lines of code immediately after the lines of code you added from <a href="#BABHHBEB">Example 3-7</a> and before the line that says <code>mediaBar.getChildren().add(playButton)</code>. This code will handle the listener.</p> 
+        <div class="example">
+         <a id="JFXMD142" name="JFXMD142"></a>
+         <a id="sthref14" name="sthref14"></a> 
+         <p class="titleinexample">Example 3-8 Add Listener Code</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+        mp.currentTimeProperty().addListener(new InvalidationListener() <br />        {
+            public void invalidated(Observable ov) {
+                updateValues();
+            }
+        });
+ 
+        mp.setOnPlaying(new Runnable() {
+            public void run() {
+                if (stopRequested) {
+                    mp.pause();
+                    stopRequested = false;
+                } else {
+                    playButton.setText(&quot;||&quot;);
+                }
+            }
+        });
+ 
+        mp.setOnPaused(new Runnable() {
+            public void run() {
+                System.out.println(&quot;onPaused&quot;);
+                playButton.setText(&quot;&gt;&quot;);
+            }
+        });
+ 
+        mp.setOnReady(new Runnable() {
+            public void run() {
+                duration = mp.getMedia().getDuration();
+                updateValues();
+            }
+        });
+ 
+        mp.setCycleCount(repeat ? MediaPlayer.INDEFINITE : 1);
+        mp.setOnEndOfMedia(new Runnable() {
+            public void run() {
+                if (!repeat) {
+                    playButton.setText(&quot;&gt;&quot;);
+                    stopRequested = true;
+                    atEndOfMedia = true;
+                }
+            }
+       });
+</pre>
+        </div> 
+        <!-- class="example" --> <p>Note that the errors that appear will be fixed by adding more code in the next steps.</p> </li> 
+       <li> <p>Add listener for the time slider by adding the following code snippet after the line that says <code>timeSlider.setMaxWidth(Double.MAX_VALUE)</code> and before the line that says <code>mediaBar.getChildren().add(timeSlider)</code>.</p> 
+        <div class="example">
+         <a id="JFXMD143" name="JFXMD143"></a>
+         <a id="sthref15" name="sthref15"></a> 
+         <p class="titleinexample">Example 3-9 Add Listener for Time Slider</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+timeSlider.valueProperty().addListener(new InvalidationListener() {
+    public void invalidated(Observable ov) {
+       if (timeSlider.isValueChanging()) {
+       // multiply duration by percentage calculated by slider position
+          mp.seek(duration.multiply(timeSlider.getValue() / 100.0));
+       }
+    }
+});
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Add listener for the volume slider control by adding the following code snippet after the line that says <code>volumeSlider.setMinWidth(30)</code> and before the <code>mediabar.getChildren().add(volumeSlider)</code>.</p> 
+        <div class="example">
+         <a id="JFXMD144" name="JFXMD144"></a>
+         <a id="sthref16" name="sthref16"></a> 
+         <p class="titleinexample">Example 3-10 Add Listener for the Volume Control</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+volumeSlider.valueProperty().addListener(new InvalidationListener() {
+    public void invalidated(Observable ov) {
+       if (volumeSlider.isValueChanging()) {
+           mp.setVolume(volumeSlider.getValue() / 100.0);
+       }
+    }
+});
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Create Method updateValues used by the playback controls. Add it after the <code>public MediaControl()</code> method.</p> 
+        <div class="example">
+         <a id="JFXMD145" name="JFXMD145"></a>
+         <a id="sthref17" name="sthref17"></a> 
+         <p class="titleinexample">Example 3-11 Add UpdateValues Method</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+protected void updateValues() {
+  if (playTime != null &amp;&amp; timeSlider != null &amp;&amp; volumeSlider != null) {
+     Platform.runLater(new Runnable() {
+        public void run() {
+          Duration currentTime = mp.getCurrentTime();
+          playTime.setText(formatTime(currentTime, duration));
+          timeSlider.setDisable(duration.isUnknown());
+          if (!timeSlider.isDisabled() <br />            &amp;&amp; duration.greaterThan(Duration.ZERO) 
+            &amp;&amp; !timeSlider.isValueChanging()) {
+              timeSlider.setValue(currentTime.divide(duration).toMillis()
+                  * 100.0);
+          }
+          if (!volumeSlider.isValueChanging()) {
+            volumeSlider.setValue((int)Math.round(mp.getVolume() 
+                  * 100));
+          }
+        }
+     });
+  }
+}
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Add the <code>private method formatTime()</code> that calculates the elapsed time the media has been playing and formats it to be displayed on the control toolbar.</p> 
+        <div class="example">
+         <a id="JFXMD146" name="JFXMD146"></a>
+         <a id="sthref18" name="sthref18"></a> 
+         <p class="titleinexample">Example 3-12 Add Method for Calculating Elapsed Time</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+private static String formatTime(Duration elapsed, Duration duration) {
+   int intElapsed = (int)Math.floor(elapsed.toSeconds());
+   int elapsedHours = intElapsed / (60 * 60);
+   if (elapsedHours &gt; 0) {
+       intElapsed -= elapsedHours * 60 * 60;
+   }
+   int elapsedMinutes = intElapsed / 60;
+   int elapsedSeconds = intElapsed - elapsedHours * 60 * 60 
+                           - elapsedMinutes * 60;
+ 
+   if (duration.greaterThan(Duration.ZERO)) {
+      int intDuration = (int)Math.floor(duration.toSeconds());
+      int durationHours = intDuration / (60 * 60);
+      if (durationHours &gt; 0) {
+         intDuration -= durationHours * 60 * 60;
+      }
+      int durationMinutes = intDuration / 60;
+      int durationSeconds = intDuration - durationHours * 60 * 60 - 
+          durationMinutes * 60;
+      if (durationHours &gt; 0) {
+         return String.format(&quot;%d:%02d:%02d/%d:%02d:%02d&quot;, 
+            elapsedHours, elapsedMinutes, elapsedSeconds,
+            durationHours, durationMinutes, durationSeconds);
+      } else {
+          return String.format(&quot;%02d:%02d/%02d:%02d&quot;,
+            elapsedMinutes, elapsedSeconds,durationMinutes, 
+                durationSeconds);
+      }
+      } else {
+          if (elapsedHours &gt; 0) {
+             return String.format(&quot;%d:%02d:%02d&quot;, elapsedHours, 
+                    elapsedMinutes, elapsedSeconds);
+            } else {
+                return String.format(&quot;%02d:%02d&quot;,elapsedMinutes, 
+                    elapsedSeconds);
+            }
+        }
+    }
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Lastly, fix the imports. Right-click in any white space and select <code>javafx.application.Platform</code> and <code>javafx.beans.Observable</code> from the Fix All Imports dialog. Click OK.</p> </li> 
+      </ol> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXMD147" name="JFXMD147"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref19" name="sthref19"></a> 
+      <h2 class="sect1">Modify the EmbeddedMediaPlayer.java</h2> 
+      <p>To add the control, modify the EmbeddedMediaPlayer.java file that you created in the previous chapter and add the code to add the MediaControl object.</p> 
+      <ol> 
+       <li> <p>Copy the lines of code in <a href="#BABCBACI">Example 3-13</a> and paste them right after the <code>mediaPlayer.setAutoPlay(true)</code> line.</p> 
+        <div class="example">
+         <a id="BABCBACI" name="BABCBACI"></a>
+         <a id="JFXMD148" name="JFXMD148"></a> 
+         <p class="titleinexample">Example 3-13 Add the Source Code to Create MediaControl Object</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+MediaControl mediaControl = new MediaControl(mediaPlayer);
+scene.setRoot(mediaControl);
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Delete the three lines shown in <a href="#BABGGHCH">Example 3-14</a>, which previously created the <code>mediaView</code> and <code>mediaPlayer</code> objects.</p> 
+        <div class="example">
+         <a id="BABGGHCH" name="BABGGHCH"></a>
+         <a id="JFXMD149" name="JFXMD149"></a> 
+         <p class="titleinexample">Example 3-14 Delete Lines of Code</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+ // create mediaView and add media player to the viewer
+ MediaView mediaView = new MediaView(mediaPlayer);
+     ((Group)scene.getRoot()).getChildren().add(mediaView);
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Adjust the size of the scene's height to accommodate the addition of the media controls.</p> 
+        <div class="example">
+         <a id="JFXMD150" name="JFXMD150"></a>
+         <a id="sthref20" name="sthref20"></a> 
+         <p class="titleinexample">Example 3-15 Change the Scene's Height</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Scene scene = new Scene(root, 540, 241);
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+      </ol> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXMD151" name="JFXMD151"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref21" name="sthref21"></a> 
+      <h2 class="sect1">Compile and Run the EmbeddedMedia</h2> 
+      <p>Now build the application you just created in the previous section and run it.</p> 
+      <ol> 
+       <li> <p>Right-click the EmbeddedMediaPlayer project node and select Clean and Build.</p> </li> 
+       <li> <p>If there are no build errors, right-click the node again and select Run. The media player with control appears, similar to <a href="#CIHFIFBH">Figure 3-2</a> and begins to play.</p> 
+        <div class="figure">
+         <a id="CIHFIFBH" name="CIHFIFBH"></a>
+         <a id="JFXMD152" name="JFXMD152"></a> 
+         <p class="titleinfigure">Figure 3-2 Media Player with Playback Controls</p> 
+         <img src="img/media-with-controls.gif" alt="Description of Figure 3-2 follows" title="Description of Figure 3-2 follows" longdesc="img_text/media-with-controls.htm" />
+         <br /> 
+         <br /> 
+         <br />
+        </div> 
+        <!-- class="figure" --></li> 
+       <li> <p>Stop and resume the video using the play/pause control button. Move forwards or backwards through the video using the progress bar. Adjust the volume using the volume control button.<br /> <br /> Find the complete application code in the <a href="EmbeddedMediaPlayer.zip">EmbeddedMediaPlayer.zip</a> file.</p> </li> 
+      </ol> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-media.htm">About This Tutorial</a></li>
+      <li><a href="overview.htm">Introduction to JavaFX Media</a></li>
+      <li><a href="simpleplayer.htm">Embedding Media Into a Web Page</a></li>
+      <li class=" active"><a href="playercontrol.htm">Controlling Media Player</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/media/EmbeddedMediaPlayer.zip">EmbeddedMediaPlayer.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

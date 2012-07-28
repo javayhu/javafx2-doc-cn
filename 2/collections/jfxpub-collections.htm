@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Using JavaFX Collections &middot; Using JavaFX Collections &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX Collections</h1>
+     <p class=" lead">Using JavaFX Collections</p>
+     <ul class=" pager"></ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="sthref2" name="sthref2"></a>  
+     <p>This tutorial describes the JavaFX Collections API — an extension of the Java Collections Framework — providing code samples that you can compile and run. This tutorial begins with a short review of the relevant classes and interfaces from the Java Collections Framework, then explains how the JavaFX Collections API extends them to provide additional behavior. For an in-depth tutorial on Java Collections, see the Collections trail of the Java Tutorial at <code><a href="../../../../docs.oracle.com/javase/tutorial/collections/default.htm">http://docs.oracle.com/javase/tutorial/collections/</a></code>.</p> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref3" name="sthref3"></a> 
+      <h2 class="sect1">Reviewing Java Collections Basics</h2> 
+      <p>This section summarizes the <code>java.util.List</code> and <code>java.util.Map</code> interfaces, and the <code>java.util.Collections</code> class. If you are already familiar with Java Collections, skip to the next section entitled <a href="#CIHEJJFH">Learning JavaFX Collections</a>.</p> 
+      <p><span class="bold">List</span></p> 
+      <p>A <code>List</code> is an ordered collection of objects, represented by the <code>java.util.List</code> interface. The objects in a <code>List</code> are called its <span class="italic">elements</span>, and duplicate elements can exist in the same <code>List</code>. The <code>List</code> interface defines a number of useful methods, enabling you to add elements, access or change elements at a particular index, create sublists, search for an element within a list, clear a list, and more.</p> 
+      <p>Example 1 demonstrates these methods with a <code>List</code> of <code>String</code> objects:</p> 
+      <div class="example">
+       <a id="sthref4" name="sthref4"></a> 
+       <p class="titleinexample">Example 1 Using a List</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package collectionsdemo;
+ 
+import java.util.List;
+import java.util.ArrayList;
+ 
+public class CollectionsDemo {
+ 
+    public static void main(String[] args) {
+ 
+        // Create a List.
+        System.out.println(&quot;Creating the List...&quot;);
+        List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+        list.add(&quot;String one&quot;);
+        list.add(&quot;String two&quot;);
+        list.add(&quot;String three&quot;);
+ 
+        // Print out contents.
+        printElements(list);
+        
+        // Set a new element at index 0.
+        System.out.println(&quot;Setting an element...&quot;);
+        list.set(0, &quot;A new String&quot;);
+        printElements(list);
+        
+        // Search for the newly added String.
+        System.out.println(&quot;Searching for content...&quot;);
+        System.out.print(&quot;Contains \&quot;A new String\&quot;? &quot;);
+        System.out.println(list.contains(&quot;A new String&quot;));
+        System.out.println(&quot;&quot;);
+        
+        // Create a sublist.
+        System.out.println(&quot;Creating a sublist...&quot;);
+        list = list.subList(1,3);
+        printElements(list);
+        
+        // Clear all elements.
+        System.out.println(&quot;Clearing all elements...&quot;);
+        list.clear();
+        printElements(list);
+    }
+    
+    private static void printElements(List&lt;String&gt; list) {
+        System.out.println(&quot;Size: &quot;+list.size());
+        for (Object o : list) {
+            System.out.println(o.toString());
+        }
+        System.out.println(&quot;&quot;);
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The output from Example 1 is as follows:</p> 
+      <p><code>Creating the List...</code></p> 
+      <p><code>Size: 3</code></p> 
+      <p><code>String one</code></p> 
+      <p><code>String two</code></p> 
+      <p><code>String three</code></p> 
+      <p><code>Setting an element...</code></p> 
+      <p><code>Size: 3</code></p> 
+      <p><code>A new String</code></p> 
+      <p><code>String two</code></p> 
+      <p><code>String three</code></p> 
+      <p><code>Searching for content...</code></p> 
+      <p><code>Contains &quot;A new String&quot;? true</code></p> 
+      <p><code>Creating a sublist...</code></p> 
+      <p><code>Size: 2</code></p> 
+      <p><code>String two</code></p> 
+      <p><code>String three</code></p> 
+      <p><code>Clearing all elements...</code></p> 
+      <p><code>Size: 0</code></p> 
+      <p>This program first instantiates an <code>ArrayList</code> (a concrete implementation of the <code>List</code> interface) and assigns it to the <code>list</code> variable. Next, three <code>String</code> objects are added to the list by invoking its <code>add</code> method. (At various points throughout its execution, the program prints out the elements by invoking a custom <code>private static</code> method named <code>printElements</code>.) The line <code>list.set(0,&quot;A new String&quot;)</code> replaces the original <code>String</code> object at the first index position with a new <code>String</code> object. The <code>contains</code> method reports whether or not the specified element is present in the <code>List</code>, and the <code>sublist</code> method returns a new <code>List</code> from the range specified by the given index values. Finally, the <code>clear</code> method removes all elements from the <code>List</code>.</p> 
+      <p><span class="bold">Map</span></p> 
+      <p>A <code>Map</code> is an object that maps keys to values. A <code>Map</code> can not contain duplicate keys; each key can map to only one value. You can put keys and values into a <code>Map</code>, then retrieve a value by passing in its key. For example, the key <span class="italic">apple</span> might return <span class="italic">fruit</span>, whereas <span class="italic">carrot</span> might return <span class="italic">vegetable</span>.</p> 
+      <p>Example 2 demonstrates these methods with a <code>Map</code> of <code>String</code> objects:</p> 
+      <div class="example">
+       <a id="sthref5" name="sthref5"></a> 
+       <p class="titleinexample">Example 2 Using a Map</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package collectionsdemo;
+ 
+import java.util.Map;
+import java.util.HashMap;
+ 
+public class CollectionsDemo {
+ 
+    public static void main(String[] args) {
+        
+        // Create a Map.
+        Map&lt;String,String&gt; map = new HashMap&lt;String,String&gt;();
+        map.put(&quot;apple&quot;, &quot;fruit&quot;);
+        map.put(&quot;carrot&quot;,&quot;vegetable&quot;);
+        System.out.println(&quot;Size: &quot;+map.size());
+        System.out.println(&quot;Empty? &quot;+map.isEmpty());
+        
+        // Pass in keys; print out values.
+        System.out.println(&quot;Passing in keys and printing out values...&quot;);
+        System.out.println(&quot;Key is apple, value is: &quot;+map.get(&quot;apple&quot;));
+        System.out.println(&quot;Key is carrot, value is: &quot;+map.get(&quot;carrot&quot;));
+        System.out.println(&quot;&quot;);
+        
+        // Check keys and values.
+        System.out.println(&quot;Inspecting keys and values:&quot;);
+        System.out.println(&quot;Contains key \&quot;apple\&quot;? &quot;+
+               map.containsKey(&quot;apple&quot;));
+        System.out.println(&quot;Contains key \&quot;carrot\&quot;? &quot;+
+               map.containsKey(&quot;carrot&quot;));
+        System.out.println(&quot;Contains key \&quot;fruit\&quot;? &quot;+
+               map.containsKey(&quot;fruit&quot;));
+        System.out.println(&quot;Contains key \&quot;vegetable\&quot;? &quot;+
+               map.containsKey(&quot;vegetable&quot;));
+        System.out.println(&quot;Contains value \&quot;apple\&quot;? &quot;+
+               map.containsValue(&quot;apple&quot;));
+        System.out.println(&quot;Contains value \&quot;carrot\&quot;? &quot;+
+               map.containsValue(&quot;carrot&quot;));
+        System.out.println(&quot;Contains value \&quot;fruit\&quot;? &quot;+
+               map.containsValue(&quot;fruit&quot;));
+        System.out.println(&quot;Contains value \&quot;vegetable\&quot;? &quot;+
+               map.containsValue(&quot;vegetable&quot;));
+        System.out.println(&quot;&quot;);
+        
+        // Remove objects from the map.
+        System.out.println(&quot;Removing apple from the map...&quot;);
+        map.remove(&quot;apple&quot;);
+        System.out.println(&quot;Size: &quot;+map.size());
+        System.out.println(&quot;Contains key \&quot;apple\&quot;? &quot;+
+               map.containsKey(&quot;apple&quot;));
+        System.out.println(&quot;Invoking map.clear()...&quot;);
+        map.clear();
+        System.out.println(&quot;Size: &quot;+map.size());
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The output of Example 2 is as follows:</p> 
+      <p><code>Size: 2</code></p> 
+      <p><code>Empty? false</code></p> 
+      <p><code>Passing in keys and printing out values...</code></p> 
+      <p><code>Key is apple, value is: fruit</code></p> 
+      <p><code>Key is carrot, value is: vegetable</code></p> 
+      <p><code>Inspecting keys and values:</code></p> 
+      <p><code>Contains key &quot;apple&quot;? true</code></p> 
+      <p><code>Contains key &quot;carrot&quot;? true</code></p> 
+      <p><code>Contains key &quot;fruit&quot;? false</code></p> 
+      <p><code>Contains key &quot;vegetable&quot;? false</code></p> 
+      <p><code>Contains value &quot;apple&quot;? false</code></p> 
+      <p><code>Contains value &quot;carrot&quot;? false</code></p> 
+      <p><code>Contains value &quot;fruit&quot;? true</code></p> 
+      <p><code>Contains value &quot;vegetable&quot;? true</code></p> 
+      <p><code>Removing apple from the map...</code></p> 
+      <p><code>Size: 1</code></p> 
+      <p><code>Contains key &quot;apple&quot;? false</code></p> 
+      <p><code>Invoking map.clear()...</code></p> 
+      <p><code>Size: 0</code></p> 
+      <p>This program first instantiates a <code>HashMap</code> (a concrete implementation of the <code>Map</code> interface) and assigns it to the <code>map</code> variable. Key-value pairs are then added to <code>map</code> by invoking its <code>put</code> method. The program then obtains (and prints out) some information about the map by invoking <code>size()</code> and <code>isEmpty()</code>. The program also demonstrates how to obtain the value for a given key (for example, <code>map.get(&quot;apple&quot;)</code> returns the value <span class="italic">fruit</span>). The <code>containsKey</code> and <code>containsValue</code> methods demonstrate how to test if a particular key or value is present, and the <code>clear</code> method removes all of the key-value mappings.</p> 
+      <p><span class="bold">Collections</span></p> 
+      <p>In addition to the methods found in <code>List</code> and <code>Map</code>, the <code>Collections</code> class exposes a number of static utility methods that operate on or return collections. Example 3 demonstrates a few such methods by creating a <code>List</code>, then using the <code>Collections</code> class to reverse, swap, and sort its elements.</p> 
+      <div class="example">
+       <a id="sthref6" name="sthref6"></a> 
+       <p class="titleinexample">Example 3 Using the Collections Class</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package collectionsdemo;
+ 
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+ 
+public class CollectionsDemo {
+ 
+    public static void main(String[] args) {
+        System.out.println(&quot;Creating the list...&quot;);
+        List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+        list.add(&quot;a&quot;);
+        list.add(&quot;b&quot;);
+        list.add(&quot;c&quot;);
+        list.add(&quot;d&quot;);
+        printElements(list);
+        System.out.println(&quot;Reversing the elements...&quot;);
+        Collections.reverse(list);
+        printElements(list);
+ 
+        System.out.println(&quot;Swapping the elements around...&quot;);
+        Collections.swap(list, 0, 3);
+        Collections.swap(list, 2, 0);
+        printElements(list);
+ 
+        System.out.println(&quot;Alphabetically sorting the elements...&quot;);
+        Collections.sort(list);
+        printElements(list);
+    }
+ 
+    private static void printElements(List&lt;String&gt; list) {
+        for (Object o : list) {
+            System.out.println(o.toString());
+        }
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The output of Example 3 is as follows:</p> 
+      <p><code>Creating the list...</code></p> 
+      <p><code>a</code></p> 
+      <p><code>b</code></p> 
+      <p><code>c</code></p> 
+      <p><code>d</code></p> 
+      <p><code>Reversing the elements...</code></p> 
+      <p><code>d</code></p> 
+      <p><code>c</code></p> 
+      <p><code>b</code></p> 
+      <p><code>a</code></p> 
+      <p><code>Swapping the elements around...</code></p> 
+      <p><code>b</code></p> 
+      <p><code>c</code></p> 
+      <p><code>a</code></p> 
+      <p><code>d</code></p> 
+      <p><code>Alphabetically sorting the elements...</code></p> 
+      <p><code>a</code></p> 
+      <p><code>b</code></p> 
+      <p><code>c</code></p> 
+      <p><code>d</code></p> 
+      <p>This program first adds the letters <span class="italic">a</span> <span class="italic">b</span> <span class="italic">c</span> and <span class="italic">d</span> to a <code>List</code>, again using <code>ArrayList</code> as the concrete implementation.) It then reverses the elements of the list by invoking <code>Collections.reverse(list)</code>. To swap the elements around within the <code>List</code>, the program invokes the <code>Collections.swap</code> method (For example, <code>Collections.swap(list,0,3)</code> swaps the elements at index positions 0 and 3. Finally, the <code>Collections.sort()</code> method alphabetically sorts the elements.</p> 
+      <p>Having reviewed the most relevant areas of the Java Collections Framework, you are now ready to learn how Collections are represented in JavaFX.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="CIHEJJFH" name="CIHEJJFH"></a> 
+      <h2 class="sect1">Learning JavaFX Collections</h2> 
+      <p>Collections in JavaFX are defined by the <code>javafx.collections</code> package, which consists of the following interfaces and classes:</p> 
+      <p><span class="bold">Interfaces</span></p> 
+      <p><code>ObservableList</code>: A list that enables listeners to track changes when they occur</p> 
+      <p><code>ListChangeListener</code>: An interface that receives notifications of changes to an <code>ObservableList</code></p> 
+      <p><code>ObservableMap</code>: A map that enables observers to track changes when they occur</p> 
+      <p><code>MapChangeListener</code>: An interface that receives notifications of changes to an <code>ObservableMap</code></p> 
+      <p><span class="bold">Classes</span></p> 
+      <p><code>FXCollections</code>: A utility class that consists of static methods that are one-to-one copies of <code>java.util.Collections</code> methods</p> 
+      <p><code>ListChangeListener.Change</code>: Represents a change made to an <code>ObservableList</code></p> 
+      <p><code>MapChangeListener.Change</code>: Represents a change made to an <code>ObservableMap</code></p> 
+      <p>The following section explains how to use these interfaces and classes</p> 
+      <p>Using ObservableList, ObservableMap, and FXCollections</p> 
+      <p>The <code>javafx.collections.ObservableList</code> and <code>javafx.collections.ObservableMap</code> interfaces both extend <code>javafx.beans.Observable</code> (and <code>java.util.List</code> or <code>java.util.Map</code>, respectively) to provide a <code>List</code> or <code>Map</code> that supports observability. If you look at the API specification for either of these interfaces, you will find methods for adding or removing the appropriate listeners (<code>ListChangeListener</code> for <code>ObservableList</code>, and <code>MapChangeListener for ObservableMap</code>). Unlike the previous <code>List</code> and <code>Map</code> examples — which used <code>ArrayList</code> and <code>HashMap</code> as their concrete implementations — Example 4 uses the <code>javafx.collections.FXCollections</code> class to create and return the <code>ObservableList</code> and <code>ObservableMap</code> objects.</p> 
+      <div class="example">
+       <a id="sthref7" name="sthref7"></a> 
+       <p class="titleinexample">Example 4 Using an ObservableList</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package collectionsdemo;
+ 
+import java.util.List;
+import java.util.ArrayList;
+import javafx.collections.ObservableList;
+import javafx.collections.ListChangeListener;
+import javafx.collections.FXCollections;
+ 
+public class CollectionsDemo {
+ 
+    public static void main(String[] args) {
+ 
+        // Use Java Collections to create the List.
+        List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+ 
+        // Now add observability by wrapping it with ObservableList.
+    ObservableList&lt;String&gt; observableList = FXCollections.observableList(list);
+        observableList.addListener(new ListChangeListener() {
+ 
+            @Override
+            public void onChanged(ListChangeListener.Change change) {
+                System.out.println(&quot;Detected a change! &quot;);
+            }
+        });
+ 
+        // Changes to the observableList WILL be reported.
+        // This line will print out &quot;Detected a change!&quot;
+        observableList.add(&quot;item one&quot;);
+ 
+        // Changes to the underlying list will NOT be reported
+        // Nothing will be printed as a result of the next line.
+        list.add(&quot;item two&quot;);
+ 
+        System.out.println(&quot;Size: &quot;+observableList.size());
+ 
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>In Example 4, a standard <code>List</code> is first created. It is then wrapped with an <code>ObservableList</code>, which is obtained by passing the list to <code>FXCollections.observableList(list)</code>. A <code>ListChangeListener</code> is then registered, and will receive notification whenever a change is made on the <code>ObservableList</code>.</p> 
+      <p>You can listen for changes on an <code>ObservableMap</code> in a similar manner, as shown in Example 5.</p> 
+      <div class="example">
+       <a id="sthref8" name="sthref8"></a> 
+       <p class="titleinexample">Example 5 Using ObservableMap</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package collectionsdemo;
+ 
+import java.util.Map;
+import java.util.HashMap;
+import javafx.collections.ObservableMap;
+import javafx.collections.MapChangeListener;
+import javafx.collections.FXCollections;
+ 
+public class CollectionsDemo {
+ 
+    public static void main(String[] args) {
+ 
+        // Use Java Collections to create the List.
+        Map&lt;String,String&gt; map = new HashMap&lt;String,String&gt;();
+ 
+        // Now add observability by wrapping it with ObservableList.
+    ObservableMap&lt;String,String&gt; observableMap = FXCollections.observableMap(map);
+        observableMap.addListener(new MapChangeListener() {
+            @Override
+            public void onChanged(MapChangeListener.Change change) {
+                System.out.println(&quot;Detected a change! &quot;);
+            }
+        });
+ 
+        // Changes to the observableMap WILL be reported.
+        observableMap.put(&quot;key 1&quot;,&quot;value 1&quot;);
+        System.out.println(&quot;Size: &quot;+observableMap.size());
+        
+        // Changes to the underlying map will NOT be reported.
+        map.put(&quot;key 2&quot;,&quot;value 2&quot;);
+        System.out.println(&quot;Size: &quot;+observableMap.size());
+ 
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>And finally, you can you use the static utility methods from either <code>Collections</code> or <code>FXCollections</code> (for example, to reverse the elements of a list). Keep in mind, however, that the <code>FXCollections</code> class will yield the smallest number of change notifications (usually one) when its methods are invoked. Invoking <code>Collections</code> methods, on the other hand, might result in multiple change notifications, as shown in Example 6.</p> 
+      <div class="example">
+       <a id="sthref9" name="sthref9"></a> 
+       <p class="titleinexample">Example 6 Collections Vs. FXCollections Change Notifications</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package collectionsdemo;
+ 
+import java.util.List;
+import java.util.ArrayList;
+import javafx.collections.ObservableList;
+import javafx.collections.ListChangeListener;
+import javafx.collections.FXCollections;
+ 
+public class CollectionsDemo {
+ 
+    public static void main(String[] args) {
+ 
+        // Use Java Collections to create the List
+        List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+        list.add(&quot;d&quot;);
+        list.add(&quot;b&quot;);
+        list.add(&quot;a&quot;);
+        list.add(&quot;c&quot;);
+        
+        // Now add observability by wrapping it with ObservableList
+       ObservableList&lt;String&gt; observableList = FXCollections.observableList(list);
+        observableList.addListener(new ListChangeListener() {
+            @Override
+            public void onChanged(ListChangeListener.Change change) {
+                System.out.println(&quot;Detected a change! &quot;);
+            }
+        });
+        
+        // Sort using FXCollections
+        FXCollections.sort(observableList);
+        
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>In Example 6, the line <code>FXCollections.sort(obervableList)</code> alphabetically sorts the <code>String</code> objects in the list, and prints only one change notification to the screen; but if you use <code>Collections.sort(observableList)</code>, the change notification is printed four times.</p> 
+      <p>When using a <code>ListChangeListener</code> or <code>MapChangeListener</code>, the <code>onChanged</code> method always contains an object that encapsulates information about the change. This is an instance of <code>ListChangeListener.Change</code> (for <code>ObservableList</code>) or <code>MapChangeListener.Change</code> (for <code>ObservableMap</code>). When working with <code>ListChangeListener.Change</code>, always wrap any calls to the change object in a loop that invokes <code>change.next()</code>. Example 7 provides a demonstration.</p> 
+      <div class="example">
+       <a id="sthref10" name="sthref10"></a> 
+       <p class="titleinexample">Example 7 Querying a ListChangeListener.Change Object</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+...
+// This code will work with any of the previous ObservableList examples
+observableList.addListener(new ListChangeListener() {
+ 
+@Override
+public void onChanged(ListChangeListener.Change change) {
+    System.out.println(&quot;Detected a change! &quot;);
+    while (change.next()) {
+        System.out.println(&quot;Was added? &quot; + change.wasAdded());
+        System.out.println(&quot;Was removed? &quot; + change.wasRemoved());
+        System.out.println(&quot;Was replaced? &quot; + change.wasReplaced());
+        System.out.println(&quot;Was permutated? &quot; + change.wasPermutated());
+        }
+    }
+});
+
+...
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Example 7 invokes various methods on the <code>ListChangeListener.Change</code> object. The most important point to remember is that a <code>ListChangeListener.Change</code> object can contain multiple changes, and therefore must be iterated by calling its <code>next()</code> method in a <code>while</code> loop. Note, however, that <code>MapChangeListener.Change</code> objects will only contain a change that represents the <code>put</code> or <code>remove</code> operation that was performed.</p> 
+      <p>For a detailed description of the methods of <code>ListChangeListener.Change</code> or <code>MapChangeListener.Change</code>, see the API Specification at <code><a href="../../../../docs.oracle.com/javafx/2.0/api/index.html">http://docs.oracle.com/javafx/2.0/api/index.html</a></code>.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li class=" active"><a href="jfxpub-collections.htm">Using JavaFX Collections</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

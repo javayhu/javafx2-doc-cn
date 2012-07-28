@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>JavaFX Packager Command-Line Syntax &middot; Deploying JavaFX Applications &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Deploying JavaFX Applications</h1>
+     <p class=" lead">JavaFX Packager Command-Line Syntax</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="packager.htm">←上一篇</a></li>
+      <li class=" next"><a href="javafx_ant_task_reference.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CCHHBCIE" name="CCHHBCIE"></a>
+     <a id="JFXDP166" name="JFXDP166"></a> 
+     <hr /> 
+     <div class="refsect1">
+      <!-- infolevel="all" infotype="General" -->  
+      <p>For basic information about packaging and the JavaFX Packager tool, see the following pages:</p> 
+      <ul> 
+       <li> <p><a href="packaging.htm#BABFECGG">Packaging</a></p> </li> 
+       <li> <p><a href="packager.htm#CCHIHIIJ">The JavaFX Packager Tool</a></p> </li> 
+      </ul> 
+      <a id="sthref52" name="sthref52"></a> 
+      <p class="titleinrefsubsect">Syntax</p> 
+      <p class="synopsis">javafxpackager <span class="variable">-taskcommand</span> <span class="variable">[-options]</span></p> 
+      <a id="sthref53" name="sthref53"></a> 
+      <p class="titleinrefsubsect">Commands</p> 
+      <p>The following commands are supported:</p> 
+      <ul> 
+       <li> <p><a href="#CCHHABJJ">javafxpackager -createbss</a></p> </li> 
+       <li> <p><a href="#CCHJFHAJ">javafxpackager -createjar</a></p> </li> 
+       <li> <p><a href="#CCHBIHJC">javafxpackager -deploy</a></p> </li> 
+       <li> <p><a href="#CCHIFAII">javafxpackager -makeall</a></p> </li> 
+       <li> <p><a href="#CCHDAFJJ">javafxpackager -signjar</a></p> </li> 
+      </ul> 
+      <p>Each command has its own set of options.</p> 
+      <a id="CCHHABJJ" name="CCHHABJJ"></a>
+      <a id="JFXDP192" name="JFXDP192"></a> 
+      <hr /> 
+      <h2 class="refsect2">javafxpackager -createbss</h2> 
+      <p>Converts a CSS file into binary form.</p> 
+      <a id="sthref54" name="sthref54"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>The <code>-createbss</code> command can be invoked independently when you only want to convert CSS files to binary form. This command does not need to be used when you use the -createjar command to create the JAR file, which by default converts all CSS files to binary format.</p> 
+      <a id="sthref55" name="sthref55"></a> 
+      <p class="titleinrefsubsect">Input File Types</p> 
+      <p>CSS files</p> 
+      <a id="CCHBEGJI" name="CCHBEGJI"></a> 
+      <p class="titleinrefsubsect">Options for the -createbss Command</p> 
+      <p>Minimally, specify the input and output files as options.</p> 
+      <dl> 
+       <dt>
+        -outdir 
+        <span class="variable">&lt;dir&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Name of the directory in which output files are generated.</p> 
+       </dd> 
+       <dt>
+        -srcdir 
+        <span class="variable">&lt;dir&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Base directory of the files to package.</p> 
+       </dd> 
+       <dt>
+        -srcfiles 
+        <span class="variable">&lt;files&gt;</span>
+       </dt> 
+       <dd> 
+        <p>List of files in the <code>-srcdir</code> option. If omitted, all files in the directory specified in <code>srcdir</code> are packaged. For example, the following option includes both the temp\out.jar file and the content of the temp\dir2 and tmp directories:</p> 
+        <p><code>-srcdir temp -srcfiles out.jar;dir2 -srcdir tmp</code></p> 
+       </dd> 
+       <dt>
+        -v
+       </dt> 
+       <dd> 
+        <p>Verbose. Displays more information while processing the command.</p> 
+       </dd> 
+      </dl> 
+      <a id="CCHCFFAB" name="CCHCFFAB"></a> 
+      <p class="titleinrefsubsect">Example of -createbss Command</p> 
+      <dl> 
+       <dd>
+        <a id="JFXDP506" name="JFXDP506"></a>
+        <a id="sthref56" name="sthref56"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 1&nbsp;&nbsp;&nbsp;-createbss Command Usage
+       </dt> 
+       <dd> 
+        <p class="synopsis">javafxpackager -createbss -srcdir src\css -srcfiles stylesheet.css -outdir styles -outfile stylesheet</p> 
+        <p>Converts the stylesheet named stylesheet.css in the src\css directory to binary format, assigns it the name stylesheet, and places the binary file named stylesheet.bss in the directory named styles under the main application folder.</p> 
+       </dd> 
+      </dl> 
+      <a id="CCHJFHAJ" name="CCHJFHAJ"></a>
+      <a id="JFXDP193" name="JFXDP193"></a> 
+      <hr /> 
+      <h2 class="refsect2">javafxpackager -createjar</h2> 
+      <p>Produces a JAR archive according to other parameters specified as options.</p> 
+      <a id="sthref57" name="sthref57"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>The Create JAR command in the JavaFX Packager tool packages files into an executable JAR file that contains the application.</p> 
+      <p>Other options are described in <a href="#CCHHFIII">Options for the -createjar command</a> on the command line reference page. For an example of the <code>-createjar</code> command, see <a href="#CCHIFHCJ">-createjar Command Usage</a>.</p> 
+      <p>By default, CSS files are converted to binary format, but you can use the option <code>-nocss2bin</code> to avoid the binary conversion.</p> 
+      <p>By default, the Create JAR command also inserts the JavaFX Launcher into the JAR archive. The JavaFX Launcher is responsible for locating the installed JavaFX Runtime and invoking the main application class using this Runtime. The JavaFX Launcher also enables the JAR file to be run by double-clicking the file. Use the <code>-noembedlauncher</code> option to keep the launcher from being embedded.</p> 
+      <a id="sthref58" name="sthref58"></a> 
+      <p class="titleinrefsubsect">Input File Types</p> 
+      <p>Compiled classes and other application resources.</p> 
+      <div align="center"> 
+       <div class="inftblnotealso">
+        <br /> 
+        <table class="NoteAlso oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+         <tbody> 
+          <tr> 
+           <td align="left"> <p class="notep1">Tip:</p> <p>To compile JavaFX source files, put the jfxrt.jar library in the classpath and use the standard javac command in the Java Development Kit (JDK). For javac command line documentation, see</p> <p><code><a href="../../../../docs.oracle.com/javase/6/docs/technotes/tools/windows/javac.html">http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javac.html</a></code></p> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <br />
+       </div> 
+       <!-- class="inftblnotealso" -->
+      </div> 
+      <a id="CCHHFIII" name="CCHHFIII"></a> 
+      <p class="titleinrefsubsect">Options for the -createjar command</p> 
+      <p>The information in angle brackets describes the value required.</p> 
+      <dl> 
+       <dt>
+        -appclass 
+        <span class="variable">&lt;application class&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Qualified name of the application class to be executed.</p> 
+       </dd> 
+       <dt>
+        -classpath &lt;files&gt;
+       </dt> 
+       <dd> 
+        <p>List of dependent JAR file names. If the application consists of multiple JAR files, then <code>classpath</code> needs to be present for the launcher to find code in other JAR files. List all of your application JAR files here, including JAR files of libraries needed for your application.</p> 
+       </dd> 
+       <dt>
+        -manifestAttrs 
+        <span class="variable">&lt;manifest attributes&gt;</span>
+       </dt> 
+       <dd> 
+        <p>List of additional manifest attributes. Syntax: <code>&quot;name1=value1,name2=value2,name3=value3&quot;</code></p> 
+       </dd> 
+       <dt>
+        -nocss2bin
+       </dt> 
+       <dd> 
+        <p>Do not convert CSS files to binary form before copying to the JAR file.</p> 
+       </dd> 
+       <dt>
+        -noembedlauncher
+       </dt> 
+       <dd> 
+        <p>Do not add the JavaFX launcher classes to the JAR file.</p> 
+       </dd> 
+       <dt>
+        -outdir 
+        <span class="variable">&lt;dir&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Name of the directory in which output files are generated.</p> 
+       </dd> 
+       <dt>
+        -outfile 
+        <span class="variable">&lt;file name&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Name of the output file, without the extension.</p> 
+       </dd> 
+       <dt>
+        -preloader &lt;preloader class&gt;
+       </dt> 
+       <dd> 
+        <p>Qualified name of the preloader class to be executed. The information affects the manifest; use this option when you plan to use a preloader with a standalone application.</p> 
+       </dd> 
+       <dt>
+        -runtimeversion 
+        <span class="variable">&lt;version&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Requires a particular version of the JavaFX Runtime.</p> 
+       </dd> 
+       <dt>
+        -srcdir 
+        <span class="variable">&lt;dir&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Base directory of the files to package.</p> 
+       </dd> 
+       <dt>
+        -srcfiles 
+        <span class="variable">&lt;files&gt;</span>
+       </dt> 
+       <dd> 
+        <p>List of files in the <code>-srcdir</code> option. If omitted, all files in the directory specified in <code>srcdir</code> are packaged. List auxiliary resources using a semicolon as the separator.</p> 
+        <p>The following example includes both the temp\out.jar file and the content of the temp\dir2 and tmp directories:</p> 
+        <p><code>-srcdir temp -srcfiles out.jar;dir2 -srcdir tmp</code></p> 
+       </dd> 
+       <dt>
+        -v
+       </dt> 
+       <dd> 
+        <p>Verbose. Displays more information while processing the command.</p> 
+       </dd> 
+      </dl> 
+      <a id="CCHJFHHA" name="CCHJFHHA"></a> 
+      <p class="titleinrefsubsect">Example of -createjar Command</p> 
+      <a id="CCHHCFEH" name="CCHHCFEH"></a> 
+      <dl> 
+       <dd>
+        <a id="JFXDP167" name="JFXDP167"></a>
+        <a id="CCHIFHCJ" name="CCHIFHCJ"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 1&nbsp;&nbsp;&nbsp;-createjar Command Usage
+       </dt> 
+       <dd> 
+        <p class="synopsis">javafxpackager -createjar -appclass package.class</p> 
+        <p class="synopsis">-srcdir classes -outdir out -outfile outjar -v</p> 
+        <p>Packages the content of the classes directory to the application JAR file and sets the application class to <span class="variable">package.class</span>.</p> 
+       </dd> 
+      </dl> 
+      <a id="CCHBIHJC" name="CCHBIHJC"></a>
+      <a id="JFXDP195" name="JFXDP195"></a> 
+      <hr /> 
+      <h2 class="refsect2">javafxpackager -deploy</h2> 
+      <p>Generates an HTML page and a deployment descriptor (JNLP) file according to other parameters specified as options.</p> 
+      <a id="sthref59" name="sthref59"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>The <code>deploy</code> command generates HTML and JNLP files for web deployment scenarios.</p> 
+      <p>For more information about web deployment files, see <a href="deploy_overview.htm#BABCGDJF">Execution Modes</a>.</p> 
+      <a id="sthref60" name="sthref60"></a> 
+      <p class="titleinrefsubsect">Input File Types</p> 
+      <p>JAR files and resources.</p> 
+      <a id="CCHJFIJA" name="CCHJFIJA"></a> 
+      <p class="titleinrefsubsect">Options for the -deploy Command</p> 
+      <p>The information in angle brackets describes the value required.</p> 
+      <dl> 
+       <dt>
+        -allpermissions
+       </dt> 
+       <dd> 
+        <p>Include the <code>&lt;all-permissions&gt;</code> tag in the JNLP file, used when the application is digitally signed.</p> 
+       </dd> 
+       <dt>
+        -appclass 
+        <span class="variable">&lt;application class&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Qualified name of the application class to be executed.</p> 
+       </dd> 
+       <dt>
+        -appId
+       </dt> 
+       <dd> 
+        <p>Application ID of the application for template processing.</p> 
+       </dd> 
+       <dt>
+        -argument 
+        <span class="variable">&lt;arg&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Unnamed argument to be passed to the application. Multiple arguments can be specified using multiple <code>-argument</code> options, which are added to the list of arguments in the same order as they are passed on the command line.</p> 
+       </dd> 
+       <dt>
+        -callbacks
+       </dt> 
+       <dd> 
+        <p>Specifies user callback methods in generated HTML. The syntax is:</p> 
+        <p><code>&quot;name1:value1,name2:value2,...&quot;</code></p> 
+        <p>For more information, see the Ant element <a href="javafx_ant_task_reference002.htm#CIABBIHI">&lt;fx:callback&gt;</a> and <a href="packaging.htm#BABIHHJE">Package Custom JavaScript Actions</a>.</p> 
+       </dd> 
+       <dt>
+        -description 
+        <span class="variable">&lt;description&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Description of the application.</p> 
+       </dd> 
+       <dt>
+        -embedCertificates
+       </dt> 
+       <dd> 
+        <p>Embed the certificates in the JNLP file.</p> 
+       </dd> 
+       <dt>
+        -embedjnlp
+       </dt> 
+       <dd> 
+        <p>If present, embed the deployment descriptor in the HTML document. This can improve startup time when the application is launched for the first time in a user's environment.</p> 
+       </dd> 
+       <dt>
+        -height 
+        <span class="variable">&lt;height&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Height of the application scene, in pixels.</p> 
+       </dd> 
+       <dt>
+        -htmlparamfile 
+        <span class="variable">&lt;file&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Properties file with parameters for the resulting applet.</p> 
+       </dd> 
+       <dt>
+        -includedt
+       </dt> 
+       <dd> 
+        <p>Copies Deployment Toolkit files to a subdirectory of <code>outdir</code> called web-files. This option is useful for offline development but is not advised for production.</p> 
+       </dd> 
+       <dt>
+        -isExtension
+       </dt> 
+       <dd> 
+        <p>Treats the files named in <code>srcfiles</code> as extensions. In other words, the packaged component is not the main application, such as utilities or resource JAR files. If present, only a portion of the deployment descriptor is generated, and the HTML file is not generated. For more information about extension descriptors, see <a href="packaging.htm#BABJGFBH">Sign the JAR Files</a>.</p> 
+       </dd> 
+       <dt>
+        -name 
+        <span class="variable">&lt;name&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Name of the application. This information appears as the heading on the HTML page. If the name has a space, enclose the string in quotation marks.</p> 
+       </dd> 
+       <dt>
+        -outdir 
+        <span class="variable">&lt;dir&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Name of the directory in which output files are generated.</p> 
+       </dd> 
+       <dt>
+        -outfile 
+        <span class="variable">&lt;file name&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Name of the output files, without a file extension.</p> 
+       </dd> 
+       <dt>
+        -paramfile 
+        <span class="variable">&lt;file&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Properties file with parameters for the deployment descriptor.</p> 
+       </dd> 
+       <dt>
+        -preloader &lt;preloader class&gt;
+       </dt> 
+       <dd> 
+        <p>Qualified name of the preloader class to be executed. The information affects the deployment descriptor (JNLP); use when you plan to use a preloader with applications launched from or in a web page.</p> 
+       </dd> 
+       <dt>
+        -srcdir 
+        <span class="variable">&lt;dir&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Base directory of the files to package.</p> 
+       </dd> 
+       <dt>
+        -srcfiles 
+        <span class="variable">&lt;files&gt;</span>
+       </dt> 
+       <dd> 
+        <p>List of JAR files to be used as the source. When used after <code>-srcdir</code>, then the file names are treated as relative to <code>-srcdir</code>. Only JAR files listed in <code>-srcfiles</code> are included in the deployment descriptor (JNLP file). Separate multiple JAR files with a comma. Example:</p> 
+        <p><code>-srcfiles app.jar;lib/preloader.jar</code></p> 
+       </dd> 
+       <dt>
+        -templateInFilename
+       </dt> 
+       <dd> 
+        <p>Name of the HTML input template file. Placeholders are in the form of</p> 
+        <p><code>#XXXX.YYYY[(APPID)]#</code></p> 
+        <p>For more information, see the Ant task <a href="javafx_ant_task_reference002.htm#CIACACDA">&lt;fx:template&gt;</a> description and <a href="packaging.htm#BABCDFAJ">Web Page Templates</a>.</p> 
+       </dd> 
+       <dt>
+        -templateOutFilename
+       </dt> 
+       <dd> 
+        <p>Name of the HTML file in which to write the filled-in template.</p> 
+       </dd> 
+       <dt>
+        -title 
+        <span class="variable">&lt;title&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Title of the application.</p> 
+       </dd> 
+       <dt>
+        -updatemode 
+        <span class="variable">&lt;enumerated_value&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Indicates the preferences for when checks for application updates are performed for embedded and Web Start applications.</p> 
+        <p>A value of <code>always</code> means to always check for updates before launching the application.</p> 
+        <p>A value of <code>background</code> means to launch the application while checking for updates in the background.</p> 
+        <p>See <a href="packaging.htm#CEGBADCB">Background Update Check for the Application</a>.</p> 
+       </dd> 
+       <dt>
+        -v
+       </dt> 
+       <dd> 
+        <p>Verbose. Displays more information while processing the command.</p> 
+       </dd> 
+       <dt>
+        -vendor 
+        <span class="variable">&lt;vendor&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Vendor of the application.</p> 
+       </dd> 
+       <dt>
+        -width 
+        <span class="variable">&lt;width&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Width of the application scene, in pixels.</p> 
+       </dd> 
+      </dl> 
+      <a id="sthref61" name="sthref61"></a> 
+      <p class="titleinrefsubsect">Example of -deploy Command</p> 
+      <dl> 
+       <dd>
+        <a id="JFXDP196" name="JFXDP196"></a>
+        <a id="sthref62" name="sthref62"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 1&nbsp;&nbsp;&nbsp;-deploy Command Usage
+       </dt> 
+       <dd> 
+        <p class="synopsis">javafxpackager -deploy -outdir dist -outfile Sample</p> 
+        <p class="synopsis">-width 800 -height 600 -srcdir dist</p> 
+        <p class="synopsis">-srcfiles AnimatedCircles.jar;lib/somelibrary.jar;preloader.jar</p> 
+        <p class="synopsis">-appclass animatedcircles.AnimatedCircles -name &quot;Animated Circles&quot;</p> 
+        <p class="synopsis">-title &quot;Animated Circles Demonstration&quot; -vendor Oracle -embedjnlp -v</p> 
+        <p>Generates an application package for an application called Animated Circles. The fully qualified name of the main application class is <code>animatedcircles.AnimatedCircles</code>. Puts artifacts in the dist folder. The output directory dist-web will contain AnimatedCircles.html and AnimatedCircles.jnlp, plus AnimatedCircles.jar, preloader.jar and the library lib/somelibrary.jar. When embedded in a web page, the application will have the dimensions 800 px x 600 px.</p> 
+       </dd> 
+      </dl> 
+      <a id="CCHIFAII" name="CCHIFAII"></a>
+      <a id="JFXDP197" name="JFXDP197"></a> 
+      <hr /> 
+      <h2 class="refsect2">javafxpackager -makeall</h2> 
+      <p>Compiles source code and combines the <code>-createjar</code> and <code>-deploy</code> commands, with simplified options.</p> 
+      <div align="center"> 
+       <div class="inftblnotealso">
+        <br /> 
+        <table class="NoteAlso oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+         <tbody> 
+          <tr> 
+           <td align="left"> <p class="notep1">Tip:</p> <p>This command is handy when you are testing an application under development that does not need a digital signature.</p> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <br />
+       </div> 
+       <!-- class="inftblnotealso" -->
+      </div> 
+      <a id="sthref63" name="sthref63"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>The command-line version of the JavaFX Packager tool has a convenience <code>-makeall</code> command, which produces deployment files with minimal configuration. The <code>-makeall</code> command performs the following tasks:</p> 
+      <ul> 
+       <li> <p>Compiles the source files</p> </li> 
+       <li> <p>Runs the <code>-createjar</code> command, which by default includes converting the CSS files to their binary form.</p> </li> 
+       <li> <p>Runs the <code>-deploy</code> command, which generates the JNLP and HTML files.</p> </li> 
+      </ul> 
+      <p>The <code>-makeall</code> command presumes all the application input files are located in the src directory and places the result files in the dist directory. The output files are always named dist. You can set a limited number of other options, described in <a href="#CCHCCBIC">Options for the -makeall Command</a> on the command line reference page. For a wider variety of options, run the <code>-createjar</code> and <code>-deploy</code> commands instead.</p> 
+      <p>Before calling the packaging (Create Jar) and deployment tasks, the <code>-makeall</code> command compiles the source files. For compilation, it searches for a JDK installation, giving preference to directories specified by the <code>JAVA_HOME</code> or <code>java.home</code> system variables and for a JavaFX SDK installation in directories specified by the <code>JAVAFX_HOME</code> or <code>javafx.home</code> system variables. However, in most cases you do not need to specify these environment variables.</p> 
+      <a id="sthref64" name="sthref64"></a> 
+      <p class="titleinrefsubsect">Input File Types</p> 
+      <p>JavaFX code files and other application resources. Files must be in a directory called src under the main application directory. The output directory is predefined as dist, and the output files are all named dist.</p> 
+      <a id="CCHCCBIC" name="CCHCCBIC"></a> 
+      <p class="titleinrefsubsect">Options for the -makeall Command</p> 
+      <dl> 
+       <dt>
+        -appclass 
+        <span class="variable">&lt;application class&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Qualified name of the application class to be executed.</p> 
+       </dd> 
+       <dt>
+        -classpath &lt;files&gt;
+       </dt> 
+       <dd> 
+        <p>List of dependent JAR file names. If the application consists of multiple JAR files, then <code>classpath</code> needs to be present for the launcher to find code in other JAR files. List all of your application JAR files here, including JAR files of libraries needed for your application.</p> 
+       </dd> 
+       <dt>
+        -height 
+        <span class="variable">&lt;height&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Height of the application scene, in pixels.</p> 
+       </dd> 
+       <dt>
+        -name 
+        <span class="variable">&lt;name&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Name of the application. This information appears as the heading on the HTML page. If the name has a space, enclose the string in quotation marks. Not that this option does not affect the output file names.</p> 
+       </dd> 
+       <dt>
+        -preloader &lt;preloader class&gt;
+       </dt> 
+       <dd> 
+        <p>Qualified name of the preloader class to be executed.</p> 
+       </dd> 
+       <dt>
+        -v
+       </dt> 
+       <dd> 
+        <p>Verbose. Displays more information while processing the command.</p> 
+       </dd> 
+       <dt>
+        -width 
+        <span class="variable">&lt;width&gt;</span>
+       </dt> 
+       <dd> 
+        <p>Width of the application scene, in pixels.</p> 
+       </dd> 
+      </dl> 
+      <a id="sthref65" name="sthref65"></a> 
+      <p class="titleinrefsubsect">Examples of Usage</p> 
+      <p>For an example of the <code>-makeall</code> command, see <a href="deploy_quick_start.htm#CIHIHJJB">JavaFX Packager Command-Line Tool</a> on the <a href="deploy_quick_start.htm#BABJCFHC">Getting Started</a> page.</p> 
+      <a id="CCHDAFJJ" name="CCHDAFJJ"></a>
+      <a id="JFXDP194" name="JFXDP194"></a> 
+      <hr /> 
+      <h2 class="refsect2">javafxpackager -signjar</h2> 
+      <p>Digitally signs JAR files and attaches a certificate.</p> 
+      <a id="sthref66" name="sthref66"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>This command signs a JAR file with a certificate you provide. There are options to specify the keystore file, key alias in the keystore, keystore password, key password, and type of keystore.</p> 
+      <p>For more information about digitally signing files, see the Java Tutorial lesson “Signing Code and Granting It Permissions” at</p> 
+      <p><code><a href="../../../../docs.oracle.com/javase/tutorial/security/toolsign/index.html">http://docs.oracle.com/javase/tutorial/security/toolsign/index.html</a></code></p> 
+      <a id="CCHBFEHA" name="CCHBFEHA"></a> 
+      <p class="titleinrefsubsect">Options for the -signjar Command</p> 
+      <dl> 
+       <dt>
+        -alias
+       </dt> 
+       <dd> 
+        <p>Alias for the key.</p> 
+       </dd> 
+       <dt>
+        -keyPass
+       </dt> 
+       <dd> 
+        <p>Password for recovering the key.</p> 
+       </dd> 
+       <dt>
+        -keyStore &lt;file&gt;
+       </dt> 
+       <dd> 
+        <p>Keystore file name.</p> 
+       </dd> 
+       <dt>
+        -outdir &lt;dir&gt;
+       </dt> 
+       <dd> 
+        <p>Name of the directory to generate output files to.</p> 
+       </dd> 
+       <dt>
+        -storePass
+       </dt> 
+       <dd> 
+        <p>-keyPassPassword to check integrity of the keystore or unlock the keystore.</p> 
+       </dd> 
+       <dt>
+        -storeType
+       </dt> 
+       <dd> 
+        <p>Keystore type. The default value is <code>jks</code>.</p> 
+       </dd> 
+       <dt>
+        -srcdir &lt;dir&gt;
+       </dt> 
+       <dd> 
+        <p>Base directory of the files to pack.</p> 
+       </dd> 
+       <dt>
+        -srcfiles &lt;files&gt;
+       </dt> 
+       <dd> 
+        <p>List of files in the <code>-srcdir</code> option. If omitted, all files in the directory specified in <code>srcdir</code> are packaged. The following option includes both the temp\out.jar file and the content of the temp\dir2 and tmp directories:</p> 
+        <p><code>-srcdir temp -srcfiles out.jar;dir2 -srcdir tmp</code></p> 
+       </dd> 
+       <dt>
+        -v
+       </dt> 
+       <dd> 
+        <p>Verbose. Displays more information while processing the command.</p> 
+       </dd> 
+      </dl> 
+      <a id="CCHIGDEE" name="CCHIGDEE"></a> 
+      <p class="titleinrefsubsect">Example of -signjar Command</p> 
+      <a id="CCHCBCJJ" name="CCHCBCJJ"></a> 
+      <dl> 
+       <dd>
+        <a id="JFXDP507" name="JFXDP507"></a>
+        <a id="sthref67" name="sthref67"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 1&nbsp;&nbsp;&nbsp;-signjar Command Usage
+       </dt> 
+       <dd> 
+        <p>This example matches the Ant task in <a href="javafx_ant_task_reference001.htm#CIAGCJFJ">Sign JAR Files</a>. It signs all of the JAR files in the dist directory, attaches a certificate with the specified alias, keyStore and storePass, and puts the signed JAR files back into the dist directory.</p> 
+        <p class="synopsis">javafxpackager -signjar --outdir dist -keyStore sampleKeystore.jks</p> 
+        <p class="synopsis">-storePass **** -alias javafx -keypass **** -srcdir dist</p> 
+       </dd> 
+      </dl> 
+     </div> 
+     <!-- class="refsect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-deployment.htm">About This Guide</a></li>
+      <li><a href="deploy_quick_start.htm">Getting Started</a></li>
+      <li><a href="deploy_overview.htm">Application Execution Modes</a></li>
+      <li><a href="deploy_user_experience.htm">Application Startup</a></li>
+      <li><a href="packaging.htm">Packaging</a></li>
+      <li><a href="deployment_toolkit.htm">Deployment in the Browser</a></li>
+      <li><a href="javafx_javascript.htm">JavaFX and JavaScript</a></li>
+      <li><a href="preloaders.htm">Preloaders</a></li>
+      <li><a href="deploy_swing_apps.htm">JavaFX in Swing Applications</a></li>
+      <li><a href="packager.htm">The JavaFX Packager Tool</a></li>
+      <li class=" active"><a href="packager001.htm">JavaFX Packager Command-Line Syntax</a></li>
+      <li><a href="javafx_ant_task_reference.htm">JavaFX Ant Tasks</a></li>
+      <li><a href="javafx_ant_task_reference001.htm">Reference: JavaFX Ant Tasks</a></li>
+      <li><a href="javafx_ant_task_reference002.htm">Reference: JavaFX Ant Helper Parameters</a></li>
+      <li><a href="troubleshooting.htm">Troubleshooting</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

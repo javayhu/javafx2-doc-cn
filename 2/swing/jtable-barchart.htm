@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Enriching Swing Applications with JavaFX Functionality &middot; JavaFX for Swing Developers &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>JavaFX for Swing Developers</h1>
+     <p class=" lead">Enriching Swing Applications with JavaFX Functionality</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="swing-fx-interoperability.htm">←上一篇</a></li>
+      <li class=" next"><a href="media-player.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CHDBHIJJ" name="CHDBHIJJ"></a>  
+     <p>This chapter continues the topic of Swing and JavaFX integration and provides an example of how to enrich an existing Swing application by adding JavaFX functionality. You learn how to intermix a Swing table and JavaFX bar chart in a single application.</p> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref18" name="sthref18"></a> 
+      <h2 class="sect1">Sample Swing Application</h2> 
+      <p>Many real-world projects employ Swing applications that deal with tables. You can continue using the existing code and still take an advantage of JavaFX APIs. For example, you can add a JavaFX bar chart to provide a colorful illustration of the tabular data. This chapter provides the <code>SwingInterop</code> example that handles a Swing table and a JavaFX bar chart. As you change the data in a table cell, the bar chart immediately updates.</p> 
+      <p>Start with the sample application that has only the Swing table shown in <a href="#BABCFGAI">Figure 3-1</a>.</p> 
+      <div class="figure">
+       <a id="BABCFGAI" name="BABCFGAI"></a> 
+       <p class="titleinfigure">Figure 3-1 Swing JTable Application Window</p> 
+       <img src="img/jtable.jpg" alt="Description of Figure 3-1 follows" title="Description of Figure 3-1 follows" longdesc="img_text/jtable.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>This application consists of two classes:</p> 
+      <ul> 
+       <li> <p><code>SampleTableModel.java</code></p> </li> 
+       <li> <p><code>SwingInterop.java</code></p> </li> 
+      </ul> 
+      <p>The <code>SampleTableModel</code> class inherits from the <code>AbstractTableModel</code> class and defines the table.</p> 
+      <p>The <code>SwingInterop</code> class inherits from the <code>JApplet</code> class and is the basic class of the application. Its <code>main</code> method calls the <code>run</code> method on the Event Dispatch Thread (EDT) to create the graphical user interface (GUI). The <code>run</code> method creates a JFrame object and a JApplet object, and initializes the JApplet object with an instance of the <code>SwingInterop</code> class. Then it calls the <code>init</code> method, which creates the table and adds the table to the content pane of the applet.</p> 
+      <p>You can see the implementation of both classes by using the links in the sidebar.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <a id="sthref20" name="sthref20"></a> 
+      <h2 class="sect1">Integrating JavaFX Bar Chart</h2> 
+      <p>To provide data for a bar chart, modify the <code>SampleTableModel</code> class by adding a new class variable (<code>bcData</code>) and a method that retrieves data from the table and returns the data in the format appropriate for the bar chart. The implementation of the <code>getBarChartData</code> method is shown in <a href="#BABJAEIF">Example 3-1</a>.</p> 
+      <div class="example">
+       <a id="BABJAEIF" name="BABJAEIF"></a> 
+       <p class="titleinexample">Example 3-1</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.chart.BarChart;
+
+public class SampleTableModel extends AbstractTableModel {
+    private static ObservableList&lt;BarChart.Series&gt; bcData;
+
+    public ObservableList&lt;BarChart.Series&gt; getBarChartData() {
+        if (bcData == null) {
+            bcData = FXCollections.&lt;BarChart.Series&gt;observableArrayList();
+            for (int row = 0; row &lt; getRowCount(); row++) {
+                ObservableList&lt;BarChart.Data&gt; series =
+FXCollections.&lt;BarChart.Data&gt;observableArrayList();
+                for (int column = 0; column &lt; getColumnCount(); column++) {
+                    series.add(new BarChart.Data(getColumnName(column),
+getValueAt(row, column)));
+                }
+                bcData.add(new BarChart.Series(series));
+            }
+        }
+        return bcData;
+    }
+//rest of the SampleTableModel class code
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The <code>SwingInterop</code> class overrides the <code>JApplet.init</code> method to create the content pane of the application. Modify the <code>init</code> method to create a JFXPanel object to hold the JavaFX bar chart and a JSplitPane object to hold both the JavaFX chart and the table. The required changes to the <code>init</code> method are shown in bold in <a href="#BABCGBJC">Example 3-2</a>.</p> 
+      <div class="example">
+       <a id="BABCGBJC" name="BABCGBJC"></a> 
+       <p class="titleinexample">Example 3-2</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+@Override
+public void init() {
+    tableModel = new SampleTableModel();
+    // create javafx panel for charts
+    <span class="bold">chartFxPanel = new JFXPanel();</span>
+<span class="bold">    chartFxPanel.setPreferredSize(new Dimension(PANEL_WIDTH_INT, PANEL_HEIGHT_INT));</span>
+
+    //create JTable
+    JTable table = new JTable(tableModel);
+    table.setAutoCreateRowSorter(true);
+    table.setGridColor(Color.DARK_GRAY);
+    SwingInterop.DecimalFormatRenderer renderer = 
+new SwingInterop.DecimalFormatRenderer();
+    renderer.setHorizontalAlignment(JLabel.RIGHT);
+    for (int i = 0; i &lt; table.getColumnCount(); i++) {
+        table.getColumnModel().getColumn(i).setCellRenderer(renderer);
+    }
+    JScrollPane tablePanel = new JScrollPane(table);
+    tablePanel.setPreferredSize(new Dimension(PANEL_WIDTH_INT, 
+TABLE_PANEL_HEIGHT_INT));
+    JPanel chartTablePanel = new JPanel();
+    chartTablePanel.setLayout(new BorderLayout());
+
+    //Create split pane that holds both the bar chart and table
+    JSplitPane jsplitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+    jsplitPane.setTopComponent(chartTablePanel);
+    jsplitPane.setBottomComponent(tablePanel);
+    jsplitPane.setDividerLocation(410);
+    chartTablePanel.add(chartFxPanel, BorderLayout.CENTER);
+
+    //Add the split pane to the content pane of the application
+    add(<span class="bold">jsplitPane</span>, BorderLayout.CENTER);
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>To get rid of a syntax error, add import statements and the definition of the <code>chartFxPanel</code> class variable to the <code>SwingInterop</code> class as shown in <a href="#BABCFGFH">Example 3-3</a>.</p> 
+      <div class="example">
+       <a id="BABCFGFH" name="BABCFGFH"></a> 
+       <p class="titleinexample">Example 3-3</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.embed.swing.JFXPanel;
+import javax.swing.*;
+
+public class SwingInterop extends JApplet {
+    private static JFXPanel chartFxPanel;
+// rest of the SwingInterop class code here
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>You prepared the UI of your Swing application to render JavaFX data. The next step is creating the JavaFX scene. Because the JavaFX scene must be created on the JavaFX Application thread, wrap your code into a Runnable object as shown in <a href="#BABDDFDJ">Example 3-4</a>. Add this code at the end of the <code>init</code> method.</p> 
+      <div class="example">
+       <a id="BABDDFDJ" name="BABDDFDJ"></a> 
+       <p class="titleinexample">Example 3-4</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Platform.runLater(new Runnable() {
+    @Override
+    public void run() {
+        createScene();
+    }
+});
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Add the import statement shown in <a href="#CHDFDHEA">Example 3-5</a> to the <code>SwingInterop</code> class.</p> 
+      <div class="example">
+       <a id="CHDFDHEA" name="CHDFDHEA"></a> 
+       <p class="titleinexample">Example 3-5</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Platform;
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Implement the <code>createScene</code> method of the <code>SwingInterop</code> class as shown in <a href="#BABBAIIG">Example 3-6</a>. Add the import statements and define the instance variable <code>chart</code>.</p> 
+      <div class="example">
+       <a id="BABBAIIG" name="BABBAIIG"></a> 
+       <p class="titleinexample">Example 3-6</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.scene.Scene;
+import javafx.scene.chart.Chart;
+
+private void createScene() {
+    chart = createBarChart();
+    chartFxPanel.setScene(new Scene(chart));
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The <code>createBarChart</code> method creates the chart diagram and adds a change listener to the table. Note that any change of JavaFX data must happen on the JavaFX thread. For this reason, wrap the code in the event handler, which updates the JavaFX chart, into a Runnable object and pass it to the <code>Platform.runLater</code> method. The implementation of the <code>createBarChart</code> method is shown in <a href="#BABDCCJC">Example 3-7</a>.</p> 
+      <div class="example">
+       <a id="BABDCCJC" name="BABDCCJC"></a> 
+       <p class="titleinexample">Example 3-7</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+private BarChart createBarChart() {
+    CategoryAxis xAxis = new CategoryAxis();
+xAxis.setCategories(FXCollections.&lt;String&gt;observableArrayList(tableModel.
+getColumnNames()));
+    xAxis.setLabel(&quot;Year&quot;);
+    double tickUnit = tableModel.getTickUnit();
+    
+    NumberAxis yAxis = new NumberAxis();
+    yAxis.setTickUnit(tickUnit);
+    yAxis.setLabel(&quot;Units Sold&quot;);
+
+    final BarChart chart = new BarChart(xAxis, yAxis, tableModel.getBarChartData());
+    tableModel.addTableModelListener(new TableModelListener() {
+    
+        public void tableChanged(TableModelEvent e) {
+            if (e.getType() == TableModelEvent.UPDATE) {
+                final int row = e.getFirstRow();
+                final int column = e.getColumn();
+                final Object value = 
+((SampleTableModel) e.getSource()).getValueAt(row, column);
+                
+                Platform.runLater(new Runnable() {
+                    public void run() {
+                        XYChart.Series&lt;String, Number&gt; s = 
+(XYChart.Series&lt;String, Number&gt;) chart.getData().get(row);
+                        BarChart.Data data = s.getData().get(column);
+                        data.setYValue(value);
+                    }
+                });
+             }
+         }
+    });
+    return chart;
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Add the import statements shown in <a href="#BABBGABB">Example 3-8</a>.</p> 
+      <div class="example">
+       <a id="BABBGABB" name="BABBGABB"></a> 
+       <p class="titleinexample">Example 3-8</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.collections.FXCollections;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Rename the title of the frame to &quot;Swing JTable and Bar Chart&quot; and run the <code>SwingInterop</code> application.</p> 
+      <p>The application window is shown in <a href="#BABIDCEG">Figure 3-2</a>.</p> 
+      <div class="figure">
+       <a id="BABIDCEG" name="BABIDCEG"></a> 
+       <p class="titleinfigure">Figure 3-2 SwingInterop Application Window</p> 
+       <img src="img/barchart.jpg" alt="Description of Figure 3-2 follows" title="Description of Figure 3-2 follows" longdesc="img_text/barchart.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-swing.htm">About This Tutorial</a></li>
+      <li><a href="overview.htm">The JavaFX Advantage for Swing Developers</a></li>
+      <li><a href="swing-fx-interoperability.htm">Integrating JavaFX into Swing Applications</a></li>
+      <li class=" active"><a href="jtable-barchart.htm">Enriching Swing Applications with JavaFX Functionality</a></li>
+      <li><a href="media-player.htm">Leveraging Applications with Media Features</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/swing/SimpleSwingBrowser.zip">SimpleSwingBrowser.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/swing/SwingInterop.zip">SwingInterop.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/swing/MediaPlayer.zip">MediaPlayer.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

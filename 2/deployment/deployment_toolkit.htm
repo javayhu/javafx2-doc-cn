@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Deployment in the Browser &middot; Deploying JavaFX Applications &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Deploying JavaFX Applications</h1>
+     <p class=" lead">Deployment in the Browser</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="packaging.htm">←上一篇</a></li>
+      <li class=" next"><a href="javafx_javascript.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="BABJHEJA" name="BABJHEJA"></a>
+     <a id="JFXDP336" name="JFXDP336"></a>  
+     <a id="JFXDP524" name="JFXDP524"></a> 
+     <p>This page explains how to deploy JavaFX applications in the browser using the Deployment Toolkit. The chapter includes an API overview, information about the callback methods, and typical examples of use.</p> 
+     <p>The recommended way to embed a JavaFX application into a web page or launch it from inside a web browser is to use the Deployment Toolkit library.</p> 
+     <p>The Deployment Toolkit provides a JavaScript API to simplify web deployment of JavaFX applications and improve the end user experience with getting the application to start.</p> 
+     <p>In addition to providing functionality to add HTML tags needed to insert JavaFX content into the web page, the Deployment Toolkit also does the following:</p> 
+     <ul> 
+      <li> <p>Detects whether the user environment is supported</p> </li> 
+      <li> <p>Offers to install the JavaFX Runtime if needed</p> </li> 
+      <li> <p>Provides visual feedback to the user while the application is loaded</p> </li> 
+      <li> <p>Reports to the user in case of unexpected error</p> </li> 
+      <li> <p>Provides other helper APIs to the developer, which can be used to simplify deployment and integration with the web page</p> </li> 
+     </ul> 
+     <p>The recommended way to use the Deployment Toolkit is to import the Deployment Toolkit JavaScript file from a shared location at</p> 
+     <p>http://java.com/js/dtjava.js.</p> 
+     <p>This way your application always uses the latest recommended way to integrate into a web page. If you cannot use the shared location, you can include the necessary files with your application by using the <code>includeDT</code> option in the <a href="javafx_ant_task_reference001.htm#CIABIFCI">&lt;fx:deploy&gt;</a> Ant task.</p> 
+     <p>Note that for the majority of simple use cases, most if not all of the code needed for deployment is generated by JavaFX packaging tools (see <a href="packaging.htm#BABBBEJH">JavaFX Packaging Tools</a>), and you can use callbacks to tune default behavior further. However, if you need more flexibility, you can use the Deployment Toolkit APIs directly.</p> 
+     <p>This page contains the following topics:</p> 
+     <ul> 
+      <li> <p><a href="#BABDJDEC">Section 5.1, &quot;API Overview&quot;</a></p> </li> 
+      <li> <p><a href="#BABFBEFG">Section 5.2, &quot;Callbacks&quot;</a></p> </li> 
+      <li> <p><a href="#FBJHAIHG">Section 5.3, &quot;Examples&quot;</a></p> </li> 
+     </ul> 
+     <a id="BABDJDEC" name="BABDJDEC"></a>
+     <a id="JFXDP412" name="JFXDP412"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">5.1</span> API Overview</h2> 
+      <p>The Deployment Toolkit API provides several important methods:</p> 
+      <ul> 
+       <li> <p><code>dtjava.embed(app, platform, callbacks)</code></p> <p>Embeds the application into the browser based on a given application descriptor. If Java Runtime or JavaFX Runtime installation is required, by default it will guide the user to click to install it or click to redirect to the page to download the installer.</p> </li> 
+       <li> <p><code>dtjava.launch(app, platform, callbacks)</code></p> <p>Launches applications that are deployed outside the browser, based on a given application descriptor. If Java or JavaFX Runtime installation is required, then by default it performs the following actions:</p> 
+        <ul> 
+         <li> <p>It attempts to start the Java or JavaFX Runtime installer.</p> </li> 
+         <li> <p>If automated installation of the Runtime is not possible, it presents a popup request for the user to install manually.</p> </li> 
+        </ul> </li> 
+       <li> <p><code>dtjava.install(platform, callbacks)</code></p> <p>Initiates installation of required components according to platform requirements.</p> </li> 
+       <li> <p><code>dtjava.validate(platform)</code></p> <p>Validates that the user environment satisfies platform requirements (for example, if a required version of JavaFX is available). Returns <code>PlatformMismatchEvent</code> describing problems, if any.</p> </li> 
+       <li> <p><code>dtjava.hideSplash(id)</code></p> <p>Hides the HTML splash panel for an application with a given id. If the splash panel does not exist, this method has no effect. For JavaFX applications, this method is called automatically after the application is ready.</p> </li> 
+      </ul> 
+      <p>See the following sections for more information about arguments taken by these methods.</p> 
+      <a id="JFXDP413" name="JFXDP413"></a> 
+      <div class="sect2">
+       <a id="sthref40" name="sthref40"></a> 
+       <h3 class="sect2"><span class="secnum">5.1.1</span> Application Descriptor (dtjava.App)</h3> 
+       <p>The application launch descriptor is an instance of the <code>dtjava.App</code> object. It contains all of the details describing what needs to be launched. The <code>dtjava.App</code> constructor takes the following two parameters:</p> 
+       <p><code>dtjava.App(url, {attribute_map});</code></p> 
+       <p>The first parameter contains the required <code>url</code> attribute, which contains a URL or a relative link to the JNLP file. The second parameter contains a subset of the attributes described in the following list.</p> 
+       <ul> 
+        <li> <p><code>id</code></p> <p>Identifier of the application. Expected to be unique on the web page. If null, then it is autogenerated. Later it can be used to get the handle of the application in JavaScript code.</p> </li> 
+        <li> <p><code>jnlp_content</code></p> <p>(optional) Content of the JNLP file in BASE64 encoding.</p> </li> 
+        <li> <p><code>params</code></p> <p>The set of named parameters to pass to an application, if any. This attribute takes the following form:</p> <p><code>params: {</code> <span class="variable">variable</span><code>: '</code><span class="variable">value</span><code>' }</code></p> </li> 
+        <li> <p><code>width</code> and <code>height</code></p> <p>Dimensions used to reserve space for an embedded application. The values can be absolute (in pixels) or relative (for example, 50 or 50%).</p> </li> 
+        <li> <p><code>placeholder</code></p> <p>Reference to a DOM node, or an identifier of a DOM node, in which to embed an application.</p> </li> 
+       </ul> 
+       <div align="center"> 
+        <div class="inftblnote">
+         <br /> 
+         <table class="Note oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+          <tbody> 
+           <tr> 
+            <td align="left"> <p class="notep1">Note:</p> <p>The <code>width</code>, <code>height</code>, and <code>placeholder</code> attributes are required for applications that run in the browser (in other words, applications that use the <code>dtjava.embed()</code> method, but not for other types of deployment (applications that use the <code>dtjava.launch()</code> method).</p> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <br />
+        </div> 
+        <!-- class="inftblnote" -->
+       </div> 
+       <p><a href="#BEHBIDBE">Example 5-1</a> shows an example of application launch descriptor code for an application that will run in the browser.</p> 
+       <div class="example">
+        <a id="BEHBIDBE" name="BEHBIDBE"></a>
+        <a id="JFXDP414" name="JFXDP414"></a> 
+        <p class="titleinexample">Example 5-1 Creating a dtjava.App Object</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+var app = new dtjava.App(
+        'ssh.jnlp', 
+    {
+        id: 'SSH',
+        width: 100,
+        height: 25,
+        placeholder: 'SSH_application_container', 
+        params: { 
+            config: 'ssh_application.conf', 
+        } 
+    }
+); 
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXDP415" name="JFXDP415"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref41" name="sthref41"></a> 
+       <h3 class="sect2"><span class="secnum">5.1.2</span> Platform (dtjava.Platform)</h3> 
+       <p>Platform requirements for an application to launch are defined by the <code>dtjava.Platform</code> object. The following attributes are supported:</p> 
+       <ul> 
+        <li> <p><code>javafx</code></p> <p>The minimum JavaFX version needed. Default is <code>null</code>.</p> </li> 
+        <li> <p><code>jvm</code></p> <p>Minimum version of Java Runtime needed. Default is 1.6+.</p> </li> 
+        <li> <p><code>jvmargs</code></p> <p>List of requested JVM arguments. The default is <code>null</code>.</p> </li> 
+       </ul> 
+       <p>Version strings are treated according to the following rules:</p> 
+       <ul> 
+        <li> <p>The null version string is treated as if there is no requirement to have it installed. Validation passes whether this component is installed or not.</p> </li> 
+        <li> <p>The version pattern strings are of the form <code>#[.#[.#[_#]]][+|*]</code>, which includes strings such as <code>&quot;1.6&quot;</code>, <code>&quot;2.1*&quot;</code>, and <code>&quot;1.6.0_18+&quot;</code>.</p> </li> 
+        <li> <p>An asterisk (*) means any version within this family, where family is defined by a prefix.</p> </li> 
+        <li> <p>A plus sign (+) means any version greater or equal to the specified version.</p> </li> 
+        <li> <p>If the version pattern does not include all four version components but does not end with an asterisk or plus sign, it will be treated as if it ended with an asterisk.</p> </li> 
+       </ul> 
+       <p>To clarify differences, consider the following examples:</p> 
+       <ul> 
+        <li> <p><code>&quot;1.6.0*&quot;</code> matches 1.6.0_25 but not 1.7.0_01, whereas <code>&quot;1.6.0+&quot;</code> or <code>&quot;1.*&quot;</code> matches both.</p> </li> 
+        <li> <p><code>&quot;2.1&quot;</code> is equivalent to <code>&quot;2.1*&quot;</code>,and will match any version number beginning with &quot;2.1&quot;.</p> </li> 
+        <li> <p>Both asterisk and plus sign patterns will match any installed version of the component. However, if the component is not installed, then validation fails.</p> </li> 
+       </ul> 
+       <p><a href="#BABEHJAC">Example 5-2</a> shows a <code>dtjava.Platform</code> object:</p> 
+       <div class="example">
+        <a id="BABEHJAC" name="BABEHJAC"></a>
+        <a id="JFXDP416" name="JFXDP416"></a> 
+        <p class="titleinexample">Example 5-2 Example of a dtjava.Platform Object</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+var platform = new dtjava.Platform({
+                    javafx: &quot;2.1+&quot;,
+                   jvmargs: &quot;-Dapp.property= ? -Xmx1024m&quot;
+                 });
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>If platform requirements are not met, then <code>dtjava.PlatformMismatchEvent</code> is returned, either as a return value from the <code>validate()</code> method or passed to the <code>onDeployError</code> callback. This object provides a set of helper methods to identify root causes:</p> 
+       <ul> 
+        <li> <p><code>javafxStatus()</code></p> <p>Returns <code>ok</code> if the error was not due to a missing JavaFX Runtime. Otherwise, this method returns one of the following error codes characterizing the problem:</p> 
+         <ul> 
+          <li> <p><code>none</code></p> <p>No JavaFX runtime is detected on the system.</p> </li> 
+          <li> <p><code>old</code></p> <p>A version of JavaFX Runtime is detected, but it does not match the platform requirements.</p> </li> 
+          <li> <p><code>disabled</code></p> <p>A matching version of JavaFX Runtime is detected, but it is disabled.</p> </li> 
+          <li> <p><code>unsupported</code></p> <p>JavaFX is not supported on this platform.</p> </li> 
+         </ul> </li> 
+        <li> <p><code>jreStatus()</code></p> <p>Returns <code>ok</code> if the error was not due to a missing JRE. Otherwise, this method returns one of the following error codes characterizing the problem:</p> 
+         <ul> 
+          <li> <p><code>none</code></p> <p>No JRE was detected on the system.</p> </li> 
+          <li> <p><code>old</code></p> <p>A version of the JRE is detected, but it does not match the platform requirements.</p> </li> 
+          <li> <p><code>oldplugin</code></p> <p>A matching JRE was found, but it is configured to use a deprecated Java plug-in.</p> </li> 
+         </ul> </li> 
+        <li> <p><code>canAutoInstall()</code></p> <p>Returns <code>true</code> if the installation of missing components can be triggered automatically or if there are no missing components.</p> </li> 
+        <li> <p><code>isRelaunchNeeded()</code></p> <p>Returns <code>true</code> if a browser must be restarted before the application can be loaded. This often is true in conjunction with the need to perform an installation.</p> </li> 
+        <li> <p><code>isUnsupportedBrowser()</code></p> <p>Returns <code>true</code> if the current web browser is not supported (for example, if it is out of date).</p> </li> 
+        <li> <p><code>isUnsupportedPlatform()</code></p> <p>Returns <code>true</code> if this platform (OS/hardware) does not satisfy the supported platform requirements. For example, a JavaFX 2.0 application attempts to launch on Solaris, which is not supported.</p> </li> 
+        <li> <p><code>javafxInstallerURL (locale)</code></p> <p>Returns the URL of a page to download and install the required version of JavaFX Runtime manually. If a matching JavaFX Runtime is already installed or not supported, then the return value is <code>null</code>.</p> </li> 
+        <li> <p><code>jreInstallerURL (locale)</code></p> <p>Returns the URL of a page to visit to install the required version of Java. If a matching Java Runtime is already installed or not supported, then the return value is <code>null</code>.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BABFBEFG" name="BABFBEFG"></a>
+     <a id="JFXDP417" name="JFXDP417"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">5.2</span> Callbacks</h2> 
+      <p>The Deployment Toolkit provides a set of hooks that can be used to customize startup behavior. To use the hook, the developer must provide a callback function. The following hooks are supported:</p> 
+      <ul> 
+       <li> <p><code><a href="#BABHEEIC">onDeployError</a>: function(app, mismatchEvent)</code></p> <p>Called when platform requirements are not met.</p> </li> 
+       <li> <p><code><a href="#BABHGABF">onInstallFinished</a>: function(placeholder, component, status, relaunchNeeded)</code></p> <p>Called after the installation of a required component is completed, unless installation was started manually.</p> </li> 
+       <li> <p><code><a href="#BABBJBGB">onInstallNeeded</a>: function(app, platform, cb, isAutoinstall, needRelaunch, launchFunc)</code></p> <p>Called if embedding or launching an application needs additional components to be installed.</p> </li> 
+       <li> <p><code><a href="#BABCBJHA">onInstallStarted</a> - function(placeholder, component, isAuto, restartNeeded)</code></p> <p>Called before installation of the required component is triggered.</p> </li> 
+      </ul> 
+      <p>The following hooks are specific to embedded applications:</p> 
+      <ul> 
+       <li> <p><code><a href="#BABHJJGB">onGetNoPluginMessage</a> function(app)</code></p> <p>Called to get content to be shown in the application area if the Java plug-in is not installed and none of the callbacks have helped.</p> </li> 
+       <li> <p><code><a href="#BABEHEDE">onGetSplash</a>: function(app)</code></p> <p>For embedded applications, called to get the content of the splash panel.</p> </li> 
+       <li> <p><code><a href="#BABHJHIJ">onJavascriptReady</a>: function(id)</code></p> <p>Called after the application is ready to accept JavaScript calls.</p> </li> 
+       <li> <p><code><a href="#BABEGHCA">onRuntimeError</a>: function(id)</code></p> <p>Called if the application failed to launch.</p> </li> 
+      </ul> 
+      <a id="BABHEEIC" name="BABHEEIC"></a>
+      <a id="JFXDP418" name="JFXDP418"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">5.2.1</span> onDeployError</h3> 
+       <p>This handler can be utilized to customize error handling behavior, such as showing messages in the user's language. See the example in <a href="#BABIABAD">Create a Handler for an Unsupported Platform</a> for an example of the <code>onDeployError</code> handler.</p> 
+       <p>A callback function is called if the application cannot be deployed because the current platform does not match the given platform requirements. It is also called if a request to install missing components cannot be completed due to platform incompatibility.</p> 
+       <p>Function signature:</p> 
+       <p><code>onDeployError : function(app, mismatchEvent)</code></p> 
+       <p>The problem can be a fatal error or a transient issue, such as a required relaunch. Further details can be extracted from the <code>mismatchEvent</code> that is provided. Here are some typical combinations:</p> 
+       <ul> 
+        <li> <p>The browser is not supported by Java.</p> <p><code>mismatchEvent.isUnsupportedBrowser()</code> returns <code>true</code></p> </li> 
+        <li> <p>The browser must be restarted before the application can be launched.</p> <p><code>mismatchEvent.isRelaunchNeeded()</code> returns <code>true</code></p> </li> 
+       </ul> 
+       <p>JRE-specific codes:</p> 
+       <ul> 
+        <li> <p>JRE is not supported on this platform.</p> <p><code>mismatchEvent.jreStatus() == &quot;unsupported&quot;</code></p> </li> 
+        <li> <p>JRE is not detected and must be installed.</p> <p><code>mismatchEvent.jreStatus() == &quot;none&quot;</code></p> </li> 
+        <li> <p>The installed version of JRE does not match application requirements.</p> <p><code>mimatchEvent.jreStatus() == &quot;old&quot;</code></p> </li> 
+        <li> <p>A matching JRE is detected, but a deprecated Java plug-in is used.</p> <p><code>mimatchEvent.jreStatus() == &quot;oldplugin&quot;</code></p> </li> 
+       </ul> 
+       <p>JavaFX-specific codes:</p> 
+       <ul> 
+        <li> <p>JavaFX is not supported on this platform.</p> <p><code>mismatchEvent.javafxStatus() == &quot;unsupported&quot;</code></p> </li> 
+        <li> <p>JavaFX Runtime is missing and must be installed manually.</p> <p><code>mismatchEvent.javafxStatus() == &quot;none&quot;</code></p> </li> 
+        <li> <p>The installed version of JavaFX Runtime does not match application requirements.</p> <p><code>mismatchEvent.javafxStatus() == &quot;old&quot;</code></p> </li> 
+        <li> <p>JavaFX Runtime is installed but is disabled.</p> <p><code>mismatchEvent.javafxStatus() == &quot;disabled&quot;</code></p> </li> 
+       </ul> 
+       <p>The default error handler handles both application launch errors and embedded content.</p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABHJJGB" name="BABHJJGB"></a>
+      <a id="JFXDP419" name="JFXDP419"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">5.2.2</span> onGetNoPluginMessage</h3> 
+       <p>This handler is called to get content to be shown in the application area if the Java plug-in is not installed and none of the callbacks helped to resolve this.</p> 
+       <p>Function signature:</p> 
+       <p><code>onGetNoPluginMessag : function(app)</code></p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABEHEDE" name="BABEHEDE"></a>
+      <a id="JFXDP420" name="JFXDP420"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">5.2.3</span> onGetSplash</h3> 
+       <p>This handler gets the content of the splash panel when the application is embedded in a browser.</p> 
+       <p>Function signature:</p> 
+       <p><code>onGetSplash: function(app)</code></p> 
+       <p>Gets the application launch descriptor as input. If null is returned, then the splash panel is disabled. A non-null return value is expected to be an HTML snippet to be added into the splash overlay. Note that the splash overlay does not enforce any specific size. You must ensure that the custom splash image is sized to fit the area in which the application will run.</p> 
+       <p>For examples of customizing the splash panel, see <a href="#BABHAHED">Add a Custom HTML Splash Screen</a> and <a href="#BABHJEIF">Disable the HTML Splash Screen</a>.</p> 
+       <div align="center"> 
+        <div class="inftblnote">
+         <br /> 
+         <table class="Note oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+          <tbody> 
+           <tr> 
+            <td align="left"> <p class="notep1">Note:</p> <p>Autohiding the splash panel is only supported by JavaFX applications. If you are deploying a Swing applet, then the application must call <code>dtjava.hideSplash()</code> explicitly to hide the splash panel. See <a href="deploy_swing_apps.htm#BACBGBJB">Hide the HTML Splash Screen</a> on the Swing deployment page.</p> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <br />
+        </div> 
+        <!-- class="inftblnote" -->
+       </div> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABHGABF" name="BABHGABF"></a>
+      <a id="JFXDP421" name="JFXDP421"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">5.2.4</span> onInstallFinished</h3> 
+       <p>This handler is called after the installation of a required component is completed. This method will not be called if the installation is performed in manual mode.</p> 
+       <p>Function signature:</p> 
+       <p><code>onInstallFinished: function(placeholder, component, status, relaunchNeeded)</code></p> 
+       <p>Parameters:</p> 
+       <ul> 
+        <li> <p><code>placeholder</code>: A DOM element that was passed to <code>onInstallStarted</code> to insert visual feedback.</p> </li> 
+        <li> <p><code>component</code>: String <code>&quot;jre</code>&quot; or <code>&quot;javafx&quot;</code></p> </li> 
+        <li> <p><code>status</code>: The status code is a string categorizing the status of the installation.</p> <p>(<code>&quot;success&quot;, &quot;error:generic&quot;, &quot;error:download&quot; or &quot;error:canceled&quot;</code>)</p> </li> 
+        <li> <p><code>relaunchNeeded</code>: Boolean value to specify whether a browser restart is required to complete the installation</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABBJBGB" name="BABBJBGB"></a>
+      <a id="JFXDP422" name="JFXDP422"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">5.2.5</span> onInstallNeeded</h3> 
+       <p>This handler is called if the embedding or launching application needs additional components to be installed. This callback is responsible for handling situations such as reporting to the user the need to install something, initiating installation using <code>install()</code>, and hiding the splash panel for embedded applications (if needed). After installation is complete, the callback implementation may retry the attempt to launch the application using the provided launch function.</p> 
+       <p>This method is not called if the platform requirement could not be met (for example, if the platform is not supported or if installation is not possible).</p> 
+       <p>The default handler provides a click to install solution for applications embedded in a browser and attempts to perform installation without additional questions for applications that have been started using <code>launch().</code></p> 
+       <p>If the handler is null, then it is treated as a no-op handler.</p> 
+       <p>Function signature:</p> 
+       <p><code>onInstallNeeded</code>: <code>function(app, platform, cb, isAutoinstall, needRelaunch, launchFunc)</code></p> 
+       <p>Parameters:</p> 
+       <ul> 
+        <li> <p><code>app</code>: Application launch descriptor. For embedded applications, <code>app.placeholder</code> refers to the root of the embedded application area in the DOM tree (to be used for visual feedback).</p> </li> 
+        <li> <p><code>platform</code>: Application platform requirements.</p> </li> 
+        <li> <p><code>cb</code>: The set of callbacks to be used during the installation process.</p> </li> 
+        <li> <p><code>isAutoinstall</code>: True if the installation can be launched automatically.</p> </li> 
+        <li> <p><code>needRestart</code>: True if restarting the browser is required after installation is complete.</p> </li> 
+        <li> <p><code>launchFunction</code>: Function to be executed to retry launching the application after the installation is finished.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABCBJHA" name="BABCBJHA"></a>
+      <a id="JFXDP423" name="JFXDP423"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">5.2.6</span> onInstallStarted</h3> 
+       <p>This handler is called before the installation of the required component is triggered. For a manual installation scenario, it is called before the installation page is opened.</p> 
+       <p>This hook can be used to provide visual feedback to the user during the installation. The placeholder points to the area that can be used for visualization. For embedded applications it will be the area into which the application will be embedded. If null, then the callee must find a place for display on its own.</p> 
+       <p>In case of automatic launch of the installation, <code>onInstallFinished</code> will be called after installation is complete (successfully or not).</p> 
+       <p>If the handler is null, then it is treated as no-op handler.</p> 
+       <p>Function signature:</p> 
+       <p><code>onInstallStarted: function(placeholder, component, isAuto, restartNeeded)</code></p> 
+       <p>Parameters:</p> 
+       <ul> 
+        <li> <p><code>placeholder</code>: The DOM element to insert visual feedback into. If null, then the callee must add visual feedback to the document on its own (for example, embedding the application into a web page).</p> </li> 
+        <li> <p><code>component</code>: String &quot;Java&quot;, &quot;JavaFX&quot;, or &quot;Java bundle&quot;.</p> </li> 
+        <li> <p><code>isAutoInstall</code>: True if the installer will be launched automatically.</p> </li> 
+        <li> <p><code>restartNeeded</code>: Boolean value to specify whether a browser restart is required.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABHJHIJ" name="BABHJHIJ"></a>
+      <a id="JFXDP424" name="JFXDP424"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">5.2.7</span> onJavascriptReady</h3> 
+       <p>This handler is called after the embedded application is ready to accept JavaScript calls.</p> 
+       <p>Function signature:</p> 
+       <p><code>onJavascriptReady</code>: <code>function(id)</code></p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABEGHCA" name="BABEGHCA"></a>
+      <a id="JFXDP425" name="JFXDP425"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">5.2.8</span> onRuntimeError</h3> 
+       <p>This handler is called if the embedded application fails to launch.</p> 
+       <p>Function signature:</p> 
+       <p><code>onRuntimeError</code>: <code>function(id)</code></p> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="FBJHAIHG" name="FBJHAIHG"></a>
+     <a id="JFXDP337" name="JFXDP337"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">5.3</span> Examples</h2> 
+      <p>This section shows examples of deployment that use the Deployment Toolkit.</p> 
+      <div align="center"> 
+       <div class="inftblnote">
+        <br /> 
+        <table class="Note oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+         <tbody> 
+          <tr> 
+           <td align="left"> <p class="notep1">Note:</p> <p>Some of the Deployment Toolkit methods may not be fully operational if used before the web page body is loaded, because the Deployment Toolkit plug-ins cannot be instantiated. If you intend to use the Deployment Toolkit before the web page DOM tree is constructed, then dtjava.js must be loaded inside the <code>&lt;body&gt;</code> element of the page and called before any other Deployment Toolkit APIs.</p> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <br />
+       </div> 
+       <!-- class="inftblnote" -->
+      </div> 
+      <p>The recommended way to initiate deployment is to use <code>onload</code> handlers to add the application after the HTML content is loaded, for the following reasons:</p> 
+      <ul> 
+       <li> <p>The DOM tree must exist when the application content is inserted. The DOM tree is created after the HTML content page loads.</p> </li> 
+       <li> <p>The Deployment Toolkit's detection code does not prevent loading of the HTML page.</p> </li> 
+       <li> <p>It avoids loading concurrently with other resources that are needed for the page.</p> </li> 
+      </ul> 
+      <a id="JFXDP339" name="JFXDP339"></a> 
+      <div class="sect2">
+       <a id="sthref42" name="sthref42"></a> 
+       <h3 class="sect2"><span class="secnum">5.3.1</span> Embedded Application Starts After the DOM Tree Is Constructed</h3> 
+       <p><a href="#FBJHIEAG">Example 5-3</a> shows the default deployment scenario for applications embedded in a web page. The application is added to the web page in the <code>deployIt()</code> function. This function is called after the page is loaded and its DOM tree is constructed. The position of the application in the DOM tree is determined by the value of the placeholder parameter. In this case, the application will be inserted into a <code>&lt;div&gt;</code> tag with <code>id=&quot;place&quot;</code>.</p> 
+       <p>Adding the application to a web page after the main page is loaded helps to get a complete web page (including the embedded application) to load faster, because the application starts concurrently with loading other resources required by the web page.</p> 
+       <p>Note that the value of the placeholder element can be a string or a JavaScript variable pointing to the container DOM node. If that node is detached from the document DOM tree, then the application is not initialized until the parent node is attached to the DOM tree.</p> 
+       <div class="example">
+        <a id="FBJHIEAG" name="FBJHIEAG"></a>
+        <a id="JFXDP340" name="JFXDP340"></a> 
+        <p class="titleinexample">Example 5-3 Insert the Application into the HTML Body with a Placeholder</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;head&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;http://java.com/js/dtjava.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        function deployIt() {
+            dtjava.embed(
+                    {         id: &quot;myApp&quot;,
+                             url: &quot;Fish.jnlp&quot;,
+                           width: 300,
+                          height: 200,
+                     placeholder: &quot;place&quot;
+                    },
+                    { javafx: &quot;2.1+&quot; },
+                    {}
+            );
+        }
+        dtjava.addOnloadCallback(<span class="bold">deployIt</span>);
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    <span class="bold">&lt;div id=&quot;place&quot;&gt;&lt;/div&gt;</span>           
+&lt;/body&gt;
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXDP426" name="JFXDP426"></a> 
+      <div class="sect2">
+       <a id="sthref43" name="sthref43"></a> 
+       <h3 class="sect2"><span class="secnum">5.3.2</span> Pass Parameters to the Embedded Application</h3> 
+       <p>You can specify a set of named parameters in the <code>params</code> attribute, within the first argument group of <code>dtjava.embed()</code>.</p> 
+       <p>In <a href="#BEHGEEBC">Example 5-4</a>, the application gets two dynamic parameters from the web page. Note that the &quot;zip&quot; parameter is assigned with the value of the JavaScript variable.</p> 
+       <div class="example">
+        <a id="BEHGEEBC" name="BEHGEEBC"></a>
+        <a id="JFXDP427" name="JFXDP427"></a> 
+        <p class="titleinexample">Example 5-4 Pass Parameters to the Embedded Application</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;head&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;http://java.com/js/dtjava.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        function deployIt() {
+            var zipcode = 95054;
+ 
+            dtjava.embed(
+                {            id: &quot;myApp&quot;,
+                            url: &quot;Map.jnlp&quot;,
+                          width: 300,
+                         height: 200,
+                    placeholder: &quot;place&quot;,
+                    params: {
+                              mode: &quot;streetview&quot;,
+                              zip: zipcode
+                    }
+                },
+                { javafx: &quot;2.1+&quot; },
+                {}
+            );
+        }
+        dtjava.addOnloadCallback(deployIt);
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;place&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABDBCFA" name="BABDBCFA"></a>
+      <a id="JFXDP428" name="JFXDP428"></a> 
+      <div class="sect2"> 
+       <h3 class="sect2"><span class="secnum">5.3.3</span> Specify Platform Requirements and Pass JVM Options</h3> 
+       <p>Use the second argument group of the <code>dtjava.embed()</code> function to specify platform requirements for the application.</p> 
+       <p>In <a href="#BEHJGGDF">Example 5-5</a>, JRE 1.6 or later is specified in the <code>jvm</code> parameter; JavaFX 2.1 or later is specified in the <code>javafx</code> parameter; and the <code>jvmargs</code> parameter indicates that the application should be executed in the Java Virtual Machine (JVM) with a 1 gigabyte heap size and given options.</p> 
+       <div class="example">
+        <a id="BEHJGGDF" name="BEHJGGDF"></a>
+        <a id="JFXDP429" name="JFXDP429"></a> 
+        <p class="titleinexample">Example 5-5 Specify Platform Requirements and Passing JVM Properties</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;head&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;http://java.com/js/dtjava.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        function deployIt() {
+            dtjava.embed(
+                {            id: &quot;my&quot;,
+                            url: &quot;app.jnlp&quot;,
+                          width: 300,
+                         height: 200,
+                    placeholder: &quot;place&quot;
+                },
+                {
+                        jvm: &quot;1.6.0+&quot;,
+                     javafx: &quot;2.1+&quot;,
+                    jvmargs: &quot;-Dapp.property= ? -Xmx1024m&quot;
+                }
+            );
+        }
+        dtjava.addOnloadCallback(deployIt);
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;place&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABCCFHF" name="BABCCFHF"></a>
+      <a id="JFXDP430" name="JFXDP430"></a> 
+      <div class="sect2"> 
+       <h3 class="sect2"><span class="secnum">5.3.4</span> Access JavaFX Code from JavaScript</h3> 
+       <p>To access a Java or JavaFX application from JavaScript, you must get a reference to the JavaScript object representing the application. The best way to do this is to specify an <code>id</code> parameter in the first argument group of the <code>dtjava.embed()</code> function, as shown in <a href="#FBJHIEAG">Example 5-3</a></p> 
+       <p>For example, if an <code>id</code> parameter is set to <code>my</code>, then a public method of the application can be accessed with the script shown in <a href="#BABIBJJC">Example 5-6</a>.</p> 
+       <div class="example">
+        <a id="BABIBJJC" name="BABIBJJC"></a>
+        <a id="JFXDP431" name="JFXDP431"></a> 
+        <p class="titleinexample">Example 5-6 Access an Application Method with an id Parameter</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;script&gt;
+    var a = document.getElementById(&quot;my&quot;);
+    a.java_method();
+&lt;/script&gt;
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>Attempts to call application methods may not work until the application finishes the initialization phase. (For a description of startup phases, see <a href="deploy_user_experience.htm#BABFIECI">Application Startup Process, Experience, and Customization</a>.) To access an application while it is loading, use an <code>onJavascriptReady</code> callback, as shown in <a href="#BABICIGE">Example 5-7</a>.</p> 
+       <div class="example">
+        <a id="BABICIGE" name="BABICIGE"></a>
+        <a id="JFXDP432" name="JFXDP432"></a> 
+        <p class="titleinexample">Example 5-7 Access an Application Method While the Application Is Loading</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;head&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;http://java.com/js/dtjava.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        function callApp(id) {
+            //it is safe to call now
+            var a = document.getElementById(id);
+            a.java_method();
+        }
+        function deployIt() {
+            dtjava.embed(
+                {            id: &quot;my&quot;,
+                            url: &quot;fxapp.jnlp&quot;,
+                          width: 300,
+                         height: 200,
+                    placeholder: &quot;place&quot;
+                    },
+                    {},
+                    {
+                        <span class="bold">onJavascriptReady: callApp</span>
+                    }
+ 
+            );
+        }
+        dtjava.addOnloadCallback(deployIt);
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;place&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABHJEIF" name="BABHJEIF"></a>
+      <a id="JFXDP433" name="JFXDP433"></a> 
+      <div class="sect2"> 
+       <h3 class="sect2"><span class="secnum">5.3.5</span> Disable the HTML Splash Screen</h3> 
+       <p>To disable the HTML splash screen for a JavaFX application, add an <code>onGetSplash</code> handler that returns null:, as shown in <a href="#BABCEDIB">Example 5-8</a>. For information about application startup phases, see <a href="deploy_user_experience.htm#BABFIECI">Application Startup Process, Experience, and Customization</a>.</p> 
+       <div class="example">
+        <a id="BABCEDIB" name="BABCEDIB"></a>
+        <a id="JFXDP434" name="JFXDP434"></a> 
+        <p class="titleinexample">Example 5-8 Disable the HTML Splash Screen</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;head&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;http://java.com/js/dtjava.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        function deployIt() {
+            dtjava.embed(
+                {            id: &quot;my&quot;,
+                            url: &quot;app.jnlp&quot;,
+                          width: 300,
+                         height: 200,
+                    placeholder: &quot;place&quot;
+                },
+                {
+                       jvm: &quot;1.6.0+&quot;,
+                    javafx: &quot;2.1+&quot;,
+                },
+                {
+                    <span class="bold">onGetSplash: function(app) {return null;}</span>
+                }
+            );
+        }
+        dtjava.addOnloadCallback(deployIt);
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;place&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABHAHED" name="BABHAHED"></a>
+      <a id="JFXDP435" name="JFXDP435"></a> 
+      <div class="sect2"> 
+       <h3 class="sect2"><span class="secnum">5.3.6</span> Add a Custom HTML Splash Screen</h3> 
+       <p><a href="#BABGBAJJ">Example 5-9</a> shows how to replace the default HTML splash screen with a green rectangle, defined in a JavaScript function.</p> 
+       <div class="example">
+        <a id="BABGBAJJ" name="BABGBAJJ"></a>
+        <a id="JFXDP436" name="JFXDP436"></a> 
+        <p class="titleinexample">Example 5-9 Replace the Splash Screen with a Custom One</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;head&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;http://java.com/js/dtjava.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        <span class="bold">function getSplash(app) {</span>
+<span class="bold">            //custom splash - green rectangle</span>
+            <span class="bold">var p = document.createElement('div')</span>;
+<span class="bold">            p.style.width  = app.width;</span>
+<span class="bold">            p.style.height = app.height;</span>
+<span class="bold">            p.style.background=&quot;green&quot;;</span>
+<span class="bold">            return p;             </span>
+<span class="bold">        }</span>
+         
+        function deployIt() {
+            dtjava.embed(
+                {            id: &quot;my&quot;,
+                            url: &quot;app.jnlp&quot;,
+                          width: 300,
+                         height: 200,
+                    placeholder: &quot;place&quot;
+                },
+                {
+                       jvm: &quot;1.6.0+&quot;,
+                    javafx: &quot;2.1+&quot;,
+                },
+                {
+                    <span class="bold">onGetSplash: getSplash</span>
+                }
+            );
+        }
+        dtjava.addOnloadCallback(deployIt);
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;place&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABIABAD" name="BABIABAD"></a>
+      <a id="JFXDP437" name="JFXDP437"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">5.3.7</span> Create a Handler for an Unsupported Platform</h3> 
+       <p><a href="#BEHCEGCB">Example 5-10</a> shows the use of JavaScript to handle an unsupported browser.</p> 
+       <div class="example">
+        <a id="BEHCEGCB" name="BEHCEGCB"></a>
+        <a id="JFXDP438" name="JFXDP438"></a> 
+        <p class="titleinexample">Example 5-10 Handle an Unsupported Browser with JavaScript</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;head&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;http://java.com/js/dtjava.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        function reportError(app, r) {
+            //ovewrite behavior for unsupported browser
+            var a = app.placeholder;
+            if (a != null &amp;&amp; r.isUnsupportedBrowser()) {
+                var p = document.createElement('div');
+                p.id = &quot;splash&quot;;
+                p.style.width  = app.width;
+                p.style.height = app.height;
+                p.style.background=&quot;red&quot;;
+                p.appendChild(
+                  document.createTextNode(&quot;This browser is not supported.&quot;));
+ 
+                //clear applet placeholder
+                while(a.hasChildNodes()) a.removeChild(a.firstChild);
+ 
+                //show custom message
+                a.appendChild(p);
+            } else {
+                //use default handlers otherwise
+                var def = new dtjava.Callbacks();
+                return def.onDeployError(app, r);
+            }
+        }
+         
+        function deployIt() {
+            dtjava.embed(
+                {       id: &quot;my&quot;,
+                       url: &quot;app.jnlp&quot;,
+                     width: 300,
+                    height: 200
+                },
+                {
+                       jvm: &quot;1.6.0+&quot;,
+                    javafx: &quot;2.1+&quot;,
+                },
+                {
+                    onDeployError: reportError
+                }
+            );
+        }
+        dtjava.addOnloadCallback(deployIt);
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;place&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXDP439" name="JFXDP439"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref44" name="sthref44"></a> 
+       <h3 class="sect2"><span class="secnum">5.3.8</span> Launch Application from the Web Page</h3> 
+       <p>The canonical form for the link to launch a Web Start application is shown in <a href="#BABGBGIC">Example 5-11</a>. Either relative or absolute links are acceptable.</p> 
+       <div class="example">
+        <a id="BABGBGIC" name="BABGBGIC"></a>
+        <a id="JFXDP440" name="JFXDP440"></a> 
+        <p class="titleinexample">Example 5-11 Canonical Link to Launch a Web Start Application</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;a href=&quot;my.jnlp&quot; 
+   onclick=&quot;dtjava.launch(new dtjava.App('my.jnlp')); 
+   return false;&quot;&gt;Launch me!&lt;/a&gt;
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>An alternative simplified syntax is shown in <a href="#BEHIJDIG">Example 5-12</a>.</p> 
+       <div class="example">
+        <a id="BEHIJDIG" name="BEHIJDIG"></a>
+        <a id="JFXDP441" name="JFXDP441"></a> 
+        <p class="titleinexample">Example 5-12 Link to Launch a Web Start Application, Simplified</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;a href=&quot;my.jnlp&quot; 
+   onclick=&quot;dtjava.launch({url: 'my.jnlp'}); 
+   return false;&quot;&gt;Launch me!&lt;/a&gt;
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>A third form for simple applications is shown in the following example.</p> 
+       <div class="example">
+        <a id="JFXDP442" name="JFXDP442"></a>
+        <a id="sthref45" name="sthref45"></a> 
+        <p class="titleinexample">Example 5-13 Link to Launch a Web Start Application, Third Example</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;a href=&quot;my.jnlp&quot; 
+   onclick=&quot;dtjava.launch('my.jnlp'); 
+   return false;&quot;&gt;Launch me!&lt;/a&gt;
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>If JavaScript is disabled in the browser, the Deployment Toolkit does not work. In this case, the browser tries to use the <code>href</code> attribute. If JavaFX Runtime is installed, then the application will still launch. The <code>return false;</code> statement ensures that the browser will not leave the current page if the launch is successful.</p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXDP443" name="JFXDP443"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref46" name="sthref46"></a> 
+       <h3 class="sect2"><span class="secnum">5.3.9</span> Check for Presence of JavaFX Runtime</h3> 
+       <p><a href="#BABDJBJC">Example 5-14</a> shows the use of JavaScript to replace the default text offering to install JavaFX. It is replaced with an offer to start the application only if the correct version of JavaFX is found on the user's system.</p> 
+       <div class="example">
+        <a id="BABDJBJC" name="BABDJBJC"></a>
+        <a id="JFXDP444" name="JFXDP444"></a> 
+        <p class="titleinexample">Example 5-14 Launch Only If JavaFX Is Installed</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;script type=&quot;text/javascript&quot; 
+                src=&quot;http://java.com/js/dtjava.js&quot;&gt;&lt;/script&gt;
+        &lt;script&gt;
+            function mayBeOfferLaunch() {
+                var platform = new dtjava.Platform({'javafx' : '2.1+'});
+ 
+                //check if validate find any problems
+                if (dtjava.validate(platform) == null) {
+                    var t = document.getElementById(&quot;text&quot;);
+                    t.innerHTML = &quot;&lt;a href='my.jnlp' &quot; +
+                    &quot;onclick='dtjava.launch({url: 'my.jnlp'}); return false;'&gt;&quot; +
+                    &quot;Launch me!&lt;/a&gt;&quot;;
+                }
+            }
+            dtjava.addOnloadCallback(mayBeOfferLaunch);
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;text&quot;&gt;To view this content you need 
+       &lt;a href=&quot;http://javafx.com&quot;&gt;to install 
+           JavaFX Runtime 2.1&lt;/a&gt;.&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-deployment.htm">About This Guide</a></li>
+      <li><a href="deploy_quick_start.htm">Getting Started</a></li>
+      <li><a href="deploy_overview.htm">Application Execution Modes</a></li>
+      <li><a href="deploy_user_experience.htm">Application Startup</a></li>
+      <li><a href="packaging.htm">Packaging</a></li>
+      <li class=" active"><a href="deployment_toolkit.htm">Deployment in the Browser</a></li>
+      <li><a href="javafx_javascript.htm">JavaFX and JavaScript</a></li>
+      <li><a href="preloaders.htm">Preloaders</a></li>
+      <li><a href="deploy_swing_apps.htm">JavaFX in Swing Applications</a></li>
+      <li><a href="packager.htm">The JavaFX Packager Tool</a></li>
+      <li><a href="packager001.htm">JavaFX Packager Command-Line Syntax</a></li>
+      <li><a href="javafx_ant_task_reference.htm">JavaFX Ant Tasks</a></li>
+      <li><a href="javafx_ant_task_reference001.htm">Reference: JavaFX Ant Tasks</a></li>
+      <li><a href="javafx_ant_task_reference002.htm">Reference: JavaFX Ant Helper Parameters</a></li>
+      <li><a href="troubleshooting.htm">Troubleshooting</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

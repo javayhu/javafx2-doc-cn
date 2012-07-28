@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Scroll Pane &middot; Using JavaFX UI Controls &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX UI Controls</h1>
+     <p class=" lead">Scroll Pane</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="scrollbar.htm">←上一篇</a></li>
+      <li class=" next"><a href="list-view.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="JFXUC235" name="JFXUC235"></a>
+     <a id="CBBFFBCH" name="CBBFFBCH"></a>  
+     <p>Scroll panes provide a scrollable view of UI elements. This control enables the user to scroll the content by panning the viewport or by using scroll bars. A scroll pane with the default settings and the added image is shown in <a href="#CBBCJDGA">Figure 11-1</a>.</p> 
+     <div class="figure">
+      <a id="CBBCJDGA" name="CBBCJDGA"></a>
+      <a id="JFXUC236" name="JFXUC236"></a> 
+      <p class="titleinfigure">Figure 11-1 Scroll Pane</p> 
+      <img src="img/scroll-pane-default.png" alt="A scroll pane with an image" title="A scroll pane with an image" longdesc="img_text/scroll-pane-default.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <a id="JFXUC237" name="JFXUC237"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref90" name="sthref90"></a> 
+      <h2 class="sect1">Creating a Scroll Pane</h2> 
+      <p><a href="#CBBDHJCD">Example 11-1</a> shows how to create this scroll pane in your application.</p> 
+      <div class="example">
+       <a id="CBBDHJCD" name="CBBDHJCD"></a>
+       <a id="JFXUC238" name="JFXUC238"></a> 
+       <p class="titleinexample">Example 11-1 Using a Scroll Pane to View an Image</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Image roses = new Image(getClass().getResourceAsStream(&quot;roses.jpg&quot;));
+ScrollPane sp = new ScrollPane();
+sp.setContent(new ImageView(roses));
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The <code>setContent</code> method defines the node that is used as the content of this scroll pane. You can specify only one node. To create a scroll view with more than one component, use layout containers or the <code>Group</code> class. You can also specify the <code>true</code> value for the <code>setPannable</code> method to preview the image by clicking it and moving the mouse cursor. The position of the scroll bars changes accordingly.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC239" name="JFXUC239"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref91" name="sthref91"></a> 
+      <h2 class="sect1">Setting the Scroll Bar Policy for a Scroll Pane</h2> 
+      <p>The <code>ScrollPane</code> class provides a policy to determine when to display scroll bars: always, never, or only when they are needed. Use the <code>setHbarPolicy</code> and <code>setVbarPolicy</code> methods to specify the scroll bar policy for the horizontal and vertical scroll bars respectively. Thus, in <a href="#CBBCJBAE">Example 11-2</a> the vertical scroll bar will appear, but not the horizontal scroll bar.</p> 
+      <div class="example">
+       <a id="CBBCJBAE" name="CBBCJBAE"></a>
+       <a id="JFXUC240" name="JFXUC240"></a> 
+       <p class="titleinexample">Example 11-2 Setting the Horizontal and Vertical Scroll Bar Policies</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>As a result, you can only scroll the image vertically, as shown in <a href="#CBBGAGGH">Figure 11-2</a>.</p> 
+      <div class="figure">
+       <a id="CBBGAGGH" name="CBBGAGGH"></a>
+       <a id="JFXUC241" name="JFXUC241"></a> 
+       <p class="titleinfigure">Figure 11-2 Disabling the Horizontal Scroll Bar</p> 
+       <img src="img/scroll-pane-policy.png" alt="Description of Figure 11-2 follows" title="Description of Figure 11-2 follows" longdesc="img_text/scroll-pane-policy.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC242" name="JFXUC242"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref93" name="sthref93"></a> 
+      <h2 class="sect1">Resizing Components in the Scroll Pane</h2> 
+      <p>When designing a UI interface, you might need to resize the components, so that they match the width or height of the scroll pane. Set either the <code>setFitToWidth</code> or <code>setFitToHeight</code> method to <code>true</code> to match a particular dimension.</p> 
+      <p>The scroll pane shown in <a href="#CBBCBCDI">Figure 11-3</a> contains radio buttons, a text box, and a password box. The size of the content exceeds the predefined size of the scroll pane and a vertical scroll bar appears. However, because the <code>setFitToWidth</code> method sets <code>true</code> for the scroll pane, the content shrinks in width and never scrolls horizontally.</p> 
+      <div class="figure">
+       <a id="CBBCBCDI" name="CBBCBCDI"></a>
+       <a id="JFXUC243" name="JFXUC243"></a> 
+       <p class="titleinfigure">Figure 11-3 Fitting the Width of the Scroll Pane</p> 
+       <img src="img/scroll-pane-fit.jpg" alt="The content of the scroll pane fits its width." title="The content of the scroll pane fits its width." longdesc="img_text/scroll-pane-fit.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>By default, both <code>FIT_TO_WIDTH</code> and <code>FIT_TO_HEIGHT</code> properties are <code>false,</code> and the resizable content keeps its original size. If you remove the <code>setFitToWidth</code> methods from the code of this application, you will see the output shown in <a href="#CBBEAADA">Figure 11-4</a>.</p> 
+      <div class="figure">
+       <a id="CBBEAADA" name="CBBEAADA"></a>
+       <a id="JFXUC244" name="JFXUC244"></a> 
+       <p class="titleinfigure">Figure 11-4 Default Properties for Fitting the Content</p> 
+       <img src="img/scroll-pane-do-not-fit.jpg" alt="Description of Figure 11-4 follows" title="Description of Figure 11-4 follows" longdesc="img_text/scroll-pane-do-not-fit.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>The <code>ScrollPane</code> class enables you to retrieve and set the current, minimum, and maximum values of the contents in the horizontal and vertical directions. Learn how to use them in your applications.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC245" name="JFXUC245"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref96" name="sthref96"></a> 
+      <h2 class="sect1">Sample Application with a Scroll Pane</h2> 
+      <p><a href="#CBBGJJFF">Example 11-3</a> uses a scroll pane to display a vertical box with images. The <code>VVALUE</code> property of the <code>ScrollPane</code> class helps to identify the currently displayed image and to render the name of the image file.</p> 
+      <div class="example">
+       <a id="CBBGJJFF" name="CBBGJJFF"></a>
+       <a id="JFXUC246" name="JFXUC246"></a> 
+       <p class="titleinexample">Example 11-3 Using a Scroll Pane to View Images</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package scrollpanesample;
+ 
+import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+ 
+public class Main extends Application {
+ 
+    final ScrollPane sp = new ScrollPane();
+    final Image[] images = new Image[5];
+    final ImageView[] pics = new ImageView[5];
+    final VBox vb = new VBox();
+    final Label fileName = new Label();
+    final String [] imageNames = new String [] {&quot;fw1.jpg&quot;, &quot;fw2.jpg&quot;,
+        &quot;fw3.jpg&quot;, &quot;fw4.jpg&quot;, &quot;fw5.jpg&quot;};
+ 
+    @Override
+    public void start(Stage stage) {
+        VBox box = new VBox();
+        Scene scene = new Scene(box, 180, 180);
+        stage.setScene(scene);
+        stage.setTitle(&quot;Scroll Pane&quot;);
+        box.getChildren().addAll(sp, fileName);
+        VBox.setVgrow(sp, Priority.ALWAYS);
+ 
+        fileName.setLayoutX(30);
+        fileName.setLayoutY(160);
+ 
+        for (int i = 0; i &lt; 5; i++) {
+            images[i] = new Image(getClass().getResourceAsStream(imageNames[i]));
+            pics[i] = new ImageView(images[i]);
+            pics[i].setFitWidth(100);
+            pics[i].setPreserveRatio(true);
+            vb.getChildren().add(pics[i]);
+        }
+ 
+        sp.setVmax(440);
+        sp.setPrefSize(115, 150);
+        sp.setContent(vb);
+        sp.vvalueProperty().addListener(new ChangeListener&lt;Number&gt;() {
+            public void changed(ObservableValue&lt;? extends Number&gt; ov,
+                Number old_val, Number new_val) {
+                    fileName.setText(imageNames[(new_val.intValue() - 1)/100]);
+            }
+        });
+        stage.show();
+    }
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Compiling and running this application produces the window shown in <a href="#CBBCAHEG">Figure 11-5</a>.</p> 
+      <div class="figure">
+       <a id="CBBCAHEG" name="CBBCAHEG"></a>
+       <a id="JFXUC247" name="JFXUC247"></a> 
+       <p class="titleinfigure">Figure 11-5 Scrolling Images</p> 
+       <img src="img/scroll-pane-app.png" alt="A scroll pane with the images" title="A scroll pane with the images" longdesc="img_text/scroll-pane-app.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>The maximum value of the vertical scroll bar is equal to the height of the vertical box. The code fragment shown in <a href="#CBBDFHHE">Example 11-4</a> renders the name of the currently displayed image file.</p> 
+      <div class="example">
+       <a id="CBBDFHHE" name="CBBDFHHE"></a>
+       <a id="JFXUC248" name="JFXUC248"></a> 
+       <p class="titleinexample">Example 11-4 Tracking the Change of the Scroll Pane's Vertical Value</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+sp.vvalueProperty().addListener(new ChangeListener&lt;Number&gt;() {
+    public void changed(ObservableValue&lt;? extends Number&gt; ov,
+        Number old_val, Number new_val) {
+            fileName.setText(imageNames[(new_val.intValue() - 1)/100]);
+        }
+});
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The <code>ImageView</code> object limits the image height to 100 pixels. Therefore, when <code>new_val.intValue() - 1</code> is divided by 100, the result gives the index of the current image in the <code>imageNames</code> array.</p> 
+      <p>In your application, you can also vary minimum and maximum values for vertical and horizontal scroll bars, thus dynamically updating your user interface.</p> 
+      <p class="itemizedlisttitle">Related API Documentation&nbsp;</p> 
+      <ul> 
+       <li> <p><code>ScrollPane</code></p> </li> 
+       <li> <p><code>ScrollBar</code></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-ui_controls.htm">About This Tutorial</a></li>
+      <li><a href="overview.htm">JavaFX UI Controls</a></li>
+      <li><a href="label.htm">Label</a></li>
+      <li><a href="button.htm">Button</a></li>
+      <li><a href="radio-button.htm">Radio Button</a></li>
+      <li><a href="toggle-button.htm">Toggle Button</a></li>
+      <li><a href="checkbox.htm">Checkbox</a></li>
+      <li><a href="choice-box.htm">Choice Box</a></li>
+      <li><a href="text-field.htm">Text Field</a></li>
+      <li><a href="password-field.htm">Password Field</a></li>
+      <li><a href="scrollbar.htm">Scroll Bar</a></li>
+      <li class=" active"><a href="scrollpane.htm">Scroll Pane</a></li>
+      <li><a href="list-view.htm">List View</a></li>
+      <li><a href="table-view.htm">Table View</a></li>
+      <li><a href="tree-view.htm">Tree View</a></li>
+      <li><a href="combo-box.htm">Combo Box</a></li>
+      <li><a href="separator.htm">Separator</a></li>
+      <li><a href="slider.htm">Slider</a></li>
+      <li><a href="progress.htm">Progress Bar and Progress Indicator</a></li>
+      <li><a href="hyperlink.htm">Hyperlink</a></li>
+      <li><a href="tooltip.htm">Tooltip</a></li>
+      <li><a href="editor.htm">HTML Editor</a></li>
+      <li><a href="accordion-titledpane.htm">Titled Pane and Accordion</a></li>
+      <li><a href="menu_controls.htm">Menu</a></li>
+      <li><a href="custom.htm">Customization of UI Controls</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/ui_controls/UIControlSamples.zip">UIControlSamples.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

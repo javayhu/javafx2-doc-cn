@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Skinning JavaFX Applications with CSS &middot; Skinning JavaFX Applications with CSS &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Skinning JavaFX Applications with CSS</h1>
+     <p class=" lead">Skinning JavaFX Applications with CSS</p>
+     <ul class=" pager"></ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CHDGHCDG" name="CHDGHCDG"></a>
+     <a id="JFXCS101" name="JFXCS101"></a>  
+     <p>You can create a custom look, also called a skin, for your JavaFX application with cascading style sheets (CSS). CSS contain style definitions that control the look of user interface elements. Using CSS in JavaFX applications is similar to using CSS in HTML. JavaFX CSS are based on the W3C CSS version 2.1 specification (available at <code><a href="../../../../www.w3.org/TR/CSS21/default.htm">http://www.w3.org/TR/CSS21/</a></code>) with some additions from current work on version 3 of the specification and some extensions that support specific JavaFX features.</p> 
+     <p>Skinning your UI with JavaFX CSS enables you to change the UI shown in <a href="#BJEBDBAC">Figure 1</a> to the UI shown in <a href="#BJEJGIGC">Figure 2</a> just by changing the style sheet used.</p> 
+     <div class="figure">
+      <a id="BJEBDBAC" name="BJEBDBAC"></a>
+      <a id="JFXCS102" name="JFXCS102"></a> 
+      <p class="titleinfigure">Figure 1 Style 1</p> 
+      <img src="img/style1.png" alt="Description of Figure 1 follows" title="Description of Figure 1 follows" longdesc="img_text/style1.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <div class="figure">
+      <a id="BJEJGIGC" name="BJEJGIGC"></a>
+      <a id="JFXCS103" name="JFXCS103"></a> 
+      <p class="titleinfigure">Figure 2 Style 2</p> 
+      <img src="img/style2.png" alt="Description of Figure 2 follows" title="Description of Figure 2 follows" longdesc="img_text/style2.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <a id="JFXCS104" name="JFXCS104"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref4" name="sthref4"></a> 
+      <h2 class="sect1">Default Style Sheet</h2> 
+      <p>The default style sheet for JavaFX applications is caspian.css, which is found in the JavaFX runtime JAR file, jfxrt.jar. This style sheet defines styles for the root node and the UI controls. To view this file, go to the \rt\lib directory under the directory in which the JavaFX SDK is installed. Use the following command to extract the style sheet from the JAR file:</p> 
+      <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+jar -xf jfxrt.jar com/sun/javafx/scene/control/skin/caspian/caspian.css
+</pre> 
+      <p><a href="#BJEEAIHE">Figure 3</a> shows what the sample UI looks like with the default style sheet.</p> 
+      <div class="figure">
+       <a id="BJEEAIHE" name="BJEEAIHE"></a>
+       <a id="JFXCS105" name="JFXCS105"></a> 
+       <p class="titleinfigure">Figure 3 Default Style</p> 
+       <img src="img/default_style.png" alt="Description of Figure 3 follows" title="Description of Figure 3 follows" longdesc="img_text/default_style.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCS106" name="JFXCS106"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref6" name="sthref6"></a> 
+      <h2 class="sect1">Creating Style Sheets</h2> 
+      <p>You can create one or more of your own style sheets to override the default styles and to add your own styles. Typically style sheets that you create have an extension of <code>.css</code> and are located in the same directory as the main class for your JavaFX application.</p> 
+      <p>The style sheet <a href="controlStyle1.css.htm">controlStyle1.css</a> provides the skinning shown in <a href="#BJEBDBAC">Figure 1</a>. The style sheet <a href="controlStyle2.css.htm">controlStyle2.css</a> provides the skinning shown in <a href="#BJEJGIGC">Figure 2</a>.</p> 
+      <p>Style sheets are applied to <code>Scene</code> objects as shown in <a href="#BJEEHIJJ">Example 1</a>, where <span class="variable">path</span> is the directory structure that reflects the location of your style sheet, and <span class="variable">stylesheet</span> is the name of your style sheet. For example, the path and name of the style sheet for <a href="#BJEJGIGC">Figure 2</a> is uicontrolcss/controlStyle2.css.</p> 
+      <div class="example">
+       <a id="BJEEHIJJ" name="BJEEHIJJ"></a>
+       <a id="JFXCS107" name="JFXCS107"></a> 
+       <p class="titleinexample">Example 1 Adding a Style Sheet</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Scene scene = new Scene(new Group(), 500, 400);
+scene.getStylesheets().add(&quot;<span class="variable">path</span>/<span class="variable">stylesheet</span>.css&quot;);
+</pre>
+      </div> 
+      <!-- class="example" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCS108" name="JFXCS108"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref7" name="sthref7"></a> 
+      <h2 class="sect1">Defining Styles</h2> 
+      <p>A style definition consists of the name of the style, also called the selector, and a series of rules that set the properties for the style. Rules for a definition are enclosed in braces ({}). <a href="#BJEGAHJB">Example 2</a> shows the definition for a style named <code>.custom-button</code>.</p> 
+      <div class="example">
+       <a id="BJEGAHJB" name="BJEGAHJB"></a>
+       <a id="JFXCS109" name="JFXCS109"></a> 
+       <p class="titleinexample">Example 2 Sample Style Definition</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.custom-button {
+    -fx-font: 16px &quot;Serif&quot;;
+    -fx-padding: 10;
+    -fx-background-color: #CCFF99;
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <div align="center"> 
+       <div class="inftblnote">
+        <br /> 
+        <table class="Note oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+         <tbody> 
+          <tr> 
+           <td align="left"> <p class="notep1">Note:</p> <p>The size of a font can be specified in either points (pt) or pixels (px). A resolution of 96 dots per inch (dpi) is assumed, so 1px = 0.75pt.</p> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <br />
+       </div> 
+       <!-- class="inftblnote" -->
+      </div> 
+      <a id="JFXCS110" name="JFXCS110"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref8" name="sthref8"></a> 
+       <h3 class="sect2">Selectors</h3> 
+       <p>Several types of styles can be defined. Each type of style has its own convention for selectors.</p> 
+       <p>Style classes correspond to class names. By convention, style class names that consist of more than one word use a hyphen (-) between words. Style class selectors are preceded by a dot (.).</p> 
+       <p>Examples of class selectors:</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.button
+.check-box
+.scroll-bar
+</pre> 
+       <p>You can also define styles that are associated with a node through the node's ID. The ID is set using the node's <code>setId()</code> method. The style name is the ID preceded by a hash symbol (#). For example, a node with the ID <code>my-button</code> is skinned with the style <code>#my-button</code>.</p> 
+       <p>Examples of ID style selectors:</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+#my-button
+#shaded-hbox
+</pre> 
+       <p>Compound selectors are also possible. Some classes include elements that can have their own style definition, which are called descendant classes. For example, many UI controls have a descendant class for the label. These definitions are identified by the selector for the class and the selector for the descendant class separated by a space.</p> 
+       <p>Examples of selectors for descendant classes:</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.check-box .label
+.check-box .box
+.radio-button .dot
+</pre> 
+       <p>Pseudo-classes enable you to customize states of a node, such as when a node has focus. These definitions are identified by the selector for the class and the name for the state separated by a colon (:).</p> 
+       <p>Examples of selectors for pseudo-classes:</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.radio-button:focused
+.radio-button:hover
+.scroll-bar:vertical
+</pre>
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXCS111" name="JFXCS111"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref9" name="sthref9"></a> 
+       <h3 class="sect2">Rules and Properties</h3> 
+       <p>The rules for a style definition assign values to properties associated with the class. Rule property names correspond to the names of the properties for a class. The convention for property names with multiple words is to separate the words with a hyphen (-). Property names for styles in JavaFX style sheets are preceded by <code>-fx-</code>. Property names and values are separated by a colon (:). Rules are terminated with a semicolon (;).</p> 
+       <p>Examples of rules:</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+-fx-background-color: #333333;
+-fx-text-fill: white;
+-fx-alignment: CENTER;
+</pre> 
+       <p>The <code>.root</code> style class is applied to the root node of the <code>Scene</code> instance. Because all nodes in the scene graph are a descendant of the root node, styles in the <code>.root</code> style class can be applied to any node.</p> 
+       <p>The <code>.root</code> style class includes properties that can be used by other styles to provide consistency in a UI. For example, the property <code>-fx-focused-base</code> is defined in the <code>.root</code> style. This property is used by styles for other UI controls as the color for the control when it has focus. The following definition shows how this property is used in the style for the class <code>CheckBox</code>:</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.check-box:focused {
+    -fx-color: -fx-focused-base;
+}
+</pre>
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCS112" name="JFXCS112"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref10" name="sthref10"></a> 
+      <h2 class="sect1">Skinning the Scene</h2> 
+      <p>You can quickly change the look of your UI just by customizing the <code>.root</code> style class. Both of the sample style sheets set the font size and family, the base color from which other colors are derived, and the background color of the scene. <a href="#BJEEEDFH">Example 3</a> shows the <code>.root</code> style from <a href="controlStyle2.css.htm">controlStyle2.css</a>.</p> 
+      <div class="example">
+       <a id="BJEEEDFH" name="BJEEEDFH"></a>
+       <a id="JFXCS113" name="JFXCS113"></a> 
+       <p class="titleinexample">Example 3 Root Style from controlStyle2.css</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.root{
+    -fx-font-size: 16pt;
+    -fx-font-family: &quot;Courier New&quot;;
+    -fx-base: rgb(132, 145, 47);
+    -fx-background: rgb(225, 228, 203);
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>With just this style, you create the basic look of <a href="#BJEJGIGC">Figure 2</a>. This is possible because the built-in UI controls use the properties set for the root node to derive their own colors and fonts.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCS114" name="JFXCS114"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref11" name="sthref11"></a> 
+      <h2 class="sect1">Skinning Controls</h2> 
+      <p>You can further customize your UI by defining styles for the different controls that you are using. You can override the definitions in the default style sheet or create new class or ID styles. You can also define the style for a node within your code.</p> 
+      <a id="JFXCS115" name="JFXCS115"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref12" name="sthref12"></a> 
+       <h3 class="sect2">Overriding Default Styles</h3> 
+       <p>You can override the default style by including the style in your style sheet and assigning it different properties. <a href="#BJECFHDA">Example 4</a> shows the style for the <code>Button</code> class from <a href="controlStyle2.css.htm">controlStyle2.css</a>.</p> 
+       <div class="example">
+        <a id="BJECFHDA" name="BJECFHDA"></a>
+        <a id="JFXCS116" name="JFXCS116"></a> 
+        <p class="titleinexample">Example 4 Override a Style</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.button{
+    -fx-text-fill: rgb(49, 89, 23);
+    -fx-border-color: rgb(49, 89, 23);
+    -fx-border-radius: 5;
+    -fx-padding: 3 6 6 6;
+}
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>The font color, border color, border radius, and padding are picked up from this definition. The color of the button and the font style of the label are picked up from the <code>.root</code> definition from <a href="#BJEEEDFH">Example 3</a>. Buttons with this styling look as shown in the following image.</p> 
+       <img src="img/button_style2.png" alt="Description of button_style2.png follows" title="Description of button_style2.png follows" longdesc="img_text/button_style2.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXCS117" name="JFXCS117"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref14" name="sthref14"></a> 
+       <h3 class="sect2">Creating Class Styles</h3> 
+       <p>You can create a class style by adding a definition for it to your style sheet. <a href="#BJEIAHCH">Example 5</a> defines a new style in <a href="controlStyle1.css.htm">controlStyle1.css</a> called <code>.button1</code>.</p> 
+       <div class="example">
+        <a id="BJEIAHCH" name="BJEIAHCH"></a>
+        <a id="JFXCS118" name="JFXCS118"></a> 
+        <p class="titleinexample">Example 5 Define a New Style</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.button1{
+    -fx-text-fill: #006464;
+    -fx-background-color: #DFB951;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 5;
+}
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>Any button to which this style is added looks as shown in the following image. Note that the font of the label is picked up from the <code>.root</code> definition in controlStyle1.css.</p> 
+       <img src="img/button_style1.png" alt="Description of button_style1.png follows" title="Description of button_style1.png follows" longdesc="img_text/button_style1.htm" />
+       <br /> 
+       <br /> 
+       <br /> 
+       <p>To assign this class style to a node, use the <code>getStyleClass().add()</code> sequence of methods. <a href="#BJEDGIBI">Example 6</a> shows the <code>.button1</code> style assigned to the Accept button.</p> 
+       <div class="example">
+        <a id="BJEDGIBI" name="BJEDGIBI"></a>
+        <a id="JFXCS119" name="JFXCS119"></a> 
+        <p class="titleinexample">Example 6 Assign a Class Style</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Button buttonAccept = new Button(&quot;Accept&quot;);
+buttonAccept.getStyleClass().add(&quot;button1&quot;);
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>Be aware that adding styles to a node is accumulative. After adding the <code>.button1</code> style class to the <code>buttonAccept</code> node, the node is rendered using rules from both the <code>.button</code> and <code>.button1</code> styles.</p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXCS120" name="JFXCS120"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref16" name="sthref16"></a> 
+       <h3 class="sect2">Creating ID Styles</h3> 
+       <p>You can define a style for an individual node by creating a style and assigning the style to the node. The style name is the ID preceded by a hash symbol (#). <a href="#BJEJIHFC">Example 7</a> creates a definition for a style named <code>#font-button</code>.</p> 
+       <div class="example">
+        <a id="BJEJIHFC" name="BJEJIHFC"></a>
+        <a id="JFXCS121" name="JFXCS121"></a> 
+        <p class="titleinexample">Example 7 Define an ID Style</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+#font-button {
+    -fx-font: bold italic 20pt &quot;Arial&quot;;
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
+}
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>The button that is assigned the ID <code>font-button</code> looks as shown in the following image.</p> 
+       <img src="img/button_style_id.png" alt="Description of button_style_id.png follows" title="Description of button_style_id.png follows" longdesc="img_text/button_style_id.htm" />
+       <br /> 
+       <br /> 
+       <br /> 
+       <p><a href="#BJECEIGJ">Example 8</a> shows how to assign the ID style to a node.</p> 
+       <div class="example">
+        <a id="BJECEIGJ" name="BJECEIGJ"></a>
+        <a id="JFXCS122" name="JFXCS122"></a> 
+        <p class="titleinexample">Example 8 Assign an ID Style</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Button buttonFont = new Button(&quot;Font&quot;);
+buttonFont.setId(&quot;font-button&quot;);
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXCS123" name="JFXCS123"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref18" name="sthref18"></a> 
+       <h3 class="sect2">Setting Styles in the Code</h3> 
+       <p>You also have the option of setting style properties for a node within the code for your application. Rules set within the code take precedence over styles from a style sheet. <a href="#BJEEEGJI">Example 9</a> shows how to change the background color and font color for a button.</p> 
+       <div class="example">
+        <a id="BJEEEGJI" name="BJEEEGJI"></a>
+        <a id="JFXCS124" name="JFXCS124"></a> 
+        <p class="titleinexample">Example 9 Define a Style Inline</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Button buttonColor = new Button(&quot;Color&quot;);
+buttonColor.setStyle(&quot;-fx-background-color: slateblue; -fx-text-fill: white;&quot;);
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>The following image shows how the button appears.</p> 
+       <img src="img/button_style_inline.png" alt="Description of button_style_inline.png follows" title="Description of button_style_inline.png follows" longdesc="img_text/button_style_inline.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCS125" name="JFXCS125"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref20" name="sthref20"></a> 
+      <h2 class="sect1">Additional Resources</h2> 
+      <p>For more in-depth information on JavaFX style sheets, see the <a href="../api/javafx/scene/doc-files/cssref.html">JavaFX CSS Reference Guide</a>.</p> 
+      <p>For information on styling the UI Controls, see <a href="../ui_controls/jfxpub-ui_controls.htm">Using JavaFX UI Controls</a>.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li class=" active"><a href="jfxpub-css_tutorial.htm">Skinning JavaFX Applications with CSS</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/css_tutorial/UIControlCSS.zip">UIControlCSS.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

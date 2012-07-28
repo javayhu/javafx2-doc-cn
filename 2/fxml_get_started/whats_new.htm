@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>FXML—What's New in JavaFX 2.1 &middot; Getting Started with FXML &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Getting Started with FXML</h1>
+     <p class=" lead">FXML—What's New in JavaFX 2.1</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="why_use_fxml.htm">←上一篇</a></li>
+      <li class=" next"><a href="fxml_tutorial_intermediate.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CHDDDDCC" name="CHDDDDCC"></a>
+     <a id="JFXMG145" name="JFXMG145"></a>  
+     <a id="JFXMG146" name="JFXMG146"></a> 
+     <p>This page contains a list of FXML enhancements in JavaFX 2.1 and incompatibilities with previous releases.</p> 
+     <p>This page contains the following sections:</p> 
+     <ul> 
+      <li> <p><a href="#BGGEABGA">FXML Enhancements for JavaFX 2.1</a></p> </li> 
+      <li> <p><a href="#BGGGCAJE">FXML Loader Incompatibilities with Previous JavaFX Releases</a></p> </li> 
+     </ul> 
+     <a id="BGGEABGA" name="BGGEABGA"></a>
+     <a id="JFXMG147" name="JFXMG147"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1">FXML Enhancements for JavaFX 2.1</h2> 
+      <p>The following FXML enhancements have been added in JavaFX 2.1.</p> 
+      <ul> 
+       <li> <p>Add support for using a leading backslash as an escape character (RT-18680)</p> <p>JavaFX 2.0 used consecutive operator characters such as <code>$$</code> as escape sequences. JavaFX 2.1 adds support for escape sequences using the backslash character, such as <code>\$</code>. These escape sequences are closer to Unified Expression Language (UEL) and so more familiar to developers). The JavaFX 2.0 escape sequences are deprecated as of JavaFX 2.1. See <a href="#BGGJDBIJ">Some JavaFX 2.0 FXML Escape Sequences are Deprecated in JavaFX 2.1</a> and <a href="#BGGCIJEI">Backslash is Now an Escape Character</a>.</p> </li> 
+       <li> <p>Add an implicit &quot;controller&quot; variable to document the namespace</p> <p>This new feature was primarily intended to help facilitate bidirectional binding between the controller and the UI. Bidirectional binding was dropped from 2.1, but this feature was retained.</p> </li> 
+       <li> <p>Add convenience constructors to the <code>FXMLLoader</code> class (RT-16815)</p> <p>Several new convenience constructors have been added to the <code>FXMLLoader</code>. class These constructors mirror the <code>static load()</code> methods defined in JavaFX 2.0, but make it easier to access the document's controller from calling code.</p> </li> 
+       <li> <p>Make controller instantiation customizable (RT-16724, RT-17268)</p> <p>In FXML 2.0, the caller did not have any control over controller creation. This prevented an application from using a dependency injection system such as Guice or Spring to manage controller initialization. FXML 2.1 adds a <code>ControllerFactory</code> interface to facilitate delegation of controller construction:</p> <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public interface ControllerFactory {
+    public Object getController(Class&lt;?&gt; type);
+}
+</pre> <p>When an instance of ControllerFactory is provided to FXMLLoader, the loader will delegate controller construction to the factory. An implementation may return null to indicate that it does not or cannot create a controller of the given type; in this case, the default controller construction mechanism will be employed by the loader. Implementations may also &quot;recycle&quot; controllers such that controller instances can be shared by multiple FXML documents. However, developers must be aware of the implications of doing this; primarily, that controller field injection should not be used in this case since it will result in the controller fields containing values from only the most recently loaded document.</p> </li> 
+       <li> <p>Make stylesheets easier to work with (RT-18299, RT-15524)</p> <p>In JavaFX 2.0, applying stylesheets in FXML was not very convenient. In 2.1, it is much simpler. Stylesheets can be specified as an attribute of a root <code>&lt;Scene&gt;</code> element as follows:</p> <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;Scene stylesheets=&quot;/com/foo/stylesheet1.css, /com/foo/stylesheet2.css&quot;&gt;
+&lt;/Scene&gt;
+</pre> <p>Style classes on individual nodes can now be applied as follows:</p> <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;Label styleClass=&quot;heading, firstPage&quot; text=&quot;First Page Heading&quot;/&gt;
+</pre></li> 
+       <li> <p>Allow caller to specify no-arg controller method as an event handler (RT-18229)</p> <p>In JavaFX 2.0, controller-based event handlers must adhere to the method signature defined by an event handler; in other words, they must accept a single argument of a type that extends Event and return void. In JavaFX 2.1, the argument restriction has been lifted, and it is now possible to write a controller event handler that takes no arguments.</p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BGGGCAJE" name="BGGGCAJE"></a>
+     <a id="JFXMG148" name="JFXMG148"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1">FXML Loader Incompatibilities with Previous JavaFX Releases</h2> 
+      <p>The following sections contain compatibility issues that users might encounter if they load a JavaFX 2.0 FXML file with a JavaFX 2.1 FXML loader.</p> 
+      <ul> 
+       <li> <p><a href="#BGGJDBIJ">Some JavaFX 2.0 FXML Escape Sequences are Deprecated in JavaFX 2.1</a></p> </li> 
+       <li> <p><a href="#BGGCIJEI">Backslash is Now an Escape Character</a></p> </li> 
+      </ul> 
+      <a id="BGGJDBIJ" name="BGGJDBIJ"></a>
+      <a id="JFXMG149" name="JFXMG149"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2">Some JavaFX 2.0 FXML Escape Sequences are Deprecated in JavaFX 2.1</h3> 
+       <p><a href="#BGGGGFJA">Table 2-1</a> shows the double-character escape sequences that were used in FXML in JavaFX 2.0 but are <span class="bold">deprecated</span> in JavaFX 2.1. Instead, use a backslash as the escape character.</p> 
+       <div class="tblformal">
+        <a id="JFXMG150" name="JFXMG150"></a>
+        <a id="sthref4" name="sthref4"></a>
+        <a id="BGGGGFJA" name="BGGGGFJA"></a> 
+        <p class="titleintable">Table 2-1 Deprecated and Current Escape Sequences</p> 
+        <table class="Formal table table-bordered table-striped" title="Deprecated and Current Escape Sequences" summary="A list of double-character escape sequences in JavaFX 2.0 FXML, with the new escape sequences for 2.1. Now a single character is preceded by a backslash." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+         <colgroup>
+          <col width="*" /> 
+          <col width="50%" /> 
+         </colgroup>
+         <thead> 
+          <tr align="left" valign="top"> 
+           <th align="left" valign="bottom" id="r1c1-t2">JavaFX 2.0 Escape Sequence</th> 
+           <th align="left" valign="bottom" id="r1c2-t2">JavaFX 2.1 Escape Sequence</th> 
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr align="left" valign="top"> 
+           <td align="left" id="r2c1-t2" headers="r1c1-t2"> <p><code>$$</code></p> <br /></td> 
+           <td align="left" headers="r2c1-t2 r1c2-t2"> <p><code>\$</code></p> <br /></td> 
+          </tr> 
+          <tr align="left" valign="top"> 
+           <td align="left" id="r3c1-t2" headers="r1c1-t2"> <p><code>%%</code></p> <br /></td> 
+           <td align="left" headers="r3c1-t2 r1c2-t2"> <p><code>\%</code></p> <br /></td> 
+          </tr> 
+          <tr align="left" valign="top"> 
+           <td align="left" id="r4c1-t2" headers="r1c1-t2"> <p><code>@@</code></p> <br /></td> 
+           <td align="left" headers="r4c1-t2 r1c2-t2"> <p><code>\@</code></p> <br /></td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <br />
+       </div> 
+       <!-- class="tblformal" --> 
+       <p>If Scene Builder encounters any of these deprecated escape sequences, the console displays a warning but loads the FXML anyway. The next time the file is saved, Scene Builder automatically replaces the deprecated escape characters with the new syntax.</p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BGGCIJEI" name="BGGCIJEI"></a>
+      <a id="JFXMG151" name="JFXMG151"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2">Backslash is Now an Escape Character</h3> 
+       <p>In JavaFX 2.1, the backslash <code>\</code> has become an escape character in FXML. As a result, JavaFX 2.0 applications with FXML files that contain FXML string attributes starting a backslash might prevent the FXML from loading, or it may cause the FXML loader to misinterpret the string.</p> 
+       <p><span class="bold">Solution:</span> For any FXML backslash text in a JavaFX 2.0 application, add an additional backslash to escape the character.</p> 
+       <p>Example:</p> 
+       <p>Replace this line of code:</p> 
+       <p><code>&lt;Button text=&quot;\&quot;/&gt;</code></p> 
+       <p>with this line of code:</p> 
+       <p><code>&lt;Button text=&quot;\\&quot;/&gt;</code></p> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-fxml_get_started.htm">About this Tutorial</a></li>
+      <li><a href="why_use_fxml.htm">Why Use FXML</a></li>
+      <li class=" active"><a href="whats_new.htm">FXML—What's New in JavaFX 2.1</a></li>
+      <li><a href="fxml_tutorial_intermediate.htm">Creating an Address Book with FXML</a></li>
+      <li><a href="fxml_deployment.htm">Deployment of FXML Applications</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/fxml_get_started/FXMLTableView.zip">FXMLTableView.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

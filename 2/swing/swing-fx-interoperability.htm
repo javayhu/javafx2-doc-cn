@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Integrating JavaFX into Swing Applications &middot; JavaFX for Swing Developers &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>JavaFX for Swing Developers</h1>
+     <p class=" lead">Integrating JavaFX into Swing Applications</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="overview.htm">←上一篇</a></li>
+      <li class=" next"><a href="jtable-barchart.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CHDIEEJE" name="CHDIEEJE"></a>  
+     <p>JavaFX SDK provides the <code>JFXPanel</code> class, which is located in the <code>javafx.embed.swing</code> package and enables you to embed JavaFX content into Swing applications.</p> 
+     <p>This chapter describes how to add JavaFX content into a Swing application and how to use threads correctly when both Swing and JavaFX content operate within a single application.</p> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref9" name="sthref9"></a> 
+      <h2 class="sect1">Adding JavaFX Content to a Swing Component</h2> 
+      <p>For the purpose of this chapter, you create a <code>JFrame</code> component, add a <code>JFXPanel</code> object to it, and set the graphical scene of the JFXPanel component that contains JavaFX content.</p> 
+      <p>As in any Swing application, you create the graphical user interface (GUI) on an Event Dispatch Thread (EDT). <a href="#CHDEDHGA">Example 2-1</a> shows the <code>initAndShowGUI</code> method, which creates a <code>JFrame</code> component and adds a <code>JFXPanel</code> object to it. Creating an instance of the <code>JFXPanel</code> class implicitly starts the JavaFX runtime. After the GUI is created, call the <code>initFX</code> method to create the JavaFX scene on the JavaFX thread.</p> 
+      <div class="example">
+       <a id="CHDEDHGA" name="CHDEDHGA"></a> 
+       <p class="titleinexample">Example 2-1</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Platform;
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
+public class Test {
+
+    private static void initAndShowGUI() {
+        // This method is invoked on the EDT thread
+        JFrame frame = new JFrame(&quot;Swing and JavaFX&quot;);
+        final JFXPanel fxPanel = new JFXPanel();
+        frame.add(fxPanel);
+        frame.setSize(300, 200);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+            initFX(fxPanel);
+            }
+       });
+    }
+
+    private static void initFX(JFXPanel fxPanel) {
+        // This method is invoked on the JavaFX thread
+        Scene scene = createScene();
+        fxPanel.setScene(scene);
+    }
+
+    private static Scene createScene() {
+        Group  root  =  new  Group();
+        Scene  scene  =  new  Scene(root, Color.ALICEBLUE);
+        Text  text  =  new  Text();
+        text.setX(40);
+        text.setY(100);
+        text.setFont(new Font(25));
+        text.setText(&quot;Welcome JavaFX!&quot;);
+        root.getChildren().add(text);
+        return (scene);
+    }
+    
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+            initAndShowGUI();
+            }
+        });
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <a id="sthref10" name="sthref10"></a> 
+      <h2 class="sect1">JavaFX–Swing Interoperability and Threads</h2> 
+      <p>With JavaFX and Swing data coexisting in a single application, you may encounter the following interoperability situations:</p> 
+      <ul> 
+       <li> <p>A JavaFX data change is triggered by a change in Swing data.</p> </li> 
+       <li> <p>A Swing data change is triggered by a change in JavaFX data.</p> </li> 
+      </ul> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref11" name="sthref11"></a> 
+       <h3 class="sect2">Changing JavaFX Data in Response to a Change in Swing Data</h3> 
+       <p>JavaFX data should be accessed only on the JavaFX User thread. Whenever you must change JavaFX data, wrap your code into a Runnable object and call the <code>Platform.runLater</code> method as shown in <a href="#CEGFDGBI">Example 2-2</a>.</p> 
+       <div class="example">
+        <a id="CEGFDGBI" name="CEGFDGBI"></a> 
+        <p class="titleinexample">Example 2-2</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+jbutton.addActionListener(new ActionListener() { 
+    public void actionPerformed(ActionEvent e) { 
+        Platform.runLater(new Runnable() { 
+            @Override
+            public void run() {
+                fxlabel.setText(&quot;Swing button clicked!&quot;); 
+            }
+        });
+    }
+});
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref12" name="sthref12"></a> 
+       <h3 class="sect2">Changing Swing Data in Response to a Change in JavaFX Data</h3> 
+       <p>Swing data should be changed only on the EDT. To ensure that your code is implemented on the EDT, wrap it into a Runnable object and call the <code>SwingUtilities.invokeLater</code> method as shown in <a href="#CEGEBFIJ">Example 2-3</a>.</p> 
+       <div class="example">
+        <a id="CEGEBFIJ" name="CEGEBFIJ"></a> 
+        <p class="titleinexample">Example 2-3</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+SwingUtilities.invokeLater(new Runnable() {
+    @Override
+    public void run() {
+        //Code to change Swing data.
+    }
+});
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref13" name="sthref13"></a> 
+      <h2 class="sect1">Introducing the SimpleSwingBrowser Application</h2> 
+      <p>To see how JavaFX–Swing interoperability works, consider the <code>SimpleSwingBrowser</code> application. This is a Swing application with an integrated JavaFX component intended to view Web pages. You can type a URL in an address bar and view the page loaded in the application window. The <code>SimpleSwingBrowser</code> application window is shown in <a href="#CEGFIBDD">Figure 2-1</a>.</p> 
+      <div class="figure">
+       <a id="CEGFIBDD" name="CEGFIBDD"></a> 
+       <p class="titleinfigure">Figure 2-1 The SimpleSwingBrowser Application Window</p> 
+       <img src="img/simple_swing_browser.jpg" alt="Description of Figure 2-1 follows" title="Description of Figure 2-1 follows" longdesc="img_text/simple_swing_browser.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref15" name="sthref15"></a> 
+       <h3 class="sect2">Initializing Swing Data</h3> 
+       <p>You can view the <code>SimpleSwingBrowser.java</code> file or download the <code>SimpleSwingBrowser.zip</code> file with a NetBeans project by using links in the sidebar. Extract files from the zip file to a directory on your local file system and run the project in your Netbeans IDE. See the <a href="../system_requirements/jfxpub-system_requirements.htm">System Requirements</a> document for a supported version of the NetBeans IDE.</p> 
+       <div align="center"> 
+        <div class="inftblnote">
+         <br /> 
+         <table class="Note oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+          <tbody> 
+           <tr> 
+            <td align="left"> <p class="notep1">Note:</p> <p>To run this application from behind a firewall, you must specify proxy settings in order for the application to access a remote resource.</p> <p>In the NetBeans IDE, right-click the <span class="bold">SimpleSwingBrowser</span> project in the Projects window, select <span class="bold">Properties</span>, and in the Projects Properties dialog, select <span class="bold">Run</span>.</p> <p>In the VM Options field, set the proxy in the following format:</p> <p>-Dhttp.proxyHost=webcache.mydomain.com -Dhttp.proxyPort=8080</p> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <br />
+        </div> 
+        <!-- class="inftblnote" -->
+       </div> 
+       <p>The GUI of the <code>SimpleSwingBrowser</code> application is created on the EDT when the application starts. The <code>main</code> method is implemented as shown in <a href="#CDDHHFIB">Example 2-4</a>.</p> 
+       <div class="example">
+        <a id="CDDHHFIB" name="CDDHHFIB"></a> 
+        <p class="titleinexample">Example 2-4</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public static void main(String[] args) {
+    SwingUtilities.invokeLater(new SimpleSwingBrowser());
+}
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>The <code>SimpleSwingBrowser</code> class overrides the <code>run</code> method, which calls the <code>initComponents</code> method to create the GUI as shown in <a href="#CDDIBAJB">Example 2-5</a>.</p> 
+       <div class="example">
+        <a id="CDDIBAJB" name="CDDIBAJB"></a> 
+        <p class="titleinexample">Example 2-5</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public class SimpleSwingBrowser implements Runnable {
+    private JFXPanel jfxPanel;
+    private JFrame frame = new JFrame();
+    private JPanel panel = new JPanel(new BorderLayout());
+    private JLabel lblStatus = new JLabel();
+
+    private JButton btnGo = new JButton(&quot;Go&quot;);
+    private JTextField txtURL = new JTextField();
+    private JProgressBar progressBar = new JProgressBar();       
+
+    @Override 
+    public void run() {
+        frame.setPreferredSize(new Dimension(1024, 600));
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        initComponents();
+
+        loadURL(&quot;http://oracle.com&quot;);
+
+        frame.pack();
+        frame.setVisible(true);
+    }
+    private void initComponents() {
+        jfxPanel = new JFXPanel();
+
+        createScene();
+
+        ActionListener al = new ActionListener() {
+            @Override 
+            public void actionPerformed(ActionEvent e) {
+                loadURL(txtURL.getText());
+            }
+    };
+
+        btnGo.addActionListener(al);
+        txtURL.addActionListener(al);
+
+        progressBar.setPreferredSize(new Dimension(150, 18));
+        progressBar.setStringPainted(true);
+
+        JPanel topBar = new JPanel(new BorderLayout(5, 0));
+        topBar.setBorder(BorderFactory.createEmptyBorder(3, 5, 3, 5));
+        topBar.add(txtURL, BorderLayout.CENTER);
+        topBar.add(btnGo, BorderLayout.EAST);
+
+        JPanel statusBar = new JPanel(new BorderLayout(5, 0));
+        statusBar.setBorder(BorderFactory.createEmptyBorder(3, 5, 3, 5));
+        statusBar.add(lblStatus, BorderLayout.CENTER);
+        statusBar.add(progressBar, BorderLayout.EAST);
+
+        panel.add(topBar, BorderLayout.NORTH);
+        panel.add(jfxPanel, BorderLayout.CENTER);
+        panel.add(statusBar, BorderLayout.SOUTH);
+
+        frame.getContentPane().add(panel);
+    }
+}
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>The topmost window of this application is a <code>JFrame</code> component, which contains various Swing components such as a text field, a button, a progress bar, and a JFX panel intended to display JavaFX content.</p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref16" name="sthref16"></a> 
+       <h3 class="sect2">Loading JavaFX Content</h3> 
+       <p>On the first run, the web page at http://oracle.com is loaded into a <code>WebView</code> object. As a new URL is entered in the address bar, the action listener, which is attached to the <code>txtURL</code> text field in the <code>initComponents</code> method, initiates the loading of a page as shown in <a href="#CEGEBHED">Example 2-6</a>.</p> 
+       <div class="example">
+        <a id="CEGEBHED" name="CEGEBHED"></a> 
+        <p class="titleinexample">Example 2-6</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+ActionListener al = new ActionListener() {
+    @Override public void actionPerformed(ActionEvent e) {
+        loadURL(txtURL.getText());
+    }
+};
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>JavaFX data should only be accessed on the JavaFX thread. The <code>loadURL</code> method wraps the code into a Runnable object and calls the <code>Platform.runLater</code> method as shown in <a href="#CEGBACBE">Example 2-7</a>.</p> 
+       <div class="example">
+        <a id="CEGBACBE" name="CEGBACBE"></a> 
+        <p class="titleinexample">Example 2-7</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public void loadURL(final String url) {
+    Platform.runLater(new Runnable() {
+        @Override public void run() {
+            String tmp = toURL(url);
+
+            if (url == null) {
+            tmp = toURL(&quot;http://&quot; + url);
+            }
+
+           engine.load(tmp);
+        }
+    });
+}
+
+private static String toURL(String str) {
+    try {
+        return new URL(str).toExternalForm();
+    } catch (MalformedURLException exception) {
+        return null;
+    }
+}
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref17" name="sthref17"></a> 
+       <h3 class="sect2">Updating Swing Data</h3> 
+       <p>As a new page is loaded into the <code>WebView</code> component, the title of the page is retrieved from the JavaFX data and passed to the Swing GUI to be placed on the application window as a title. This behavor is implemented in the <code>createScene</code> method as shown in <a href="#CEGHFDCA">Example 2-8</a>.</p> 
+       <div class="example">
+        <a id="CEGHFDCA" name="CEGHFDCA"></a> 
+        <p class="titleinexample">Example 2-8</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+private void createScene() {
+
+    Platform.runLater(new Runnable() {
+        @Override public void run() {
+
+            WebView view = new WebView();
+            engine = view.getEngine();
+
+            engine.titleProperty().addListener(new ChangeListener&lt;String&gt;() {
+                @Override
+                public void changed(ObservableValue&lt;? extends String&gt; observable, 
+String oldValue, final String newValue) {
+                    SwingUtilities.invokeLater(new Runnable() {
+                        @Override public void run() {
+                            frame.setTitle(newValue);
+                        }
+                    )};
+                }
+            )};
+        }
+    });
+}
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>To deploy a Swing application with JavaFX content on the web, follow the steps to deploy a Java application as a Web Start (JNLP) or applet described in the Java Tutorial lessons on <a href="../../../../docs.oracle.com/javase/tutorial/deployment/applet/default.htm">Java applets</a> and <a href="../../../../docs.oracle.com/javase/tutorial/deployment/webstart/deploying.html">Web Start applications</a>. After you create a JNLP file, you must modify it by adding a dependency on the JavaFX runtime as descibed in the <a href="../deployment/deploy_swing_apps.htm">Deploying JavaFX Applications</a> guide.</p> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-swing.htm">About This Tutorial</a></li>
+      <li><a href="overview.htm">The JavaFX Advantage for Swing Developers</a></li>
+      <li class=" active"><a href="swing-fx-interoperability.htm">Integrating JavaFX into Swing Applications</a></li>
+      <li><a href="jtable-barchart.htm">Enriching Swing Applications with JavaFX Functionality</a></li>
+      <li><a href="media-player.htm">Leveraging Applications with Media Features</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/swing/SimpleSwingBrowser.zip">SimpleSwingBrowser.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/swing/SwingInterop.zip">SwingInterop.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/swing/MediaPlayer.zip">MediaPlayer.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

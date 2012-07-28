@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>JavaFX Installation for Microsoft Windows &middot; JavaFX 2.1.1 Installation Guide &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>JavaFX 2.1.1 Installation Guide</h1>
+     <p class=" lead">JavaFX Installation for Microsoft Windows</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="jfxpub-installation_2-1-1.htm">←上一篇</a></li>
+      <li class=" next"><a href="javafx-installation-mac.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CJGGCFBH" name="CJGGCFBH"></a>
+     <a id="JFXIS101" name="JFXIS101"></a>  
+     <a id="JFXIS126" name="JFXIS126"></a> 
+     <p>This page provides information about the installing the JavaFX 2.1.1 SDK on Microsoft Windows.</p> 
+     <p>See the following topics:</p> 
+     <ul> 
+      <li> <p><a href="#A1197821">&quot;Download the JavaFX Installer that Meets Your Needs&quot;</a></p> </li> 
+      <li> <p><a href="#CHDDCDGB">&quot;JavaFX Installation Instructions&quot;</a></p> </li> 
+      <li> <p><a href="#CJGHCBAC">&quot;Installing NetBeans IDE&quot;</a></p> </li> 
+      <li> <p><a href="#CHDCFFGI">&quot;Viewing and Using JavaFX Samples&quot;</a></p> </li> 
+      <li> <p><a href="#A1199702">&quot;JavaFX Scene Builder&quot;</a></p> </li> 
+      <li> <p><a href="#CHDIJCEA">&quot;JavaFX SDK File Structure&quot;</a></p> </li> 
+      <li> <p><a href="#A1108970">&quot;Uninstalling JavaFX&quot;</a></p> </li> 
+      <li> <p><a href="#A1114590">&quot;Troubleshooting&quot;</a></p> </li> 
+     </ul> 
+     <a id="A1197821" name="A1197821"></a>
+     <a id="JFXIS124" name="JFXIS124"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1">Download the JavaFX Installer that Meets Your Needs</h2> 
+      <p>There are various ways that you can install JavaFX 2.1.1.</p> 
+      <ul> 
+       <li> <p>You can install JDK 7 update 5 (including the JRE) and JavaFX 2.1.1 SDK (including the JavaFX Runtime) with a single installer. Get the JDK 7u5 installer at<br /> <code><a href="../../../../www.oracle.com/technetwork/java/javase/downloads/default.htm">http://www.oracle.com/technetwork/java/javase/downloads/</a></code></p> </li> 
+       <li> <p>If you want to use JavaFX with Java SE 6, this option is available for Windows only, and only until <a href="../../../../https@blogs.oracle.com/henrik/entry/updated_java_6_eol_date">Java SE 6 reaches End-Of-Life in November 2012</a>. To run JavaFX with Java SE 6, download and install the JavaFX 2.1.1 SDK standalone installer (which also installs the JavaFX 2.1.1 Runtime) from the JavaFX Downloads page at<br /> <code><a href="../../../../www.oracle.com/technetwork/java/javafx/downloads/default.htm">http://www.oracle.com/technetwork/java/javafx/downloads/</a></code></p> </li> 
+       <li> <p>If you only want to run JavaFX applications but do not plan to develop them, download the Java SE 7 update 5 JRE from the Java SE Downloads page at<br /> <code><a href="../../../../www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></code></p> </li> 
+      </ul> 
+      <div align="center"> 
+       <div class="inftblnote">
+        <br /> 
+        <table class="Note oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+         <tbody> 
+          <tr> 
+           <td align="left"> <p class="notep1">Note:</p> <p>For Windows installations, there is a 32-bit or 64-bit JavaFX available for whichever JDK you have installed. If you have both the 32-bit and 64-bit JDK installed, download the 64-bit JavaFX SDK.</p> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <br />
+       </div> 
+       <!-- class="inftblnote" -->
+      </div> 
+      <p>Whichever installer you download, it is important that you check the system requirements at the following locations:</p> 
+      <ul> 
+       <li> <p>JavaFX 2.1.1 system requirements:<br /> <code><a href="../../../../docs.oracle.com/javafx/2/system_requirements_2-1-1/jfxpub-system_requirements_2-1-1.htm">http://docs.oracle.com/javafx/2/system_requirements_2-1-1/jfxpub-system_requirements_2-1-1.htm</a></code></p> </li> 
+       <li> <p>JDK 7 system requirements:<br /> <code><a href="../../../../docs.oracle.com/javase/7/docs/webnotes/install/default.htm">http://docs.oracle.com/javase/7/docs/webnotes/install/</a></code></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="CHDDCDGB" name="CHDDCDGB"></a>
+     <a id="JFXIS107" name="JFXIS107"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1">JavaFX Installation Instructions</h2> 
+      <div align="center"> 
+       <div class="inftblnote">
+        <br /> 
+        <table class="Note oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+         <tbody> 
+          <tr> 
+           <td align="left"> <p class="notep1">Note:</p> <p>Only one version of the JavaFX SDK and JavaFX Runtime can be installed at a time. The JavaFX Runtime installer will automatically uninstall previous versions.</p> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <br />
+       </div> 
+       <!-- class="inftblnote" -->
+      </div> 
+      <p>Double-click the .exe file of whichever installer you downloaded. If you use a bundled installer, the installers run in the following order:</p> 
+      <ul> 
+       <li> <p>Java Development Kit (JDK)</p> </li> 
+       <li> <p>Java Runtime Environment (JRE)</p> </li> 
+       <li> <p>JavaFX Software Development Kit (SDK)</p> </li> 
+       <li> <p>JavaFX Runtime</p> </li> 
+      </ul> 
+      <p>The default installation directory for the JavaFX 2.1.1 SDK is C:\Program Files\Oracle\JavaFX 2.1 SDK. See <a href="#CHDIJCEA">JavaFX SDK File Structure</a> for the directories and contents.</p> 
+      <p>The default installation directory for the JavaFX 2.1.1 Runtime is C:\Program Files\Oracle\JavaFX 2.1 Runtime.</p> 
+      <p>For more information about JDK installation and system requirements, see the JDK Installation Guide at<br /> <code><a href="../../../../docs.oracle.com/javase/7/docs/webnotes/install/default.htm">http://docs.oracle.com/javase/7/docs/webnotes/install/</a></code></p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="CJGHCBAC" name="CJGHCBAC"></a>
+     <a id="JFXIS117" name="JFXIS117"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1">Installing NetBeans IDE</h2> 
+      <p>The JavaFX 2.1.1 SDK requires a minimum of NetBeans IDE 7.1.2. Download the NetBeans IDE from the <a href="../../../../www.oracle.com/technetwork/java/javafx/downloads/default.htm">JavaFX Downloads</a> page.</p> 
+      <p>For information about configuring NetBeans IDE to run with JavaFX, see Setting Up NetBeans IDE With JavaFX at<br /> <code><a href="../../../../netbeans.org/kb/docs/java/javafx-setup.html">http://netbeans.org/kb/docs/java/javafx-setup.html</a></code></p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="CHDCFFGI" name="CHDCFFGI"></a>
+     <a id="JFXIS104" name="JFXIS104"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1">Viewing and Using JavaFX Samples</h2> 
+      <p>Sample JavaFX applications are available to download as a zip file from the <a href="../../../../www.oracle.com/technetwork/java/javafx/downloads/default.htm">JavaFX Downloads</a> page.</p> 
+      <p>Extract the files to your file system, then open samples_readme.txt for more information.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="A1199702" name="A1199702"></a>
+     <a id="JFXIS125" name="JFXIS125"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1">JavaFX Scene Builder</h2> 
+      <p>JavaFX Scene Builder is a design tool for the JavaFX platform. You can download it from the following location:<br /> <code><a href="../../../../www.oracle.com/technetwork/java/javafx/downloads/devpreview-1429449.html">http://www.oracle.com/technetwork/java/javafx/downloads/devpreview-1429449.html</a></code></p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="CHDIJCEA" name="CHDIJCEA"></a>
+     <a id="JFXIS110" name="JFXIS110"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1">JavaFX SDK File Structure</h2> 
+      <p>By default, the JavaFX SDK software is installed at C:\Program Files\Oracle\JavaFX 2.1 SDK.</p> 
+      <div align="center"> 
+       <div class="inftblnotealso">
+        <br /> 
+        <table class="NoteAlso oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+         <tbody> 
+          <tr> 
+           <td align="left"> <p class="notep1">Tip:</p> <p>To verify that you have JavaFX 2.1.1 installed, go to Add/Remove Programs in Control Panel. JavaFX 2.1.1 and JavaFX 2.1.1 SDK will appear in the list of installed programs.</p> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <br />
+       </div> 
+       <!-- class="inftblnotealso" -->
+      </div> 
+      <p>The JavaFX SDK contains the directories and content shown in <a href="#CHDFFJHH">Figure 1-1</a>.</p> 
+      <div class="figure">
+       <a id="CHDFFJHH" name="CHDFFJHH"></a>
+       <a id="JFXIS122" name="JFXIS122"></a> 
+       <p class="titleinfigure">Figure 1-1 Directories and Content of the JavaFX SDK on Windows</p> 
+       <img src="img/jfx-sdkdirectory.png" alt="Description of Figure 1-1 follows" title="Description of Figure 1-1 follows" longdesc="img_text/jfx-sdkdirectory.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <dl> 
+       <dt>
+        bin/
+       </dt> 
+       <dd> 
+        <p>Contains the JavaFX Packager tool for compiling, packaging, signing, and deploying JavaFX applications.</p> 
+       </dd> 
+       <dt>
+        docs/
+       </dt> 
+       <dd> 
+        <p>Contains the API documentation. For the online version of the API documentation and JavaFX tutorials, see<br /> <code><a href="../../../../docs.oracle.com/javafx/default.htm">http://docs.oracle.com/javafx/</a></code></p> 
+       </dd> 
+       <dt>
+        lib/
+       </dt> 
+       <dd> 
+        <p>Contains the following JavaFX utility jar files:</p> 
+        <p>ant-javafx.jar: Ant tasks for packaging and deployment.</p> 
+        <p>javafx-doclet.jar: A doclet for producing customized and nicely formatted documentation for the users of your JavaFX library.</p> 
+        <p>javafx-mx.jar: A file used for debugging.</p> 
+       </dd> 
+       <dt>
+        rt/
+       </dt> 
+       <dd> 
+        <p>Contains a private, embedded copy of the JavaFX Runtime installation, used by JavaFX SDK development tools. You would typically point to the installed JavaFX Runtime instead, whose default location is C:\Program Files\Oracle\JavaFX 2.1 Runtime</p> 
+       </dd> 
+       <dt>
+        tools/
+       </dt> 
+       <dd> 
+        <p>This directory contains the same set of JAR files as the lib directory and is maintained for backward compatibility with NetBeans 7.1.1.</p> 
+       </dd> 
+       <dt>
+        COPYRIGHT.html
+       </dt> 
+       <dd> 
+        <p>Copyright information for the JavaFX software and documentation.</p> 
+       </dd> 
+       <dt>
+        README.html
+       </dt> 
+       <dd> 
+        <p>Provides a link to the README index page for the Java SE, JavaFX SDK, JavaFX Runtime.</p> 
+       </dd> 
+       <dt>
+        THIRDPARTYLICENSEREADME.txt
+       </dt> 
+       <dd> 
+        <p>License information for third-party software included in the JavaFX SDK.</p> 
+       </dd> 
+      </dl> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="A1108970" name="A1108970"></a>
+     <a id="JFXIS112" name="JFXIS112"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1">Uninstalling JavaFX</h2> 
+      <p>To uninstall JavaFX, use the standard Windows Add/Remove Programs utility in Control Panel. You must uninstall the JavaFX SDK and Runtime separately.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="A1114590" name="A1114590"></a>
+     <a id="JFXIS123" name="JFXIS123"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1">Troubleshooting</h2> 
+      <p>Here are some tips for working around problems that are sometimes seen during or following an installation.</p> 
+      <ol> 
+       <li> <p>If you installed the 64-bit version, you may have problems with applications that run on 32 bits. Note that the 32-bit version is compatible with both 32-bit and 64-bit systems, but the reverse is not true. See the JavaFX Supported System Configurations at<br /> <code><a href="../../../../www.oracle.com/technetwork/java/javafx/downloads/supportedconfigurations-1506746.html">http://www.oracle.com/technetwork/java/javafx/downloads/supportedconfigurations-1506746.html</a></code></p> </li> 
+       <li> <p>Verify that you have a supported environment. See the <a href="../system_requirements/jfxpub-system_requirements.htm">JavaFX System Requirements</a> document at<br /> <code><a href="../../../../docs.oracle.com/javafx/2/system_requirements_2-1/jfxpub-system_requirements_2-1.htm">http://docs.oracle.com/javafx/2/system_requirements_2-1/jfxpub-system_requirements_2-1.htm</a></code></p> </li> 
+       <li> <p>Check the <a href="../release_notes/jfxpub-release_notes.htm">release notes</a> for known issues at<br /> <code><a href="../../../../docs.oracle.com/javafx/2/release_notes_2-1/jfxpub-release_notes_2-1.htm">http://docs.oracle.com/javafx/2/release_notes_2-1/jfxpub-release_notes_2-1.htm</a></code></p> </li> 
+       <li> <p>Ensure that the JavaFX Runtime is installed. Go to Control Panel, choose <span class="gui-object-action">Add/Remove Programs</span>, and verify that JavaFX 2.1.1 appears in the list of installed applications. Note that only one version of JavaFX SDK or Runtime can be installed.</p> </li> 
+       <li> <p>Try running the JavaFX pre-built samples. See <a href="#CHDCFFGI">Viewing and Using JavaFX Samples</a>.</p> </li> 
+       <li> <p>Check your JDK/JRE installation running a standard Java applet, Web Start application, or standalone JAR application.</p> </li> 
+       <li> <p>If you still have unresolved issues, go to the JavaFX Forum at<br /> <code><a href="../../../../https@forums.oracle.com/forums/forum.jspa@forumID=1385">https://forums.oracle.com/forums/forum.jspa?forumID=1385</a></code></p> </li> 
+      </ol> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-installation_2-1-1.htm">JavaFX 2.1.1 Installation Guide</a></li>
+      <li class=" active"><a href="javafx-installation-windows.htm">JavaFX Installation for Microsoft Windows</a></li>
+      <li><a href="javafx-installation-mac.htm">JavaFX Installation for Mac OS X</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

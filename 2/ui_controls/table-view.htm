@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Table View &middot; Using JavaFX UI Controls &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX UI Controls</h1>
+     <p class=" lead">Table View</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="list-view.htm">←上一篇</a></li>
+      <li class=" next"><a href="tree-view.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CJAGAAEE" name="CJAGAAEE"></a>
+     <a id="JFXUC262" name="JFXUC262"></a>
+     <a id="CJABIEED" name="CJABIEED"></a>  
+     <p>Several classes in the JavaFX SDK API are designed to represent data in a tabular form. The most important classes for creating tables in JavaFX applications are <code>TableView</code>, <code>TableColumn</code>, and <code>TableCell</code>. You can populate a table by implementing the data model and by applying a cell factory.</p> 
+     <p>The table classes provide built-in capabilities to sort data in columns and to resize columns when necessary.</p> 
+     <p><a href="#CJADHEAG">Figure 13-1</a> shows a typical table representing contact information from an address book.</p> 
+     <div class="figure">
+      <a id="CJADHEAG" name="CJADHEAG"></a>
+      <a id="JFXUC263" name="JFXUC263"></a> 
+      <p class="titleinfigure">Figure 13-1 Table Sample</p> 
+      <img src="img/table-sample.png" alt="Address Book" title="Address Book" longdesc="img_text/table-sample.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <a id="JFXUC264" name="JFXUC264"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref109" name="sthref109"></a> 
+      <h2 class="sect1">Creating a Table</h2> 
+      <p>The code fragment in <a href="#CJAFBAHI">Example 13-1</a> creates an empty table with three columns and adds it to the application scene.</p> 
+      <div class="example">
+       <a id="CJAFBAHI" name="CJAFBAHI"></a>
+       <a id="JFXUC265" name="JFXUC265"></a> 
+       <p class="titleinexample">Example 13-1 Adding a Table</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.stage.Stage;
+ 
+public class Main extends Application {
+ 
+   
+    private TableView table = new TableView();
+        
+    public static void main(String[] args) {
+        launch(args);
+    }
+ 
+    @Override
+    public void start(Stage stage) {
+        Scene scene = new Scene(new Group());
+        stage.setTitle(&quot;Table View Sample&quot;);
+        stage.setWidth(400);
+        stage.setHeight(500);
+ 
+        final Label label = new Label(&quot;Address Book&quot;);
+        label.setFont(new Font(&quot;Arial&quot;, 20));
+ 
+        TableColumn firstNameCol = new TableColumn(&quot;First Name&quot;);
+        TableColumn lastNameCol = new TableColumn(&quot;Last Name&quot;);
+        TableColumn emailCol = new TableColumn(&quot;Email&quot;);
+          
+        table.getColumns().addAll(firstNameCol, lastNameCol, emailCol);
+       
+        final VBox vbox = new VBox();
+        vbox.setSpacing(5);
+        vbox.getChildren().addAll(label, table);
+        vbox.setPadding(new Insets(10, 0, 0, 10));
+ 
+        ((Group) scene.getRoot()).getChildren().addAll(vbox);
+ 
+        stage.setScene(scene);
+        stage.show();
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The table control is created by instantiating the <code>TableView</code> class. In <a href="#CJAFBAHI">Example 13-1</a>, it is added to the <code>VBox</code> layout container, however, you can add it directly to the application scene.</p> 
+      <p><a href="#CJAFBAHI">Example 13-1</a> defines three columns to store the following information in an address book: a contact's first name and last name, and an email address. The columns are created by using the <code>TableColumn</code> class.</p> 
+      <p>The <code>getColumns</code> method of the <code>TableView</code> class adds the previously created columns to the table. In your applications, you can use this method to dynamically add and remove columns.</p> 
+      <p>Compiling and running this application produces the output shown in <a href="#CJAHCBHE">Figure 13-2</a>.</p> 
+      <div class="figure">
+       <a id="CJAHCBHE" name="CJAHCBHE"></a>
+       <a id="JFXUC266" name="JFXUC266"></a> 
+       <p class="titleinfigure">Figure 13-2 Table Without Data</p> 
+       <img src="img/table-empty.png" alt="An empty table" title="An empty table" longdesc="img_text/table-empty.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>You can manage visibility of the columns by calling the <code>setVisible</code> method. For example, if the logic of your application requires hiding user email addresses, you can implement this task as follows: <code>emailCol.setVisible(false)</code>.</p> 
+      <p>When the structure of your data requires a more complicated representation, you can create nested columns.</p> 
+      <p>For example, suppose that the contacts in the address book have two email accounts. Then you need two columns to show the primary and the secondary email addresses. Create two subcolumns, and call the <code>getColumns</code> method on <code>emailCol</code> as shown in <a href="#CJABHBEH">Example 13-2</a>.</p> 
+      <div class="example">
+       <a id="CJABHBEH" name="CJABHBEH"></a>
+       <a id="JFXUC337" name="JFXUC337"></a> 
+       <p class="titleinexample">Example 13-2 Creating Nested Columns</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+TableColumn firstEmailCol = new TableColumn(&quot;Primary&quot;);
+TableColumn secondEmailCol = new TableColumn(&quot;Secondary&quot;);
+
+emailCol.getColumns().addAll(firstEmailCol, secondEmailCol);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>After you have added these lines to <a href="#CJAFBAHI">Example 13-1</a>, and compiled and run the application code, the table appears as shown in <a href="#CJAFIDEI">Figure 13-3</a>.</p> 
+      <div class="figure">
+       <a id="CJAFIDEI" name="CJAFIDEI"></a>
+       <a id="JFXUC338" name="JFXUC338"></a> 
+       <p class="titleinfigure">Figure 13-3 Table with Nested Columns</p> 
+       <img src="img/table-nested.png" alt="Table with nested columns" title="Table with nested columns" longdesc="img_text/table-nested.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Although the table is added to the application, the standard caption &quot;No content in table&quot; appears, because no data is defined. Instead of showing this caption, you can use the <code>setPlaceholder</code> method to specify a <code>Node</code> object to appear in an empty table.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC267" name="JFXUC267"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref112" name="sthref112"></a> 
+      <h2 class="sect1">Defining the Data Model</h2> 
+      <p>When you create a table in a JavaFX application, it is a best practice to implement a class that defines the data model and provides methods and fields to further work with the table. <a href="#CJADAHAH">Example 13-3</a> creates the <code>Person</code> class to define data in an address book.</p> 
+      <div class="example">
+       <a id="CJADAHAH" name="CJADAHAH"></a>
+       <a id="JFXUC268" name="JFXUC268"></a> 
+       <p class="titleinexample">Example 13-3 Creating the Person Class</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public static class Person {
+    private final SimpleStringProperty firstName;
+    private final SimpleStringProperty lastName;
+    private final SimpleStringProperty email;
+ 
+    private Person(String fName, String lName, String email) {
+        this.firstName = new SimpleStringProperty(fName);
+        this.lastName = new SimpleStringProperty(lName);
+        this.email = new SimpleStringProperty(email);
+    }
+ 
+    public String getFirstName() {
+        return firstName.get();
+    }
+    public void setFirstName(String fName) {
+        firstName.set(fName);
+    }
+        
+    public String getLastName() {
+        return lastName.get();
+    }
+    public void setLastName(String fName) {
+        lastName.set(fName);
+    }
+    
+    public String getEmail() {
+        return email.get();
+    }
+    public void setEmail(String fName) {
+        email.set(fName);
+    }
+        
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The <code>firstName</code>, <code>lastName</code>, and <code>email</code> string properties are created to enable the referencing of a particular data element.</p> 
+      <p>Additionally, the <code>get</code> and <code>set</code> methods are provided for each data element. Thus, for example, the <code>getFirstName</code> method returns the value of the <code>firstName</code> property, and the <code>setFirstName</code> method specifies a value for this property.</p> 
+      <p>When the data model is outlined in the <code>Person</code> class, you can create an <code>ObservableList</code> array and define as many data rows as you would like to show in your table. The code fragment in <a href="#CJACAECH">Example 13-4</a> implements this task.</p> 
+      <div class="example">
+       <a id="CJACAECH" name="CJACAECH"></a>
+       <a id="JFXUC269" name="JFXUC269"></a> 
+       <p class="titleinexample">Example 13-4 Defining Table Data in an Observable List</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+final ObservableList&lt;Person&gt; data = FXCollections.observableArrayList(
+    new Person(&quot;Jacob&quot;, &quot;Smith&quot;, &quot;jacob.smith@example.com&quot;),
+    new Person(&quot;Isabella&quot;, &quot;Johnson&quot;, &quot;isabella.johnson@example.com&quot;),
+    new Person(&quot;Ethan&quot;, &quot;Williams&quot;, &quot;ethan.williams@example.com&quot;),
+    new Person(&quot;Emma&quot;, &quot;Jones&quot;, &quot;emma.jones@example.com&quot;),
+    new Person(&quot;Michael&quot;, &quot;Brown&quot;, &quot;michael.brown@example.com&quot;)
+);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The next step is to associate the data with the table columns. You can do this through the properties defined for each data element, as shown in <a href="#CJAGHGBD">Example 13-5</a>.</p> 
+      <div class="example">
+       <a id="CJAGHGBD" name="CJAGHGBD"></a>
+       <a id="JFXUC270" name="JFXUC270"></a> 
+       <p class="titleinexample">Example 13-5 Setting Data Properties to Columns</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+firstNameCol.setCellValueFactory(
+    new PropertyValueFactory&lt;Person,String&gt;(&quot;firstName&quot;)
+);
+lastNameCol.setCellValueFactory(
+    new PropertyValueFactory&lt;Person,String&gt;(&quot;lastName&quot;)
+);
+emailCol.setCellValueFactory(
+    new PropertyValueFactory&lt;Person,String&gt;(&quot;email&quot;)
+);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The <code>setCellValueFactory</code> method specifies a cell factory for each column. The cell factories are implemented by using the <code>PropertyValueFactory</code> class, which uses the <code>firstName</code>, <code>lastName</code>, and <code>email</code> properties of the table columns as references to the corresponding methods of the <code>Person</code> class.</p> 
+      <p>When the data model is defined, and the data is added and associated with the columns, you can add the data to the table by using the <code>setItems</code> method of the <code>TableView</code> class: <code>table.setItems(data)</code>.</p> 
+      <p>Because the <code>ObservableList</code> object enables the tracking of any changes to its elements, the <code>TableView</code> content automatically updates whenever the data changes.</p> 
+      <p>Examine the application code shown in <a href="#CJABHGAJ">Example 13-6</a>.</p> 
+      <div class="example">
+       <a id="CJABHGAJ" name="CJABHGAJ"></a>
+       <a id="JFXUC271" name="JFXUC271"></a> 
+       <p class="titleinexample">Example 13-6 Creating a Table and Adding Data to It</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.beans.property.SimpleStringProperty;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.stage.Stage;
+ 
+public class Main extends Application {
+ 
+    public static class Person {
+        private final SimpleStringProperty firstName;
+        private final SimpleStringProperty lastName;
+        private final SimpleStringProperty email;
+ 
+        private Person(String fName, String lName, String email) {
+            this.firstName = new SimpleStringProperty(fName);
+            this.lastName = new SimpleStringProperty(lName);
+            this.email = new SimpleStringProperty(email);
+        }
+ 
+        public String getFirstName() {
+            return firstName.get();
+        }
+        public void setFirstName(String fName) {
+            firstName.set(fName);
+        }
+        
+        public String getLastName() {
+            return lastName.get();
+        }
+        public void setLastName(String fName) {
+            lastName.set(fName);
+        }
+        
+        public String getEmail() {
+            return email.get();
+        }
+        public void setEmail(String fName) {
+            email.set(fName);
+        }
+        
+    }
+    
+    private TableView&lt;Person&gt; table = new TableView&lt;Person&gt;();
+    private final ObservableList&lt;Person&gt; data = 
+        FXCollections.observableArrayList(
+            new Person(&quot;Jacob&quot;, &quot;Smith&quot;, &quot;jacob.smith@example.com&quot;),
+            new Person(&quot;Isabella&quot;, &quot;Johnson&quot;, &quot;isabella.johnson@example.com&quot;),
+            new Person(&quot;Ethan&quot;, &quot;Williams&quot;, &quot;ethan.williams@example.com&quot;),
+            new Person(&quot;Emma&quot;, &quot;Jones&quot;, &quot;emma.jones@example.com&quot;),
+            new Person(&quot;Michael&quot;, &quot;Brown&quot;, &quot;michael.brown@example.com&quot;)
+        );
+    
+    public static void main(String[] args) {
+        launch(args);
+    }
+ 
+    @Override
+    public void start(Stage stage) {
+        Scene scene = new Scene(new Group());
+        stage.setTitle(&quot;Table View Sample&quot;);
+        stage.setWidth(400);
+        stage.setHeight(500);
+ 
+        final Label label = new Label(&quot;Address Book&quot;);
+        label.setFont(new Font(&quot;Arial&quot;, 20));
+ 
+        TableColumn firstNameCol = new TableColumn(&quot;First Name&quot;);
+        firstNameCol.setCellValueFactory(
+            new PropertyValueFactory&lt;Person,String&gt;(&quot;firstName&quot;)
+        );
+ 
+        TableColumn lastNameCol = new TableColumn(&quot;Last Name&quot;);
+        lastNameCol.setCellValueFactory(
+            new PropertyValueFactory&lt;Person,String&gt;(&quot;lastName&quot;)
+        );
+ 
+        TableColumn emailCol = new TableColumn(&quot;Email&quot;);
+        emailCol.setMinWidth(200);
+        emailCol.setCellValueFactory(
+            new PropertyValueFactory&lt;Person,String&gt;(&quot;email&quot;)
+        );
+ 
+        table.setItems(data);
+        table.getColumns().addAll(firstNameCol, lastNameCol, emailCol);
+ 
+        final VBox vbox = new VBox();
+        vbox.setSpacing(5);
+        vbox.getChildren().addAll(label, table);
+        vbox.setPadding(new Insets(10, 0, 0, 10));
+ 
+        ((Group) scene.getRoot()).getChildren().addAll(vbox);
+ 
+        stage.setScene(scene);
+        stage.show();
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When you compile and run this application code, the table shown in <a href="#CJAEDBIA">Figure 13-4</a> appears.</p> 
+      <div class="figure">
+       <a id="CJAEDBIA" name="CJAEDBIA"></a>
+       <a id="JFXUC272" name="JFXUC272"></a> 
+       <p class="titleinfigure">Figure 13-4 Table Populated with Data</p> 
+       <img src="img/table-data.png" alt="A table populated with contact information" title="A table populated with contact information" longdesc="img_text/table-data.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC273" name="JFXUC273"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref114" name="sthref114"></a> 
+      <h2 class="sect1">Adding New Rows</h2> 
+      <p>The table in <a href="#CJAEDBIA">Figure 13-4</a> contains five rows of data, which cannot be modified so far.</p> 
+      <p>You can use text fields to enter new values into the First Name, Last Name, and Email columns. The <a href="text-field.htm#BABBCEIG">Text Field</a> control enables your application to receive text input from a user. <a href="#CJAHBCII">Example 13-7</a> creates three text fields, defines the prompt text for each field, and creates the Add button.</p> 
+      <div class="example">
+       <a id="CJAHBCII" name="CJAHBCII"></a>
+       <a id="JFXUC274" name="JFXUC274"></a> 
+       <p class="titleinexample">Example 13-7 Using Text Fields to Enter New Items in the Table</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+final TextField addFirstName = new TextField();
+addFirstName.setPromptText(&quot;First Name&quot;);
+addFirstName.setMaxWidth(firstNameCol.getPrefWidth());
+final TextField addLastName = new TextField();
+addLastName.setMaxWidth(lastNameCol.getPrefWidth());
+addLastName.setPromptText(&quot;Last Name&quot;);
+final TextField addEmail = new TextField();
+addEmail.setMaxWidth(emailCol.getPrefWidth());
+addEmail.setPromptText(&quot;Email&quot;);
+ 
+final Button addButton = new Button(&quot;Add&quot;);
+addButton.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+    @Override public void handle(ActionEvent e) {
+        data.add(new Person(
+            addFirstName.getText(),
+            addLastName.getText(),
+            addEmail.getText()
+        ));
+        addFirstName.setText(&quot;&quot;);
+        addLastName.setText(&quot;&quot;);
+        addEmail.setText(&quot;&quot;);
+    }
+});
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When a user clicks the Add button, the values entered in the text fields are included in a <code>Person</code> constructor and added to the <code>data</code> observable list. Thus, the new entry with contact information appears in the table.</p> 
+      <p>Examine the application code shown in <a href="#CJAFABCH">Example 13-8</a>.</p> 
+      <div class="example">
+       <a id="CJAFABCH" name="CJAFABCH"></a>
+       <a id="JFXUC275" name="JFXUC275"></a> 
+       <p class="titleinexample">Example 13-8 Table with the Text Fields to Enter New Items</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.stage.Stage;
+ 
+public class Main extends Application {
+ 
+    public static class Person {
+ 
+        private final StringProperty firstName;
+        private final StringProperty lastName;
+        private final StringProperty email;
+ 
+        private Person(String fName, String lName, String email) {
+            this.firstName = new SimpleStringProperty(fName);
+            this.lastName = new SimpleStringProperty(lName);
+            this.email = new SimpleStringProperty(email);
+        }
+ 
+        public String getFirstName() {
+            return firstName.get();
+        }
+ 
+        public void setFirstName(String fName) {
+            firstName.set(fName);
+        }
+ 
+        public String getLastName() {
+            return lastName.get();
+        }
+ 
+        public void setLastName(String fName) {
+            lastName.set(fName);
+        }
+ 
+        public String getEmail() {
+            return email.get();
+        }
+ 
+        public void setEmail(String fName) {
+            email.set(fName);
+        }
+ 
+    }
+    private TableView&lt;Person&gt; table = new TableView&lt;Person&gt;();
+    private final ObservableList&lt;Person&gt; data = 
+        FXCollections.observableArrayList(
+            new Person(&quot;Jacob&quot;, &quot;Smith&quot;, &quot;jacob.smith@example.com&quot;),
+            new Person(&quot;Isabella&quot;, &quot;Johnson&quot;, &quot;isabella.johnson@example.com&quot;),
+            new Person(&quot;Ethan&quot;, &quot;Williams&quot;, &quot;ethan.williams@example.com&quot;),
+            new Person(&quot;Emma&quot;, &quot;Jones&quot;, &quot;emma.jones@example.com&quot;),
+            new Person(&quot;Michael&quot;, &quot;Brown&quot;, &quot;michael.brown@example.com&quot;)
+        );
+ 
+    private HBox hb = new HBox();
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+ 
+    @Override
+    public void start(Stage stage) {
+        Scene scene = new Scene(new Group());
+        stage.setTitle(&quot;Table View Sample&quot;);
+        stage.setWidth(400);
+        stage.setHeight(500);
+ 
+        final Label label = new Label(&quot;Address Book&quot;);
+        label.setFont(new Font(&quot;Arial&quot;, 20));
+ 
+        TableColumn firstNameCol = new TableColumn(&quot;First&quot;);
+        firstNameCol.setCellValueFactory(
+            new PropertyValueFactory&lt;Person,String&gt;(&quot;firstName&quot;)
+        );
+ 
+        TableColumn lastNameCol = new TableColumn(&quot;Last&quot;);
+        lastNameCol.setCellValueFactory(
+            new PropertyValueFactory&lt;Person,String&gt;(&quot;lastName&quot;)
+        );
+ 
+        TableColumn emailCol = new TableColumn(&quot;Email&quot;);
+        emailCol.setMinWidth(200);
+        emailCol.setCellValueFactory(
+                new PropertyValueFactory&lt;Person,String&gt;(&quot;email&quot;)
+        );
+ 
+        table.setItems(data);
+        table.getColumns().addAll(firstNameCol, lastNameCol, emailCol);
+ 
+        final TextField addFirstName = new TextField();
+        addFirstName.setPromptText(&quot;First Name&quot;);
+        addFirstName.setMaxWidth(firstNameCol.getPrefWidth());
+        final TextField addLastName = new TextField();
+        addLastName.setMaxWidth(lastNameCol.getPrefWidth());
+        addLastName.setPromptText(&quot;Last Name&quot;);
+        final TextField addEmail = new TextField();
+        addEmail.setMaxWidth(emailCol.getPrefWidth());
+        addEmail.setPromptText(&quot;Email&quot;);
+ 
+        final Button addButton = new Button(&quot;Add&quot;);
+        addButton.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+            @Override public void handle(ActionEvent e) {
+                data.add(new Person(
+                        addFirstName.getText(),
+                        addLastName.getText(),
+                        addEmail.getText()
+                        ));
+                addFirstName.setText(&quot;&quot;);
+                addLastName.setText(&quot;&quot;);
+                addEmail.setText(&quot;&quot;);
+            }
+        });
+ 
+        hb.getChildren().addAll(addFirstName, addLastName, addEmail, addButton);
+        hb.setSpacing(3);
+ 
+        final VBox vbox = new VBox();
+        vbox.setSpacing(5);
+        vbox.getChildren().addAll(label, table, hb);
+        vbox.setPadding(new Insets(10, 0, 0, 10));
+ 
+        ((Group) scene.getRoot()).getChildren().addAll(vbox);
+ 
+        stage.setScene(scene);
+        stage.show();
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>This application does not provide any filters to check if, for example, an email address was entered in an incorrect format. You can provide such functionality when you develop your own application.</p> 
+      <p>The current implementation also does not check to determine if the empty values are entered. If no values are provided, clicking the Add button inserts an empty row in the table.</p> 
+      <p><a href="#CJADIDIE">Figure 13-5</a> demonstrates how a user adds a new row of data.</p> 
+      <div class="figure">
+       <a id="CJADIDIE" name="CJADIDIE"></a>
+       <a id="JFXUC276" name="JFXUC276"></a> 
+       <p class="titleinfigure">Figure 13-5 Adding Contact Information to the Address Book</p> 
+       <img src="img/table-add.png" alt="A table with text fields to add new data" title="A table with text fields to add new data" longdesc="img_text/table-add.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p><a href="#CJAJBIGI">Figure 13-6</a> shows the table after the Add button is clicked. The contact details of Emma White now appear in the table.</p> 
+      <div class="figure">
+       <a id="CJAJBIGI" name="CJAJBIGI"></a>
+       <a id="JFXUC277" name="JFXUC277"></a> 
+       <p class="titleinfigure">Figure 13-6 Newly Added Entry</p> 
+       <img src="img/table-added.png" alt="The newly entered data in the address book" title="The newly entered data in the address book" longdesc="img_text/table-added.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC278" name="JFXUC278"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref117" name="sthref117"></a> 
+      <h2 class="sect1">Sorting Data in Columns</h2> 
+      <p>The <code>TableView</code> class provides built-in capabilities to sort data in columns. Users can alter the order of data by clicking column headers. The first click enables the ascending sorting order, the second click enables descending sorting order, and the third click disables sorting. By default, no sorting is applied.</p> 
+      <p>Users can sort multiple columns in a table and specify the priority of each column in the sort operation. To sort multiple columns, the user presses the Shift key while clicking the header of each column to be sorted.</p> 
+      <p>In <a href="#CJAJDBJC">Figure 13-7</a>, an ascending sort order is applied to the first names, while last names are sorted in a descending order. Note that the first column has priority over the second column.</p> 
+      <div class="figure">
+       <a id="CJAJDBJC" name="CJAJDBJC"></a>
+       <a id="JFXUC279" name="JFXUC279"></a> 
+       <p class="titleinfigure">Figure 13-7 Sorting Multiple Columns</p> 
+       <img src="img/table-sort.png" alt="A table with the data sorted by columns." title="A table with the data sorted by columns." longdesc="img_text/table-sort.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>As the application developer, you can set sorting preferences for each column in your application by applying the <code>setSortType</code> method. You can specify both ascending and descending type. For example, use the following code line to set the descending type of sorting for the emailCol column: <code>emailCol.setSortType(TableColumn.SortType.DESCENDING);</code>.</p> 
+      <p>You can also specify which columns to sort by adding and removing <code>TableColumn</code> instances from the <code>TableView.sortOrder</code> observable list. The order of columns in this list represents the sort priority (for example, the zero item has higher priority than the first item).</p> 
+      <p>To prohibit sorting of data, call the <code>setSortable(false)</code> method on the column.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC280" name="JFXUC280"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref119" name="sthref119"></a> 
+      <h2 class="sect1">Editing Data in the Table</h2> 
+      <p>The <code>TableView</code> class not only renders tabular data, but it also provides capabilities to edit it. You can use the <code>TableView.edit(int row, TableColumn&lt;S,?&gt; column)</code> method to start an edit.You can also use methods of the <code>TableCell</code> class to edit data in the table, as shown in <a href="#CJAGDAHE">Example 13-9</a>.</p> 
+      <div class="example">
+       <a id="CJAGDAHE" name="CJAGDAHE"></a>
+       <a id="JFXUC281" name="JFXUC281"></a> 
+       <p class="titleinexample">Example 13-9 Implementing Cell Editing</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+class EditingCell extends TableCell&lt;Person, String&gt; {
+     
+        private TextField textField;
+ 
+        public EditingCell() {           
+        }
+ 
+        @Override
+        public void startEdit() {
+            super.startEdit();
+ 
+            if (textField == null) {
+                createTextField();
+            }
+            setText(null);
+            setGraphic(textField);
+            textField.selectAll();
+        }
+ 
+        @Override
+        public void cancelEdit() {
+            super.cancelEdit();
+ 
+            setText((String) getItem());
+            setGraphic(null);
+        }
+ 
+        @Override                       
+        public void updateItem(String item, boolean empty) {
+            super.updateItem(item, empty);
+ 
+            if (empty) {
+                setText(null);
+                setGraphic(null);
+            } else {
+                if (isEditing()) {
+                    if (textField != null) {
+                        textField.setText(getString());
+                    }
+                    setText(null);
+                    setGraphic(textField);
+                } else {
+                    setText(getString());
+                    setGraphic(null);                   
+                }
+            }
+        }
+ 
+        private void createTextField() {
+         
+            textField = new TextField(getString());
+            textField.setMinWidth(this.getWidth() - this.getGraphicTextGap()*2);
+            textField.setOnKeyReleased(new EventHandler&lt;KeyEvent&gt;() {
+ 
+                @Override
+                public void handle(KeyEvent t) {
+                    if (t.getCode() == KeyCode.ENTER) {
+                        commitEdit(textField.getText());
+                    } else if (t.getCode() == KeyCode.ESCAPE) {
+                        cancelEdit();
+                    }
+                }
+            }); 
+        }
+       
+        private String getString() {
+            return getItem() == null ? &quot;&quot; : getItem().toString();
+        }
+    }
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>In <a href="#CJAGDAHE">Example 13-9</a>, the <code>createTextField</code> method uses the <code>textField</code> variable to analyze the entered sequence and to call either the <code>commitEdit</code> or <code>cancelEdit</code> method when the Enter or Escape keys are released, respectively.</p> 
+      <p>The <code>setCellFactory</code> method of the <code>TableColumn</code> class can be used to install a custom cell factory. The primary task of this custom cell factory is to return a new <code>TableCell</code> instance whenever requested. <a href="#CJAFAIEG">Example 13-10</a> shows how to implement a cell factory for the <code>firstNameCol</code>, <code>lastNameCol</code>, and <code>emailCol</code> columns.</p> 
+      <div class="example">
+       <a id="CJAFAIEG" name="CJAFAIEG"></a>
+       <a id="JFXUC282" name="JFXUC282"></a> 
+       <p class="titleinexample">Example 13-10 Using a Cell Factory</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Callback&lt;TableColumn, TableCell&gt; cellFactory = 
+    new Callback&lt;TableColumn, TableCell&gt;() {
+        public TableCell call(TableColumn p) {
+            return new EditingCell();
+    }
+};
+
+firstNameCol.setCellFactory(cellFactory);
+lastNameCol.setCellFactory(cellFactory);
+emailCol.setCellFactory(cellFactory);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Use the <code>setOnEditCommit</code> method of the <code>TableColumn</code> class, as shown in <a href="#CJAECGCI">Example 13-11</a>, so that the table can process any changes to its items. The method identifies a modified item, retrieves new data, and replaces the corresponding element in the <code>data</code> observable list.</p> 
+      <div class="example">
+       <a id="CJAECGCI" name="CJAECGCI"></a>
+       <a id="JFXUC283" name="JFXUC283"></a> 
+       <p class="titleinexample">Example 13-11 Processing Edited Data in the Table</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+//Enabling editing
+table.setEditable(true);
+
+//Modifying the firstName property
+firstNameCol.setOnEditCommit(new EventHandler&lt;CellEditEvent&lt;Person, String&gt;&gt;() {
+    @Override public void handle(CellEditEvent&lt;Person, String&gt; t) {
+        ((Person)t.getTableView().getItems().get(
+            t.getTablePosition().getRow())).setFirstName(t.getNewValue());
+    }
+});
+
+//Modifying the lastName property
+lastNameCol.setOnEditCommit(new EventHandler&lt;CellEditEvent&lt;Person, String&gt;&gt;() {
+    @Override public void handle(CellEditEvent&lt;Person, String&gt; t) {
+        ((Person)t.getTableView().getItems().get(
+            t.getTablePosition().getRow())).setLastName(t.getNewValue());
+    }
+}); 
+
+//Modifying the email property
+emailCol.setOnEditCommit(new EventHandler&lt;CellEditEvent&lt;Person, String&gt;&gt;() {
+    @Override public void handle(CellEditEvent&lt;Person, String&gt; t) {
+        ((Person)t.getTableView().getItems().get(
+            t.getTablePosition().getRow())).setEmail(t.getNewValue());
+     }
+});
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>You can find the complete source code of the address book application in the list of the Application Files.</p> 
+      <p>In <a href="#CJAEHEBD">Figure 13-8</a>, the user is editing the last name of Michael Brown. To edit a table cell, the user enters the new value in the cell, and then presses the Enter key. The cell is not modified until the Enter key is pressed. This behavior is determined by the implementation of the <code>TextField</code> class.</p> 
+      <div class="figure">
+       <a id="CJAEHEBD" name="CJAEHEBD"></a>
+       <a id="JFXUC284" name="JFXUC284"></a> 
+       <p class="titleinfigure">Figure 13-8 Editing a Table Cell</p> 
+       <img src="img/table-edit.png" alt="An edited table." title="An edited table." longdesc="img_text/table-edit.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p class="itemizedlisttitle">Related API Documentation&nbsp;</p> 
+      <ul> 
+       <li> <p><code>TableView</code></p> </li> 
+       <li> <p><code>TableColumn</code></p> </li> 
+       <li> <p><code>TableCell</code></p> </li> 
+       <li> <p><code>TextField</code></p> </li> 
+       <li> <p><code>Button</code></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-ui_controls.htm">About This Tutorial</a></li>
+      <li><a href="overview.htm">JavaFX UI Controls</a></li>
+      <li><a href="label.htm">Label</a></li>
+      <li><a href="button.htm">Button</a></li>
+      <li><a href="radio-button.htm">Radio Button</a></li>
+      <li><a href="toggle-button.htm">Toggle Button</a></li>
+      <li><a href="checkbox.htm">Checkbox</a></li>
+      <li><a href="choice-box.htm">Choice Box</a></li>
+      <li><a href="text-field.htm">Text Field</a></li>
+      <li><a href="password-field.htm">Password Field</a></li>
+      <li><a href="scrollbar.htm">Scroll Bar</a></li>
+      <li><a href="scrollpane.htm">Scroll Pane</a></li>
+      <li><a href="list-view.htm">List View</a></li>
+      <li class=" active"><a href="table-view.htm">Table View</a></li>
+      <li><a href="tree-view.htm">Tree View</a></li>
+      <li><a href="combo-box.htm">Combo Box</a></li>
+      <li><a href="separator.htm">Separator</a></li>
+      <li><a href="slider.htm">Slider</a></li>
+      <li><a href="progress.htm">Progress Bar and Progress Indicator</a></li>
+      <li><a href="hyperlink.htm">Hyperlink</a></li>
+      <li><a href="tooltip.htm">Tooltip</a></li>
+      <li><a href="editor.htm">HTML Editor</a></li>
+      <li><a href="accordion-titledpane.htm">Titled Pane and Accordion</a></li>
+      <li><a href="menu_controls.htm">Menu</a></li>
+      <li><a href="custom.htm">Customization of UI Controls</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/ui_controls/UIControlSamples.zip">UIControlSamples.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

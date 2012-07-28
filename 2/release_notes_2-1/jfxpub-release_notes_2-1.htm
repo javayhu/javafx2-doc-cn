@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>JavaFX 2.1 Release Notes &middot; JavaFX 2.1 Release Notes &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>JavaFX 2.1 Release Notes</h1>
+     <p class=" lead">JavaFX 2.1 Release Notes</p>
+     <ul class=" pager"></ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="JFXRN101" name="JFXRN101"></a>
+     <a id="sthref2" name="sthref2"></a>  
+     <p>The JavaFX 2.1 release includes the JavaFX Software Development Kit (SDK) for the Windows and Mac OS X platforms. The JavaFX SDK provides the tools and technologies for developing JavaFX applications. This release also includes the JavaFX Runtime for the Windows platform.</p> 
+     <p>In addition to a number of bug fixes, this release includes:</p> 
+     <ul> 
+      <li> <p>Media H.264 and AAC support</p> </li> 
+      <li> <p>Mac OS X support</p> <p>Applications must be packaged for the desktop, Web and Web Start applications are not yet supported.</p> </li> 
+      <li> <p>LCD text</p> </li> 
+      <li> <p>UI enhancements, including controls for Combo Box, Stacked Chart, and application-wide menu bar</p> </li> 
+      <li> <p>Webview to support JavaScript to Java method calls</p> </li> 
+     </ul> 
+     <p>Note that a standalone JavaFX SDK and JavaFX Runtime is available only for the Windows platform. The JavaFX SDK is installed with Java SE 7 update 4 for both the Windows and Mac OS X platforms. The JavaFX Runtime is installed with the JRE for the Windows platform.</p> 
+     <a id="JFXRN102" name="JFXRN102"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref3" name="sthref3"></a> 
+      <h2 class="sect1">System Requirements</h2> 
+      <p>See the <a href="../system_requirements_2-1/jfxpub-system_requirements_2-1.htm">JavaFX System Requirements</a> document for information on the hardware and software prerequisites.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXRN103" name="JFXRN103"></a> 
+     <div class="sect1">
+      <a id="sthref4" name="sthref4"></a> 
+      <h2 class="sect1">Getting Started</h2> 
+      <p>To get started with the JavaFX SDK, review the documentation provided at<br /> <code><a href="../../../../docs.oracle.com/javafx/default.htm">http://docs.oracle.com/javafx/</a></code>. Good starting points include:</p> 
+      <ul> 
+       <li> <p><a href="../installation_2-1/jfxpub-installation_2-1.htm">Installing JavaFX</a> - Instructions for installing the JavaFX SDK.</p> </li> 
+       <li> <p><a href="../overview/jfxpub-overview.htm">What is JavaFX?</a> - Introduction to concepts and tools for working with the JavaFX SDK.</p> </li> 
+       <li> <p><a href="../get_started/jfxpub-get_started.htm">Getting Started with JavaFX</a> - Step-by-step tutorial for creating a JavaFX application.</p> </li> 
+       <li> <p><a href="../api/index.html">API documentation</a> - Output from the Javadoc tool for JavaFX classes.</p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXRN113" name="JFXRN113"></a> 
+     <div class="sect1">
+      <a id="sthref5" name="sthref5"></a> 
+      <h2 class="sect1">Samples</h2> 
+      <p>Sample JavaFX applications are available at<br /> <code><a href="../../../../www.oracle.com/technetwork/java/javafx/downloads/index.html">http://www.oracle.com/technetwork/java/javafx/downloads/index.html</a></code>. Download the zip file that contains the samples for your operating system and extract the files to a directory of your choice. After extracting the files, the samples are in the javafx-samples-<span class="variable">version</span> directory, where <span class="variable">version</span> is the version of JavaFX with which the samples were built.</p> 
+      <p>Read the javafx-samples-<span class="variable">version</span>/samples_readme.txt file for information on running the samples.</p> 
+      <p>Source code for each sample is in the javafx-samples-<span class="variable">version</span>\src directory. To view the source code, go to the javafx-samples-<span class="variable">version</span>\src\<span class="variable">sample</span> directory, where <span class="variable">sample</span> is the name of the application in which you are interested. Each of the sample source directories is a NetBeans project. Follow the steps in <a href="../../../../netbeans.org/kb/docs/java/javafx-setup.html">Setting Up NetBeans IDE with JavaFX</a> to create a JavaFX-enabled platform in NetBeans IDE.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXRN112" name="JFXRN112"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref6" name="sthref6"></a> 
+      <h2 class="sect1">Supported Locales</h2> 
+      <p>The <code>java.lang</code>, <code>java.util</code>, and <code>java.text</code> packages from the Java Platform Standard Edition (Java SE) JDK are available to JavaFX applications that are interested in supporting languages other than English. For information on the locale support that these packages provide, see <a href="../../../../www.oracle.com/technetwork/java/javase/javase7locales-334809.html">JDK 7 and JRE 7 Supported Locales</a>.</p> 
+      <p>Bidirectional and complex writing systems are not supported for JavaFX applications in this release.</p> 
+      <p>The JavaFX Runtime environment is translated into the same languages as the Java SE Runtime Environment. See the &quot;User Interface Translation&quot; section of the <a href="../../../../www.oracle.com/technetwork/java/javase/javase7locales-334809.html#translation">JDK 7 and JRE 7 Supported Locales</a> page for the list of languages and the scope of the translation.</p> 
+      <p>The JavaFX SDK is translated into Japanese (locale code <code>ja</code>) and Simplified Chinese (locale code <code>zh_CN</code>).</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXRN104" name="JFXRN104"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref7" name="sthref7"></a> 
+      <h2 class="sect1">Known Bugs and Issues</h2> 
+      <p>The following sections describe known issues with the code. Bugs are arranged by component.</p> 
+      <p>The number for each issue refers to reports in the JavaFX issues dashboard in JIRA. You must be a registered JIRA user to access the reports. To see a report or the complete list of open issues, log in to the JIRA project for JavaFX at<br /> <code><a href="../../../../javafx-jira.kenai.com/default.htm">http://javafx-jira.kenai.com/</a></code>.</p> 
+      <a id="JFXRN114" name="JFXRN114"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref8" name="sthref8"></a> 
+       <h3 class="sect2">App Model</h3> 
+       <ul> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-13739">RT-13739</a> Attempt to display error dialog to Mac OS X users fails.</p> <p><span class="bold">Description:</span> After setting Mac to Headless mode, an attempt to display a dialog fails.</p> <p><span class="bold">Workaround:</span> None.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXRN115" name="JFXRN115"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref9" name="sthref9"></a> 
+       <h3 class="sect2">Deployment</h3> 
+       <ul> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-17931">RT-17931</a> JavaFX doesn't run in Chrome.</p> <p><span class="bold">Description:</span> When using the Chrome browser on Windows to run a JavaFX application, you might see the following information bar:</p> <p>&quot;The Java plug-in needs your permission to run&quot;.</p> <p><span class="bold">Workaround:</span> Click on &quot;Always run on this site&quot;, and then reload the page in the browser. The JavaFX application should start to load.</p> </li> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-17954">RT-17954</a> Application that triggers mixed code dialog could not be launched successfully.</p> <p><span class="bold">Description:</span> If your JavaFX application contains both signed and unsigned code and causes the mixed code warning dialog to be shown, your application might stop working.</p> <p><span class="bold">Workaround:</span> Prevent the mixed code warning dialog from being triggered by following the mixed code guidelines, which are described at<br /> <code><a href="../../../../docs.oracle.com/javase/6/docs/technotes/guides/jweb/mixed_code.html">http://docs.oracle.com/javase/6/docs/technotes/guides/jweb/mixed_code.html</a></code>. Another option is to sign all of your application code to prevent the mixed code scenario.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXRN116" name="JFXRN116"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref10" name="sthref10"></a> 
+       <h3 class="sect2">Glass</h3> 
+       <ul> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-11736">RT-11736</a> Mac: InputMethods support on Mac.</p> <p><span class="bold">Description:</span> Input methods for the Mac OS X platform are not supported in this release.</p> <p><span class="bold">Workaround:</span> None.</p> </li> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-17026">RT-17026</a> Drag and Drop of custom data formats doesn't work on Mac OS X.</p> <p><span class="bold">Description:</span> Custom data UTI formats on the Mac do not work.</p> <p><span class="bold">Workaround:</span> Define your data as Serializable and use one of the existing UTI types.</p> </li> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-20247">RT-20247</a> Mac: [dnd] onDragDropped is not called, when DnD is from native, Mac only.</p> <p><span class="bold">Description:</span> On Mac OS X, using native drag-and-drop fails because the <code>onDragDropped</code> method is not called.</p> <p><span class="bold">Workaround:</span> None.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXRN117" name="JFXRN117"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref11" name="sthref11"></a> 
+       <h3 class="sect2">Graphics</h3> 
+       <ul> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-5431">RT-5431</a> Mouse events should not be delivered to non-visible components.</p> <p><span class="bold">Description:</span> Currently picking does not take into account the front clipping plane of the view frustum in culling picked node. This can result in returning the wrong picked node if a 3D transformed node exists between the viewer and the front clipping plane.</p> <p><span class="bold">Workaround:</span> None.</p> </li> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-14413">RT-14413</a> <code>JFXPanel</code> does not work in full-screen mode.</p> <p><span class="bold">Description:</span> AWT full-screen exclusive mode prevents initialization of the JavaFX D3D pipeline.</p> <p><span class="bold">Workaround:</span> Construct a JFXPanel object before entering full-screen mode from any Swing JWindow.</p> </li> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-15117">RT-15117</a> Clipping does not work for objects in 3D</p> <p><span class="bold">Description:</span> Objects to which a 3D transform is applied are not clipped correctly. This is a known perspective rendering bug for nVidia and AMD (ATI) GPUs.</p> <p><span class="bold">Workaround:</span> None.</p> </li> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-16397">RT-16397</a> Region: asymmetric clipping in an image border that repeats.</p> <p><span class="bold">Description:</span> Clipping in an image border is incorrect because the behavior of a <code>Region</code> object does not comply with the CSS spec. The <code>Region</code> object begins the image slice at the left of the image, however the CSS spec starts the image slice at the center of the image.</p> <p><span class="bold">Workaround:</span> None.</p> </li> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-16398">RT-16398</a> Region: distortion in an image border that repeats. Repeated images have the wrong width-to-height ratio.</p> <p><span class="bold">Description:</span> When the values defined for the <code>-fx-border-image-slice</code> and <code>-fx-border-image-width</code> properties do not match, the image is scaled to fit. However, the image is scaled disproportionately.</p> <p><span class="bold">Workaround:</span> Size the image so that <code>-fx-border-image-slice</code> and <code>-fx-border-image-width</code> have the same value, so the image does not need to be scaled.</p> </li> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-16495">RT-16495</a> Native Clipboard: passing RTF to a native application does not work.</p> <p><span class="bold">Description:</span> An application that tries to put rich text format (RTF) content on the clipboard fails silently and does not leave data formatted as <code>text/rtf</code> on the clipboard.</p> <p><span class="bold">Workaround:</span> None.</p> </li> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-17973">RT-17973</a> Rendering bug while resizing applications.</p> <p><span class="bold">Description:</span> Rendering artifact appears while resizing window on ATI Radeon series system.</p> <p><span class="bold">Workaround:</span> On Windows - Upgrade the ATI driver to Catalyst 11.09 or higher.</p> </li> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-18254">RT-18254</a> Stage Icons don't load on Mac OS X.</p> <p><span class="bold">Description:</span> When <code>stage.getIcons().addAll(</code><span class="variable">icon</span><code>)</code> is used to load an icon for an application on Mac OS X, the icon fails to load and the application uses the standard Java icon instead.</p> <p><span class="bold">Workaround:</span> To set the icon for an application on Mac OS X, follow the instructions in the <a href="../../../../https@developer.apple.com/library/mac/#documentation/CoreFoundation/Conceptual/CFBundles/BundleTypes/BundleTypes.html#//apple_ref/doc/uid/10000123i-CH101-SW13">Bundle Programming Guide</a> in the Mac OS X Developer Library.</p> </li> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-19662">RT-19662</a> Some GIF images cannot be loaded when scaling is applied.</p> <p><span class="bold">Description:</span> Images that are scaled do not appear.</p> <p><span class="bold">Workaround:</span> Scale the image using the <code>ImageView</code> class instead of scaling it in the constructor for the <code>Image</code> class.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXRN118" name="JFXRN118"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref12" name="sthref12"></a> 
+       <h3 class="sect2">Media</h3> 
+       <ul> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-5238">RT-5238</a> Negative rate playback is not supported.</p> <p><span class="bold">Description:</span> Playing back media in reverse (negative rate) is not yet supported.</p> <p><span class="bold">Workaround:</span> None.</p> </li> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-9100">RT-9100</a> FLV and MP3 playback crash Java if the platform does not support the SSE2 instruction set.</p> <p><span class="bold">Description:</span> The Java virtual machine could crash if the machine being used to play media does not support the SSE2 instruction set.</p> <p><span class="bold">Workaround:</span> Make sure that the machine being used meets the JavaFX system requirements.</p> </li> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-17533">RT-17533</a> Mac MP3 decoder does not play short audio clips.</p> <p><span class="bold">Description:</span> MP3 sources must contain at least three frames to be playable on Mac OS X.</p> <p><span class="bold">Workaround:</span> Convert the MP3 clip to uncompressed (PCM) AIFF or WAV format, which are the preferred formats for short audio clips.</p> </li> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-19712">RT-19712</a> MediaPlayer silently fails to play MP4 via http.</p> <p><span class="bold">Description:</span> MPEG-4 files which are not properly prepared for streaming might have to be completely downloaded before playback can begin.</p> <p><span class="bold">Workaround:</span> Put headers for MP4 files at the end of the file. Otherwise, wait for the entire file to be downloaded.</p> </li> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-20075">RT-20075</a> Cannot decode more than a single H.264 track at once on Mac.</p> <p><span class="bold">Description:</span> On Mac OS X, only one H.264 video track can be played at a time, and the graphics hardware must be supported by the Video Decode Acceleration framework.</p> <p><span class="bold">Workaround:</span> None.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXRN119" name="JFXRN119"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref13" name="sthref13"></a> 
+       <h3 class="sect2">Scenegraph</h3> 
+       <ul> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-20486">RT-20486</a> Exception when a stage is shown in <code>MouseEntered</code> handler.</p> <p><span class="bold">Description:</span> An exception is thrown when a new window is shown in an event handler for <code>MOUSE_ENTERED</code> or <code>MOUSE_EXITED</code> events.</p> <p><span class="bold">Workaround:</span> Enclose the code for showing the new window in a <code>Runnable</code> object and call the <code>Platform.runLater()</code> method.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXRN120" name="JFXRN120"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref14" name="sthref14"></a> 
+       <h3 class="sect2">Samples</h3> 
+       <ul> 
+        <li> <p><span class="bold">Issue:</span> <a href="../../../../javafx-jira.kenai.com/browse/RT-20824">RT-20824</a> DataAppReadme.html setup directions should be made generic to include multiple platforms.</p> <p><span class="bold">Description:</span> The instructions for installing the MySQL drivers into GlassFish are for specific versions of NetBeans and GlassFish on Windows. Instructions for other supported versions and platforms are needed.</p> <p><span class="bold">Workaround:</span> Manually copy the mysql-connector-java-5.1.13-bin.jar file from the <span class="variable">netbeans-install-dir</span>\ide\modules\ext\ to the <span class="variable">glassfish-install-dir</span>/glassfish/lib directory, where <span class="variable">netbeans-install-dir</span> and <span class="variable">glassfish-install-dir</span> are the directories into which the products were installed.</p> <p>If DataAppServer is run before the MySQL drivers are copied, the output will include an error message that directs the user to copy the drivers from a specific source directory to a destination directory.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li class=" active"><a href="jfxpub-release_notes_2-1.htm">JavaFX 2.1 Release Notes</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

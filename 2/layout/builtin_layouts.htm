@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Using Built-in Layout Panes &middot; Working With Layouts in JavaFX &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Working With Layouts in JavaFX</h1>
+     <p class=" lead">Using Built-in Layout Panes</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="jfxpub-layout.htm">←上一篇</a></li>
+      <li class=" next"><a href="size_align.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CHDGHCDG" name="CHDGHCDG"></a>
+     <a id="JFXLY102" name="JFXLY102"></a>  
+     <p>A JavaFX application can manually lay out the UI by setting the position and size properties for each UI element. However, an easier option is to make use of layout panes. The JavaFX SDK provides several layout container classes, called panes, for the easy setup and management of classic layouts such as rows, columns, stacks, tiles, and others. As a window is resized, the layout pane automatically repositions and resizes the nodes that it contains according to the properties for the nodes.</p> 
+     <p>This topic provides an overview and a simple example of each of the layout panes provided by the JavaFX layout package. The <a href="LayoutSample.java.html">LayoutSample.java</a> file contains the source code for the UI built in this topic. The <code><a href="LayoutSample.zip">LayoutSample.zip</a></code> file contains the NetBeans IDE project for the sample application.</p> 
+     <a id="JFXLY103" name="JFXLY103"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref3" name="sthref3"></a> 
+      <h2 class="sect1">BorderPane</h2> 
+      <p>The <code>BorderPane</code> layout pane provides five regions in which to place nodes: top, bottom, left, right, and center. <a href="#BABEFDGB">Figure 1-1</a> shows the type of layout that you can create with a border pane. The regions can be any size. If your application does not need one of the regions, you do not need to define it and no space is allocated for it.</p> 
+      <div class="figure">
+       <a id="BABEFDGB" name="BABEFDGB"></a>
+       <a id="JFXLY104" name="JFXLY104"></a> 
+       <p class="titleinfigure">Figure 1-1 Sample Border Pane</p> 
+       <img src="img/border.png" alt="Description of Figure 1-1 follows" title="Description of Figure 1-1 follows" longdesc="img_text/border.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>A border pane is useful for the classic look of a tool bar at the top, a status bar at the bottom, a navigation panel on the left, additional information on the right, and a working area in the center.</p> 
+      <p>If the window is larger than the space needed for the contents of each region, the extra space is given to the center region by default. If the window is smaller than the space needed for the contents of each region, the regions might overlap. The overlap is determined by the order in which the regions are set. For example, if the regions are set in the order of left, bottom, and right, when the window is made smaller, the bottom region overlaps the left region and the right region overlaps the bottom region. If set in the order of left, right, and bottom, when the window is made smaller, the bottom region overlaps both the left and right regions.</p> 
+      <p><a href="#CHDCJDBD">Example 1-1</a> shows the code for creating the border pane that is used for the UI that is built by the Layout Sample application. The methods that create the layout panes used in each region are described in the remaining sections of this topic.</p> 
+      <div class="example">
+       <a id="CHDCJDBD" name="CHDCJDBD"></a>
+       <a id="JFXLY105" name="JFXLY105"></a> 
+       <p class="titleinexample">Example 1-1 Create a Border Pane</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+BorderPane border = new BorderPane();
+HBox hbox = addHBox()
+border.setTop(hbox);
+border.setLeft(addVBox());
+addStackPane(hbox);         // Add stack to HBox in top region
+
+border.setCenter(addGridPane());
+border.setRight(addFlowPane());
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Note that the bottom region of the border pane is not used in this sample. If you want to add something to the bottom region, use the following statement and replace <span class="variable">node</span> with the control of your choice:</p> 
+      <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+border.setBottom(<span class="variable">node</span>);
+</pre>
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="CHDBJEHA" name="CHDBJEHA"></a>
+     <a id="JFXLY106" name="JFXLY106"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1">HBox</h2> 
+      <p>The <code>HBox</code> layout pane provides an easy way for arranging a series of nodes in a single row. <a href="#CHDHAAJC">Figure 1-2</a> shows an example of an <code>HBox</code> pane.</p> 
+      <div class="figure">
+       <a id="CHDHAAJC" name="CHDHAAJC"></a>
+       <a id="JFXLY107" name="JFXLY107"></a> 
+       <p class="titleinfigure">Figure 1-2 Sample HBox Pane</p> 
+       <img src="img/hbox.png" alt="Description of Figure 1-2 follows" title="Description of Figure 1-2 follows" longdesc="img_text/hbox.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>The padding property can be set to manage the distance between the nodes and the edges of the <code>HBox</code> pane. Spacing can be set to manage the distance between the nodes. The style can be set to change the background color.</p> 
+      <p><a href="#CHDHEIGI">Example 1-2</a> creates an <code>HBox</code> pane for a tool bar that contains two buttons.</p> 
+      <div class="example">
+       <a id="CHDHEIGI" name="CHDHEIGI"></a>
+       <a id="JFXLY108" name="JFXLY108"></a> 
+       <p class="titleinexample">Example 1-2 Create an HBox Pane</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public HBox addHBox() {
+    HBox hbox = new HBox();
+    hbox.setPadding(new Insets(15, 12, 15, 12));
+    hbox.setSpacing(10);
+    hbox.setStyle(&quot;-fx-background-color: #336699;&quot;);
+
+    Button buttonCurrent = new Button(&quot;Current&quot;);
+    buttonCurrent.setPrefSize(100, 20);
+
+    Button buttonProjected = new Button(&quot;Projected&quot;);
+    buttonProjected.setPrefSize(100, 20);
+    hbox.getChildren().addAll(buttonCurrent, buttonProjected);
+
+    return hbox;
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The <code>setTop()</code> method in <a href="#CHDCJDBD">Example 1-1</a> adds the <code>HBox</code> pane to the top region of the border pane. The result is shown in <a href="#CHDIECDA">Figure 1-3</a>.</p> 
+      <div class="figure">
+       <a id="CHDIECDA" name="CHDIECDA"></a>
+       <a id="JFXLY109" name="JFXLY109"></a> 
+       <p class="titleinfigure">Figure 1-3 HBox Pane in a Border Pane</p> 
+       <img src="img/hbox_in_border.png" alt="Description of Figure 1-3 follows" title="Description of Figure 1-3 follows" longdesc="img_text/hbox_in_border.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXLY110" name="JFXLY110"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref7" name="sthref7"></a> 
+      <h2 class="sect1">VBox</h2> 
+      <p>The <code>VBox</code> layout pane is similar to the <code>HBox</code> layout pane, except that the nodes are arranged in a single column. <a href="#CHDDHGCJ">Figure 1-4</a> shows an example of a <code>VBox</code> pane.</p> 
+      <div class="figure">
+       <a id="CHDDHGCJ" name="CHDDHGCJ"></a>
+       <a id="JFXLY111" name="JFXLY111"></a> 
+       <p class="titleinfigure">Figure 1-4 Sample VBox Pane</p> 
+       <img src="img/vbox.png" alt="Description of Figure 1-4 follows" title="Description of Figure 1-4 follows" longdesc="img_text/vbox.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>The padding property can be set to manage the distance between the nodes and the edges of the <code>VBox</code> pane. Spacing can be set to manage the distance between the nodes. Margins can be set to add additional space around individual controls.</p> 
+      <p><a href="#CHDDJFGE">Example 1-3</a> creates a <code>VBox</code> pane for a list of options.</p> 
+      <div class="example">
+       <a id="CHDDJFGE" name="CHDDJFGE"></a>
+       <a id="JFXLY112" name="JFXLY112"></a> 
+       <p class="titleinexample">Example 1-3 Create a VBox Pane</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public VBox addVBox(); {
+    VBox vbox = new VBox();
+    vbox.setPadding(new Insets(10));
+    vbox.setSpacing(8);
+
+    Text title = new Text(&quot;Data&quot;);
+    title.setFont(Font.font(&quot;Arial&quot;, FontWeight.BOLD, 14));
+    vbox.getChildren().add(title);
+
+    Hyperlink options[] = new Hyperlink[] {
+        new Hyperlink(&quot;Sales&quot;),
+        new Hyperlink(&quot;Marketing&quot;),
+        new Hyperlink(&quot;Distribution&quot;),
+        new Hyperlink(&quot;Costs&quot;)};
+
+    for (int i=0; i&lt;4; i++) {
+        VBox.setMargin(options[i], new Insets(0, 0, 0, 8));
+        vbox.getChildren().add(options[i]);
+    }
+
+    return vbox;
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The <code>setLeft()</code> method in <a href="#CHDCJDBD">Example 1-1</a> adds the <code>VBox</code> pane to the left region of the border pane. The result is shown in <a href="#CHDBIFEH">Figure 1-5</a>.</p> 
+      <div class="figure">
+       <a id="CHDBIFEH" name="CHDBIFEH"></a>
+       <a id="JFXLY113" name="JFXLY113"></a> 
+       <p class="titleinfigure">Figure 1-5 VBox Pane in a Border Pane</p> 
+       <img src="img/vbox_in_border.png" alt="Description of Figure 1-5 follows" title="Description of Figure 1-5 follows" longdesc="img_text/vbox_in_border.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXLY114" name="JFXLY114"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref10" name="sthref10"></a> 
+      <h2 class="sect1">StackPane</h2> 
+      <p>The <code>StackPane</code> layout pane places all of the nodes within a single stack with each new node added on top of the previous node. This layout model provides an easy way to overlay text on a shape or image or to overlap common shapes to create a complex shape. <a href="#CHDBFEDD">Figure 1-6</a> shows a help icon that is created by stacking a question mark on top of a rectangle with a gradient background.</p> 
+      <div class="figure">
+       <a id="CHDBFEDD" name="CHDBFEDD"></a>
+       <a id="JFXLY115" name="JFXLY115"></a> 
+       <p class="titleinfigure">Figure 1-6 Sample Stack Pane</p> 
+       <img src="img/stack.png" alt="Description of Figure 1-6 follows" title="Description of Figure 1-6 follows" longdesc="img_text/stack.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>The alignment property can be set to manage how children are positioned in the stack pane. This property affects all children, so margins can be set to adjust the position of individual children in the stack.</p> 
+      <p><a href="#CHDJFBAE">Example 1-4</a> creates a stack pane for a help icon.</p> 
+      <div class="example">
+       <a id="CHDJFBAE" name="CHDJFBAE"></a>
+       <a id="JFXLY116" name="JFXLY116"></a> 
+       <p class="titleinexample">Example 1-4 Create a Stack Pane</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public void addStackPane(HBox hb) {
+    StackPane stack = new StackPane();
+    Rectangle helpIcon = new Rectangle(30.0, 25.0);
+    helpIcon.setFill(new LinearGradient(0,0,0,1, true, CycleMethod.NO_CYCLE,
+        new Stop[]{
+        new Stop(0,Color.web(&quot;#4977A3&quot;)),
+        new Stop(0.5, Color.web(&quot;#B0C6DA&quot;)),
+        new Stop(1,Color.web(&quot;#9CB6CF&quot;)),}));
+    helpIcon.setStroke(Color.web(&quot;#D0E6FA&quot;));
+    helpIcon.setArcHeight(3.5);
+    helpIcon.setArcWidth(3.5);
+
+    Text helpText = new Text(&quot;?&quot;);
+    helpText.setFont(Font.font(&quot;Verdana&quot;, FontWeight.BOLD, 18));
+    helpText.setFill(Color.WHITE);
+    helpText.setStroke(Color.web(&quot;#7080A0&quot;)); 
+
+    stack.getChildren().addAll(helpIcon, helpText);
+    stack.setAlignment(Pos.CENTER_RIGHT);     // Right-justify nodes in stack
+    StackPane.setMargin(helpText, new Insets(0, 10, 0, 0)); // Center &quot;?&quot;
+
+    hb.getChildren().add(stack);            // Add to HBox from <a href="#CHDHEIGI">Example 1-2</a>
+    HBox.setHgrow(stack, Priority.ALWAYS);    // Give stack any extra space
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The last lines of code in <a href="#CHDJFBAE">Example 1-4</a> add the stack pane to the <code>HBox</code> pane created in <a href="#CHDHEIGI">Example 1-2</a> and position it to always be at the right-most edge of the pane. The result is shown in <a href="#CHDJGBDJ">Figure 1-7</a>.</p> 
+      <div class="figure">
+       <a id="CHDJGBDJ" name="CHDJGBDJ"></a>
+       <a id="JFXLY117" name="JFXLY117"></a> 
+       <p class="titleinfigure">Figure 1-7 Stack Pane in an HBox Pane</p> 
+       <img src="img/hbox_stack.png" alt="Description of Figure 1-7 follows" title="Description of Figure 1-7 follows" longdesc="img_text/hbox_stack.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BABIFCCA" name="BABIFCCA"></a>
+     <a id="JFXLY118" name="JFXLY118"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1">GridPane</h2> 
+      <p>The <code>GridPane</code> layout pane enables you to create a flexible grid of rows and columns in which to lay out nodes. Nodes can be placed in any cell in the grid and can span cells as needed. A grid pane is useful for creating forms or any layout that is organized in rows and columns. <a href="#CHDFCFAE">Figure 1-8</a> shows a grid pane that contains an icon, title, subtitle, text and a pie chart. In this figure, the <code>gridLinesVisible</code> property is set to display grid lines, which show the rows and columns and the gaps between the rows and columns. This property is useful for visually debugging your <code>GridPane</code> layouts.</p> 
+      <div class="figure">
+       <a id="CHDFCFAE" name="CHDFCFAE"></a>
+       <a id="JFXLY119" name="JFXLY119"></a> 
+       <p class="titleinfigure">Figure 1-8 Sample Grid Pane</p> 
+       <img src="img/grid.png" alt="Description of Figure 1-8 follows" title="Description of Figure 1-8 follows" longdesc="img_text/grid.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Gap properties can be set to manage the spacing between the rows and columns. The padding property can be set to manage the distance between the nodes and the edges of the grid pane. The vertical and horizontal alignment properties can be set to manage the alignment of individual controls in a cell.</p> 
+      <p><a href="#CHDIDIGC">Example 1-5</a> creates the grid pane shown in <a href="#CHDFCFAE">Figure 1-8</a>.</p> 
+      <div class="example">
+       <a id="CHDIDIGC" name="CHDIDIGC"></a>
+       <a id="JFXLY120" name="JFXLY120"></a> 
+       <p class="titleinexample">Example 1-5 Create a Grid Pane</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public GridPane addGridPane() {
+    GridPane grid = new GridPane();
+    grid.setHgap(10);
+    grid.setVgap(10);
+    grid.setPadding(new Insets(0, 10, 0, 10));
+
+    // Category in column 2, row 1
+    Text category = new Text(&quot;Sales:&quot;);
+    category.setFont(Font.font(&quot;Arial&quot;, FontWeight.BOLD, 20));
+    grid.add(category, 1, 0); 
+
+    // Title in column 3, row 1
+    Text chartTitle = new Text(&quot;Current Year&quot;);
+    chartTitle.setFont(Font.font(&quot;Arial&quot;, FontWeight.BOLD, 20));
+    grid.add(chartTitle, 2, 0);
+
+    // Subtitle in columns 2-3, row 2
+    Text chartSubtitle = new Text(&quot;Goods and Services&quot;);
+    grid.add(chartSubtitle, 1, 1, 2, 1);
+
+    // House icon in column 1, rows 1-2
+    ImageView imageHouse = new ImageView(
+      new Image(LayoutSample.class.getResourceAsStream(&quot;graphics/house.png&quot;)));
+    grid.add(imageHouse, 0, 0, 1, 2); 
+
+    // Left label in column 1 (bottom), row 3
+    Text goodsPercent = new Text(&quot;Goods\n80%&quot;);
+    GridPane.setValignment(goodsPercent, VPos.BOTTOM);
+    grid.add(goodsPercent, 0, 2); 
+
+    // Chart in columns 2-3, row 3
+    ImageView imageChart = new ImageView(
+     new Image(LayoutSample.class.getResourceAsStream(&quot;graphics/piechart.png&quot;)));
+    grid.add(imageChart, 1, 2, 2, 1); 
+
+    // Right label in column 4 (top), row 3
+    Text servicesPercent = new Text(&quot;Services\n20%&quot;);
+    GridPane.setValignment(servicesPercent, VPos.TOP);
+    grid.add(servicesPercent, 3, 2);
+
+    return grid;
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The <code>setCenter()</code> method in <a href="#CHDCJDBD">Example 1-1</a> adds the grid pane to the center region of the border pane. The result is shown in <a href="#CHDBDBDE">Figure 1-9</a>.</p> 
+      <div class="figure">
+       <a id="CHDBDBDE" name="CHDBDBDE"></a>
+       <a id="JFXLY121" name="JFXLY121"></a> 
+       <p class="titleinfigure">Figure 1-9 Grid Pane in a Border Pane</p> 
+       <img src="img/grid_in_border.png" alt="Description of Figure 1-9 follows" title="Description of Figure 1-9 follows" longdesc="img_text/grid_in_border.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>As the window is resized, the nodes within the grid pane are resized according to their layout constraints.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXLY122" name="JFXLY122"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref15" name="sthref15"></a> 
+      <h2 class="sect1">FlowPane</h2> 
+      <p>The nodes within a <code>FlowPane</code> layout pane are laid out consecutively and wrap at the boundary set for the pane. Nodes can flow vertically (in columns) or horizontally (in rows). A vertical flow pane wraps at the height boundary for the pane. A horizontal flow pane wraps at the width boundary for the pane. <a href="#CHDCACIE">Figure 1-10</a> shows a sample horizontal flow pane using numbered icons. By contrast, in a vertical flow pane, column one would contain pages one through four and column two would contain pages five through eight.</p> 
+      <div class="figure">
+       <a id="CHDCACIE" name="CHDCACIE"></a>
+       <a id="JFXLY123" name="JFXLY123"></a> 
+       <p class="titleinfigure">Figure 1-10 Sample Horizontal Flow Pane</p> 
+       <img src="img/flow.png" alt="Description of Figure 1-10 follows" title="Description of Figure 1-10 follows" longdesc="img_text/flow.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Gap properties can be set to manage the spacing between the rows and columns. The padding property can be set to manage the distance between the nodes and the edges of the pane. <a href="#CHDJHFCD">Example 1-6</a> creates a horizontal flow pane for a series of page icons.</p> 
+      <div class="example">
+       <a id="CHDJHFCD" name="CHDJHFCD"></a>
+       <a id="JFXLY124" name="JFXLY124"></a> 
+       <p class="titleinexample">Example 1-6 Create a Flow Pane</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public FlowPane addFlowPane() {
+    FlowPane flow = new FlowPane();
+    flow.setPadding(new Insets(5, 0, 5, 0));
+    flow.setVgap(4);
+    flow.setHgap(4);
+    flow.setPrefWrapLength(170); // preferred width allows for two columns
+    flow.setStyle(&quot;-fx-background-color: DAE6F3;&quot;);
+
+    ImageView pages[] = new ImageView[8];
+    for (int i=0; i&lt;8; i++) {
+        pages[i] = new ImageView(
+            new Image(LayoutSample.class.getResourceAsStream(
+            &quot;graphics/chart_&quot;+(i+1)+&quot;.png&quot;)));
+        flow.getChildren().add(pages[i]);
+    }
+
+    return flow;
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The <code>setRight()</code> method in <a href="#CHDCJDBD">Example 1-1</a> adds the flow pane to the right region of the border pane. The result is shown in <a href="#CHDIHHHG">Figure 1-11</a>.</p> 
+      <div class="figure">
+       <a id="CHDIHHHG" name="CHDIHHHG"></a>
+       <a id="JFXLY125" name="JFXLY125"></a> 
+       <p class="titleinfigure">Figure 1-11 Flow Pane in a Border Pane</p> 
+       <img src="img/flow_in_border.png" alt="Description of Figure 1-11 follows" title="Description of Figure 1-11 follows" longdesc="img_text/flow_in_border.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXLY126" name="JFXLY126"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref18" name="sthref18"></a> 
+      <h2 class="sect1">TilePane</h2> 
+      <p>A tile pane is similar to a flow pane. The <code>TilePane</code> layout pane places all of the nodes in a grid in which each cell, or tile, is the same size. Nodes can be laid out horizontally (in rows) or vertically (in columns). Horizontal tiling wraps the tiles at the tile pane's width boundary and vertical tiling wraps them at the height boundary. Use the <code>prefColumns</code> and <code>prefRows</code> properties to establish the preferred size of the tile pane.</p> 
+      <p>Gap properties can be set to manage the spacing between the rows and columns. The padding property can be set to manage the distance between the nodes and the edges of the pane.</p> 
+      <p><a href="#BABEFJEA">Example 1-7</a> creates a horizontal tile pane that produces the same layout shown in <a href="#CHDCACIE">Figure 1-10</a>.</p> 
+      <div class="example">
+       <a id="BABEFJEA" name="BABEFJEA"></a>
+       <a id="JFXLY127" name="JFXLY127"></a> 
+       <p class="titleinexample">Example 1-7 Create a Tile Pane</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+TilePane tile = new TilePane();
+tile.setPadding(new Insets(5, 0, 5, 0));
+tile.setVgap(4);
+tile.setHgap(4);
+tile.setPrefColumns(2);
+tile.setStyle(&quot;-fx-background-color: DAE6F3;&quot;);
+
+ImageView pages[] = new ImageView[8];
+for (int i=0; i&lt;8; i++) {
+     pages[i] = new ImageView(
+        new Image(LayoutSample.class.getResourceAsStream(
+        &quot;graphics/chart_&quot;+(i+1)+&quot;.png&quot;)));
+     tile.getChildren().add(pages[i]);
+}
+</pre>
+      </div> 
+      <!-- class="example" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXLY128" name="JFXLY128"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref19" name="sthref19"></a> 
+      <h2 class="sect1">AnchorPane</h2> 
+      <p>The <code>AnchorPane</code> layout pane enables you to anchor nodes to the top, bottom, left side, right side, or center of the pane. As the window is resized, the nodes maintain their position relative to their anchor point. Nodes can be anchored to more than one position and more than one node can be anchored to the same position. <a href="#CHDBADFH">Figure 1-12</a> shows an anchor pane with the grid pane from <a href="#BABIFCCA">GridPane</a> anchored to the top and an <code>HBox</code> pane with two buttons anchored to the bottom and the right side.</p> 
+      <div class="figure">
+       <a id="CHDBADFH" name="CHDBADFH"></a>
+       <a id="JFXLY129" name="JFXLY129"></a> 
+       <p class="titleinfigure">Figure 1-12 Sample Anchor Pane</p> 
+       <img src="img/anchor.png" alt="Description of Figure 1-12 follows" title="Description of Figure 1-12 follows" longdesc="img_text/anchor.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p><a href="#BABGJJEC">Example 1-8</a> creates an anchor pane with a node anchored to the top of the pane and a node anchored to the bottom right of the pane. The grid that was created in <a href="#CHDIDIGC">Example 1-5</a> is used for the top node.</p> 
+      <div class="example">
+       <a id="BABGJJEC" name="BABGJJEC"></a>
+       <a id="JFXLY130" name="JFXLY130"></a> 
+       <p class="titleinexample">Example 1-8 Create an Anchor Pane</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public AnchorPane addAnchorPane(GridPane grid) {
+    AnchorPane anchorpane = new AnchorPane();
+    Button buttonSave = new Button(&quot;Save&quot;);
+    Button buttonCancel = new Button(&quot;Cancel&quot;);
+
+    HBox hb = new HBox();
+    hb.setPadding(new Insets(0, 10, 10, 10));
+    hb.setSpacing(10);
+    hb.getChildren().addAll(buttonSave, buttonCancel);
+
+    anchorpane.getChildren().addAll(grid,hb);   // Add grid from <a href="#CHDIDIGC">Example 1-5</a>
+    AnchorPane.setBottomAnchor(hb, 8.0);
+    AnchorPane.setRightAnchor(hb, 5.0);
+    AnchorPane.setTopAnchor(grid, 10.0);
+
+    return anchorpane;
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The following statement replaces the center region of the border pane with the anchor pane:</p> 
+      <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+border.setCenter(addAnchorPane(addGridPane()));
+</pre> 
+      <p>The result is shown in <a href="#BABJBJCB">Figure 1-13</a>.</p> 
+      <div class="figure">
+       <a id="BABJBJCB" name="BABJBJCB"></a>
+       <a id="JFXLY131" name="JFXLY131"></a> 
+       <p class="titleinfigure">Figure 1-13 Anchor Pane in a Border Pane</p> 
+       <img src="img/anchor_in_border_big.png" alt="Description of Figure 1-13 follows" title="Description of Figure 1-13 follows" longdesc="img_text/anchor_in_border_big.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>As the window is resized, the nodes maintain their position in the pane according to their anchor points. <a href="#BABHICGB">Figure 1-14</a> shows how the buttons, which are anchored to the bottom of the pane, move closer to the sales information as the window is made smaller.</p> 
+      <div class="figure">
+       <a id="BABHICGB" name="BABHICGB"></a>
+       <a id="JFXLY132" name="JFXLY132"></a> 
+       <p class="titleinfigure">Figure 1-14 Resized Anchor Pane</p> 
+       <img src="img/anchor_in_border_small.png" alt="Description of Figure 1-14 follows" title="Description of Figure 1-14 follows" longdesc="img_text/anchor_in_border_small.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-layout.htm">About This Tutorial</a></li>
+      <li class=" active"><a href="builtin_layouts.htm">Using Built-in Layout Panes</a></li>
+      <li><a href="size_align.htm">Tips for Sizing and Aligning Nodes</a></li>
+      <li><a href="style_css.htm">Styling Layout Panes with CSS</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/layout/LayoutSample.zip">LayoutSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/layout/LayoutSizingAligning.zip">LayoutSizingAligning.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/layout/LayoutSampleCSS.zip">LayoutSampleCSS.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Application Startup &middot; Deploying JavaFX Applications &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Deploying JavaFX Applications</h1>
+     <p class=" lead">Application Startup</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="deploy_overview.htm">←上一篇</a></li>
+      <li class=" next"><a href="packaging.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="BABCHDBJ" name="BABCHDBJ"></a>
+     <a id="JFXDP374" name="JFXDP374"></a>  
+     <p>The user experience (UE) is an extremely important factor for success of the application. The way the application is deployed creates a first impression on the user and has a crucial impact on user satisfaction, even before the application itself is ready.</p> 
+     <p>Users are easily annoyed if they fail to launch the application, if they do not understand what the next steps are, if they perceive the application to be slow or it hangs, or for other reasons.</p> 
+     <p>A properly packaged and deployed JavaFX application includes tweaks for many typical user experience problems, and with JavaFX, developers have a wide range of options to customize the user experience for their application and its audience.</p> 
+     <p>In this section, the default experience for users of JavaFX applications is explained, and the options the developer has to customize the user experience are presented. This page contains the following sections:</p> 
+     <ul> 
+      <li> <p><a href="#BABFIECI">Section 3.1, &quot;Application Startup Process, Experience, and Customization&quot;</a></p> </li> 
+      <li> <p><a href="#BABJEJGG">Section 3.2, &quot;Helping Users Start the Application&quot;</a></p> </li> 
+     </ul> 
+     <a id="BABFIECI" name="BABFIECI"></a>
+     <a id="JFXDP375" name="JFXDP375"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">3.1</span> Application Startup Process, Experience, and Customization</h2> 
+      <p>Out of the box, JavaFX application startup was designed for a good user experience. The following sections describe the transition phases of application startup, how users experience those phases, and how the default visual feedback to the user can be customized.</p> 
+      <a id="JFXDP376" name="JFXDP376"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref15" name="sthref15"></a> 
+       <h3 class="sect2"><span class="secnum">3.1.1</span> Startup Process</h3> 
+       <p>Between the time an application is started and the time the user sees the main application, a sequence of events occurs on screen while operations are carried out in the background, as shown in <a href="#CIABIBJE">Figure 3-1</a> and described in the following paragraphs. This startup sequence partially depends on the execution mode and on the speed with which the background operations complete. <a href="#CIABIBJE">Figure 3-1</a> shows a series of boxes that depict the background operations over time, along with screenshots of what the user sees while these operations occur.</p> 
+       <div class="figure">
+        <a id="CIABIBJE" name="CIABIBJE"></a>
+        <a id="JFXDP520" name="JFXDP520"></a> 
+        <p class="titleinfigure">Figure 3-1 Background Operations and Screen Events During Application Startup</p> 
+        <img src="img/javaone_deploy_flow.jpg" alt="Description of Figure 3-1 follows" title="Description of Figure 3-1 follows" longdesc="img_text/javaone_deploy_flow.htm" />
+        <br /> 
+        <br /> 
+        <br />
+       </div> 
+       <!-- class="figure" --> 
+       <p>There are four phases in the application startup process:</p> 
+       <ul> 
+        <li> <p>Phase 1: Initialization</p> <p>Initialization of Java Runtime and an initial examination identifies components that must be loaded and executed before starting the application. The initialization phase is depicted in the first two boxes in the upper row in <a href="#CIABIBJE">Figure 3-1</a>.</p> </li> 
+        <li> <p>Phase 2: Loading and preparation</p> <p>The required resources are loaded from either the network or a disk cache, and validation procedures occur. All execution modes see the default or a custom preloader. This phase is depicted in the third box in the upper row in <a href="#CIABIBJE">Figure 3-1</a>.</p> </li> 
+        <li> <p>Phase 3: Application-specific initialization</p> <p>The application is started, but it may need to load additional resources or perform other lengthy preparations before it becomes fully functional. An example of this is checking whether elevated permissions are needed and displaying the appropriate request for permission to the user.</p> </li> 
+        <li> <p>Phase 4: Application execution</p> <p>The application is displayed and is ready to use. This occurs after the background operations shown in <a href="#CIABIBJE">Figure 3-1</a> are finished.</p> </li> 
+       </ul> 
+       <a id="JFXDP377" name="JFXDP377"></a> 
+       <div class="sect3">
+        <!-- infolevel="all" infotype="General" -->
+        <a id="sthref17" name="sthref17"></a> 
+        <h4 class="sect3"><span class="secnum">3.1.1.1</span> Visual Feedback During Phase One Initialization</h4> 
+        <p>Options to provide visual feedback during the first phase of initialization are limited. At that moment, it is not yet known what must be done to launch the application, and the Java platform has not initialized the Java platform yet. Visual feedback must be provided using external means, for example using JavaScript or HTML if the application is embedded into the web page. By default, a splash screen is displayed during this phase, as described in <a href="#CIAJJBBG">Default User Experience</a>.</p> 
+       </div> 
+       <!-- class="sect3" --> 
+       <a id="JFXDP378" name="JFXDP378"></a> 
+       <div class="sect3">
+        <!-- infolevel="all" infotype="General" -->
+        <a id="sthref18" name="sthref18"></a> 
+        <h4 class="sect3"><span class="secnum">3.1.1.2</span> Visual Feedback After Initialization</h4> 
+        <p>To provide visual feedback after the initialization phase, JavaFX provides a preloader, which gets notifications about the loading progress and can also get application-specific notifications. By default, a default preloader with a progress bar is displayed during this phase, as described in <a href="#CIAJJBBG">Default User Experience</a>. You can customize the default preloader (see <a href="#BABCAFEI">Customization Options</a>), or you can create your own preloaders to customize the display and messaging (see <a href="preloaders.htm#BABCDIHD">Preloaders</a>).</p> 
+       </div> 
+       <!-- class="sect3" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="CIAJJBBG" name="CIAJJBBG"></a>
+      <a id="JFXDP379" name="JFXDP379"></a> 
+      <div class="sect2"> 
+       <h3 class="sect2"><span class="secnum">3.1.2</span> Default User Experience</h3> 
+       <p>A properly packaged JavaFX application provides default visual feedback to the user for the first two phases for all execution modes. The actual behavior depends on the execution mode.</p> 
+       <p>When launched in standalone mode most applications start quickly, and no visual feedback is required.</p> 
+       <p><a href="#BABEECIF">Table 3-1</a> summarizes the default behavior according to execution mode when the application is launched for the first time (in other words, is loaded from the network).</p> 
+       <div class="tblhruleformal">
+        <a id="JFXDP380" name="JFXDP380"></a>
+        <a id="sthref19" name="sthref19"></a>
+        <a id="BABEECIF" name="BABEECIF"></a> 
+        <p class="titleintable">Table 3-1 Default Behavior During First-Time Launch</p> 
+        <table class="HRuleFormal table table-bordered table-striped" title="Default Behavior During First-Time Launch" summary="Default Startup Behavior During First-Time Launch, for either Web Starrt or embedded launch." dir="ltr" border="1" width="100%" frame="hsides" rules="rows" cellpadding="3" cellspacing="0"> 
+         <colgroup>
+          <col width="17%" /> 
+          <col width="*" /> 
+          <col width="40%" /> 
+         </colgroup>
+         <thead> 
+          <tr align="left" valign="top"> 
+           <th align="left" valign="bottom" id="r1c1-t2">Startup Phase</th> 
+           <th align="left" valign="bottom" id="r1c2-t2">Web Start Launch</th> 
+           <th align="left" valign="bottom" id="r1c3-t2">Embedded into Web Page</th> 
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr align="left" valign="top"> 
+           <td align="left" id="r2c1-t2" headers="r1c1-t2"> <p>Phase 1<br /> Initialization</p> </td> 
+           <td align="left" headers="r2c1-t2 r1c2-t2"> <p>Splash screen:</p> <img src="img/java7_splash.gif" alt="Description of java7_splash.gif follows" title="Description of java7_splash.gif follows" longdesc="img_text/java7_splash.htm" /><br /> </td> 
+           <td align="left" headers="r2c1-t2 r1c3-t2"> <p>Splash screen:</p> <img src="img/html_splash_75.gif" alt="Description of html_splash_75.gif follows" title="Description of html_splash_75.gif follows" longdesc="img_text/html_splash_75.htm" /><br /> </td> 
+          </tr> 
+          <tr align="left" valign="top"> 
+           <td align="left" id="r3c1-t2" headers="r1c1-t2"> <p>Phase 2<br /> Loading Code</p> </td> 
+           <td align="left" headers="r3c1-t2 r1c2-t2"> <p>Progress window:</p> <img src="img/ws_load.png" alt="Description of ws_load.png follows" title="Description of ws_load.png follows" longdesc="img_text/ws_load.htm" /><br /> </td> 
+           <td align="left" headers="r3c1-t2 r1c3-t2"> <p>Progress window:</p> <img src="img/progress_dialog2_5F40.gif" alt="Description of progress_dialog2_40.gif follows" title="Description of progress_dialog2_40.gif follows" longdesc="img_text/progress_dialog2_40.htm" /><br /> </td> 
+          </tr> 
+          <tr align="left" valign="top"> 
+           <td align="left" id="r4c1-t2" headers="r1c1-t2"> <p>Phase 3<br /> Transition to Application</p> </td> 
+           <td align="left" headers="r4c1-t2 r1c2-t2"> <p>Hide progress window</p> </td> 
+           <td align="left" headers="r4c1-t2 r1c3-t2"> <p>Fade-out progress window</p> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <br />
+       </div> 
+       <!-- class="tblhruleformal" --> 
+       <p><a href="#BABJJDGF">Table 3-2</a> summarizes the default behavior for subsequent launches, in which the JAR files are loaded from the cache. In this case, the process has fewer visual transitions because nothing needs to be loaded from the network during the Loading Code phase, so launch time is substantially shorter.</p> 
+       <div class="tblhruleformal">
+        <a id="JFXDP381" name="JFXDP381"></a>
+        <a id="sthref24" name="sthref24"></a>
+        <a id="BABJJDGF" name="BABJJDGF"></a> 
+        <p class="titleintable">Table 3-2 Default Startup Behavior During Subsequent Launches</p> 
+        <table class="HRuleFormal table table-bordered table-striped" title="Default Startup Behavior During Subsequent Launches" summary="Default behavior during subsequent launches, for either Web Starrt or embedded launch." dir="ltr" border="1" width="100%" frame="hsides" rules="rows" cellpadding="3" cellspacing="0"> 
+         <colgroup>
+          <col width="17%" /> 
+          <col width="41%" /> 
+          <col width="*" /> 
+         </colgroup>
+         <thead> 
+          <tr align="left" valign="top"> 
+           <th align="left" valign="bottom" id="r1c1-t3"><br /></th> 
+           <th align="left" valign="bottom" id="r1c2-t3">Web Start Launch or Launch from Shortcut</th> 
+           <th align="left" valign="bottom" id="r1c3-t3">Embedded into Web Page</th> 
+          </tr> 
+         </thead> 
+         <tbody> 
+          <tr align="left" valign="top"> 
+           <td align="left" id="r2c1-t3" headers="r1c1-t3"> <p>Phase 1<br /> Initialization</p> </td> 
+           <td align="left" headers="r2c1-t3 r1c2-t3"> <p>Splash screen:</p> <img src="img/java7_splash.gif" alt="Description of java7_splash.gif follows" title="Description of java7_splash.gif follows" longdesc="img_text/java7_splash.htm" /><br /> </td> 
+           <td align="left" headers="r2c1-t3 r1c3-t3"> <p>Splash screen:</p> <img src="img/html_splash_75.gif" alt="Description of html_splash_75.gif follows" title="Description of html_splash_75.gif follows" longdesc="img_text/html_splash_75.htm" /><br /> </td> 
+          </tr> 
+          <tr align="left" valign="top"> 
+           <td align="left" id="r3c1-t3" headers="r1c1-t3"> <p>Phase 2<br /> Loading Code</p> </td> 
+           <td align="left" headers="r3c1-t3 r1c2-t3"><img src="img/java7_splash.gif" alt="Description of java7_splash.gif follows" title="Description of java7_splash.gif follows" longdesc="img_text/java7_splash.htm" /><br /> </td> 
+           <td align="left" headers="r3c1-t3 r1c3-t3"><img src="img/html_splash_75.gif" alt="Screenshot of splash screen for applications in the browser" title="Screenshot of splash screen for applications in the browser" longdesc="img_text/html_splash_75.htm" /><br /> </td> 
+          </tr> 
+          <tr align="left" valign="top"> 
+           <td align="left" id="r4c1-t3" headers="r1c1-t3"> <p>Phase 3<br /> Transition to Application</p> </td> 
+           <td align="left" headers="r4c1-t3 r1c2-t3"> <p>Hide splash screen</p> </td> 
+           <td align="left" headers="r4c1-t3 r1c3-t3"> <p>Hide splash screen</p> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <br />
+       </div> 
+       <!-- class="tblhruleformal" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABCAFEI" name="BABCAFEI"></a>
+      <a id="JFXDP382" name="JFXDP382"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">3.1.3</span> Customization Options</h3> 
+       <p>The splash screen for embedded applications is displayed in the web page and can be easily customized by using an <code>onGetSplash</code> callback, as shown in the example <a href="deployment_toolkit.htm#BABEHEDE">onGetSplash</a>.</p> 
+       <p>The default preloader can be customized by using a CSS stylesheet, similar to other JavaFX components. Pass the customized style data using the <code>javafx.default.preloader.stylesheet</code> parameter for your application. The value of the parameter can be any of following:</p> 
+       <ul> 
+        <li> <p>Absolute or relative URI of the CSS stylesheet, either as a text file with a .css extension or in binary form with a .bss extension. For more information about binary conversion, see <a href="packaging.htm#BABCACBD">Stylesheet Conversion</a>.</p> </li> 
+        <li> <p>Actual CSS code.</p> </li> 
+       </ul> 
+       <p>To customize the preloader, use the <code>.default-preloader</code> class. In addition to standard CSS keys, the preloader has two special keys:</p> 
+       <ul> 
+        <li> <p><code>-fx-preloader-status-text</code></p> <p>Status text to be shown in the preloader</p> </li> 
+        <li> <p><code>-fx-preloader-graphic</code></p> <p>Absolute or relative URI of the image to be used by the preloader</p> </li> 
+       </ul> 
+       <p><a href="#BABFHCCE">Example 3-1</a> shows an example of CSS file my.css:</p> 
+       <div class="example">
+        <a id="BABFHCCE" name="BABFHCCE"></a>
+        <a id="JFXDP383" name="JFXDP383"></a> 
+        <p class="titleinexample">Example 3-1 Example CSS Class to Customize the Preloader</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.default-preloader { 
+    -fx-background-color: yellow; 
+    -fx-text-fill: red; 
+    -fx-preloader-graphic: url(&quot;http://host.domain/duke.gif&quot;); 
+    -fx-preloader-text: &quot;Loading, loading, LOADING!&quot;; 
+} 
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>Add the stylesheet to the <a href="javafx_ant_task_reference001.htm#CIABIFCI">&lt;fx:deploy&gt;</a> Ant task as shown in <a href="#BABEFJAH">Example 3-2</a>:</p> 
+       <div class="example">
+        <a id="BABEFJAH" name="BABEFJAH"></a>
+        <a id="JFXDP384" name="JFXDP384"></a> 
+        <p class="titleinexample">Example 3-2 Adding a Preloader Stylesheet to the &lt;fx:deploy&gt; Ant Task</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:deploy ...&gt;
+    &lt;fx:application ...&gt;
+        &lt;fx:htmlparam  name=&quot;javafx.default.preloader.stylesheet&quot; 
+                value=&quot;my.css&quot;/&gt;
+    &lt;fx:application&gt;
+&lt;/fx:deploy&gt;
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>If your customizations are small, then it is more efficient to pass CSS code instead of a file name, because there is no need to download the file. <a href="#BABBIJCG">Example 3-3</a> shows to change the background color to yellow.</p> 
+       <div class="example">
+        <a id="BABBIJCG" name="BABBIJCG"></a>
+        <a id="JFXDP385" name="JFXDP385"></a> 
+        <p class="titleinexample">Example 3-3 Changing the Default Preloader Background Color</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:deploy ...&gt;
+    &lt;fx:application ...&gt;
+    &lt;!-- Using fx:param here, so it will be applicable to all web
+            execution environemnts --&gt;
+        &lt;fx:param  name=&quot;javafx.default.preloader.stylesheet&quot;
+                value=&quot;.default-preloader { -fx-background-color: yellow; }&quot;/&gt;
+    &lt;fx:application&gt;
+&lt;/fx:deploy&gt; 
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>If customizing the default preloader is not enough and you need a different visualization or behavior, see <a href="preloaders.htm#BABCDIHD">Preloaders</a> for information about how to implement your own preloader and see <a href="packaging.htm#BABFECGG">Packaging</a> for information about how to add it to your package.</p> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BABJEJGG" name="BABJEJGG"></a>
+     <a id="JFXDP386" name="JFXDP386"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">3.2</span> Helping Users Start the Application</h2> 
+      <p>There are various reasons why a particular user might have difficulty getting your application to run, such as the following:</p> 
+      <ul> 
+       <li> <p>The user has an unsupported platform.</p> </li> 
+       <li> <p>The user's system does not have JavaFX Runtime or Java Runtime installed.</p> </li> 
+       <li> <p>Java is not configured correctly, for example the proxy information is not set.</p> </li> 
+       <li> <p>The user declined to grant permissions to a signed application.</p> </li> 
+      </ul> 
+      <p>Because most users never experience any of these problems, it is important to plan for users who experience problems, either providing guidance to resolve the issue or having the application fail gracefully and explaining to the user why it cannot be resolved.</p> 
+      <p>The following sections describe approaches to some common issues.</p> 
+      <a id="JFXDP387" name="JFXDP387"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref29" name="sthref29"></a> 
+       <h3 class="sect2"><span class="secnum">3.2.1</span> No JavaFX Runtime</h3> 
+       <p>If the user does not have JavaFX Runtime installed, then the application cannot start. The JavaFX application package includes several hooks to improve user experience if this is the case.</p> 
+       <p>You can customize the default behavior described in the following sections. See <a href="packaging.htm#BABFECGG">Packaging</a> for information about how to embed various fallback applications into the application package. See <a href="deployment_toolkit.htm#BABJHEJA">Deployment in the Browser</a> for information about how to customize prompts to install JavaFX Runtime and error handling for web applications.</p> 
+       <a id="JFXDP388" name="JFXDP388"></a> 
+       <div class="sect3">
+        <!-- infolevel="all" infotype="General" -->
+        <a id="sthref30" name="sthref30"></a> 
+        <h4 class="sect3"><span class="secnum">3.2.1.1</span> Standalone Launch</h4> 
+        <p>The main application JAR file includes a launcher program, which is used to detect JavaFX runtime. If JavaFX Runtime or Java Runtime is not found, then a dialog box displays that explains where to get JavaFX Runtime and Java Runtime.</p> 
+       </div> 
+       <!-- class="sect3" --> 
+       <a id="JFXDP389" name="JFXDP389"></a> 
+       <div class="sect3">
+        <!-- infolevel="all" infotype="General" -->
+        <a id="sthref31" name="sthref31"></a> 
+        <h4 class="sect3"><span class="secnum">3.2.1.2</span> Launch with the Deployment Toolkit</h4> 
+        <p>If the JavaFX application is embedded into a web page or launched from a web page using the Deployment Toolkit (see <a href="deployment_toolkit.htm#BABJHEJA">Deployment in the Browser</a>), then the Deployment Toolkit takes care of JavaFX Runtime and Java Runtime detection before trying to launch the application. If JavaFX Runtime or Java Runtime is missing, the Deployment Toolkit initiates installation of JavaFX Runtime, either by offering the user a link to the installer, or by triggering download and installation automatically. By default, automatic download only occurs when the user launches an application using Web Start and has a recent version of the Java Runtime.</p> 
+       </div> 
+       <!-- class="sect3" --> 
+       <a id="JFXDP390" name="JFXDP390"></a> 
+       <div class="sect3">
+        <!-- infolevel="all" infotype="General" -->
+        <a id="sthref32" name="sthref32"></a> 
+        <h4 class="sect3"><span class="secnum">3.2.1.3</span> Launch a Remote Application without the Deployment Toolkit</h4> 
+        <p>The application package includes a fallback Swing application, which is used if an attempt to launch the application is made but the JavaFX Runtime cannot be found.</p> 
+       </div> 
+       <!-- class="sect3" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABIBJEG" name="BABIBJEG"></a>
+      <a id="JFXDP391" name="JFXDP391"></a> 
+      <div class="sect2"> 
+       <h3 class="sect2"><span class="secnum">3.2.2</span> Runtime Errors</h3> 
+       <p>An application can fail to launch due to various runtime errors or user mistakes, such as the absence of a network connection needed to load some of application JAR files.</p> 
+       <p>One of the most common errors is when the user does not grant permissions to the application. In that case, the application fails, and the user has to restart the application and then grant permissions to get it to run. In a case like this, it is helpful to explain to the user why the application failed and what the user must do to restart it successfully. By default, an error message will display, either in a dialog box or inside the web page in the location where the application is embedded. In either case, the messaging can be customized.</p> 
+       <p>If the Deployment Toolkit is used, then the <code>onDeployError</code> handler can be used to display an error message in the application area in the web page. You can also consider including some instructions to the splash screen to alert users about granting permissions. For more information, see <a href="deployment_toolkit.htm#BABJHEJA">Deployment in the Browser</a>.</p> 
+       <p>You can also include a custom preloader in your application to get notifications about errors, unless the error occurs while launching the preloader. For more information about preloaders and code examples, see <a href="preloaders.htm#BABCDIHD">Preloaders</a>.</p> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-deployment.htm">About This Guide</a></li>
+      <li><a href="deploy_quick_start.htm">Getting Started</a></li>
+      <li><a href="deploy_overview.htm">Application Execution Modes</a></li>
+      <li class=" active"><a href="deploy_user_experience.htm">Application Startup</a></li>
+      <li><a href="packaging.htm">Packaging</a></li>
+      <li><a href="deployment_toolkit.htm">Deployment in the Browser</a></li>
+      <li><a href="javafx_javascript.htm">JavaFX and JavaScript</a></li>
+      <li><a href="preloaders.htm">Preloaders</a></li>
+      <li><a href="deploy_swing_apps.htm">JavaFX in Swing Applications</a></li>
+      <li><a href="packager.htm">The JavaFX Packager Tool</a></li>
+      <li><a href="packager001.htm">JavaFX Packager Command-Line Syntax</a></li>
+      <li><a href="javafx_ant_task_reference.htm">JavaFX Ant Tasks</a></li>
+      <li><a href="javafx_ant_task_reference001.htm">Reference: JavaFX Ant Tasks</a></li>
+      <li><a href="javafx_ant_task_reference002.htm">Reference: JavaFX Ant Helper Parameters</a></li>
+      <li><a href="troubleshooting.htm">Troubleshooting</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

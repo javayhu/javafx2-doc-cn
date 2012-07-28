@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Choice Box &middot; Using JavaFX UI Controls &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX UI Controls</h1>
+     <p class=" lead">Choice Box</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="checkbox.htm">←上一篇</a></li>
+      <li class=" next"><a href="text-field.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="JFXUC188" name="JFXUC188"></a>
+     <a id="BCEDJAEH" name="BCEDJAEH"></a>  
+     <p>The <code>ChoiceBox</code> class provides support for quickly selecting between a few options. Evaluate a simple implementation of a choice box shown in <a href="#BCEGHBFB">Figure 7-1</a>.</p> 
+     <div class="figure">
+      <a id="BCEGHBFB" name="BCEGHBFB"></a>
+      <a id="JFXUC189" name="JFXUC189"></a> 
+      <p class="titleinfigure">Figure 7-1 Creating a Choice Box with Three Items</p> 
+      <img src="img/choice-box.png" alt="Description of Figure 7-1 follows" title="Description of Figure 7-1 follows" longdesc="img_text/choice-box.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <a id="JFXUC190" name="JFXUC190"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref61" name="sthref61"></a> 
+      <h2 class="sect1">Creating a Choice Box</h2> 
+      <p><a href="#BCEFHDCF">Example 7-1</a> creates a choice box with three items.</p> 
+      <div class="example">
+       <a id="BCEFHDCF" name="BCEFHDCF"></a>
+       <a id="JFXUC191" name="JFXUC191"></a> 
+       <p class="titleinexample">Example 7-1 Creating a Choice Box</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+ChoiceBox cb = new ChoiceBox(FXCollections.observableArrayList(
+    &quot;First&quot;, &quot;Second&quot;, &quot;Third&quot;)
+);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p><a href="#BCEFHDCF">Example 7-1</a> shows a list of items created and populated within a constructor of the <code>ChoiceBox</code> class. The list items are specified by using an observable array. Alternatively, you can use an empty constructor of the class and set the list items by using the <code>setItems</code> method shown in <a href="#BCEEJJFJ">Example 7-2</a>.</p> 
+      <div class="example">
+       <a id="BCEEJJFJ" name="BCEEJJFJ"></a>
+       <a id="JFXUC192" name="JFXUC192"></a> 
+       <p class="titleinexample">Example 7-2 Choice Box with Text Elements and a Separator</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+ChoiceBox cb = new ChoiceBox();
+cb.setItems(FXCollections.observableArrayList(
+    &quot;New Document&quot;, &quot;Open &quot;, 
+    new Separator(), &quot;Save&quot;, &quot;Save as&quot;)
+);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Note that a choice box can contain not only text elements, but other objects as well. A <code>Separator</code> control is used in <a href="#BCEEJJFJ">Example 7-2</a> to separate the items. When this code fragment is integrated into the application, it produces the output shown in <a href="#BCEGDABB">Figure 7-2</a>.</p> 
+      <div class="figure">
+       <a id="BCEGDABB" name="BCEGDABB"></a>
+       <a id="JFXUC193" name="JFXUC193"></a> 
+       <p class="titleinfigure">Figure 7-2 Menu Created by Using a Choice Box</p> 
+       <img src="img/menu.png" alt="Description of Figure 7-2 follows" title="Description of Figure 7-2 follows" longdesc="img_text/menu.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>In real-life applications, the choice boxes are used to build multiple-choice lists.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC194" name="JFXUC194"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref63" name="sthref63"></a> 
+      <h2 class="sect1">Setting the Behavior for a Choice Box</h2> 
+      <p>The application shown in <a href="#BCEEACHJ">Figure 7-3</a> provides a multiple-choice box with five options. When a particular language is selected, the corresponding greeting is rendered.</p> 
+      <div class="figure">
+       <a id="BCEEACHJ" name="BCEEACHJ"></a>
+       <a id="JFXUC195" name="JFXUC195"></a> 
+       <p class="titleinfigure">Figure 7-3 Multiple-Choice List</p> 
+       <img src="img/choice-boxes.png" alt="Description of Figure 7-3 follows" title="Description of Figure 7-3 follows" longdesc="img_text/choice-boxes.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p><a href="#BCEBGGJJ">Figure 7-4</a> provides a code fragment to illustrate how an item selected from the choice box defines which greeting should be rendered.</p> 
+      <div class="figure">
+       <a id="BCEBGGJJ" name="BCEBGGJJ"></a>
+       <a id="JFXUC196" name="JFXUC196"></a> 
+       <p class="titleinfigure">Figure 7-4 Selecting a Choice Box Item</p> 
+       <img src="img/choice-box-code.png" alt="A code fragment" title="A code fragment" longdesc="img_text/choice-box-code.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>A <code>ChangeListener&lt;Number&gt;</code> object detects the index of the currently selected item by consecutive calls of the <code>getSelectionModel</code> and <code>selectedIndexProperty</code> methods. The <code>getSelectionModel</code> method returns the selected item, and the <code>selectedIndexProperty</code> method returns the <code>SELECTED_INDEX</code> property of the cb choice box. As a result, the integer value as an index defines an element of the greetings array and specifies a <code>String</code> text value for the label. If, for example, a user selects the second item, which corresponds to Spanish, the <code>SELECTED_INDEX</code> is equal to 1 and &quot;Hola&quot; is selected from the greetings array. Thus, the label renders &quot;Hola.&quot;</p> 
+      <p>You can make the <code>ChoiceBox</code> control more informative by assigning a tooltip to it. A tooltip is a UI control that is available in the <code>javafx.scene.control</code> package. A tooltip can be applied to any of the JavaFX UI controls.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC197" name="JFXUC197"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref66" name="sthref66"></a> 
+      <h2 class="sect1">Applying a Tooltip</h2> 
+      <p>The <code>Tooltip</code> class provides a prefabricated tooltip that can be easily applied to a choice box (or any other control) by calling the <code>setTooltip</code> method shown in <a href="#BCEFGFJG">Example 7-3</a>.</p> 
+      <div class="example">
+       <a id="BCEFGFJG" name="BCEFGFJG"></a>
+       <a id="JFXUC198" name="JFXUC198"></a> 
+       <p class="titleinexample">Example 7-3 Adding a Tooltip to a Choice Box</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+cb.setTooltip(new Tooltip(&quot;Select the language&quot;));
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Typically a user defines the text of the tooltip within a constructor of the <code>Tooltip</code> class. However, if the logic of your application requires UI to set the text dynamically, you can apply a tooltip by using an empty constructor and then assign the text to it by using the <code>setText</code> method.</p> 
+      <p>After the tooltip is applied to the cb choice box, a user who positions the cursor over the choice box sees the image shown in <a href="#BCEIFGHA">Figure 7-5</a>.</p> 
+      <div class="figure">
+       <a id="BCEIFGHA" name="BCEIFGHA"></a>
+       <a id="JFXUC199" name="JFXUC199"></a> 
+       <p class="titleinfigure">Figure 7-5 Choice Box with the Applied Tooltip</p> 
+       <img src="img/choice-box-tooltip.png" alt="A choice box with the tooltip" title="A choice box with the tooltip" longdesc="img_text/choice-box-tooltip.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>To further enhance your application, you can style the choice box with the CSS properties or apply visual effects or transformations.</p> 
+      <p class="itemizedlisttitle">Related API Documentation&nbsp;</p> 
+      <ul> 
+       <li> <p><code>ChoiceBox</code></p> </li> 
+       <li> <p><code>Tooltip</code></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-ui_controls.htm">About This Tutorial</a></li>
+      <li><a href="overview.htm">JavaFX UI Controls</a></li>
+      <li><a href="label.htm">Label</a></li>
+      <li><a href="button.htm">Button</a></li>
+      <li><a href="radio-button.htm">Radio Button</a></li>
+      <li><a href="toggle-button.htm">Toggle Button</a></li>
+      <li><a href="checkbox.htm">Checkbox</a></li>
+      <li class=" active"><a href="choice-box.htm">Choice Box</a></li>
+      <li><a href="text-field.htm">Text Field</a></li>
+      <li><a href="password-field.htm">Password Field</a></li>
+      <li><a href="scrollbar.htm">Scroll Bar</a></li>
+      <li><a href="scrollpane.htm">Scroll Pane</a></li>
+      <li><a href="list-view.htm">List View</a></li>
+      <li><a href="table-view.htm">Table View</a></li>
+      <li><a href="tree-view.htm">Tree View</a></li>
+      <li><a href="combo-box.htm">Combo Box</a></li>
+      <li><a href="separator.htm">Separator</a></li>
+      <li><a href="slider.htm">Slider</a></li>
+      <li><a href="progress.htm">Progress Bar and Progress Indicator</a></li>
+      <li><a href="hyperlink.htm">Hyperlink</a></li>
+      <li><a href="tooltip.htm">Tooltip</a></li>
+      <li><a href="editor.htm">HTML Editor</a></li>
+      <li><a href="accordion-titledpane.htm">Titled Pane and Accordion</a></li>
+      <li><a href="menu_controls.htm">Menu</a></li>
+      <li><a href="custom.htm">Customization of UI Controls</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/ui_controls/UIControlSamples.zip">UIControlSamples.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

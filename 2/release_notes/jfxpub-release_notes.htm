@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>JavaFX 2.0 Release Notes &middot; JavaFX 2.0 Release Notes &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>JavaFX 2.0 Release Notes</h1>
+     <p class=" lead">JavaFX 2.0 Release Notes</p>
+     <ul class=" pager"></ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="JFXRN101" name="JFXRN101"></a>
+     <a id="sthref2" name="sthref2"></a>  
+     <p>The JavaFX 2.0 release includes the Software Development Kit (SDK), JavaFX Runtime, and JavaFX 2.0 Samples. The SDK provides the tools and technologies for developing JavaFX applications. The runtime enables users to run your JavaFX applications without needing to install the SDK. The samples provide developers a quick overview to the features in JavaFX 2.0.</p> 
+     <p>This release provides Java APIs for JavaFX, which opens the capabilities of JavaFX technology to all Java developers and enables the many existing Java developer tools to be used to create JavaFX applications. In addition, this release provides:</p> 
+     <ul> 
+      <li> <p>High performance graphics engine that provides high level support for making rich graphics simple, smooth, and fast.</p> </li> 
+      <li> <p>Media engine that supports playback of web multimedia content.</p> </li> 
+      <li> <p>Web component that enables HTML to be embedded in a JavaFX application.</p> </li> 
+      <li> <p>Refreshed browser plug-in that enables the loading of JavaFX applets based on Prism.</p> </li> 
+      <li> <p>Extensive set of UI controls, such as Charts, Tables, Menus, and Panes.</p> </li> 
+      <li> <p>XML-based markup language called FXML for defining user interfaces.</p> </li> 
+      <li> <p>Sample applications that showcase the features of the JavaFX 2.0 technology.</p> </li> 
+     </ul> 
+     <a id="JFXRN102" name="JFXRN102"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref3" name="sthref3"></a> 
+      <h2 class="sect1">System Requirements</h2> 
+      <p>See the <a href="../system_requirements/jfxpub-system_requirements.htm">JavaFX System Requirements</a> document for information on the hardware and software prerequisites.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXRN103" name="JFXRN103"></a> 
+     <div class="sect1">
+      <a id="sthref4" name="sthref4"></a> 
+      <h2 class="sect1">Getting Started</h2> 
+      <p>To get started with the JavaFX SDK, review the documentation provided at<br /> <code><a href="../../default.htm">http://download.oracle.com/javafx/</a></code>. Good starting points include:</p> 
+      <ul> 
+       <li> <p><a href="../installation/jfxpub-installation.htm">Installing JavaFX</a> - Instructions for installing the JavaFX SDK.</p> </li> 
+       <li> <p><a href="../overview/jfxpub-overview.htm">What is JavaFX?</a> - Introduction to concepts and tools for working with the JavaFX SDK.</p> </li> 
+       <li> <p><a href="../get_started/jfxpub-get_started.htm">Getting Started with JavaFX</a> - Step-by-step tutorial for creating a JavaFX application.</p> </li> 
+       <li> <p><a href="../api/index.html">API documentation</a> - Output from the Javadoc tool for JavaFX classes.</p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXRN104" name="JFXRN104"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref5" name="sthref5"></a> 
+      <h2 class="sect1">Known Bugs and Issues</h2> 
+      <p>The following sections describe known issues with the code or documentation. Code bugs are arranged by component.</p> 
+      <a id="JFXRN105" name="JFXRN105"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref6" name="sthref6"></a> 
+       <h3 class="sect2">App Model</h3> 
+       <ul> 
+        <li> <p><span class="bold">Issue RT-13604:</span> Standalone application fails to launch when double-clicking if 64-bit JRE is installed.</p> <p><span class="bold">Description:</span> Double-clicking on a JavaFX application JAR file fails to launch the application on 64-bit systems with the 64-bit JRE installed when the 64-bit version of the JavaFX Runtime is not installed.</p> <p><span class="bold">Workaround:</span> Install the 64-bit version of the JavaFX Runtime.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXRN106" name="JFXRN106"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref7" name="sthref7"></a> 
+       <h3 class="sect2">Control</h3> 
+       <ul> 
+        <li> <p><span class="bold">Issue RT-16589:</span> All em font sizes applied to controls cause double effect.</p> <p><span class="bold">Description:</span> Fonts are drawn twice as large as expected when a control and skin have the same CSS style class with a rule that specifies a font size in ems. For example, if you have a base font size of 16px and you have a CSS rule for <code>Label</code> and <code>LabelSkin</code> with 2em, the font size for <code>Label</code> is calculated as 32px and the font size for <code>LabelSkin</code> is calculated as 64px. The text for the label is then drawn as 64px.</p> <p><span class="bold">Workaround:</span> Add the following rule, which is matched by the skin and keeps the font at the size specified for the control:</p> <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.label &gt; .label { -fx-font-size: 1em; }
+</pre></li> 
+        <li> <p><span class="bold">Issue RT-16647:</span> <code>getUserAgentStylesheet</code> is not called in all scenarios.</p> <p><span class="bold">Description:</span> The styles for a custom control might not be applied if the styles are defined in a style sheet that is specific to the control.</p> <p><span class="bold">Workaround:</span> Load the custom style sheet into the style sheet for the application's scene.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXRN107" name="JFXRN107"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref8" name="sthref8"></a> 
+       <h3 class="sect2">Deployment</h3> 
+       <ul> 
+        <li> <p><span class="bold">Issue RT-15819:</span> File open/save dialog does not show when using <code>FileOpenService</code> and <code>FileSaveService</code>.</p> <p><span class="bold">Description:</span> JNLP API Services (javax.jnlp.*) are not supported in JavaFX 2.0.</p> <p><span class="bold">Workaround:</span> In some cases it might be possible to use standard Java APIs, for example, to create or read a file.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXRN108" name="JFXRN108"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref9" name="sthref9"></a> 
+       <h3 class="sect2">Graphics</h3> 
+       <ul> 
+        <li> <p><span class="bold">Issue RT-5431:</span> Mouse events should not be delivered to non-visible components.</p> <p><span class="bold">Description:</span> Currently picking does not take into account the front clipping plane of the view frustum in culling picked node. This can result in returning the wrong picked node if a 3D transformed node exists between the viewer and the front clipping plane.</p> <p><span class="bold">Workaround:</span> None.</p> </li> 
+        <li> <p><span class="bold">Issue RT-14413:</span> <code>JFXPanel</code> does not work in full-screen mode.</p> <p><span class="bold">Description:</span> AWT full-screen exclusive mode prevents initialization of the JavaFX D3D pipeline.</p> <p><span class="bold">Workaround:</span> Construct a JFXPanel object before entering full-screen mode from any Swing JWindow.</p> </li> 
+        <li> <p><span class="bold">Issue RT-15117:</span> Clipping does not work for objects in 3D</p> <p><span class="bold">Description:</span> Objects to which a 3D transform is applied are not clipped correctly. This is a known perspective rendering bug for nVidia and AMD (ATI) GPUs.</p> <p><span class="bold">Workaround:</span> None.</p> </li> 
+        <li> <p><span class="bold">Issue RT-15181:</span> Shape with clip set to true does not render correctly with perspective transform and depth test.</p> <p><span class="bold">Description:</span> Clipped 3D shapes are not shown correctly when a perspective transformation is performed with depth test set to true.</p> <p><span class="bold">Workaround:</span> None.</p> </li> 
+        <li> <p><span class="bold">Issue RT-16196:</span> Dragboard/Clipboard distorts image.</p> <p><span class="bold">Description:</span> Some image formats are not copied to the clipboard correctly and may appear distorted.</p> <p><span class="bold">Workaround:</span> None.</p> </li> 
+        <li> <p><span class="bold">Issue RT-16337:</span> Animation stops in <code>JFXPanel</code> after returning from Windows lock or screensaver.</p> <p><span class="bold">Description:</span> On the Windows platform, when the desktop is locked and showing a password prompt, or when a screensaver is active, a <code>JFXPanel</code> component is not repainted after returning to the user's desktop.</p> <p><span class="bold">Workaround:</span> Resize the JFXPanel component to restart the animation.</p> </li> 
+        <li> <p><span class="bold">Issue RT-16397:</span> Region: asymmetric clipping in an image border that repeats.</p> <p><span class="bold">Description:</span> Clipping in an image border is incorrect because the behavior of a <code>Region</code> object does not comply with the CSS spec. The <code>Region</code> object begins the image slice at the left of the image, however the CSS spec starts the image slice at the center of the image.</p> <p><span class="bold">Workaround:</span> None.</p> </li> 
+        <li> <p><span class="bold">Issue RT-16398:</span> Region: distortion in an image border that repeats. Repeated images have the wrong width-to-height ratio.</p> <p><span class="bold">Description:</span> When the values defined for the <code>-fx-border-image-slice</code> and <code>-fx-border-image-width</code> properties do not match, the image is scaled to fit. However, the image is scaled disproportionately.</p> <p><span class="bold">Workaround:</span> Size the image so that <code>-fx-border-image-slice</code> and <code>-fx-border-image-width</code> have the same value, so the image does not need to be scaled.</p> </li> 
+        <li> <p><span class="bold">Issue RT-16495:</span> Native Clipboard: passing RTF to a native application does not work.</p> <p><span class="bold">Description:</span> An application that tries to put rich text format (RTF) content on the clipboard fails silently and does not leave data formatted as <code>text/rtf</code> on the clipboard.</p> <p><span class="bold">Workaround:</span> None.</p> </li> 
+        <li> <p><span class="bold">Issue RT-16512:</span> Region: background position does not work properly</p> <p><span class="bold">Description:</span> Setting <code>fx-background-position</code> causes the image to not clip, that is, the image is not included in the calculation.</p> <p><span class="bold">Workaround:</span> Manually clip or position the source image.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXRN111" name="JFXRN111"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref10" name="sthref10"></a> 
+       <h3 class="sect2">Media</h3> 
+       <ul> 
+        <li> <p><span class="bold">Issue RT-5238:</span> Negative rate playback is not supported.</p> <p><span class="bold">Description:</span> Playing back media in reverse (negative rate) is not yet supported.</p> <p><span class="bold">Workaround:</span> None.</p> </li> 
+        <li> <p><span class="bold">Issue RT-9100:</span> FLV and MP3 playback crash Java if the platform does not support the SSE2 instruction set.</p> <p><span class="bold">Description:</span> The Java virtual machine could crash if the machine being used to play media does not support the SSE2 instruction set.</p> <p><span class="bold">Workaround:</span> Make sure that the machine being used meets the JavaFX system requirements.</p> </li> 
+        <li> <p><span class="bold">Issue RT-10611:</span> Make <code>MediaView</code> resizable.</p> <p><span class="bold">Description:</span> The <code>MediaView</code> class cannot be resized.</p> <p><span class="bold">Workaround:</span> Create a subclass of <code>MediaView</code> that is resizable and use that class instead.</p> </li> 
+        <li> <p><span class="bold">Issue RT-10846:</span> After stalling, the player does not resume.</p> <p><span class="bold">Description:</span> If the media player stalls due to insufficient data such as over a slow network connection, it might not resume playing automatically.</p> <p><span class="bold">Workaround:</span> None.</p> </li> 
+        <li> <p><span class="bold">Issue RT-13945:</span> <code>AudioClip</code> doesn`t play short (mp3) audio files.</p> <p><span class="bold">Description:</span> Short MP3 clips might not be played by an <code>AudioClip</code> object. The MP3 decoder needs to be primed to be able to produce uncompressed data.</p> <p><span class="bold">Workaround:</span> Convert the MP3 clip to uncompressed (PCM) AIFF or WAV format, which are the preferred formats.</p> </li> 
+        <li> <p><span class="bold">Issue RT-15044:</span> Should be able to play media if at least one track is in a supported encoding.</p> <p><span class="bold">Description:</span> Media sources might not play if they contain a track that is encoded in a format that is not supported. The media types that are supported are documented as such.</p> <p><span class="bold">Workaround:</span> Make sure that all tracks in the media source are encoded in a supported format.</p> </li> 
+        <li> <p><span class="bold">Issue RT-16527:</span> <code>JFXMedia</code> error listener may not catch all error conditions.</p> <p><span class="bold">Description:</span> Errors that occur during the initialization of a <code>MediaPlayer</code> object might not be propagated to the interface layer.</p> <p><span class="bold">Workaround:</span> None.</p> </li> 
+        <li> <p><span class="bold">Issue RT-16675:</span> Media player state transitions Stalled -&gt; Paused and Stopped -&gt; Paused may not work properly.</p> <p><span class="bold">Description:</span> Status transitions from STALLED or STOPPED status to PAUSED status are not always occurring as documented.</p> <p><span class="bold">Workaround:</span> None.</p> </li> 
+        <li> <p><span class="bold">Issue RT-16809:</span> Current time is not updated after EOS and seek.</p> <p><span class="bold">Description:</span> The internal update of the <code>currentTime</code> property stops if the player is not automatically cycling and the stop time or end of media is reached. After this point, if a manual seek to an earlier time is performed, a listener of <code>currentTime</code> will not receive any more notifications.</p> <p><span class="bold">Workaround:</span> Call <code>MediaPlayer.getCurrentTime()</code> directly to get the correct value.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXRN109" name="JFXRN109"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref11" name="sthref11"></a> 
+       <h3 class="sect2">Samples</h3> 
+       <ul> 
+        <li> <p><span class="bold">Issue:</span> A Reference Problem error appears when you open a JavaFX sample project in NetBeans IDE.</p> <p><span class="bold">Description:</span> If this is your first time working with JavaFX 2.0 in NetBeans IDE, you see a Reference Problem when you open a Sample project. This error occurs because NetBeans IDE is unable to find the default JavaFX platform.</p> <p><span class="bold">Workaround:</span> Create the default JavaFX platform by opening the <span class="bold">File</span> menu and choosing <span class="bold">New Project</span>. In the New Project dialog box, choose <span class="bold">JavaFX</span> in the Categories pane and <span class="bold">JavaFX Application</span> in the Projects pane, and then click <span class="bold">Next</span>. When you see Default JavaFX Platform in the JavaFX Platform field, click <span class="bold">Cancel</span>. The default JavaFX platform is now set for all JavaFX projects.</p> </li> 
+        <li> <p><span class="bold">Issue:</span> NetBeans cannot find the path to JavaFX in a sample project.</p> <p><span class="bold">Description:</span> This issue arises under the following conditions:</p> 
+         <ul> 
+          <li> <p>You are <span class="bold">not</span> running a 32-bit JavaFX SDK with a 32-bit JDK or a 64-bit JavaFX SDK with a 64-bit JDK. For example, your JavaFX is installed in C:\Program Files (x86)\Oracle\JavaFX 2.0 SDK.</p> </li> 
+          <li> <p>Your JavaFX SDK is installed in a non-standard location (for example, not on the C drive).</p> </li> 
+          <li> <p>You are trying to build the FXML-LoginDemo, and your JavaFX SDK is not installed in C:\Program Files (x86)\Oracle\JavaFX 2.0 SDK.</p> </li> 
+         </ul> <p><span class="bold">Workaround:</span> Open the sample project in NetBeans IDE. In the Projects window, right-click the project name and choose <span class="bold">Properties</span>. In the Project Properties window, simply click <span class="bold">OK</span>; no changes are necessary.</p> <p>To verify that the path has been set, use an editor to open the project.properties file of your sample JavaFX application. This file is in the nbproject directory. Check that javafx.runtime and javafx.sdk point to where your JavaFX SDK is installed. For example:</p> <p><code>javafx.runtime=C:\\Program Files\\Oracle\\JavaFX Runtime 2.0</code></p> <p><code>javafx.sdk=C:\\Program Files\\Oracle\\JavaFX 2.0 SDK</code></p> <p>If javafx.runtime and javafx.sdk still do not point to the right location, update the file manually using the editor.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXRN110" name="JFXRN110"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref12" name="sthref12"></a> 
+       <h3 class="sect2">WebView</h3> 
+       <ul> 
+        <li> <p><span class="bold">Issue RT-16536:</span> NPE when loading web pages that use large textures when rendering.</p> <p><span class="bold">Description:</span> If the web page loaded into a <code>WebView</code> object makes use of an image or HTML5 canvas whose width or height exceeds a certain limit, the <code>WebView</code> object displays a null pointer exception when trying to render the page content.</p> <p>The limit is specific to the graphics card used and is usually either 4096 or 8192 pixels. The problem appears only when running the HW pipeline and is not reproducible with the SW pipeline.</p> <p><span class="bold">Workaround:</span> None.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li class=" active"><a href="jfxpub-release_notes.htm">JavaFX 2.0 Release Notes</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

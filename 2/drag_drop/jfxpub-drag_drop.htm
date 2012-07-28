@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Drag-and-Drop Feature in JavaFX Applications &middot; Drag-and-Drop Feature in JavaFX Applications &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Drag-and-Drop Feature in JavaFX Applications</h1>
+     <p class=" lead">Drag-and-Drop Feature in JavaFX Applications</p>
+     <ul class=" pager"></ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="sthref2" name="sthref2"></a>  
+     <p>The ability to drag and drop data is an integral part of modern graphical user interfaces. For this reason, support for the drag-and-drop gesture is included in JavaFX Release 2.</p> 
+     <p>In this article, you learn which objects participate in a drag-and-drop gesture, what types of data can be transferred, and which events occur during a drag-and-drop gesture. This article also includes code samples to illustrate the APIs being used and the explained material.</p> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref3" name="sthref3"></a> 
+      <h2 class="sect1">Introduction</h2> 
+      <p>A drag-and-drop operation is a data transfer between two objects: a gesture source and a gesture target. The gesture source and gesture target can be the following objects:</p> 
+      <ul> 
+       <li> <p>Nodes</p> </li> 
+       <li> <p>Scenes</p> </li> 
+      </ul> 
+      <p>The gesture source and gesture target can belong to a single JavaFX application or to two different JavaFX or Java Client applications. Moreover, drag-and-drop can be implemented between a JavaFX application and a third-party (native) application such as Windows Explorer or a desktop.</p> 
+      <p>A drag-and-drop gesture happens as follows: The user click a mouse button on a gesture source, drags the mouse, and releases the mouse button on a gesture target. While dragging the data, the user gets visual feedback, which denotes locations that do not accept the data and, when over a target that accepts the data, gives a hint where to drop the data.</p> 
+      <p>The data is transferred using a dragboard, which has the same interface as a system clipboard but is only used for the drag-and-drop data transfer.</p> 
+      <p>During the drag-and-drop gesture, various types of data can be transferred such as text, images, URLs, files, bytes, and strings.</p> 
+      <p>The <code>javafx.scene.input.DragEvent</code> class is the basic class used to implement the drag-and-drop gesture. For more information on particular methods and other classes in the <code>javafx.scene.input</code> package, see the API documentation.</p> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref4" name="sthref4"></a> 
+       <h3 class="sect2">Transfer Modes</h3> 
+       <p>Transfer modes define the type of transfer that happens between the gesture source and gesture target. Available transfer modes include <code>COPY</code>, <code>MOVE</code>, and <code>LINK</code>.</p> 
+       <p>A gesture source reports supported transfer modes. A gesture target accepts one or more transfer modes. The transfer mode in a given drag-and-drop gesture is chosen by the system from the modes supported by the source and accepted by the target according to the keyboard modifiers pressed by the user.</p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref5" name="sthref5"></a> 
+       <h3 class="sect2">Implementing a Basic Drag-and-Drop Gesture</h3> 
+       <p>You can learn how to implement basic drag-and-drop functionality by using the <code>HelloDragAndDrop</code> sample application. To download the source code, click the link in the sidebar. The gesture source and gesture target are two text nodes defined as shown in <a href="#BABHDFEJ">Example 1</a>.</p> 
+       <div class="example">
+        <a id="BABHDFEJ" name="BABHDFEJ"></a> 
+        <p class="titleinexample">Example 1</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+final Text source = new Text(50, 100, &quot;DRAG ME&quot;);
+final Text target = new Text(300, 100, &quot;DROP HERE&quot;);
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <div class="sect3">
+        <!-- infolevel="all" infotype="General" -->
+        <a id="sthref6" name="sthref6"></a> 
+        <h4 class="sect3">Starting the Drag-and-Drop Gesture on a Source</h4> 
+        <p>The drag-and-drop gesture can only be started by calling the <code>startDragAndDrop</code> method inside the handler of the <code>DRAG_DETECTED</code> event on a gesture source. It is here that transfer modes supported by the gesture source are defined, and the data to be transferred is placed onto the dragboard.</p> 
+        <p>See the implementation of the <code>onDragDetected</code> handler in <a href="#BABEIIGE">Example 2</a>.</p> 
+        <div class="example">
+         <a id="BABEIIGE" name="BABEIIGE"></a> 
+         <p class="titleinexample">Example 2</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+source.setOnDragDetected(new EventHandler&lt;MouseEvent&gt;() {
+    public void handle(MouseEvent event) {
+        /* drag was detected, start a drag-and-drop gesture*/
+        /* allow any transfer mode */
+        Dragboard db = source.startDragAndDrop(TransferMode.ANY);
+        
+        /* Put a string on a dragboard */
+        ClipboardContent content = new ClipboardContent();
+        content.putString(source.getText());
+        db.setContent(content);
+        
+        event.consume();
+    }
+});
+</pre>
+        </div> 
+        <!-- class="example" --> 
+        <p>The <code>startDragAndDrop</code> method takes a set of transfer modes supported by the gesture source. You can pass any combination of available transfer modes. By passing <code>TransferMode.COPY</code>, you can indicate that the gesture source only supports copying, but not moving or referencing.</p> 
+       </div> 
+       <!-- class="sect3" --> 
+       <div class="sect3">
+        <!-- infolevel="all" infotype="General" -->
+        <a id="sthref7" name="sthref7"></a> 
+        <h4 class="sect3">Handling a DRAG_OVER Event on a Target</h4> 
+        <p>After the drag-and-drop gesture is started, any node or scene that the mouse is dragged over is a potential target to drop the data. You specify which object accepts the data by implementing the <code>DRAG_OVER</code> event handler.</p> 
+        <p>Note the importance of the <code>DRAG_OVER</code> event handler. For a successful drag-and-drop operation, you must implement the <code>DRAG_OVER</code> event handler, which calls the <code>acceptTransferModes(TransferMode...)</code> method on the event, passing the transfer modes that the target intends to accept. If none of the passed transfer modes are supported by the gesture source, the potential target does not fit the given drag-and-drop gesture.</p> 
+        <p>Note that the type of data available on the dragboard must be taken into account when deciding whether to accept the event. To access the data stored on the dragboard, use the <code>event.getDragboard()</code> method.</p> 
+        <p><a href="#BABEDEBB">Example 3</a> shows the implementation of the <code>DRAG_OVER</code> event handler.</p> 
+        <div class="example">
+         <a id="BABEDEBB" name="BABEDEBB"></a> 
+         <p class="titleinexample">Example 3</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+target.setOnDragOver(new EventHandler&lt;DragEvent&gt;() {
+    public void handle(DragEvent event) {
+        /* data is dragged over the target */
+        /* accept it only if it is not dragged from the same node 
+         * and if it has a string data */
+        if (event.getGestureSource() != target &amp;&amp;
+                event.getDragboard().hasString()) {
+            /* allow for both copying and moving, whatever user chooses */
+            event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
+        }
+        
+        event.consume();
+    }
+});
+</pre>
+        </div> 
+        <!-- class="example" -->
+       </div> 
+       <!-- class="sect3" --> 
+       <div class="sect3">
+        <!-- infolevel="all" infotype="General" -->
+        <a id="sthref8" name="sthref8"></a> 
+        <h4 class="sect3">Providing Visual Feedback by a Gesture Target</h4> 
+        <p>During a drag-and-drop gesture, when the mouse pointer hovers over a target that fits the given drag-and-drop gesture, the target typically changes its appearance to provide a hint to the user where the data can be dropped.</p> 
+        <p>When the drag gesture enters the boundaries of a potential gesture target, the target receives a <code>DRAG_ENTERED</code> event. When the drag gesture leaves the potential target's boundaries, the target receives a <code>DRAG_EXITED</code> event. You can use the <code>DRAG_ENTERED</code> and <code>DRAG_EXITED</code> event handlers to change the target's appearance in order to provide the visual feedback to the user.</p> 
+        <p><a href="#BABFACBF">Example 4</a> shows how the visual feedback is implemented by changing the color of the text.</p> 
+        <div class="example">
+         <a id="BABFACBF" name="BABFACBF"></a> 
+         <p class="titleinexample">Example 4</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+target.setOnDragEntered(new EventHandler&lt;DragEvent&gt;() {
+    public void handle(DragEvent event) {
+    /* the drag-and-drop gesture entered the target */
+    /* show to the user that it is an actual gesture target */
+         if (event.getGestureSource() != target &amp;&amp;
+                 event.getDragboard().hasString()) {
+             target.setFill(Color.GREEN);
+         }
+                
+         event.consume();
+    }
+});
+</pre>
+        </div> 
+        <!-- class="example" --> 
+        <p>Note the importance of verifying the contents of the dragboard. The target only changes its appearance if the dragboard contains data in the proper format, which is a string in this case.</p> 
+        <p><a href="#BABEFGBI">Example 5</a> shows the implementation of the <code>DRAG_EXITED</code> event handler, which restores the original appearance of the text.</p> 
+        <div class="example">
+         <a id="BABEFGBI" name="BABEFGBI"></a> 
+         <p class="titleinexample">Example 5</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+target.setOnDragExited(new EventHandler&lt;DragEvent&gt;() {
+    public void handle(DragEvent event) {
+        /* mouse moved away, remove the graphical cues */
+        target.setFill(Color.BLACK);
+
+        event.consume();
+    }
+});
+</pre>
+        </div> 
+        <!-- class="example" -->
+       </div> 
+       <!-- class="sect3" --> 
+       <div class="sect3">
+        <!-- infolevel="all" infotype="General" -->
+        <a id="sthref9" name="sthref9"></a> 
+        <h4 class="sect3">Handling a DRAG_DROPPED Event on a Target</h4> 
+        <p>When the mouse button is released on the gesture target, which accepted previous <code>DRAG_OVER</code> events with a transfer mode supported by the gesture source, then the <code>DRAG_DROPPED</code> event is sent to the gesture target. In the <code>DRAG_DROPPED</code> event handler, you must complete the drag-and-drop gesture by calling the <code>setDropCompleted(Boolean)</code> method on the event. Otherwise, the gesture is considered unsuccessful.</p> 
+        <p>See the implementation of the <code>DRAG_DROPPED</code> event handler in <a href="#BABEFBDA">Example 6</a>.</p> 
+        <div class="example">
+         <a id="BABEFBDA" name="BABEFBDA"></a> 
+         <p class="titleinexample">Example 6</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+target.setOnDragDropped(new EventHandler&lt;DragEvent&gt;() {
+    public void handle(DragEvent event) {
+        /* data dropped */
+        /* if there is a string data on dragboard, read it and use it */
+        Dragboard db = event.getDragboard();
+        boolean success = false;
+        if (db.hasString()) {
+           target.setText(db.getString());
+           success = true;
+        }
+        /* let the source know whether the string was successfully 
+         * transferred and used */
+        event.setDropCompleted(success);
+        
+        event.consume();
+     }
+});
+</pre>
+        </div> 
+        <!-- class="example" -->
+       </div> 
+       <!-- class="sect3" --> 
+       <div class="sect3">
+        <!-- infolevel="all" infotype="General" -->
+        <a id="sthref10" name="sthref10"></a> 
+        <h4 class="sect3">Handling a DRAG_DONE Event on a Source</h4> 
+        <p>After the drag-and-drop gesture is finished, the <code>DRAG_DONE</code> event is sent to the gesture source to inform the source about how the gesture finished. In the <code>DRAG_DONE</code> event handler, get the transfer mode by calling the <code>getTransferMode</code> method on the event. If the transfer mode is <code>NULL</code> then that means the data transfer did not happen. If the mode is <code>MOVE</code>, then clear the data on the gesture source as shown in <a href="#BABJGICJ">Example 7</a>.</p> 
+        <div class="example">
+         <a id="BABJGICJ" name="BABJGICJ"></a> 
+         <p class="titleinexample">Example 7</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+source.setOnDragDone(new EventHandler&lt;DragEvent&gt;() {
+    public void handle(DragEvent event) {
+        /* the drag and drop gesture ended */
+        /* if the data was successfully moved, clear it */
+        if (event.getTransferMode() == TransferMode.MOVE) {
+            source.setText(&quot;&quot;);
+        }
+        event.consume();
+    }
+});
+</pre>
+        </div> 
+        <!-- class="example" -->
+       </div> 
+       <!-- class="sect3" --> 
+       <div class="sect3">
+        <!-- infolevel="all" infotype="General" -->
+        <a id="sthref11" name="sthref11"></a> 
+        <h4 class="sect3">Dragging Custom Data</h4> 
+        <p>Similarly, you can implement the drag-and-drop gesture on custom data. Define the custom data type as shown in <a href="#BABBACHJ">Example 8</a>:</p> 
+        <div class="example">
+         <a id="BABBACHJ" name="BABBACHJ"></a> 
+         <p class="titleinexample">Example 8</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+/** The custom format */
+private static final DataFormat customFormat =
+    new DataFormat(&quot;helloworld.custom&quot;);
+</pre>
+        </div> 
+        <!-- class="example" --> 
+        <p>When putting a custom data onto a dragboard, specify the data type. Note that the data must be serializable.</p> 
+        <p>When reading the data from the dragboard, a proper casting is needed.</p> 
+       </div> 
+       <!-- class="sect3" -->
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li class=" active"><a href="jfxpub-drag_drop.htm">Drag-and-Drop Feature in JavaFX Applications</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/drag_drop/hellodraganddrop.zip">hellodraganddrop.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

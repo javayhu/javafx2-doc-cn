@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Deploying Your First JavaFX Application &middot; Getting Started with JavaFX &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Getting Started with JavaFX</h1>
+     <p class=" lead">Deploying Your First JavaFX Application</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="animation.htm">←上一篇</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="BABIDHGA" name="BABIDHGA"></a>
+     <a id="JFXGS218" name="JFXGS218"></a>  
+     <a id="JFXGS219" name="JFXGS219"></a> 
+     <p>This page shows how to deploy any of the <a href="jfxpub-get_started.htm#BABGIDID">About This Tutorial</a> tutorials. If you develop your JavaFX application in NetBeans IDE, it is packaged automatically and is easy to deploy.</p> 
+     <p>This page contains the following sections.</p> 
+     <ul> 
+      <li> <p><a href="#BABFBCHC">Deployment Modes</a></p> </li> 
+      <li> <p><a href="#BABCHEHA">Packaging the Application in NetBeans IDE</a></p> </li> 
+      <li> <p><a href="#BABCIGGB">Running the Application Outside NetBeans IDE</a></p> </li> 
+      <li> <p><a href="#BABGAGDA">Other Ways to Package JavaFX Applications</a></p> </li> 
+     </ul> 
+     <a id="BABFBCHC" name="BABFBCHC"></a>
+     <a id="JFXGS225" name="JFXGS225"></a> 
+     <div class="sect1"> 
+      <h2 class="sect1">Deployment Modes</h2> 
+      <p>The Java and JavaFX Runtime installations support the following deployment modes:</p> 
+      <ul> 
+       <li> <p>Standalone Mode</p> <p>Standalone applications run on desktops. The compiled class files are usually packaged into JAR files, and it is the responsibility of the application or deployment team to distribute the application and ensure that it is kept updated.</p> </li> 
+       <li> <p>Run in Browser Mode</p> <p>The application runs in a web page in a browser. Applications are packaged by the NetBeans IDE to use the Java Deployment Toolkit, which checks the user's system for the minimum required versions of the Java and JavaFX Runtimes.</p> </li> 
+       <li> <p>Web Start Mode</p> <p>The application is generally initiated from a web page link, but the application itself runs outside the browser on the desktop. If the Java Deployment Toolkit is used, then it checks the user's system for the minimum required versions of the Java and JavaFX Runtime installations and can also download application updates.</p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BABCHEHA" name="BABCHEHA"></a>
+     <a id="JFXGS226" name="JFXGS226"></a> 
+     <div class="sect1"> 
+      <h2 class="sect1">Packaging the Application in NetBeans IDE</h2> 
+      <p>When you run your application in NetBeans IDE or use the Clean and Build command, your application is packaged for all modes of JavaFX deployment, using options that are set as project properties. By default, applications are packaged into the following files:</p> 
+      <ul> 
+       <li> <p>A JAR file, containing the compiled class files and images.</p> </li> 
+       <li> <p>A JNLP file, which contains a deployment descriptor for the two web modes (Web Start and embedded in browser).</p> </li> 
+       <li> <p>An HTML file, which contains basic code for running both the Web Start application and the embedded application using the Deployment Toolkit.</p> </li> 
+       <li> <p>A web-files folder, which contains an offline set of files from the Java Deployment Toolkit to assist with starting up your application. For more information about using the Java Deployment Toolkit in JavaFX applications, see &quot;Deployment in the Browser&quot; at<br /> <code><a href="../../../../docs.oracle.com/javafx/2/deployment/deployment_toolkit.htm">http://docs.oracle.com/javafx/2/deployment/deployment_toolkit.htm</a></code></p> </li> 
+      </ul> 
+      <a id="JFXGS231" name="JFXGS231"></a> 
+      <div class="sect2">
+       <a id="sthref52" name="sthref52"></a> 
+       <h3 class="sect2">Application Sizing</h3> 
+       <p>With standalone and Web Start mode, the window is sized around the width and height values you specify for the scene in the code. If you do not specify a specific width and height in the code, the window automatically sizes itself to fit the application.</p> 
+       <p>Applications that are embedded in a web page require that you set width and height values in the NetBeans project's properties, even if you specify width and height values in the code. You can even specify different width and height values in the project properties from what is specified in the code, so you can experiment to see what looks best in the browser.</p> 
+       <p class="orderedlisttitle">To specify application width and height in NetBeans project properties:&nbsp;</p> 
+       <ol> 
+        <li> <p>In the Projects pane, right-click your NetBeans project and choose <span class="gui-object-action">Properties</span>.</p> </li> 
+        <li> <p>Select the <span class="gui-object-action">Run</span> category.</p> </li> 
+        <li> <p>In the section entitled Web Start and Browser Application Properties, specify width and height values.</p> </li> 
+        <li> <p>If you want to test the application in a browser when you run it inside NetBeans IDE, choose <span class="gui-object-action">in Browser</span> in the Run field.</p> </li> 
+        <li> <p>Click <span class="gui-object-action">OK</span> to close the Properties dialog box.</p> </li> 
+        <li> <p>Right-click the project and choose <span class="gui-object-action">Clean and Build</span>.</p> </li> 
+        <li> <p>If you chose to run the application in the browser in the project properties, you can right-click the project and choose <span class="gui-object-action">Run</span>. Otherwise, test the HTML file outside the browser by following the instructions in <a href="#BABCIGGB">Running the Application Outside NetBeans IDE</a>.</p> </li> 
+       </ol> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BABCIGGB" name="BABCIGGB"></a>
+     <a id="JFXGS227" name="JFXGS227"></a> 
+     <div class="sect1"> 
+      <h2 class="sect1">Running the Application Outside NetBeans IDE</h2> 
+      <p>To run the packaged application outside NetBeans IDE, go to the dist subdirectory of your application project directory and do the following:</p> 
+      <ul> 
+       <li> <p>To run the application in standalone mode, double-click the JAR file.</p> </li> 
+       <li> <p>To run as a Web Start application, either click the link in the HTML page in your browser or double-click the JNLP file. The advantage of using the link in the browser is that the web page contains logic that uses the Deployment Toolkit, which checks to ensure that the minimum required version of both the Java and JavaFX Runtimes are installed on the user's system.</p> </li> 
+       <li> <p>To run the application in a web page, open the HTML file in a browser.</p> 
+        <div align="center"> 
+         <div class="inftblnote">
+          <br /> 
+          <table class="Note oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+           <tbody> 
+            <tr> 
+             <td align="left"> <p class="notep1">Note:</p> <p>If you open the HTML file in Google Chrome, you might have to click either <span class="gui-object-action">Run this time</span> or <span class="gui-object-action">Always run on this site</span> to enable the Java plug-in, as shown in <a href="#BABBBEDB">Figure 6-1</a>. Then reload the page to run the applet.</p> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+          <br />
+         </div> 
+         <!-- class="inftblnote" -->
+        </div> </li> 
+      </ul> 
+      <div class="figure">
+       <a id="BABBBEDB" name="BABBBEDB"></a>
+       <a id="JFXGS228" name="JFXGS228"></a> 
+       <p class="titleinfigure">Figure 6-1 Plug-In Message in Google Chrome</p> 
+       <img src="img/chrome_startup.png" alt="Surrounding text describes Figure 6-1 ." title="Surrounding text describes Figure 6-1 ." />
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <div align="center"> 
+       <div class="inftblnote">
+        <br /> 
+        <table class="Note oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+         <tbody> 
+          <tr> 
+           <td align="left"> <p class="notep1">Note:</p> <p>For applications that include FXML markup, NetBeans IDE adds a digital signature to the JAR file by default to ensure that it will run on the web. For more information about packaging FXML applications and FXML deployment, see<br /> <code><a href="../../../../docs.oracle.com/javafx/2/fxml_get_started/fxml_deployment.htm">http://docs.oracle.com/javafx/2/fxml_get_started/fxml_deployment.htm</a></code></p> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <br />
+       </div> 
+       <!-- class="inftblnote" -->
+      </div> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXGS229" name="JFXGS229"></a> 
+     <div class="sect1">
+      <a id="sthref54" name="sthref54"></a> 
+      <h2 class="sect1">Deploying the Packaged Files</h2> 
+      <p>With the Java 7 Runtime and later, you can move the deployment files to other locations without changing any configuration properties in the deployment descriptor (which means the contents of the JNLP file). The files required for each deployment mode are shown in <a href="#BABHAGAB">Table 6-1</a>.</p> 
+      <div class="tblformal">
+       <a id="JFXGS220" name="JFXGS220"></a>
+       <a id="sthref55" name="sthref55"></a>
+       <a id="BABHAGAB" name="BABHAGAB"></a> 
+       <p class="titleintable">Table 6-1 Files Required for Each Deployment Mode</p> 
+       <table class="Formal table table-bordered table-striped" title="Files Required for Each Deployment Mode" summary="This table describes which deployment files are required for each deployment mode." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="31%" /> 
+         <col width="*" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t4">Deployment Mode</th> 
+          <th align="left" valign="bottom" id="r1c2-t4">Files Required</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t4" headers="r1c1-t4"> <p>Standalone</p> </td> 
+          <td align="left" headers="r2c1-t4 r1c2-t4"> <p>JAR</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r3c1-t4" headers="r1c1-t4"> <p>Run in Browser</p> </td> 
+          <td align="left" headers="r3c1-t4 r1c2-t4"> <p>JAR, JNLP, HTML</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r4c1-t4" headers="r1c1-t4"> <p>Web Start</p> </td> 
+          <td align="left" headers="r4c1-t4 r1c2-t4"> <p>JAR, JNLP, HTML</p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblformal" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BABGAGDA" name="BABGAGDA"></a>
+     <a id="JFXGS230" name="JFXGS230"></a> 
+     <div class="sect1"> 
+      <h2 class="sect1">Other Ways to Package JavaFX Applications</h2> 
+      <p>Instead of using NetBeans IDE to package your deployment files, you can also use the JavaFX Packager tool or a custom Ant task. All of these tools generate a default HTML file with application launch descriptors that you manually copy into your web page, but you can optionally generate the application launch descriptors directly into your own HTML pages using an input template. You can also customize many other aspects of application startup and execution. For more information, see <span class="italic">Deploying JavaFX Applications</span> at<br /> <code><a href="../../../../docs.oracle.com/javafx/2/deployment/jfxpub-deployment.htm">http://docs.oracle.com/javafx/2/deployment/jfxpub-deployment.htm</a></code></p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-get_started.htm">About This Tutorial</a></li>
+      <li><a href="hello_world.htm">Hello World, JavaFX Style</a></li>
+      <li><a href="form.htm">Creating a Form in JavaFX</a></li>
+      <li><a href="css.htm">Fancy Forms with JavaFX CSS</a></li>
+      <li><a href="fxml_tutorial.htm">Using FXML to Create a User Interface</a></li>
+      <li><a href="animation.htm">Animation and Visual Effects in JavaFX</a></li>
+      <li class=" active"><a href="basic_deployment.htm">Deploying Your First JavaFX Application</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/get_started/Login.zip">Login.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/get_started/LoginCSS.zip">LoginCSS.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/get_started/FXMLExample.zip">FXMLExample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/get_started/ColorfulCircles.zip">ColorfulCircles.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

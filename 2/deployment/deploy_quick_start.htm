@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Getting Started &middot; Deploying JavaFX Applications &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Deploying JavaFX Applications</h1>
+     <p class=" lead">Getting Started</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="jfxpub-deployment.htm">←上一篇</a></li>
+      <li class=" next"><a href="deploy_overview.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="BABJCFHC" name="BABJCFHC"></a>
+     <a id="JFXDP101" name="JFXDP101"></a>  
+     <p>Mastered <a href="../get_started/jfxpub-get_started.htm">JavaFX basics</a> and have your application ready? Now want to learn what to do to publish it on the web?</p> 
+     <p>Here is all you have to do:</p> 
+     <ul> 
+      <li> <p>Use JavaFX tools to create the application package.</p> </li> 
+      <li> <p>Copy the package to the place you want to deploy it.</p> </li> 
+      <li> <p>Update your HTML page to include the generated JavaScript snippet.</p> </li> 
+      <li> <p>You are done. Open the browser and test it.</p> </li> 
+     </ul> 
+     <p>The same JavaFX application can be used in multiple execution environments including:</p> 
+     <ul> 
+      <li> <p>Launching from the command line using the Java launcher</p> </li> 
+      <li> <p>Double-clicking the JAR file</p> </li> 
+      <li> <p>Launching from a desktop shortcut</p> </li> 
+      <li> <p>Launching by clicking a link in the browser</p> </li> 
+      <li> <p>Embedding into a web page</p> </li> 
+     </ul> 
+     <p>The following sections provide more basic information about basic packaging and deploiyment.</p> 
+     <ul> 
+      <li> <p><a href="#CHDHBBAB">Section 1.1, &quot;Application Package&quot;</a></p> </li> 
+      <li> <p><a href="#CHDJAEFD">Section 1.2, &quot;User Experience&quot;</a></p> </li> 
+      <li> <p><a href="#CHDEFDAI">Section 1.3, &quot;Getting the Most Out of the Execution Environment&quot;</a></p> </li> 
+      <li> <p><a href="#CHDECEGG">Section 1.4, &quot;Deploying Swing and SWT Applications with Embedded JavaFX Content&quot;</a></p> </li> 
+     </ul> 
+     <a id="CHDHBBAB" name="CHDHBBAB"></a>
+     <a id="JFXDP344" name="JFXDP344"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">1.1</span> Application Package</h2> 
+      <p>The JavaFX application package is a collection of files needed to run the application:</p> 
+      <ul> 
+       <li> <p>An application JAR file (or multiple JAR files for large applications)</p> </li> 
+       <li> <p>A JNLP file with a deployment descriptor</p> <p>A deployment descriptor is an XML file that describes application components, platform requirements, and launch rules.</p> </li> 
+       <li> <p>An HTML file containing JavaScript code to embed or launch JavaFX content from the web page</p> </li> 
+      </ul> 
+      <p>For the Colorful Circles application from the <a href="../get_started/animation.htm">JavaFX Getting Started tutorials</a>, the package consists of these files:</p> 
+      <ul> 
+       <li> <p>ColorfulCircles.jar</p> </li> 
+       <li> <p>ColorfulCircles.jnlp</p> </li> 
+       <li> <p>ColorfulCircles.html</p> </li> 
+      </ul> 
+      <p>There are three different tools that you can use to package your application:</p> 
+      <ul> 
+       <li> <p><a href="#CIHHIIGG">NetBeans IDE</a></p> </li> 
+       <li> <p><a href="#CIHGBCHF">Ant Tasks</a></p> </li> 
+       <li> <p><a href="#CIHIHJJB">JavaFX Packager Command-Line Tool</a></p> </li> 
+      </ul> 
+      <p>The HTML page generated by default is a simple test page for your application. It includes sample JavaScript code to launch and embed your application, which you can copy to your own web page. To avoid manual copying, consider using HTML templates for application packaging to insert these code snippets into an existing web page. For more information, see <a href="packaging.htm#BABCDFAJ">Web Page Templates</a>.</p> 
+      <p>For more information about JavaFX packaging, see <a href="packaging.htm#BABFECGG">Packaging</a>.</p> 
+      <a id="CIHHIIGG" name="CIHHIIGG"></a>
+      <a id="JFXDP517" name="JFXDP517"></a> 
+      <div class="sect2"> 
+       <h3 class="sect2"><span class="secnum">1.1.1</span> NetBeans IDE</h3> 
+       <p>If you use Netbeans IDE (see the <a href="../get_started/jfxpub-get_started.htm">JavaFX Getting Started tutorials</a> for information about how to use JavaFX projects in Netbeans IDE), then it will do most of the work for you. Open Project Properties to specify preferred dimensions for your application scene. Enter 800 for width and 600 for height if you use the Colorful Circles example. Then build the project with Clean and Build. Your application package is generated to the dist folder. Open it in Windows Explorer and try double-clicking the HTML, JNLP, or JAR files.</p> 
+       <p>For more information about packaging and deploying simple JavaFX applications using NetBeans IDE, see &quot;Deploying Your First JavaFX Application&quot; at<br /> <code><a href="../../../../docs.oracle.com/javafx/2/get_started/basic_deployment.htm">http://docs.oracle.com/javafx/2/get_started/basic_deployment.htm</a></code></p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="CIHGBCHF" name="CIHGBCHF"></a>
+      <a id="JFXDP518" name="JFXDP518"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">1.1.2</span> Ant Tasks</h3> 
+       <p>If you are using another IDE, then you can add JavaFX packaging as a post-build step, using Ant tasks that are included in the JavaFX SDK. <a href="#CIHBFBCE">Example 1-1</a> shows an Ant package task for Colorful Circles:</p> 
+       <div class="example">
+        <a id="CIHBFBCE" name="CIHBFBCE"></a>
+        <a id="JFXDP345" name="JFXDP345"></a> 
+        <p class="titleinexample">Example 1-1 Package Task for the ColorfulCircles Application</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;taskdef resource=&quot;com/sun/javafx/tools/ant/antlib.xml&quot;      
+        uri=&quot;javafx:com.sun.javafx.tools.ant&quot;
+        classpath=&quot;${javafx.sdk.path}/lib/ant-javafx.jar&quot;/&gt;
+ 
+&lt;fx:jar destfile=&quot;dist-web/ColorfulCircles.jar&quot;&gt;
+    &lt;fx:application mainClass=&quot;colorfulcircles.ColorfulCircles&quot;/&gt;
+    &lt;fileset dir=&quot;build/classes/&quot;&gt;
+        &lt;include name=&quot;**&quot;/&gt;
+    &lt;/fileset&gt;
+&lt;/fx:jar&gt;
+ 
+&lt;fx:deploy width=&quot;800&quot; height=&quot;600&quot;
+        outdir=&quot;dist-web&quot; outfile=&quot;ColorfulCircles&quot;&gt;
+    &lt;fx:info title=&quot;Colorful Circles&quot;/&gt;
+    &lt;fx:application name=&quot;Colorful Circles example&quot;
+            mainClass=&quot;colorfulcircles.ColorfulCircles&quot;/&gt;
+    &lt;fx:resources&gt;
+        &lt;fx:fileset dir=&quot;dist-web&quot; includes=&quot;ColorfulCircles.jar&quot;/&gt;
+    &lt;/fx:resources&gt;
+&lt;/fx:deploy&gt; 
+
+ 
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="CIHIHJJB" name="CIHIHJJB"></a>
+      <a id="JFXDP519" name="JFXDP519"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">1.1.3</span> JavaFX Packager Command-Line Tool</h3> 
+       <p>If you cannot use Ant and prefer command-line tools, use the JavaFX Packager tool that comes with the JavaFX SDK. The JavaFX Packager tool has several commands for packaging applications, described in <a href="packager001.htm#CCHHBCIE">JavaFX Packager Command-Line Syntax</a>. For a quick test build, you can use the <a href="packager001.htm#CCHIFAII">javafxpackager -makeall</a> command, such as the one in <a href="#CIHFEBGH">Example 1-2</a>. This command compiles source code and combines the <a href="packager001.htm#CCHJFHAJ">javafxpackager -createjar</a> and <a href="packager001.htm#CCHBIHJC">javafxpackager -deploy</a> commands, with simplified options.</p> 
+       <div class="example">
+        <a id="CIHFEBGH" name="CIHFEBGH"></a>
+        <a id="JFXDP346" name="JFXDP346"></a> 
+        <p class="titleinexample">Example 1-2 javafxpackager -makeall Command to Build an Application</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+javafxpackager -makeall -appclass colorfulcircles.ColorfulCircles 
+    -name &quot;Colorful Circles&quot; -width 800 -height 600
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>As a command intended only to help to build simple projects quickly, the <code>-makeall</code> command supports a limited set of options to customize the command behavior. The <code>-makeall</code> command makes the following assumptions about input and output files:</p> 
+       <ul> 
+        <li> <p>Source and other resource files must be in a directory named src under the main project directory.</p> </li> 
+        <li> <p>The resulting package is always generated to a directory named dist, and file names all start with the dist prefix.</p> </li> 
+       </ul> 
+       <div align="center"> 
+        <div class="inftblnote">
+         <br /> 
+         <table class="Note oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+          <tbody> 
+           <tr> 
+            <td align="left"> <p class="notep1">Note:</p> <p>Stage width and height must always be specified for applications embedded in the browser.</p> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <br />
+        </div> 
+        <!-- class="inftblnote" -->
+       </div> 
+       <p>When your application is ready to go live, use the <code>-createjar</code> and <code>-deploy</code> commands instead of the <code>-makeall</code> command. The <code>-createjar</code> and <code>-deploy</code> commands have considerably more options. For even more flexibility, use an Ant task.</p> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="CHDJAEFD" name="CHDJAEFD"></a>
+     <a id="JFXDP347" name="JFXDP347"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">1.2</span> User Experience</h2> 
+      <p>Users are easily annoyed if they are unable to start an application, do not understand what are the next steps, or perceive the application as slow or hung and for many other reasons.</p> 
+      <p>Default JavaFX packaging takes care of many problem areas including:</p> 
+      <ul> 
+       <li> <p>Ensuring the user has the required JRE and JavaFX installed</p> </li> 
+       <li> <p>Auto installing missing dependencies or offering to install them as needed</p> </li> 
+       <li> <p>Providing visual feedback to the user while the application is being loaded</p> </li> 
+       <li> <p>Showing descriptive error messages</p> </li> 
+      </ul> 
+      <p>For example, when users do not have JavaFX installed and double-click the JAR file for your application, they see a dialog box explaining that they need to download and install the JavaFX Runtime.</p> 
+      <p>Moreover, developers have a wide range of options on how to tune the experience for their users, such as:</p> 
+      <ul> 
+       <li> <p>Customize the messaging (for example explain to users why they need to install JavaFX Runtime in a language other than English)</p> </li> 
+       <li> <p>Show your own splash screen and use a custom loading progress indicator</p> </li> 
+       <li> <p>Switch to alternative content if the user's system is not capable of running JavaFX applications</p> </li> 
+      </ul> 
+      <p>For example, you could pass the following string as a value of the <code>javafx.default.preloader.stylesheet</code> parameter to add a company logo to the default preloader:</p> 
+      <p><code>&quot;.default-preloader { -fx-preloader-graphic:url<br /> ('http://my.company/logo.gif'); }&quot;</code></p> 
+      <p>In <a href="#CHDEHCHH">Example 1-3</a>, the text in bold shows what must be changed in the Ant code used to deploy the ColorfulCircles example.</p> 
+      <div class="example">
+       <a id="CHDEHCHH" name="CHDEHCHH"></a>
+       <a id="JFXDP348" name="JFXDP348"></a> 
+       <p class="titleinexample">Example 1-3 Ant Task to Add a Company Logo to the Default Preloader</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:deploy width=&quot;800&quot; height=&quot;600&quot;
+        outdir=&quot;dist-web&quot; outfile=&quot;ColorfulCircles&quot;&gt;
+    &lt;fx:info title=&quot;Colorful Circles&quot;/&gt;
+    &lt;fx:application name=&quot;Colorful Circles example&quot;
+            mainClass=&quot;colorfulcircles.ColorfulCircles&quot;&gt;
+<span class="bold">        &lt;fx:param  name=&quot;javafx.default.preloader.stylesheet&quot;</span>
+<span class="bold">            value=&quot;.default-preloader </span>
+<span class="bold">                { -fx-preloader-graphic: url('http://my.company/logo.gif'); }&quot; /&gt;</span>
+    &lt;/fx:application&gt;
+    &lt;fx:resources&gt;
+        &lt;fx:fileset dir=&quot;dist-web&quot; includes=&quot;ColorfulCircles.jar&quot;/&gt;
+    &lt;/fx:resources&gt;
+&lt;/fx:deploy&gt; 
+ 
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>See the following pages for more information and examples:</p> 
+      <ul> 
+       <li> <p><a href="deploy_user_experience.htm#BABCHDBJ">Application Startup</a></p> </li> 
+       <li> <p><a href="deployment_toolkit.htm#BABJHEJA">Deployment in the Browser</a></p> </li> 
+       <li> <p><a href="preloaders.htm#BABCDIHD">Preloaders</a></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="CHDEFDAI" name="CHDEFDAI"></a>
+     <a id="JFXDP349" name="JFXDP349"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">1.3</span> Getting the Most Out of the Execution Environment</h2> 
+      <p>Different execution environments have different specifics, and taking these specifics into account can help to make an application more natural and powerful when run in this execution environment.</p> 
+      <p>One specific could be a unique feature that is not applicable to other environments, for example that applications embedded in a web page can use JavaScript to communicate to the host web page. Another specific could be an important peculiarity such as a presized stage that is provided to a JavaFX application embedded into a web page.</p> 
+      <p><a href="#CIHHGHCB">Example 1-4</a> shows an example of using JavaScript to go to a new page:</p> 
+      <div class="example">
+       <a id="CIHHGHCB" name="CIHHGHCB"></a>
+       <a id="JFXDP350" name="JFXDP350"></a> 
+       <p class="titleinexample">Example 1-4 Using JavaScript to Go to a New Page</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+final HostServices services = getHostServices();
+JSObject js = services.getWebContext();
+js.eval(&quot;window.location='http://javafx.com'&quot;);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>See the following pages for more information and examples:</p> 
+      <ul> 
+       <li> <p><a href="deploy_overview.htm#CEGHEAHD">Application Execution Modes</a></p> </li> 
+       <li> <p><a href="javafx_javascript.htm#BCEBDHIF">JavaFX and JavaScript</a></p> </li> 
+       <li> <p><a href="preloaders.htm#BABCDIHD">Preloaders</a></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="CHDECEGG" name="CHDECEGG"></a>
+     <a id="JFXDP351" name="JFXDP351"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">1.4</span> Deploying Swing and SWT Applications with Embedded JavaFX Content</h2> 
+      <p>If you are developing Swing applications with embedded JavaFX content, then you must follow deployment scenarios for Swing applications and applets (see the <a href="../swing/jfxpub-swing.htm">Swing tutorial</a> for tips on coding).</p> 
+      <p>You will need to modify the JNLP descriptor to include a reference to the JavaFX Runtime, which is required to run your application.</p> 
+      <p>While most of the techniques discussed in this guide are not directly applicable to Swing application with JavaFX content some of them are. In particular, you can use the Deployment Toolkit to embed your Swing applet into a web page or launch it from a web page.</p> 
+      <p>For more information, see <a href="deploy_swing_apps.htm#BACFDACD">JavaFX in Swing Applications</a>.</p> 
+      <p>SWT applications with embedded JavaFX content are deployed in the same manner as Swing applications, but the SWT library must be included as a resource. For an example of deploying an SWT-JavaFX application, see <span class="italic">JavaFX Interoperability with SWT</span> at<br /> <code><a href="../../../../docs.oracle.com/javafx/2/swt_interoperability/jfxpub-swt_interoperability.htm">http://docs.oracle.com/javafx/2/swt_interoperability/jfxpub-swt_interoperability.htm</a></code></p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-deployment.htm">About This Guide</a></li>
+      <li class=" active"><a href="deploy_quick_start.htm">Getting Started</a></li>
+      <li><a href="deploy_overview.htm">Application Execution Modes</a></li>
+      <li><a href="deploy_user_experience.htm">Application Startup</a></li>
+      <li><a href="packaging.htm">Packaging</a></li>
+      <li><a href="deployment_toolkit.htm">Deployment in the Browser</a></li>
+      <li><a href="javafx_javascript.htm">JavaFX and JavaScript</a></li>
+      <li><a href="preloaders.htm">Preloaders</a></li>
+      <li><a href="deploy_swing_apps.htm">JavaFX in Swing Applications</a></li>
+      <li><a href="packager.htm">The JavaFX Packager Tool</a></li>
+      <li><a href="packager001.htm">JavaFX Packager Command-Line Syntax</a></li>
+      <li><a href="javafx_ant_task_reference.htm">JavaFX Ant Tasks</a></li>
+      <li><a href="javafx_ant_task_reference001.htm">Reference: JavaFX Ant Tasks</a></li>
+      <li><a href="javafx_ant_task_reference002.htm">Reference: JavaFX Ant Helper Parameters</a></li>
+      <li><a href="troubleshooting.htm">Troubleshooting</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

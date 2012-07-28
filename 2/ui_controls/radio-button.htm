@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Radio Button &middot; Using JavaFX UI Controls &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX UI Controls</h1>
+     <p class=" lead">Radio Button</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="button.htm">←上一篇</a></li>
+      <li class=" next"><a href="toggle-button.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="JFXUC149" name="JFXUC149"></a>
+     <a id="BABBJBDA" name="BABBJBDA"></a>  
+     <p>The <code>RadioButton</code> class is a specialized implementation of the <code>ToggleButton</code> class. A radio button control can be either selected or deselected. Typically radio buttons are combined into a group where only one button at a time can be selected. This behavior distinguishes them from toggle buttons, because all toggle buttons in a group can be in a deselected state.</p> 
+     <p><a href="#BABJAHHB">Figure 4-1</a> shows three screen captures of the <code>RadioButton</code> sample, in which three radio buttons are added to a group.</p> 
+     <div class="figure">
+      <a id="BABJAHHB" name="BABJAHHB"></a>
+      <a id="JFXUC150" name="JFXUC150"></a> 
+      <p class="titleinfigure">Figure 4-1 RadioButton Sample</p> 
+      <img src="img/radio-buttons.png" alt="A group of three radio buttons" title="A group of three radio buttons" longdesc="img_text/radio-buttons.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <p>Study the following paragraphs to learn more about how to implement radio buttons in your applications.</p> 
+     <a id="JFXUC151" name="JFXUC151"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref34" name="sthref34"></a> 
+      <h2 class="sect1">Creating a Radio Button</h2> 
+      <p>The <code>RadioButton</code> class available in the <code>javafx.scene.control</code> package of the JavaFX SDK provides two constructors with which you can create a radio button. <a href="#BABHHHDH">Example 4-1</a> shows two radio buttons. The constructor with no parameters is used to create rb1. The text caption for this radio button is set by using the <code>setText</code> method. The text caption for rb2 is defined within the corresponding constructor.</p> 
+      <div class="example">
+       <a id="BABHHHDH" name="BABHHHDH"></a>
+       <a id="JFXUC152" name="JFXUC152"></a> 
+       <p class="titleinexample">Example 4-1 Creating Radio Buttons</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+//A radio button with an empty string for its label
+RadioButton rb1 = new RadioButton();
+//Setting a text label
+rb1.setText(&quot;Home&quot;);
+//A radio button with the specified label
+RadioButton rb2 = new RadioButton(&quot;Calendar&quot;);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>You can explicitly make a radio button selected by using the <code>setSelected</code> method and specifying its value as <code>true</code>. If you need to check whether a particular radio button was selected by a user, apply the <code>isSelected</code> method.</p> 
+      <p>Because the <code>RadioButton</code> class is an extension of the <code>Labeled</code> class, you can specify not only a text caption, but also an image. Use the <code>setGraphic</code> method to specify an image. <a href="#BABIFJEA">Example 4-2</a> demonstrates how to implement a graphical radio button in your application.</p> 
+      <div class="example">
+       <a id="BABIFJEA" name="BABIFJEA"></a>
+       <a id="JFXUC153" name="JFXUC153"></a> 
+       <p class="titleinexample">Example 4-2 Creating a Graphical Radio Button</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Image image = new Image(getClass().getResourceAsStream(&quot;ok.jpg&quot;));
+RadioButton rb = new RadioButton(&quot;Agree&quot;);
+rb.setGraphic(new ImageView(image));
+</pre>
+      </div> 
+      <!-- class="example" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC154" name="JFXUC154"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref35" name="sthref35"></a> 
+      <h2 class="sect1">Adding Radio Buttons to Groups</h2> 
+      <p>Radio buttons are typically used in a group to present several mutually exclusive options. The <code>ToggleGroup</code> object provides references to all radio buttons that are associated with it and manages them so that only one of the radio buttons can be selected at a time. <a href="#BABJCGEA">Example 4-3</a> creates a toggle group, creates three radio buttons, adds each radio button to the toggle group, and specifies which button should be selected when the application starts.</p> 
+      <div class="example">
+       <a id="BABJCGEA" name="BABJCGEA"></a>
+       <a id="JFXUC155" name="JFXUC155"></a> 
+       <p class="titleinexample">Example 4-3 Creating a Group of Radio Buttons</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+final ToggleGroup group = new ToggleGroup();
+
+RadioButton rb1 = new RadioButton(&quot;Home&quot;);
+rb1.setToggleGroup(group);
+rb1.setSelected(true);
+
+RadioButton rb2 = new RadioButton(&quot;Calendar&quot;);
+rb2.setToggleGroup(group);
+ 
+RadioButton rb3 = new RadioButton(&quot;Contacts&quot;);
+rb3.setToggleGroup(group);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When these radio buttons are laid out by using the layout containers and added to the content of the application, the output should resemble <a href="#BABJCFHC">Figure 4-2</a>.</p> 
+      <div class="figure">
+       <a id="BABJCFHC" name="BABJCFHC"></a>
+       <a id="JFXUC156" name="JFXUC156"></a> 
+       <p class="titleinfigure">Figure 4-2 Three Radio Buttons Combined in a Group</p> 
+       <img src="img/radio-buttons-group.png" alt="Three radio buttons: Home, Calendar, Contacts" title="Three radio buttons: Home, Calendar, Contacts" longdesc="img_text/radio-buttons-group.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC157" name="JFXUC157"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref37" name="sthref37"></a> 
+      <h2 class="sect1">Processing Events for Radio Buttons</h2> 
+      <p>Typically, the application performs an action when one of the radio buttons in the group is selected. Review the code fragment in <a href="#BABCAAGE">Example 4-4</a> to learn how to change an icon according to which radio button is selected.</p> 
+      <div class="example">
+       <a id="BABCAAGE" name="BABCAAGE"></a>
+       <a id="JFXUC158" name="JFXUC158"></a> 
+       <p class="titleinexample">Example 4-4 Processing Action for Radio Buttons</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+ImageView image = new ImageView();
+
+rb1.setUserData(&quot;Home&quot;)
+rb2.setUserData(&quot;Calendar&quot;);
+rb3.setUserData(&quot;Contacts&quot;);
+
+final ToggleGroup group = new ToggleGroup();
+group.selectedToggleProperty().addListener(new ChangeListener&lt;Toggle&gt;(){
+    public void changed(ObservableValue&lt;? extends Toggle&gt; ov,
+        Toggle old_toggle, Toggle new_toggle) {
+            if (group.getSelectedToggle() != null) {
+                final Image image = new Image(
+                    getClass().getResourceAsStream(
+                        group.getSelectedToggle().getUserData().toString() + 
+                            &quot;.jpg&quot;
+                    )
+                );
+                icon.setImage(image);
+            }                
+        }
+});
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The user data was assigned for each radio button. The <code>ChangeListener&lt;Toggle&gt;</code> object checks a selected toggle in the group. It uses the <code>getSelectedToggle</code> method to identify which radio button is currently selected and extracts its user data by calling the <code>getUserData</code> method. Then the user data is applied to construct an image file name to load.</p> 
+      <p>For example, when rb3 is selected, the <code>getSelectedToggle</code> method returns &quot;rb3,&quot; and the <code>getUserData</code> method returns &quot;Contacts.&quot; Therefore, the <code>getResourceAsStream</code> method receives the value &quot;Contacts.jpg.&quot; The application output is shown in <a href="#BABJAHHB">Figure 4-1</a>.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC159" name="JFXUC159"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref38" name="sthref38"></a> 
+      <h2 class="sect1">Requesting Focus for a Radio Button</h2> 
+      <p>In the group of radio buttons, the first button initially has the focus by default. If you apply the <code>setSelected</code> method to the second radio button in the group, you should expect the result shown in <a href="#BABHBJCA">Figure 4-3</a>.</p> 
+      <div class="figure">
+       <a id="BABHBJCA" name="BABHBJCA"></a>
+       <a id="JFXUC160" name="JFXUC160"></a> 
+       <p class="titleinfigure">Figure 4-3 Default Focus Settings</p> 
+       <img src="img/radio-button-focus1.png" alt="The second radio button is selected." title="The second radio button is selected." longdesc="img_text/radio-button-focus1.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>The second radio button is selected, and the first button remains in focus. Use the <code>requestFocus</code> function to change the focus, as shown in <a href="#BABBJJCH">Example 4-5</a>.</p> 
+      <div class="example">
+       <a id="BABBJJCH" name="BABBJJCH"></a>
+       <a id="JFXUC161" name="JFXUC161"></a> 
+       <p class="titleinexample">Example 4-5 Requesting Focus for the Second Radio Button</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+rb2.setSelected(true);
+rb2.requestFocus();
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When applied, this code produces the result shown in <a href="#BABDFAFH">Figure 4-4</a>.</p> 
+      <div class="figure">
+       <a id="BABDFAFH" name="BABDFAFH"></a>
+       <a id="JFXUC162" name="JFXUC162"></a> 
+       <p class="titleinfigure">Figure 4-4 Setting Focus for the Selected Radio Button</p> 
+       <img src="img/radio-button-focus2.png" alt="The second radio button gets focused." title="The second radio button gets focused." longdesc="img_text/radio-button-focus2.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p class="itemizedlisttitle">Related API Documentation&nbsp;</p> 
+      <ul> 
+       <li> <p><code>RadioButton</code></p> </li> 
+       <li> <p><code>Labeled</code></p> </li> 
+       <li> <p><code>ToggleGroup</code></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-ui_controls.htm">About This Tutorial</a></li>
+      <li><a href="overview.htm">JavaFX UI Controls</a></li>
+      <li><a href="label.htm">Label</a></li>
+      <li><a href="button.htm">Button</a></li>
+      <li class=" active"><a href="radio-button.htm">Radio Button</a></li>
+      <li><a href="toggle-button.htm">Toggle Button</a></li>
+      <li><a href="checkbox.htm">Checkbox</a></li>
+      <li><a href="choice-box.htm">Choice Box</a></li>
+      <li><a href="text-field.htm">Text Field</a></li>
+      <li><a href="password-field.htm">Password Field</a></li>
+      <li><a href="scrollbar.htm">Scroll Bar</a></li>
+      <li><a href="scrollpane.htm">Scroll Pane</a></li>
+      <li><a href="list-view.htm">List View</a></li>
+      <li><a href="table-view.htm">Table View</a></li>
+      <li><a href="tree-view.htm">Tree View</a></li>
+      <li><a href="combo-box.htm">Combo Box</a></li>
+      <li><a href="separator.htm">Separator</a></li>
+      <li><a href="slider.htm">Slider</a></li>
+      <li><a href="progress.htm">Progress Bar and Progress Indicator</a></li>
+      <li><a href="hyperlink.htm">Hyperlink</a></li>
+      <li><a href="tooltip.htm">Tooltip</a></li>
+      <li><a href="editor.htm">HTML Editor</a></li>
+      <li><a href="accordion-titledpane.htm">Titled Pane and Accordion</a></li>
+      <li><a href="menu_controls.htm">Menu</a></li>
+      <li><a href="custom.htm">Customization of UI Controls</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/ui_controls/UIControlSamples.zip">UIControlSamples.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

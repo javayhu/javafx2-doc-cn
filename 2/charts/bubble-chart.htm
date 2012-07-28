@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Bubble Chart &middot; Using JavaFX Charts &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX Charts</h1>
+     <p class=" lead">Bubble Chart</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="area-chart.htm">←上一篇</a></li>
+      <li class=" next"><a href="scatter-chart.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CIHJHEAF" name="CIHJHEAF"></a>
+     <a id="JFXCH106" name="JFXCH106"></a>
+     <a id="CHDHAFHB" name="CHDHAFHB"></a>  
+     <p>The bubble chart is a two-axis chart that plots bubbles for the data points in a series. Each data item can be defined by two or three parameters. <a href="#CHDBIHGJ">Figure 5-1</a> shows a typical bubble chart, where each data item is presented by the three following parameters: X value, Y value, and the radius of the bubble.</p> 
+     <div class="figure">
+      <a id="CHDBIHGJ" name="CHDBIHGJ"></a>
+      <a id="JFXCH163" name="JFXCH163"></a> 
+      <p class="titleinfigure">Figure 5-1 Typical Bubble Chart</p> 
+      <img src="img/bubble-sample.png" alt="Description of Figure 5-1 follows" title="Description of Figure 5-1 follows" longdesc="img_text/bubble-sample.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <a id="JFXCH107" name="JFXCH107"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref48" name="sthref48"></a> 
+      <h2 class="sect1">Creating a Bubble Chart</h2> 
+      <p>To create a bubble chart in your JavaFX application, at minimum, you must instantiate the <code>BubbleChart</code> class, define horizontal and vertical axes, and specify one or more series of data by using constructors of the <code>XYChart.Data</code> class with two or three parameters. <a href="#CHDDGGHG">Example 5-1</a> creates a bubble chart with two series of data. Each data item is represented by X and Y values: a number of a week and an amount of product budget.</p> 
+      <div class="example">
+       <a id="CHDDGGHG" name="CHDDGGHG"></a>
+       <a id="JFXCH164" name="JFXCH164"></a> 
+       <p class="titleinexample">Example 5-1 Creating a Bubble Chart with Two Data Parameters</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.chart.BubbleChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.stage.Stage;
+ 
+ 
+public class BubbleChartSample extends Application {
+ 
+    @Override public void start(Stage stage) {
+        stage.setTitle(&quot;Bubble Chart Sample&quot;);
+        final NumberAxis xAxis = new NumberAxis(1, 53, 4);
+        final NumberAxis yAxis = new NumberAxis(0, 80, 10);
+        final BubbleChart&lt;Number,Number&gt; blc = new
+            BubbleChart&lt;Number,Number&gt;(xAxis,yAxis);
+        xAxis.setLabel(&quot;Week&quot;);
+        yAxis.setLabel(&quot;Product Budget&quot;);
+        blc.setTitle(&quot;Budget Monitoring&quot;);
+       
+        XYChart.Series series1 = new XYChart.Series();
+        series1.setName(&quot;Product 1&quot;);
+        series1.getData().add(new XYChart.Data(3, 35));
+        series1.getData().add(new XYChart.Data(12, 60));
+        series1.getData().add(new XYChart.Data(15, 15));
+        series1.getData().add(new XYChart.Data(22, 30));
+        series1.getData().add(new XYChart.Data(28, 20));
+        series1.getData().add(new XYChart.Data(35, 41));
+        series1.getData().add(new XYChart.Data(42, 17));
+        series1.getData().add(new XYChart.Data(49, 30));
+                
+        XYChart.Series series2 = new XYChart.Series();
+        series2.setName(&quot;Product 2&quot;);
+        series2.getData().add(new XYChart.Data(8, 15));
+        series2.getData().add(new XYChart.Data(13, 23));
+        series2.getData().add(new XYChart.Data(15, 45));
+        series2.getData().add(new XYChart.Data(24, 30));
+        series2.getData().add(new XYChart.Data(38, 78));
+        series2.getData().add(new XYChart.Data(40, 41));
+        series2.getData().add(new XYChart.Data(45, 57));
+        series2.getData().add(new XYChart.Data(47, 23));
+                       
+        Scene scene  = new Scene(blc);
+        blc.getData().addAll(series1, series2);           
+        stage.setScene(scene);
+        stage.show();
+    }
+    
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The result of compiling and running this application is shown in <a href="#CHDFFCBI">Figure 5-2</a>.</p> 
+      <div class="figure">
+       <a id="CHDFFCBI" name="CHDFFCBI"></a>
+       <a id="JFXCH165" name="JFXCH165"></a> 
+       <p class="titleinfigure">Figure 5-2 Bubble Chart with Two Data Parameters</p> 
+       <img src="img/bubble-two-parameters.png" alt="Description of Figure 5-2 follows" title="Description of Figure 5-2 follows" longdesc="img_text/bubble-two-parameters.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>This application defines lower and upper boundaries of the data ranges and the tick units within the constructors of the <code>NumberAxis</code> class. Additionally, the minor tick count is set to 4, so that each minor tick corresponds to a particular week.</p> 
+      <p>To indicate that the vertical axis renders the amount of money in US dollars, use a tick label formatter as shown in <a href="#CHDJECGA">Example 5-2</a>.</p> 
+      <div class="example">
+       <a id="CHDJECGA" name="CHDJECGA"></a>
+       <a id="JFXCH166" name="JFXCH166"></a> 
+       <p class="titleinexample">Example 5-2 Formatting Tick Labels</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+yAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(yAxis,&quot;$ &quot;,null));
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The <code>NumberAxis.DefaultFormatter</code> class adds prefixes and suffixes to the tick labels of the specified axis. In <a href="#CHDJECGA">Example 5-2</a>, the formatter defines a dollar sign ($) prefix for each tick label of the vertical axis. The <code>null</code> value for the suffix parameter indicates that no suffixes are added. <a href="#CHDFIFCC">Figure 5-3</a> shows the bubble chart after the formatting has been applied.</p> 
+      <div class="figure">
+       <a id="CHDFIFCC" name="CHDFIFCC"></a>
+       <a id="JFXCH167" name="JFXCH167"></a> 
+       <p class="titleinfigure">Figure 5-3 Specifying Prefixes for Tick Labels</p> 
+       <img src="img/bubble-format.png" alt="Description of Figure 5-3 follows" title="Description of Figure 5-3 follows" longdesc="img_text/bubble-format.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCH168" name="JFXCH168"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref51" name="sthref51"></a> 
+      <h2 class="sect1">Using the Extra Value Property</h2> 
+      <p>The bubble chart shown in <a href="#CHDBIHGJ">Figure 5-1</a> provides information about budgets of two products for the period of a year. However, you can enhance this application and benefit from the additional capabilities of the <code>BubbleChart</code> class. Use the <code>extraValue</code> property and define three parameters in <code>XYChart.Data</code> objects when specifying the series of data for your bubble chart.</p> 
+      <p>The code fragment shown in <a href="#CHDBBBIE">Example 5-3</a> demonstrates how to modify data series for the Budget Monitoring application, so that each bubble shows the percentage of consumed budget for a particular product. The third parameter in the <code>XYChart.Data</code> object defines the radius of each bubble: the bigger the radius, the higher the percentage of the budget consumed. Thus, a radius of 7.5 corresponds to consuming 75% of the budget, 5.5 to 55%, and so on.</p> 
+      <div class="example">
+       <a id="CHDBBBIE" name="CHDBBBIE"></a>
+       <a id="JFXCH169" name="JFXCH169"></a> 
+       <p class="titleinexample">Example 5-3 Adding Extra Value</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+XYChart.Series series1 = new XYChart.Series();
+series1.setName(&quot;Product 1&quot;);
+series1.getData().add(new XYChart.Data(3, 35, <span class="bold">2</span>));
+series1.getData().add(new XYChart.Data(12, 60, <span class="bold">1.8</span>));
+series1.getData().add(new XYChart.Data(15, 15, <span class="bold">7</span>));
+series1.getData().add(new XYChart.Data(22, 30, <span class="bold">2.5</span>));
+series1.getData().add(new XYChart.Data(28, 20, <span class="bold">1</span>));
+series1.getData().add(new XYChart.Data(35, 41, <span class="bold">5.5</span>));
+series1.getData().add(new XYChart.Data(42, 17, <span class="bold">9</span>));
+series1.getData().add(new XYChart.Data(49, 30, <span class="bold">1.8</span>));
+                
+XYChart.Series series2 = new XYChart.Series();
+series2.setName(&quot;Product 2&quot;);
+series2.getData().add(new XYChart.Data(8, 15, <span class="bold">2</span>));
+series2.getData().add(new XYChart.Data(13, 23, <span class="bold">1</span>));
+series2.getData().add(new XYChart.Data(15, 45, <span class="bold">3</span>));
+series2.getData().add(new XYChart.Data(24, 30, <span class="bold">4.5</span>));
+series2.getData().add(new XYChart.Data(38, 78, <span class="bold">1</span>));
+series2.getData().add(new XYChart.Data(40, 41, <span class="bold">7.5</span>));
+series2.getData().add(new XYChart.Data(45, 57, <span class="bold">2</span>));
+series2.getData().add(new XYChart.Data(47, 23, <span class="bold">3.8</span>));
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The result of adding the modified code fragment to the Budget Monitoring application and then compiling and running it is shown in <a href="#CHDGBCAE">Figure 5-4</a>.</p> 
+      <div class="figure">
+       <a id="CHDGBCAE" name="CHDGBCAE"></a>
+       <a id="JFXCH170" name="JFXCH170"></a> 
+       <p class="titleinfigure">Figure 5-4 Demonstrating Percentage of Consumed Budget</p> 
+       <img src="img/bubble-three-parameters.png" alt="Description of Figure 5-4 follows" title="Description of Figure 5-4 follows" longdesc="img_text/bubble-three-parameters.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCH171" name="JFXCH171"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref53" name="sthref53"></a> 
+      <h2 class="sect1">Changing the Appearance Visual Setting of the Plot and Tick Marks</h2> 
+      <p>You can alter the appearance of the chart plot and axes. Examine some methods and properties available in the JavaFX SDK API to modify the look of the Budget Monitoring application.</p> 
+      <p>There are four properties in the <code>XYChart</code> class to manage the appearance of the chart plot. The <code>alternativeColumnFillVisible</code> and <code>alternativeRowFillVisible</code> properties define whether the alternative rows and columns have the fill colors. The <code>verticalGridLinesVisible</code> and <code>horizontalGridLinesVisible</code> properties enable and disable showing the grid lines. <a href="#CHDIJIHB">Table 5-1</a> shows the default values for these properties.</p> 
+      <div class="tblformal">
+       <a id="JFXCH172" name="JFXCH172"></a>
+       <a id="sthref54" name="sthref54"></a>
+       <a id="CHDIJIHB" name="CHDIJIHB"></a> 
+       <p class="titleintable">Table 5-1 Default Values of the Chart Plot Properties</p> 
+       <table class="Formal table table-bordered table-striped" title="Default Values of the Chart Plot Properties" summary="Default values for alternative columns and grid lines visibility" dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="*" /> 
+         <col width="40%" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t2">Property</th> 
+          <th align="left" valign="bottom" id="r1c2-t2">Default Value</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t2" headers="r1c1-t2"> <p><code>alternativeColumnFillVisible</code></p> </td> 
+          <td align="left" headers="r2c1-t2 r1c2-t2"> <p><code>false</code></p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r3c1-t2" headers="r1c1-t2"> <p><code>alternativeRowFillVisible</code></p> </td> 
+          <td align="left" headers="r3c1-t2 r1c2-t2"> <p><code>true</code></p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r4c1-t2" headers="r1c1-t2"> <p><code>verticalGridLinesVisible</code></p> </td> 
+          <td align="left" headers="r4c1-t2 r1c2-t2"> <p><code>true</code></p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r5c1-t2" headers="r1c1-t2"> <p><code>verticalZeroLineVisible</code></p> </td> 
+          <td align="left" headers="r5c1-t2 r1c2-t2"> <p><code>true</code></p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblformal" --> 
+      <p>Alter these properties by using the corresponding methods as shown in <a href="#CHDCEECH">Example 5-4</a> to modify the look of the chart plot.</p> 
+      <div class="example">
+       <a id="CHDCEECH" name="CHDCEECH"></a>
+       <a id="JFXCH173" name="JFXCH173"></a> 
+       <p class="titleinexample">Example 5-4 Visualizing Alternative Columns</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+blc.setAlternativeColumnFillVisible(true);
+blc.setAlternativeRowFillVisible(false);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>In addition to the plot properties, you can modify the properties of the axis to attain the required appearance. Code lines in <a href="#CHDBJFAJ">Example 5-5</a> specify the <code>CHOCOLATE</code> color for the tick labels.</p> 
+      <div class="example">
+       <a id="CHDBJFAJ" name="CHDBJFAJ"></a>
+       <a id="JFXCH174" name="JFXCH174"></a> 
+       <p class="titleinexample">Example 5-5 Defining a Fill Color for the Tick Labels</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+xAxis.setTickLabelFill(Color.CHOCOLATE);
+yAxis.setTickLabelFill(Color.CHOCOLATE);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Finally, you can adjust the position of the tick labels relative to the tick marks. Use the <code>setTickLabelGap</code> method to specify the gap between tick labels and the tick mark lines on the vertical axis: <code>yAxis.setTickLabelGap(10)</code>.</p> 
+      <p><a href="#CHDHJFGD">Figure 5-5</a> shows the output of the Budget Monitoring application after all the modifications are incorporated in the code.</p> 
+      <div class="figure">
+       <a id="CHDHJFGD" name="CHDHJFGD"></a>
+       <a id="JFXCH175" name="JFXCH175"></a> 
+       <p class="titleinfigure">Figure 5-5 Changes in the Appearance of the Bubble Chart</p> 
+       <img src="img/bubble-style.png" alt="Description of Figure 5-5 follows" title="Description of Figure 5-5 follows" longdesc="img_text/bubble-style.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p class="itemizedlisttitle">Related API Documentation&nbsp;</p> 
+      <ul> 
+       <li> <p><code>BubbleChart</code></p> </li> 
+       <li> <p><code>Chart</code></p> </li> 
+       <li> <p><code>XYChart</code></p> </li> 
+       <li> <p><code>XYChart.Data</code></p> </li> 
+       <li> <p><code>XYChart.Series</code></p> </li> 
+       <li> <p><code>NumberAxis</code></p> </li> 
+       <li> <p><code>NumberAxis.DefaultFormatter</code></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-charts.htm">About This Tutorial</a></li>
+      <li><a href="chart-overview.htm">Introduction to JavaFX Charts</a></li>
+      <li><a href="pie-chart.htm">Pie Chart</a></li>
+      <li><a href="line-chart.htm">Line Chart</a></li>
+      <li><a href="area-chart.htm">Area Chart</a></li>
+      <li class=" active"><a href="bubble-chart.htm">Bubble Chart</a></li>
+      <li><a href="scatter-chart.htm">Scatter Chart</a></li>
+      <li><a href="bar-chart.htm">Bar Chart</a></li>
+      <li><a href="css-styles.htm">Styling Charts with CSS</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/AreaChartSample.zip">AreaChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/BarChartSample.zip">BarChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/BubbleChartSample.zip">BubbleChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/LineChartSample.zip">LineChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/PieChartSample.zip">PieChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/ScatterChartSample.zip">ScatterChartSample.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

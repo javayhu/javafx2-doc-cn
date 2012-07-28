@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Introduction to JavaFX Media &middot; Incorporating Media Assets Into JavaFX Applications &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Incorporating Media Assets Into JavaFX Applications</h1>
+     <p class=" lead">Introduction to JavaFX Media</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="jfxpub-media.htm">←上一篇</a></li>
+      <li class=" next"><a href="simpleplayer.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CJAHFAHJ" name="CJAHFAHJ"></a>
+     <a id="JFXMD101" name="JFXMD101"></a>  
+     <p>The active growth of media content on the web has made video and audio an essential part of rich Internet applications. The idea of broadening the horizons of traditional media usage led to the creation of the JavaFX media functionality that is available through a set of Java APIs. The <code>javafx.scene.media</code> package enables developers to create media applications that provide media playback in the desktop window or within a web page on supported platforms.</p> 
+     <p><a href="#CJADFAHE">Figure 1-1</a> demonstrates a variety of possible media usages in JavaFX applications.</p> 
+     <div class="figure">
+      <a id="CJADFAHE" name="CJADFAHE"></a>
+      <a id="JFXMD131" name="JFXMD131"></a> 
+      <p class="titleinfigure">Figure 1-1 Samples of Media Usages</p> 
+      <img src="img/functionality.jpg" alt="Description of Figure 1-1 follows" title="Description of Figure 1-1 follows" longdesc="img_text/functionality.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <p>The operating systems and Java Runtime Environments (JREs) supported by JavaFX media features are the same as those listed in the JavaFX SDK System Requirements document. Refer to the <a href="../../release-documentation.html">JavaFX Release Documentation</a> page for the appropriate system requirements information for the version of JavaFX SDK you are using.</p> 
+     <div class="sect1">
+      <a id="sthref4" name="sthref4"></a> 
+      <h2 class="sect1">Supported Media Codecs</h2> 
+      <p>The formats currently supported are the following:</p> 
+      <ul> 
+       <li> <p><span class="bold">Audio:</span> MP3; AIFF containing uncompressed PCM; WAV containing uncompressed PCM; MPEG-4 multimedia container with Advanced Audio Coding (AAC) audio</p> </li> 
+       <li> <p><span class="bold">Video:</span> FLV containing VP6 video and MP3 audio; MPEG-4 multimedia container with H.264/AVC (Advanced Video Coding) video compression</p> </li> 
+      </ul> 
+      <div align="center"> 
+       <div class="inftblnote">
+        <br /> 
+        <table class="Note oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+         <tbody> 
+          <tr> 
+           <td align="left"> <p class="notep1">Note:</p> <p>You may not integrate the On2 VP6 video decoder in the design of a semiconductor or register transfer level (RTL) or any other similar level necessary for development of semiconductor implementation of the On2 VP6 video decoder.</p> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <br />
+       </div> 
+       <!-- class="inftblnote" -->
+      </div> 
+      <p>The FLV container is supported by the media stack on the platforms supported by the JavaFX SDK. A single movie encoded in this format works seamlessly on the supported platforms. Standard FLV MIME settings are required on the server side to enable media streaming.</p> 
+      <p>The MPEG-4 multimedia container is also supported on all operating systems supported by the JavaFX SDK. On the Mac OS X and Windows 7 platforms, playback will be functional without requiring additional software. However, the Linux operating system and versions of Windows older than Windows 7 require the installation of readily available third party software packages, as documented in the <a href="../../release-documentation.html">JavaFX 2.1 Systems Requirements</a>. AAC and H.264/AVC decoding have certain platform-dependent limitations, as described in the <a href="../../release-documentation.html">JavaFX 2.1 Release Notes</a>.</p> 
+      <p>Decoding of some audio and video compression types relies on operating system-specific media engines. The JavaFX media framework does not attempt to handle all multimedia container formats and media encodings supported by these native engines. Instead, the framework attempts to provide equivalent and well-tested functionality across all platforms on which JavaFX is supported.</p> 
+      <p>Some of the features supported by the JavaFX media stack include the following:</p> 
+      <ul> 
+       <li> <p>FLV container with MP3 and VP6</p> </li> 
+       <li> <p>MP3 audio</p> </li> 
+       <li> <p>MPEG-4 container with either AAC, H.264, or both</p> </li> 
+       <li> <p>HTTP, FILE protocol support</p> </li> 
+       <li> <p>Progressive download</p> </li> 
+       <li> <p>Seeking</p> </li> 
+       <li> <p>Buffer progress</p> </li> 
+       <li> <p>Playback functions (Play, Pause, Stop, Volume, Mute, Balance, Equalizer)</p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXMD105" name="JFXMD105"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref5" name="sthref5"></a> 
+      <h2 class="sect1">Creating a Media Player</h2> 
+      <p>The JavaFX media concept is based on the following entities.</p> 
+      <ul> 
+       <li> <p><span class="bold">Media</span> – A media resource, containing information about the media, such as its source, resolution, and metadata</p> </li> 
+       <li> <p><span class="bold">MediaPlayer</span> – The key component providing the controls for playing media</p> </li> 
+       <li> <p><span class="bold">MediaView</span> – A Node object to support animation, translucency, and effects</p> </li> 
+      </ul> 
+      <p>Each element of the media functionality is available through the JavaFX API. <a href="#BGBJJEDH">Figure 1-2</a> shows the classes that reside in the <code>javafx.scene.media</code> package. These classes are interdependent and are used in combination to create an embedded media player.</p> 
+      <div class="figure">
+       <a id="BGBJJEDH" name="BGBJJEDH"></a>
+       <a id="JFXMD106" name="JFXMD106"></a> 
+       <p class="titleinfigure">Figure 1-2 Classes in the javafx.scene.media Package</p> 
+       <img src="img/mediafxapi.gif" alt="Description of Figure 1-2 follows" title="Description of Figure 1-2 follows" longdesc="img_text/mediafxapi.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>The <code>MediaPlayer</code> class provides all the attributes and functions needed to control media playback. You can either set the <code>AUTO_PLAY</code> mode, call the <code>play()</code> function directly, or explicitly specify the number of times that the media should play. The <code>VOLUME</code> variable and the <code>BALANCE</code> variable can be used to adjust the volume level and left-right settings, respectively. The volume level range is from 0 to 1.0 (the maximum value). The balance range is continuous from -1.0 on the far left, 0 at the center, and 1.0 at the right.</p> 
+      <p>The <code>play()</code>, <code>stop()</code>, and <code>pause()</code> functions control media playback. Additionally, a bundle of functions handles specific events when the player does one of the following:</p> 
+      <ul> 
+       <li> <p>Buffers data</p> </li> 
+       <li> <p>Reaches the end of media</p> </li> 
+       <li> <p>Stalls because it has not received data fast enough to continue playing</p> </li> 
+       <li> <p>Encounters any of the errors defined in the <code>MediaErrorEvent</code> class</p> </li> 
+      </ul> 
+      <p>The <code>MediaView</code> class extends the <code>Node</code> class and provides a view of the media being played by the media player. It is responsible mostly for effects and transformations. Its <code>mediaPlayer</code> instance variable specifies the <code>MediaPlayer</code> object by which the media is being played. Other Boolean attributes serve to apply the particular effect provided by the <code>Node</code> class, for example, to enable the media player to be rotated.</p> 
+      <p>For more information about the <code>javafx.scene.media</code> package, see the <a href="../api/index.html">API documentation</a>.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-media.htm">About This Tutorial</a></li>
+      <li class=" active"><a href="overview.htm">Introduction to JavaFX Media</a></li>
+      <li><a href="simpleplayer.htm">Embedding Media Into a Web Page</a></li>
+      <li><a href="playercontrol.htm">Controlling Media Player</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/media/EmbeddedMediaPlayer.zip">EmbeddedMediaPlayer.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

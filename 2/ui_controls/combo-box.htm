@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Combo Box &middot; Using JavaFX UI Controls &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX UI Controls</h1>
+     <p class=" lead">Combo Box</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="tree-view.htm">←上一篇</a></li>
+      <li class=" next"><a href="separator.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="BABJCCIB" name="BABJCCIB"></a>
+     <a id="BABEFEJC" name="BABEFEJC"></a>  
+     <p>This chapter explains how to use combo boxes in your JavaFX application. It discusses editable and uneditable combo boxes, teaches you how to track changes in the editable combo boxes and handle events on them, and explains how to use cell factories to alter the default implementation of a combo box.</p> 
+     <p>A combo box is a typical element of a user interface that enables users to choose one of several options. A combo box is helpful when the number of items to show exceeds some limit, because it can add scrolling to the drop down list, unlike a choice box. If the number of items does not exceed a certain limit, developers can decide whether a combo box or a choice box better suits their needs.</p> 
+     <p>You can create a combo box in the JavaFX application by using the <code>ComboBox</code> class of the JavaFX API. <a href="#BABDDHII">Figure 15-1</a> shows an application with two combo boxes.</p> 
+     <div class="figure">
+      <a id="BABDDHII" name="BABDDHII"></a> 
+      <p class="titleinfigure">Figure 15-1 Application with Two Combo Boxes</p> 
+      <img src="img/combobox-sample.png" alt="Description of Figure 15-1 follows" title="Description of Figure 15-1 follows" longdesc="img_text/combobox-sample.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref135" name="sthref135"></a> 
+      <h2 class="sect1">Creating Combo Boxes</h2> 
+      <p>When creating a combo box, you must instantiate the <code>ComboBox</code> class and define the items as an observable list, just like other UI controls such as <code>ChoiceBox</code>, <code>ListView</code>, and <code>TableView</code>. <a href="#BABDBJBD">Example 15-1</a> sets the items within a constructor.</p> 
+      <div class="example">
+       <a id="BABDBJBD" name="BABDBJBD"></a> 
+       <p class="titleinexample">Example 15-1 Creating a Combo Box with an Observable List</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+ObservableList&lt;String&gt; options = 
+    FXCollections.observableArrayList(
+        &quot;Option 1&quot;,
+        &quot;Option 2&quot;,
+        &quot;Option 3&quot;
+    );
+final ComboBox comboBox = new ComboBox(options);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Another possibility is to create a combo box by using an empty constructor and call the <code>setItems</code> method on it, as follows: <code>comboBox.setItems(options);</code></p> 
+      <p>When the combo box is added to the application scene, it appears in the user interface as shown in <a href="#BABDJFJJ">Figure 15-2</a>.</p> 
+      <div class="figure">
+       <a id="BABDJFJJ" name="BABDJFJJ"></a> 
+       <p class="titleinfigure">Figure 15-2 Combo Box with Three Items</p> 
+       <img src="img/combobox-string.png" alt="Description of Figure 15-2 follows" title="Description of Figure 15-2 follows" longdesc="img_text/combobox-string.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>At any time, you can supplement the list of items with new values. <a href="#BABEFGCF">Example 15-2</a> implements this task by adding three more items to the comboBox control.</p> 
+      <div class="example">
+       <a id="BABEFGCF" name="BABEFGCF"></a> 
+       <p class="titleinexample">Example 15-2 Adding Items to a Combo Box</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+comboBox.getItems().addAll(
+    &quot;Option 4&quot;,
+    &quot;Option 5&quot;,
+    &quot;Option 6&quot;
+);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The <code>ComboBox</code> class provides handy properties and methods to use with combo boxes.</p> 
+      <p>You can use the <code>setValue</code> method to specify the item selected in the combo box. When you call the <code>setValue</code> method on the <code>ComboBox</code> object, the selected item of the <code>selectionModel</code> property changes to this value even if the value is not in the combo box items list. If the items list then changes to include this value, the corresponding item becomes selected.</p> 
+      <p>Similarly, you can obtain the value of the selected item by calling the <code>getValue</code> method. When a user selects an item, the selected item of the <code>selectionModel</code> property and the combo box <code>value</code> property are both updated to the new value.</p> 
+      <p>You can also restrict the number of visible rows in the <code>ComboBox</code> drop down list when it is displayed. The following code line enables the display of three items for the comboBox control: <code>comboBox.setVisibleRowCount(3)</code> As the result of calling this method, the number of visible rows is limited to three, and a scroll bar appears (as shown in <a href="#BABGFGJC">Figure 15-3</a>).</p> 
+      <div class="figure">
+       <a id="BABGFGJC" name="BABGFGJC"></a> 
+       <p class="titleinfigure">Figure 15-3 Setting the Number of Visible Rows for a Combo Box</p> 
+       <img src="img/combobox-button.png" alt="Description of Figure 15-3 follows" title="Description of Figure 15-3 follows" longdesc="img_text/combobox-button.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Although the <code>ComboBox</code> class has a generic notation and enables users to populate it with items of various types, do not use <code>Node</code> (or any subclass) as the type. Because the scene graph concept implies that only one <code>Node</code> object can be in one place of the application scene, the selected item is removed from the <code>ComboBox</code> list of items. When the selection changes, the previously selected item returns to the list and the new selection is removed. To prevent this situation, use the cell factory mechanism and the solution described in the <a href="../api/javafx/scene/control/ComboBox.html">API documentation</a>. The cell factory mechanism is particularly helpful when you need to change the initial behavior or appearance of the <code>ComboBox</code> object.</p> 
+      <p>The ComboBoxSample application is designed to illustrate how to use combo boxes in a typical email interface. <a href="#BABDFEFC">Example 15-3</a> creates a such an interface, in which two combo boxes are used to select the email recipient and the priority of the message.</p> 
+      <div class="example">
+       <a id="BABDFEFC" name="BABDFEFC"></a> 
+       <p class="titleinexample">Example 15-3 Creating Combo Boxes and Adding Them to the Scene</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+ 
+public class ComboBoxSample extends Application {
+    public static void main(String[] args) {
+        launch(args);
+    }
+        
+    final Button button = new Button (&quot;Send&quot;);
+    final Label notification = new Label ();
+    final TextField subject = new TextField(&quot;&quot;);
+    final TextArea text = new TextArea (&quot;&quot;);
+    
+    String address = &quot; &quot;;
+    
+    @Override public void start(Stage stage) {
+        stage.setTitle(&quot;ComboBoxSample&quot;);
+        Scene scene = new Scene(new Group(), 450, 250);
+        
+        final ComboBox emailComboBox = new ComboBox();
+        emailComboBox.getItems().addAll(
+            &quot;jacob.smith@example.com&quot;,
+            &quot;isabella.johnson@example.com&quot;,
+            &quot;ethan.williams@example.com&quot;,
+            &quot;emma.jones@example.com&quot;,
+            &quot;michael.brown@example.com&quot;  
+        );
+        
+        final ComboBox priorityComboBox = new ComboBox();
+        priorityComboBox.getItems().addAll(
+            &quot;Highest&quot;,
+            &quot;High&quot;,
+            &quot;Normal&quot;,
+            &quot;Low&quot;,
+            &quot;Lowest&quot; 
+        );   
+
+        priorityComboBox.setValue(&quot;Normal&quot;);
+        
+        GridPane grid = new GridPane();
+        grid.setVgap(4);
+        grid.setHgap(10);
+        grid.setPadding(new Insets(5, 5, 5, 5));
+        grid.add(new Label(&quot;To: &quot;), 0, 0);
+        grid.add(emailComboBox, 1, 0);
+        grid.add(new Label(&quot;Priority: &quot;), 2, 0);
+        grid.add(priorityComboBox, 3, 0);
+        grid.add(new Label(&quot;Subject: &quot;), 0, 1);
+        grid.add(subject, 1, 1, 3, 1);            
+        grid.add(text, 0, 2, 4, 1);
+        grid.add(button, 0, 3);
+        grid.add (notification, 1, 3, 3, 1);
+        
+        Group root = (Group)scene.getRoot();
+        root.getChildren().add(grid);
+        stage.setScene(scene);
+        stage.show();
+    }    
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Both combo boxes in <a href="#BABDFEFC">Example 15-3</a> use the <code>getItems</code> and <code>addAll</code> methods to add items. When you compile and run this code, it produces the application window shown in <a href="#BABDEGIH">Figure 15-4</a>.</p> 
+      <div class="figure">
+       <a id="BABDEGIH" name="BABDEGIH"></a> 
+       <p class="titleinfigure">Figure 15-4 Email Recipient and Priority Combo Boxes</p> 
+       <img src="img/combobox-simple.png" alt="Description of Figure 15-4 follows" title="Description of Figure 15-4 follows" longdesc="img_text/combobox-simple.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref139" name="sthref139"></a> 
+      <h2 class="sect1">Editable Combo Boxes</h2> 
+      <p>Typically, email client applications enable users to both select recipients from the address book and type a new address. An editable combo box perfectly fits this task. Use the <code>setEditable(true)</code> method of the <code>ComboBox</code> class to make a combo box editable. With the <code>setPromptText</code> method, you can specify the text to appear in the combo box editing area when no selection is performed. Examine the modified code of the application in <a href="#BABFGHFG">Example 15-4</a>. The bold lines are the additions made to <a href="#BABDFEFC">Example 15-3</a>.</p> 
+      <div class="example">
+       <a id="BABFGHFG" name="BABFGHFG"></a> 
+       <p class="titleinexample">Example 15-4 Processing Newly Typed Values in an Editable Combo Box</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+<span class="bold">import javafx.beans.value.ChangeListener;</span>
+<span class="bold">import javafx.beans.value.ObservableValue;</span>
+<span class="bold">import javafx.event.ActionEvent;</span>
+<span class="bold">import javafx.event.EventHandler;</span>
+import javafx.geometry.Insets;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+ 
+public class ComboBoxSample extends Application {
+        public static void main(String[] args) {
+        launch(args);
+    }
+    
+    final Button button = new Button (&quot;Send&quot;);
+    final Label notification = new Label ();
+    final TextField subject = new TextField(&quot;&quot;);
+    final TextArea text = new TextArea (&quot;&quot;);
+    
+    String address = &quot; &quot;;
+    
+    @Override public void start(Stage stage) {
+        stage.setTitle(&quot;ComboBoxSample&quot;);
+        Scene scene = new Scene(new Group(), 450, 250);
+        
+        final ComboBox emailComboBox = new ComboBox();
+        emailComboBox.getItems().addAll(
+            &quot;jacob.smith@example.com&quot;,
+            &quot;isabella.johnson@example.com&quot;,
+            &quot;ethan.williams@example.com&quot;,
+            &quot;emma.jones@example.com&quot;,
+            &quot;michael.brown@example.com&quot;  
+        );
+        <span class="bold">emailComboBox.setPromptText(&quot;Email address&quot;);</span>
+        <span class="bold">emailComboBox.setEditable(true); </span>       
+        <span class="bold">emailComboBox.valueProperty().addListener(new ChangeListener&lt;String&gt;() {</span>
+            <span class="bold">@Override</span> 
+            <span class="bold">public void changed(ObservableValue ov, String t, String t1) {</span>                
+                <span class="bold">address = t1;</span>                
+            <span class="bold">}</span>    
+        <span class="bold">});</span>
+        
+        final ComboBox priorityComboBox = new ComboBox();
+        priorityComboBox.getItems().addAll(
+            &quot;Highest&quot;,
+            &quot;High&quot;,
+            &quot;Normal&quot;,
+            &quot;Low&quot;,
+            &quot;Lowest&quot; 
+        );   
+
+        priorityComboBox.setValue(&quot;Normal&quot;);
+     
+        
+        <span class="bold">button.setOnAction(new EventHandler&lt;ActionEvent&gt;() {</span>
+            @<span class="bold">Override</span>
+            <span class="bold">public void handle(ActionEvent e) {</span>
+                <span class="bold">if (emailComboBox.getValue() != null &amp;&amp;</span> 
+                    <span class="bold">!emailComboBox.getValue().toString().isEmpty()){</span>
+                        <span class="bold">notification.setText(&quot;Your message was successfully sent&quot;</span>
+                           <span class="bold"> + &quot; to &quot; + address);</span>   
+                        <span class="bold">emailComboBox.setValue(null);</span>
+                       <span class="bold"> if (priorityComboBox.getValue() != null &amp;&amp;</span> 
+                            <span class="bold">!</span><span class="bold">priorityComboBox.getValue().toString().isEmpty()){</span>
+                                <span class="bold">priorityComboBox.setValue(null);</span>
+                            <span class="bold">}</span>
+                        <span class="bold">subject.clear();</span>
+                        <span class="bold">text.clear();</span>
+                <span class="bold">}</span>
+                <span class="bold">else {</span>
+                    <span class="bold">notification.setText(&quot;You have not selected a recipient!&quot;);</span> 
+                <span class="bold">}</span>
+            <span class="bold">}</span>
+        <span class="bold">});</span>
+        
+        GridPane grid = new GridPane();
+        grid.setVgap(4);
+        grid.setHgap(10);
+        grid.setPadding(new Insets(5, 5, 5, 5));
+        grid.add(new Label(&quot;To: &quot;), 0, 0);
+        grid.add(emailComboBox, 1, 0);
+        grid.add(new Label(&quot;Priority: &quot;), 2, 0);
+        grid.add(priorityComboBox, 3, 0);
+        grid.add(new Label(&quot;Subject: &quot;), 0, 1);
+        grid.add(subject, 1, 1, 3, 1);            
+        grid.add(text, 0, 2, 4, 1);
+        grid.add(button, 0, 3);
+        grid.add (notification, 1, 3, 3, 1);
+        
+        Group root = (Group)scene.getRoot();
+        root.getChildren().add(grid);
+        stage.setScene(scene);
+        stage.show();
+ 
+    }    
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Besides the ability to edit <code>emailComboBox</code>, this code fragment implements event handling for this control. The newly typed or selected value is stored in the <code>address</code> variable. When users press the Send button, the notification containing the email address is shown.</p> 
+      <p><a href="#BABEGIBG">Figure 15-5</a> captures the moment when a user is editing the email address of Jacob Smith and changing it to greg.smith@example.com.</p> 
+      <div class="figure">
+       <a id="BABEGIBG" name="BABEGIBG"></a> 
+       <p class="titleinfigure">Figure 15-5 Editing an Email Address</p> 
+       <img src="img/combobox-editable.png" alt="Description of Figure 15-5 follows" title="Description of Figure 15-5 follows" longdesc="img_text/combobox-editable.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>When the Send button is pressed, all the controls return to their default states. The <code>clear</code> methods are called on the <code>TextField</code> and <code>TextArea</code> objects, and the <code>null</code> value is set for the combo box selected items. <a href="#BABCHAAH">Figure 15-6</a> shows the moment after the Send button is pressed.</p> 
+      <div class="figure">
+       <a id="BABCHAAH" name="BABCHAAH"></a> 
+       <p class="titleinfigure">Figure 15-6 User Interface After the Send Button Is Pressed</p> 
+       <img src="img/combobox-sent.png" alt="Description of Figure 15-6 follows" title="Description of Figure 15-6 follows" longdesc="img_text/combobox-sent.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref142" name="sthref142"></a> 
+      <h2 class="sect1">Applying Cell Factories to Combo Boxes</h2> 
+      <p>You can use the cell factory mechanism to alter the default behavior or appearance of a combo box. <a href="#BABIIIID">Example 15-5</a> creates a cell factory and applies it to the priority combo box to highlight priority types with special colors.</p> 
+      <div class="example">
+       <a id="BABIIIID" name="BABIIIID"></a> 
+       <p class="titleinexample">Example 15-5 Implementing a Cell Factory for the Priority Combo Box</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
+<span class="bold">import javafx.scene.paint.Color;</span>
+import javafx.stage.Stage;
+<span class="bold">import javafx.util.Callback;</span>
+ 
+public class ComboBoxSample extends Application {
+        public static void main(String[] args) {
+        launch(args);
+    }
+    
+    final Button button = new Button (&quot;Send&quot;);
+    final Label notification = new Label ();
+    final TextField subject = new TextField(&quot;&quot;);
+    final TextArea text = new TextArea (&quot;&quot;);
+    
+    String address = &quot; &quot;;
+    
+    @Override public void start(Stage stage) {
+        stage.setTitle(&quot;ComboBoxSample&quot;);
+        Scene scene = new Scene(new Group(), 450, 250);
+        
+        final ComboBox emailComboBox = new ComboBox();
+        emailComboBox.getItems().addAll(
+            &quot;jacob.smith@example.com&quot;,
+            &quot;isabella.johnson@example.com&quot;,
+            &quot;ethan.williams@example.com&quot;,
+            &quot;emma.jones@example.com&quot;,
+            &quot;michael.brown@example.com&quot;  
+        );
+        emailComboBox.setPromptText(&quot;Email address&quot;);
+        emailComboBox.setEditable(true);        
+        emailComboBox.valueProperty().addListener(new ChangeListener&lt;String&gt;() {
+            @Override public void changed(ObservableValue ov, String t, String t1) {                
+                address = t1;                
+            }    
+        });
+        
+        final ComboBox priorityComboBox = new ComboBox();
+        priorityComboBox.getItems().addAll(
+            &quot;Highest&quot;,
+            &quot;High&quot;,
+            &quot;Normal&quot;,
+            &quot;Low&quot;,
+            &quot;Lowest&quot; 
+        );   
+
+        priorityComboBox.setValue(&quot;Normal&quot;);
+        priorityComboBox.setCellFactory(
+            <span class="bold">new Callback&lt;ListView&lt;String&gt;, ListCell&lt;String&gt;&gt;() {</span>
+                <span class="bold">@Override public ListCell&lt;String&gt; call(ListView&lt;String&gt; param) {</span>
+                    <span class="bold">final ListCell&lt;String&gt; cell = new ListCell&lt;String&gt;() {</span>
+                        <span class="bold">{</span>
+                            <span class="bold">super.setPrefWidth(100);</span>
+                        <span class="bold">}</span>    
+                        <span class="bold">@Override public void updateItem(String item,</span> 
+                            <span class="bold">boolean empty) {</span>
+                                <span class="bold">super.updateItem(item, empty);</span>
+                                <span class="bold">if (item != null) {</span>
+                                    <span class="bold">setText(item);</span>    
+                                    <span class="bold">if (item.contains(&quot;High&quot;)) {</span>
+                                        <span class="bold">setTextFill(Color.RED);</span>
+                                    <span class="bold">}</span>
+                                    <span class="bold">else if (item.contains(&quot;Low&quot;)){</span>
+                                        <span class="bold">setTextFill(Color.GREEN);</span>
+                                    <span class="bold">}</span>
+                                    <span class="bold">else {</span>
+                                        <span class="bold">setTextFill(Color.BLACK);</span>
+                                    <span class="bold">}</span>
+                                <span class="bold">}</span>
+                                <span class="bold">else {</span>
+                                   <span class="bold"> setText(null);</span>
+                                <span class="bold">}</span>
+                            <span class="bold">}</span>
+                <span class="bold">};</span>
+                <span class="bold">return cell;</span>
+            <span class="bold">}</span>
+        <span class="bold">});</span>
+     
+        
+        button.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+            @Override
+            public void handle(ActionEvent e) {
+                if (emailComboBox.getValue() != null &amp;&amp; 
+                    !emailComboBox.getValue().toString().isEmpty()){
+                        notification.setText(&quot;Your message was successfully sent&quot;
+                            + &quot; to &quot; + address);   
+                        emailComboBox.setValue(null);
+                        if (priorityComboBox.getValue() != null &amp;&amp; 
+                            !priorityComboBox.getValue().toString().isEmpty()){
+                                priorityComboBox.setValue(null);
+                            }
+                        subject.clear();
+                        text.clear();
+                }
+                else {
+                    notification.setText(&quot;You have not selected a recipient!&quot;); 
+                }
+            }
+        });
+        
+        GridPane grid = new GridPane();
+        grid.setVgap(4);
+        grid.setHgap(10);
+        grid.setPadding(new Insets(5, 5, 5, 5));
+        grid.add(new Label(&quot;To: &quot;), 0, 0);
+        grid.add(emailComboBox, 1, 0);
+        grid.add(new Label(&quot;Priority: &quot;), 2, 0);
+        grid.add(priorityComboBox, 3, 0);
+        grid.add(new Label(&quot;Subject: &quot;), 0, 1);
+        grid.add(subject, 1, 1, 3, 1);            
+        grid.add(text, 0, 2, 4, 1);
+        grid.add(button, 0, 3);
+        grid.add (notification, 1, 3, 3, 1);
+        
+        Group root = (Group)scene.getRoot();
+        root.getChildren().add(grid);
+        stage.setScene(scene);
+        stage.show();
+ 
+    }    
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The cell factory produces <code>ListCell</code> objects. Every cell is associated with a single combo box item. The width of each combo box item is set through the <code>setPrefWidth</code> method. The <code>updateItem</code> method sets the red color for the High and Highest items, green color for the Low and Lowest items, and leaves the Normal item black.</p> 
+      <p><a href="#BABCCBHC">Figure 15-7</a> shows the items of the priority combo box after the cell factory in <a href="#BABIIIID">Example 15-5</a> is applied.</p> 
+      <div class="figure">
+       <a id="BABCCBHC" name="BABCCBHC"></a> 
+       <p class="titleinfigure">Figure 15-7 Modified the Priority Combo Box</p> 
+       <img src="img/combobox-priority.png" alt="Description of Figure 15-7 follows" title="Description of Figure 15-7 follows" longdesc="img_text/combobox-priority.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>You can further enhance the appearance of the <code>ComboBox</code> control by applying CSS styles or visual effects.</p> 
+      <p class="itemizedlisttitle">Related API Documentation&nbsp;</p> 
+      <ul> 
+       <li> <p><code>ComboBox</code></p> </li> 
+       <li> <p><code>ComboBoxBase</code></p> </li> 
+       <li> <p><code>ListView</code></p> </li> 
+       <li> <p><code>ListCell</code></p> </li> 
+       <li> <p><code>Button</code></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-ui_controls.htm">About This Tutorial</a></li>
+      <li><a href="overview.htm">JavaFX UI Controls</a></li>
+      <li><a href="label.htm">Label</a></li>
+      <li><a href="button.htm">Button</a></li>
+      <li><a href="radio-button.htm">Radio Button</a></li>
+      <li><a href="toggle-button.htm">Toggle Button</a></li>
+      <li><a href="checkbox.htm">Checkbox</a></li>
+      <li><a href="choice-box.htm">Choice Box</a></li>
+      <li><a href="text-field.htm">Text Field</a></li>
+      <li><a href="password-field.htm">Password Field</a></li>
+      <li><a href="scrollbar.htm">Scroll Bar</a></li>
+      <li><a href="scrollpane.htm">Scroll Pane</a></li>
+      <li><a href="list-view.htm">List View</a></li>
+      <li><a href="table-view.htm">Table View</a></li>
+      <li><a href="tree-view.htm">Tree View</a></li>
+      <li class=" active"><a href="combo-box.htm">Combo Box</a></li>
+      <li><a href="separator.htm">Separator</a></li>
+      <li><a href="slider.htm">Slider</a></li>
+      <li><a href="progress.htm">Progress Bar and Progress Indicator</a></li>
+      <li><a href="hyperlink.htm">Hyperlink</a></li>
+      <li><a href="tooltip.htm">Tooltip</a></li>
+      <li><a href="editor.htm">HTML Editor</a></li>
+      <li><a href="accordion-titledpane.htm">Titled Pane and Accordion</a></li>
+      <li><a href="menu_controls.htm">Menu</a></li>
+      <li><a href="custom.htm">Customization of UI Controls</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/ui_controls/UIControlSamples.zip">UIControlSamples.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

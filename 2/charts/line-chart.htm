@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Line Chart &middot; Using JavaFX Charts &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX Charts</h1>
+     <p class=" lead">Line Chart</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="pie-chart.htm">←上一篇</a></li>
+      <li class=" next"><a href="area-chart.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="JFXCH108" name="JFXCH108"></a>
+     <a id="CIHGBCFI" name="CIHGBCFI"></a>  
+     <p>The line chart is a type of two-axis chart that presents data as a series of points connected by straight lines. The line chart is often used to illustrate the dynamics of data over a particular interval of time. <a href="#CIHHCIDA">Figure 3-1</a> demonstrates a typical line chart with three series of data.</p> 
+     <div class="figure">
+      <a id="CIHHCIDA" name="CIHHCIDA"></a>
+      <a id="JFXCH137" name="JFXCH137"></a> 
+      <p class="titleinfigure">Figure 3-1 Example of a Line Chart</p> 
+      <img src="img/line-sample.png" alt="Description of Figure 3-1 follows" title="Description of Figure 3-1 follows" longdesc="img_text/line-sample.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <p>Each two-axis chart has two axes, the plot of data points, and the legend. You can also specify a title for the chart.</p> 
+     <a id="JFXCH109" name="JFXCH109"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref25" name="sthref25"></a> 
+      <h2 class="sect1">Creating a Line Chart</h2> 
+      <p>To create a line chart, at a minimum, you must define two axes, create the <code>LineChart</code> object by instantiating the <code>LineChart</code> class, create one or more series of data by using the <code>XYChart.Series</code> class, and assign the data to the chart. <a href="#CIHIGFCI">Example 3-1</a> implements these tasks.</p> 
+      <div class="example">
+       <a id="CIHIGFCI" name="CIHIGFCI"></a>
+       <a id="JFXCH138" name="JFXCH138"></a> 
+       <p class="titleinexample">Example 3-1 Simple Line Chart</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.stage.Stage;
+ 
+ 
+public class LineChartSample extends Application {
+ 
+    @Override public void start(Stage stage) {
+        stage.setTitle(&quot;Line Chart Sample&quot;);
+        //defining the axes
+        final NumberAxis xAxis = new NumberAxis();
+        final NumberAxis yAxis = new NumberAxis();
+        xAxis.setLabel(&quot;Number of Month&quot;);
+        //creating the chart
+        final LineChart&lt;Number,Number&gt; lineChart = 
+                new LineChart&lt;Number,Number&gt;(xAxis,yAxis);
+                
+        lineChart.setTitle(&quot;Stock Monitoring, 2010&quot;);
+        //defining a series
+        XYChart.Series series = new XYChart.Series();
+        series.setName(&quot;My portfolio&quot;);
+        //populating the series with data
+        series.getData().add(new XYChart.Data(1, 23));
+        series.getData().add(new XYChart.Data(2, 14));
+        series.getData().add(new XYChart.Data(3, 15));
+        series.getData().add(new XYChart.Data(4, 24));
+        series.getData().add(new XYChart.Data(5, 34));
+        series.getData().add(new XYChart.Data(6, 36));
+        series.getData().add(new XYChart.Data(7, 22));
+        series.getData().add(new XYChart.Data(8, 45));
+        series.getData().add(new XYChart.Data(9, 43));
+        series.getData().add(new XYChart.Data(10, 17));
+        series.getData().add(new XYChart.Data(11, 29));
+        series.getData().add(new XYChart.Data(12, 25));
+        
+        Scene scene  = new Scene(lineChart,800,600);
+        lineChart.getData().add(series);
+       
+        stage.setScene(scene);
+        stage.show();
+    }
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>In this example, both vertical and horizontal axes are created by using the <code>NumberAxis</code> class, a subclass of the <code>Axis</code> class, to represent numerical values. Having declared both <code>X</code> and <code>Y</code> axes numerical, you should specify <code>Number</code> parameters for <code>XYChart.Data</code> objects when creating a series of data. The first parameters of <code>XYChart.Data</code> objects define values for the horizontal axis, whereas, the second parameters of the <code>XYChart.Data</code> objects define values for the vertical axis.</p> 
+      <p>The result of compiling and running this application is shown in <a href="#CIHHDJEJ">Figure 3-2</a>.</p> 
+      <div class="figure">
+       <a id="CIHHDJEJ" name="CIHHDJEJ"></a>
+       <a id="JFXCH139" name="JFXCH139"></a> 
+       <p class="titleinfigure">Figure 3-2 Line Chart with One Series of Data</p> 
+       <img src="img/line-series.png" alt="Description of Figure 3-2 follows" title="Description of Figure 3-2 follows" longdesc="img_text/line-series.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>The line chart shown in <a href="#CIHHDJEJ">Figure 3-2</a> uses symbols to highlight each data item on the chart. If you want to show trends instead of specific data values on your line chart, you can disable the chart symbols as shown in <a href="#CIHDAIDC">Example 3-2</a>.</p> 
+      <div class="example">
+       <a id="CIHDAIDC" name="CIHDAIDC"></a>
+       <a id="JFXCH140" name="JFXCH140"></a> 
+       <p class="titleinexample">Example 3-2 Disabling Symbols for a Line Chart</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+lineChart.setCreateSymbols(false);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The sample of a trend chart is shown in <a href="#CIHHCIDA">Figure 3-1</a>.</p> 
+      <p>In <a href="#CIHHCIDA">Figure 3-1</a>, axes are shown in their default positions relative to the chart plot. However, you can display an axis on another side of the chart plot by applying the <code>setSide</code> method. <a href="#CIHHJBBE">Example 3-3</a> demonstrates how to move the horizontal axis to the top of the chart plot.</p> 
+      <div class="example">
+       <a id="CIHHJBBE" name="CIHHJBBE"></a>
+       <a id="JFXCH141" name="JFXCH141"></a> 
+       <p class="titleinexample">Example 3-3 Specifying the Axis Side</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+xAxis.setSide(Side.TOP);
+</pre>
+      </div> 
+      <!-- class="example" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCH142" name="JFXCH142"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref27" name="sthref27"></a> 
+      <h2 class="sect1">Creating Categories for a Line Chart</h2> 
+      <p>Use the <code>CategoryAxis</code> class instead of the <code>NumberAxis</code> class to render non-numerical data in a line chart.</p> 
+      <p>Examine the modified code of the application shown in <a href="#CIHFJHHD">Example 3-4</a>. It creates the horizontal axis by instantiating the <code>CategoryAxis</code> class. The declaration of the <code>LineChart</code> object is modified to accommodate the change of the X axis type.</p> 
+      <div class="example">
+       <a id="CIHFJHHD" name="CIHFJHHD"></a>
+       <a id="JFXCH143" name="JFXCH143"></a> 
+       <p class="titleinexample">Example 3-4 Using Category Axis to Show Months</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.stage.Stage;
+ 
+ 
+public class LineChartSample extends Application {
+ 
+    @Override public void start(Stage stage) {
+        stage.setTitle(&quot;Line Chart Sample&quot;);
+        <span class="bold">final CategoryAxis xAxis = new CategoryAxis();</span>
+        final NumberAxis yAxis = new NumberAxis();
+        <span class="bold">xAxis.setLabel(&quot;Month&quot;);</span>       
+        
+        <span class="bold">final LineChart&lt;String,Number&gt; lineChart = </span>
+                <span class="bold">new LineChart&lt;String,Number&gt;(xAxis,yAxis);</span>
+                
+        lineChart.setTitle(&quot;Stock Monitoring, 2010&quot;);
+                                
+        XYChart.Series series = new XYChart.Series();
+        series.setName(&quot;My portfolio&quot;);
+        
+        series.getData().add(new XYChart.Data(<span class="bold">&quot;Jan&quot;, 23</span>));
+        series.getData().add(new XYChart.Data(<span class="bold">&quot;Feb&quot;, 14</span>));
+        series.getData().add(new XYChart.Data(<span class="bold">&quot;Mar&quot;, 15</span>));
+        series.getData().add(new XYChart.Data(<span class="bold">&quot;Apr&quot;, 24</span>));
+        series.getData().add(new XYChart.Data(<span class="bold">&quot;May&quot;, 34</span>));
+        series.getData().add(new XYChart.Data(<span class="bold">&quot;Jun&quot;, 36</span>));
+        series.getData().add(new XYChart.Data(<span class="bold">&quot;Jul&quot;, 22</span>));
+        series.getData().add(new XYChart.Data(<span class="bold">&quot;Aug&quot;, 45</span>));
+        series.getData().add(new XYChart.Data(<span class="bold">&quot;Sep&quot;, 43</span>));
+        series.getData().add(new XYChart.Data(<span class="bold">&quot;Oct&quot;, 17</span>));
+        series.getData().add(new XYChart.Data(<span class="bold">&quot;Nov&quot;, 29</span>));
+        series.getData().add(new XYChart.Data(<span class="bold">&quot;Dec&quot;, 25</span>));
+        
+        
+        Scene scene  = new Scene(lineChart,800,600);
+        lineChart.getData().add(series);
+       
+        stage.setScene(scene);
+        stage.show();
+    }
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The <code>XYChartData</code> objects contain the month name and the corresponding numerical value. The label of the horizontal axis is modified accordingly.</p> 
+      <p>The result of compiling and running the modified code of the application is shown in <a href="#CIHGEBGE">Figure 3-3</a>.</p> 
+      <div class="figure">
+       <a id="CIHGEBGE" name="CIHGEBGE"></a>
+       <a id="JFXCH144" name="JFXCH144"></a> 
+       <p class="titleinfigure">Figure 3-3 Horizontal Category Axis</p> 
+       <img src="img/line-categories.png" alt="Description of Figure 3-3 follows" title="Description of Figure 3-3 follows" longdesc="img_text/line-categories.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Often, line charts enable analyzing different set of data over the same period of time. Use several series of <code>XYChart.Data</code> objects to implement this task in your application.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCH145" name="JFXCH145"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref29" name="sthref29"></a> 
+      <h2 class="sect1">Adding Series to the Line Chart</h2> 
+      <p><a href="#CIHCBIBB">Example 3-5</a> provides source code for the stock monitoring application with three series of data. In addition to the series used in <a href="#CIHFJHHD">Example 3-4</a>, the previous example, two new series are declared.</p> 
+      <p>The series are assigned to the chart by using consecutive calls of the <code>getData</code> and <code>addAll</code> methods.</p> 
+      <div class="example">
+       <a id="CIHCBIBB" name="CIHCBIBB"></a>
+       <a id="JFXCH146" name="JFXCH146"></a> 
+       <p class="titleinexample">Example 3-5 Adding Two More Series to the Stock Monitoring Sample</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.stage.Stage;
+ 
+ 
+public class LineChartSample extends Application {
+ 
+    @Override public void start(Stage stage) {
+        stage.setTitle(&quot;Line Chart Sample&quot;);
+        final CategoryAxis xAxis = new CategoryAxis();
+        final NumberAxis yAxis = new NumberAxis();
+         xAxis.setLabel(&quot;Month&quot;);
+        final LineChart&lt;String,Number&gt; lineChart = 
+                new LineChart&lt;String,Number&gt;(xAxis,yAxis);
+       
+        lineChart.setTitle(&quot;Stock Monitoring, 2010&quot;);
+                          
+        XYChart.Series series1 = new XYChart.Series();
+        series1.setName(&quot;Portfolio 1&quot;);
+        
+        series1.getData().add(new XYChart.Data(&quot;Jan&quot;, 23));
+        series1.getData().add(new XYChart.Data(&quot;Feb&quot;, 14));
+        series1.getData().add(new XYChart.Data(&quot;Mar&quot;, 15));
+        series1.getData().add(new XYChart.Data(&quot;Apr&quot;, 24));
+        series1.getData().add(new XYChart.Data(&quot;May&quot;, 34));
+        series1.getData().add(new XYChart.Data(&quot;Jun&quot;, 36));
+        series1.getData().add(new XYChart.Data(&quot;Jul&quot;, 22));
+        series1.getData().add(new XYChart.Data(&quot;Aug&quot;, 45));
+        series1.getData().add(new XYChart.Data(&quot;Sep&quot;, 43));
+        series1.getData().add(new XYChart.Data(&quot;Oct&quot;, 17));
+        series1.getData().add(new XYChart.Data(&quot;Nov&quot;, 29));
+        series1.getData().add(new XYChart.Data(&quot;Dec&quot;, 25));
+        
+        XYChart.Series series2 = new XYChart.Series();
+        series2.setName(&quot;Portfolio 2&quot;);
+        series2.getData().add(new XYChart.Data(&quot;Jan&quot;, 33));
+        series2.getData().add(new XYChart.Data(&quot;Feb&quot;, 34));
+        series2.getData().add(new XYChart.Data(&quot;Mar&quot;, 25));
+        series2.getData().add(new XYChart.Data(&quot;Apr&quot;, 44));
+        series2.getData().add(new XYChart.Data(&quot;May&quot;, 39));
+        series2.getData().add(new XYChart.Data(&quot;Jun&quot;, 16));
+        series2.getData().add(new XYChart.Data(&quot;Jul&quot;, 55));
+        series2.getData().add(new XYChart.Data(&quot;Aug&quot;, 54));
+        series2.getData().add(new XYChart.Data(&quot;Sep&quot;, 48));
+        series2.getData().add(new XYChart.Data(&quot;Oct&quot;, 27));
+        series2.getData().add(new XYChart.Data(&quot;Nov&quot;, 37));
+        series2.getData().add(new XYChart.Data(&quot;Dec&quot;, 29));
+        
+        XYChart.Series series3 = new XYChart.Series();
+        series3.setName(&quot;Portfolio 3&quot;);
+        series3.getData().add(new XYChart.Data(&quot;Jan&quot;, 44));
+        series3.getData().add(new XYChart.Data(&quot;Feb&quot;, 35));
+        series3.getData().add(new XYChart.Data(&quot;Mar&quot;, 36));
+        series3.getData().add(new XYChart.Data(&quot;Apr&quot;, 33));
+        series3.getData().add(new XYChart.Data(&quot;May&quot;, 31));
+        series3.getData().add(new XYChart.Data(&quot;Jun&quot;, 26));
+        series3.getData().add(new XYChart.Data(&quot;Jul&quot;, 22));
+        series3.getData().add(new XYChart.Data(&quot;Aug&quot;, 25));
+        series3.getData().add(new XYChart.Data(&quot;Sep&quot;, 43));
+        series3.getData().add(new XYChart.Data(&quot;Oct&quot;, 44));
+        series3.getData().add(new XYChart.Data(&quot;Nov&quot;, 45));
+        series3.getData().add(new XYChart.Data(&quot;Dec&quot;, 44));
+        
+        Scene scene  = new Scene(lineChart,800,600);       
+        lineChart.getData().addAll(series1, series2, series3);
+       
+        stage.setScene(scene);
+        stage.show();
+    }
+ 
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Each series of data has its unique name defined by using the <code>setName</code> method.</p> 
+      <p>The result of compiling and running this application is shown in <a href="#CIHEIHIH">Figure 3-4</a>.</p> 
+      <div class="figure">
+       <a id="CIHEIHIH" name="CIHEIHIH"></a>
+       <a id="JFXCH147" name="JFXCH147"></a> 
+       <p class="titleinfigure">Figure 3-4 Stock Monitoring Example with Tree Series of Data</p> 
+       <img src="img/line-three.png" alt="Description of Figure 3-4 follows" title="Description of Figure 3-4 follows" longdesc="img_text/line-three.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Note that the different colors of the lines are defined by the declared order of the corresponding series in the <code>addAll</code> method. Change the order as follows: <code>lineChart.getData().addAll(series3, series1, series2)</code>, and then compile and run the application. The modified output is shown in <a href="#CIHGIGDF">Figure 3-5</a>.</p> 
+      <div class="figure">
+       <a id="CIHGIGDF" name="CIHGIGDF"></a>
+       <a id="JFXCH148" name="JFXCH148"></a> 
+       <p class="titleinfigure">Figure 3-5 Alternative Order of Series in the Line Chart</p> 
+       <img src="img/line-order.png" alt="Description of Figure 3-5 follows" title="Description of Figure 3-5 follows" longdesc="img_text/line-order.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p class="itemizedlisttitle">Related API Documentation&nbsp;</p> 
+      <ul> 
+       <li> <p><code>LineChart</code></p> </li> 
+       <li> <p><code>Chart</code></p> </li> 
+       <li> <p><code>XYChart</code></p> </li> 
+       <li> <p><code>XYChart.Data</code></p> </li> 
+       <li> <p><code>XYChart.Series</code></p> </li> 
+       <li> <p><code>Axis</code></p> </li> 
+       <li> <p><code>NumberAxis</code></p> </li> 
+       <li> <p><code>CategoryAxis</code></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-charts.htm">About This Tutorial</a></li>
+      <li><a href="chart-overview.htm">Introduction to JavaFX Charts</a></li>
+      <li><a href="pie-chart.htm">Pie Chart</a></li>
+      <li class=" active"><a href="line-chart.htm">Line Chart</a></li>
+      <li><a href="area-chart.htm">Area Chart</a></li>
+      <li><a href="bubble-chart.htm">Bubble Chart</a></li>
+      <li><a href="scatter-chart.htm">Scatter Chart</a></li>
+      <li><a href="bar-chart.htm">Bar Chart</a></li>
+      <li><a href="css-styles.htm">Styling Charts with CSS</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/AreaChartSample.zip">AreaChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/BarChartSample.zip">BarChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/BubbleChartSample.zip">BubbleChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/LineChartSample.zip">LineChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/PieChartSample.zip">PieChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/ScatterChartSample.zip">ScatterChartSample.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

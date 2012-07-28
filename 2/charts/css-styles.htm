@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Styling Charts with CSS &middot; Using JavaFX Charts &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX Charts</h1>
+     <p class=" lead">Styling Charts with CSS</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="bar-chart.htm">←上一篇</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CIHGIAGE" name="CIHGIAGE"></a>  
+     <p>This chapter explains how to change the default appearance of JavaFX charts by applying Cascading Style Sheets (CSS). Learn how to change a chart color scheme, modify its legend or axes, and alter chart symbols.</p> 
+     <p>All visual elements of JavaFX charts are defined by the caspian style sheet. The JavaFX API has a limited set of methods and properties to alter these visual elements. Oracle recommends that you use the chart-specific CSS properties to implement an alternative look and feel for charts in your JavaFX application.</p> 
+     <p>You can find a complete list of the chart-specific properties in the <a href="../../../../docs.oracle.com/javafx/2.0/api/javafx/scene/doc-files/cssref.html">JavaFX CSS Reference Guide</a>. When you apply CSS styles to your charts, refer to <a href="../css_tutorial/jfxpub-css_tutorial.htm">Skin JavaFX Applications with CSS</a> for implementation details.</p> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref77" name="sthref77"></a> 
+      <h2 class="sect1">Modifying Basic Chart Elements</h2> 
+      <p>All JavaFX charts have common properties that can be set though the <code>.chart</code>, <code>.chart-content</code>, <code>.chart-title</code>, and .<code>chart-legend</code> CSS classes. <a href="#CIHIGFGH">Figure 8-1</a> shows the corresponding areas of the chart.</p> 
+      <div class="figure">
+       <a id="CIHIGFGH" name="CIHIGFGH"></a> 
+       <p class="titleinfigure">Figure 8-1 Visual Elements of a Chart</p> 
+       <img src="img/css-chart-elements.png" alt="Description of Figure 8-1 follows" title="Description of Figure 8-1 follows" longdesc="img_text/css-chart-elements.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>You can change and set the following visual characteristics of these elements:</p> 
+      <ul> 
+       <li> <p>Padding and insets</p> </li> 
+       <li> <p>Background color and image</p> </li> 
+       <li> <p>Font</p> </li> 
+       <li> <p>Text fill color</p> </li> 
+      </ul> 
+      <p>By default, any chart has 5-pixel padding and its content has 10-pixel padding. You can alter these values by using the <code>-fx-padding</code> properties of the <code>.chart</code> and <code>.chart-content</code> CSS classes as shown in <a href="#CIHIJHFF">Example 8-1</a>.</p> 
+      <div class="example">
+       <a id="CIHIJHFF" name="CIHIJHFF"></a> 
+       <p class="titleinexample">Example 8-1 Set Chart Padding, Background, and Font</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.chart {
+    -fx-padding: 10px;
+    -fx-background-color: #f0fff0;    
+    -fx-font-family: Tahoma;
+    -fx-font-size: 1.2em;
+    -fx-text-fill: #4682b4;    
+}
+.chart-content {
+    -fx-padding: 30px;
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p><a href="#CIHBBHII">Figure 8-2</a> shows the view of the line chart after these styles are applied.</p> 
+      <div class="figure">
+       <a id="CIHBBHII" name="CIHBBHII"></a> 
+       <p class="titleinfigure">Figure 8-2 Setting Chart Top-Level CSS Properties</p> 
+       <img src="img/css-chart-padding.png" alt="Description of Figure 8-2 follows" title="Description of Figure 8-2 follows" longdesc="img_text/css-chart-padding.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Instead of defining the background color, you can specify a background image. Replace the <code>-fx-background-color</code> property with the <code>-fx-background-image</code> property as shown in <a href="#CIHHJIGJ">Example 8-2</a>.</p> 
+      <div class="example">
+       <a id="CIHHJIGJ" name="CIHHJIGJ"></a> 
+       <p class="titleinexample">Example 8-2 Setting a Background Image</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.chart {
+    -fx-padding: 10px;
+    <span class="bold">-fx-background-image: url(&quot;icon.jpg&quot;);</span>
+    -fx-font-family: Tahoma;
+    -fx-font-size: 1.2em;
+    -fx-text-fill: #4682b4;    
+}
+.chart-content {
+    -fx-padding: 30px;
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Because the icon is smaller than the line chart, the image is repeated to fill the remaining area. <a href="#CIHCJFDF">Figure 8-3</a> shows line chart when the background image is applied.</p> 
+      <div class="figure">
+       <a id="CIHCJFDF" name="CIHCJFDF"></a> 
+       <p class="titleinfigure">Figure 8-3 Line Chart with a Background Image</p> 
+       <img src="img/css-background.png" alt="Description of Figure 8-3 follows" title="Description of Figure 8-3 follows" longdesc="img_text/css-background.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>The chart legend for the line chart shown in <a href="#CIHCJFDF">Figure 8-3</a> has the default look and feel. You can change its appearance by altering the properties defined in the <code>.chart-legend</code> CSS class, as demonstrated in <a href="#CIHHJJHD">Example 8-3</a>.</p> 
+      <div class="example">
+       <a id="CIHHJJHD" name="CIHHJJHD"></a> 
+       <p class="titleinexample">Example 8-3 Setting a Chart Legend</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.chart {
+    -fx-padding: 10px;
+    -fx-background-image: url(&quot;icon.jpg&quot;);
+    -fx-font-family: Tahoma;
+    -fx-font-size: 1.2em;
+    -fx-text-fill: #4682b4;    
+}
+.chart-content {
+    -fx-padding: 30px;
+    
+}
+<span class="bold">.chart-legend {</span>
+   <span class="bold">-fx-background-color:  transparent;</span>
+   <span class="bold">-fx-padding: 20px;</span>
+<span class="bold">}</span>
+ 
+<span class="bold">.chart-legend-item-symbol</span><span class="bold">{</span>
+   <span class="bold">-fx-background-radius: 0;</span>
+<span class="bold">}</span>
+ 
+<span class="bold">.chart-legend-item{</span>
+    <span class="bold">-fx-text-fill: #191970;</span>
+<span class="bold">}</span>
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When you apply these styles, the chart legend is rendered with a transparent background, the labels are painted with dark blue, and the legend symbols change to square, as shown in <a href="#CIHBGBHA">Figure 8-4</a>.</p> 
+      <div class="figure">
+       <a id="CIHBGBHA" name="CIHBGBHA"></a> 
+       <p class="titleinfigure">Figure 8-4 Changing the Chart Legend</p> 
+       <img src="img/css-legend.png" alt="Description of Figure 8-4 follows" title="Description of Figure 8-4 follows" longdesc="img_text/css-legend.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>By default, legend symbols look like circles, because they are declared as rounded rectangles with a 5-pixel height, 5-pixel width, and 5-pixel radius. When you explicitly set the radius to 0, the circles turn into squares. You can also define the legend symbol by using the <code>-fx-shape</code> property. For example, the following line creates a triangle by specifying its SVG path: <code>-fx-shape: &quot;M5,0 L10,8 L0,8 Z.&quot;</code></p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref82" name="sthref82"></a> 
+      <h2 class="sect1">Altering Colors of the Chart Plot</h2> 
+      <p>When you change the default background color of a chart or set an image as a chart background, the changes do not affect the graph itself. As specified in the caspian style sheet, the chart plot of a two-axis chart has a light gray background, and its alternative rows are gray. Use the <code>-fx-background-color</code> and <code>-fx-background-image</code> properties of the <code>.chart-plot-background</code> class to set the background for the chart plot. <a href="#CIHEEIDE">Example 8-4</a> defines the background color for the chart plot, the fill color for the alternative rows, and the color of vertical and horizontal grid lines.</p> 
+      <div class="example">
+       <a id="CIHEEIDE" name="CIHEEIDE"></a> 
+       <p class="titleinexample">Example 8-4 Setting a Background Color for a Chart Plot</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.chart {
+    -fx-padding: 10px;
+    -fx-background-image: url(&quot;icon.jpg&quot;);
+    -fx-font-family: Tahoma;
+    -fx-font-size: 1.2em;
+    -fx-text-fill: #4682b4;    
+}
+.chart-content {
+    -fx-padding: 30px;
+    
+}
+.chart-legend {
+   -fx-background-color:  transparent;
+   -fx-padding: 20px;
+}
+ 
+.chart-legend-item-symbol{
+   -fx-background-radius: 0;
+}
+ 
+.chart-legend-item{
+    -fx-text-fill: #191970;
+}
+ 
+<span class="bold">.chart-plot-background {</span>
+    <span class="bold">-fx-background-color: #e2ecfe;</span>
+<span class="bold">}</span>
+<span class="bold">.chart-vertical-grid-lines {</span>
+    <span class="bold">-fx-stroke: #3278fa;</span>
+<span class="bold">}</span>
+<span class="bold">.chart-horizontal-grid-lines {</span>
+    <span class="bold">-fx-stroke: #3278fa;</span>
+<span class="bold">}</span>
+<span class="bold">.chart-alternative-row-fill {</span>
+    <span class="bold">-fx-fill: #99bcfd;</span>
+    <span class="bold">-fx-stroke: transparent;</span>
+    <span class="bold">-fx-stroke-width: 0;</span>
+<span class="bold">}</span>
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p><a href="#CIHCHAGG">Figure 8-5</a> shows the line chart with the modified plot background.</p> 
+      <div class="figure">
+       <a id="CIHCHAGG" name="CIHCHAGG"></a> 
+       <p class="titleinfigure">Figure 8-5 Line Chart with an Alternative Plot Color</p> 
+       <img src="img/css-plot.png" alt="Description of Figure 8-5 follows" title="Description of Figure 8-5 follows" longdesc="img_text/css-plot.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>When you design your chart so that its plot has the same background as the other chart areas, set a transparent background for the plot and alternative rows, as shown in <a href="#CIHJIEJA">Example 8-5</a>.</p> 
+      <div class="example">
+       <a id="CIHJIEJA" name="CIHJIEJA"></a> 
+       <p class="titleinexample">Example 8-5 Setting a Transparent Background for the Chart Plot</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.chart {
+    -fx-padding: 10px;
+    -fx-background-image: url(&quot;icon.jpg&quot;);
+    -fx-font-family: Tahoma;
+    -fx-font-size: 1.2em;
+    -fx-text-fill: #4682b4;    
+}
+.chart-content {
+    -fx-padding: 30px;
+    
+}
+.chart-legend {
+   -fx-background-color:  transparent;
+   -fx-padding: 20px;
+}
+ 
+.chart-legend-item-symbol{
+   -fx-background-radius: 0;
+}
+ 
+.chart-legend-item{
+    -fx-text-fill: #191970;
+}
+ 
+.chart-plot-background {
+    <span class="bold">-fx-background-color: transparent;</span>
+}
+.chart-vertical-grid-lines {
+    -fx-stroke: #3278fa;
+}
+.chart-horizontal-grid-lines {
+    -fx-stroke: #3278fa;
+}
+.chart-alternative-row-fill {
+    <span class="bold">-fx-fill: transparent;</span>
+    -fx-stroke: transparent;
+    -fx-stroke-width: 0;
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>You can make the alternative rows invisible by applying the <code>setAlternativeRowFillVisible(false)</code> method to the chart in the JavaFX application.</p> 
+      <p>When the transparent background colors are applied, the chart appears as shown in <a href="#CIHDAJAH">Figure 8-6</a>.</p> 
+      <div class="figure">
+       <a id="CIHDAJAH" name="CIHDAJAH"></a> 
+       <p class="titleinfigure">Figure 8-6 Line Chart with a Transparent Plot Background</p> 
+       <img src="img/css-plot2.png" alt="Description of Figure 8-6 follows" title="Description of Figure 8-6 follows" longdesc="img_text/css-plot2.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref85" name="sthref85"></a> 
+      <h2 class="sect1">Setting the Axes</h2> 
+      <p>Although the <code>Axis</code> class provides methods and properties to set the tick marks and labels, you can use the corresponding CSS classes and properties to define the appearance for these chart elements.</p> 
+      <p>Consider the bubble chart sample described in the <a href="bubble-chart.htm#CIHJHEAF">Bubble Chart</a> chapter. Disable the color set for the tick labels in <a href="bubble-chart.htm#CHDBJFAJ">Example 5-5</a> by either deleting or commenting out the following lines.</p> 
+      <ul> 
+       <li> <p><code>xAxis.setTickLabelFill(Color.CHOCOLATE);</code></p> </li> 
+       <li> <p><code>yAxis.setTickLabelFill(Color.CHOCOLATE)</code><code>;</code></p> </li> 
+      </ul> 
+      <p>Add the code fragment shown in <a href="#CIHFFFJA">Example 8-6</a> to the CSS file of the application.</p> 
+      <div class="example">
+       <a id="CIHFFFJA" name="CIHFFFJA"></a> 
+       <p class="titleinexample">Example 8-6 Defining Styles for the Chart Axes</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.axis {
+    -fx-font-size: 1.2em;
+    -fx-text-fill: #462300;
+    -fx-tick-label-fill: #914800;
+    -fx-font-family: Tahoma;
+    -fx-tick-length: 20;
+    -fx-minor-tick-length: 10;
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>This style sheet defines the relative font size, font family, and fill colors for the axis captions and tick labels. It also sets the lengths for the tick marks and minor tick marks. When these styles are applied to the chart, it looks as shown in <a href="#CIHHCJCH">Figure 8-7</a>.</p> 
+      <div class="figure">
+       <a id="CIHHCJCH" name="CIHHCJCH"></a> 
+       <p class="titleinfigure">Figure 8-7 Bubble Chart with the Modified Appearance of Its Axes</p> 
+       <img src="img/css-axis.png" alt="Description of Figure 8-7 follows" title="Description of Figure 8-7 follows" longdesc="img_text/css-axis.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Note that the tick labels in <a href="#CIHHCJCH">Figure 8-7</a> look too large. You can decrease their size by applying the <code>-fx-font-size</code> property within the <code>.axis .tick-mark</code> CSS class. See the lines in bold in <a href="#CIHECCCC">Example 8-7</a>.</p> 
+      <div class="example">
+       <a id="CIHECCCC" name="CIHECCCC"></a> 
+       <p class="titleinexample">Example 8-7 Changing Size of the Tick Labels</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.axis {
+    -fx-font-size: 1.2em;
+    -fx-text-fill: #462300;
+    -fx-tick-label-fill: #914800;
+    -fx-font-family: Tahoma;
+    -fx-tick-length: 20;
+    -fx-minor-tick-length: 10;
+}
+ 
+<span class="bold">.axis .tick-mark {</span>
+    <span class="bold">-fx-font-size: 0.8em;</span>
+<span class="bold">}</span>
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>With this style applied, the chart axes look as shown in <a href="#CIHIADHE">Figure 8-8</a>.</p> 
+      <div class="figure">
+       <a id="CIHIADHE" name="CIHIADHE"></a> 
+       <p class="titleinfigure">Figure 8-8 Smaller Font Size of the Tick Labels</p> 
+       <img src="img/css-tick-label.png" alt="Description of Figure 8-8 follows" title="Description of Figure 8-8 follows" longdesc="img_text/css-tick-label.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p><a href="#CIHFFFJA">Example 8-6</a> changes the default values for the length of tick marks and minor tick marks. You can continue changing their appearance by defining a new color scheme, as shown in <a href="#CIHHGCGE">Example 8-8</a>. This example also sets a 3-pixel width for the basic tick marks, so that they look thicker than minor tick marks.</p> 
+      <div class="example">
+       <a id="CIHHGCGE" name="CIHHGCGE"></a> 
+       <p class="titleinexample">Example 8-8 Altering Colors of Tick Marks and Minor Tick Marks</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.axis {
+    -fx-font-size: 1.2em;
+    -fx-text-fill: #462300;
+    -fx-tick-label-fill: #914800;
+    -fx-font-family: Tahoma;
+    -fx-tick-length: 20;
+    -fx-minor-tick-length: 10;
+}
+ 
+.axis .tick-mark {
+    -fx-font-size: 0.8em;
+}
+ 
+.<span class="bold">axis-tick-mark {</span>
+    <span class="bold">-fx-stroke: #637040;</span>
+    <span class="bold">-fx-stroke-width: 3;</span> 
+<span class="bold">}</span>
+<span class="bold">.axis-minor-tick-mark {</span>
+    <span class="bold">-fx-stroke: #859656;</span>
+<span class="bold">}</span>
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p><a href="#CIHDCDJA">Figure 8-9</a> shows how the axes change when you modify the color and width of the chart tick marks.</p> 
+      <div class="figure">
+       <a id="CIHDCDJA" name="CIHDCDJA"></a> 
+       <p class="titleinfigure">Figure 8-9 Alternative Color Scheme and Width for the Tick Marks</p> 
+       <img src="img/css-tick-mark.png" alt="Description of Figure 8-9 follows" title="Description of Figure 8-9 follows" longdesc="img_text/css-tick-mark.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref89" name="sthref89"></a> 
+      <h2 class="sect1">Setting Chart Colors</h2> 
+      <p>Changing the default colors of the charts is the simple way to provide a unique style for your JavaFX application. This section describes some aspects of setting alternative colors for basic types of charts.</p> 
+      <p>By default, the caspian style sheet defines eight colors of line that correspond to the first eight series of data. When the number of data series added to the line chart exceeds eight, the color of the extra lines is defined in the <code>.chart-series-line</code> CSS class.</p> 
+      <p>Use the <code>.chart-series-line</code> class and <code>.default-color&lt;x&gt;.chart-series-line</code> classes to change the style of lines. The style defined in <a href="#CIHECGEC">Example 8-9</a> sets new colors for the lines of the three data series, removes the default effects, and specifies a 2-pixel width.</p> 
+      <div class="example">
+       <a id="CIHECGEC" name="CIHECGEC"></a> 
+       <p class="titleinexample">Example 8-9 Setting Alternative Colors for Three Series in a Line Chart</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.chart-series-line {    
+    -fx-stroke-width: 2px;
+    -fx-effect: null;
+}
+ 
+.default-color0.chart-series-line { -fx-stroke: #e9967a; }
+.default-color1.chart-series-line { -fx-stroke: #f0e68c; }
+.default-color2.chart-series-line { -fx-stroke: #dda0dd; }
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p><a href="#CIHEGJGJ">Figure 8-10</a> shows the line chart after this style has been applied.</p> 
+      <div class="figure">
+       <a id="CIHEGJGJ" name="CIHEGJGJ"></a> 
+       <p class="titleinfigure">Figure 8-10 Line Chart with the Modified Line Colors</p> 
+       <img src="img/css-color-line.png" alt="Description of Figure 8-10 follows" title="Description of Figure 8-10 follows" longdesc="img_text/css-color-line.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Note that the legend still shows the default colors of the chart series. This is because the corresponding changes were not applied to the chart symbols. <a href="#CIHDBIFC">Example 8-10</a> shows how to change the colors of the series in the legend.</p> 
+      <div class="example">
+       <a id="CIHDBIFC" name="CIHDBIFC"></a> 
+       <p class="titleinexample">Example 8-10 Changing Chart Symbol Color</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.chart-series-line {    
+    -fx-stroke-width: 2px;
+    -fx-effect: null;
+}
+ 
+.default-color0.chart-series-line { -fx-stroke: #e9967a; }
+.default-color1.chart-series-line { -fx-stroke: #f0e68c; }
+.default-color2.chart-series-line { -fx-stroke: #dda0dd; }
+ 
+<span class="bold">.default-color0.chart-line-symbol { -fx-background-color: #e9967a, white; }</span>
+<span class="bold">.default-color1.chart-line-symbol { -fx-background-color: #f0e68c, white; }</span>
+<span class="bold">.default-color2.chart-line-symbol { -fx-background-color: #dda0dd, white; }</span>
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Compare <a href="#CIHEGJGJ">Figure 8-10</a> and <a href="#CIHFHDIJ">Figure 8-11</a> to observe the change in the chart legend.</p> 
+      <div class="figure">
+       <a id="CIHFHDIJ" name="CIHFHDIJ"></a> 
+       <p class="titleinfigure">Figure 8-11 Line Chart with the Modified Colors of Its Lines and Proper Legend Symbols</p> 
+       <img src="img/css-color-line2.png" alt="Description of Figure 8-11 follows" title="Description of Figure 8-11 follows" longdesc="img_text/css-color-line2.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>When you change colors in a area chart, consider three graphical components: the area for each data series, the corresponding bounding line, and the chart symbol. By default, the caspian styles sheet defines a color scheme for eight series of data, including the colors of their areas, lines, and symbols. The default style also sets the basic color for areas, lines, and symbols of additional series.</p> 
+      <p><a href="#CIHJIABI">Example 8-11</a> shows how to change the default color scheme for the areas that correspond to three series of data.</p> 
+      <div class="example">
+       <a id="CIHJIABI" name="CIHJIABI"></a> 
+       <p class="titleinexample">Example 8-11 Creating a New Color Scheme for an Area Chart</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.default-color0.chart-area-symbol { -fx-background-color: #e9967a, #ffa07a; }
+.default-color1.chart-area-symbol { -fx-background-color: #f0e68c, #fffacd; }
+.default-color2.chart-area-symbol { -fx-background-color: #dda0dd, #d8bfd8; }
+ 
+.default-color0.chart-series-area-line { -fx-stroke: #e9967a; }
+.default-color1.chart-series-area-line { -fx-stroke: #f0e68c; }
+.default-color2.chart-series-area-line { -fx-stroke: #dda0dd; }
+ 
+.default-color0.chart-series-area-fill { -fx-fill: #ffa07a<span class="bold">aa</span>}
+.default-color1.chart-series-area-fill { -fx-fill: #fffacd<span class="bold">77</span>; }
+.default-color2.chart-series-area-fill { -fx-fill: #d8bfd8<span class="bold">33</span>; }
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Pay attention to the values in bold. These bold characters set new values for area opacity. By default, all areas have an opacity level of 0.17. <a href="#CIHJIABI">Example 8-11</a> reassigns opacity for the areas so that the first area has the lowest opacity level, and the third area has the highest opacity level. Note that the hexadecimal color syntax with alpha is not a standard W3C CSS format. To conform with the W3C requirements, use the <code>rgba</code> CSS function with the fourth parameter as an alpha value. <a href="#CIHHDHCB">Figure 8-12</a> shows how these styles change the chart appearance when they are applied.</p> 
+      <div class="figure">
+       <a id="CIHHDHCB" name="CIHHDHCB"></a> 
+       <p class="titleinfigure">Figure 8-12 Area Chart with an Alternative Color Scheme</p> 
+       <img src="img/css-color-area.png" alt="Description of Figure 8-12 follows" title="Description of Figure 8-12 follows" longdesc="img_text/css-color-area.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p><a href="#CIHHEDFD">Example 8-12</a> shows the basic style for all bars in the bar chart defined in the caspian style sheet. This style creates a linear gradient for the background color and sets the radius so that all bar edges look rounded.</p> 
+      <div class="example">
+       <a id="CIHHEDFD" name="CIHHEDFD"></a> 
+       <p class="titleinexample">Example 8-12 Default Style of the Bar Chart</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.chart-bar {
+    -fx-bar-fill: #22bad9;
+    -fx-background-color: linear (0%,0%) to (0%,100%) 
+        stops (0%, derive(-fx-bar-fill,-30%)) 
+        (100%, derive(-fx-bar-fill,-40%)),
+        linear (0%,0%) to (0%,100%) 
+        stops (0%, derive(-fx-bar-fill,80%)) 
+        (100%, derive(-fx-bar-fill, 0%)),
+        linear (0%,0%) to (0%,100%) 
+        stops (0%, derive(-fx-bar-fill,30%)) 
+        (100%, derive(-fx-bar-fill,-10%));
+    -fx-background-insets: 0,1,2;
+    -fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The background settings are not limited to colors, gradients, and effects. You can also set background image for each data series. To implement this approach, first simplify the BarChartSample application as shown in <a href="#CIHEGJDG">Example 8-13</a>.</p> 
+      <div class="example">
+       <a id="CIHEGJDG" name="CIHEGJDG"></a> 
+       <p class="titleinexample">Example 8-13 Simplified Bar Chart Sample</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package barchartsample;
+ 
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.stage.Stage;
+ 
+public class BarChartSample extends Application {
+    
+    final static String austria = &quot;Austria&quot;;
+    final static String brazil = &quot;Brazil&quot;;
+    final static String france = &quot;France&quot;;
+    final static String italy = &quot;Italy&quot;;
+    final static String usa = &quot;USA&quot;;
+ 
+    @Override
+    public void start(Stage stage) {
+        stage.setTitle(&quot;Bar Chart Sample&quot;);
+        final CategoryAxis xAxis = new CategoryAxis();
+        final NumberAxis yAxis = new NumberAxis();
+        final BarChart&lt;String, Number&gt; bc =
+                new BarChart&lt;String, Number&gt;(xAxis, yAxis);
+        bc.setTitle(&quot;Country Summary&quot;);
+        xAxis.setLabel(&quot;Country&quot;);
+        xAxis.setTickLabelRotation(90);
+        yAxis.setLabel(&quot;Value&quot;);
+ 
+        XYChart.Series series1 = new XYChart.Series();
+        series1.setName(&quot;2003&quot;);
+        series1.getData().add(new XYChart.Data(austria, 25601.34));
+        series1.getData().add(new XYChart.Data(brazil, 20148.82));
+        series1.getData().add(new XYChart.Data(france, 10000));
+        series1.getData().add(new XYChart.Data(italy, 35407.15));
+        series1.getData().add(new XYChart.Data(usa, 11000));
+ 
+        Scene scene = new Scene(bc, 400, 600);
+        bc.getData().add(series1);
+        bc.setLegendVisible(false);
+        stage.setScene(scene);
+        scene.getStylesheets().add(&quot;barchartsample/Chart.css&quot;);
+        stage.show();
+    }
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Now define the chart style sheet as shown in <a href="#CIHDEBBF">Example 8-14</a>.</p> 
+      <div class="example">
+       <a id="CIHDEBBF" name="CIHDEBBF"></a> 
+       <p class="titleinexample">Example 8-14 Adding Images to the Bar Background</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.chart-bar {
+    -fx-background-color: rgba(0,168,355,0.05);
+    -fx-border-color: rgba(0,168,355,0.3) rgba(0,168,355,0.3) 
+        transparent rgba(0,168,355,0.3);
+    -fx-background-radius: 0;
+    -fx-background-position: left center;
+}
+ 
+.data0.chart-bar {
+    -fx-background-image: url(&quot;austria.png&quot;);
+}
+.data1.chart-bar {
+    -fx-background-image: url(&quot;brazil.png&quot;);
+}
+.data2.chart-bar {
+    -fx-background-image: url(&quot;france.png&quot;);
+}
+.data3.chart-bar {
+    -fx-background-image: url(&quot;italy.png&quot;);
+}
+.data4.chart-bar {
+    -fx-background-image: url(&quot;usa.png&quot;);
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>This style sets a background image for each data series and defines the position of the image within the bar. <a href="#CIHJEGFH">Figure 8-13</a> shows how the BarChartSample looks after the new styles are applied.</p> 
+      <div class="figure">
+       <a id="CIHJEGFH" name="CIHJEGFH"></a> 
+       <p class="titleinfigure">Figure 8-13 Using Images to Fill a Bar Chart</p> 
+       <img src="img/css-color-bar.png" alt="Description of Figure 8-13 follows" title="Description of Figure 8-13 follows" longdesc="img_text/css-color-bar.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>When you build pie charts in your JavaFX application, you typically need to set alternative colors for the pie chart slices. You can redefine the default color scheme by setting the <code>.default-color&lt;x&gt;.chart-pie</code> CSS classes. <a href="#CIHEIEHC">Example 8-15</a> implements this task.</p> 
+      <div class="example">
+       <a id="CIHEIEHC" name="CIHEIEHC"></a> 
+       <p class="titleinexample">Example 8-15 Setting Colors of a Pie Chart</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.default-color0.chart-pie { -fx-pie-color: #ffd700; }
+.default-color1.chart-pie { -fx-pie-color: #ffa500; }
+.default-color2.chart-pie { -fx-pie-color: #860061; }
+.default-color3.chart-pie { -fx-pie-color: #adff2f; }
+.default-color4.chart-pie { -fx-pie-color: #ff5700; }
+ 
+.chart-pie-label-line {
+    -fx-stroke: #8b4513;
+    -fx-fill: #8b4513;
+}
+ 
+.chart-pie-label {
+    -fx-fill: #8b4513;
+    -fx-font-size: 1em;
+} 
+.chart-legend {
+   -fx-background-color:  #fafad2;
+   -fx-stroke: #daa520;
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The pie chart colors now resemble the colors of fruit that they represent. Additionally, the style sheet in <a href="#CIHEIEHC">Example 8-15</a> sets alternative colors for the labels and the chart legend. You can observe the new style in <a href="#CIHGGEJA">Figure 8-14</a>.</p> 
+      <div class="figure">
+       <a id="CIHGGEJA" name="CIHGGEJA"></a> 
+       <p class="titleinfigure">Figure 8-14 Pie Chart with the Redefined Colors of Its Slices</p> 
+       <img src="img/css-color-pie.png" alt="Description of Figure 8-14 follows" title="Description of Figure 8-14 follows" longdesc="img_text/css-color-pie.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref95" name="sthref95"></a> 
+      <h2 class="sect1">Changing Chart Symbols</h2> 
+      <p>Although symbols to display in the chart legend are defined in the caspian style sheet, you can change their appearance by modifying the default color scheme and symbol shape. <a href="#CIHJIABI">Example 8-11</a> changes the colors of the area chart symbols. You can add the following line to change the symbol shape to a square: <code>.chart-area-symbol{-fx-background-radius: 0;}</code>. By default, the background radius is 5 pixels. Changing the background radius to 0, turns the circle into a square. This change applies to all series of data, as shown in <a href="#CIHBFGJG">Figure 8-15</a>.</p> 
+      <div class="figure">
+       <a id="CIHBFGJG" name="CIHBFGJG"></a> 
+       <p class="titleinfigure">Figure 8-15 Area Chart with Modified Chart Symbols</p> 
+       <img src="img/css-symbol-area.png" alt="Description of Figure 8-15 follows" title="Description of Figure 8-15 follows" longdesc="img_text/css-symbol-area.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>In scatter charts, all data is represented by set of points. Each data series has its special symbol. By default, the caspian style defines seven symbols for seven series of data and the basic symbol that it uses for other data series. <a href="#CIHBJHCB">Example 8-16</a> shows the default styles for the scatter charts.</p> 
+      <div class="example">
+       <a id="CIHBJHCB" name="CIHBJHCB"></a> 
+       <p class="titleinexample">Example 8-16 Styles for a Scatter Chart Defined in the Caspian Style Sheet</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.chart-symbol { /* solid circle */
+    -fx-background-color: #f9d900;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+}
+.default-color1.chart-symbol { /* solid square */
+    -fx-background-color: #a9e200;
+    -fx-background-radius: 0;
+}
+.default-color2.chart-symbol { /* solid diamond */
+    -fx-background-color: #22bad9;
+    -fx-background-radius: 0;
+    -fx-padding: 7px 5px 7px 5px;
+    -fx-shape: &quot;M5,0 L10,9 L5,18 L0,9 Z&quot;;
+}
+.default-color3.chart-symbol { /* cross */
+    -fx-background-color: #0181e2;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-shape: &quot;M2,0 L5,4 L8,0 L10,0 L10,2 L6,5 L10,8 L10,10 L8,10 L5,6 L2,
+    10 L0,10 L0,8 L4,5 L0,2 L0,0 Z&quot;;
+}
+.default-color4.chart-symbol { /* solid triangle */
+    -fx-background-color: #2f357f;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-shape: &quot;M5,0 L10,8 L0,8 Z&quot;;
+}
+.default-color5.chart-symbol { /* hollow circle */
+    -fx-background-color: #860061, white;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+}
+.default-color6.chart-symbol { /* hollow square */
+    -fx-background-color: #c62b00, white;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 0;
+}
+.default-color7.chart-symbol { /* hollow diamond */
+    -fx-background-color: #ff5700, white;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0, 2.5;
+    -fx-padding: 7px 5px 7px 5px;
+    -fx-shape: &quot;M5,0 L10,9 L5,18 L0,9 Z&quot;;
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>You can use these CSS classes and the available CSS properties to change the symbols of scatter charts, or you can invent your own symbols to represent data.</p> 
+      <p>Use the <code>.default-color1.chart-symbol</code> CSS class to change the default color and shape of the symbol for the second data series as shown in <a href="#CIHJGHFA">Example 8-17</a>.</p> 
+      <div class="example">
+       <a id="CIHJGHFA" name="CIHJGHFA"></a> 
+       <p class="titleinexample">Example 8-17 Redefining the Shape of the Second Series of Data</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.default-color1.chart-symbol {
+    -fx-background-color: #a9e200;
+    -fx-shape: &quot;M0,4 L2,4 L4,8 L7,0 L9,0 L4,11 Z&quot;;
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When this style is applied to the scatter chart, as shown in <a href="#CIHGJHGB">Figure 8-16</a>, the points of the second series appear as check marks. The points of other series appear according to the default styles.</p> 
+      <div class="figure">
+       <a id="CIHGJHGB" name="CIHGJHGB"></a> 
+       <p class="titleinfigure">Figure 8-16 Scatter Chart with New Check Mark Symbol to Designate the Second Data Series</p> 
+       <img src="img/css-symbol-scatter2.png" alt="Description of Figure 8-16 follows" title="Description of Figure 8-16 follows" longdesc="img_text/css-symbol-scatter2.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Use the <code>.chart-symbol</code> class to set a new chart symbol for the all data series in the scatter chart, as shown in <a href="#CIHGAHFF">Example 8-18</a>.</p> 
+      <div class="example">
+       <a id="CIHGAHFF" name="CIHGAHFF"></a> 
+       <p class="titleinexample">Example 8-18 Defining an Alternative Symbol for a Scatter Chart</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.chart-symbol{ 
+    -fx-shape: &quot;M0,4 L2,4 L4,8 L7,0 L9,0 L4,11 Z&quot;;
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p><a href="#CIHEIAGA">Figure 8-17</a> shows a scatter chart with seven series of data. Each series is represented by a check mark of different color. The color of each series is derived from the caspian style sheet.</p> 
+      <div class="figure">
+       <a id="CIHEIAGA" name="CIHEIAGA"></a> 
+       <p class="titleinfigure">Figure 8-17 Scatter Chart with a Check Sign as a Chart Symbol</p> 
+       <img src="img/css-symbol-scatter.png" alt="Description of Figure 8-17 follows" title="Description of Figure 8-17 follows" longdesc="img_text/css-symbol-scatter.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>In conclusion, when you need to style a chart in your JavaFX application, consider the following steps:</p> 
+      <ul> 
+       <li> <p>Add a .css file to your JavaFX application.</p> </li> 
+       <li> <p>Identify the graphical elements of the chart you need to change.</p> </li> 
+       <li> <p>Determine the corresponding CSS classes.</p> </li> 
+       <li> <p>Set the properties of the selected CSS classes specifying the values to attain the required appearance.</p> </li> 
+      </ul> 
+      <p>Refer to <a href="../css_tutorial/jfxpub-css_tutorial.htm">Skin JavaFX Applications with CSS</a> for additional information about how to style your JavaFX application with CSS.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-charts.htm">About This Tutorial</a></li>
+      <li><a href="chart-overview.htm">Introduction to JavaFX Charts</a></li>
+      <li><a href="pie-chart.htm">Pie Chart</a></li>
+      <li><a href="line-chart.htm">Line Chart</a></li>
+      <li><a href="area-chart.htm">Area Chart</a></li>
+      <li><a href="bubble-chart.htm">Bubble Chart</a></li>
+      <li><a href="scatter-chart.htm">Scatter Chart</a></li>
+      <li><a href="bar-chart.htm">Bar Chart</a></li>
+      <li class=" active"><a href="css-styles.htm">Styling Charts with CSS</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/AreaChartSample.zip">AreaChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/BarChartSample.zip">BarChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/BubbleChartSample.zip">BubbleChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/LineChartSample.zip">LineChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/PieChartSample.zip">PieChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/ScatterChartSample.zip">ScatterChartSample.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

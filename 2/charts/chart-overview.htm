@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Introduction to JavaFX Charts &middot; Using JavaFX Charts &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX Charts</h1>
+     <p class=" lead">Introduction to JavaFX Charts</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="jfxpub-charts.htm">←上一篇</a></li>
+      <li class=" next"><a href="pie-chart.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CJAFBGCA" name="CJAFBGCA"></a>
+     <a id="JFXCH104" name="JFXCH104"></a>
+     <a id="CJAHHJCB" name="CJAHHJCB"></a>  
+     <p>In addition to the typical elements of a user interface, the JavaFX SDK provides charts in the <code>javafx.scene.chart</code> package. The types of charts in <a href="#CJABGCDI">Figure 1-1</a> are currently supported: bar, area, line, bubble, scatter, and pie.</p> 
+     <div class="figure">
+      <a id="CJABGCDI" name="CJABGCDI"></a>
+      <a id="JFXCH122" name="JFXCH122"></a> 
+      <p class="titleinfigure">Figure 1-1 Types of Charts</p> 
+      <img src="img/overview.png" alt="Types of graphical charts" title="Types of graphical charts" longdesc="img_text/overview.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <p>With the JavaFX SDK you can build such charts in your application by adding just a few lines of code.</p> 
+     <a id="JFXCH114" name="JFXCH114"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref4" name="sthref4"></a> 
+      <h2 class="sect1">Chart Data</h2> 
+      <p>When you define the data model for a particular chart, you must distinguish between two-axis charts and charts that do not use axes to display data.</p> 
+      <p>The <code>XYChart</code> class, a super class for all two-axis charts, provides basic capabilities for building area, line, bar, scatter, and bubble charts. Use the <code>XYChart.Data</code> class to specify the data model for these types of charts. The <code>xValue</code> property defines the value of a chart element to be plotted on the X axis, and the <code>yValue</code> property defines the value for the Y axis. You can also set the extra value for each chart element. This value can be plotted in any way the chart needs, or it can be used to store additional information about the chart element. For example, it can be used to define a radius for bubble charts.</p> 
+      <p>Unlike a two-axis chart, the pie chart does not require defining values for x and y axes. You use the <code>PieChart.Data</code> class to specify values for each slice in the pie.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCH115" name="JFXCH115"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref5" name="sthref5"></a> 
+      <h2 class="sect1">Series of Data</h2> 
+      <p>For two-axis charts, you can define several series of data by using the <code>XYChart.Series</code> class. For example, the line chart shown in <a href="#CJAIEIIH">Figure 1-2</a> has three series of data to demonstrate the changes dynamic in three different stock portfolios.</p> 
+      <div class="figure">
+       <a id="CJAIEIIH" name="CJAIEIIH"></a>
+       <a id="JFXCH123" name="JFXCH123"></a> 
+       <p class="titleinfigure">Figure 1-2 Line Chart with Three Series of Data</p> 
+       <img src="img/overview-series.png" alt="Line chart with three series" title="Line chart with three series" longdesc="img_text/overview-series.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Use the <code>XYChart.Series</code> class to define as many sets of data as you need to represent on your graph. You can also assign a particular name to each series to display in the chart legend.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCH117" name="JFXCH117"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref7" name="sthref7"></a> 
+      <h2 class="sect1">Chart Settings</h2> 
+      <p>For each chart, you can specify the title and its position relative to the graph. The title can be located on the top, right, left, or bottom of the graph. Similarly, you can specify the position of the chart legend.</p> 
+      <p>For a two-axis graph, you can manage the appearance of the chart plot, the chart area where the graphical symbols corresponding to data values are rendered. You can set alternative columns and rows as well as horizontal and vertical grid lines and zero lines.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCH116" name="JFXCH116"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref8" name="sthref8"></a> 
+      <h2 class="sect1">Axis Settings</h2> 
+      <p>You can alter the default appearance of each chart by defining the following settings:</p> 
+      <ul> 
+       <li> <p>The axis label</p> </li> 
+       <li> <p>The axis position relative to the chart plot</p> </li> 
+       <li> <p>The upper and lower boundaries of the axis range</p> </li> 
+       <li> <p>The minimum and maximum tick marks, tick units, the gap between two tick marks, and tick labels</p> </li> 
+      </ul> 
+      <p>You can also specify that any changes to the axis and its range will be animated, or you can enable the axis to automatically determine its range from the data.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCH124" name="JFXCH124"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref9" name="sthref9"></a> 
+      <h2 class="sect1">Processing Events for Chart Elements</h2> 
+      <p>All chart classes in the JavaFX SDK API extend the <code>Node</code> class and inherit all methods and properties of that class, which let you apply visual effects or handle mouse and key events. If you need to handle events for a particular chart element that is not a <code>Node</code> object, for example, for a slice of a pie chart, then use the <code>node</code> property and the <code>setNode</code> and <code>getNode</code> methods to associate a particular <code>Node</code> object with an element of the chart. You can process events for this chart element in the way you handle events for any other node: user interface control or shape. <a href="#CJAFEFCH">Example 1-1</a> demonstrates a code pattern to process events for a two-axis chart.</p> 
+      <div class="example">
+       <a id="CJAFEFCH" name="CJAFEFCH"></a>
+       <a id="JFXCH125" name="JFXCH125"></a> 
+       <p class="titleinexample">Example 1-1 Event Handling</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+for (final XYChart.Data data : chart.getData()) {
+    data.getNode().addEventHandler(
+       //Event handling 
+    );
+}
+</pre>
+      </div> 
+      <!-- class="example" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCH118" name="JFXCH118"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref10" name="sthref10"></a> 
+      <h2 class="sect1">Animated Charts</h2> 
+      <p>With the JavaFX SDK, you can make your chart change dynamically as the data changes. Use the <code>animated</code> property and the <code>setAnimated</code> method of the <code>Chart</code> class to toggle this functionality for the chart. You can use the <code>animated</code> property and the <code>setAnimated</code> method of the <code>Axis</code> class to animate any changes to either axis and its range.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCH198" name="JFXCH198"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref11" name="sthref11"></a> 
+      <h2 class="sect1">Styling Charts</h2> 
+      <p>The colors of the chart elements are defined by the implementation of each particular chart class. However, you can alter these colors as well as chart symbols by applying CSS styles. <a href="#BABJIGJB">Figure 1-3</a> shows an area chart with the modified colors of its areas, lines, and symbols.</p> 
+      <div class="figure">
+       <a id="BABJIGJB" name="BABJIGJB"></a>
+       <a id="JFXCH199" name="JFXCH199"></a> 
+       <p class="titleinfigure">Figure 1-3 Area Chart Styled with CSS</p> 
+       <img src="img/area-css.png" alt="Description of Figure 1-3 follows" title="Description of Figure 1-3 follows" longdesc="img_text/area-css.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>The CSS file with the corresponding styles are shown in <a href="#BABECECB">Example 1-2</a>.</p> 
+      <div class="example">
+       <a id="BABECECB" name="BABECECB"></a>
+       <a id="JFXCH200" name="JFXCH200"></a> 
+       <p class="titleinexample">Example 1-2 Area Chart Styles</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.default-color0.chart-area-symbol { -fx-background-color: #e9967a, #ffa07a; }
+.default-color1.chart-area-symbol { -fx-background-color: #f0e68c, #fffacd; }
+.default-color2.chart-area-symbol { -fx-background-color: #dda0dd, #d8bfd855; }
+ 
+.default-color0.chart-series-area-line { -fx-stroke: #e9967a; }
+.default-color1.chart-series-area-line { -fx-stroke: #f0e68c; }
+.default-color2.chart-series-area-line { -fx-stroke: #dda0dd; }
+ 
+.default-color0.chart-series-area-fill { -fx-fill: #ffa07a55; }
+.default-color1.chart-series-area-fill { -fx-fill: #fffacd55; }
+.default-color2.chart-series-area-fill { -fx-fill: #d8bfd855; }
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Find the complete list of the JavaFX CSS properties in <a href="../api/javafx/scene/doc-files/cssref.html">JavaFX CSS Reference Guide</a>.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCH119" name="JFXCH119"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref13" name="sthref13"></a> 
+      <h2 class="sect1">Custom Chart</h2> 
+      <p>You can invent your own type of chart by extending the <code>Chart</code> class or the <code>XYChart</code> class. <a href="#CJAEDFBI">Figure 1-4</a> shows a custom implementation of the candlestick chart.</p> 
+      <div class="figure">
+       <a id="CJAEDFBI" name="CJAEDFBI"></a>
+       <a id="JFXCH126" name="JFXCH126"></a> 
+       <p class="titleinfigure">Figure 1-4 Sample of a Custom Chart</p> 
+       <img src="img/overview-custom.png" alt="Custom candle stick chart" title="Custom candle stick chart" longdesc="img_text/overview-custom.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>To create a custom chart, you must override the methods of the <code>Chart</code> or <code>XYChart</code> classes that are necessary to enable specific chart capabilities. You also must create a new <code>Node</code> object to represent a single data item.</p> 
+      <p>See the Charts section of the <code>Ensemble</code> application available on the product site to evaluate the implementation details.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-charts.htm">About This Tutorial</a></li>
+      <li class=" active"><a href="chart-overview.htm">Introduction to JavaFX Charts</a></li>
+      <li><a href="pie-chart.htm">Pie Chart</a></li>
+      <li><a href="line-chart.htm">Line Chart</a></li>
+      <li><a href="area-chart.htm">Area Chart</a></li>
+      <li><a href="bubble-chart.htm">Bubble Chart</a></li>
+      <li><a href="scatter-chart.htm">Scatter Chart</a></li>
+      <li><a href="bar-chart.htm">Bar Chart</a></li>
+      <li><a href="css-styles.htm">Styling Charts with CSS</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/AreaChartSample.zip">AreaChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/BarChartSample.zip">BarChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/BubbleChartSample.zip">BubbleChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/LineChartSample.zip">LineChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/PieChartSample.zip">PieChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/ScatterChartSample.zip">ScatterChartSample.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

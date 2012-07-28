@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Packaging &middot; Deploying JavaFX Applications &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Deploying JavaFX Applications</h1>
+     <p class=" lead">Packaging</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="deploy_user_experience.htm">←上一篇</a></li>
+      <li class=" next"><a href="deployment_toolkit.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="BABFECGG" name="BABFECGG"></a>
+     <a id="JFXDP186" name="JFXDP186"></a>  
+     <p>This page provides an overview of JavaFX packaging and tools. It contains the following topics:</p> 
+     <ul> 
+      <li> <p><a href="#BABCIBAD">Section 4.1, &quot;JavaFX Packaging Overview&quot;</a></p> </li> 
+      <li> <p><a href="#BABBBEJH">Section 4.2, &quot;JavaFX Packaging Tools&quot;</a></p> </li> 
+      <li> <p><a href="#BABDBHAJ">Section 4.3, &quot;Packaging Tasks&quot;</a></p> </li> 
+      <li> <p><a href="#BABFFCEI">Section 4.4, &quot;Create the Main Application JAR File&quot;</a></p> </li> 
+      <li> <p><a href="#BABJGFBH">Section 4.5, &quot;Sign the JAR Files&quot;</a></p> </li> 
+      <li> <p><a href="#BABFCGJJ">Section 4.6, &quot;Assemble the Package&quot;</a></p> </li> 
+      <li> <p><a href="#BABIHHJE">Section 4.7, &quot;Package Custom JavaScript Actions&quot;</a></p> </li> 
+      <li> <p><a href="#BABCDFAJ">Section 4.8, &quot;Web Page Templates&quot;</a></p> </li> 
+      <li> <p><a href="#BABCJCHH">Section 4.9, &quot;Performance Tuning&quot;</a></p> </li> 
+     </ul> 
+     <a id="BABCIBAD" name="BABCIBAD"></a>
+     <a id="JFXDP392" name="JFXDP392"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">4.1</span> JavaFX Packaging Overview</h2> 
+      <p>A properly packaged JavaFX application:</p> 
+      <ul> 
+       <li> <p>Works out of the box in multiple execution environments including:</p> 
+        <ul> 
+         <li> <p>Launching from the command line using the Java launcher.</p> </li> 
+         <li> <p>Double-clicking on the JAR file.</p> </li> 
+         <li> <p>Launching from a desktop shortcut.</p> </li> 
+         <li> <p>Embedding the application into a web page.</p> </li> 
+        </ul> </li> 
+       <li> <p>Includes everything needed to provide a good user experience for various user environments, including:</p> 
+        <ul> 
+         <li> <p>Ensuring that the required Java Runtime Environment (JRE) and JavaFX Runtime are installed.</p> </li> 
+         <li> <p>Autodownloading missing dependencies or offering to install them as needed.</p> </li> 
+         <li> <p>Providing visual feedback to the user while the application is being loaded.</p> </li> 
+         <li> <p>Showing descriptive error messages.</p> </li> 
+        </ul> </li> 
+      </ul> 
+      <p>The JavaFX application package is a collection of the following files needed to run the application:</p> 
+      <ul> 
+       <li> <p>An executable application JAR file, which contains application code and resources and can be launched by double-clicking the file.</p> </li> 
+       <li> <p>Optional auxiliary JAR files.</p> </li> 
+       <li> <p>A JNLP file with a deployment descriptor.</p> </li> 
+       <li> <p>An HTML file containing JavaScript code to embed and launch JavaFX content from a web page</p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BABBBEJH" name="BABBBEJH"></a>
+     <a id="JFXDP393" name="JFXDP393"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">4.2</span> JavaFX Packaging Tools</h2> 
+      <p>The recommended way to package JavaFX applications is to use a collection of Ant tasks provided with the JavaFX SDK.</p> 
+      <p>NetBeans IDE uses these Ant tasks to package JavaFX projects. Embedded packaging support in NetBeans IDE covers most of the typical use cases. However, if you need something special, you can always tune packaging by adding custom packaging hooks to the build.xml file (for example, as a <code>-post-jar</code> target).</p> 
+      <p>The JavaFX SDK includes a command-line packaging utility, <code>javafxpackager</code>, which can be used for simple packaging tasks. Note that <code>javafxpackager</code> is a convenience utility and does not provide as much flexibility or as many options as Ant tasks.</p> 
+      <p>For more comprehensive reference information about packaging, see <a href="javafx_ant_task_reference.htm#CIACDJHC">JavaFX Ant Tasks</a>, <a href="packager.htm#CCHIHIIJ">The JavaFX Packager Tool</a>, and the NetBeans documentation for information on NetBeans configuration options for JavaFX projects.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BABDBHAJ" name="BABDBHAJ"></a>
+     <a id="JFXDP394" name="JFXDP394"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">4.3</span> Packaging Tasks</h2> 
+      <p>The build process for JavaFX applications extends the normal build process with several additional steps, as outlined in <a href="#BABBJBFA">Figure 4-1</a>.</p> 
+      <div class="figure">
+       <a id="BABBJBFA" name="BABBJBFA"></a>
+       <a id="JFXDP395" name="JFXDP395"></a> 
+       <p class="titleinfigure">Figure 4-1 The Build Process for JavaFX Applications</p> 
+       <img src="img/packaging.gif" alt="See graphic description link" title="See graphic description link" longdesc="img_text/packaging.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>New or modified steps are marked with colored arrows and described as follows:</p> 
+      <ul> 
+       <li> <p>(Optional) Convert stylesheets to binary form</p> <p>Converts CSS files to binary form to reduce parsing overhead at application runtime.</p> </li> 
+       <li> <p>Create main application JAR file</p> <p>Packages code and resources needed for the JavaFX application into a JAR file and embeds the utility classes to support autodetection of JavaFX Runtime, launch on double-click, and integration with the preloader JAR, if needed.</p> </li> 
+       <li> <p>(Optional) Sign the JAR files</p> <p>Signing JAR files is needed only when the application requires elevated privileges, such as accessing files on the local file system or accessing nonsecure system properties. Signing is not a new concept, and you can sign the JAR files for your JavaFX application in the same way as you would for Swing/AWT applications.</p> <p>JavaFX Runtime supports a new method to sign JAR files that reduces the JAR size overhead for signing, thereby improving the download time.</p> </li> 
+       <li> <p>Assemble the package</p> <p>Creates a deployment descriptor for deployment on the web, generates JavaScript code needed to embed the application into a web page, or launches the application from a web page and assemble the package for redistribution.</p> </li> 
+      </ul> 
+      <p>Table 4-1 summarizes how to accomplish these steps using the various packaging tools available. Note that <code>javafxpackager</code> also provides a <code>-makeall</code> macro command to create a complete application package for simple applications (for more information, see <a href="packager.htm#CCHIHIIJ">The JavaFX Packager Tool</a>).</p> 
+      <div class="tblhruleformal">
+       <a id="JFXDP189" name="JFXDP189"></a>
+       <a id="sthref34" name="sthref34"></a>
+       <a id="BABHJFJA" name="BABHJFJA"></a> 
+       <p class="titleintable">Table 4-1 JavaFX Packaging Tasks and Tools</p> 
+       <table class="HRuleFormal table table-bordered table-striped" title="JavaFX Packaging Tasks and Tools" summary="Describes the JavaFX packaging tasks and provides links that show how to perform them in each of the JavaFX packaging tools." dir="ltr" border="1" width="100%" frame="hsides" rules="rows" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="19%" /> 
+         <col width="20%" /> 
+         <col width="28%" /> 
+         <col width="*" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t2">Task</th> 
+          <th align="left" valign="bottom" id="r1c2-t2">JavaFX Packager Library Ant Task</th> 
+          <th align="left" valign="bottom" id="r1c3-t2">JavaFX Packager Tool Command</th> 
+          <th align="left" valign="bottom" id="r1c4-t2">NetBeans IDE</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t2" headers="r1c1-t2"> <p>Convert any CSS files to binary format</p> </td> 
+          <td align="left" headers="r2c1-t2 r1c2-t2"> <p><a href="javafx_ant_task_reference001.htm#CIAEFCGA">&lt;fx:csstobin&gt;</a></p> <br /></td> 
+          <td align="left" headers="r2c1-t2 r1c3-t2"> <p><a href="packager001.htm#CCHHABJJ">javafxpackager -createbss</a></p> <br /></td> 
+          <td align="left" headers="r2c1-t2 r1c4-t2"> <p>Packaging category in Project Properties</p> 
+           <ul> 
+            <li> <p><span class="gui-object-action">Select Binary Encode JavaFX CSS Files</span> check box.</p> </li> 
+           </ul> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r3c1-t2" headers="r1c1-t2"> <p>Create a JAR archive</p> </td> 
+          <td align="left" headers="r3c1-t2 r1c2-t2"> <p><a href="javafx_ant_task_reference001.htm#CIACICBG">&lt;fx:jar&gt;</a></p> <br /></td> 
+          <td align="left" headers="r3c1-t2 r1c3-t2"> <p><a href="packager001.htm#CCHJFHAJ">javafxpackager -createjar</a></p> <br /></td> 
+          <td align="left" headers="r3c1-t2 r1c4-t2"> <p>Occurs by default with a Build command, using the configuration in Project Properties.</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r4c1-t2" headers="r1c1-t2"> <p>Sign a JAR archive as one binary object</p> </td> 
+          <td align="left" headers="r4c1-t2 r1c2-t2"> <p><a href="javafx_ant_task_reference001.htm#CIADDAEE">&lt;fx:signjar&gt;</a></p> <br /></td> 
+          <td align="left" headers="r4c1-t2 r1c3-t2"> <p><a href="packager001.htm#CCHDAFJJ">javafxpackager -signjar</a></p> <br /></td> 
+          <td align="left" headers="r4c1-t2 r1c4-t2"> <p>Deployment category in Project Properties</p> 
+           <ul> 
+            <li> <p><span class="gui-object-action">Request unrestricted access</span> check box.</p> </li> 
+            <li> <p>To attach a certificate, click <span class="gui-object-action">Edit</span>.</p> </li> 
+           </ul> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r5c1-t2" headers="r1c1-t2"> <p>Generate files for web deployment</p> </td> 
+          <td align="left" headers="r5c1-t2 r1c2-t2"> <p><a href="javafx_ant_task_reference001.htm#CIABIFCI">&lt;fx:deploy&gt;</a></p> <br /></td> 
+          <td align="left" headers="r5c1-t2 r1c3-t2"> <p><a href="packager001.htm#CCHBIHJC">javafxpackager -deploy</a></p> <br /></td> 
+          <td align="left" headers="r5c1-t2 r1c4-t2"> <p>Occurs by default with a Build command, using the configuration in Project Properties.</p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblhruleformal" --> 
+      <a id="BABCACBD" name="BABCACBD"></a>
+      <a id="JFXDP396" name="JFXDP396"></a> 
+      <div class="sect2"> 
+       <h3 class="sect2"><span class="secnum">4.3.1</span> Stylesheet Conversion</h3> 
+       <p>Converting stylesheets to binary format is optional but improves application performance. This is especially noticeable on larger CSS files.</p> 
+       <p>To use a binary CSS file, refer to it instead of the CSS file, as shown in <a href="#CEGDDGFC">Example 4-1</a>:</p> 
+       <div class="example">
+        <a id="CEGDDGFC" name="CEGDDGFC"></a>
+        <a id="JFXDP397" name="JFXDP397"></a> 
+        <p class="titleinexample">Example 4-1 Using a Binary Stylesheet</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+scene.getStylesheets().add(this.getClass().getResource
+        (&quot;mystyles.bss&quot;).toExternalForm());
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>Usage:</p> 
+       <ul> 
+        <li> <p>Ant task: <a href="javafx_ant_task_reference001.htm#CIAIEFAD">Convert CSS Files to Binary</a></p> </li> 
+        <li> <p>JavaFX Packager tool: <a href="packager001.htm#CCHCFFAB">Example of -createbss Command</a></p> </li> 
+        <li> <p>NetBeans IDE: In the Packaging category of Project Properties, select <span class="gui-object-action">Binary Encode JavaFX CSS Files</span>.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BABFFCEI" name="BABFFCEI"></a>
+     <a id="JFXDP398" name="JFXDP398"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">4.4</span> Create the Main Application JAR File</h2> 
+      <p>In addition to application classes and resources, the application JAR file for JavaFX applications contains the following components:</p> 
+      <ul> 
+       <li> <p>Platform requirements</p> </li> 
+       <li> <p>Required versions of Java Runtime and JavaFX Runtime</p> </li> 
+       <li> <p>Required Java VM arguments</p> </li> 
+       <li> <p>The following details about the application:</p> 
+        <ul> 
+         <li> <p>Name of the main application class</p> </li> 
+         <li> <p>Name of preloader class (if there is a preloader)</p> </li> 
+         <li> <p>Name of fallback class to use if the platform does not support JavaFX</p> </li> 
+        </ul> </li> 
+       <li> <p>Details about application resources</p> </li> 
+       <li> <p>Set of class files and other resources included in the JAR file</p> </li> 
+       <li> <p>List of auxiliary JAR files needed by the application, including a custom preloader JAR file (if needed)</p> </li> 
+      </ul> 
+      <p>Usage:</p> 
+      <ul> 
+       <li> <p>Ant task: <a href="javafx_ant_task_reference001.htm#CIAEEAGG">&lt;fx:jar&gt; Usage Examples</a></p> </li> 
+       <li> <p>JavaFX Packager tool: <a href="packager001.htm#CCHJFHHA">Example of -createjar Command</a></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BABJGFBH" name="BABJGFBH"></a>
+     <a id="JFXDP399" name="JFXDP399"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">4.5</span> Sign the JAR Files</h2> 
+      <p>Before adding code to sign your application, ensure that signing is needed, because it carries a cost of overhead to perform validation and often causes additional dialog boxes to be shown to the end user on application startup. See <a href="deploy_overview.htm#CEGJGHDA">Run in Sandbox Unless Signed</a> to find out when an application needs elevated permissions.</p> 
+      <p>If you want to use traditional methods to sign JAR files, consult the Java Tutorial's <a href="../../../../docs.oracle.com/javase/tutorial/security/toolsign/signer.html">steps for code signing</a> and the description of the standard Ant <code>&lt;signjar&gt;</code> task for information about the traditional signing method.</p> 
+      <p>JavaFX also provides a new signing method that helps to reduce the size overhead of signing the JAR file. In this method, you sign the JAR file as one large object instead of signing every JAR entry individually. This saves up to 10 percent of the total JAR size.</p> 
+      <p>To use the new signing method provided by JavaFX, you need the keystore and signing key. See the <a href="../../../../docs.oracle.com/javase/tutorial/security/toolsign/step3.html">Java Tutorial on generating keys</a> for instructions.</p> 
+      <p>Usage:</p> 
+      <ul> 
+       <li> <p>Ant task: <a href="javafx_ant_task_reference001.htm#CIAFJGAB">&lt;fx:signjar&gt; Usage Examples</a></p> </li> 
+       <li> <p>JavaFX Packager tool: <a href="packager001.htm#CCHIGDEE">Example of -signjar Command</a></p> </li> 
+       <li> <p>NetBeans IDE: Netbeans IDE users enable signing when they request elevated permissions for the application by selecting the <span class="gui-object-action">Request unrestricted access</span> check box in the project properties. To sign with a specific certificate, click <span class="gui-object-action">Edit</span> next to the check box.</p> </li> 
+      </ul> 
+      <div align="center"> 
+       <div class="inftblnote">
+        <br /> 
+        <table class="Note oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+         <tbody> 
+          <tr> 
+           <td align="left"> <p class="notep1">Note:</p> <p>All JAR files must be signed or unsigned in the context of a single deployment descriptor file. If you need to mix signed and unsigned JAR files, use an additional <a href="javafx_ant_task_reference001.htm#CIABIFCI">&lt;fx:deploy&gt;</a> Ant task to generate an additional deployment descriptor for each JAR file. These additional deployment descriptors are called extension descriptors. Use <a href="javafx_ant_task_reference002.htm#CIADIIEI">&lt;fx:resources&gt;</a> to refer to the extension descriptors when the main descriptor is generated. For an example of how to do this, see <a href="javafx_ant_task_reference002.htm#CIABGCEE">Using &lt;fx:resources&gt; for Extension Descriptors</a>.</p> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <br />
+       </div> 
+       <!-- class="inftblnote" -->
+      </div> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BABFCGJJ" name="BABFCGJJ"></a>
+     <a id="JFXDP400" name="JFXDP400"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">4.6</span> Assemble the Package</h2> 
+      <p>A redistributable package consists of the following items:</p> 
+      <ul> 
+       <li> <p>The main executable JAR file</p> </li> 
+       <li> <p>(Optional) A set of auxiliary JAR files, including a JAR file with preloader code</p> </li> 
+       <li> <p>A deployment descriptor, defining how to deploy the application</p> </li> 
+       <li> <p>Either a basic HTML file with sample code to embed the application into your own web page or a custom web page that is the result of preprocessing an HTML template</p> </li> 
+      </ul> 
+      <p>Packages are assembled with the <code>&lt;fx:deploy&gt;</code> Ant task, the <code>-deploy</code> command in the javafxpackager tool, or as part of the Build command in NetBeans IDE.</p> 
+      <p>Usage:</p> 
+      <ul> 
+       <li> <p>Ant task: <a href="javafx_ant_task_reference001.htm#CIABHEIG">&lt;fx:deploy&gt; Task Usage Examples</a></p> </li> 
+       <li> <p>JavaFX Packager tool: <a href="packager001.htm#CCHIGDEE">Example of -signjar Command</a></p> </li> 
+       <li> <p>NetBeans IDE: Netbeans IDE users enable signing when they request elevated permissions for the application by selecting the <span class="gui-object-action">Request unrestricted access</span> check box in the project properties. To sign with a specific certificate, click <span class="gui-object-action">Edit</span> next to the check box.</p> </li> 
+      </ul> 
+      <a id="JFXDP401" name="JFXDP401"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref35" name="sthref35"></a> 
+       <h3 class="sect2"><span class="secnum">4.6.1</span> Application Details</h3> 
+       <p>The key part of this task is providing information to fill the deployment descriptor. This information includes:</p> 
+       <ul> 
+        <li> <p>Entry points: the main application class, preloader class, and other details</p> <p>Defined as attributes of the <a href="javafx_ant_task_reference002.htm#CIAGCAFH">&lt;fx:application&gt;</a> tag.</p> </li> 
+        <li> <p>Parameters to be passed to the application</p> <p>Defined using <a href="javafx_ant_task_reference002.htm#CIACICCF">&lt;fx:param&gt;</a> and <a href="javafx_ant_task_reference002.htm#CIACDFGB">&lt;fx:htmlparam&gt;</a> tags under <a href="javafx_ant_task_reference002.htm#CIAGCAFH">&lt;fx:application&gt;</a>.</p> </li> 
+        <li> <p>The preferred application stage size</p> <p>It is crucial to reserve the display area for embedded content.</p> <p>Width and height are defined using width and height attributes in the <a href="javafx_ant_task_reference001.htm#CIABIFCI">&lt;fx:deploy&gt;</a> tag for Ant tasks, the <a href="packager001.htm#CCHBIHJC">javafxpackager -deploy</a> command, or in the Run category of NetBeans project properties.</p> </li> 
+        <li> <p>A description of application to be used in any dialog boxes that the user sees during application startup</p> <p>Defined using the <a href="javafx_ant_task_reference002.htm#CIAIEJHG">&lt;fx:info&gt;</a> tag.</p> </li> 
+        <li> <p>Platform requirements, including required versions of Java and JavaFX Runtimes and JVM settings</p> <p>Defined using the <a href="javafx_ant_task_reference002.htm#CIAEEFCJ">&lt;fx:platform&gt;</a> tag. For an example, see <a href="javafx_ant_task_reference002.htm#CIAGFFIF">&lt;fx:platform&gt; Parameter to Specify JVM Options</a>.</p> </li> 
+        <li> <p>Desktop integration preferences of the application, such as adding a shortcut to the desktop or a reference to the Start menu.</p> <p>Defined using the optional <a href="javafx_ant_task_reference002.htm#CIADDDAA">&lt;fx:preferences&gt;</a> tag. See <a href="javafx_ant_task_reference002.htm#CIADCBDC">&lt;fx:preferences&gt; Usage Examples</a>.</p> </li> 
+        <li> <p>Permissions needed to run the application.</p> <p>By default web applications run in the sandbox. To request elevated permissions, use the <a href="javafx_ant_task_reference002.htm#CIAHGJBH">&lt;fx:permissions&gt;</a> tag. Note that in order for permissions to be granted, application JAR files must be signed, and the user must trust the security certificate used for signing. If the application requests elevated permissions but requirements for the user granting permissions are not met, then the application will fail to launch.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABGCEDJ" name="BABGCEDJ"></a>
+      <a id="JFXDP402" name="JFXDP402"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">4.6.2</span> Application Resources</h3> 
+       <p>Supported application resource files include:</p> 
+       <ul> 
+        <li> <p>JAR files</p> </li> 
+        <li> <p>JNLP files, describing auxiliary libraries for the application</p> </li> 
+       </ul> 
+       <p>Every resource is associated with a priority hint defining the point in the application lifecycle at which this resource is needed. The priority hint is defined using the <code>requiredFor</code> attribute of <a href="javafx_ant_task_reference002.htm#CIAIHFGI">&lt;fx:fileset&gt;</a>, nested under <a href="javafx_ant_task_reference002.htm#CIADIIEI">&lt;fx:resources&gt;</a>. For a list of supported values, see <a href="javafx_ant_task_reference002.htm#CIACHAIA">Table 10-8</a>.</p> 
+       <div align="center"> 
+        <div class="inftblnotealso">
+         <br /> 
+         <table class="NoteAlso oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+          <tbody> 
+           <tr> 
+            <td align="left"> <p class="notep1">Tip:</p> <p>Accurate use of priority hints helps to achieve the best possible user experience.</p> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <br />
+        </div> 
+        <!-- class="inftblnotealso" -->
+       </div> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BABIHHJE" name="BABIHHJE"></a>
+     <a id="JFXDP403" name="JFXDP403"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">4.7</span> Package Custom JavaScript Actions</h2> 
+      <p>The Deployment Toolkit provides a set of hooks that can be used to customize the startup behavior when an application is deployed in the browser. Developers must install a callback function to the hook, so it will be utilized by the Deployment Toolkit.</p> 
+      <p><a href="deployment_toolkit.htm#BABJHEJA">Deployment in the Browser</a> describes in detail what hooks are available and how to use them in the code. However, in order to ensure that they are correctly installed, they also must be specified at packaging time.</p> 
+      <p>To specify callbacks, list them in the <a href="javafx_ant_task_reference002.htm#CIAJBBCD">&lt;fx:callbacks&gt;</a> tag under <a href="javafx_ant_task_reference001.htm#CIABIFCI">&lt;fx:deploy&gt;</a>. Add an <a href="javafx_ant_task_reference002.htm#CIABBIHI">&lt;fx:callback&gt;</a> entry for every callback you want to install and specify the name of the hook in the <code>name</code> attribute. The content of the <a href="javafx_ant_task_reference002.htm#CIABBIHI">&lt;fx:callback&gt;</a> tag is the JavaScript function to be used. You can use a full function definition or refer to a function defined elsewhere.</p> 
+      <p>Usage:</p> 
+      <ul> 
+       <li> <p>Ant task: <a href="javafx_ant_task_reference002.htm#CIACIFHH">&lt;fx:callback&gt; Usage Examples</a></p> </li> 
+       <li> <p>NetBeans IDE: Add callbacks in the Deployment category of Project Properties. Click the <span class="gui-object-action">Edit</span> button to the right of Custom JavaScript Actions.</p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BABCDFAJ" name="BABCDFAJ"></a>
+     <a id="JFXDP404" name="JFXDP404"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">4.8</span> Web Page Templates</h2> 
+      <p>By default, JavaFX packaging tools generate a simple web page with a placeholder for the embedded application. You can manually copy code from this generated page to your real web page, but this is error prone and time consuming if you need to do this often.</p> 
+      <p>JavaFX packaging tools also support injecting required code into an existing web page through the use of an input template. This is especially useful when the application is tightly integrated with the web page, for example if the application uses JavaScript to communicate to the web page, or if callbacks are used and their code is kept in the web page itself.</p> 
+      <p>An input template is an HTML file containing markers to be replaced with JavaScript or HTML snippets needed to deploy the JavaFX application on the web page. <a href="#BABDCGJH">Example 4-2</a> shows an example of an input template.</p> 
+      <div class="example">
+       <a id="BABDCGJH" name="BABDCGJH"></a>
+       <a id="JFXDP405" name="JFXDP405"></a> 
+       <p class="titleinexample">Example 4-2 HTML Input Template</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Host page for JavaFX Application&lt;/title&gt;
+        #DT.SCRIPT.CODE#
+        #DT.EMBED.CODE.ONLOAD#
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Embed JavaFX application into existing page&lt;/h1&gt;
+        &lt;!-- application will be inserted here --&gt;
+        &lt;div id=&quot;ZZZ&quot;&gt;&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;  
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p><code>#DT.SCRIPT.CODE#</code> and <code>#DT.EMBED.CODE.ONLOAD#</code> are markers that will be substituted with JavaScript and HTML code snippets when the template is processed. Markers have the form of <code>#</code><span class="variable">MARKERNAME</span><code>#</code> or <code>#</code><span class="variable">MARKERNAME</span><code>(</code><span class="variable">id</span><code>)#</code>,</p> 
+      <p><span class="variable">id</span> is the identifier of an application (specified using the <code>id</code> attribute of the <a href="javafx_ant_task_reference001.htm#CIABIFCI">&lt;fx:deploy&gt;</a> tag if you are using Ant), and <span class="variable">MARKERNAME</span> is the type of the marker. If <span class="variable">id</span> is not specified, then <span class="variable">MARKER</span> matches any application. For a list of supported markers, see <a href="javafx_ant_task_reference002.htm#CIACACDA">&lt;fx:template&gt;</a> in the Ant task reference.</p> 
+      <p>Templates can be used to deploy multiple applications into the same page. Use the full form of the marker including application ID (an alphanumeric string without spaces) and pass the partially processed template file when packaging each applications to insert.</p> 
+      <p><a href="#BABDJGBC">Example 4-3</a> shows an example of a template that is used to deploy multiple applications.</p> 
+      <div class="example">
+       <a id="BABDJGBC" name="BABDJGBC"></a>
+       <a id="JFXDP406" name="JFXDP406"></a> 
+       <p class="titleinexample">Example 4-3 An Input Template Used to Deploy Multiple Applications</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Page with two application&lt;/title&gt;
+        &lt;script src=&quot;#DT.SCRIPT.URL#&quot;&gt;&lt;/script&gt;
+ 
+        &lt;!-- code to load first app with id 'firstApp'
+             (specified as attribute to fx:application) --&gt;
+        &lt;!-- #DT.EMBED.CODE.ONLOAD(firstApp)# --&gt;
+ 
+        &lt;!-- code to load first app with id 'secondApp' --&gt;
+        &lt;!-- #DT.EMBED.CODE.ONLOAD(secondApp)# --&gt; 
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Multiple applications in the same page&lt;/h1&gt;
+ 
+        JavaFX app: &lt;br&gt;
+        &lt;!-- First app. Ant task need to use &quot;ZZZ_1 as placeholderId --&gt;
+        &lt;div id=&quot;ZZZ_1&quot;&gt;&lt;/div&gt;
+ 
+        Another app: &lt;br&gt;
+        &lt;!-- Second app. Ant task need to use &quot;ZZZ_2 as placeholderId --&gt;
+        &lt;div id=&quot;ZZZ_2&quot;&gt;&lt;/div&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p><a href="#BABDJGBC">Example 4-3</a> demonstrate one useful feature of the JavaFX template processor: the markers can be placed in the HTML comments. If the comment does not contain anything other than marker code, then the comment tags will be removed from the content in the resulting HTML. This keeps the HTML in the template page well formed.</p> 
+      <p>Usage:</p> 
+      <ul> 
+       <li> <p>Ant task: Add a template tag. See <a href="javafx_ant_task_reference002.htm#CIABEFHB">&lt;fx:template&gt; Usage Examples</a>.</p> </li> 
+       <li> <p>JavaFX Packager tool: <a href="packager001.htm#CCHIGDEE">Example of -signjar Command</a>.</p> </li> 
+       <li> <p>NetBeans IDE: Specify the input HTML template file in the Run category of Project Properties.</p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BABCJCHH" name="BABCJCHH"></a>
+     <a id="JFXDP407" name="JFXDP407"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">4.9</span> Performance Tuning</h2> 
+      <p>There are several options that can be used to improve application launch time for the first and subsequent launches of web applications.</p> 
+      <div align="center"> 
+       <div class="inftblnotealso">
+        <br /> 
+        <table class="NoteAlso oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+         <tbody> 
+          <tr> 
+           <td align="left"> <p class="notep1">Tip:</p> <p>While you actively develop an application it is a good idea to disable optimizations to avoid unneeded complexity. Use them at the final packaging stage.</p> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <br />
+       </div> 
+       <!-- class="inftblnotealso" -->
+      </div> 
+      <a id="CEGBADCB" name="CEGBADCB"></a>
+      <a id="JFXDP408" name="JFXDP408"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">4.9.1</span> Background Update Check for the Application</h3> 
+       <p>Every time a web application starts (Web Start or embedded), a background update check is conducted for whether updates are required. By default, JavaFX applications perform &quot;lazy&quot; update checks in the background while the application runs. This helps to avoid wait time to check for updates when the application starts. If updates are found, then they will be used only after the application restarts. To switch between update modes, use the following mechanisms in the JavaFX packaging tools:</p> 
+       <ul> 
+        <li> <p>Ant task: <code>updatemode</code> attribute of the <a href="javafx_ant_task_reference001.htm#CIABIFCI">&lt;fx:deploy&gt;</a> task.</p> </li> 
+        <li> <p>JavaFX Packager tool: <code>-updatemode</code> option of the <a href="packager001.htm#CCHBIHJC">javafxpackager -deploy</a> command.</p> </li> 
+        <li> <p>NetBeans IDE: In the Deployment category of Project Properties, select <span class="gui-object-action">Check for Application Updates in Background</span>.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXDP409" name="JFXDP409"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref36" name="sthref36"></a> 
+       <h3 class="sect2"><span class="secnum">4.9.2</span> Embed Deployment Descriptor into Web Page</h3> 
+       <p>You can embed the content of the deployment descriptor into the HTML page, which helps to reduce the number of network connections needed to launch the application, as shown in <a href="#CEGEGEED">Figure 4-2</a>.</p> 
+       <div class="figure">
+        <a id="CEGEGEED" name="CEGEGEED"></a>
+        <a id="JFXDP521" name="JFXDP521"></a> 
+        <p class="titleinfigure">Figure 4-2 Embedding JNLP Content Reduces Network Connections</p> 
+        <img src="img/embedded_jnlp_advantage.gif" alt="Description of Figure 4-2 follows" title="Description of Figure 4-2 follows" longdesc="img_text/embedded_jnlp_advantage.htm" />
+        <br /> 
+        <br /> 
+        <br />
+       </div> 
+       <!-- class="figure" --> 
+       <p>The original JNLP file will be loaded in the background to perform application update checks.</p> 
+       <p>To embed the content of the deployment descriptor:</p> 
+       <ul> 
+        <li> <p>Ant task: <code>embedjnlp</code> attribute of the <a href="javafx_ant_task_reference001.htm#CIABIFCI">&lt;fx:deploy&gt;</a> task.</p> </li> 
+        <li> <p>JavaFX Packager tool: <code>-embedjnlp</code> option of the <a href="packager001.htm#CCHBIHJC">javafxpackager -deploy</a> command.</p> </li> 
+        <li> <p>NetBeans IDE: The content is embedded by default.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABGGIHD" name="BABGGIHD"></a>
+      <a id="JFXDP410" name="JFXDP410"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">4.9.3</span> Embed Signing Certificate into Deployment Descriptor</h3> 
+       <p>If the application is signed, then this option embeds into the JNLP file a copy of the details of the certificate used to sign the JAR files. If the user needs to approve permissions, this certificate, followed by a security prompt, is shown while the application JAR files are being loaded, as shown in <a href="#CEGGGHHJ">Figure 4-3</a>.</p> 
+       <div class="figure">
+        <a id="CEGGGHHJ" name="CEGGGHHJ"></a>
+        <a id="JFXDP522" name="JFXDP522"></a> 
+        <p class="titleinfigure">Figure 4-3 Advantage of Embedding the Certificate in the Deployment Descriptor</p> 
+        <img src="img/preloader_flow_jdk7_talk.jpg" alt="Description of Figure 4-3 follows" title="Description of Figure 4-3 follows" longdesc="img_text/preloader_flow_jdk7_talk.htm" />
+        <br /> 
+        <br /> 
+        <br />
+       </div> 
+       <!-- class="figure" --> 
+       <p>To use this feature:</p> 
+       <ul> 
+        <li> <p>Ant task: <code>cachecertificates</code> attribute of the <a href="javafx_ant_task_reference002.htm#CIAHGJBH">&lt;fx:permissions&gt;</a> task.</p> </li> 
+        <li> <p>JavaFX Packager tool: <code>-embedCertificates</code> option of the <a href="packager001.htm#CCHBIHJC">javafxpackager -deploy</a> command.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXDP411" name="JFXDP411"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref39" name="sthref39"></a> 
+       <h3 class="sect2"><span class="secnum">4.9.4</span> Use New JavaFX Signing Method (Signed Applications)</h3> 
+       <p>Reducing the JAR file size helps to reduce download time and improve startup time. See <a href="#BABJGFBH">Sign the JAR Files</a>.</p> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-deployment.htm">About This Guide</a></li>
+      <li><a href="deploy_quick_start.htm">Getting Started</a></li>
+      <li><a href="deploy_overview.htm">Application Execution Modes</a></li>
+      <li><a href="deploy_user_experience.htm">Application Startup</a></li>
+      <li class=" active"><a href="packaging.htm">Packaging</a></li>
+      <li><a href="deployment_toolkit.htm">Deployment in the Browser</a></li>
+      <li><a href="javafx_javascript.htm">JavaFX and JavaScript</a></li>
+      <li><a href="preloaders.htm">Preloaders</a></li>
+      <li><a href="deploy_swing_apps.htm">JavaFX in Swing Applications</a></li>
+      <li><a href="packager.htm">The JavaFX Packager Tool</a></li>
+      <li><a href="packager001.htm">JavaFX Packager Command-Line Syntax</a></li>
+      <li><a href="javafx_ant_task_reference.htm">JavaFX Ant Tasks</a></li>
+      <li><a href="javafx_ant_task_reference001.htm">Reference: JavaFX Ant Tasks</a></li>
+      <li><a href="javafx_ant_task_reference002.htm">Reference: JavaFX Ant Helper Parameters</a></li>
+      <li><a href="troubleshooting.htm">Troubleshooting</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

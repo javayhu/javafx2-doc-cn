@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Creating an Address Book with FXML &middot; Getting Started with FXML &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Getting Started with FXML</h1>
+     <p class=" lead">Creating an Address Book with FXML</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="whats_new.htm">←上一篇</a></li>
+      <li class=" next"><a href="fxml_deployment.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CACFEHBI" name="CACFEHBI"></a>
+     <a id="JFXMG153" name="JFXMG153"></a>  
+     <a id="JFXMG154" name="JFXMG154"></a> 
+     <p>In this tutorial, you create an Address Book application that includes a table of names and email addresses, as shown in <a href="#CACFCJGI">Figure 3-1</a>. The tutorial shows how to populate a table with data, sort the data at application startup, align the data in the table cells, and add rows to the table.</p> 
+     <p>Some amount of knowledge of FXML and application development is assumed for this tutorial. Before you start, you should have completed the <a href="../get_started/fxml_tutorial.htm">FXML tutorial in the Getting Started series</a>, because it teaches the basics of FXML development. Specifically, for the Address Book tutorial, you should know:</p> 
+     <ul> 
+      <li> <p>The basic structure of an FXML project (.java, .fxml, and controller files)</p> </li> 
+      <li> <p>How to create and run a JavaFX FXML project in NetBeans IDE</p> </li> 
+      <li> <p>The basics of layout and user interface components</p> </li> 
+     </ul> 
+     <p>Before you begin this tutorial, ensure that the version of NetBeans IDE that you are using supports your version of JavaFX 2. See the <a href="../../release-documentation.html">System Requirements</a> for details.</p> 
+     <div class="figure">
+      <a id="CACFCJGI" name="CACFCJGI"></a>
+      <a id="JFXMG155" name="JFXMG155"></a> 
+      <p class="titleinfigure">Figure 3-1 Address Book Application</p> 
+      <img src="img/table_final.png" alt="Description of Figure 3-1 follows" title="Description of Figure 3-1 follows" longdesc="img_text/table_final.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <a id="JFXMG156" name="JFXMG156"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref6" name="sthref6"></a> 
+      <h2 class="sect1">Set Up the Project</h2> 
+      <p>Your first task is to set up a JavaFX FXML project in NetBeans IDE.</p> 
+      <ol> 
+       <li> <p>From the <span class="gui-object-action">File</span> menu, choose <span class="gui-object-action">New Project</span>.</p> </li> 
+       <li> <p>In the <span class="bold">JavaFX</span> application category, choose <span class="bold">JavaFX FXML Application</span>. Click <span class="gui-object-action">Next</span>.</p> </li> 
+       <li> <p>Name the project <span class="bold">FXMLTableView</span> and click <span class="gui-object-action">Finish</span>.</p> <p>NetBeans IDE opens an FXML project that includes the code for a basic Hello World application. The application includes three files: FXMLTableView.java, Sample.fxml, and Sample.java.</p> </li> 
+       <li> <p>Rename Sample.java to FXMLTableViewController.java so that the name is more meaningful for this application.</p> 
+        <ol> 
+         <li> <p>In the Projects window, right-click <span class="bold">Sample.java</span> and choose <span class="bold">Refactor</span> then <span class="bold">Rename</span>.</p> </li> 
+         <li> <p>Enter <span class="bold">FXMLTableViewController</span>, and then click <span class="bold">Refactor</span>.</p> </li> 
+        </ol> </li> 
+       <li> <p>Rename Sample.fxml to fxml_tableview.fxml.</p> 
+        <ol> 
+         <li> <p>Right-click <span class="bold">Sample.fxml</span> and choose <span class="bold">Rename</span>.</p> </li> 
+         <li> <p>Enter <span class="bold">fxml_tableview</span> and click <span class="bold">OK</span>.</p> </li> 
+        </ol> </li> 
+       <li> <p>Open FXMLTableView.java and edit the <code>FXMLTableView</code> class to look like <a href="#CACHBAEJ">Example 3-1</a>.</p> 
+        <div class="example">
+         <a id="CACHBAEJ" name="CACHBAEJ"></a>
+         <a id="JFXMG157" name="JFXMG157"></a> 
+         <p class="titleinexample">Example 3-1 FXMLTableView.java</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public class FXMLTableView extends Application {
+    
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+       primaryStage.setTitle(&quot;FXML TableView Example&quot;);
+       primaryStage.setScene
+       ((Scene)FXMLLoader.load(getClass().getResource(&quot;fxml_tableview.fxml&quot;)));
+       primaryStage.show();
+    }
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+</pre>
+        </div> 
+        <!-- class="example" --> <p>Note that the code for the scene has been removed from the Java file. In the next section of the tutorial, <a href="#CACBGIIG">Create the Basic User Interface</a>, you will add the code for the scene in the FXML file.</p> </li> 
+       <li> <p>Press Ctrl (or Cmd) + Shift + I to fix the import statements.</p> </li> 
+      </ol> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXMG158" name="JFXMG158"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="CACBGIIG" name="CACBGIIG"></a> 
+      <h2 class="sect1">Create the Basic User Interface</h2> 
+      <p>Now, define the user interface by creating the scene and adding a <code>GridPane</code> layout container as the root node. Then add a <code>Label</code> and a <code>TableView</code> component as child nodes of the grid pane.</p> 
+      <ol> 
+       <li> <p>Open the fxml_tableview.fxml file.</p> </li> 
+       <li> <p>Delete the <code>&lt;AnchorPane&gt;</code> markup that NetBeans IDE auto-generated.</p> </li> 
+       <li> <p>Add code for the scene as shown in <a href="#CACCACJI">Example 3-2</a>.</p> 
+        <div class="example">
+         <a id="CACCACJI" name="CACCACJI"></a>
+         <a id="JFXMG159" name="JFXMG159"></a> 
+         <p class="titleinexample">Example 3-2 Scene</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;Scene width=&quot;550&quot; height=&quot;550&quot;
+    fx:controller=&quot;fxmltableview.FXMLTableViewController&quot; 
+    xmlns:fx=&quot;http://javafx.com/fxml&quot;&gt;
+&lt;/Scene&gt;
+</pre>
+        </div> 
+        <!-- class="example" --> <p>You can ignore the error &quot;File not found in the specified address: http://javafx.com/fxml&quot; that might appear in the output window.</p> </li> 
+       <li> <p>Add a <code>GridPane</code> layout container as the root node of the scene, using the code in <a href="#CACCCGFD">Example 3-3</a>.</p> 
+        <div class="example">
+         <a id="CACCCGFD" name="CACCCGFD"></a>
+         <a id="JFXMG160" name="JFXMG160"></a> 
+         <p class="titleinexample">Example 3-3 GridPane</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;Scene width=&quot;550&quot; height=&quot;550&quot; 
+    fx:controller=&quot;fxmltableview.FXMLTableViewController&quot; 
+    xmlns:fx=&quot;http://javafx.com/fxml&quot;&gt;
+
+    <span class="bold">&lt;GridPane alignment=&quot;center&quot; hgap=&quot;10&quot; vgap=&quot;10&quot;&gt;</span>
+        <span class="bold">&lt;padding&gt;</span>
+            <span class="bold">&lt;Insets top=&quot;10&quot; right=&quot;10&quot; bottom=&quot;10&quot; left=&quot;10&quot;/&gt;</span>
+        <span class="bold">&lt;/padding&gt;</span>
+    <span class="bold">&lt;/GridPane&gt;</span>
+
+&lt;/Scene&gt;
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Add a <code>Label</code> and <code>TableView</code> component to the grid pane. The code is in <a href="#CACECECI">Example 3-4</a>.</p> 
+        <div class="example">
+         <a id="CACECECI" name="CACECECI"></a>
+         <a id="JFXMG161" name="JFXMG161"></a> 
+         <p class="titleinexample">Example 3-4 Label and TableView</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;GridPane alignment=&quot;center&quot; hgap=&quot;10&quot; vgap=&quot;10&quot;&gt;
+     &lt;padding&gt;
+         &lt;Insets top=&quot;10&quot; right=&quot;10&quot; bottom=&quot;10&quot; left=&quot;10&quot;/&gt;
+     &lt;/padding&gt;
+     <span class="bold">&lt;Label text=&quot;Address Book&quot; GridPane.columnIndex=&quot;0&quot; GridPane.rowIndex=&quot;0&quot;</span> 
+         <span class="bold">style=&quot;-fx-font: NORMAL 20 Tahoma;&quot;/&gt;</span>
+     <span class="bold">&lt;TableView fx:id=&quot;tableView&quot; GridPane.columnIndex=&quot;0&quot;</span> 
+         <span class="bold">GridPane.rowIndex=&quot;1&quot;&gt;</span>
+     <span class="bold">&lt;/TableView&gt;</span>
+&lt;/GridPane&gt;
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Add the import statement for the <code>Insets</code> class.</p> <p><code>&lt;?import javafx.geometry.Insets?&gt;</code></p> </li> 
+       <li> <p>Run the program. You see the label Address Book and a table with the text &quot;No columns in table,&quot; which is the default caption defined by the <code>TableView</code> implementation, as shown in <a href="#CACBDJCD">Figure 3-2</a>.</p> 
+        <div class="figure">
+         <a id="CACBDJCD" name="CACBDJCD"></a>
+         <a id="JFXMG162" name="JFXMG162"></a> 
+         <p class="titleinfigure">Figure 3-2 Table with No Columns</p> 
+         <img src="img/table_no_columns.png" alt="Description of Figure 3-2 follows" title="Description of Figure 3-2 follows" longdesc="img_text/table_no_columns.htm" />
+         <br /> 
+         <br /> 
+         <br />
+        </div> 
+        <!-- class="figure" --></li> 
+      </ol> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXMG163" name="JFXMG163"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref8" name="sthref8"></a> 
+      <h2 class="sect1">Add Columns to the Table</h2> 
+      <p>Now, use the <code>TableColumn</code> class to add three columns for displaying the data: First Name, Last Name, and Email address. The code is in <a href="#CACIAAFE">Example 3-5</a>.</p> 
+      <div class="example">
+       <a id="CACIAAFE" name="CACIAAFE"></a>
+       <a id="JFXMG164" name="JFXMG164"></a> 
+       <p class="titleinexample">Example 3-5 Table Columns</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;TableView fx:id=&quot;tableView&quot; GridPane.columnIndex=&quot;0&quot; GridPane.rowIndex=&quot;1&quot;&gt;
+     <span class="bold">&lt;columns&gt;</span>
+          <span class="bold">&lt;TableColumn text=&quot;First Name&quot;&gt;</span>
+          <span class="bold">&lt;/TableColumn&gt;</span>
+          <span class="bold">&lt;TableColumn text=&quot;Last Name&quot;&gt;</span>
+          <span class="bold">&lt;/TableColumn&gt;</span>
+          <span class="bold">&lt;TableColumn text=&quot;Email Address&quot;&gt;</span>
+         <span class="bold"> &lt;/TableColumn&gt;</span>
+     <span class="bold">&lt;/columns&gt;</span>    
+&lt;/TableView&gt;
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p><span class="bold">Tip</span>: For more information on the <code>TableColumn</code> class or any other JavaFX class discussed in this tutorial, refer to the <a href="../api/index.html">API documentation</a>.</p> 
+      <p><a href="#CACGDIJJ">Figure 3-3</a> shows the table with the columns for First Name, Last Name, and Email Address.</p> 
+      <div class="figure">
+       <a id="CACGDIJJ" name="CACGDIJJ"></a>
+       <a id="JFXMG195" name="JFXMG195"></a> 
+       <p class="titleinfigure">Figure 3-3 Address Book with Three Columns</p> 
+       <img src="img/table_columns.png" alt="Description of Figure 3-3 follows" title="Description of Figure 3-3 follows" longdesc="img_text/table_columns.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXMG167" name="JFXMG167"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref10" name="sthref10"></a> 
+      <h2 class="sect1">Define the Data Model</h2> 
+      <p>When you create a table in a JavaFX application, it is a best practice to implement a class that defines the data model and provides methods and fields to further work with the table. Here, you create a <code>Person</code> class to define the data for the address book.</p> 
+      <ol> 
+       <li> <p>In NetBeans IDE, right-click the <span class="bold">fxmltableview</span> folder under Source Packages, and choose <span class="bold">New</span> then <span class="bold">Java Class</span>.</p> </li> 
+       <li> <p>Name the class <span class="bold">Person</span> and then click <span class="bold">Finish</span>.</p> </li> 
+       <li> <p>Implement a <code>Person</code> class to define the data, as shown in <a href="#CACHHCAD">Example 3-6</a>.</p> 
+        <div class="example">
+         <a id="CACHHCAD" name="CACHHCAD"></a>
+         <a id="JFXMG168" name="JFXMG168"></a> 
+         <p class="titleinexample">Example 3-6 Person Class</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package fxmltableview;
+ 
+import javafx.beans.property.SimpleStringProperty;
+ 
+public class Person {
+   private final SimpleStringProperty firstName = new SimpleStringProperty(&quot;&quot;);
+   private final SimpleStringProperty lastName = new SimpleStringProperty(&quot;&quot;);
+   private final SimpleStringProperty email = new SimpleStringProperty(&quot;&quot;);
+
+public Person() {
+        this(&quot;&quot;, &quot;&quot;, &quot;&quot;);
+    }
+ 
+    public Person(String firstName, String lastName, String email) {
+        setFirstName(firstName);
+        setLastName(lastName);
+        setEmail(email);
+    }
+
+    public String getFirstName() {
+        return firstName.get();
+    }
+ 
+    public void setFirstName(String fName) {
+        firstName.set(fName);
+    }
+        
+    public String getLastName() {
+        return lastName.get();
+    }
+    
+    public void setLastName(String fName) {
+        lastName.set(fName);
+    }
+    
+    public String getPrimary() {
+        return getEmail();
+    }
+    
+    public String getSecondary() {
+        return getEmail();
+    }
+    
+    public String getEmail() {
+        return email.get();
+    }
+    
+    public void setEmail(String fName) {
+        email.set(fName);
+    }
+}
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+      </ol> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXMG169" name="JFXMG169"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref11" name="sthref11"></a> 
+      <h2 class="sect1">Associate Data with the Table Columns</h2> 
+      <p>The next tasks are to define rows for the data and associate the data with the table columns. You add this code in the FXML file.</p> 
+      <ol> 
+       <li> <p>In the fxml_tableview.fxml file, create an <code>ObservableList</code> array and define as many data rows as you would like to show in your table. Sample code is in <a href="#CACFHDEJ">Example 3-7</a>. Add the code between the <code>&lt;/columns&gt;</code> and <code>&lt;/TableView&gt;</code> markup.</p> 
+        <div class="example">
+         <a id="CACFHDEJ" name="CACFHDEJ"></a>
+         <a id="JFXMG170" name="JFXMG170"></a> 
+         <p class="titleinexample">Example 3-7 ObservableList Array</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;/columns&gt;
+<span class="bold">&lt;items&gt;</span>
+    <span class="bold">&lt;FXCollections fx:factory=&quot;observableArrayList&quot;&gt;</span>
+        <span class="bold">&lt;Person firstName=&quot;Jacob&quot; lastName=&quot;Smith&quot;</span>  
+             <span class="bold">email=&quot;jacob.smith@example.com&quot;/&gt;</span>
+        <span class="bold">&lt;Person firstName=&quot;Isabella&quot; lastName=&quot;Johnson&quot;</span> 
+             <span class="bold">email=&quot;isabella.johnson@example.com&quot;/&gt;</span>
+        <span class="bold">&lt;Person firstName=&quot;Ethan&quot; lastName=&quot;Williams&quot;</span> 
+             <span class="bold">email=&quot;ethan.williams@example.com&quot;/&gt;</span>
+        <span class="bold">&lt;Person firstName=&quot;Emma&quot; lastName=&quot;Jones&quot;</span>
+             <span class="bold">email=&quot;emma.jones@example.com&quot;/&gt;</span>
+        <span class="bold">&lt;Person firstName=&quot;Michael&quot; lastName=&quot;Brown&quot;</span> 
+             <span class="bold">email=&quot;michael.brown@example.com&quot;/&gt;</span>
+    <span class="bold">&lt;/FXCollections&gt;</span>
+<span class="bold">&lt;/items&gt;</span>
+&lt;/TableView&gt;
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Specify a cell factory for each column to associate the data with the column, as shown in <a href="#CACHDCCF">Example 3-8</a>.</p> 
+        <div class="example">
+         <a id="CACHDCCF" name="CACHDCCF"></a>
+         <a id="JFXMG171" name="JFXMG171"></a> 
+         <p class="titleinexample">Example 3-8 Cell Factories</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;columns&gt;
+     &lt;TableColumn text=&quot;First Name&quot;&gt;
+        <span class="bold">&lt;cellValueFactory&gt;&lt;PropertyValueFactory property=&quot;firstName&quot; /&gt;</span>
+      <span class="bold">  &lt;/cellValueFactory&gt;</span>
+     &lt;/TableColumn&gt;
+     &lt;TableColumn text=&quot;Last Name&quot;&gt;
+       <span class="bold"> &lt;cellValueFactory&gt;&lt;PropertyValueFactory property=&quot;lastName&quot; /&gt;</span>
+        <span class="bold">&lt;/cellValueFactory&gt;</span>
+     &lt;/TableColumn&gt;
+     &lt;TableColumn text=&quot;Email Address&quot;&gt;
+         <span class="bold">&lt;cellValueFactory&gt;&lt;PropertyValueFactory property=&quot;email&quot; /&gt;</span>
+         <span class="bold">&lt;/cellValueFactory&gt;</span>
+    &lt;/TableColumn&gt;
+&lt;/columns&gt; 
+</pre>
+        </div> 
+        <!-- class="example" --> <p>Cell factories are implemented by using the <code>PropertyValueFactory</code> class, which uses the <code>firstName</code>, <code>lastName</code>, and <code>email</code> properties of the table columns as references to the corresponding methods of the <code>Person</code> class.</p> </li> 
+       <li> <p>Import the required packages:</p> 
+        <div class="example">
+         <a id="JFXMG172" name="JFXMG172"></a>
+         <a id="sthref12" name="sthref12"></a> 
+         <p class="titleinexample">Example 3-9 Import Statements</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;?import javafx.scene.control.cell.*?&gt; 
+&lt;?import javafx.collections.*?&gt; 
+&lt;?import fxmltableview.*?&gt; 
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+      </ol> 
+      <p>Running the application at this point shows the table populated with data, as shown in <a href="#CACFJBJH">Figure 3-4</a>.</p> 
+      <div class="figure">
+       <a id="CACFJBJH" name="CACFJBJH"></a>
+       <a id="JFXMG196" name="JFXMG196"></a> 
+       <p class="titleinfigure">Figure 3-4 Table with Data</p> 
+       <img src="img/table_with_data.png" alt="Description of Figure 3-4 follows" title="Description of Figure 3-4 follows" longdesc="img_text/table_with_data.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Here are some built-in features of the <code>TableView</code> class for you to try:</p> 
+      <ul> 
+       <li> <p>Resize a column width by dragging the column divider in the table header to the left or right.</p> </li> 
+       <li> <p>Move a column by dragging the column header.</p> </li> 
+       <li> <p>Alter the sort order of data by clicking in a column header. The first click enables ascending sorting order, the second click enables descending sorting order, and the third click disables sorting. By default, no sorting is applied.</p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXMG174" name="JFXMG174"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref14" name="sthref14"></a> 
+      <h2 class="sect1">Set Sort Order on Startup</h2> 
+      <p>In this task, you set the sort order so that the entries in the First Name column appear in ascending alphabetical order on application startup. You do this by creating an ID for the table column and then setting up a reference to it.</p> 
+      <ol> 
+       <li> <p>Add an id to the First Name column:</p> <p><code>&lt;TableColumn fx:id=&quot;firstNameColumn&quot; text=&quot;First Name&quot;&gt;</code></p> </li> 
+       <li> <p>Specify the sort order by adding the code in <a href="#CACFIIFE">Example 3-10</a> between the <code>&lt;/items&gt;</code> and <code>&lt;/TableView&gt;</code> markup.</p> 
+        <div class="example">
+         <a id="CACFIIFE" name="CACFIIFE"></a>
+         <a id="JFXMG175" name="JFXMG175"></a> 
+         <p class="titleinexample">Example 3-10 Sort Order</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+     &lt;/items&gt;
+     <span class="bold">&lt;sortOrder&gt;</span>
+          <span class="bold">&lt;fx:reference source=&quot;firstNameColumn&quot;/&gt;</span>
+     <span class="bold">&lt;/sortOrder&gt;</span> 
+&lt;/TableView&gt;
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+      </ol> 
+      <p>You can see the results in <a href="#CACEDHHI">Figure 3-5</a>.</p> 
+      <div class="figure">
+       <a id="CACEDHHI" name="CACEDHHI"></a>
+       <a id="JFXMG197" name="JFXMG197"></a> 
+       <p class="titleinfigure">Figure 3-5 Table with First Column Data Sorted at Startup</p> 
+       <img src="img/table_sort.png" alt="Description of Figure 3-5 follows" title="Description of Figure 3-5 follows" longdesc="img_text/table_sort.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXMG177" name="JFXMG177"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref16" name="sthref16"></a> 
+      <h2 class="sect1">Define Column Widths</h2> 
+      <p>Here, you add the <code>prefWidth</code> property to increase the column widths, as shown in <a href="#CACFIABH">Example 3-11</a>.</p> 
+      <div class="example">
+       <a id="CACFIABH" name="CACFIABH"></a>
+       <a id="JFXMG178" name="JFXMG178"></a> 
+       <p class="titleinexample">Example 3-11 Column Widths</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+     &lt;TableColumn fx:id=&quot;firstnameColumn&quot; text=&quot;First Name&quot; <span class="bold">prefWidth=&quot;100&quot;</span>&gt;
+        &lt;cellValueFactory&gt;&lt;PropertyValueFactory property=&quot;firstName&quot; /&gt;
+        &lt;/cellValueFactory&gt;
+     &lt;/TableColumn&gt;
+     &lt;TableColumn text=&quot;Last Name&quot; <span class="bold">prefWidth=&quot;100&quot;</span>&gt;
+        &lt;cellValueFactory&gt;&lt;PropertyValueFactory property=&quot;lastName&quot; /&gt;
+        &lt;/cellValueFactory&gt;
+     &lt;/TableColumn&gt;
+     &lt;TableColumn text=&quot;Email Address&quot; <span class="bold">prefWidth=&quot;200&quot;</span>&gt;
+        &lt;cellValueFactory&gt;&lt;PropertyValueFactory property=&quot;email&quot; /&gt;
+        &lt;/cellValueFactory&gt;
+     &lt;/TableColumn&gt;
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The result is in <a href="#CACEDCFD">Figure 3-6</a>. The column widths have been increased so that all data is visible in each table row.</p> 
+      <div class="figure">
+       <a id="CACEDCFD" name="CACEDCFD"></a>
+       <a id="JFXMG198" name="JFXMG198"></a> 
+       <p class="titleinfigure">Figure 3-6 Table with Column Widths Set</p> 
+       <img src="img/table_prefwidth.png" alt="Description of Figure 3-6 follows" title="Description of Figure 3-6 follows" longdesc="img_text/table_prefwidth.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXMG180" name="JFXMG180"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref18" name="sthref18"></a> 
+      <h2 class="sect1">Set Alignment in Table Cells</h2> 
+      <p>Another customization you can do is to set the alignment of the data in the table cells. You implement the logic in a new class named <code>FormattedTableCellFactory</code> and then set the alignment in the <code>&lt;TableColumn&gt;</code> markup in the FXML code.</p> 
+      <ol> 
+       <li> <p>In NetBeans IDE, right-click the <span class="bold">fxmltableview</span> folder under Source Packages, and choose <span class="bold">New</span> then <span class="bold">Java Class</span>.</p> </li> 
+       <li> <p>Name the class <span class="bold">FormattedTableCellFactory</span> and then click <span class="bold">Finish</span>.</p> </li> 
+       <li> <p>Modify the FormattedTableCellFactory class by implementing the <code>Callback</code> class and creating instances of the <code>TextAlignment</code> and <code>Format</code> classes, as shown in <a href="#CACCJICD">Example 3-12</a>. The <code>S</code> parameter is the TableView generic type and the <code>T</code> parameter is the type of the content of all cells in this table column.</p> 
+        <div class="example">
+         <a id="CACCJICD" name="CACCJICD"></a>
+         <a id="JFXMG181" name="JFXMG181"></a> 
+         <p class="titleinexample">Example 3-12 Callback Class</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public class FormattedTableCellFactory&lt;S, T&gt; 
+    implements Callback&lt;TableColumn&lt;S, T&gt;, TableCell&lt;S, T&gt;&gt; {
+    private TextAlignment alignment;
+    private Format format;
+ 
+    public TextAlignment getAlignment() {
+        return alignment;
+    }
+ 
+    public void setAlignment(TextAlignment alignment) {
+        this.alignment = alignment;
+    }
+ 
+    public Format getFormat() {
+        return format;
+    }
+ 
+    public void setFormat(Format format) {
+        this.format = format;
+    }
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Implement the <code>TableCell</code> and <code>TableColumn</code> classes by appending the code in <a href="#CACIEEHH">Example 3-13</a>. This code overrides the <code>updateItem</code> method of the <code>TableCell</code> class and calls the <code>setTextAlignment</code> method on the table cell.</p> 
+        <div class="example">
+         <a id="CACIEEHH" name="CACIEEHH"></a>
+         <a id="JFXMG182" name="JFXMG182"></a> 
+         <p class="titleinexample">Example 3-13 TableCell and TableColumn Classes</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+@Override
+    @SuppressWarnings(&quot;unchecked&quot;)
+    public TableCell&lt;S, T&gt; call(TableColumn&lt;S, T&gt; p) {
+        TableCell&lt;S, T&gt; cell = new TableCell&lt;S, T&gt;() {
+            @Override
+            public void updateItem(Object item, boolean empty) {
+                if (item == getItem()) {
+                    return;
+                }
+                super.updateItem((T) item, empty);
+                if (item == null) {
+                    super.setText(null);
+                    super.setGraphic(null);
+                } else if (format != null) {
+                    super.setText(format.format(item));
+                } else if (item instanceof Node) {
+                    super.setText(null);
+                    super.setGraphic((Node) item);
+                } else {
+                    super.setText(item.toString());
+                    super.setGraphic(null);
+                }
+            }
+        };
+        cell.setTextAlignment(alignment);
+        switch (alignment) {
+            case CENTER:
+                cell.setAlignment(Pos.CENTER);
+                break;
+            case RIGHT:
+                cell.setAlignment(Pos.CENTER_RIGHT);
+                break;
+            default:
+                cell.setAlignment(Pos.CENTER_LEFT);
+                break;
+        }
+        return cell;
+    }
+}
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Fist the import statements.</p> </li> 
+       <li> <p>In the fxml_tableview.fxml file, create a cellFactory alignment for the First Name column by adding the following code under the <code>&lt;cellValueFactory&gt;</code> markup.</p> 
+        <div class="example">
+         <a id="JFXMG183" name="JFXMG183"></a>
+         <a id="sthref19" name="sthref19"></a> 
+         <p class="titleinexample">Example 3-14 Alignment in Data Cell</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;TableColumn fx:id=&quot;firstNameColumn&quot; text=&quot;First Name&quot; prefWidth=&quot;100&quot;&gt;
+     &lt;cellValueFactory&gt;&lt;PropertyValueFactory property=&quot;firstName&quot; /&gt;
+     &lt;/cellValueFactory&gt;
+    <span class="bold"> &lt;cellFactory&gt;</span>
+          <span class="bold">&lt;FormattedTableCellFactory alignment=&quot;center&quot;&gt;</span>
+          <span class="bold">&lt;/FormattedTableCellFactory&gt;</span>
+     <span class="bold">&lt;/cellFactory&gt;</span>
+&lt;/TableColumn&gt;
+</pre>
+        </div> 
+        <!-- class="example" --> <p>You can create cellFactory alignment for the remaining columns using left, right, or center.</p> </li> 
+      </ol> 
+      <p>Running the project now shows data center-aligned in the First Name column.</p> 
+      <div class="figure">
+       <a id="JFXMG199" name="JFXMG199"></a>
+       <a id="sthref20" name="sthref20"></a> 
+       <p class="titleinfigure">Figure 3-7 Data Center Aligned in First Name Column</p> 
+       <img src="img/table_alignment.png" alt="Description of Figure 3-7 follows" title="Description of Figure 3-7 follows" longdesc="img_text/table_alignment.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXMG185" name="JFXMG185"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref22" name="sthref22"></a> 
+      <h2 class="sect1">Add Rows to the Table</h2> 
+      <p>Now, you add the ability for users to add a row of data to the table. You add the application logic in the Controller class. Then, you modify the user interface to include three text fields and a button for entering the data.</p> 
+      <ol> 
+       <li> <p>Open the FXMLTableViewController.java file.</p> </li> 
+       <li> <p>Edit the <code>FXMLTableViewController</code> class so it looks like the code in <a href="#CACHFIJJ">Example 3-15</a>.</p> 
+        <div class="example">
+         <a id="CACHFIJJ" name="CACHFIJJ"></a>
+         <a id="JFXMG186" name="JFXMG186"></a> 
+         <p class="titleinexample">Example 3-15 FXMLTableViewController.java</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public class FXMLTableViewController {
+    @FXML private TableView&lt;Person&gt; tableView;
+    @FXML private TextField firstNameField;
+    @FXML private TextField lastNameField;
+    @FXML private TextField emailField;
+    
+    @FXML
+    protected void addPerson(ActionEvent event) {
+        ObservableList&lt;Person&gt; data = tableView.getItems();
+        data.add(new Person(firstNameField.getText(),
+            lastNameField.getText(),
+            emailField.getText()
+        ));
+        
+        firstNameField.setText(&quot;&quot;);
+        lastNameField.setText(&quot;&quot;);
+        emailField.setText(&quot;&quot;);   
+    }
+}
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Fix the import statements. They should be:</p> 
+        <div class="example">
+         <a id="JFXMG187" name="JFXMG187"></a>
+         <a id="sthref23" name="sthref23"></a> 
+         <p class="titleinexample">Example 3-16 Import Statements in FXMLTableViewController</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>In the fxml_tableview.fxml file, add this code before the <code>&lt;/GridPane&gt;</code> markup</p> 
+        <div class="example">
+         <a id="JFXMG188" name="JFXMG188"></a>
+         <a id="sthref24" name="sthref24"></a> 
+         <p class="titleinexample">Example 3-17 Text Fields and Button for Adding a Row</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+     &lt;/TableView&gt;
+     <span class="bold">&lt;HBox spacing=&quot;10&quot; alignment=&quot;bottom_right&quot; GridPane.columnIndex=&quot;0&quot;</span> 
+          <span class="bold">GridPane.rowIndex=&quot;2&quot;&gt;</span>
+          <span class="bold">&lt;TextField fx:id=&quot;firstNameField&quot; promptText=&quot;First Name&quot;</span>
+               <span class="bold">prefWidth=&quot;90&quot;/&gt;</span>
+          <span class="bold">&lt;TextField fx:id=&quot;lastNameField&quot; promptText=&quot;Last Name&quot;</span>
+               <span class="bold">prefWidth=&quot;90&quot;/&gt;</span>
+          <span class="bold">&lt;TextField fx:id=&quot;emailField&quot; promptText=&quot;email&quot;</span>
+               <span class="bold">prefWidth=&quot;150&quot;/&gt;</span>
+          <span class="bold">&lt;Button text=&quot;Add&quot; onAction=&quot;#addPerson&quot;/&gt;</span>
+     <span class="bold">&lt;/HBox&gt;</span>
+&lt;/GridPane&gt;
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+      </ol> 
+      <p>Run the application and you see that the text fields and button have been appear below the table, as shown in <a href="#CACCEFJI">Figure 3-8</a>. Enter data in the text fields and click <span class="bold">Add</span> to see the application in action.</p> 
+      <div class="figure">
+       <a id="CACCEFJI" name="CACCEFJI"></a>
+       <a id="JFXMG200" name="JFXMG200"></a> 
+       <p class="titleinfigure">Figure 3-8 Table with Text Fields and Button for Adding Data</p> 
+       <img src="img/table_add_row_.png" alt="Description of Figure 3-8 follows" title="Description of Figure 3-8 follows" longdesc="img_text/table_add_row_.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXMG190" name="JFXMG190"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref26" name="sthref26"></a> 
+      <h2 class="sect1">Where to Go from Here</h2> 
+      <p>This concludes the FXML TableView tutorial, but here are some things for you to try next.</p> 
+      <ul> 
+       <li> <p>Provide a filter to check if data was entered in the correct format.</p> </li> 
+       <li> <p>Customize the table by applying a cascading style sheet to distinguish between empty and non-empty rows. Refer to &quot;Styling UI Controls with CSS&quot; in <a href="../../../../docs.oracle.com/javafx/2/ui_controls/overview.htm">JavaFX UI Controls</a> for more information.</p> </li> 
+       <li> <p>Enable editing of data in the table. See <a href="../../../../docs.oracle.com/javafx/2/ui_controls/table-view.htm">Editing Data in the Table</a> in Using JavaFX UI Controls for pointers.</p> </li> 
+       <li> <p>See <a href="fxml_deployment.htm#BABJBHJJ">Deployment of FXML Applications</a> for additional deployment options.</p> </li> 
+       <li> <p>Look at <a href="../api/javafx/fxml/doc-files/introduction_to_fxml.html">Introduction to FXML</a>, which provides more information on the elements that make up the FXML language. The document is included in the javafx.fxml package in the API documentation at <code><a href="../../../../docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html">http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html</a></code></p> </li> 
+       <li> <p>For an example of an FXML application that draws data from a database, take a look at the Henley Sales Application sample by downloading the JavaFX Samples zip file at<br /> <code><a href="../../../../www.oracle.com/technetwork/java/javafx/downloads/default.htm">http://www.oracle.com/technetwork/java/javafx/downloads/</a></code></p> <p>The NetBeans projects and source code for this sample (called DataApp) are included in the samples zip file. See the readme for instructions on how to set up and run the application.</p> <p>This sample provides several examples of how to populate a table from a database. In particular, look at the following files:</p> 
+        <ul> 
+         <li> <p>DataAppClient\src\com\javafx\experiments\dataapp\client\historytab\history-tab.fxml</p> </li> 
+         <li> <p>DataAppClient\src\com\javafx\experiments\dataapp\client\livetab\live-tab.fxml</p> </li> 
+         <li> <p>DataAppClient\src\com\javafx\experiments\dataapp\client\productstab\products-tab.fxml</p> </li> 
+        </ul> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-fxml_get_started.htm">About this Tutorial</a></li>
+      <li><a href="why_use_fxml.htm">Why Use FXML</a></li>
+      <li><a href="whats_new.htm">FXML—What's New in JavaFX 2.1</a></li>
+      <li class=" active"><a href="fxml_tutorial_intermediate.htm">Creating an Address Book with FXML</a></li>
+      <li><a href="fxml_deployment.htm">Deployment of FXML Applications</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/fxml_get_started/FXMLTableView.zip">FXMLTableView.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

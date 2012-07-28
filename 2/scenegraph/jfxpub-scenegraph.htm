@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Working with the JavaFX Scene Graph &middot; Working with the JavaFX Scene Graph &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Working with the JavaFX Scene Graph</h1>
+     <p class=" lead">Working with the JavaFX Scene Graph</p>
+     <ul class=" pager"></ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="sthref2" name="sthref2"></a>  
+     <p>JavaFX makes it easy to create modern-looking graphical user interfaces (GUIs) with sophisticated visual effects. This tutorial explores the JavaFX Scene Graph Application Programming Interface (API), the underlying framework that renders your GUI to the screen.</p> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref3" name="sthref3"></a> 
+      <h2 class="sect1">Overview</h2> 
+      <p>If you are an experienced Java developer, then chances are good that at some point you have created an application with a graphical user interface. This could be anything from small programs in web pages, to standalone Swing applications on the desktop. And if you have ever done any custom painting, you are familiar with the <code>Graphics</code> class and its related methods. The traditional approaches — as powerful as they are — have always required some amount of effort on the developer's part to correctly render the graphics to the screen. This work is often separate from the bulk of the application logic.</p> 
+      <p>The JavaFX Scene Graph API makes graphical user interfaces easier to create, especially when complex visual effects and transformations are involved. A <span class="italic">scene graph</span> is a tree data structure, most commonly found in graphical applications and libraries such as vector editing tools, 3D libraries, and video games. The JavaFX scene graph is a <span class="italic">retained mode API</span>, meaning that it maintains an internal model of all graphical objects in your application. At any given time, it knows what objects to display, what areas of the screen need repainting, and how to render it all in the most efficient manner. Instead of invoking primitive drawing methods directly, you instead use the scene graph API and let the system automatically handle the rendering details. This approach significantly reduces the amount of code that is needed in your application.</p> 
+      <p>The individual items held within the JavaFX scene graph are known as <span class="italic">nodes</span>. Each node is classified as either a <span class="italic">branch node</span> (meaning that it can have children), or a <span class="italic">leaf node</span> (meaning that it cannot have children). The first node in the tree is always called the <span class="italic">root node</span>, and it never has a parent.</p> 
+      <div class="figure">
+       <a id="sthref4" name="sthref4"></a> 
+       <p class="titleinfigure">Figure 1 Root, Branch, and Leaf Nodes</p> 
+       <img src="img/figure1.png" alt="Description of Figure 1 follows" title="Description of Figure 1 follows" longdesc="img_text/figure1.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>The JavaFX API defines a number of classes that can act as root, branch or leaf nodes. When substituted with actual class names, this same figure might resemble that shown in Figure 2 in a real application.</p> 
+      <div class="figure">
+       <a id="sthref6" name="sthref6"></a> 
+       <p class="titleinfigure">Figure 2 Specific Root, Branch, and Leaf Classes</p> 
+       <img src="img/figure2.png" alt="Description of Figure 2 follows" title="Description of Figure 2 follows" longdesc="img_text/figure2.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>In Figure 2, a <code>Group</code> object acts as the root node. The <code>Circle</code> and <code>Rectangle</code> objects are leaf nodes, because they do not (and cannot) have children. The <code>Region</code> object (which defines an area of the screen with children than can be styled using CSS) is a branch node that contains two more leaf nodes (<code>Text</code> and <code>ImageView</code>). Scene graphs can become much larger than this, but the basic organization — that is, the way in which parent nodes contain child nodes — is a pattern that repeats in all applications.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref8" name="sthref8"></a> 
+      <h2 class="sect1">Exploring the API</h2> 
+      <p>So what does this all mean in terms of code? Let us start by setting up a basic application frame, populated with only the root node, as shown in Example 1.</p> 
+      <div class="example">
+       <a id="sthref9" name="sthref9"></a> 
+       <p class="titleinexample">Example 1 Creating the Application Frame</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package scenegraphdemo;
+ 
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+ 
+public class Main extends Application {
+ 
+   @Override
+   public void start(Stage stage) {
+       Group root = new Group();
+       Scene scene = new Scene(root, 500, 500, Color.BLACK);
+       stage.setTitle(&quot;JavaFX Scene Graph Demo&quot;);
+       stage.setScene(scene);
+       stage.show();
+   }
+ 
+   public static void main(String[] args) {
+       launch(args);
+   }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>This code produces a window that looks like what is shown in Figure 3.</p> 
+      <div class="figure">
+       <a id="sthref10" name="sthref10"></a> 
+       <p class="titleinfigure">Figure 3 Creating a Scene with Root Node Only</p> 
+       <img src="img/figure3.png" alt="Description of Figure 3 follows" title="Description of Figure 3 follows" longdesc="img_text/figure3.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>The important points to consider are as follows:</p> 
+      <ol> 
+       <li> <p>The <code>Main</code> class is an extension of the <code>javafx.application.Application</code> class. Its <code>start</code> method is overridden and receives a <code>Stage</code> object (a top-level GUI container) as its only parameter.</p> </li> 
+       <li> <p>The root node (in this case, an instance of the <code>javafx.scene.Group</code> class) is created and passed to the scene's constructor, along with the scene's width, height, and fill.</p> </li> 
+       <li> <p>The stage's title, scene, and visibility are all set.</p> </li> 
+       <li> <p>The main method invokes the <code>Application.launch()</code> method.</p> </li> 
+      </ol> 
+      <p>The resulting application appears as it does because black is the scene's fill color. Because the root node currently has no children, there is nothing else to display. Adding a child to the root node can be accomplished with the modifications shown in Example 2.</p> 
+      <div class="example">
+       <a id="sthref12" name="sthref12"></a> 
+       <p class="titleinexample">Example 2 Adding a Leaf Node</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package scenegraphdemo;
+ 
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
+ 
+public class Main extends Application {
+ 
+   @Override
+   public void start(Stage stage) {
+       Group root = new Group();
+       Scene scene = new Scene(root, 500, 500, Color.BLACK);
+ 
+       Rectangle r = new Rectangle(25,25,250,250);
+       r.setFill(Color.BLUE);
+       root.getChildren().add(r);
+ 
+       stage.setTitle(&quot;JavaFX Scene Graph Demo&quot;);
+       stage.setScene(scene);
+       stage.show();
+   }
+ 
+   public static void main(String[] args) {
+       launch(args);
+   }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>With the change shown in Example 2, a blue rectangle (leaf node) that is 250x250 pixels will appear at the specified X and Y coordinates. (By default, X increases from left to right, and Y increases from top to bottom. This can be affected by transformations, however.) Figure 4 shows the result of adding a leaf node.</p> 
+      <div class="figure">
+       <a id="sthref13" name="sthref13"></a> 
+       <p class="titleinfigure">Figure 4 Adding a Leaf Node</p> 
+       <img src="img/figure4.png" alt="Description of Figure 4 follows" title="Description of Figure 4 follows" longdesc="img_text/figure4.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Because the graphical objects are managed by the scene graph, you can achieve some interesting effects with very little extra code. For example, you could easily animate the rectangle to bounce back and forth across the screen while rotating, changing its size, and transitioning its color from blue to red.</p> 
+      <p>Example 3 uses transitions to make this happen:</p> 
+      <div class="example">
+       <a id="sthref15" name="sthref15"></a> 
+       <p class="titleinexample">Example 3 Animating the Scene</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package scenegraphdemo; 
+ 
+import javafx.animation.FillTransition; 
+import javafx.application.Application; 
+import javafx.scene.Group; 
+import javafx.scene.Scene; 
+import javafx.scene.paint.Color; 
+import javafx.scene.shape.Rectangle; 
+import javafx.stage.Stage; 
+import javafx.animation.Timeline; 
+import javafx.animation.ParallelTransition; 
+import javafx.animation.RotateTransition; 
+import javafx.animation.ScaleTransition; 
+import javafx.animation.TranslateTransition; 
+import javafx.util.Duration; 
+ 
+public class Main extends Application { 
+ 
+    @Override 
+    public void start(Stage stage) { 
+        Group root = new Group(); 
+        Scene scene = new Scene(root, 500, 500, Color.BLACK); 
+        Rectangle r = new Rectangle(0, 0, 250, 250); 
+        r.setFill(Color.BLUE); 
+        root.getChildren().add(r); 
+ 
+        TranslateTransition translate = 
+        new TranslateTransition(Duration.millis(750)); 
+        translate.setToX(390); 
+        translate.setToY(390); 
+ 
+        FillTransition fill = new FillTransition(Duration.millis(750)); 
+        fill.setToValue(Color.RED); 
+ 
+        RotateTransition rotate = new RotateTransition(Duration.millis(750)); 
+        rotate.setToAngle(360); 
+ 
+        ScaleTransition scale = new ScaleTransition(Duration.millis(750)); 
+        scale.setToX(0.1); 
+        scale.setToY(0.1); 
+ 
+        ParallelTransition transition = new ParallelTransition(r, 
+       translate, fill, rotate, scale); 
+   transition.setCycleCount(Timeline.INDEFINITE);
+       transition.setAutoReverse(true); 
+       transition.play(); 
+ 
+        stage.setTitle(&quot;JavaFX Scene Graph Demo&quot;); 
+        stage.setScene(scene); 
+        stage.show(); 
+    } 
+ 
+    public static void main(String[] args) { 
+        launch(args); 
+    } 
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Or, you could use builders to accomplish the same thing:</p> 
+      <div class="example">
+       <a id="sthref16" name="sthref16"></a> 
+       <p class="titleinexample">Example 4 Using Builders</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package scenegraphdemo; 
+ 
+import javafx.application.Application; 
+import javafx.scene.Group; 
+import javafx.scene.Scene; 
+import javafx.scene.paint.Color; 
+import javafx.scene.shape.Rectangle; 
+import javafx.stage.Stage; 
+import javafx.animation.Timeline; 
+import javafx.animation.ParallelTransition; 
+import javafx.animation.FillTransitionBuilder; 
+import javafx.animation.RotateTransitionBuilder; 
+import javafx.animation.ScaleTransitionBuilder; 
+import javafx.animation.TranslateTransitionBuilder; 
+import javafx.util.Duration; 
+ 
+public class Main extends Application { 
+ 
+    @Override 
+    public void start(Stage stage) { 
+
+        Group root = new Group(); 
+        Scene scene = new Scene(root, 500, 500, Color.BLACK); 
+        Rectangle r = new Rectangle(0, 0, 250, 250); 
+        r.setFill(Color.BLUE); 
+        root.getChildren().add(r); 
+ 
+        ParallelTransition transition = new ParallelTransition(r, 
+        TranslateTransitionBuilder.create() 
+            .duration(Duration.millis(750)) 
+            .toX(390) 
+            .toY(390) 
+            .build(), 
+        FillTransitionBuilder.create() 
+            .duration(Duration.millis(750)) 
+            .toValue(Color.RED) 
+            .build(), 
+        RotateTransitionBuilder.create() 
+            .duration(Duration.millis(750)) 
+            .toAngle(360) 
+            .build(),
+        ScaleTransitionBuilder.create()
+            .duration(Duration.millis(750)) 
+            .toX(0.1) 
+            .toY(0.1) 
+            .build()); 
+   transition.setCycleCount(Timeline.INDEFINITE); 
+        transition.setAutoReverse(true); 
+        transition.play(); 
+        stage.setTitle(&quot;JavaFX Scene Graph Demo&quot;); 
+        stage.setScene(scene); 
+        stage.show(); 
+    } 
+ 
+    public static void main(String[] args) { 
+        launch(args); 
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>While these examples may be simple, they identify and demonstrate some important concepts that you will use in most graphical applications.</p> 
+      <p>The <code>javafx.scene</code> package defines more than a dozen classes, but three in particular are most important when it comes to learning how the API is structured:</p> 
+      <ul> 
+       <li> <p><code>Node</code>: The abstract base class for all scene graph nodes.</p> </li> 
+       <li> <p><code>Parent</code>: The abstract base class for all branch nodes. (This class directly extends <code>Node</code>).</p> </li> 
+       <li> <p><code>Scene</code>: The base container class for all content in the scene graph.</p> </li> 
+      </ul> 
+      <p>These base classes define important functionality that will subsequently be inherited by subclasses, including paint order, visibility, composition of transformations, support for CSS styling, and so on. You will also find various branch node classes that inherit directly from the <code>Parent</code> class, such as <code>Control</code>, <code>Group</code>, <code>Region</code>, and <code>WebView</code>. The leaf node classes are defined throughout a number of additional packages, such as <code>javafx.scene.shape</code> and <code>javafx.scene.text</code>.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li class=" active"><a href="jfxpub-scenegraph.htm">Working with the JavaFX Scene Graph</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

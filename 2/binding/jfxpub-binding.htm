@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Using JavaFX Properties and Binding &middot; Using JavaFX Properties and Binding &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX Properties and Binding</h1>
+     <p class=" lead">Using JavaFX Properties and Binding</p>
+     <ul class=" pager"></ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="sthref2" name="sthref2"></a>  
+     <p>This tutorial describes properties and binding in JavaFX 2.0, using working examples that you can compile and run.</p> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref3" name="sthref3"></a> 
+      <h2 class="sect1">Overview</h2> 
+      <p>For many years, the Java programming language has used the JavaBeans component architecture to represent the property of an object. This model consists of both an API and a design pattern; it is widely understood by Java application developers and development tools alike. This release introduces property support into JavaFX, support that is based on the proven JavaBeans model, but expanded and improved.</p> 
+      <p>JavaFX properties are often used in conjunction with binding, a powerful mechanism for expressing direct relationships between variables. When objects participate in bindings, changes made to one object will automatically be reflected in another object. This can be useful in a variety of applications. For example, binding could be used in a bill invoice tracking program, where the total of all bills would automatically be updated whenever an individual bill is changed. Or, binding could be used in a graphical user interface (GUI) that automatically keeps its display synchronized with the application's underlying data.</p> 
+      <p>Bindings are assembled from one or more sources, known as <span class="italic">dependencies</span>. A binding observes its list of dependencies for changes, and then updates itself automatically after a change has been detected.</p> 
+      <p>The binding APIs are divided into two broad categories:</p> 
+      <ol> 
+       <li> <p>The High-Level API: Provides a simple way to create bindings for the most common use cases. Its syntax is easy to learn and use, especially in environments that provide code completion, such as the NetBeans IDE.</p> </li> 
+       <li> <p>The Low-Level API: Provides additional flexibility, and can be used by advanced developers in situations where the High-Level API is insufficient. The Low-Level API was designed for fast execution and small memory footprint.</p> </li> 
+      </ol> 
+      <p>The remainder of this tutorial describes these APIs, and provides working code examples that you can compile and run.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref4" name="sthref4"></a> 
+      <h2 class="sect1">Understanding Properties</h2> 
+      <p>As mentioned in the overview, JavaFX property support is based on the well-known property model established by the JavaBeans component architecture. This section provides a brief overview of what that means, then explains how properties apply to JavaFX.</p> 
+      <p>The Java programming language makes it possible to encapsulate data within an object, but it does not enforce any specific naming conventions for the methods that you define. For example, your code might define a <code>Person</code> class, which encapsulates a first name and a last name. But without naming conventions, different programmers might choose different names for these methods: <code>read_first()</code>, <code>firstName()</code>, <code>getFN()</code>, etc. would all be perfectly valid choices. However, there is no guarantee that these names will be meaningful to other developers.</p> 
+      <p>The JavaBeans component architecture addressed this problem by defining some simple naming conventions that bring consistency across projects. In JavaBeans programming, the full signatures for these methods would be: <code>public void setFirstName(String name)</code>, <code>public String getFirstName()</code>, <code>public void setLastName(String name)</code>, and <code>public String getLastName()</code>. This naming pattern is easily recognizable, both to human programmers and to editing tools, such as the NetBeans IDE. In JavaBeans terminology, the <code>Person</code> object is said to contain <code>firstName</code> and <code>lastName</code> <span class="italic">properties</span>.</p> 
+      <p>The JavaBeans model also provides support for complex property types, plus an event delivery system. It also contains a number of support classes, all available as an API under the <code>java.beans</code> package. Therefore, mastering JavaBeans programming involves learning the required naming conventions and its corresponding API. (For more background reading on JavaBeans in general, see the JavaBeans lesson of the Java Tutorial at <code><a href="../../../javase/tutorial/javabeans">http://download.oracle.com/javase/tutorial/javabeans</a></code>).</p> 
+      <p>Similarly, understanding JavaFX properties also requires learning a few new APIs and naming conventions. In JavaFX, it is entirely possible that you will only be interested in <span class="italic">using</span> classes that contain properties (as opposed to implementing properties in your own custom classes), but Example 1 will familiarize you with the new method naming conventions that form the JavaFX property pattern. It defines a class named <code>Bill</code>, which implements a single property named <code>amountDue</code>.</p> 
+      <div class="example">
+       <a id="sthref5" name="sthref5"></a> 
+       <p class="titleinexample">Example 1 Defining a Property</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package propertydemo;
+
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+ 
+class Bill {
+ 
+    // Define a variable to store the property
+    private DoubleProperty amountDue = new SimpleDoubleProperty();
+ 
+    // Define a getter for the property's value
+    public final double getAmountDue(){return amountDue.get();}
+ 
+    // Define a setter for the property's value
+    public final void setAmountDue(double value){amountDue.set(value);}
+ 
+     // Define a getter for the property itself
+    public DoubleProperty amountDueProperty() {return amountDue;}
+ 
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The <code>amountDue</code> object — an instance of the <code>javafx.beans.property.DoubleProperty</code> class — is marked as <code>private</code> to encapsulate it from the outside world. This is standard practice in both Java and JavaBeans application development. Note however that the object's type is not one of the standard Java primitives, but rather, a new wrapper class that encapsulates a Java primitive and adds some extra functionality (the classes under <code>javafx.beans.property</code> all contain built-in support for observability and binding as part of their design).</p> 
+      <p>The property method naming conventions are as follows:</p> 
+      <ul> 
+       <li> <p>The <code>getAmountDue()</code> method is a standard getter that returns the current value of the <code>amountDue</code> property. By convention, this method is declared as <code>final</code>. Note that the return type for this method is <code>double,</code> not <code>DoubleProperty</code>.</p> </li> 
+       <li> <p>The <code>setAmountDue(double)</code> method (also <code>final</code>) is a standard setter that allows a caller to set the property's value. The setter method is optional. Its parameter is also of type <code>double</code>.</p> </li> 
+       <li> <p>Finally, the <code>amountDueProperty()</code> method defines the property getter. This is a new convention in which the method name contains the name of the property (<code>amountDue</code>, in this case), followed by the word &quot;Property.&quot; The return type is the same as the property itself (<code>DoubleProperty</code>, in this example).</p> </li> 
+      </ul> 
+      <p>When building GUI applications with JavaFX, you will notice that certain classes in the API already implement properties. For example, the <code>javafx.scene.shape.Rectangle</code> class contains properties for <code>arcHeight</code>, <code>arcWidth</code>, <code>height</code>, <code>width</code>, <code>x</code>, and <code>y</code>. For each of these properties there will be corresponding methods that match the conventions previously described. For example, <code>getArcHeight()</code>, <code>setArcHeight(double)</code>, <code>arcHeightProperty()</code>, which together indicate (to both developers and tools) that the given property exists.</p> 
+      <p>You can also add a change listener to be notified when the property's value has changed, as shown in Example 2.</p> 
+      <div class="example">
+       <a id="sthref6" name="sthref6"></a> 
+       <p class="titleinexample">Example 2 Using a ChangeListener</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package propertydemo;
+ 
+import javafx.beans.value.ObservableValue;
+import javafx.beans.value.ChangeListener;
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+ 
+      Bill electricBill = new Bill();
+ 
+       electricBill.amountDueProperty().addListener(new ChangeListener(){
+        @Override public void changed(ObservableValue o,Object oldVal, 
+                 Object newVal){
+             System.out.println(&quot;Electric bill has changed!&quot;);
+        }
+      });
+     
+      electricBill.setAmountDue(100.00);
+     
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Running this example will print the message &quot;Electric bill has changed&quot; to standard output, proving that the change listener notification is working.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref7" name="sthref7"></a> 
+      <h2 class="sect1">Using the High-Level Binding API</h2> 
+      <p>The High-Level API is the quickest and easiest way to begin using bindings in your own applications. It consists of two parts: the Fluent API, and the <code>Bindings</code> class. The Fluent API exposes methods on the various dependency objects, whereas the <code>Bindings</code> class provides static factory methods instead.</p> 
+      <p>To begin using the Fluent API, consider a simple use case in which two integers are bound so that their values are always added together. In Example 3, there are three variables involved: <code>num1</code> (a dependency), <code>num2</code> (a dependency), and <code>sum</code> (the binding). The dependency types are both <code>IntegerProperty</code>, and the binding itself is <code>NumberBinding</code>.</p> 
+      <div class="example">
+       <a id="sthref8" name="sthref8"></a> 
+       <p class="titleinexample">Example 3 Using the Fluent API</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package bindingdemo;
+ 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.binding.NumberBinding;
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+        IntegerProperty num1 = new SimpleIntegerProperty(1);
+        IntegerProperty num2 = new SimpleIntegerProperty(2);
+        NumberBinding sum = num1.add(num2);
+        System.out.println(sum.getValue());
+        num1.set(2);
+        System.out.println(sum.getValue());
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>This code binds the two dependencies, prints their sum, then changes the value of <code>num1</code> and prints the sum again. The results are &quot;3&quot; and &quot;4&quot;, which proves that the binding is working.</p> 
+      <p>You could also use the <code>Bindings</code> class to do the same thing, as shown in Example 4.</p> 
+      <div class="example">
+       <a id="sthref9" name="sthref9"></a> 
+       <p class="titleinexample">Example 4 Using the Bindings Class</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package bindingdemo;
+ 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.binding.NumberBinding;
+import javafx.beans.binding.Bindings;
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+       IntegerProperty num1 = new SimpleIntegerProperty(1);
+       IntegerProperty num2 = new SimpleIntegerProperty(2);
+       NumberBinding sum = Bindings.add(num1,num2);
+       System.out.println(sum.getValue());
+       num1.setValue(2);
+       System.err.println(sum.getValue());
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Example 5 combines the two approaches:</p> 
+      <div class="example">
+       <a id="sthref10" name="sthref10"></a> 
+       <p class="titleinexample">Example 5 Combining Both Approaches</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package bindingdemo;
+ 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.binding.NumberBinding;
+import javafx.beans.binding.Bindings;
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+       IntegerProperty num1 = new SimpleIntegerProperty(1);
+       IntegerProperty num2 = new SimpleIntegerProperty(2);
+       IntegerProperty num3 = new SimpleIntegerProperty(3);
+       IntegerProperty num4 = new SimpleIntegerProperty(4);
+       NumberBinding total =
+         Bindings.add(num1.multiply(num2),num3.multiply(num4));
+       System.out.println(total.getValue());
+       num1.setValue(2);
+       System.err.println(total.getValue());
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Example 5 modifies the code to invoke the <code>multiply</code> method from the Fluent API, and <code>add</code> from the <code>Bindings</code> class. You should also know that the High-Level API lets you mix types when defining arithmetic operations. The type of the result is defined by the same rules as the Java programming language:</p> 
+      <ol> 
+       <li> <p>If one of the operands is a <code>double</code>, the result is a <code>double</code>.</p> </li> 
+       <li> <p>If not and one of the operands is a <code>float</code>, the result is a <code>float</code>.</p> </li> 
+       <li> <p>If not and one of the operands is a <code>long</code>, the result is a <code>long</code>.</p> </li> 
+       <li> <p>The result is an integer otherwise.</p> </li> 
+      </ol> 
+      <p>The next section explores observability, and demonstrates how invalidation listeners differ from change listeners.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref11" name="sthref11"></a> 
+      <h2 class="sect1">Exploring Observable, ObservableValue, InvalidationListener, and ChangeListener</h2> 
+      <p>The binding API defines a set of interfaces that enable objects to be notified when a value change or invalidation takes place. The <code>Observable</code> and <code>ObservableValue</code> interfaces fire the change notifications, and the <code>InvalidationListener</code> and <code>ChangeListener</code> interfaces receive them. The difference between the two is that <code>ObservableValue</code> wraps a value and fires its changes to any registered <code>ChangeListener</code>, whereas <code>Observable</code> (which does <span class="italic">not</span> wrap a value) fires its changes to any registered <code>InvalidationListener</code>.</p> 
+      <p>The JavaFX binding and property implementations all support lazy evaluation, which means that when a change occurs, the value is not immediately recomputed. Recomputation happens later, if and when the value is subsequently requested.</p> 
+      <p>In Example 6, the bill total (a binding) will be marked as invalid the first time it detects a change in one of its dependencies. However, the binding object will recalculate itself only if the total is actually requested again.</p> 
+      <div class="example">
+       <a id="sthref12" name="sthref12"></a> 
+       <p class="titleinexample">Example 6 Using an InvalidationListener</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package bindingdemo;
+ 
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.binding.NumberBinding;
+import javafx.beans.binding.Bindings;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
+ 
+class Bill {
+ 
+    // Define the property
+    private DoubleProperty amountDue = new SimpleDoubleProperty();
+ 
+    // Define a getter for the property's value
+    public final double getAmountDue(){return amountDue.get();}
+ 
+    // Define a setter for the property's value
+    public final void setAmountDue(double value){amountDue.set(value);}
+ 
+     // Define a getter for the property itself
+    public DoubleProperty amountDueProperty() {return amountDue;}
+ 
+}
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+ 
+        Bill bill1 = new Bill();
+        Bill bill2 = new Bill();
+        Bill bill3 = new Bill();
+ 
+        NumberBinding total =
+          Bindings.add(bill1.amountDueProperty().add(bill2.amountDueProperty()),
+              bill3.amountDueProperty());
+        total.addListener(new InvalidationListener() {
+ 
+        @Override public void invalidated(Observable o) {
+                System.out.println(&quot;The binding is now invalid.&quot;);
+            }
+        });
+
+        // First call makes the binding invalid
+        bill1.setAmountDue(200.00);
+
+        // The binding is now invalid
+        bill2.setAmountDue(100.00);
+        bill3.setAmountDue(75.00);
+
+        // Make the binding valid...
+        System.out.println(total.getValue());
+
+        // Make invalid... 
+        bill3.setAmountDue(150.00);
+
+        // Make valid...
+        System.out.println(total.getValue());
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>By changing the value of a single bill, the binding becomes invalid, and the invalidation listener will fire. But if the binding is already invalid, the invalidation listener will not fire again, even if another bill changes. (In Example 6, invoking <code>total.getValue()</code> moves the binding from invalid to valid.) We know this because a subsequent change to any bill in the dependency list will cause the invalidation listener to fire again. This would not happen if the binding was still invalid.</p> 
+      <p>Note that registering a <code>ChangeListener</code> will enforce eager computation, even if the implementation of the <code>ObservableValue</code> supports lazy evaluation. For a lazily evaluated value, it is not possible to know if an invalid value really has changed until it is recomputed. For this reason, generating change events requires eager evaluation, while invalidation events can be generated for both eager and lazy implementations.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref13" name="sthref13"></a> 
+      <h2 class="sect1">Using the Low-Level Binding API</h2> 
+      <p>If the High-Level API is not enough to satisfy your requirements, you can always use the Low-Level API instead. The Low-Level API is for developers who require more flexibility (or better performance) than that offered by the High-Level API.</p> 
+      <p>Example 7 shows a basic example of using the Low-Level API.</p> 
+      <div class="example">
+       <a id="sthref14" name="sthref14"></a> 
+       <p class="titleinexample">Example 7 Using the Low-Level API</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+package bindingdemo;
+ 
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.binding.DoubleBinding;
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+ 
+        final DoubleProperty a = new SimpleDoubleProperty(1);
+        final DoubleProperty b = new SimpleDoubleProperty(2);
+        final DoubleProperty c = new SimpleDoubleProperty(3);
+        final DoubleProperty d = new SimpleDoubleProperty(4);
+ 
+        DoubleBinding db = new DoubleBinding() {
+ 
+            {
+                super.bind(a, b, c, d);
+            }
+ 
+            @Override
+            protected double computeValue() {
+                return (a.get() * b.get()) + (c.get() * d.get());
+            }
+        };
+ 
+        System.out.println(db.get());
+        b.set(3);
+        System.out.println(db.get());
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Using the Low-Level API involves extending one of the binding classes and overriding its <code>computeValue()</code> method to return the current value of the binding. Example 7 does this with a custom subclass of <code>DoubleBinding</code>. The invocation of <code>super.bind()</code> passes the dependencies up to <code>DoubleBinding</code> so that the default invalidation behavior is retained. It is generally not necessary for you to check if the binding is invalid; this behavior is provided for you by the base class.</p> 
+      <p>You now know enough information to begin using the Low-Level API.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li class=" active"><a href="jfxpub-binding.htm">Using JavaFX Properties and Binding</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

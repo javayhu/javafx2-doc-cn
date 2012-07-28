@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>JavaFX Architecture and Framework &middot; JavaFX Architecture and Framework &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>JavaFX Architecture and Framework</h1>
+     <p class=" lead">JavaFX Architecture and Framework</p>
+     <ul class=" pager"></ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="JFXAR101" name="JFXAR101"></a>
+     <a id="sthref2" name="sthref2"></a>  
+     <p>The JavaFX 2 platform is a rich client platform built on Java technology and designed to enable application developers to easily create and deploy rich Internet applications (RIAs) that behave consistently across platforms. See the <a href="../overview/jfxpub-overview.htm">What is JavaFX</a> 2 document for a summary of what JavaFX 2 has to offer.</p> 
+     <p><a href="#BABDFFDG">Figure 1</a> illustrates the architectural components of the JavaFX 2 platform. The sections following the diagram describe each component and how the parts interconnect. Below the JavaFX public APIs lies the engine that runs your JavaFX code. It is composed of subcomponents that include the new JavaFX high performance graphics engine, called Prism; the new small and efficient windowing system, called Glass; a media engine, and a web engine. Although these components are not exposed publicly, their descriptions can help you to better understand what runs a JavaFX application.</p> 
+     <div class="figure">
+      <a id="BABDFFDG" name="BABDFFDG"></a>
+      <a id="JFXAR102" name="JFXAR102"></a> 
+      <p class="titleinfigure">Figure 1 JavaFX 2 Architecture Diagram</p> 
+      <img src="img/jfx-arch-diag.gif" alt="Description of Figure 1 follows" title="Description of Figure 1 follows" longdesc="img_text/jfx-arch-diag.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <a id="JFXAR103" name="JFXAR103"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref4" name="sthref4"></a> 
+      <h2 class="sect1">Scene Graph</h2> 
+      <p>The JavaFX scene graph, shown as part of the top layer in <a href="#BABDFFDG">Figure 1</a>, is the starting point for constructing a JavaFX application. It is a hierarchical tree of nodes that represents all of the visual elements of the application's user interface. It can handle input and can be rendered.</p> 
+      <p>A single element in a scene graph is called a node. Each node has an ID, style class, and bounding volume. With the exception of the root node of a scene graph, each node in a scene graph has a single parent and zero or more children. It can also have the following:</p> 
+      <ul> 
+       <li> <p>Effects, such as blurs and shadows</p> </li> 
+       <li> <p>Opacity</p> </li> 
+       <li> <p>Transforms</p> </li> 
+       <li> <p>Event handlers (such as mouse, key and input method)</p> </li> 
+       <li> <p>An application-specific state</p> </li> 
+      </ul> 
+      <p>Unlike in Swing and Abstract Window Toolkit (AWT), the JavaFX scene graph also has the graphics primitives, such as rectangles and text, in addition to having controls, layout containers, images and media.</p> 
+      <p>For most uses, the scene graph simplifies working with UIs, especially when rich UIs are used. Animating various graphics in the scene graph can be accomplished quickly using the javafx.animation APIs, and declarative methods, such as XML doc, also work well.</p> 
+      <p>The <code>javafx.scene</code> API allows the creation and specification of several types of content, such as:</p> 
+      <ul> 
+       <li> <p><span class="bold">Nodes</span>: Shapes (2-D and 3-D), images, media, embedded web browser, text, UI controls, charts, groups, and containers</p> </li> 
+       <li> <p><span class="bold">State</span>: Transforms (positioning and orientation of nodes), visual effects, and other visual state of the content</p> </li> 
+       <li> <p><span class="bold">Effects</span>: Simple objects that change the appearance of scene graph nodes, such as blurs, shadows, and color adjustment</p> </li> 
+      </ul> 
+      <p>For more information, see the <a href="../scenegraph/jfxpub-scenegraph.htm">Working with the JavaFX Scene Graph</a> document</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXAR104" name="JFXAR104"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref5" name="sthref5"></a> 
+      <h2 class="sect1">Java APIs for JavaFX Features</h2> 
+      <p>The JavaFX 2 platform includes a complete set of public APIs, also shown in the topmost layer in <a href="#BABDFFDG">Figure 1</a>. These APIs provide unparalleled freedom and flexibility to construct rich client applications (RIAs). The JavaFX platform combines the best capabilities of the Java platform with comprehensive, immersive media functionality into an intuitive and comprehensive one-stop development environment. These new Java APIs for JavaFX features:</p> 
+      <ul> 
+       <li> <p>Allow the use of powerful Java features, such as generics, annotations, and multithreading.</p> </li> 
+       <li> <p>Make it easier for Web developers to use JavaFX from other popular dynamic languages, such as JRuby, Groovy, and JavaScript.</p> </li> 
+       <li> <p>Allow Java developers to use other system languages, such as Groovy, for writing large or complex JavaFX applications.</p> </li> 
+       <li> <p>Allow the use of binding similar to that in JavaFX Script language. This includes support for high performance lazy binding, binding expressions, bound sequence expressions, and partial bind reevaluation. Alternative languages (like Groovy) can use this binding library to introduce binding syntax similar to that of JavaFX Script.</p> </li> 
+       <li> <p>Extend the Java collections library to include observable lists and maps, which allow applications to wire user interfaces to data models, observe changes in those data models, and update the corresponding UI control accordingly.</p> </li> 
+      </ul> 
+      <p>The JavaFX 2 APIs and programming model are a continuation of the JavaFX 1.x product line. Most of the JavaFX APIs have been ported directly to Java. Some APIs, such as Layout and Media, along with many other details, have been improved and simplified based on feedback received from users of the JavaFX 1.x release. JavaFX 2 relies more on web standards, such as CSS for styling controls and ARIA for accessibility specifications. The use of additional web standards is also under review.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXAR105" name="JFXAR105"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref6" name="sthref6"></a> 
+      <h2 class="sect1">Graphics System</h2> 
+      <p>The JavaFX Graphics System, shown in blue in <a href="#BABDFFDG">Figure 1</a>, is an implementation detail beneath the JavaFX scene graph layer. It supports both 2-D and 3-D scene graphs. It provides software rendering when the graphics hardware on a system is insufficient to support hardware accelerated rendering.</p> 
+      <p>Two graphics accelerated pipelines are implemented on the JavaFX 2 platform:</p> 
+      <ul> 
+       <li> <p><span class="bold">Prism</span> processes render jobs. It can run on both hardware and software renderers, including 3-D. It is responsible for rasterization and rendering of JavaFX scenes. The following multiple render paths are possible based on the device being used:</p> 
+        <ul> 
+         <li> <p>DirectX 9 on Windows XP and Windows Vista</p> </li> 
+         <li> <p>DirectX 11 on Windows 7</p> </li> 
+         <li> <p>OpenGL on Mac, Linux, Embedded</p> </li> 
+         <li> <p>Java2D when hardware acceleration is not possible</p> <p>The fully hardware accelerated path is used when possible, but when it is not available, the Java2D render path is used because the Java2D render path is already distributed in all of the Java Runtime Environments (JREs). This is particularly important when handling 3-D scenes. However, performance is better when the hardware render paths are used.</p> </li> 
+        </ul> </li> 
+       <li> <p><span class="bold">Quantum Toolkit</span> ties Prism and Glass Windowing Toolkit together and makes them available to the JavaFX layer above them in the stack. It also manages the threading rules related to rendering versus events handling.</p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXAR106" name="JFXAR106"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref7" name="sthref7"></a> 
+      <h2 class="sect1">Glass Windowing Toolkit</h2> 
+      <p>The Glass Windowing Toolkit, shown in beige in the middle portion of <a href="#BABDFFDG">Figure 1</a>, is the lowest level framework for the JavaFX 2 graphics stack. Its main responsibility is to provide native operating services, such as managing the windows, timers, and surfaces. It serves as the platform-dependent layer that connects the JavaFX platform to the native operating system.</p> 
+      <p>The Glass toolkit is also responsible for managing the event queue. Unlike the Abstract Window Toolkit (AWT), which manages its own event queue, the Glass toolkit uses the native operating system's event queue functionality to schedule thread usage. Also unlike AWT, the Glass toolkit runs on the same thread as the JavaFX application. In AWT, the native half of AWT runs on one thread and the Java level runs on another thread. This introduces a lot of issues, many of which are resolved in JavaFX by using the single JavaFX application thread approach.</p> 
+      <a id="JFXAR107" name="JFXAR107"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref8" name="sthref8"></a> 
+       <h3 class="sect2">Threads</h3> 
+       <p>The system runs two or more of the following threads at any given time.</p> 
+       <ul> 
+        <li> <p><span class="bold">JavaFX application thread</span>: This is the primary thread used by JavaFX application developers. Any “live” scene, which is a scene that is part of a window, must be accessed from this thread. A scene graph can be created and manipulated in a background thread, but when its root node is attached to any live object in the scene, that scene graph must be accessed from the JavaFX application thread. This enables developers to create complex scene graphs on a background thread while keeping animations on 'live' scenes smooth and fast. The JavaFX application thread is a different thread from the Swing and AWT Event Dispatch Thread (EDT), so care must be taken when embedding JavaFX code into Swing applications.</p> </li> 
+        <li> <p><span class="bold">Prism render thread</span>: This thread handles the rendering separately from the event dispatcher. It allows frame N to be rendered while frame N +1 is being processed. This ability to perform concurrent processing is a big advantage, especially on modern systems that have multiple processors. The Prism render thread may also have multiple rasterization threads that help off-load work that needs to be done in rendering.</p> </li> 
+        <li> <p><span class="bold">Media thread</span>: This thread runs in the background and synchronizes the latest frames through the scene graph by using the JavaFX application thread.</p> </li> 
+       </ul> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXAR108" name="JFXAR108"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref9" name="sthref9"></a> 
+       <h3 class="sect2">Pulse</h3> 
+       <p>A pulse is an event that indicates to the JavaFX scene graph that it is time to synchronize the state of the elements on the scene graph with Prism. A pulse is throttled at 60 frames per second (fps) maximum and is fired whenever animations are running on the scene graph. Even when animation is not running, a pulse is scheduled when something in the scene graph is changed. For example, if a position of a button is changed, a pulse is scheduled.</p> 
+       <p>When a pulse is fired, the state of the elements on the scene graph is synchronized down to the rendering layer. A pulse enables application developers a way to handle events asynchronously. This important feature allows the system to batch and execute events on the pulse.</p> 
+       <p>Layout and CSS are also tied to pulse events. Numerous changes in the scene graph could lead to multiple layout or CSS updates, which could seriously degrade performance. The system automatically performs a CSS and layout pass once per pulse to avoid performance degradation. Application developers can also manually trigger layout passes as needed to take measurements prior to a pulse.</p> 
+       <p>The Glass Windowing Toolkit is responsible for executing the pulse events. It uses the high-resolution native timers to make the execution.</p> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXAR109" name="JFXAR109"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref10" name="sthref10"></a> 
+      <h2 class="sect1">Media and Images</h2> 
+      <p>JavaFX media functionality is available through the <code>javafx.scene.media</code> APIs. JavaFX supports both visual and audio media. Support is provided for MP3, AIFF, and WAV audio files and FLV video files. JavaFX media functionality is provided as three separate components: the Media object represents a media file, the MediaPlayer plays a media file, and a MediaView is a node that displays the media.</p> 
+      <p>The Media Engine component, shown in green in <a href="#BABDFFDG">Figure 1</a>, has been completely redesigned for JavaFX 2 to increase stability, improve performance, and provide consistent behavior across platforms. For more information, read the <a href="../media/jfxpub-media.htm">Incorporating Media Assets into JavaFX Applications</a> document.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXAR110" name="JFXAR110"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref11" name="sthref11"></a> 
+      <h2 class="sect1">Embedded Browser</h2> 
+      <p>The JavaFX embedded browser is a new JavaFX user interface component that provides a web viewer and full browsing functionality through its API. This Web Engine component, shown in orange in <a href="#BABDFFDG">Figure 1</a>, is based on WebKit, which is an open source web browser engine that supports HTML5, CSS, JavaScript, DOM, and SVG. It enables developers to implement the following features in their Java applications:</p> 
+      <ul> 
+       <li> <p>Render HTML content from local or remote URL</p> </li> 
+       <li> <p>Support history and provide Back and Forward navigation</p> </li> 
+       <li> <p>Reload the content</p> </li> 
+       <li> <p>Apply effects to the web component</p> </li> 
+       <li> <p>Edit the HTML content</p> </li> 
+       <li> <p>Execute JavaScript commands</p> </li> 
+       <li> <p>Handle events</p> </li> 
+      </ul> 
+      <p>This embedded browser component is composed of the following classes:</p> 
+      <ul> 
+       <li> <p><code>WebEngine</code> provides basic web page browsing capability.</p> </li> 
+       <li> <p><code>WebView</code> encapsulates a WebEngine object, incorporates HTML content into an application's scene, and provides fields and methods to apply effects and transformations. It is an extension of a <code>Node</code> class.</p> </li> 
+      </ul> 
+      <p>For more detailed overview of the JavaFX embedded browser, see the <a href="../webview/jfxpub-webview.htm">Adding HTML Content to JavaFX Applications</a> document.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXAR111" name="JFXAR111"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref12" name="sthref12"></a> 
+      <h2 class="sect1">CSS</h2> 
+      <p>JavaFX Cascading Style Sheets (CSS) provides the ability to apply customized styling to the user interface of a JavaFX application without changing any of that application's source code. CSS can be applied to any node in the JavaFX scene graph and are applied to the nodes asynchronously. JavaFX CSS styles can also be easily assigned to the scene at runtime, allowing an application's appearance to dynamically change.</p> 
+      <p><a href="#BABICCFD">Figure 2</a> demonstrates the application of two different CSS styles to the same set of UI controls.</p> 
+      <div class="figure">
+       <a id="BABICCFD" name="BABICCFD"></a>
+       <a id="JFXAR112" name="JFXAR112"></a> 
+       <p class="titleinfigure">Figure 2 CSS Style Sheet Sample</p> 
+       <img src="img/css-style-sample.gif" alt="Description of Figure 2 follows" title="Description of Figure 2 follows" longdesc="img_text/css-style-sample.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>JavaFX CSS is based on the W3C CSS version 2.1 specifications, with some additions from current work on version 3. The JavaFX CSS support and extensions have been designed to allow JavaFX CSS style sheets to be parsed cleanly by any compliant CSS parser, even one that does not support JavaFX extensions. This enables the mixing of CSS styles for JavaFX and for other purposes (such as for HTML pages) into a single style sheet. All JavaFX property names are prefixed with a vendor extension of “<code>-fx-</code>“, including those that might seem to be compatible with standard HTML CSS, because some JavaFX values have slightly different semantics.</p> 
+      <p>For more detailed information about JavaFX CSS, see the <a href="../css_tutorial/jfxpub-css_tutorial.htm">Skinning JavaFX Applications with CSS</a> article.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXAR113" name="JFXAR113"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref14" name="sthref14"></a> 
+      <h2 class="sect1">UI Controls</h2> 
+      <p>The JavaFX UI controls available through the JavaFX API are built by using nodes in the scene graph. They can take full advantage of the visually rich features of the JavaFX platform and are portable across different platforms. JavaFX CSS allows for theming and skinning of the UI controls.</p> 
+      <p><a href="#CHDCDBCA">Figure 3</a> shows some of the UI controls that are currently supported. New Java UI controls, like TitlePane or Accordion, have been introduced with the JavaFX 2 SDK. These new controls reside in the <code>javafx.scene.control</code> package.</p> 
+      <div class="figure">
+       <a id="CHDCDBCA" name="CHDCDBCA"></a>
+       <a id="JFXAR114" name="JFXAR114"></a> 
+       <p class="titleinfigure">Figure 3 JavaFX UI Controls Sample</p> 
+       <img src="img/uicontrols.png" alt="Description of Figure 3 follows" title="Description of Figure 3 follows" longdesc="img_text/uicontrols.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>For more detailed information about all the available JavaFX UI controls, see the <a href="../ui_controls/jfxpub-ui_controls.htm">Using JavaFX UI Controls</a> document and the <a href="../api/index.html">API documentation</a> for the <code>javafx.scene.control</code> package.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXAR115" name="JFXAR115"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref16" name="sthref16"></a> 
+      <h2 class="sect1">Layout</h2> 
+      <p>Layout containers or panes can be used to allow for flexible and dynamic arrangements of the UI controls within a scene graph of a JavaFX application. The JavaFX Layout API includes the following container classes that automate common layout models:</p> 
+      <ul> 
+       <li> <p>The <code>BorderPane</code> class lays out its content nodes in the top, bottom, right, left, or center region.</p> </li> 
+       <li> <p>The <code>HBox</code> class arranges its content nodes horizontally in a single row.</p> </li> 
+       <li> <p>The <code>VBox</code> class arranges its content nodes vertically in a single column.</p> </li> 
+       <li> <p>The <code>StackPane</code> class places its content nodes in a back-to-front single stack.</p> </li> 
+       <li> <p>The <code>GridPane</code> class enables the developer to create a flexible grid of rows and columns in which to lay out content nodes.</p> </li> 
+       <li> <p>The <code>FlowPane</code> class arranges its content nodes in either a horizontal or vertical “flow,” wrapping at the specified width (for horizontal) or height (for vertical) boundaries.</p> </li> 
+       <li> <p>The <code>TilePane</code> class places its content nodes in uniformly sized layout cells or tiles</p> </li> 
+       <li> <p>The <code>AnchorPane</code> class enables developers to create anchor nodes to the top, bottom, left side, or center of the layout.</p> </li> 
+      </ul> 
+      <p>To achieve a desired layout structure, different containers can be nested within a JavaFX application.</p> 
+      <p>To learn more about how to work with layouts, see the <a href="../layout/jfxpub-layout.htm">Working with Layouts in JavaFX</a> article. For more information about the JavaFX layout API, see the API documentation for the <code>javafx.scene.layout</code> package.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXAR116" name="JFXAR116"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref17" name="sthref17"></a> 
+      <h2 class="sect1">2-D and 3-D Transformations</h2> 
+      <p>Each node in the JavaFX scene graph can be transformed in the x-y coordinate using the following <code>javafx.scene.tranform</code> classes:</p> 
+      <ul> 
+       <li> <p><code>translate</code> – Move a node from one place to another along the x, y, z planes relative to its initial position.</p> </li> 
+       <li> <p><code>scale</code> – Resize a node to appear either larger or smaller in the x, y, z planes, depending on the scaling factor.</p> </li> 
+       <li> <p><code>shear</code> – Rotate one axis so that the x-axis and y-axis are no longer perpendicular. The coordinates of the node are shifted by the specified multipliers.</p> </li> 
+       <li> <p><code>rotate</code> – Rotate a node about a specified pivot point of the scene.</p> </li> 
+       <li> <p><code>affine</code> – Perform a linear mapping from 2-D/3-D coordinates to other 2-D/3-D coordinates while preserving the 'straight' and 'parallel' properties of the lines. This class should be used with <code>Translate</code>, <code>Scale</code>, <code>Rotate</code>, or <code>Shear</code> transform classes instead of being used directly.</p> </li> 
+      </ul> 
+      <p>To learn more about working with transformations, see the <a href="../transformations/jfxpub-transformations.htm">Applying Transformations in JavaFX</a> document. For more information about the <code>javafx.scene.transform</code> API classes, see the <a href="../api/index.html">API documentation</a>.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXAR117" name="JFXAR117"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref18" name="sthref18"></a> 
+      <h2 class="sect1">Visual Effects</h2> 
+      <p>The development of rich client interfaces in the JavaFX scene graph involves the use of Visual Effects or Effects to enhance the look of JavaFX applications in real time. The JavaFX Effects are primarily image pixel-based and, hence, they take the set of nodes that are in the scene graph, render it as an image, and apply the specified effects to it.</p> 
+      <p>Some of the visual effects available in JavaFX include the use of the following classes:</p> 
+      <ul> 
+       <li> <p><code>Drop Shadow</code> – Renders a shadow of a given content behind the content to which the effect is applied.</p> </li> 
+       <li> <p><code>Reflection</code> – Renders a reflected version of the content below the actual content.</p> </li> 
+       <li> <p><code>Lighting</code> – Simulates a light source shining on a given content and can give a flat object a more realistic, three-dimensional appearance.</p> </li> 
+      </ul> 
+      <p>For examples on how to use some of the available visual effects, see the <a href="../visual_effects/jfxpub-visual_effects.htm">Creating Visual Effects</a> document. For more information about all the available visual effects classes, see the <a href="../api/index.html">API documentation</a> for the <code>javafx.scene.effect</code> package.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref19" name="sthref19"></a> 
+      <h2 class="sect1">Deployment</h2> 
+      <p>JavaFX applications can be deployed on a desktop or in a browser in three different deployment modes:</p> 
+      <ul> 
+       <li> <p>Standalone – The JavaFX application is installed on a local drive and is run by double-clicking the JAR file. This mode is ideal when users do not need or do not have online access.</p> </li> 
+       <li> <p>Browser – In this mode, the JavaFX application is embedded in a web page and is started automatically when the web page is accessed. It can interact with the web page through JavaScript.</p> </li> 
+       <li> <p>Web Start – This mode downloads the application from a central location on the web and then runs it on the desktop. Once it is downloaded, users can start the application by double-clicking the JNLP file.</p> </li> 
+      </ul> 
+      <p>For more information about these three different modes and how to prepare your JavaFX application for deployment, see the <a href="../deployment/jfxpub-deployment.htm">Deploying JavaFX Applications document</a>.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li class=" active"><a href="jfxpub-architecture.htm">JavaFX Architecture and Framework</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

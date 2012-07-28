@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>JavaFX Interoperability with SWT &middot; JavaFX Interoperability with SWT &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>JavaFX Interoperability with SWT</h1>
+     <p class=" lead">JavaFX Interoperability with SWT</p>
+     <ul class=" pager"></ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="JFXMO101" name="JFXMO101"></a>
+     <a id="sthref2" name="sthref2"></a>  
+     <a id="JFXMO102" name="JFXMO102"></a> 
+     <p>This article shows how to add a JavaFX scene graph to a Standard Widget Toolkit (SWT) application, and how to make SWT and JavaFX controls interoperate.</p> 
+     <p>If you develop SWT applications, you know that SWT uses the native operating system controls and cannot easily be configured to use advanced GUI features, such as animation. You can quickly add sparkle to an SWT application by integrating JavaFX with SWT. All you need is the <code>FXCanvas</code> class, which is located in the <a href="../../../../docs.oracle.com/javafx/2/api/index.html@javafx_2Fembed_2Fswt_2Fpackage-summary.html"><code>javafx.embed.swt</code></a> package. FXCanvas is a regular SWT canvas that can be used anywhere that an SWT canvas can appear. It's that simple.</p> 
+     <p>In this article, you will see how to create an interactive SWT button and JavaFX button, shown in <a href="#BGBEGIHG">Figure 1</a>.</p> 
+     <div class="figure">
+      <a id="BGBEGIHG" name="BGBEGIHG"></a>
+      <a id="JFXMO103" name="JFXMO103"></a> 
+      <p class="titleinfigure">Figure 1 SWT Button on Left, JavaFX Button on Right</p> 
+      <img src="img/swt_jfx.png" alt="Screenshot of the SWT and JavaFX buttons" title="Screenshot of the SWT and JavaFX buttons" />
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <p>When the user clicks either button, the text is changed in the other button, as shown in <a href="#BGBDJJEB">Figure 2</a> and <a href="#BGBIBEAJ">Figure 3</a>. This example shows how the SWT code and JavaFX code can interoperate.</p> 
+     <div class="figure">
+      <a id="BGBDJJEB" name="BGBDJJEB"></a>
+      <a id="JFXMO104" name="JFXMO104"></a> 
+      <p class="titleinfigure">Figure 2 Clicking the SWT Button Changes the JavaFX Button Label</p> 
+      <img src="img/swt_click.png" alt="Description of Figure 2 follows" title="Description of Figure 2 follows" longdesc="img_text/swt_click.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <div class="figure">
+      <a id="BGBIBEAJ" name="BGBIBEAJ"></a>
+      <a id="JFXMO105" name="JFXMO105"></a> 
+      <p class="titleinfigure">Figure 3 Clicking the JavaFX Button Changes the SWT Button Label</p> 
+      <img src="img/jfx_click.png" alt="Description of Figure 3 follows" title="Description of Figure 3 follows" longdesc="img_text/jfx_click.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <a id="JFXMO106" name="JFXMO106"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref5" name="sthref5"></a> 
+      <h2 class="sect1">Adding JavaFX Content to an SWT Component</h2> 
+      <p>In JavaFX, the Java code that creates and manipulates JavaFX classes runs in the JavaFX User thread. In SWT, code that creates and manipulates SWT widgets runs in the event loop thread. When JavaFX is embedded in SWT, these two threads are the same. This means that there are no restrictions when calling methods defined in one toolkit from the other.</p> 
+      <p><a href="#BGBBGAGG">Example 1</a> shows the code to create the SWT button and JavaFX button shown in <a href="#BGBEGIHG">Figure 1</a>. As shown in the code, you set JavaFX content into an FXCanvas with the <code>setScene()</code> method in the <code>FXCanvas</code> class. To force SWT to lay out the canvas based on the new JavaFX content, resize the JavaFX content first. To do this, get the JavaFX Window that contains the JavaFX content and call <code>sizeToScene()</code>. When JavaFX is embedded in SWT, a new preferred size is set for <code>FXCanvas</code>, enabling SWT to resize the embedded JFX content in the same manner as other SWT controls.</p> 
+      <p>JavaFX constructs content in terms of a hierarchical scene graph, placed inside a scene. The code in <a href="#BGBBGAGG">Example 1</a> places the JavaFX button into a scene with the scene graph shown in <a href="#BGBCDABE">Figure 4</a> and described in comments in the code example.</p> 
+      <div class="figure">
+       <a id="BGBCDABE" name="BGBCDABE"></a>
+       <a id="JFXMO107" name="JFXMO107"></a> 
+       <p class="titleinfigure">Figure 4 JavaFX Scene Graph in SWT Application</p> 
+       <img src="img/jfx_scenegraph.png" alt="Description of Figure 4 follows" title="Description of Figure 4 follows" longdesc="img_text/jfx_scenegraph.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <div class="example">
+       <a id="BGBBGAGG" name="BGBBGAGG"></a>
+       <a id="JFXMO114" name="JFXMO114"></a> 
+       <p class="titleinexample">Example 1 Java Code for Plain SWT and JavaFX Buttons</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.embed.swt.FXCanvas;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.paint.Color;
+ 
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.layout.RowLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Shell;
+ 
+public class TwoButtons {
+ 
+    public static void main(String[] args) {
+        final Display display = new Display();
+        final Shell shell = new Shell(display);
+        final RowLayout layout = new RowLayout();
+        shell.setLayout(layout);
+ 
+        /* Create the SWT button */
+        final org.eclipse.swt.widgets.Button swtButton =
+                new org.eclipse.swt.widgets.Button(shell, SWT.PUSH);
+        swtButton.setText(&quot;SWT Button&quot;);
+ 
+        /* Create an FXCanvas */
+        final FXCanvas fxCanvas = new FXCanvas(shell, SWT.NONE) {
+            public Point computeSize(int wHint, int hHint, boolean changed) {
+                getScene().getWindow().sizeToScene();
+                int width = (int) getScene().getWidth();
+                int height = (int) getScene().getHeight();
+                return new Point(width, height);
+            }
+        };
+        /* Create a JavaFX Group node */
+        Group group = new Group();
+        /* Create a JavaFX button */
+        final Button jfxButton = new Button(&quot;JFX Button&quot;);
+        /* Assign the CSS ID ipad-dark-grey */
+        jfxButton.setId(&quot;ipad-dark-grey&quot;);
+        /* Add the button as a child of the Group node */
+        group.getChildren().add(jfxButton);
+        /* Create the Scene instance and set the group node as root */
+        Scene scene = new Scene(group, Color.rgb(
+                shell.getBackground().getRed(),
+                shell.getBackground().getGreen(),
+                shell.getBackground().getBlue()));
+        /* Attach an external stylesheet */
+        scene.getStylesheets().add(&quot;twobuttons/Buttons.css&quot;);
+        fxCanvas.setScene(scene);
+ 
+        /* Add Listeners */
+        swtButton.addListener(SWT.Selection, new Listener() {
+ 
+            public void handleEvent(Event event) {
+                jfxButton.setText(&quot;JFX Button: Hello from SWT&quot;);
+                shell.layout();
+            }
+        });
+        jfxButton.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+ 
+            public void handle(ActionEvent event) {
+                swtButton.setText(&quot;SWT Button: Hello from JFX&quot;);
+                shell.layout();
+            }
+        });
+ 
+        shell.open();
+        while (!shell.isDisposed()) {
+            if (!display.readAndDispatch()) {
+                display.sleep();
+            }
+        }
+        display.dispose();
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The button style is based on a blog by Jasper Potts at the following location:<br /> <code><a href="../../../../fxexperience.com/2011/12/styling-fx-buttons-with-css/default.htm">http://fxexperience.com/2011/12/styling-fx-buttons-with-css/</a></code></p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXMO109" name="JFXMO109"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref7" name="sthref7"></a> 
+      <h2 class="sect1">Notes on Creating and Deploying SWT-JavaFX Applications</h2> 
+      <p>The following sections present some tips for creating and building SWT applications with JavaFX components require some special handling, as described in the following sections.</p> 
+      <a id="JFXMO111" name="JFXMO111"></a> 
+      <div class="sect2">
+       <a id="sthref8" name="sthref8"></a> 
+       <h3 class="sect2">Creating Java Applications with SWT and JavaFX</h3> 
+       <p>To create an SWT-JavaFX application in an IDE, create a Java application and add the following libraries to your application:</p> 
+       <ul> 
+        <li> <p>swt.jar, from an SWT zip download, available at<br /> <code><a href="../../../../eclipse.org/swt">http://eclipse.org/swt</a></code></p> </li> 
+        <li> <p>jfxrt.jar, from the /lib directory of the JavaFX Runtime installation.</p> </li> 
+        <li> <p>ant-javafx.jar, from the /lib directory of the JavaFX SDK installation.</p> <p>You can get the installer for the JavaFX SDK, which includes the JavaFX Runtime, at<code><br /> <a href="../../../../www.oracle.com/technetwork/java/javafx/downloads/index.html">http://www.oracle.com/technetwork/java/javafx/downloads/index.html</a></code></p> </li> 
+       </ul> 
+       <div align="center"> 
+        <div class="inftblnote">
+         <br /> 
+         <table class="Note oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+          <tbody> 
+           <tr> 
+            <td align="left"> <p class="notep1">Caution:</p> <p>Ensure that all JAR files are either 32 bit or 64 bit, as required for your environment.</p> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <br />
+        </div> 
+        <!-- class="inftblnote" -->
+       </div> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXMO112" name="JFXMO112"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref9" name="sthref9"></a> 
+       <h3 class="sect2">Building and Packaging SWT-JavaFX Applications for Deployment</h3> 
+       <p>When an SWT-JavaFX application is built, the JAR file must be packaged as a JavaFX application so the application on startup will look for the JavaFX Runtime on the user's system. The SWT library (swt.jar) must be included as a resource (32-bit or 64-bit to match the target system).</p> 
+       <p>The JavaFX SDK includes JavaFX Ant tasks to build JavaFX applications. The ant-javafx.jar file is required to load the JavaFX Ant task definitions. It is located in the <span class="variable">javafx-sdk-home</span>\lib directory of the JavaFX SDK. You must also declare the fx: namespace to load the JavaFX Ant task definitions. For more information about JavaFX Ant tasks, see<br /> <code><a href="../../../../docs.oracle.com/javafx/2/deployment/javafx_ant_task_reference.htm">http://docs.oracle.com/javafx/2/deployment/javafx_ant_task_reference.htm</a></code></p> 
+       <p>If you used NetBeans IDE to create a Java application for your SWT-JavaFX code, you can override some of the default Ant build tasks in order to build a JavaFX application and include the SWT library as a resource. <a href="#CDDDBHBE">Example 2</a> shows a custom build.xml script for NetBeans IDE, containing those overrides. This build.xml script is included in the TwoButtons sample application. After you do a Clean and Build in NetBeans IDE, you can run the application outside NetBeans IDE by double-clicking the JAR file.</p> 
+       <div class="example">
+        <a id="CDDDBHBE" name="CDDDBHBE"></a>
+        <a id="JFXMO113" name="JFXMO113"></a> 
+        <p class="titleinexample">Example 2 Custom build.xml Script to Build the Application JAR File</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+ 
+&lt;!-- Declare the fx: namespace, necessary for JavaFX Ant task definitions --&gt;
+&lt;project name=&quot;TwoButtons&quot; default=&quot;default&quot; basedir=&quot;.&quot; 
+         xmlns:fx=&quot;javafx:com.sun.javafx.tools.ant&quot;&gt;
+    &lt;description&gt;Builds, tests, and runs the project TwoButtons.&lt;/description&gt;
+    
+    &lt;import file=&quot;nbproject/build-impl.xml&quot;/&gt; 
+    
+    &lt;!-- Try to find the JavaFX SDK --&gt;
+    &lt;target name=&quot;find-javafx&quot; unless=&quot;javafx.sdk&quot;&gt;
+        &lt;property environment=&quot;env&quot; /&gt;
+        &lt;condition property=&quot;javafx.sdk&quot;
+                   value=&quot;${env.ProgramFiles(x86)}/Oracle/JavaFX 2.1 SDK/&quot;
+                   else=&quot;${env.ProgramFiles}/Oracle/JavaFX 2.1 SDK/&quot;&gt;
+            &lt;and&gt;
+                &lt;contains string=&quot;${os.arch}&quot; substring=&quot;x86&quot;/&gt;
+                &lt;available file=&quot;${env.ProgramFiles(x86)}/Oracle/JavaFX 2.1 SDK/
+rt/lib/jfxrt.jar&quot;/&gt;
+            &lt;/and&gt;
+        &lt;/condition&gt;
+    &lt;/target&gt;
+    
+    &lt;!-- Check if the jfxrt.jar library exists in the specified JavaFX SDK
+         directory--&gt;
+    &lt;target name=&quot;check-javafx&quot;&gt;
+        &lt;available file=&quot;${javafx.sdk}/rt/lib/jfxrt.jar&quot; 
+                   property=&quot;found-javafx&quot;/&gt;
+    &lt;/target&gt;
+ 
+    &lt;!-- If the JavaFX SDK cannot be found --&gt;
+    &lt;target name=&quot;javafx-missing&quot; unless=&quot;found-javafx&quot;&gt;
+        &lt;fail&gt;.
+            Ant could not find the JavaFX 2.1 SDK. Please set [javafx.sdk] 
+            on the command line. For example:
+            ant -Djavafx.sdk=&quot;C:\Program Files\Oracle\JavaFX 2.1 SDK&quot;
+            or ant -Djavafx.sdk=&quot;C:\Program Files (x86)\Oracle\JavaFX 2.1 SDK&quot;
+        &lt;/fail&gt;
+    &lt;/target&gt;
+    
+    &lt;!-- When not running in NetBeans IDE, try to locate the JavaFX SDK --&gt;
+    &lt;target name=&quot;-pre-init&quot; depends=&quot;find-javafx, check-javafx&quot; 
+            unless=&quot;netbeans-home&quot;&gt;
+        &lt;echo message=&quot;Using JavaFX SDK: ${javafx.sdk}&quot;/&gt;
+        &lt;property name=&quot;javafx.tools.ant.jar&quot;  
+                  value=&quot;${javafx.sdk}/lib/ant-javafx.jar&quot;/&gt;
+        &lt;property name=&quot;file.reference.jfxrt.jar&quot;  
+                  value=&quot;${javafx.sdk}/rt/lib/jfxrt.jar&quot;/&gt;
+        &lt;property name=&quot;file.reference.ant-javafx.jar&quot;  
+                  value=&quot;${javafx.sdk}/lib/ant-javafx.jar&quot;/&gt;
+    &lt;/target&gt;
+    
+    &lt;target name=&quot;-pre-compile&quot; depends=&quot;javafx-missing&quot;&gt;
+    &lt;/target&gt;
+ 
+    &lt;target name=&quot;-pre-jar&quot; depends=&quot;javafx-missing&quot;&gt;
+    &lt;/target&gt;
+ 
+    &lt;target name=&quot;-post-jar&quot;&gt;
+        &lt;taskdef resource=&quot;com/sun/javafx/tools/ant/antlib.xml&quot;
+                 uri=&quot;javafx:com.sun.javafx.tools.ant&quot;
+                 classpath=&quot;${javafx.tools.ant.jar}&quot;/&gt;
+                
+        &lt;!-- Remove the JavaFX libraries from /dist/lib because the app 
+             will use the installed JavaFX Runtime --&gt;
+        &lt;delete file=&quot;${dist.dir}/lib/jfxrt.jar&quot;/&gt;
+        &lt;delete file=&quot;${dist.dir}/lib/ant-javafx.jar&quot;/&gt;
+       
+        &lt;!-- Package the JAR file so that it has the code to  
+             find the installed JavaFX Runtime --&gt;
+        &lt;fx:jar destfile=&quot;${dist.jar}&quot;&gt;
+            &lt;fx:application mainClass=&quot;${main.class}&quot;/&gt;
+            &lt;fileset dir=&quot;${build.classes.dir}&quot;/&gt;
+            
+            &lt;!-- Add the SWT library --&gt;
+            &lt;fx:resources&gt;
+                &lt;fx:fileset dir=&quot;dist&quot; includes=&quot;lib/swt.jar&quot;/&gt;
+            &lt;/fx:resources&gt;
+            
+            &lt;!-- Add information for the manifest --&gt;
+            &lt;manifest&gt;
+                &lt;attribute name=&quot;Implementation-Vendor&quot; 
+                           value=&quot;${application.vendor}&quot;/&gt;
+                &lt;attribute name=&quot;Implementation-Title&quot; 
+                           value=&quot;${application.title}&quot;/&gt;
+                &lt;attribute name=&quot;Implementation-Version&quot; 
+                           value=&quot;1.0&quot;/&gt;
+            &lt;/manifest&gt;
+        &lt;/fx:jar&gt;
+    &lt;/target&gt;
+&lt;/project&gt;
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXMO110" name="JFXMO110"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref10" name="sthref10"></a> 
+       <h3 class="sect2">Special VM Option for Mac</h3> 
+       <p>On Mac, in order for SWT applications to run, the <code>-XstartOnFirstThread</code> VM option must be specified. SWT applications run their event loop in <code>main()</code>, unlike JavaFX and AWT/Swing, and the Mac needs to be given this information.</p> 
+       <p>In the NetBeans IDE for Mac, you must add <code>-XstartOnFirstThread</code> in the VM Options field of the Run category in Project Properties to run SWT applications.</p> 
+       <p>In the Eclipse IDE for Mac, when a Java program references SWT, the IDE automatically adds the VM option <code>-XstartOnFirstThread</code>. In most cases, this automatic addition is helpful. However, there is one case when adding this VM option causes a problem, namely with an Eclipse project for an SWT application that also includes one or more &quot;pure&quot; JavaFX classes that do not interoperate with the SWT classes. A &quot;pure&quot; JavaFX application that is launched from such an Eclipse project will hang because it does not expect <code>-XstartOnFirstThread</code>.</p> 
+       <p>The following issue has been reported related to this issue due to automatic insertion of the <code>XstartOnFirstThread</code> VM option in Eclipse on Mac:<code><br /> <a href="../../../../https@bugs.eclipse.org/bugs/show_bug.cgi@id=211625">https://bugs.eclipse.org/bugs/show_bug.cgi?id=211625</a></code></p> 
+       <p>As a workaround, for SWT application that contain pure JavaFX classes, you can create an Eclipse &quot;Standard VM&quot; instead of using the default. The Standard VM that you create points to the same Java, but the Eclipse IDE does not add the <code>-XstartOnFirstThread</code> VM option.</p> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li class=" active"><a href="jfxpub-swt_interoperability.htm">JavaFX Interoperability with SWT</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/swt_interoperability/TwoButtons.zip">TwoButtons.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

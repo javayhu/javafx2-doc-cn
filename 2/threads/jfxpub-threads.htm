@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Concurrency in JavaFX &middot; Concurrency in JavaFX &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Concurrency in JavaFX</h1>
+     <p class=" lead">Concurrency in JavaFX</p>
+     <ul class=" pager"></ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="sthref2" name="sthref2"></a>  
+     <p>This article describes the capabilities provided by the <code>javafx.concurrent</code> package to create multithreaded applications. You learn how to keep your JavaFX application user interface (UI) responsive by delegating time-consuming task execution to background threads.</p> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref3" name="sthref3"></a> 
+      <h2 class="sect1">Why Use the javafx.concurrent Package?</h2> 
+      <p>The JavaFX scene graph, which represents the graphical user interface of a JavaFX application, is not thread-safe and can only be accessed and modified from the UI thread also known as the JavaFX Application thread. Implementing long-running tasks on the JavaFX Application thread inevitably makes an application UI unresponsive. A best practice is to do these tasks on one or more background threads and let the JavaFX Application thread process user events.</p> 
+      <p>If you implement a background worker by creating a Runnable object and a new thread, at some point, you must communicate with the JavaFX Application thread, either with a result or with the progress of the background task, which is error prone. Instead, use the JavaFX APIs provided by the <code>javafx.concurrent</code> package, which takes care of multithreaded code that interacts with the UI and ensures that this interaction happens on the correct thread.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref4" name="sthref4"></a> 
+      <h2 class="sect1">Overview of the javafx.concurrent Package</h2> 
+      <p>The Java platform provides a complete set of concurrency libraries available through the <code>java.util.concurrent</code> package. The <code>javafx.concurrent</code> package leverages the existing API by considering the JavaFX Application thread and other constraints faced by GUI developers.</p> 
+      <p>The <code>javafx.concurrent</code> package consists of the <code>Worker</code> interface and two basic classes, <code>Task</code> and <code>Service</code>, both of which implement the <code>Worker</code> interface. The <code>Worker</code> interface provides APIs that are useful for a background worker to communicate with the UI. The <code>Task</code> class is a fully observable implementation of the <code>java.util.concurrent.FutureTask</code> class. The <code>Task</code> class enables developers to implement asynchronous tasks in JavaFX applications. The <code>Service</code> class executes tasks.</p> 
+      <p>The <code>WorkerStateEvent</code> class specifies an event that occurs whenever the state of a Worker implementation changes. Both the <code>Task</code> and <code>Service</code> classes implement the <code>EventTarget</code> interface and thus support listening to the state events.</p> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref5" name="sthref5"></a> 
+       <h3 class="sect2">The Worker Interface</h3> 
+       <p>The <code>Worker</code> interface defines an object that performs some work on one or more background threads. The state of the Worker object is observable and usable from the JavaFX Application thread.</p> 
+       <p>The lifecycle of the Worker object is defined as follows. When created, the Worker object is in the <code>READY</code> state. Upon being scheduled for work, the Worker object transitions to the <code>SCHEDULED</code> state. After that, when the Worker object is performing the work, its state becomes <code>RUNNING</code>. Note that even when the Worker object is immediately started without being scheduled, it first transitions to the <code>SCHEDULED</code> state and then to the <code>RUNNING</code> state. The state of a Worker object that completes successfully is <code>SUCCEEDED</code>, and the <code>value</code> property is set to the result of this Worker object. Otherwise, if any exceptions are thrown during the execution of the Worker object, its state becomes <code>FAILED</code> and the <code>exception</code> property is set to the type of the exception that occurred. At any time before the end of the Worker object the developer can interrupt it by invoking the <code>cancel</code> method, which puts the Worker object into the <code>CANCELLED</code> state.</p> 
+       <p>The progress of the work being done by the Worker object can be obtained through three different properties such as <code>totalWork</code>, <code>workDone</code>, and <code>progress</code>.</p> 
+       <p>For more information on the range of the parameter values, see the API documentation.</p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref6" name="sthref6"></a> 
+       <h3 class="sect2">The Task Class</h3> 
+       <p>Tasks are used to implement the logic of work that needs to be done on a background thread. First, you need to extend the <code>Task</code> class. Your implementation of the <code>Task</code> class must override the <code>call</code> method to do the background work and return the result.</p> 
+       <p>The <code>call</code> method is invoked on the background thread, therefore this method can only manipulate states that are safe to read and write from a background thread. For example, manipulating an active scene graph from the <code>call</code> method throws runtime exceptions. On the other hand, the <code>Task</code> class is designed to be used with JavaFX GUI applications, and it ensures that any changes to public properties, change notifications for errors or cancellation, event handlers, and states occur on the JavaFX Application thread. Inside the <code>call</code> method, you can use the <code>updateProgress</code>, <code>updateMessage</code>, <code>updateTitle</code> methods, which update the values of the corresponding properties on the JavaFX Application thread. However, if the task was canceled, a return value from the <code>call</code> method is ignored.</p> 
+       <p>Note that the <code>Task</code> class fits into the Java concurrency libraries because it inherits from the <code>java.utils.concurrent.FutureTask</code> class, which implements the <code>Runnable</code> interface. For this reason, a Task object can be used within the Java concurrency <code>Executor</code> API and also can be passed to a thread as a parameter. You can call the Task object directly by using the <code>FutureTask.run()</code> method, which enables calling this task from another background thread. Having a good understanding of the Java concurrency API will help you understand concurrency in JavaFX.</p> 
+       <p>A task can be started in one of the following ways:</p> 
+       <ul> 
+        <li> <p>By starting a thread with the given task as a parameter:</p> <p><code>Thread th = new Thread(task);</code></p> <p><code>th.setDaemon(true);</code></p> <p><code>th.start();</code></p> </li> 
+        <li> <p>By using the <code>ExecutorService</code> API:</p> <p><code>ExecutorService.submit(task);</code></p> </li> 
+       </ul> 
+       <p>The <code>Task</code> class defines a one-time object that cannot be reused. If you need a reusable Worker object, use the <code>Service</code> class.</p> 
+       <div class="sect3">
+        <!-- infolevel="all" infotype="General" -->
+        <a id="sthref7" name="sthref7"></a> 
+        <h4 class="sect3">Cancelling the Task</h4> 
+        <p>There is no reliable way in Java to stop a thread in process. However, the task must stop processing whenever <code>cancel</code> is called on the task. The task is supposed to check periodically during its work whether it was cancelled by using the <code>isCancelled</code> method within the body of the <code>call</code> method. <a href="#BABCHBEA">Example 1</a> shows a correct implementation of the <code>Task</code> class that checks for cancellation.</p> 
+        <div class="example">
+         <a id="BABCHBEA" name="BABCHBEA"></a> 
+         <p class="titleinexample">Example 1</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.concurrent.Task;
+
+Task&lt;Integer&gt; task = new Task&lt;Integer&gt;() {
+    @Override protected Integer call() throws Exception {
+        int iterations;
+        for (iterations = 0; iterations &lt; 100000; iterations++) {
+            if (isCancelled()) {
+               break;
+            }
+            System.out.println(&quot;Iteration &quot; + iterations);
+        }
+        return iterations;
+    }
+};
+</pre>
+        </div> 
+        <!-- class="example" --> 
+        <p>If the task implementation has blocking calls such as <code>Thread.sleep</code> and the task is cancelled while in a blocking call, an <code>InterruptedException</code> is thrown. For these tasks, an interrupted thread may be the signal for a cancelled task. Therefore, tasks that have blocking calls must double-check the <code>isCancelled</code> method to ensure that the <code>InterruptedException</code> was thrown due to the cancellation of the task as shown in <a href="#BABBHBHE">Example 2</a>.</p> 
+        <div class="example">
+         <a id="BABBHBHE" name="BABBHBHE"></a> 
+         <p class="titleinexample">Example 2</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.concurrent.Task;
+
+Task&lt;Integer&gt; task = new Task&lt;Integer&gt;() {
+    @Override protected Integer call() throws Exception {
+        int iterations;
+        for (iterations = 0; iterations &lt; 1000; iterations++) {
+            if (isCancelled()) {
+                updateMessage(&quot;Cancelled&quot;);
+                break;
+            }
+            updateMessage(&quot;Iteration &quot; + iterations);
+            updateProgress(iterations, 1000);
+ 
+            //Block the thread for a short time, but be sure
+            //to check the InterruptedException for cancellation
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException interrupted) {
+                if (isCancelled()) {
+                    updateMessage(&quot;Cancelled&quot;);
+                    break;
+                }
+            }
+        }
+        return iterations;
+    }
+};
+</pre>
+        </div> 
+        <!-- class="example" -->
+       </div> 
+       <!-- class="sect3" --> 
+       <div class="sect3">
+        <!-- infolevel="all" infotype="General" -->
+        <a id="sthref8" name="sthref8"></a> 
+        <h4 class="sect3">Showing the Progress of a Background Task</h4> 
+        <p>A typical use case in multithreaded applications is showing the progress of a background task. Suppose you have a background task that counts from one to one million and a progress bar, and you must update the progress on this progress bar as the counter runs in the background. <a href="#BABGJIDB">Example 3</a> shows how to update a progress bar.</p> 
+        <div class="example">
+         <a id="BABGJIDB" name="BABGJIDB"></a> 
+         <p class="titleinexample">Example 3</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.concurrent.Task;
+
+Task task = new Task&lt;Void&gt;() {
+    @Override public Void call() {
+        static final int max = 1000000;
+        for (int i=1; i&lt;=max; i++) {
+            if (isCancelled()) {
+               break;
+            }
+            updateProgress(i, max);
+        }
+        return null;
+    }
+};
+ProgressBar bar = new ProgressBar();
+bar.progressProperty().bind(task.progressProperty());
+new Thread(task).start();
+</pre>
+        </div> 
+        <!-- class="example" --> 
+        <p>First, you create the task by overriding the <code>call</code> method where you implement the logic of the work to be done and invoke the <code>updateProgress</code> method, which updates the <code>progress</code>, <code>totalWork</code>, and <code>workDone</code> properties of the task. This is important because you can now use the <code>progressProperty</code> method to retrieve the progress of the task and bind the progress of the bar to the progress of the task.</p> 
+       </div> 
+       <!-- class="sect3" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref9" name="sthref9"></a> 
+       <h3 class="sect2">The Service Class</h3> 
+       <p>The <code>Service</code> class is designed to execute a Task object on one or several background threads. The <code>Service</code> class methods and states must only be accessed on the JavaFX Application thread. The purpose of this class is to help the developer to implement the correct interaction between the background threads and the JavaFX Application thread.</p> 
+       <p>You have the following control over the Service object: you can start, cancel and restart it as you need. To start the Service object, use the <code>Service.start()</code> method.</p> 
+       <p>Using the <code>Service</code> class, you can observe the state of the background work and optionally cancel it. Later, you can reset the service and restart it. Thus, the service can be defined declaratively and restarted on demand.</p> 
+       <p>When implementing the subclasses of the <code>Service</code> class, be sure to expose the input parameters to the Task object as properties of the subclass.</p> 
+       <p>The service can be executed in one of the following ways:</p> 
+       <ul> 
+        <li> <p>By an Executor object, if it is specified for the given service</p> </li> 
+        <li> <p>By a daemon thread, if no executor is specified</p> </li> 
+        <li> <p>By a custom executor such as a ThreadPoolExecutor</p> </li> 
+       </ul> 
+       <p><a href="#BABCCGCI">Example 4</a> shows an implementation of the <code>Service</code> class which reads the first line from any URL and returns it as a string.</p> 
+       <div class="example">
+        <a id="BABCCGCI" name="BABCCGCI"></a> 
+        <p class="titleinexample">Example 4</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import javafx.application.Application;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.concurrent.Service;
+import javafx.concurrent.Task;
+import javafx.concurrent.WorkerStateEvent;
+import javafx.event.EventHandler;
+import javafx.stage.Stage;
+
+public class FirstLineServiceApp extends Application {
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        FirstLineService service = new FirstLineService();
+        service.setUrl(&quot;http://google.com&quot;);
+        service.setOnSucceeded(new EventHandler&lt;WorkerStateEvent&gt;() {
+
+            @Override
+            public void handle(WorkerStateEvent t) {
+                System.out.println(&quot;done:&quot; + t.getSource().getValue());
+            }
+        });
+        service.start();
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+
+    private static class FirstLineService extends Service&lt;String&gt; {
+        private StringProperty url = new SimpleStringProperty();
+
+        public final void setUrl(String value) {
+            url.set(value);
+        }
+
+        public final String getUrl() {
+            return url.get();
+        }
+
+        public final StringProperty urlProperty() {
+           return url;
+        }
+
+        protected Task&lt;String&gt; createTask() {
+            final String _url = getUrl();
+            return new Task&lt;String&gt;() {
+                protected String call() 
+                    throws IOException, MalformedURLException {
+                        String result = null;
+                        BufferedReader in = null;
+                        try {
+                            URL u = new URL(_url);
+                            in = new BufferedReader(
+                                new InputStreamReader(u.openStream()));
+                            result = in.readLine();
+                        } finally {
+                            if (in != null) {
+                                in.close();
+                            }
+                        }
+                        return result;
+                }
+            };
+        }
+    }
+}
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref10" name="sthref10"></a> 
+       <h3 class="sect2">The WorkerStateEvent Class and State Transitions</h3> 
+       <p>Whenever the state of the Worker implementation changes, an appropriate event, defined by the <code>WorkerStateEvent</code> class, occurs. For example, when the Task object transitions to the <code>SUCCEEDED</code> state, the <code>WORKER_STATE_SUCCEEDED</code> event occurs, the <code>onSucceeded</code> event handler is called, after which the protected convenience method <code>succeeded</code> is invoked on the JavaFX Application thread.</p> 
+       <p>There are several protected convenience methods such as <code>cancelled</code>, <code>failed</code>, <code>running</code>, <code>scheduled</code>, and <code>succeeded</code>, which are invoked when the Worker implementation transitions to the corresponding state. These methods can be overridden by subclasses of the <code>Task</code> and <code>Service</code> classes when the state is changed to implement the logic of your application. <a href="#BABFIDDD">Example 5</a> shows a Task implementation that updates the status message on the task's success, cancellation, and failure.</p> 
+       <div class="example">
+        <a id="BABFIDDD" name="BABFIDDD"></a> 
+        <p class="titleinexample">Example 5</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.concurrent.Task;
+
+Task&lt;Integer&gt; task = new Task&lt;Integer&gt;() {
+    @Override protected Integer call() throws Exception {
+        int iterations = 0;
+        for (iterations = 0; iterations &lt; 100000; iterations++) {
+            if (isCancelled()) {
+                break;
+            }
+            System.out.println(&quot;Iteration &quot; + iterations);
+        }
+        return iterations;
+    }
+
+    @Override protected void succeeded() {
+        super.succeeded();
+        updateMessage(&quot;Done!&quot;);
+    }
+
+    @Override protected void cancelled() {
+        super.cancelled();
+        updateMessage(&quot;Cancelled!&quot;);
+    }
+
+@Override protected void failed() {
+    super.failed();
+    updateMessage(&quot;Failed!&quot;);
+    }
+};
+
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref11" name="sthref11"></a> 
+       <h3 class="sect2">Conclusion</h3> 
+       <p>In this article, you learned the basic capabilities provided by the <code>javafx.concurrent</code> package and became familiar with several examples of the <code>Task</code> and <code>Service</code> classes implementation. For more examples of how to create the Task implementation correctly, see the API documentation for the <a href="../api/javafx/concurrent/Task.html">Task</a> class.</p> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li class=" active"><a href="jfxpub-threads.htm">Concurrency in JavaFX</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

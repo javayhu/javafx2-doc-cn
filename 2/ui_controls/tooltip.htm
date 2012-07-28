@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Tooltip &middot; Using JavaFX UI Controls &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX UI Controls</h1>
+     <p class=" lead">Tooltip</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="hyperlink.htm">←上一篇</a></li>
+      <li class=" next"><a href="editor.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="JFXUC326" name="JFXUC326"></a>
+     <a id="BABBIJBJ" name="BABBIJBJ"></a>  
+     <p>The <code>Tooltip</code> class represents a common UI component that is typically used to display additional information about the UI control. The tooltip is shown when the control is hovered over by the mouse cursor. The tooltip can be set on any control by calling the <code>setTooltip</code> method.</p> 
+     <p>The tooltip has two different states: activated and showing. When the tooltip is activated, the mouse moves over a control. When the tooltip is in the showing state, it actually appears. A shown tooltip is also activated. There is usually some delay between when the Tooltip becomes activated and when it is actually shown.</p> 
+     <p>A password field with a tooltip is shown in <a href="#BABIGHED">Figure 20-1</a>.</p> 
+     <div class="figure">
+      <a id="BABIGHED" name="BABIGHED"></a>
+      <a id="JFXUC327" name="JFXUC327"></a> 
+      <p class="titleinfigure">Figure 20-1 Tooltip Added to a Password Field</p> 
+      <img src="img/tooltip-password.png" alt="A password with a tooltip." title="A password with a tooltip." longdesc="img_text/tooltip-password.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <a id="JFXUC328" name="JFXUC328"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref172" name="sthref172"></a> 
+      <h2 class="sect1">Creating a Tooltip</h2> 
+      <p>Study the code fragment in <a href="#BABCBDFF">Example 20-1</a> that creates the password field with a tooltip in the JavaFX application shown in the preceding figure.</p> 
+      <div class="example">
+       <a id="BABCBDFF" name="BABCBDFF"></a>
+       <a id="JFXUC329" name="JFXUC329"></a> 
+       <p class="titleinexample">Example 20-1 Adding a Tooltip to the Password Field</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+final PasswordField pf = new PasswordField();
+final Tooltip tooltip = new Tooltip();
+tooltip.setText(
+    &quot;\nYour password must be\n&quot; +
+    &quot;at least 8 characters in length\n&quot;  +
+);
+pf.setTooltip(tooltip);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Each UI control from the <code>javafx.scene.control</code> package has the <code>setTooltip</code> method to add a tooltip. You can define a text caption within a <code>Tooltip</code> constructor or by using the <code>setText</code> method.</p> 
+      <p>Because the <code>Tooltip</code> class is an extension of the <code>Labeled</code> class, you can add not only a text caption, but a graphical icon as well. The code fragment in <a href="#BABHFIJI">Example 20-2</a> adds an icon to the tooltip for the password field.</p> 
+      <div class="example">
+       <a id="BABHFIJI" name="BABHFIJI"></a>
+       <a id="JFXUC330" name="JFXUC330"></a> 
+       <p class="titleinexample">Example 20-2 Adding an Icon to a Tooltip</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Image image = new Image(
+    getClass().getResourceAsStream(&quot;warn.png&quot;)
+);
+tooltip.setGraphic(new ImageView(image));
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>After you add this code fragment to the application, and the code is compiled, and run, the tooltip shown in <a href="#BABHCHGG">Figure 20-2</a> appears.</p> 
+      <div class="figure">
+       <a id="BABHCHGG" name="BABHCHGG"></a>
+       <a id="JFXUC331" name="JFXUC331"></a> 
+       <p class="titleinfigure">Figure 20-2 Tooltip with an Icon</p> 
+       <img src="img/tooltip-graphic.png" alt="The tooltip has both a text caption and an icon" title="The tooltip has both a text caption and an icon" longdesc="img_text/tooltip-graphic.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>A tooltip can contain not only additional or auxiliary information, but it can also present data.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC332" name="JFXUC332"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref174" name="sthref174"></a> 
+      <h2 class="sect1">Presenting Application Data in Tooltips</h2> 
+      <p>The application in <a href="#BABCDJBD">Figure 20-3</a> uses information presented in the tooltips to calculate the total cost of the hotel stay</p> 
+      <div class="figure">
+       <a id="BABCDJBD" name="BABCDJBD"></a>
+       <a id="JFXUC333" name="JFXUC333"></a> 
+       <p class="titleinfigure">Figure 20-3 Calculating Hotel Rates</p> 
+       <img src="img/tooltip-booking.png" alt="A sample of the booking application" title="A sample of the booking application" longdesc="img_text/tooltip-booking.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Each checkbox is accompanied by a tooltip. Each tooltip displays the rate for a particular booking option. If a user selects a checkbox, the corresponding value is added to the total. If a selected checkbox is deselected, the corresponding value is deducted from the total.</p> 
+      <p>Review the source code of the application shown in <a href="#BABHEHBI">Example 20-3</a>.</p> 
+      <div class="example">
+       <a id="BABHEHBI" name="BABHEHBI"></a>
+       <a id="JFXUC334" name="JFXUC334"></a> 
+       <p class="titleinexample">Example 20-3 Using Tooltips to Calculate Hotel Rates</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.geometry.Insets;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.stage.Stage;
+ 
+ 
+public class Main extends Application {
+ 
+    final static String[] rooms = new String[]{
+        &quot;Accommodation (BB)&quot;,
+        &quot;Half Board&quot;,
+        &quot;Late Check-out&quot;,
+        &quot;Extra Bed&quot;
+    };
+    final static Integer[] rates = new Integer[]{
+        100, 20, 10, 30
+    };
+    final CheckBox[] cbs = new CheckBox[rooms.length];
+    final Label total = new Label(&quot;Total: $0&quot;);
+    Integer sum = 0;
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+ 
+    @Override
+    public void start(Stage stage) {
+        Scene scene = new Scene(new Group());
+        stage.setTitle(&quot;Tooltip Sample&quot;);
+        stage.setWidth(300);
+        stage.setHeight(150);
+ 
+        total.setFont(new Font(&quot;Arial&quot;, 20));
+        
+        for (int i = 0; i &lt; rooms.length; i++) {
+            final CheckBox cb = cbs[i] = new CheckBox(rooms[i]);
+            final Integer rate = rates[i];
+            final Tooltip tooltip = new Tooltip(&quot;$&quot; + rates[i].toString());
+            tooltip.setFont(new Font(&quot;Arial&quot;, 16));
+            cb.setTooltip(tooltip);
+            cb.selectedProperty().addListener(new ChangeListener&lt;Boolean&gt;() {
+                public void changed(ObservableValue&lt;? extends Boolean&gt; ov,
+                    Boolean old_val, Boolean new_val) {
+                    if (cb.isSelected()) {
+                        sum = sum + rate;
+                    } else {
+                        sum = sum - rate;
+                    }
+                    total.setText(&quot;Total: $&quot; + sum.toString());
+                }
+            });
+        }
+ 
+        VBox vbox = new VBox();
+        vbox.getChildren().addAll(cbs);
+        vbox.setSpacing(5);
+        HBox root = new HBox();
+        root.getChildren().add(vbox);
+        root.getChildren().add(total);
+        root.setSpacing(40);
+        root.setPadding(new Insets(20, 10, 10, 20));
+ 
+        ((Group) scene.getRoot()).getChildren().add(root);
+ 
+        stage.setScene(scene);
+        stage.show();
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The code line in <a href="#BABGEIFC">Example 20-4</a> was used in <a href="#BABHEHBI">Example 20-3</a> to create a tooltip and assign a text caption to it. The <code>Integer</code> value of the option price was converted into a <code>String</code> value.</p> 
+      <div class="example">
+       <a id="BABGEIFC" name="BABGEIFC"></a>
+       <a id="JFXUC335" name="JFXUC335"></a> 
+       <p class="titleinexample">Example 20-4 Setting the Value for a Tooltip</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+final Tooltip tooltip = new Tooltip(&quot;$&quot; + rates[i].toString())
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>You can alter visual appearance of a tooltip by applying CSS.</p> 
+      <p class="itemizedlisttitle">Related API Documentation&nbsp;</p> 
+      <ul> 
+       <li> <p><code>Tooltip</code></p> </li> 
+       <li> <p><code>Labeled</code></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-ui_controls.htm">About This Tutorial</a></li>
+      <li><a href="overview.htm">JavaFX UI Controls</a></li>
+      <li><a href="label.htm">Label</a></li>
+      <li><a href="button.htm">Button</a></li>
+      <li><a href="radio-button.htm">Radio Button</a></li>
+      <li><a href="toggle-button.htm">Toggle Button</a></li>
+      <li><a href="checkbox.htm">Checkbox</a></li>
+      <li><a href="choice-box.htm">Choice Box</a></li>
+      <li><a href="text-field.htm">Text Field</a></li>
+      <li><a href="password-field.htm">Password Field</a></li>
+      <li><a href="scrollbar.htm">Scroll Bar</a></li>
+      <li><a href="scrollpane.htm">Scroll Pane</a></li>
+      <li><a href="list-view.htm">List View</a></li>
+      <li><a href="table-view.htm">Table View</a></li>
+      <li><a href="tree-view.htm">Tree View</a></li>
+      <li><a href="combo-box.htm">Combo Box</a></li>
+      <li><a href="separator.htm">Separator</a></li>
+      <li><a href="slider.htm">Slider</a></li>
+      <li><a href="progress.htm">Progress Bar and Progress Indicator</a></li>
+      <li><a href="hyperlink.htm">Hyperlink</a></li>
+      <li class=" active"><a href="tooltip.htm">Tooltip</a></li>
+      <li><a href="editor.htm">HTML Editor</a></li>
+      <li><a href="accordion-titledpane.htm">Titled Pane and Accordion</a></li>
+      <li><a href="menu_controls.htm">Menu</a></li>
+      <li><a href="custom.htm">Customization of UI Controls</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/ui_controls/UIControlSamples.zip">UIControlSamples.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

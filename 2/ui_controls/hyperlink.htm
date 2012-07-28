@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Hyperlink &middot; Using JavaFX UI Controls &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX UI Controls</h1>
+     <p class=" lead">Hyperlink</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="progress.htm">←上一篇</a></li>
+      <li class=" next"><a href="tooltip.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="JFXUC314" name="JFXUC314"></a>
+     <a id="CIHGADBG" name="CIHGADBG"></a>  
+     <p>The <code>Hyperlink</code> class represents another type of <code>Labeled</code> control, which is used mainly for formatting text as a hyperlink. <a href="#CHDCHBBG">Figure 19-1</a> demonstrates three states of the default hyperlink implementation.</p> 
+     <div class="figure">
+      <a id="CHDCHBBG" name="CHDCHBBG"></a>
+      <a id="JFXUC315" name="JFXUC315"></a> 
+      <p class="titleinfigure">Figure 19-1 Three States of a Hyperlink Control</p> 
+      <img src="img/hyperlink-types.png" alt="Three states of hyperlinks" title="Three states of hyperlinks" longdesc="img_text/hyperlink-types.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <a id="JFXUC316" name="JFXUC316"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref164" name="sthref164"></a> 
+      <h2 class="sect1">Creating a Hyperlink</h2> 
+      <p>The code fragment that produces a hyperlink is shown in <a href="#CHDDHEII">Example 19-1</a>.</p> 
+      <div class="example">
+       <a id="CHDDHEII" name="CHDDHEII"></a>
+       <a id="JFXUC317" name="JFXUC317"></a> 
+       <p class="titleinexample">Example 19-1 Typical Hyperlink</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Hyperlink link = new Hyperlink();
+link.setText(&quot;http://example.com&quot;);
+link.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+    @Override
+    public void handle(ActionEvent e) {
+        System.out.println(&quot;This link is clicked&quot;);
+    }
+});
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The <code>setText</code> instance method defines the text caption for the hyperlink. Because the <code>Hyperlink</code> class is an extension of the <code>Labeled</code> class, you can set a specific font and text fill for the hyperlink caption. The <code>setOnAction</code> method sets the specific action, which is called whenever the hyperlink is clicked, similar to how this method works for the <code>Button</code> control. In <a href="#CHDDHEII">Example 19-1</a>, this action is limited to printing the string. However, in your application, you might want to implement more common tasks.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC318" name="JFXUC318"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref165" name="sthref165"></a> 
+      <h2 class="sect1">Linking the Local Content</h2> 
+      <p>The application in <a href="#CIHHCJIJ">Figure 19-2</a> renders images from the local directory.</p> 
+      <div class="figure">
+       <a id="CIHHCJIJ" name="CIHHCJIJ"></a>
+       <a id="JFXUC319" name="JFXUC319"></a> 
+       <p class="titleinfigure">Figure 19-2 Viewing Images</p> 
+       <img src="img/hyperlink-images.png" alt="Four hypelinks to view images on a local drive." title="Four hypelinks to view images on a local drive." longdesc="img_text/hyperlink-images.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Review the source code of this application shown in <a href="#CHDJIDJF">Example 19-2</a>.</p> 
+      <div class="example">
+       <a id="CHDJIDJF" name="CHDJIDJF"></a>
+       <a id="JFXUC320" name="JFXUC320"></a> 
+       <p class="titleinexample">Example 19-2 Using Hyperlinks to VIew Images</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.*;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+ 
+public class Main extends Application {
+ 
+    final static String[] imageFiles = new String[]{
+        &quot;product.png&quot;,
+        &quot;education.png&quot;,
+        &quot;partners.png&quot;,
+        &quot;support.png&quot;
+    };
+    final static String[] captions = new String[]{
+        &quot;Products&quot;,
+        &quot;Education&quot;,
+        &quot;Partners&quot;,
+        &quot;Support&quot;
+    };
+    final ImageView selectedImage = new ImageView();
+    final ScrollPane list = new ScrollPane();
+    final Hyperlink[] hpls = new Hyperlink[captions.length];
+    final Image[] images = new Image[imageFiles.length];
+ 
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+ 
+    @Override
+    public void start(Stage stage) {
+        Scene scene = new Scene(new Group());
+        stage.setTitle(&quot;Hyperlink Sample&quot;);
+        stage.setWidth(300);
+        stage.setHeight(200);
+ 
+        selectedImage.setLayoutX(100);
+        selectedImage.setLayoutY(10);
+ 
+        for (int i = 0; i &lt; captions.length; i++) {
+            final Hyperlink hpl = hpls[i] = new Hyperlink(captions[i]);
+            final Image image = images[i] = new Image(
+                getClass().getResourceAsStream(imageFiles[i])
+            );
+            hpl.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+                @Override
+                public void handle(ActionEvent e) {
+                    selectedImage.setImage(image);
+                }
+            });
+        }
+ 
+        final Button button = new Button(&quot;Refresh links&quot;);
+        button.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+                @Override
+                public void handle(ActionEvent e) {
+                    for (int i = 0; i &lt; captions.length; i++) {
+                        hpls[i].setVisited(false);
+                        selectedImage.setImage(null);
+                    }
+                }
+            });
+ 
+        VBox vbox = new VBox();
+        vbox.getChildren().addAll(hpls);
+        vbox.getChildren().add(button);
+        vbox.setSpacing(5);
+ 
+        ((Group) scene.getRoot()).getChildren().addAll(vbox, selectedImage);
+        stage.setScene(scene);
+        stage.show();
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>This application creates four <code>Hyperlink</code> objects within a <code>for</code> loop. The <code>setOnAction</code> method called on each hyperlink defines the behavior when a user clicks a particular hyperlink. In that case, the corresponding image from the <code>images</code> array is set for the <code>selectedImage</code> variable.</p> 
+      <p>When a user clicks a hyperlink, it becomes visited. You can use the <code>setVisited</code> method of the <code>Hyperlink</code> class to refresh the links. The code fragment in <a href="#CHDHGGJF">Example 19-3</a> accomplishes this task.</p> 
+      <div class="example">
+       <a id="CHDHGGJF" name="CHDHGGJF"></a>
+       <a id="JFXUC321" name="JFXUC321"></a> 
+       <p class="titleinexample">Example 19-3 Refreshing the HyperlInks</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+final Button button = new Button(&quot;Refresh links&quot;);
+button.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+    @Override
+    public void handle(ActionEvent e) {
+       for (int i = 0; i &lt; captions.length; i++) {
+           hpls[i].setVisited(false);
+           selectedImage.setImage(null);
+       }
+    }
+});
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When clicked, the Refresh Links button brings all the hyperlinks to the unvisited state, as show in <a href="#CHDGGEIJ">Figure 19-3</a>.</p> 
+      <div class="figure">
+       <a id="CHDGGEIJ" name="CHDGGEIJ"></a>
+       <a id="JFXUC322" name="JFXUC322"></a> 
+       <p class="titleinfigure">Figure 19-3 Unvisited Hyperlinks</p> 
+       <img src="img/hyperlink-refresh.png" alt="The hyperlinks are refreshed." title="The hyperlinks are refreshed." longdesc="img_text/hyperlink-refresh.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Because the <code>Hyperlink</code> class is an extension of the <code>Labeled</code> class, you can specify not only a text caption but also an image. The application provided in the next section uses both a text caption and an image to create hyperlinks and to load remote HTML pages.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC323" name="JFXUC323"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref168" name="sthref168"></a> 
+      <h2 class="sect1">Linking the Remote Content</h2> 
+      <p>You can render HTML content in your JavaFX application by embedding the <code>WebView</code> browser in the application scene. The <code>WebView</code> component provides basic web page browsing functionality. It renders web pages and supports user interaction such as navigating links and executing JavaScript commands.</p> 
+      <p>Study the source code of the application in <a href="#CHDFFBEF">Example 19-4</a>. It creates four hyperlinks with text captions and images. When a hyperlink is clicked, the corresponding value is passed as a URL to the embedded browser.</p> 
+      <div class="example">
+       <a id="CHDFFBEF" name="CHDFFBEF"></a>
+       <a id="JFXUC324" name="JFXUC324"></a> 
+       <p class="titleinexample">Example 19-4 Loading Remote Web Pages</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.*;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
+import javafx.stage.Stage;
+ 
+public class Main extends Application {
+ 
+    final static String[] imageFiles = new String[]{
+        &quot;product.png&quot;,
+        &quot;education.png&quot;,
+        &quot;partners.png&quot;,
+        &quot;support.png&quot;
+    };
+    final static String[] captions = new String[]{
+        &quot;Products&quot;,
+        &quot;Education&quot;,
+        &quot;Partners&quot;,
+        &quot;Support&quot;
+    };
+ 
+    final static String[] urls = new String[]{
+        &quot;http://www.oracle.com/us/products/index.html&quot;,
+        &quot;http://education.oracle.com/&quot;,
+        &quot;http://www.oracle.com/partners/index.html&quot;,
+        &quot;http://www.oracle.com/us/support/index.html&quot;
+    };
+    
+    final ImageView selectedImage = new ImageView();
+    final Hyperlink[] hpls = new Hyperlink[captions.length];
+    final Image[] images = new Image[imageFiles.length];   
+ 
+    public static void main(String[] args){
+        launch(args);
+    }
+ 
+    @Override
+    public void start(Stage stage) {
+        VBox vbox = new VBox();
+        Scene scene = new Scene(vbox);
+        stage.setTitle(&quot;Hyperlink Sample&quot;);
+        stage.setWidth(570);
+        stage.setHeight(550);
+ 
+        selectedImage.setLayoutX(100);
+        selectedImage.setLayoutY(10);
+        
+        final WebView browser = new WebView();
+        final WebEngine webEngine = browser.getEngine();
+ 
+        for (int i = 0; i &lt; captions.length; i++) {
+            final Hyperlink hpl = hpls[i] = new Hyperlink(captions[i]);
+ 
+            final Image image = images[i] =
+                    new Image(getClass().getResourceAsStream(imageFiles[i]));
+            hpl.setGraphic(new ImageView (image));
+            hpl.setFont(Font.font(&quot;Arial&quot;, 14));
+            final String url = urls[i];
+ 
+            hpl.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+                @Override
+                public void handle(ActionEvent e) {
+                    webEngine.load(url);
+                }
+            });
+        }
+              
+        HBox hbox = new HBox();
+        hbox.getChildren().addAll(hpls);
+ 
+        vbox.getChildren().addAll(hbox, browser);
+        VBox.setVgrow(browser, Priority.ALWAYS);
+        
+        stage.setScene(scene);
+        stage.show();
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The hyperlinks are created within a <code>for</code> loop similar to the one in <a href="#CHDJIDJF">Example 19-2</a>. The action set for a hyperlink passes the corresponding URL from the <code>urls</code> array to the <code>WebEngine</code> object of the embedded browser.</p> 
+      <p>When you compile and run this application, it produces the window shown in <a href="#CHDFHHBD">Figure 19-4</a>.</p> 
+      <div class="figure">
+       <a id="CHDFHHBD" name="CHDFHHBD"></a>
+       <a id="JFXUC325" name="JFXUC325"></a> 
+       <p class="titleinfigure">Figure 19-4 Loading Pages from the Oracle Corporate Site</p> 
+       <img src="img/hyperlink-webview.png" alt="Description of Figure 19-4 follows" title="Description of Figure 19-4 follows" longdesc="img_text/hyperlink-webview.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p class="itemizedlisttitle">Related API Documentation&nbsp;</p> 
+      <ul> 
+       <li> <p><code>Hyperlink</code></p> </li> 
+       <li> <p><code>Labeled</code></p> </li> 
+       <li> <p><code>WebView</code></p> </li> 
+       <li> <p><code>WebEngine</code></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-ui_controls.htm">About This Tutorial</a></li>
+      <li><a href="overview.htm">JavaFX UI Controls</a></li>
+      <li><a href="label.htm">Label</a></li>
+      <li><a href="button.htm">Button</a></li>
+      <li><a href="radio-button.htm">Radio Button</a></li>
+      <li><a href="toggle-button.htm">Toggle Button</a></li>
+      <li><a href="checkbox.htm">Checkbox</a></li>
+      <li><a href="choice-box.htm">Choice Box</a></li>
+      <li><a href="text-field.htm">Text Field</a></li>
+      <li><a href="password-field.htm">Password Field</a></li>
+      <li><a href="scrollbar.htm">Scroll Bar</a></li>
+      <li><a href="scrollpane.htm">Scroll Pane</a></li>
+      <li><a href="list-view.htm">List View</a></li>
+      <li><a href="table-view.htm">Table View</a></li>
+      <li><a href="tree-view.htm">Tree View</a></li>
+      <li><a href="combo-box.htm">Combo Box</a></li>
+      <li><a href="separator.htm">Separator</a></li>
+      <li><a href="slider.htm">Slider</a></li>
+      <li><a href="progress.htm">Progress Bar and Progress Indicator</a></li>
+      <li class=" active"><a href="hyperlink.htm">Hyperlink</a></li>
+      <li><a href="tooltip.htm">Tooltip</a></li>
+      <li><a href="editor.htm">HTML Editor</a></li>
+      <li><a href="accordion-titledpane.htm">Titled Pane and Accordion</a></li>
+      <li><a href="menu_controls.htm">Menu</a></li>
+      <li><a href="custom.htm">Customization of UI Controls</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/ui_controls/UIControlSamples.zip">UIControlSamples.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

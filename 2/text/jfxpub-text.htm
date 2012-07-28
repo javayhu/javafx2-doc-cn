@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Using Text and Text Effects in JavaFX &middot; Using Text and Text Effects in JavaFX &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using Text and Text Effects in JavaFX</h1>
+     <p class=" lead">Using Text and Text Effects in JavaFX</p>
+     <ul class=" pager"></ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="sthref2" name="sthref2"></a>  
+     <p>This article explains how to add text to your JavaFX 2 applications and how to provide text with some fancy effects.</p> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref3" name="sthref3"></a> 
+      <h2 class="sect1">Introduction</h2> 
+      <p>The graphical content of JavaFX 2 applications consists of objects organized in a tree-like structure called a <span class="bold">scene graph</span>. A single element in the scene graph is called a <span class="bold">node</span>. Nodes can handle different types of content, including text. Nodes can be transformed and animated. You can also apply various effects to nodes. Using features common to all node types enables you to provide sophisticated text content that meets the demands of modern rich Internet applications (RIAs).</p> 
+      <p>The JavaFX 2 release provides the <code>javafx.scene.text.Text</code> class that is used to display text. The <code>Text</code> class inherits from the <code>Node</code> class. For this reason, you can apply effects, animation, and transformations to text nodes in the same way as to any other nodes. Because the <code>Node</code> class inherits from the <code>Shape</code> class, you can set a stroke or apply a fill setting to text nodes in the same way as to any shape.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref4" name="sthref4"></a> 
+      <h2 class="sect1">Adding Text</h2> 
+      <p>To add a text object to your application, use any of the constructors shown in <a href="#CHDBDIBI">Example 1</a> through <a href="#CHDJIEBB">Example 3</a>.</p> 
+      <div class="example">
+       <a id="CHDBDIBI" name="CHDBDIBI"></a> 
+       <p class="titleinexample">Example 1</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Text t = new Text();
+t.setText(&quot;This is a text sample&quot;);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <div class="example">
+       <a id="sthref5" name="sthref5"></a> 
+       <p class="titleinexample">Example 2</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Text t = new Text(&quot;This is a text sample&quot;);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <div class="example">
+       <a id="CHDJIEBB" name="CHDJIEBB"></a> 
+       <p class="titleinexample">Example 3</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Text t = new Text (10, 20, &quot;This is a text sample&quot;);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>You can also create text objects by using the <code>javafx.scene.text.TextBuilder</code> class as shown in <a href="#CHDDADCE">Example 4</a>.</p> 
+      <div class="example">
+       <a id="CHDDADCE" name="CHDDADCE"></a> 
+       <p class="titleinexample">Example 4</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Text t = TextBuilder.create().text(&quot;This is a text sample&quot;).build();
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref6" name="sthref6"></a> 
+       <h3 class="sect2">Setting Text Font and Color</h3> 
+       <p>When adding text, you can also set some of its properties. To set the font, you can use an instance of the <code>javafx.scene.text.Font</code> class. The <code>Font.font()</code> method enables you to specify the font family name and size. You can also set the text color as shown in <a href="#CHDBADEI">Example 5</a>.</p> 
+       <div class="example">
+        <a id="CHDBADEI" name="CHDBADEI"></a> 
+        <p class="titleinexample">Example 5</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+t.setText(&quot;This is a text sample&quot;);
+t.setFont(Font.font (&quot;Verdana&quot;, 20));
+t.setFill(Color.RED);
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>Alternatively, you may want to use a system font, which varies depending on the platform. For this purpose, call the <code>Font.getDefault()</code> method.</p> 
+       <p>In the production code, Oracle recommends that you set the styles using cascading style sheets (CSS). For example, to be able to apply a linear gradient fill to your text objects, add the style with the required rules to your CSS as shown in <a href="#CHDDAEBG">Example 6</a>.</p> 
+       <div class="example">
+        <a id="CHDDAEBG" name="CHDDAEBG"></a> 
+        <p class="titleinexample">Example 6</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+#fancytext {
+    -fx-font: 100px Tahoma;
+    -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);
+    -fx-stroke: black;
+    -fx-stroke-width: 1;
+}
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>In your code, create a text object and apply the style from CSS as shown in <a href="#BCECEICG">Example 7</a>.</p> 
+       <div class="example">
+        <a id="BCECEICG" name="BCECEICG"></a> 
+        <p class="titleinexample">Example 7</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Text t = new Text (&quot;Stroke and Fill&quot;);
+t.setId(&quot;fancytext&quot;);
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>This code creates the text shown in <a href="#CHDCJHBA">Figure 1</a>.</p> 
+       <div class="figure">
+        <a id="CHDCJHBA" name="CHDCJHBA"></a> 
+        <p class="titleinfigure">Figure 1 Text with a Linear Gradient Fill</p> 
+        <img src="img/stroke_fill.jpg" alt="Description of Figure 1 follows" title="Description of Figure 1 follows" longdesc="img_text/stroke_fill.htm" />
+        <br /> 
+        <br /> 
+        <br />
+       </div> 
+       <!-- class="figure" --> 
+       <p>For more details about using CSS in JavaFX applications, see <a href="../css_tutorial/jfxpub-css_tutorial.htm">Skinning JavaFX Applications with CSS</a>.</p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref8" name="sthref8"></a> 
+       <h3 class="sect2">Making Text Bold or Italic</h3> 
+       <p>To make the text look bold, use the <code>FontWeight</code> constant of the <code>font</code> method as shown in <a href="#CHDJBFFA">Example 8</a>.</p> 
+       <div class="example">
+        <a id="CHDJBFFA" name="CHDJBFFA"></a> 
+        <p class="titleinexample">Example 8</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+t.setFont(Font.font(&quot;Verdana&quot;, FontWeight.BOLD, 70));
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>To display text in italic, use the <code>FontPosture</code> constant as shown in <a href="#CHDHDIHD">Example 9</a>.</p> 
+       <div class="example">
+        <a id="CHDHDIHD" name="CHDHDIHD"></a> 
+        <p class="titleinexample">Example 9</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+t.setFont(Font.font(&quot;Verdana&quot;, FontPosture.ITALIC, 20));
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref9" name="sthref9"></a> 
+       <h3 class="sect2">Using Custom Fonts</h3> 
+       <p>If you need to use a unique font that might not be installed on another computer, you can include a TrueType font (.ttf) or an OpenType (.otf) in your JavaFX 2 application.</p> 
+       <p>To include a TrueType or OpenType font as a custom font, use the following procedure:</p> 
+       <ol> 
+        <li> <p>Create a <code>resources/fonts</code> folder in your project folder.</p> </li> 
+        <li> <p>Copy your font files to the <code>fonts</code> subfolder in your project.</p> </li> 
+        <li> <p>In your source code, load the custom font as shown in <a href="#CHDDHDBF">Example 10</a>.</p> 
+         <div class="example">
+          <a id="CHDDHDBF" name="CHDDHDBF"></a> 
+          <p class="titleinexample">Example 10</p> 
+          <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+text.setFont(Font.loadFont(&quot;file:resources/fonts/isadoracyr.ttf&quot;, 120));
+</pre>
+         </div> 
+         <!-- class="example" --></li> 
+       </ol> 
+       <p>This code provides the font for the text shown in <a href="#CHDCJBHE">Figure 2</a>.</p> 
+       <div class="figure">
+        <a id="CHDCJBHE" name="CHDCJBHE"></a> 
+        <p class="titleinfigure">Figure 2 Custom Font</p> 
+        <img src="img/custom_font.jpg" alt="Description of Figure 2 follows" title="Description of Figure 2 follows" longdesc="img_text/custom_font.htm" />
+        <br /> 
+        <br /> 
+        <br />
+       </div> 
+       <!-- class="figure" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref11" name="sthref11"></a> 
+       <h3 class="sect2">Setting LCD Text Support</h3> 
+       <p>LCD (liquid crystal display) text is an anti-aliased text that takes advantage of the properties of LCD panels to render smoother text. You can take advantage of the LCD text on the text nodes by using the API shown in <a href="#BCEEDFGJ">Example 11</a>.</p> 
+       <div class="example">
+        <a id="BCEEDFGJ" name="BCEEDFGJ"></a> 
+        <p class="titleinexample">Example 11</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+text.setFontSmoothingType(FontSmoothingType.LCD));
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>Alternatively, you can provide this setting in a .css file by using the syntax shown in <a href="#BCEDDEAB">Example 12</a>.</p> 
+       <div class="example">
+        <a id="BCEDDEAB" name="BCEDDEAB"></a> 
+        <p class="titleinexample">Example 12</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+.text { -fx-font-smoothing-type: lcd; } 
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <a id="sthref12" name="sthref12"></a> 
+      <h2 class="sect1">Applying Effects</h2> 
+      <p>The JavaFX 2 release provides a wide set of effects that reside in the <code>javafx.scene.effect</code> package. As already mentioned, you can apply effects to your text nodes. For a complete set of available effects, see the API documentation. You can see some of the effects in action in the <code>TextEffects</code> demo application. This application displays text nodes with various effects. Download the <code>texteffects.zip</code> file using the link in the sidebar, extract the files, save them on your computer, and open a NetBeans project in the NetBeans IDE.</p> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref13" name="sthref13"></a> 
+       <h3 class="sect2">Perspective Effect</h3> 
+       <p>The <code>PerspectiveTransform</code> class enables you to imitate a three-dimensional effect for your two-dimensional content. The perspective transformation can map an arbitrary quadrilateral into another quadrilateral. An input for this transformation is your node. To define the perspective transformation, you specify the x and y coordinates of output locations of all four corners. In the <code>TextEffects</code> application, the PerspectiveTransform effect is set for a group consisting of a rectangle and text as shown in <a href="#CHDFIFGE">Example 13</a>.</p> 
+       <div class="example">
+        <a id="CHDFIFGE" name="CHDFIFGE"></a> 
+        <p class="titleinexample">Example 13</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+PerspectiveTransform pt = new PerspectiveTransform();
+pt.setUlx(10.0f);
+pt.setUly(10.0f);
+pt.setUrx(310.0f);
+pt.setUry(40.0f);
+pt.setLrx(310.0f);
+pt.setLry(60.0f);
+pt.setLlx(10.0f);
+pt.setLly(90.0f);
+ 
+g.setEffect(pt);
+g.setCache(true);
+ 
+Rectangle r = new Rectangle();
+r.setX(10.0f);
+r.setY(10.0f);
+r.setWidth(280.0f);
+r.setHeight(80.0f);
+r.setFill(Color.BLUE);
+ 
+Text t = new Text();
+t.setX(20.0f);
+t.setY(65.0f);
+t.setText(&quot;Perspective&quot;);
+t.setFill(Color.YELLOW);
+t.setFont(Font.font(null, FontWeight.BOLD, 36));
+ 
+g.getChildren().add(r);
+g.getChildren().add(t);
+return g;
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>You can see the result of the perspective transformation in <a href="#CHDFHIIC">Figure 3</a>.</p> 
+       <div class="figure">
+        <a id="CHDFHIIC" name="CHDFHIIC"></a> 
+        <p class="titleinfigure">Figure 3 Text with a Perspective Effect</p> 
+        <img src="img/perspective.jpg" alt="Description of Figure 3 follows" title="Description of Figure 3 follows" longdesc="img_text/perspective.htm" />
+        <br /> 
+        <br /> 
+        <br />
+       </div> 
+       <!-- class="figure" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref15" name="sthref15"></a> 
+       <h3 class="sect2">Blur Effect</h3> 
+       <p>The <code>GaussianBlur</code> class provides a blur effect based on a Gaussian convolution kernel.</p> 
+       <p><a href="#CHDFJIGI">Example 14</a> shows a text node with an applied Gaussian blur effect implemented in the <code>TextEffects</code> application.</p> 
+       <div class="example">
+        <a id="CHDFJIGI" name="CHDFJIGI"></a> 
+        <p class="titleinexample">Example 14</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Text t2 = new Text();
+t2.setX(10.0f);
+t2.setY(140.0f);
+t2.setCache(true);
+t2.setText(&quot;Blurry Text&quot;);
+t2.setFill(Color.RED);
+t2.setFont(Font.font(null, FontWeight.BOLD, 36));
+t2.setEffect(new GaussianBlur());
+return t2;
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>You can see the result of the Gaussian blur effect in <a href="#CHDFCDBB">Figure 4</a>.</p> 
+       <div class="figure">
+        <a id="CHDFCDBB" name="CHDFCDBB"></a> 
+        <p class="titleinfigure">Figure 4 Text with a Blur Effect</p> 
+        <img src="img/gauss_blur.jpg" alt="Description of Figure 4 follows" title="Description of Figure 4 follows" longdesc="img_text/gauss_blur.htm" />
+        <br /> 
+        <br /> 
+        <br />
+       </div> 
+       <!-- class="figure" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref17" name="sthref17"></a> 
+       <h3 class="sect2">Drop Shadow Effect</h3> 
+       <p>To implement a drop shadow effect, use the <code>DropShadow</code> class. You can specify a color and an offset for the shadow of your text. In the <code>TextEffects</code> application, the drop shadow effect is applied to the red text and provides a three-pixel gray shadow. You can see the code in <a href="#CHDBBFHC">Example 15</a>.</p> 
+       <div class="example">
+        <a id="CHDBBFHC" name="CHDBBFHC"></a> 
+        <p class="titleinexample">Example 15</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+DropShadow ds = new DropShadow();
+ds.setOffsetY(3.0f);
+ds.setColor(Color.color(0.4f, 0.4f, 0.4f));
+ 
+Text t = new Text();
+t.setEffect(ds);
+t.setCache(true);
+t.setX(10.0f);
+t.setY(270.0f);
+t.setFill(Color.RED);
+t.setText(&quot;JavaFX drop shadow...&quot;);
+t.setFont(Font.font(null, FontWeight.BOLD, 32));
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>You can see the result of the applied effect in <a href="#CHDBBDAI">Figure 5</a>.</p> 
+       <div class="figure">
+        <a id="CHDBBDAI" name="CHDBBDAI"></a> 
+        <p class="titleinfigure">Figure 5 Text with a Drop Shadow Effect</p> 
+        <img src="img/drop_shadow.jpg" alt="Description of Figure 5 follows" title="Description of Figure 5 follows" longdesc="img_text/drop_shadow.htm" />
+        <br /> 
+        <br /> 
+        <br />
+       </div> 
+       <!-- class="figure" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref19" name="sthref19"></a> 
+       <h3 class="sect2">Inner Shadow Effect</h3> 
+       <p>An inner shadow effect renders a shadow inside the edges of your content. For text content, you can specify a color and an offset. See how the inner shadow effect with four-pixel offsets in the x and y directions is applied to a text node in <a href="#CHDCAIGA">Example 16</a>.</p> 
+       <div class="example">
+        <a id="CHDCAIGA" name="CHDCAIGA"></a> 
+        <p class="titleinexample">Example 16</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+InnerShadow is = new InnerShadow();
+is.setOffsetX(4.0f);
+is.setOffsetY(4.0f);
+
+Text t = new Text();
+t.setEffect(is);
+t.setX(20);
+t.setY(100);
+t.setText(&quot;InnerShadow&quot;);
+t.setFill(Color.YELLOW);
+t.setFont(Font.font(null, FontWeight.BOLD, 80));
+
+t.setTranslateX(300);
+t.setTranslateY(300);
+ 
+return t;
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>The result of the applied effect is shown in <a href="#BCEEFIHG">Figure 6</a>.</p> 
+       <div class="figure">
+        <a id="BCEEFIHG" name="BCEEFIHG"></a> 
+        <p class="titleinfigure">Figure 6 Text with an Inner Shadow Effect</p> 
+        <img src="img/inner_shadow.jpg" alt="Description of Figure 6 follows" title="Description of Figure 6 follows" longdesc="img_text/inner_shadow.htm" />
+        <br /> 
+        <br /> 
+        <br />
+       </div> 
+       <!-- class="figure" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref21" name="sthref21"></a> 
+       <h3 class="sect2">Reflection</h3> 
+       <p>The <code>Reflection</code> class enables you to display the reflected version of your text below the original text. You can adjust the view of your reflected text by providing additional parameters such as a bottom opacity value, a fraction of the input to be visible in the reflection, an offset between the input text and its reflection, and a top opacity value. For details, see the API documentation.</p> 
+       <p>The reflection effect is implemented in the <code>TextEffects</code> application as shown in <a href="#CHDJFAHB">Example 17</a>.</p> 
+       <div class="example">
+        <a id="CHDJFAHB" name="CHDJFAHB"></a> 
+        <p class="titleinexample">Example 17</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Text t = new Text();
+t.setX(10.0f);
+t.setY(50.0f);
+t.setCache(true);
+t.setText(&quot;Reflections on JavaFX...&quot;);
+t.setFill(Color.RED);
+t.setFont(Font.font(null, FontWeight.BOLD, 30));
+ 
+Reflection r = new Reflection();
+r.setFraction(0.7f);
+ 
+t.setEffect(r);
+ 
+t.setTranslateY(400);
+return t;
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>You can see the text node with the reflection effect in <a href="#CHDFHJCF">Figure 7</a>.</p> 
+       <div class="figure">
+        <a id="CHDFHJCF" name="CHDFHJCF"></a> 
+        <p class="titleinfigure">Figure 7 Text with a Reflection Effect</p> 
+        <img src="img/reflections.jpg" alt="Description of Figure 7 follows" title="Description of Figure 7 follows" longdesc="img_text/reflections.htm" />
+        <br /> 
+        <br /> 
+        <br />
+       </div> 
+       <!-- class="figure" -->
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref23" name="sthref23"></a> 
+      <h2 class="sect1">Combining Several Effects</h2> 
+      <p>In the previous section you learned how to apply a single effect to a text node. To further enrich your text content, you can compose several effects and apply a chain of effects to achieve a specific visual result. Consider the <code>NeonSign</code> application shown in <a href="#CHDDIDCG">Figure 8</a>.</p> 
+      <div class="figure">
+       <a id="CHDDIDCG" name="CHDDIDCG"></a> 
+       <p class="titleinfigure">Figure 8 The Neon Sign Application Window</p> 
+       <img src="img/neon_sign.jpg" alt="Description of Figure 8 follows" title="Description of Figure 8 follows" longdesc="img_text/neon_sign.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>The graphical scene of the <code>NeonSign</code> application consists of the following elements:</p> 
+      <ul> 
+       <li> <p>An image of a brick wall used as a background</p> </li> 
+       <li> <p>A rectangle that provides a radial gradient fill</p> </li> 
+       <li> <p>A text node with a chain of effects</p> </li> 
+       <li> <p>A text field used for entering text data</p> </li> 
+      </ul> 
+      <p>The background is set in an external .css file.</p> 
+      <p>This application uses a binding mechanism to set the text content on the text node. The text property of the text node is bound to the text property of the text field as shown in <a href="#CHDBDIFF">Example 18</a>.</p> 
+      <div class="example">
+       <a id="CHDBDIFF" name="CHDBDIFF"></a> 
+       <p class="titleinexample">Example 18</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Text text = new Text();
+TextField textField = new TextField();
+textField.setText(&quot;Neon Sign&quot;);
+text.textProperty().bind(textField.textProperty());
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>You can type in the text field and view the changed contents of the text node.</p> 
+      <p>A chain of effects is applied to the text node. The primary effect is a blend effect that uses the <code>MULTIPLY</code> mode to mix two inputs together: a drop shadow effect and another blend effect, <code>blend1</code>. Similarly, the <code>blend1</code> effect combines a drop shadow effect (<code>ds1</code>) and a blend effect (<code>blend2</code>). The <code>blend2</code> effect combines two inner shadow effects. Using this chain of effects and varying color parameters enables you to apply subtle and sophisticated color patterns to text objects. See the code for the chain of effects in <a href="#CHDDHDGJ">Example 19</a>.</p> 
+      <div class="example">
+       <a id="CHDDHDGJ" name="CHDDHDGJ"></a> 
+       <p class="titleinexample">Example 19</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Blend blend = new Blend();
+blend.setMode(BlendMode.MULTIPLY);
+
+DropShadow ds = new DropShadow();
+ds.setColor(Color.rgb(254, 235, 66, 0.3));
+ds.setOffsetX(5);
+ds.setOffsetY(5);
+ds.setRadius(5);
+ds.setSpread(0.2);
+
+blend.setBottomInput(ds);
+
+DropShadow ds1 = new DropShadow();
+ds1.setColor(Color.web(&quot;#f13a00&quot;));
+ds1.setRadius(20);
+ds1.setSpread(0.2);
+
+Blend blend2 = new Blend();
+blend2.setMode(BlendMode.MULTIPLY);
+
+InnerShadow is = new InnerShadow();
+is.setColor(Color.web(&quot;#feeb42&quot;));
+is.setRadius(9);
+is.setChoke(0.8);
+blend2.setBottomInput(is);
+
+InnerShadow is1 = new InnerShadow();
+is.setColor(Color.web(&quot;#f13a00&quot;));
+is.setRadius(5);
+is.setChoke(0.4);
+blend2.setTopInput(is1);
+
+Blend blend1 = new Blend();
+blend1.setMode(BlendMode.MULTIPLY);
+blend1.setBottomInput(ds1);
+blend1.setTopInput(blend2);
+
+blend.setTopInput(blend1);
+
+text.setEffect(blend);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>In this article, you learned how to add text and apply various effects to text content. For a complete set of available effects, see the API documentation.</p> 
+      <p>If you need to implement a text editing area in your JavaFX application, use the <code>HTMLEditor</code> component. For more information about the <code>HTMLEditor</code> control, see <a href="../ui_controls/editor.htm">Using JavaFX UI Controls</a>.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li class=" active"><a href="jfxpub-text.htm">Using Text and Text Effects in JavaFX</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/text/texteffects.zip">texteffects.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/text/neonsign.zip">neonsign.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

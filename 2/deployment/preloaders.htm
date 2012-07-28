@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Preloaders &middot; Deploying JavaFX Applications &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Deploying JavaFX Applications</h1>
+     <p class=" lead">Preloaders</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="javafx_javascript.htm">←上一篇</a></li>
+      <li class=" next"><a href="deploy_swing_apps.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="BABCDIHD" name="BABCDIHD"></a>
+     <a id="JFXDP169" name="JFXDP169"></a>  
+     <p>During the second phase of startup, a preloader application runs, either the default application in the JavaFX Runtime or a custom application that you supply. See <a href="deploy_user_experience.htm#BABFIECI">Application Startup Process, Experience, and Customization</a> for information about how a preloader fits into the startup flow.</p> 
+     <p>A custom preloader application is optional and can be used to tune the application loading and startup experience. For example, users tend to get irritated if they have to wait for an application to start or if they do not get status messages. Use of a preloader can help to reduce perceived application startup time by showing some content to the user earlier, such as a progress indicator or login prompt.</p> 
+     <p>A preloader application can also be used to present custom messaging to the user. For example, you can explain what is currently happening and what the user will be asked to do next, such as grant permissions to the application, or you could create a preloader to present custom error messaging.</p> 
+     <p>Not every application needs a preloader. For example, if the size of your application is small and does not have special requirements such as permissions, then it probably starts quickly. Even for larger applications, the default preloader included with the JavaFX Runtime can be a good choice, because it is loaded from the client machine rather than the network.</p> 
+     <p>This page contains the following topics:</p> 
+     <ul> 
+      <li> <p><a href="#BABFABDG">Section 7.1, &quot;Implementing a Custom Preloader&quot;</a></p> </li> 
+      <li> <p><a href="#BABJDJDJ">Section 7.2, &quot;Packaging an Application with a Preloader&quot;</a></p> </li> 
+      <li> <p><a href="#BABHADJH">Section 7.3, &quot;Preloader Code Examples&quot;</a></p> </li> 
+      <li> <p><a href="#BABIJCII">Section 7.4, &quot;Performance Tips&quot;</a></p> </li> 
+     </ul> 
+     <p>See <a href="deploy_user_experience.htm#BABFIECI">Application Startup Process, Experience, and Customization</a> for information about how to customize the default preloader.</p> 
+     <a id="BABFABDG" name="BABFABDG"></a>
+     <a id="JFXDP465" name="JFXDP465"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">7.1</span> Implementing a Custom Preloader</h2> 
+      <p>A custom preloader is a specialized JavaFX application extending the <a href="../api/javafx/application/Preloader.html"><code>javafx.application.Preloader</code></a> class. Because the <code>Preloader</code> class is an extension of <a href="../api/javafx/application/Application.html"><code>javafx.application.Application</code></a>, a custom preloader has the same lifecycle and can use all of the features of the JavaFX Runtime.</p> 
+      <p>The preloader startup sequence is shown in relation to the application startup in <a href="#BCFEJJGE">Figure 7-1</a>. The preloader application is started before the main application and gets notification of the progress of the loading application resources, application initialization, and startup, as well as of errors.</p> 
+      <div class="figure">
+       <a id="BCFEJJGE" name="BCFEJJGE"></a>
+       <a id="JFXDP523" name="JFXDP523"></a> 
+       <p class="titleinfigure">Figure 7-1 Preloader Startup Related to Application Startup</p> 
+       <img src="img/preloader_startup.gif" alt="Description of Figure 7-1 follows" title="Description of Figure 7-1 follows" longdesc="img_text/preloader_startup.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p><a href="#BABFAFHH">Example 7-1</a> shows a simple preloader that uses the <code>ProgressBar</code> control to visualize the loading progress.</p> 
+      <div class="example">
+       <a id="BABFAFHH" name="BABFAFHH"></a>
+       <a id="JFXDP466" name="JFXDP466"></a> 
+       <p class="titleinexample">Example 7-1 Simple Preloader Using the ProgressBar Control</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public class FirstPreloader extends Preloader {
+    ProgressBar bar;
+    Stage stage;
+ 
+    private Scene createPreloaderScene() {
+        bar = new ProgressBar();
+        BorderPane p = new BorderPane();
+        p.setCenter(bar);
+        return new Scene(p, 300, 150);        
+    }
+    
+    public void start(Stage stage) throws Exception {
+        this.stage = stage;
+        stage.setScene(createPreloaderScene());        
+        stage.show();
+    }
+    
+    @Override
+    public void handleProgressNotification(ProgressNotification pn) {
+        bar.setProgress(pn.getProgress());
+    }
+ 
+    @Override
+    public void handleStateChangeNotification(StateChangeNotification evt) {
+        if (evt.getType() == StateChangeNotification.Type.BEFORE_START) {
+            stage.hide();
+        }
+    }    
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>As a regular JavaFX application, the <code>FirstPreloader</code> class uses the <code>start()</code> method to create a scene to display the loading progress. Updates on progress are delivered to the preloader using the <code>handleProgressNotification()</code> method, and the <code>FirstPreloader</code> implementation uses them to update the UI.</p> 
+      <p>The preloader and main application have different Stage objects, and the preloader needs to take care of showing and hiding its own stage when needed. In <a href="#BABFAFHH">Example 7-1</a>, the preloader stage is hidden after notification is received that the <code>start()</code> method of the main application is about to be called.</p> 
+      <p>The implementation of the <code>FirstPreloader</code> class illustrates the main concept and will work in many scenarios, but it does not provide the best user experience for all use cases. See <a href="#BABHADJH">Preloader Code Examples</a> for examples of how to improve it further.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BABJDJDJ" name="BABJDJDJ"></a>
+     <a id="JFXDP467" name="JFXDP467"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">7.2</span> Packaging an Application with a Preloader</h2> 
+      <p>There are some special requirements for packaging applications with preloaders.</p> 
+      <p>First, in most cases, the code for the preloader must be packaged into one or more JAR files that are separate from the rest of application. This enables faster loading when the application is deployed on the web. Using a single JAR file for both application and preloader code can be a good choice for some specialized cases, for example if the application is run in standalone mode only. In NetBeans IDE, the JAR files are packaged separately by creating two projects: one for the main application and a special JavaFX preloader project for the preloader. See <a href="#BABBCGAE">Packaging a Preloader Application in NetBeans IDE</a>.</p> 
+      <p>Second, application deployment descriptors should include information about which class belongs to the preloader and where the preloader code is. The way to specify it depends on what tools you use for packaging. For more information about tools, see <a href="packaging.htm#BABBBEJH">JavaFX Packaging Tools</a>.</p> 
+      <p>All of the packaging tools produce a deployment descriptor that includes the preloader, as in <a href="#BABBBGBC">Example 7-2</a>. In this example, the main application is called AnimatedCircles and the preloader application is called FirstPreloader.</p> 
+      <div class="example">
+       <a id="BABBBGBC" name="BABBBGBC"></a>
+       <a id="JFXDP468" name="JFXDP468"></a> 
+       <p class="titleinexample">Example 7-2 Sample Deployment Descriptor for an Application with a Preloader</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;jnlp spec=&quot;1.0&quot; xmlns:jfx=&quot;http://javafx.com&quot; href=&quot;AnimatedCircles.jnlp&quot;&gt;
+  &lt;information&gt;
+    &lt;title&gt;AnimatedCircles&lt;/title&gt;
+    &lt;vendor&gt;Oracle&lt;/vendor&gt;
+    &lt;description&gt;Animated Circles&lt;/description&gt;
+    &lt;offline-allowed/&gt;
+  &lt;/information&gt;
+  &lt;resources os=&quot;Windows&quot;&gt;
+      &lt;jfx:javafx-runtime version=&quot;2.1+&quot; 
+          href=&quot;http://javadl.sun.com/webapps/download/GetFile/
+                  javafx-latest/windows-i586/javafx2.jnlp&quot;/&gt;
+  &lt;/resources&gt;
+  &lt;resources&gt;
+    &lt;j2se version=&quot;1.6+&quot; href=&quot;http://java.sun.com/products/autodl/j2se&quot;/&gt;
+<span class="bold">    &lt;jar href=&quot;lib/FirstPreloader.jar&quot; size=&quot;2801&quot; download=&quot;progress&quot; /&gt;</span>
+    &lt;jar href=&quot;AnimatedCircles.jar&quot; size=&quot;13729&quot; download=&quot;always&quot; /&gt;
+  &lt;/resources&gt;
+  &lt;applet-desc  width=&quot;800&quot; height=&quot;600&quot;
+      main-class=&quot;com.javafx.main.NoJavaFXFallback&quot;  name=&quot;AnimatedCircles&quot; /&gt;
+  &lt;jfx:javafx-desc  width=&quot;800&quot; height=&quot;600&quot;
+    main-class=&quot;animatedcircles.AnimatedCircles&quot;  name=&quot;AnimatedCircles&quot;  
+    <span class="bold">preloader-class=&quot;firstpreloader.FirstPreloader&quot;</span>/&gt;
+  &lt;update check=&quot;background&quot;/&gt;
+&lt;/jnlp&gt;
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The manifest must also contain the classpath to the preloader, shown in <a href="#BABGFBHF">Example 7-3</a>.</p> 
+      <div class="example">
+       <a id="BABGFBHF" name="BABGFBHF"></a>
+       <a id="JFXDP469" name="JFXDP469"></a> 
+       <p class="titleinexample">Example 7-3 Sample Manifest for an Application with a Preloader</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Manifest-Version: 1.0
+JavaFX-Version: 2.1
+implementation-vendor: nhildebr
+implementation-title: AnimatedCircles
+implementation-version: 1.0
+JavaFX-Preloader-Class: firstpreloader.FirstPreloader
+JavaFX-Application-Class: animatedcircles.AnimatedCircles
+<span class="bold">JavaFX-Class-Path: lib/FirstPreloader.jar</span>
+JavaFX-Fallback-Class: com.javafx.main.NoJavaFXFallback
+Created-By: JavaFX Packager
+Main-Class: com/javafx/main/Main
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <a id="BABBCGAE" name="BABBCGAE"></a>
+      <a id="JFXDP470" name="JFXDP470"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">7.2.1</span> Packaging a Preloader Application in NetBeans IDE</h3> 
+       <p>If you are using NetBeans IDE, in the main application you can specify either another NetBeans project that contains the main preloader class or a JAR file in which the preloader was packaged.</p> 
+       <p>The following procedures show two ways to package a preloader in NetBeans IDE, depending on your project configuration. You can either create a new NetBeans project and choose a preloader option, or you can add a preloader to an existing NetBeans project. Both procedures use the preloader class from <a href="#BABFAFHH">Example 7-1</a>.</p> 
+       <p class="orderedlisttitle">To create a new application with a preloader in NetBeans IDE:&nbsp;</p> 
+       <ol> 
+        <li> <p>On the File menu, choose <span class="gui-object-action">New Project</span>.</p> </li> 
+        <li> <p>Select the <span class="gui-object-action">JavaFX</span> category and <span class="gui-object-action">JavaFX Application</span> as the project type. Click <span class="gui-object-action">Next</span>.</p> </li> 
+        <li> <p>Enter FirstApp as a project name and choose <span class="gui-object-action">Create Custom Preloader</span>. Click <span class="gui-object-action">Finish</span>.</p> <p>Netbeans IDE creates two new projects for you: a FirstApp-Preloader project with basic implementation of a custom preloader, and FirstApp project with a sample JavaFX Application using your custom preloader.</p> </li> 
+        <li> <p>Open the <code>SimplePreloader</code> class in Source Packages in the FirstApp-Preloader project.</p> </li> 
+        <li> <p>Replace the implementation of the <code>SimplePreloader</code> class with the implementation of the FirstPreloader class, or any other sample from this page.</p> <p>Be sure to fix imports if needed by going to the Source menu and choosing <span class="gui-object-action">Fix Imports</span>.</p> </li> 
+        <li> <p>Select the FirstApp project and run Clean and Build to build both the sample application and the preloader.</p> <p>The artifacts are placed in the dist folder in the FirstApp project.</p> </li> 
+        <li> <p>Test the artifacts by running them in Netbeans.</p> 
+         <div align="center"> 
+          <div class="inftblnotealso">
+           <br /> 
+           <table class="NoteAlso oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+            <tbody> 
+             <tr> 
+              <td align="left"> <p class="notep1">Tip:</p> <p>You can launch your application as standalone or in a browser by choosing a Run category in Project Properties, or you can directly open the build artifacts.</p> </td> 
+             </tr> 
+            </tbody> 
+           </table> 
+           <br />
+          </div> 
+          <!-- class="inftblnotealso" -->
+         </div> <p>Note that for standalone launch, the preloader may be not visible if it displays loading progress only, because there is nothing to load. Even when testing web launch from a local hard drive, the preloader might show up for a very short time.</p> </li> 
+       </ol> 
+       <p class="orderedlisttitle">To add a preloader to an existing NetBeans project:&nbsp;</p> 
+       <ol> 
+        <li> <p>Create a separate NetBeans project of type JavaFX Preloader for the preloader class. In the example, the project name is FirstPreloader, which contains the firstpreloader package and the code for the FirstPreloader class.</p> </li> 
+        <li> <p>In the Project Properties for the main application, click the <span class="gui-object-action">Run</span> category.</p> </li> 
+        <li> <p>Select the check box <span class="gui-object-action">Use Preloader,</span> then Click <span class="gui-object-action">Browse</span>, then choose the NetBeans project for the preloader. The Preloader Class field is populated by default, as shown in <a href="#BABIDAFA">Figure 7-2</a>.</p> 
+         <div class="figure">
+          <a id="BABIDAFA" name="BABIDAFA"></a>
+          <a id="JFXDP471" name="JFXDP471"></a> 
+          <p class="titleinfigure">Figure 7-2 Preloader Option in the Run Category of NetBeans Project Properties</p> 
+          <img src="img/preloader_packaging_nb.gif" alt="Screenshot of NetBeans Preloader option" title="Screenshot of NetBeans Preloader option" />
+          <br />
+         </div> 
+         <!-- class="figure" --> 
+         <div align="center"> 
+          <div class="inftblnote">
+           <br /> 
+           <table class="Note oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+            <tbody> 
+             <tr> 
+              <td align="left"> <p class="notep1">Note:</p> <p>As an alternative to selecting a NetBeans project for the preloader, when you click Browse you have the option of selecting a preloader JAR file.</p> </td> 
+             </tr> 
+            </tbody> 
+           </table> 
+           <br />
+          </div> 
+          <!-- class="inftblnote" -->
+         </div> </li> 
+        <li> <p>Click <span class="gui-object-action">OK</span> to close the Project Properties dialog box.</p> </li> 
+        <li> <p>Right-click the main application and choose <span class="gui-object-action">Clean and Build</span>.</p> <p>The main application files are created for deployment in the dist directory, and the preloader JAR file is placed in a lib subdirectory. All of the necessary JNLP and manifest entries are handled by the IDE.</p> </li> 
+       </ol> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXDP472" name="JFXDP472"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref50" name="sthref50"></a> 
+       <h3 class="sect2"><span class="secnum">7.2.2</span> Packaging a Preloader Application in an Ant Task</h3> 
+       <p>Ant users must specify information about the preloader class and JAR files in both the <code><a href="javafx_ant_task_reference001.htm#CIACICBG">&lt;fx:jar&gt;</a></code> and <code><a href="javafx_ant_task_reference001.htm#CIABIFCI">&lt;fx:deploy&gt;</a></code> tasks. Setting the proper parameters in the <code>&lt;fx:jar&gt;</code> task ensures that the preloader is registered for standalone applications. Setting the proper parameters in the <code>&lt;fx:deploy&gt;</code> task creates the configuration for web deployment.</p> 
+       <p>Some settings are required in other parts of the Ant script. The preloader main class is specified as part of the <code><a href="javafx_ant_task_reference002.htm#CIAGCAFH">&lt;fx:application&gt;</a></code> element, as shown in <a href="#BABFIGIG">Example 7-4</a>.</p> 
+       <div class="example">
+        <a id="BABFIGIG" name="BABFIGIG"></a>
+        <a id="JFXDP473" name="JFXDP473"></a> 
+        <p class="titleinexample">Example 7-4 Specify the Preloader Class in &lt;fx:application&gt;</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:application id=&quot;app-desc&quot; 
+        mainClass=&quot;sample.AppSample&quot;
+        <span class="bold">preloaderClass=&quot;preloaders.SamplePreloader&quot;</span>/&gt;
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>Preloader resources are marked with <code>the requiredFor=&quot;preloader&quot;</code> attribute in the description of application resources, nested under <code>&lt;fx:application&gt;</code>, as shown in <a href="#BABDJEIA">Example 7-5</a>.</p> 
+       <div class="example">
+        <a id="BABDJEIA" name="BABDJEIA"></a>
+        <a id="JFXDP474" name="JFXDP474"></a> 
+        <p class="titleinexample">Example 7-5 Use the requiredFor Attribute of &lt;fx:fileset&gt;</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:application ... &gt;
+    &lt;fx:resources&gt;
+        &lt;fx:fileset id=&quot;preloader-files&quot; 
+                <span class="bold">requiredFor=&quot;preloader&quot;</span>
+                dir=&quot;dist&quot; 
+            <span class="bold">    includes=&quot;preloader.jar&quot;/&gt;</span>
+        &lt;fx:fileset dir=&quot;dist&quot; includes=&quot;myapplet.jar&quot;/&gt;
+    &lt;/fx:resources&gt; 
+&lt;/fx:application&gt;
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>With the help of the <code>refid</code> attribute creating a reference to an <code>id</code> attribute, elements can be reused to reduce code duplication. The preloader settings for the <code>&lt;fx:jar&gt;</code> and <code>&lt;fx:deploy&gt;</code> tasks are shown in <a href="#BABBBHGE">Example 7-6</a>.</p> 
+       <div class="example">
+        <a id="BABBBHGE" name="BABBBHGE"></a>
+        <a id="JFXDP475" name="JFXDP475"></a> 
+        <p class="titleinexample">Example 7-6 Preloader Settings in &lt;fx:jar&gt; and &lt;fx:deploy&gt; Tasks</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:jar destfile=&quot;dist/application.jar&quot;&gt;
+    &lt;fx:application refid=&quot;app-desc&quot;/&gt;
+        &lt;fx:resources&gt;
+            &lt;fx:fileset <span class="bold">refid=&quot;preloader-files&quot;</span>/&gt;
+        &lt;/fx:resources&gt;
+        &lt;fileset dir=&quot;build/classes/&quot; include=&quot;**&quot;/&gt;
+&lt;/fx:jar&gt;
+        
+&lt;fx:deploy width=&quot;600&quot; height=&quot;400&quot;
+        outdir=&quot;app-dist&quot; outfile=&quot;SampleApp&quot;&gt;
+    &lt;fx:info title=&quot;Sample application&quot;/&gt;
+    &lt;fx:application refid=&quot;app-desc&quot;/&gt;
+    &lt;fx:resources&gt;
+        &lt;fx:fileset requiredFor=&quot;startup&quot; dir=&quot;dist&quot; include=&quot;application.jar&quot;/&gt;
+        &lt;fx:fileset <span class="bold">refid=&quot;preloader-files&quot;</span>/&gt;
+    &lt;/fx:resources&gt;
+&lt;/fx:deploy&gt;
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>See <a href="javafx_ant_task_reference.htm#CIAHEGJD">Example 10-2</a> to see another preloader configuration in a full Ant task. In that example, both the preloader and the main application JAR files are signed in the <code><a href="javafx_ant_task_reference001.htm#CIADDAEE">&lt;fx:signjar&gt;</a></code> task. If the preloader JAR file is unsigned and the main application JAR file is signed, then a multipart deployment descriptor is needed. Packaging is similar to any other JavaFX application using a mix of signed and unsigned code. For more information, see <a href="packaging.htm#BABGCEDJ">Application Resources</a>.</p> 
+       <p>Note the following preloader-specific details:</p> 
+       <ul> 
+        <li> <p>The name of the preloader class is always specified in the main application descriptor, as in <a href="#BABFIGIG">Example 7-4</a>.</p> </li> 
+        <li> <p>In most cases, it is a good idea to keep the preloader JAR files in the main application descriptor so they will start loading sooner.</p> </li> 
+       </ul> 
+       <p>The reasoning for the last point is as follows. There are two <code>&lt;fx:deploy&gt;</code> tasks to package this application, which generate two different JNLP files: one for the main application and another extension. The application will start from the link to the main JNLP, so whatever is referenced from the main JNLP file can start loading sooner and is ready faster.</p> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BABHADJH" name="BABHADJH"></a>
+     <a id="JFXDP476" name="JFXDP476"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">7.3</span> Preloader Code Examples</h2> 
+      <p>The following code examples demonstrate various uses of preloaders:</p> 
+      <ul> 
+       <li> <p><a href="#BABGJCID">Show the Preloader Only if Needed</a></p> </li> 
+       <li> <p><a href="#BABDDDEF">Enhance Visual Transitions</a></p> </li> 
+       <li> <p><a href="#BABIAIIC">Using JavaScript with a Preloader</a></p> </li> 
+       <li> <p><a href="#BABGGDJG">Using a Preloader to Display the Application Initialization Progress</a></p> </li> 
+       <li> <p><a href="#BABDDGCD">Cooperation of Preloader and Application: A Login Preloader</a></p> </li> 
+       <li> <p><a href="#BABBBBBJ">Cooperation of Preloader and Application: Sharing the Stage</a></p> </li> 
+       <li> <p><a href="#BABFBIGF">Customizing Error Messaging</a></p> </li> 
+      </ul> 
+      <a id="BABGJCID" name="BABGJCID"></a>
+      <a id="JFXDP477" name="JFXDP477"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">7.3.1</span> Show the Preloader Only if Needed</h3> 
+       <p>If the application runs standalone or is loaded from the web cache, then the preloader does not get any progress notifications because there is nothing to load, and the application will likely start quickly.</p> 
+       <p>Using the FirstPreloader example as implemented in <a href="#BABFAFHH">Example 7-1</a>, users only see the preloader stage briefly with 0 percent progress. Unless the application is embedded in a browser, a window also pops up that is briefly visible. In this case, a better user experience is to show nothing until the first progress notification.</p> 
+       <p>When the application is embedded in a web page, something needs to be shown to avoid having a gray box (hole in the web page effect) where the application will appear. One possible approach is to display the HTML splash screen until the preloader has something to display or, if the preloader does not get any events, until the application is ready. Another option is to show a simplified version of the preloader and add a progress indicator after the first progress notification is received.</p> 
+       <p><a href="#BABGBAID">Example 7-7</a> shows how to improve the relevant parts of the FirstPreloader implementation:</p> 
+       <ul> 
+        <li> <p>Do not show the progress indicator until the first progress notification.</p> </li> 
+        <li> <p>If the preloader stage is not embedded, do not show it until the first progress notification.</p> </li> 
+       </ul> 
+       <div class="example">
+        <a id="BABGBAID" name="BABGBAID"></a>
+        <a id="JFXDP478" name="JFXDP478"></a> 
+        <p class="titleinexample">Example 7-7 Example of Tweaking When the Preloader Appears</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+boolean isEmbedded = false;
+public void start(Stage stage) throws Exception {
+    //embedded stage has preset size
+    isEmbedded = (stage.getWidth() &gt; 0);
+
+    this.stage = stage;
+    stage.setScene(createPreloaderScene());        
+}
+    
+@Override
+public void handleProgressNotification(ProgressNotification pn) {
+    if (pn.getProgress() != 1 &amp;&amp; !stage.isShowing()) {
+        stage.show();
+    }
+    bar.setProgress(pn.getProgress());
+}
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>See <a href="#BABIAIIC">Using JavaScript with a Preloader</a> for an example of how to postpone hiding the splash screen.</p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABDDDEF" name="BABDDDEF"></a>
+      <a id="JFXDP479" name="JFXDP479"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">7.3.2</span> Enhance Visual Transitions</h3> 
+       <p>The last state change notification received by the preloader before the application starts is <code>StateChangeNotification.Type.BEFORE_START</code>. After it is processed, the application's <code>start()</code> method is called. However, it can take time before the application is ready to display its stage after the <code>start()</code> method is called. If the preloader stage is already hidden, then there could be a period of time when the application shows nothing on the screen. When the application is embedded in a web page, this can result in a hole in the web page effect.</p> 
+       <p>For this and other reasons, hiding the preloader instantly might not be the best visual transition from preloader to application. One approach to improve the visual transition between preloader and application is shown in <a href="#BABFDDCH">Example 7-8</a>. If this FirstPreloader example is used for an application embedded in a web page, it will fade out over a period of 1 second instead of hiding instantly.</p> 
+       <div class="example">
+        <a id="BABFDDCH" name="BABFDDCH"></a>
+        <a id="JFXDP480" name="JFXDP480"></a> 
+        <p class="titleinexample">Example 7-8 Make the Preloader Fade Out</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+@Override
+public void handleStateChangeNotification(StateChangeNotification evt) {
+    if (evt.getType() == StateChangeNotification.Type.BEFORE_START) {
+        if (isEmbedded &amp;&amp; stage.isShowing()) {
+            //fade out, hide stage at the end of animation
+            FadeTransition ft = new FadeTransition(
+                Duration.millis(1000), stage.getScene().getRoot());
+                ft.setFromValue(1.0);
+                ft.setToValue(0.0);
+                final Stage s = stage;
+                EventHandler&lt;ActionEvent&gt; eh = new EventHandler&lt;ActionEvent&gt;() {
+                    public void handle(ActionEvent t) {
+                        s.hide();
+                    }
+                };
+                ft.setOnFinished(eh);
+                ft.play();
+        } else {
+            stage.hide();
+        }
+    }
+}
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>If the preloader and application cooperate, then the transition is even smoother. See <a href="#BABBBBBJ">Cooperation of Preloader and Application: Sharing the Stage</a> for an example of a preloader that fades into the application.</p> 
+       <p>If the application takes time to initialize, then it can be helpful to use a custom notification to initiate the transition from preloader to application when the application is ready. See <a href="#BABGGDJG">Using a Preloader to Display the Application Initialization Progress</a> for further information.</p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABIAIIC" name="BABIAIIC"></a>
+      <a id="JFXDP481" name="JFXDP481"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">7.3.3</span> Using JavaScript with a Preloader</h3> 
+       <p>Because a JavaFX application preloader has access to application features such as parameters and host services, the preloader can use JavaScript to communicate to the web page in which an application is embedded.</p> 
+       <p>In <a href="#BABFJGIG">Example 7-9</a>, JavaScript access is used to create a preloader that displays the loading progress in the HTML splash screen and hides the splash screen only when the application is ready. The code uses the following two JavaScript methods, which must be provided by the web page:</p> 
+       <ul> 
+        <li> <p><code>hide()</code> to hide the HTML splash screen</p> </li> 
+        <li> <p><code>progress(p)</code> to update the progress</p> </li> 
+       </ul> 
+       <p>It is assumed that there is a custom HTML splash screen that is not hidden by default.</p> 
+       <div class="example">
+        <a id="BABFJGIG" name="BABFJGIG"></a>
+        <a id="JFXDP482" name="JFXDP482"></a> 
+        <p class="titleinexample">Example 7-9 Use JavaScript from the Preloader</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Preloader;
+import javafx.stage.Stage;
+import netscape.javascript.JSObject;
+ 
+public class JSPreloader extends Preloader {
+    public void start(Stage stage) throws Exception {}
+    
+    public void handleStateChangeNotification(StateChangeNotification evt) {
+        if (evt.getType() == StateChangeNotification.Type.BEFORE_START) {
+            JSObject js = getHostServices().getWebContext();
+            if (js != null) {
+                try {
+                    js.eval(&quot;hide();&quot;);
+                } catch (Throwable e) {
+                    System.err.println(&quot;Ouch &quot;+e);
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+ 
+    public void handleProgressNotification(ProgressNotification pn) {
+        JSObject js = getHostServices().getWebContext();
+        if (js != null) {
+            try {
+                js.eval(&quot;progress(&quot;+ ((int) (100*pn.getProgress()))+&quot;);&quot;);
+            } catch (Throwable e) {
+                e.printStackTrace();
+            }
+        }
+    }   
+}
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p><a href="#BABJDIHC">Example 7-10</a> shows a sample web page template that uses the preloader in <a href="#BABFJGIG">Example 7-9</a>. When this template page is processed during packaging, <code>#DT.SCRIPT.URL#</code> and <code>#DT.EMBED.CODE.ONLOAD#</code> will be replaced with code to embed the JavaFX application into the web page. For more information about templates, see <a href="javafx_ant_task_reference002.htm#CIACACDA">&lt;fx:template&gt;</a> in the JavaFX Ant reference.</p> 
+       <div class="example">
+        <a id="BABJDIHC" name="BABJDIHC"></a>
+        <a id="JFXDP483" name="JFXDP483"></a> 
+        <p class="titleinexample">Example 7-10 Web Page Template Containing JavaScript for Preloader</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;style&gt;
+            div.label {
+                position:absolute;
+                bottom:100px;
+                left:200px;
+                font-family: 'tahoma';
+                font-size:150px;
+                color:silver;
+            }
+        &lt;/style&gt;
+ 
+        &lt;SCRIPT src=&quot;#DT.SCRIPT.URL#&quot;&gt;&lt;/SCRIPT&gt;
+        &lt;script&gt;
+            //Postpone the moment the splash screen is hidden 
+            // so it can show loading progress
+            // save reference to hide function and replace it with no op for now
+            var realHide = dtjava.hideSplash;
+            dtjava.hideSplash = function(id) {}
+ 
+            //hide splash
+            function hide() {
+                realHide('sampleApp');
+            }
+ 
+            //update progress data
+            function progress(p) {
+                var e = document.getElementById(&quot;splash&quot;);
+                e.removeChild(e.firstChild);
+                e.appendChild(document.createTextNode(&quot;&quot;+p));
+            }
+   
+            //create custom splash to be used
+            function getSplash(app) {
+                var l = document.createElement('div');
+                l.className=&quot;label&quot;;
+                l.id=&quot;splash&quot;;
+                l.appendChild(document.createTextNode(&quot;...&quot;));
+                return l;
+            }
+        &lt;/script&gt;
+    &lt;!-- #DT.EMBED.CODE.ONLOAD# --&gt;
+ 
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Test page for &lt;b&gt;JS preloader sample&lt;/b&gt;&lt;/h2&gt;
+        &lt;!-- Application will be inserted here --&gt;
+        &lt;div id='javafx-app-placeholder'&gt;&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABGGDJG" name="BABGGDJG"></a>
+      <a id="JFXDP484" name="JFXDP484"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">7.3.4</span> Using a Preloader to Display the Application Initialization Progress</h3> 
+       <p>A JavaFX application can pass information about events to a preloader by using custom notifications. For example, the preloader can be used to display the application initialization progress.</p> 
+       <p>Technically, any class implementing the <a href="../api/javafx/application/Preloader.PreloaderNotification.html"><code>Preloader.PreloaderNotification</code></a> interface can serve as a custom notification, and the application can send it to the preloader by using the <a href="../api/javafx/application/Application.html#notifyPreloader(javafx.application.Preloader.PreloaderNotification)"><code>Application.notifyPreloader()</code></a>method. On the preloader side, the application notification is delivered to the <a href="../api/javafx/application/Preloader.html#handleApplicationNotification(javafx.application.Preloader.PreloaderNotification)"><code>handleApplicationNotification()</code></a> method.</p> 
+       <p><a href="#BABGIICI">Example 7-11</a> is a variation of the FirstPreloader example. It does not hide the preloader after notification of application startup is received. It waits for application-specific notifications, displays the progress notifications, and hides the splash screen after the application sends a state change notification.</p> 
+       <div class="example">
+        <a id="BABGIICI" name="BABGIICI"></a>
+        <a id="JFXDP485" name="JFXDP485"></a> 
+        <p class="titleinexample">Example 7-11 Preloader to Display Progress of Application Initialization and Loading</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public class LongAppInitPreloader extends Preloader {
+    ProgressBar bar;
+    Stage stage;
+    boolean noLoadingProgress = true;
+ 
+    private Scene createPreloaderScene() {
+        bar = new ProgressBar(0);
+        BorderPane p = new BorderPane();
+        p.setCenter(bar);
+        return new Scene(p, 300, 150);
+    }
+ 
+    public void start(Stage stage) throws Exception {
+        this.stage = stage;
+        stage.setScene(createPreloaderScene());
+        stage.show();
+    }
+ 
+    @Override
+    public void handleProgressNotification(ProgressNotification pn) {
+        //application loading progress is rescaled to be first 50%
+        //Even if there is nothing to load 0% and 100% events can be
+        // delivered
+        if (pn.getProgress() != 1.0 || !noLoadingProgress) {
+          bar.setProgress(pn.getProgress()/2);
+          if (pn.getProgress() &gt; 0) {
+              noLoadingProgress = false;
+          }
+        }
+    }
+ 
+    @Override
+    public void handleStateChangeNotification(StateChangeNotification evt) {
+        //ignore, hide after application signals it is ready
+    }
+ 
+    @Override
+    public void handleApplicationNotification(PreloaderNotification pn) {
+        if (pn instanceof ProgressNotification) {
+           //expect application to send us progress notifications 
+           //with progress ranging from 0 to 1.0
+           double v = ((ProgressNotification) pn).getProgress();
+           if (!noLoadingProgress) {
+               //if we were receiving loading progress notifications 
+               //then progress is already at 50%. 
+               //Rescale application progress to start from 50%               
+               v = 0.5 + v/2;
+           }
+           bar.setProgress(v);            
+        } else if (pn instanceof StateChangeNotification) {
+            //hide after get any state update from application
+            stage.hide();
+        }
+    }  
+ }
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>In <a href="#BABGIICI">Example 7-11</a>, note that the same progress bar is used to display the progress of both the application initialization and loading. For simplicity, 50 percent is reserved for each phase. However, if the loading phase is skipped, for example when the application is launched as standalone, then the entire progress bar is devoted to displaying the progress of the application initialization.</p> 
+       <p><a href="#BABHAFBG">Example 7-12</a> shows the code on the application side. The <code>longStart()</code> method is used to simulate a lengthy initialization process that happens on a background thread. After initialization is completed, the <code>ready</code> property is updated, which makes the application stage visible. During initialization, intermediate progress notifications are generated. At the end of initialization, the <code>StateChangeNotification</code> is sent, which causes the preloader to hide itself.</p> 
+       <div class="example">
+        <a id="BABHAFBG" name="BABHAFBG"></a>
+        <a id="JFXDP486" name="JFXDP486"></a> 
+        <p class="titleinexample">Example 7-12 Application Code to Enable the Progress Display</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public class LongInitApp extends Application {
+    Stage stage;
+    BooleanProperty ready = new SimpleBooleanProperty(false);
+    
+    private void longStart() {
+        //simulate long init in background
+        Task task = new Task&lt;Void&gt;() {
+            @Override
+            protected Void call() throws Exception {
+                int max = 10;
+                for (int i = 1; i &lt;= max; i++) {
+                    Thread.sleep(200);
+                    // Send progress to preloader
+                    notifyPreloader(new ProgressNotification(((double) i)/max));
+                }
+                // After init is ready, the app is ready to be shown
+                // Do this before hiding the preloader stage to prevent the 
+                // app from exiting prematurely
+                ready.setValue(Boolean.TRUE);
+ 
+                notifyPreloader(new StateChangeNotification(
+                    StateChangeNotification.Type.BEFORE_START));
+                
+                return null;
+            }
+        };
+        new Thread(task).start();
+    }
+ 
+    @Override
+    public void start(final Stage stage) throws Exception {
+        // Initiate simulated long startup sequence
+        longStart();
+        
+        stage.setScene(new Scene(new Label(&quot;Application started&quot;), 
+            400, 400));
+        
+        // After the app is ready, show the stage
+        ready.addListener(new ChangeListener&lt;Boolean&gt;(){
+            public void changed(
+                ObservableValue&lt;? extends Boolean&gt; ov, Boolean t, Boolean t1) {
+                    if (Boolean.TRUE.equals(t1)) {
+                        Platform.runLater(new Runnable() {
+                            public void run() {
+                                stage.show();
+                            }
+                        });
+                    }
+                }
+        });;                
+    }
+}
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>In this example, standard events are reused, but in general the application can send arbitrary data to the preloader. For example, for application loading, image collection notifications can include sample preview images and so on.</p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABDDGCD" name="BABDDGCD"></a>
+      <a id="JFXDP487" name="JFXDP487"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">7.3.5</span> Cooperation of Preloader and Application: A Login Preloader</h3> 
+       <p>As part of <code>StateChangeNotification</code>, the preloader receives a reference to the application, which enables the preloader to cooperate closely with the application.</p> 
+       <p>The example in this section shows how to use this cooperation in a login preloader, which requests user credentials while the application is loading, then passes them to the application.</p> 
+       <p>In order to cooperate, this preloader and application share the <code>CredentialsConsumer</code> interface, which the preloader uses to pass credentials to the application. In addition to implementing a shared interface, the only other special thing in this sample is that the application does not show itself until it has both user credentials and a reference to a <code>Stage</code> object.</p> 
+       <p><a href="#BABBJIAH">Example 7-13</a> shows the application code for the login preloader.</p> 
+       <div class="example">
+        <a id="BABBJIAH" name="BABBJIAH"></a>
+        <a id="JFXDP488" name="JFXDP488"></a> 
+        <p class="titleinexample">Example 7-13 Enable the Login Preloader</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public class AppToLogInto extends Application implements CredentialsConsumer {
+    String user = null;
+    Label l = new Label(&quot;&quot;);
+    Stage stage = null;
+    
+    private void mayBeShow() {
+        // Show the application if it has credentials and 
+        // the application stage is ready
+        if (user != null &amp;&amp; stage != null) {
+            Platform.runLater(new Runnable() {
+                public void run() {
+                    stage.show();
+                }                
+            });
+        }
+    }
+    
+    @Override
+    public void start(Stage stage) throws Exception {
+        this.stage = stage;
+        stage.setScene(new Scene(l, 400, 400));
+        mayBeShow();
+    }
+ 
+    public void setCredential(String user, String password) {
+        this.user = user;
+        l.setText(&quot;Hello &quot;+user+&quot;!&quot;);
+        mayBeShow();
+    }
+}
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>The preloader stage is displayed unconditionally, because the user must provide credentials. However, the preloader is not hidden when the application is ready to start unless there are credentials to pass to the application.</p> 
+       <p>To be able to pass credentials, you can cast a reference to the application from <code>StateChangeNotification</code> to <code>CredentialsConsumer</code>, assuming the application implements it.</p> 
+       <p>In <a href="#BABFDADG">Example 7-14</a>, the login pane UI from the previous example above is simplistic, but it shows how to adapt it to execution mode. If there is no progress to display, then there is no point to adding a progress bar to the UI. Also, if the application has finished loading but is still waiting for user input, then the UI can be simplified by hiding unneeded progress.</p> 
+       <div class="example">
+        <a id="BABFDADG" name="BABFDADG"></a>
+        <a id="JFXDP489" name="JFXDP489"></a> 
+        <p class="titleinexample">Example 7-14 Login Preloader Code</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public class LoginPreloader extends Preloader {
+    public static interface CredentialsConsumer {
+        public void setCredential(String user, String password);
+    }
+    
+    Stage stage = null;
+    ProgressBar bar = null;
+    CredentialsConsumer consumer = null;
+    String username = null;
+    String password = null;
+    
+    private Scene createLoginScene() {
+        VBox vbox = new VBox();
+ 
+        final TextField userNameBox = new TextField();
+        userNameBox.setPromptText(&quot;name&quot;);
+        vbox.getChildren().add(userNameBox);
+        
+        final PasswordField passwordBox = new PasswordField();
+        passwordBox.setPromptText(&quot;password&quot;);
+        vbox.getChildren().add(passwordBox);
+        
+        final Button button = new Button(&quot;Log in&quot;);
+        button.setOnAction(new EventHandler&lt;ActionEvent&gt;(){
+            public void handle(ActionEvent t) {
+                // Save credentials
+                username = userNameBox.getText();
+                password = passwordBox.getText();
+                
+                // Do not allow any further edits
+                userNameBox.setEditable(false);
+                passwordBox.setEditable(false);
+                button.setDisable(true);
+                
+                // Hide if app is ready
+                mayBeHide();
+            }
+        });
+        vbox.getChildren().add(button);
+        
+        bar = new ProgressBar(0);
+        vbox.getChildren().add(bar);
+        bar.setVisible(false);
+        
+        Scene sc = new Scene(vbox, 200, 200);
+        return sc;
+    }
+    
+    @Override
+    public void start(Stage stage) throws Exception {
+        this.stage = stage;
+        stage.setScene(createLoginScene());
+        stage.show();
+    }
+    
+    @Override
+    public void handleProgressNotification(ProgressNotification pn) {
+        bar.setProgress(pn.getProgress());
+        if (pn.getProgress() &gt; 0 &amp;&amp; pn.getProgress() &lt; 1.0) {
+            bar.setVisible(true);
+        }
+    }
+ 
+    private void mayBeHide() {
+        if (stage.isShowing() &amp;&amp; username != null &amp;&amp; consumer != null) {
+            consumer.setCredential(username, password);
+            Platform.runLater(new Runnable() {
+                public void run() {
+                   stage.hide();
+                }
+            });
+        }
+    }
+    
+    @Override
+    public void handleStateChangeNotification(StateChangeNotification evt) {
+        if (evt.getType() == StateChangeNotification.Type.BEFORE_START) {
+            //application is loaded =&gt; hide progress bar
+            bar.setVisible(false);
+            
+            consumer = (CredentialsConsumer) evt.getApplication();
+            //hide preloader if credentials are entered
+            mayBeHide();
+        }
+    }    
+}
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>Note that close cooperation between the preloader and application is subject to <a href="../../../../docs.oracle.com/javase/6/docs/technotes/guides/jweb/mixed_code.html">mixed code restrictions</a> unless both the preloader and application are in the same trust domain, in other words both are signed or unsigned.</p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABBBBBJ" name="BABBBBBJ"></a>
+      <a id="JFXDP490" name="JFXDP490"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">7.3.6</span> Cooperation of Preloader and Application: Sharing the Stage</h3> 
+       <p>This section demonstrates how to use cooperation between the preloader and the application to improve the transition from preloader to application.</p> 
+       <p><a href="#BABFFFJJ">Example 7-15</a> shows how the preloader and application share the same stage, and the preloader fades into the application when the application is ready. As in <a href="#BABFDADG">Example 7-14</a>, the preloader and application need to share the <code>SharedScene</code> interface.</p> 
+       <div class="example">
+        <a id="BABFFFJJ" name="BABFFFJJ"></a>
+        <a id="JFXDP491" name="JFXDP491"></a> 
+        <p class="titleinexample">Example 7-15 SharedScene Interface</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+/* Contact interface between application and preloader */
+public interface SharedScene {
+    /* Parent node of the application */
+    Parent getParentNode();
+}
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>The <code>Application</code> class implements it to provide the preloader with access to the application scene. The preloader later uses it for setup transition.</p> 
+       <p>Now, the interface must be implemented. The code in <a href="#BABHJEEB">Example 7-16</a> shows that the application is active during the transition.</p> 
+       <div class="example">
+        <a id="BABHJEEB" name="BABHJEEB"></a>
+        <a id="JFXDP492" name="JFXDP492"></a> 
+        <p class="titleinexample">Example 7-16 Implement the SharedScene Interface</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public class SharedStageApp extends Application 
+        <span class="bold">implements FadeInPreloader.SharedScene</span> {
+    private Parent parentNode;
+    private Rectangle rect;
+            
+    <span class="bold">public Parent getParentNode() {</span>
+<span class="bold">       return parentNode;</span>
+<span class="bold">    }    </span>
+ 
+    public void init() {
+        //prepare application scene
+        rect = new Rectangle(0, 0, 40, 40);
+        rect.setArcHeight(10);
+        rect.setArcWidth(10);
+        rect.setFill(Color.ORANGE);
+        parentNode = new Group(rect);
+    }
+    
+    public void start(Stage primaryStage) {
+        //setup some simple animation to 
+        // show that application is live when preloader is fading out
+        Path path = new Path();
+        path.getElements().add(new MoveTo(20, 20));
+        path.getElements().add(new CubicCurveTo(380, 0, 380, 120, 200, 120));
+ 
+        PathTransition pathTransition = new PathTransition();
+        pathTransition.setDuration(Duration.millis(4000));
+        pathTransition.setPath(path);
+        pathTransition.setNode(rect);
+        pathTransition.setCycleCount(Timeline.INDEFINITE);
+        pathTransition.setAutoReverse(true);
+        
+        pathTransition.play();
+    }
+}
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>On the preloader side, instead of hiding the preloader stage, the code initiates a fade-in transition by inserting the application scene behind the preloader scene and fading out the preloader scene over time. After the fade-out is finished, the preloader is removed from the scene so the application can own the stage and scene.</p> 
+       <div class="example">
+        <a id="JFXDP493" name="JFXDP493"></a>
+        <a id="sthref51" name="sthref51"></a> 
+        <p class="titleinexample">Example 7-17 Preloader Use of Fade-Out for a Smooth Transition</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public class FadeInPreloader extends Preloader{
+    Group topGroup;
+    Parent preloaderParent;
+ 
+    private Scene createPreloaderScene() {
+        //our preloader is simple static green rectangle
+        Rectangle r = new Rectangle(300, 150);
+        r.setFill(Color.GREEN);
+        preloaderParent = new Group(r);
+        topGroup = new Group(preloaderParent);
+        return new Scene(topGroup, 300, 150);        
+    }
+    
+    public void start(Stage stage) throws Exception {
+        stage.setScene(createPreloaderScene());        
+        stage.show();
+    }
+    
+    @Override
+    public void handleStateChangeNotification(StateChangeNotification evt) {
+        if (evt.getType() == StateChangeNotification.Type.BEFORE_START) {
+            //its time to start fading into application ...
+            SharedScene appScene = (SharedScene) evt.getApplication();
+            fadeInTo(appScene.getParentNode());            
+        }
+    }    
+    
+    private void fadeInTo(Parent p) {
+        //add application scene to the preloader group
+        // (visualized &quot;behind&quot; preloader at this point)
+        //Note: list is back to front
+        topGroup.getChildren().add(0, p);
+        
+        //setup fade transition for preloader part of scene
+        // fade out over 5s
+        FadeTransition ft = new FadeTransition(
+                Duration.millis(5000), 
+                preloaderParent);
+        ft.setFromValue(1.0);
+        ft.setToValue(0.5);
+        ft.setOnFinished(new EventHandler&lt;ActionEvent&gt;() {
+            public void handle(ActionEvent t) {
+               //After fade is done, remove preloader content
+               topGroup.getChildren().remove(preloaderParent);
+            }            
+        });
+        ft.play();
+    }    
+}
+</pre>
+       </div> 
+       <!-- class="example" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="BABFBIGF" name="BABFBIGF"></a>
+      <a id="JFXDP494" name="JFXDP494"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2"><span class="secnum">7.3.7</span> Customizing Error Messaging</h3> 
+       <p>A preloader can also be used to customize messaging to the end user. For example, if the application cannot be started because the user declines to grant permissions, then an unsigned preloader can be used to provide better feedback, as shown in <a href="#BABGCEAE">Example 7-18</a>.</p> 
+       <div class="example">
+        <a id="BABGCEAE" name="BABGCEAE"></a>
+        <a id="JFXDP495" name="JFXDP495"></a> 
+        <p class="titleinexample">Example 7-18 Preloader with Error Messaging</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+@Override
+    public boolean handleErrorNotification(ErrorNotification en) {
+        // Display error
+        Label l = new Label(
+                &quot;This application needs elevated permissions to launch. &quot; +
+                &quot;Please reload the page and accept the security dialog.&quot;);        
+        stage.getScene().setRoot(l);
+        
+        // Return true to prevent default error handler to take care of this error
+        return true;
+    }  
+</pre>
+       </div> 
+       <!-- class="example" --> 
+       <p>Note that the preloader cannot provide error messaging when the error affects the preloader itself. For example, if a user cannot run an application embedded in a web page because the Java proxy settings are incorrect, then the preloader code cannot be loaded and therefore cannot display an error message.</p> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="BABIJCII" name="BABIJCII"></a>
+     <a id="JFXDP496" name="JFXDP496"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" --> 
+      <h2 class="sect1"><span class="secnum">7.4</span> Performance Tips</h2> 
+      <p>Because preloaders are displayed while the main application is loading, it is critical that they load quickly and run smoothly.</p> 
+      <p>Use the following guidelines to ensure your preloaders perform well.</p> 
+      <ul> 
+       <li> <p>Put the preloader classes and resources in a separate JAR file from the main application and follow packaging instructions. See <a href="#BABJDJDJ">Packaging an Application with a Preloader</a>.</p> </li> 
+       <li> <p>Keep it small.</p> <p>Optimizing visual assets for size can significantly reduce the size of JAR files.</p> </li> 
+       <li> <p>Plan for achieving smooth transitions.</p> <p>Take care of the transition both from the splash screen to the preloader and from the preloader to the application. Consider reducing the number of transitions, for example by doing the following:</p> 
+        <ul> 
+         <li> <p>Show the preloader in HTML. See <a href="#BABIAIIC">Using JavaScript with a Preloader</a>.</p> </li> 
+         <li> <p>Share the stage between the preloader and application. For an example, see <a href="#BABBBBBJ">Cooperation of Preloader and Application: Sharing the Stage</a>.</p> </li> 
+         <li> <p>Do not display a preloader. See <a href="#BABGJCID">Show the Preloader Only if Needed</a>.</p> </li> 
+        </ul> </li> 
+       <li> <p>Ensure there is something to display before initiating a transition.</p> <p>Both the application and the preloader itself may need some initialization time before they can display something on the screen. If this is the case, consider explicitly hiding the splash screen when the preloader is ready (see <a href="#BABIAIIC">Using JavaScript with a Preloader</a>) and hiding the preloader on custom notification from the application (see <a href="#BABGGDJG">Using a Preloader to Display the Application Initialization Progress</a>).</p> </li> 
+       <li> <p>If application initialization takes time, use custom events to update the preloader on initialization progress. For example, see <a href="#BABGGDJG">Using a Preloader to Display the Application Initialization Progress</a>.</p> </li> 
+       <li> <p>Avoid signing the preloader if possible</p> <p>If the preloader is signed and the user needs to grant permissions, then the preloader is not visible until the user grant permissions.</p> </li> 
+      </ul> 
+      <p>The following guidelines are applicable to both the main application and the preloader. See also <a href="deploy_overview.htm#CEGHEFIA">Coding Tips</a> for general hints.</p> 
+      <ul> 
+       <li> <p>Avoid lengthy operations on the JavaFX application thread.</p> <p>Blocking the JavaFX thread pauses any UI updates and event processing. To avoid freezing the application UI, use the JavaFX <a href="../api/javafx/concurrent/Worker.html">Worker</a> API and offload lengthy operations to other threads.</p> </li> 
+       <li> <p>Try to keep the <code>start()</code> method implementation lightweight.</p> <p>Doing more work in the <code>init()</code> method unclogs the JavaFX application thread.</p> </li> 
+       <li> <p>Enable embedding when packaging your application for web deployment.</p> <p>Embedding a deployment descriptor (JNLP) and security certificates (if needed) reduces the time needed to collect all the information about the application and help to start the preloader and application faster.</p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-deployment.htm">About This Guide</a></li>
+      <li><a href="deploy_quick_start.htm">Getting Started</a></li>
+      <li><a href="deploy_overview.htm">Application Execution Modes</a></li>
+      <li><a href="deploy_user_experience.htm">Application Startup</a></li>
+      <li><a href="packaging.htm">Packaging</a></li>
+      <li><a href="deployment_toolkit.htm">Deployment in the Browser</a></li>
+      <li><a href="javafx_javascript.htm">JavaFX and JavaScript</a></li>
+      <li class=" active"><a href="preloaders.htm">Preloaders</a></li>
+      <li><a href="deploy_swing_apps.htm">JavaFX in Swing Applications</a></li>
+      <li><a href="packager.htm">The JavaFX Packager Tool</a></li>
+      <li><a href="packager001.htm">JavaFX Packager Command-Line Syntax</a></li>
+      <li><a href="javafx_ant_task_reference.htm">JavaFX Ant Tasks</a></li>
+      <li><a href="javafx_ant_task_reference001.htm">Reference: JavaFX Ant Tasks</a></li>
+      <li><a href="javafx_ant_task_reference002.htm">Reference: JavaFX Ant Helper Parameters</a></li>
+      <li><a href="troubleshooting.htm">Troubleshooting</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

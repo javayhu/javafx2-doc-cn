@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Checkbox &middot; Using JavaFX UI Controls &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX UI Controls</h1>
+     <p class=" lead">Checkbox</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="toggle-button.htm">←上一篇</a></li>
+      <li class=" next"><a href="choice-box.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="JFXUC176" name="JFXUC176"></a>
+     <a id="CHDFEJCD" name="CHDFEJCD"></a>  
+     <p>The <code>CheckBox</code> class provides support for creating checkboxes in your application. Although checkboxes look similar to radio buttons, they cannot be combined into toggle groups to enable the selection of many options at one time. See the Radio Button and Toggle Button chapters for more information.</p> 
+     <p><a href="#CHDGBHGF">Figure 6-1</a> shows a screen capture of an application in which three checkboxes are used to enable or disable icons in an application toolbar.</p> 
+     <div class="figure">
+      <a id="CHDGBHGF" name="CHDGBHGF"></a>
+      <a id="JFXUC177" name="JFXUC177"></a> 
+      <p class="titleinfigure">Figure 6-1 Checkbox Sample</p> 
+      <img src="img/checkboxes.png" alt="Checkbox sample" title="Checkbox sample" longdesc="img_text/checkboxes.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <a id="JFXUC178" name="JFXUC178"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref52" name="sthref52"></a> 
+      <h2 class="sect1">Creating Checkboxes</h2> 
+      <p><a href="#CHDBFIFF">Example 6-1</a> creates two simple checkboxes.</p> 
+      <div class="example">
+       <a id="CHDBFIFF" name="CHDBFIFF"></a>
+       <a id="JFXUC179" name="JFXUC179"></a> 
+       <p class="titleinexample">Example 6-1 Creating Checkboxes</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+//A checkbox without a caption
+CheckBox cb1 = new CheckBox();
+//A checkbox with a string caption
+CheckBox cb2 = new CheckBox(&quot;Second&quot;);
+
+cb1.setText(&quot;First&quot;);
+cb1.setSelected(true);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Once you have created a checkbox, you can modify it by using methods available through the JavaFX APIs. In <a href="#CHDBFIFF">Example 6-1</a> the <code>setText</code> method defines the text caption of the c1 checkbox. The <code>setSelected</code> method is set to <code>true</code> so that the cb1 checkbox is selected when the application is started.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC180" name="JFXUC180"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref53" name="sthref53"></a> 
+      <h2 class="sect1">Defining a State</h2> 
+      <p>The checkbox can be either defined or undefined. When it is defined, you can select or deselect it. However, when the checkbox is undefined, it cannot be selected or deselected. Use a combination of the <code>setSelected</code> and <code>setIndeterminate</code> methods of the <code>CheckBox</code> class to specify the state of the checkbox. <a href="#CHDECEFC">Table 6-1</a> shows three states of a checkbox based on its <code>INDETERMINATE</code> and <code>SELECTED</code> properties.</p> 
+      <div class="tblhruleformal">
+       <a id="JFXUC181" name="JFXUC181"></a>
+       <a id="sthref54" name="sthref54"></a>
+       <a id="CHDECEFC" name="CHDECEFC"></a> 
+       <p class="titleintable">Table 6-1 States of a Checkbox</p> 
+       <table class="HRuleFormal table table-bordered table-striped" title="States of a Checkbox" summary="Available states of a checkbox" dir="ltr" border="1" width="100%" frame="hsides" rules="rows" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="31%" /> 
+         <col width="*" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t2">Property Values</th> 
+          <th align="left" valign="bottom" id="r1c2-t2">Checkbox Appearance</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t2" headers="r1c1-t2"> <p><code>INDETERMINATE</code> = false</p> <p><code>SELECTED</code> = false</p> </td> 
+          <td align="left" headers="r2c1-t2 r1c2-t2"> <p><img src="img/checkbox-state1.png" alt="The checkbox is deselected." title="The checkbox is deselected." /></p> <br /></td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r3c1-t2" headers="r1c1-t2"> <p><code>INDETERMINATE</code> =false</p> <p><code>SELECTED</code> = true</p> </td> 
+          <td align="left" headers="r3c1-t2 r1c2-t2"> <p><img src="img/checkbox-state3.png" alt="The checkbox is selected." title="The checkbox is selected." /></p> <br /></td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r4c1-t2" headers="r1c1-t2"> <p><code>INDETERMINATE</code> = true</p> <p><code>SELECTED</code> = true/false</p> </td> 
+          <td align="left" headers="r4c1-t2 r1c2-t2"> <p><img src="img/checkbox-state2.png" alt="The checkbox is undefined." title="The checkbox is undefined." /></p> <br /></td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblhruleformal" --> 
+      <p>You might need enabling three states for checkboxes in your application when they represent UI elements that can be in mixed states, for example, &quot;Yes&quot;, &quot;No&quot;, &quot;Not Applicable.&quot; The <code>allowIndeterminate</code> property of the <code>CheckBox</code> object determines whether the checkbox should cycle through all three states: selected, deselected, and undefined. If the variable is <code>true</code>, the control will cycle through all the three states. If it is <code>false</code>, the control will cycle through the selected and deselected states. The application described in the next section constructs three checkboxes and enables only two states for them.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC182" name="JFXUC182"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref55" name="sthref55"></a> 
+      <h2 class="sect1">Setting the Behavior</h2> 
+      <p>The code fragment in <a href="#CHDDFEED">Example 6-2</a> creates three checkboxes, such that if a checkbox is selected, the corresponding icon appears in a toolbar.</p> 
+      <div class="example">
+       <a id="CHDDFEED" name="CHDDFEED"></a>
+       <a id="JFXUC183" name="JFXUC183"></a> 
+       <p class="titleinexample">Example 6-2 Setting the Behavior for the Checkboxes</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+final String[] names = new String[]{&quot;Security&quot;, &quot;Project&quot;, &quot;Chart&quot;};
+final Image[] images = new Image[names.length];
+final ImageView[] icons = new ImageView[names.length];
+final CheckBox[] cbs = new CheckBox[names.length];
+
+for (int i = 0; i &lt; names.length; i++) {
+    final Image image = images[i] =
+        new Image(getClass().getResourceAsStream(names[i] + &quot;.png&quot;));
+    final ImageView icon = icons[i] = new ImageView();
+    final CheckBox cb = cbs[i] = new CheckBox(names[i]);
+    cb.selectedProperty().addListener(new ChangeListener&lt;Boolean&gt;() {
+        public void changed(ObservableValue&lt;? extends Boolean&gt; ov,
+            Boolean old_val, Boolean new_val) {
+                icon.setImage(new_val ? image : null);
+        }
+    });
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The <code>names</code> array uses a <code>for</code> loop to create an array of checkboxes and a corresponding array of icons. For example, cbs[0], the first checkbox, is assigned the &quot;Security&quot; text caption. At the same time, image[0] receives &quot;Security.png&quot; as a file name for the <code>getResourceStream</code> method when an image for the first icon is created. If a particular checkbox is selected, the corresponding image is assigned to the icon. If a checkbox is deselected, the icon receives a <code>null</code> image and the icon is not rendered.</p> 
+      <p><a href="#CHDJJAGF">Figure 6-2</a> shows an application when the Security and Chart checkboxes are selected and the Project checkbox is deselected.</p> 
+      <div class="figure">
+       <a id="CHDJJAGF" name="CHDJJAGF"></a>
+       <a id="JFXUC184" name="JFXUC184"></a> 
+       <p class="titleinfigure">Figure 6-2 Checkbox Application in Action</p> 
+       <img src="img/checkboxes-two.png" alt="Two checkboxes are selected" title="Two checkboxes are selected" longdesc="img_text/checkboxes-two.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC185" name="JFXUC185"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref57" name="sthref57"></a> 
+      <h2 class="sect1">Styling a Checkbox</h2> 
+      <p>The checkboxes in <a href="#CHDJJAGF">Figure 6-2</a> have the default look and feel of the <code>CheckBox</code> class. You can alter the appearance of a checkbox by using the <code>setStyle</code> method, as shown in <a href="#CHDGHDDF">Example 6-3</a>.</p> 
+      <div class="example">
+       <a id="CHDGHDDF" name="CHDGHDDF"></a>
+       <a id="JFXUC186" name="JFXUC186"></a> 
+       <p class="titleinexample">Example 6-3 Styling a Checkbox</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+cb1.setStyle(
+    &quot;-fx-border-color: lightblue; &quot;
+    + &quot;-fx-font-size: 20;&quot;
+    + &quot;-fx-border-insets: -5; &quot;
+    + &quot;-fx-border-radius: 5;&quot;
+    + &quot;-fx-border-style: dotted;&quot;
+    + &quot;-fx-border-width: 2;&quot;
+);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The new style includes a dotted light blue border and an increased font size for its text caption. <a href="#CHDHCBDJ">Figure 6-3</a> shows the cb1 checkbox with this style applied.</p> 
+      <div class="figure">
+       <a id="CHDHCBDJ" name="CHDHCBDJ"></a>
+       <a id="JFXUC187" name="JFXUC187"></a> 
+       <p class="titleinfigure">Figure 6-3 Styled Checkbox</p> 
+       <img src="img/checkbox-css.png" alt="Description of Figure 6-3 follows" title="Description of Figure 6-3 follows" longdesc="img_text/checkbox-css.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>To set a specific style for all the checkboxes in your application, use the following procedure:</p> 
+      <ul> 
+       <li> <p>Create a .css file.</p> </li> 
+       <li> <p>Create the <code>checkbox</code> CSS class in the .css file.</p> </li> 
+       <li> <p>Define all the required styles in the <code>checkbox</code> CSS class.</p> </li> 
+       <li> <p>In your JavaFX application, enable the style sheet by using the <code>setStyleClass</code> method.</p> </li> 
+      </ul> 
+      <p class="itemizedlisttitle">Related API Documentation &nbsp;</p> 
+      <ul> 
+       <li> <p><code>CheckBox</code></p> </li> 
+       <li> <p>JavaFX CSS Specification</p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-ui_controls.htm">About This Tutorial</a></li>
+      <li><a href="overview.htm">JavaFX UI Controls</a></li>
+      <li><a href="label.htm">Label</a></li>
+      <li><a href="button.htm">Button</a></li>
+      <li><a href="radio-button.htm">Radio Button</a></li>
+      <li><a href="toggle-button.htm">Toggle Button</a></li>
+      <li class=" active"><a href="checkbox.htm">Checkbox</a></li>
+      <li><a href="choice-box.htm">Choice Box</a></li>
+      <li><a href="text-field.htm">Text Field</a></li>
+      <li><a href="password-field.htm">Password Field</a></li>
+      <li><a href="scrollbar.htm">Scroll Bar</a></li>
+      <li><a href="scrollpane.htm">Scroll Pane</a></li>
+      <li><a href="list-view.htm">List View</a></li>
+      <li><a href="table-view.htm">Table View</a></li>
+      <li><a href="tree-view.htm">Tree View</a></li>
+      <li><a href="combo-box.htm">Combo Box</a></li>
+      <li><a href="separator.htm">Separator</a></li>
+      <li><a href="slider.htm">Slider</a></li>
+      <li><a href="progress.htm">Progress Bar and Progress Indicator</a></li>
+      <li><a href="hyperlink.htm">Hyperlink</a></li>
+      <li><a href="tooltip.htm">Tooltip</a></li>
+      <li><a href="editor.htm">HTML Editor</a></li>
+      <li><a href="accordion-titledpane.htm">Titled Pane and Accordion</a></li>
+      <li><a href="menu_controls.htm">Menu</a></li>
+      <li><a href="custom.htm">Customization of UI Controls</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/ui_controls/UIControlSamples.zip">UIControlSamples.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

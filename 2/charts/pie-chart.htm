@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Pie Chart &middot; Using JavaFX Charts &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX Charts</h1>
+     <p class=" lead">Pie Chart</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="chart-overview.htm">←上一篇</a></li>
+      <li class=" next"><a href="line-chart.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="JFXCH110" name="JFXCH110"></a>
+     <a id="CIHFDADD" name="CIHFDADD"></a>  
+     <p>A pie chart represents data in a form of circle divided into triangular wedges called slices. Each slice represents a percentage that corresponds to a particular value. <a href="#CIHDAHBF">Figure 2-1</a> shows a pie chart created by using the <code>PieChart</code> class. The colors of the slices are defined by the order of the corresponding data items added to the <code>PieChart.Data</code> array.</p> 
+     <div class="figure">
+      <a id="CIHDAHBF" name="CIHDAHBF"></a>
+      <a id="JFXCH127" name="JFXCH127"></a> 
+      <p class="titleinfigure">Figure 2-1 Typical Pie Chart</p> 
+      <img src="img/pie-sample.png" alt="A typical pie chart" title="A typical pie chart" longdesc="img_text/pie-sample.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <a id="JFXCH111" name="JFXCH111"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref16" name="sthref16"></a> 
+      <h2 class="sect1">Creating a Pie Chart</h2> 
+      <p>To create a pie chart in your JavaFX application, at a minimum, you must instantiate the <code>PieChart</code> class, define the data, assign the data items to the <code>PieChart</code> object, and add the chart to the application. When creating the chart data, define as many <code>PieChart.Data</code> objects for as many slices you want to appear. Each <code>PieChart.Data</code> object has two fields: the name of the pie slice and its corresponding value. <a href="#CIHBAGHE">Example 2-1</a> creates the basic pie chart.</p> 
+      <div class="example">
+       <a id="CIHBAGHE" name="CIHBAGHE"></a>
+       <a id="JFXCH128" name="JFXCH128"></a> 
+       <p class="titleinexample">Example 2-1 Creating a Pie Chart</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.scene.chart.*;
+import javafx.scene.Group;
+ 
+public class PieChartSample extends Application {
+ 
+    @Override public void start(Stage stage) {
+        Scene scene = new Scene(new Group());
+        stage.setTitle(&quot;Imported Fruits&quot;);
+        stage.setWidth(500);
+        stage.setHeight(500);
+ 
+        ObservableList&lt;PieChart.Data&gt; pieChartData =
+                FXCollections.observableArrayList(
+                new PieChart.Data(&quot;Grapefruit&quot;, 13),
+                new PieChart.Data(&quot;Oranges&quot;, 25),
+                new PieChart.Data(&quot;Plums&quot;, 10),
+                new PieChart.Data(&quot;Pears&quot;, 22),
+                new PieChart.Data(&quot;Apples&quot;, 30));
+        final PieChart chart = new PieChart(pieChartData);
+        chart.setTitle(&quot;Imported Fruits&quot;);
+
+        ((Group) scene.getRoot()).getChildren().add(chart);
+        stage.setScene(scene);
+        stage.show();
+    }
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The result of compiling and running this application is shown in <a href="#BABEJCDE">Figure 2-2</a>.</p> 
+      <div class="figure">
+       <a id="BABEJCDE" name="BABEJCDE"></a>
+       <a id="JFXCH129" name="JFXCH129"></a> 
+       <p class="titleinfigure">Figure 2-2 Imported Fruits Charts</p> 
+       <img src="img/pie-fruits.png" alt="Typical pie chart" title="Typical pie chart" longdesc="img_text/pie-fruits.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>In addition to the basic settings, <a href="#CIHBAGHE">Example 2-1</a> specifies the title of the chart by calling the <code>setTitle</code> method.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCH130" name="JFXCH130"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref18" name="sthref18"></a> 
+      <h2 class="sect1">Setting a Pie Chart and a Legend</h2> 
+      <p>The default view of a pie chart includes the pie with the labels and the chart legend. The values of the labels are retrieved from the name field of a <code>PieChart.Data</code> object. You can manage the appearance of the labels by using the <code>setLabelsVisile</code> method. Similarly, you can manage the appearance of the chart legend by calling the <code>setLegendVisible</code> method.</p> 
+      <p>You can alter the position of the labels and the legend. With the <code>setLabelLineLength</code> method, you can specify the length of the line between the circumference of the pie and the labels. Use the <code>setLegendSide</code> method to alter the default position of the legend relative to the pie. <a href="#CIHHEHEF">Example 2-2</a> demonstrates how to apply these methods to the chart created in <a href="#CIHBAGHE">Example 2-1</a>.</p> 
+      <div class="example">
+       <a id="CIHHEHEF" name="CIHHEHEF"></a>
+       <a id="JFXCH131" name="JFXCH131"></a> 
+       <p class="titleinexample">Example 2-2 Changing Position of the Labels and the Legend</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+chart.setLabelLineLength(10);
+chart.setLegendSide(Side.LEFT);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The result of adding these lines to the application code, compiling, and then running the application is shown in <a href="#CIHJCGCA">Figure 2-3</a>.</p> 
+      <div class="figure">
+       <a id="CIHJCGCA" name="CIHJCGCA"></a>
+       <a id="JFXCH132" name="JFXCH132"></a> 
+       <p class="titleinfigure">Figure 2-3 Alternative Position of the Chart Legend and Labels</p> 
+       <img src="img/pie-legend.png" alt="Alternative position of the pie chart legend and labels." title="Alternative position of the pie chart legend and labels." longdesc="img_text/pie-legend.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>Your application might require that you alter the direction in which the slices are placed in the pie. By default, the slices are placed clockwise. However, you can change this by specifying the <code>false</code> value for the <code>setClockwise</code> method <code>chart.setClockwise(false)</code>. Use this method in combination with the <code>setStartAngle</code> method to attain the desired position of the slices. <a href="#CIHJIDGI">Figure 2-4</a> shows how the appearance of the pie chart changes when the <code>setStartAngle(180)</code> method is called for the <code>chart</code> object.</p> 
+      <div class="figure">
+       <a id="CIHJIDGI" name="CIHJIDGI"></a>
+       <a id="JFXCH133" name="JFXCH133"></a> 
+       <p class="titleinfigure">Figure 2-4 Changing the Start Angle of the Pie Chart Slices</p> 
+       <img src="img/pie-angle.png" alt="Description of Figure 2-4 follows" title="Description of Figure 2-4 follows" longdesc="img_text/pie-angle.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXCH134" name="JFXCH134"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref21" name="sthref21"></a> 
+      <h2 class="sect1">Processing Events for a Pie Chart</h2> 
+      <p>Although a pie chart slice is not a <code>Node</code> object, each <code>PieChart.Data</code> element has a node associated with it, which can be used to analyze events and process them accordingly. The code fragment shown in <a href="#BABHBIJH">Example 2-3</a> creates an <code>EventHandler</code> object to process a <code>MOUSE_PRESSED</code> event that falls into a particular chart slice.</p> 
+      <div class="example">
+       <a id="BABHBIJH" name="BABHBIJH"></a>
+       <a id="JFXCH135" name="JFXCH135"></a> 
+       <p class="titleinexample">Example 2-3 Processing Mouse Events for a Pie Chart</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+final Label caption = new Label(&quot;&quot;);
+caption.setTextFill(Color.DARKORANGE);
+caption.setStyle(&quot;-fx-font: 24 arial;&quot;);
+
+for (final PieChart.Data data : chart.getData()) {
+    data.getNode().addEventHandler(MouseEvent.MOUSE_PRESSED,
+        new EventHandler&lt;MouseEvent&gt;() {
+            @Override public void handle(MouseEvent e) {
+                caption.setTranslateX(e.getSceneX());
+                caption.setTranslateY(e.getSceneY());
+                caption.setText(String.valueOf(data.getPieValue()) + &quot;%&quot;);
+             }
+        });
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When you add this code fragment to the application code and compile and run it, the application starts reacting to the mouse clicks. <a href="#BABFJECC">Figure 2-5</a> shows the value displayed for Pears when a user clicks the corresponding slice.</p> 
+      <div class="figure">
+       <a id="BABFJECC" name="BABFJECC"></a>
+       <a id="JFXCH136" name="JFXCH136"></a> 
+       <p class="titleinfigure">Figure 2-5 Processing the Mouse-Pressed Events for a Pie Chart</p> 
+       <img src="img/pie-click.png" alt="Description of Figure 2-5 follows" title="Description of Figure 2-5 follows" longdesc="img_text/pie-click.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>By using this coding pattern, you can process various events or apply visual effects to the whole chart as well as to its slices.</p> 
+      <p class="itemizedlisttitle">Related API Documentation&nbsp;</p> 
+      <ul> 
+       <li> <p><code>PieChart</code></p> </li> 
+       <li> <p><code>PieChart.Data</code></p> </li> 
+       <li> <p><code>Chart</code></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-charts.htm">About This Tutorial</a></li>
+      <li><a href="chart-overview.htm">Introduction to JavaFX Charts</a></li>
+      <li class=" active"><a href="pie-chart.htm">Pie Chart</a></li>
+      <li><a href="line-chart.htm">Line Chart</a></li>
+      <li><a href="area-chart.htm">Area Chart</a></li>
+      <li><a href="bubble-chart.htm">Bubble Chart</a></li>
+      <li><a href="scatter-chart.htm">Scatter Chart</a></li>
+      <li><a href="bar-chart.htm">Bar Chart</a></li>
+      <li><a href="css-styles.htm">Styling Charts with CSS</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/AreaChartSample.zip">AreaChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/BarChartSample.zip">BarChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/BubbleChartSample.zip">BubbleChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/LineChartSample.zip">LineChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/PieChartSample.zip">PieChartSample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/charts/ScatterChartSample.zip">ScatterChartSample.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

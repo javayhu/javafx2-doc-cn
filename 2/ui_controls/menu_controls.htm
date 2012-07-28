@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Menu &middot; Using JavaFX UI Controls &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX UI Controls</h1>
+     <p class=" lead">Menu</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="accordion-titledpane.htm">←上一篇</a></li>
+      <li class=" next"><a href="custom.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="BABGHADI" name="BABGHADI"></a>  
+     <p>This chapter explains how to create menus and menu bars, add menu items, group the menus into categories, create submenus, and set context menus.</p> 
+     <p>You can use the following classes of the JavaFX API to build menus in your JavaFX application.</p> 
+     <ul> 
+      <li> <p>MenuBar</p> </li> 
+      <li> <p>MenuItem</p> 
+       <ul> 
+        <li> <p>Menu</p> </li> 
+        <li> <p>CheckMenuItem</p> </li> 
+        <li> <p>RadioMenuItem</p> </li> 
+        <li> <p>Menu</p> </li> 
+        <li> <p>CustomMenuItem</p> 
+         <ul> 
+          <li> <p>SeparatorMenuItem</p> </li> 
+         </ul> </li> 
+       </ul> </li> 
+      <li> <p>ContextMenu</p> </li> 
+     </ul> 
+     <p><a href="#BABFJIIH">Figure 23-1</a> shows a screen capture of an application with a typical menu bar.</p> 
+     <div class="figure">
+      <a id="BABFJIIH" name="BABFJIIH"></a> 
+      <p class="titleinfigure">Figure 23-1 Application with a Menu Bar and Three Menu Categories</p> 
+      <img src="img/menu-intro.png" alt="Description of Figure 23-1 follows" title="Description of Figure 23-1 follows" longdesc="img_text/menu-intro.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref200" name="sthref200"></a> 
+      <h2 class="sect1">Building Menus in JavaFX Applications</h2> 
+      <p>A menu is a list of actionable items that can be displayed upon a user's request. When a menu is visible, users can select one menu item at time. After a user clicks an item, the menu returns to the hidden mode. By using menus, you can save space in your application user interface (UI) by placing in menus the functionality that does not always need to be visible.</p> 
+      <p>The menus in a menu bar are typically grouped into categories. The coding pattern is to declare a menu bar, define the category menus, and populate the category menus with menu items. Use the following menu item classes when building menus in your JavaFX applications:</p> 
+      <ul> 
+       <li> <p><code>MenuItem</code> – to create one actionable option</p> </li> 
+       <li> <p><code>Menu</code> – to create a submenu</p> </li> 
+       <li> <p><code>RadioButtonItem</code> – to create a mutually exclusive selection</p> </li> 
+       <li> <p><code>CheckMenuItem</code> – to create an option that can be toggled between selected and unselected states</p> </li> 
+      </ul> 
+      <p>To separate menu items within one category, use the <code>SeparatorMenuItem</code> class.</p> 
+      <p>The menus organized by categories in a menu bar are typically located at the top of the window, leaving the rest of the scene for crucial UI elements. If, for some reasons, you cannot allot any visual part of your UI for a menu bar, you can use context menus that the user opens with a mouse click.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref201" name="sthref201"></a> 
+      <h2 class="sect1">Creating a Menu Bar</h2> 
+      <p>Although a menu bar can be placed elsewhere in the user interface, typically it is located at the top of the UI and it contains one or more menus. The menu bar automatically resizes to fit the width of the application window. By default, each menu added to the menu bar is represented by a button with the text value.</p> 
+      <p>Consider an application that renders reference information about plants such as their name, binomial name, picture, and a brief description. You can create three menu categories: File, Edit, and View, and populate them with the menu items. <a href="#BABCFFFG">Example 23-1</a> shows the source code of such an application with the menu bar added.</p> 
+      <div class="example">
+       <a id="BABCFFFG" name="BABCFFFG"></a> 
+       <p class="titleinexample">Example 23-1 Menu Sample Application</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import java.util.AbstractMap.SimpleEntry;
+import java.util.Map.Entry;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.Effect;
+import javafx.scene.effect.Glow;
+import javafx.scene.effect.SepiaTone;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+ 
+public class MenuSample extends Application {
+ 
+    final PageData[] pages = new PageData[] {
+        new PageData(&quot;Apple&quot;,
+            &quot;The apple is the pomaceous fruit of the apple tree, species Malus &quot;
+            + &quot;domestica in the rose family (Rosaceae). It is one of the most &quot;
+            + &quot;widely cultivated tree fruits, and the most widely known of &quot;
+            + &quot;the many members of genus Malus that are used by humans. &quot;
+            + &quot;The tree originated in Western Asia, where its wild ancestor, &quot;
+            + &quot;the Alma, is still found today.&quot;,
+            &quot;Malus domestica&quot;),
+        new PageData(&quot;Hawthorn&quot;,
+            &quot;The hawthorn is a large genus of shrubs and trees in the rose &quot;
+            + &quot;family, Rosaceae, native to temperate regions of the Northern &quot;
+            + &quot;Hemisphere in Europe, Asia and North America. &quot;
+            + The name hawthorn was &quot;
+            + &quot;originally applied to the species native to northern Europe, &quot;
+            + &quot;especially the Common Hawthorn C. monogyna, and the unmodified &quot;
+            + &quot;name is often so used in Britain and Ireland.&quot;,
+            &quot;Crataegus monogyna&quot;),
+        new PageData(&quot;Ivy&quot;,
+            &quot;The ivy is a flowering plant in the grape family (Vitaceae) native to
+            + &quot; eastern Asia in Japan, Korea, and northern and eastern China. &quot;
+            + &quot;It is a deciduous woody vine growing to 30 m tall or more given &quot;
+            + &quot;suitable support,  attaching itself by means of numerous small &quot;
+            + &quot;branched tendrils tipped with sticky disks.&quot;,
+            &quot;Parthenocissus tricuspidata&quot;),
+        new PageData(&quot;Quince&quot;,
+            &quot;The quince is the sole member of the genus Cydonia and is native to &quot;
+            + &quot;warm-temperate southwest Asia in the Caucasus region. The &quot;
+            + &quot;immature fruit is green with dense grey-white pubescence, most &quot;
+            + &quot;of which rubs off before maturity in late autumn when the fruit &quot;
+            + &quot;changes color to yellow with hard, strongly perfumed flesh.&quot;,
+            &quot;Cydonia oblonga&quot;)
+    };
+ 
+    final String[] viewOptions = new String[] {
+        &quot;Title&quot;, 
+        &quot;Binomial name&quot;, 
+        &quot;Picture&quot;, 
+        &quot;Decsription&quot;
+    };
+ 
+    final Entry&lt;String, Effect&gt;[] effects = new Entry[] {
+        new SimpleEntry&lt;String, Effect&gt;(&quot;Sepia Tone&quot;, new SepiaTone()),
+        new SimpleEntry&lt;String, Effect&gt;(&quot;Glow&quot;, new Glow()),
+        new SimpleEntry&lt;String, Effect&gt;(&quot;Shadow&quot;, new DropShadow())
+    };
+ 
+    final ImageView pic = new ImageView();
+    final Label name = new Label();
+    final Label binName = new Label();
+    final Label description = new Label();
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+ 
+    @Override
+    public void start(Stage stage) {
+        stage.setTitle(&quot;Menu Sample&quot;);
+        Scene scene = new Scene(new VBox(), 400, 350);
+        scene.setFill(Color.OLDLACE);
+ 
+        <span class="bold">MenuBar menuBar = new MenuBar();</span>
+ 
+        // --- Menu File
+        <span class="bold">Menu menuFile = new Menu(&quot;File&quot;);</span>
+ 
+        // --- Menu Edit
+        <span class="bold">Menu menuEdit = new Menu(&quot;Edit&quot;);</span>
+ 
+        // --- Menu View
+        <span class="bold">Menu menuView = new Menu(&quot;View&quot;);</span>
+ 
+        <span class="bold">menuBar.getMenus().addAll(menuFile, menuEdit, menuView);</span>
+ 
+ 
+        ((VBox) scene.getRoot()).getChildren().addAll(menuBar);
+ 
+        stage.setScene(scene);
+        stage.show();
+    }
+ 
+ 
+    private class PageData {
+        public String name;
+        public String description;
+        public String binNames;
+        public Image image;
+        public PageData(String name, String description, String binNames) {
+            this.name = name;
+            this.description = description;
+            this.binNames = binNames;
+            image = new Image(getClass().getResourceAsStream(name + &quot;.jpg&quot;));
+        }
+    }
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Unlike other UI Controls, the <code>Menu</code> class and other extensions of the <code>MenuItem</code> class do not extend the <code>Node</code> class. They cannot be added directly to the application scene and remain invisible until added to the menu bar through the <code>getMenus</code> method.</p> 
+      <div class="figure">
+       <a id="BABBBEHI" name="BABBBEHI"></a> 
+       <p class="titleinfigure">Figure 23-2 Menu Bar is Added to the Application</p> 
+       <img src="img/menu-bar.png" alt="Description of Figure 23-2 follows" title="Description of Figure 23-2 follows" longdesc="img_text/menu-bar.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>You can navigate through the menus by using the arrow keys of the keyboard. However, when you select a menu, no action is performed, because the behavior for the menus is not defined yet.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref203" name="sthref203"></a> 
+      <h2 class="sect1">Adding Menu Items</h2> 
+      <p>Set the functionality for the File menu by adding the following items:</p> 
+      <ul> 
+       <li> <p>Shuffle – to load reference information about plants</p> </li> 
+       <li> <p>Clear – to remove the reference information and clear the scene</p> </li> 
+       <li> <p>Separator – to detach menu items</p> </li> 
+       <li> <p>Exit – to exit the application</p> </li> 
+      </ul> 
+      <p>Bold lines in <a href="#BABCEFCH">Example 23-2</a> create a Shuffle menu by using the <code>MenuItem</code> class and add graphical components to the application scene. The <code>MenuItem</code> class enables creating an actionable item with text and graphics. The action performed on a user click is defined by the <code>setOnAction</code> method, similar to the <code>Button</code> class.</p> 
+      <div class="example">
+       <a id="BABCEFCH" name="BABCEFCH"></a> 
+       <p class="titleinexample">Example 23-2 Adding the Shuffle Menu Item with Graphics</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import java.util.AbstractMap.SimpleEntry;
+import java.util.Map.Entry;
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.Effect;
+import javafx.scene.effect.Glow;
+import javafx.scene.effect.SepiaTone;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.TextAlignment;
+import javafx.stage.Stage;
+ 
+public class MenuSample extends Application {
+ 
+    final PageData[] pages = new PageData[] {
+        new PageData(&quot;Apple&quot;,
+            &quot;The apple is the pomaceous fruit of the apple tree, species Malus &quot;
+            +&quot;domestica in the rose family (Rosaceae). It is one of the most &quot;
+            +&quot;widely cultivated tree fruits, and the most widely known of &quot;
+            +&quot;the many members of genus Malus that are used by humans. &quot;
+            +&quot;The tree originated in Western Asia, where its wild ancestor, &quot;
+            +&quot;the Alma, is still found today.&quot;,
+            &quot;Malus domestica&quot;),
+        new PageData(&quot;Hawthorn&quot;,
+            &quot;The hawthorn is a large genus of shrubs and trees in the rose &quot;
+            + &quot;family, Rosaceae, native to temperate regions of the Northern &quot;
+            + &quot;Hemisphere in Europe, Asia and North America. &quot;
+            + &quot;The name hawthorn was &quot;
+            + &quot;originally applied to the species native to northern Europe, &quot;
+            + &quot;especially the Common Hawthorn C. monogyna, and the unmodified &quot;
+            + &quot;name is often so used in Britain and Ireland.&quot;,
+            &quot;Crataegus monogyna&quot;),
+        new PageData(&quot;Ivy&quot;,
+            &quot;The ivy is a flowering plant in the grape family (Vitaceae) native&quot;
+            +&quot; to eastern Asia in Japan, Korea, and northern and eastern China.&quot;
+            +&quot; It is a deciduous woody vine growing to 30 m tall or more given &quot;
+            +&quot;suitable support,  attaching itself by means of numerous small &quot;
+            +&quot;branched tendrils tipped with sticky disks.&quot;,
+            &quot;Parthenocissus tricuspidata&quot;),
+        new PageData(&quot;Quince&quot;,
+            &quot;The quince is the sole member of the genus Cydonia and is native&quot;
+            +&quot; to warm-temperate southwest Asia in the Caucasus region. The &quot;
+            +&quot;immature fruit is green with dense grey-white pubescence, most &quot;
+            +&quot;of which rubs off before maturity in late autumn when the fruit &quot;
+            +&quot;changes color to yellow with hard, strongly perfumed flesh.&quot;,
+            &quot;Cydonia oblonga&quot;)
+    };
+ 
+    final String[] viewOptions = new String[] {
+        &quot;Title&quot;, 
+        &quot;Binomial name&quot;, 
+        &quot;Picture&quot;, 
+        &quot;Decsription&quot;
+    };
+ 
+    final Entry&lt;String, Effect&gt;[] effects = new Entry[] {
+        new SimpleEntry&lt;String, Effect&gt;(&quot;Sepia Tone&quot;, new SepiaTone()),
+        new SimpleEntry&lt;String, Effect&gt;(&quot;Glow&quot;, new Glow()),
+        new SimpleEntry&lt;String, Effect&gt;(&quot;Shadow&quot;, new DropShadow())
+    };
+ 
+    final ImageView pic = new ImageView();
+    final Label name = new Label();
+    final Label binName = new Label();
+    final Label description = new Label();
+    <span class="bold">private int currentIndex = -1;</span>
+ 
+    public static void main(String[] args) {
+        launch(args);
+    }
+ 
+    @Override
+    public void start(Stage stage) {
+        stage.setTitle(&quot;Menu Sample&quot;);
+        Scene scene = new Scene(new VBox(), 400, 350);
+        scene.setFill(Color.OLDLACE);
+ 
+        <span class="bold">name.setFont(new Font(&quot;Verdana Bold&quot;, 22));</span>
+        <span class="bold">binName.setFont(new Font(&quot;Arial Italic&quot;, 10));</span>
+        <span class="bold">pic.setFitHeight(150);</span>
+        <span class="bold">pic.setPreserveRatio(true);</span>
+        <span class="bold">description.setWrapText(true);</span>
+        <span class="bold">description.setTextAlignment(TextAlignment.JUSTIFY);</span>
+ 
+        <span class="bold">shuffle();</span>
+ 
+        MenuBar menuBar = new MenuBar();
+ 
+        final VBox vbox = new VBox();
+        vbox.setAlignment(Pos.CENTER);
+        vbox.setSpacing(10);
+        vbox.setPadding(new Insets(0, 10, 0, 10));
+        vbox.getChildren().addAll(name, binName, pic, description);
+ 
+        // --- Menu File
+        Menu menuFile = new Menu(&quot;File&quot;);
+        <span class="bold">MenuItem add = new MenuItem(&quot;Shuffle&quot;,</span>
+            <span class="bold">new ImageView(new Image(&quot;src/menusample/new.png&quot;)));</span>
+       <span class="bold"> add.setOnAction(new EventHandler&lt;ActionEvent&gt;() {</span>
+            <span class="bold">public void handle(ActionEvent t) {</span>
+                <span class="bold">shuffle();</span>
+                <span class="bold">vbox.setVisible(true);</span>
+            <span class="bold">}</span>
+        <span class="bold">})</span>;        
+ 
+        <span class="bold">menuFile.getItems().addAll(add);</span>
+ 
+        // --- Menu Edit
+        Menu menuEdit = new Menu(&quot;Edit&quot;);
+        
+        // --- Menu View
+        Menu menuView = new Menu(&quot;View&quot;);
+        
+        menuBar.getMenus().addAll(menuFile, menuEdit, menuView);
+        ((VBox) scene.getRoot()).getChildren().addAll(menuBar, <span class="bold">vbox</span>);
+        stage.setScene(scene);
+        stage.show();
+    }
+ 
+    <span class="bold">private void shuffle() {</span>
+        <span class="bold">int i = currentIndex;</span>
+        <span class="bold">while (i == currentIndex) {</span>
+            <span class="bold">i = (int) (Math.random() * pages.length);</span>
+        <span class="bold">}</span>
+        <span class="bold">pic.setImage(pages[i].image);</span>
+        <span class="bold">name.setText(pages[i].name);</span>
+        <span class="bold">binName.setText(&quot;(&quot; + pages[i].binNames + &quot;)&quot;);</span>
+        <span class="bold">description.setText(pages[i].description);</span>
+        <span class="bold">currentIndex = i;</span>
+    }
+ 
+    
+    private class PageData {
+        public String name;
+        public String description;
+        public String binNames;
+        public Image image;
+        public PageData(String name, String description, String binNames) {
+            this.name = name;
+            this.description = description;
+            this.binNames = binNames;
+            image = new Image(getClass().getResourceAsStream(name + &quot;.jpg&quot;));
+        }
+    }
+} 
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When a user selects the Shuffle menu item, the <code>shuffle</code> method called within <code>setOnAction</code> specifies the title, the binomial name, a picture of the plant, and its description by calculating the index of the elements in the corresponding arrays.</p> 
+      <p>The Clear menu item is used to erase the application scene. You can implement this by making the <code>VBox</code> container with the GUI elements invisible as shown in <a href="#BABIGGAG">Example 23-3</a>.</p> 
+      <div class="example">
+       <a id="BABIGGAG" name="BABIGGAG"></a> 
+       <p class="titleinexample">Example 23-3 Creating the Clear Menu Item with Accelerator</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+MenuItem clear = new MenuItem(&quot;Clear&quot;);
+    clear.setAccelerator(KeyCombination.keyCombination(&quot;Ctrl+X&quot;));
+    clear.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+        public void handle(ActionEvent t) {
+            vbox.setVisible(false);
+        }
+});
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Implementation of the <code>MenuItem</code> class enables developers to set a menu accelerator, a key combination that performs the same action as the menu item. With the Clear menu, users can either select the action from the File menu category or press Control Key and X key simultaneously.</p> 
+      <p>The Exit menu closes the application window. Set <code>System.exit(0)</code> as an action for this menu item as shown in <a href="#BABGIIGB">Example 23-4</a>.</p> 
+      <div class="example">
+       <a id="BABGIIGB" name="BABGIIGB"></a> 
+       <p class="titleinexample">Example 23-4 Creating the Exit Menu Item</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+MenuItem exit = new MenuItem(&quot;Exit&quot;);
+exit.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+    public void handle(ActionEvent t) {
+        System.exit(0);
+    }
+});
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Use the <code>getItems</code> method shown in <a href="#BABGAAIE">Example 23-5</a> to add the newly created menu items to the File menu. You can create a separator menu item and add it within the <code>getItems</code> method to visually detach the Exit menu item.</p> 
+      <div class="example">
+       <a id="BABGAAIE" name="BABGAAIE"></a> 
+       <p class="titleinexample">Example 23-5 Adding Menu Items</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+menuFile.getItems().addAll(add, clear, new SeparatorMenuItem(), exit);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Add <a href="#BABCEFCH">Example 23-2</a>, <a href="#BABIGGAG">Example 23-3</a>, <a href="#BABGIIGB">Example 23-4</a>, and <a href="#BABGAAIE">Example 23-5</a> to the Menu Sample application, and then compile and run it. Select the Shuffle menu item to load reference information about different plants. Then clear the scene (Clear), and close the application (Exit). <a href="#BABCEEDA">Figure 23-3</a> shows selection of the Clear menu item.</p> 
+      <div class="figure">
+       <a id="BABCEEDA" name="BABCEEDA"></a> 
+       <p class="titleinfigure">Figure 23-3 File Menu with Three Menu Items</p> 
+       <img src="img/menu-file.png" alt="Description of Figure 23-3 follows" title="Description of Figure 23-3 follows" longdesc="img_text/menu-file.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>With the View menu, you can hide and show elements of reference information. Implement the <code>createMenuItem</code> method and call it within the <code>start</code> method to create four <code>CheckMenuItem</code> objects. Then add newly created check menu items to the View menu to toggle visibility of the title, binomial name, picture of the plant, and its description. <a href="#BABJBEEB">Example 23-6</a> shows two code fragments that implement these tasks.</p> 
+      <div class="example">
+       <a id="BABJBEEB" name="BABJBEEB"></a> 
+       <p class="titleinexample">Example 23-6 Applying the CheckMenuItem Class to Create Toggle Options</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+// --- Creating four check menu items within the start method
+CheckMenuItem titleView = createMenuItem (&quot;Title&quot;, name);                                                       
+CheckMenuItem binNameView = createMenuItem (&quot;Binomial name&quot;, binName);        
+CheckMenuItem picView = createMenuItem (&quot;Picture&quot;, pic);        
+CheckMenuItem descriptionView = createMenuItem (&quot;Description&quot;, description);     
+menuView.getItems().addAll(titleView, binNameView, picView, descriptionView);
+
+...
+
+// The createMenuItem method
+private static CheckMenuItem createMenuItem (String title, final Node node){
+    CheckMenuItem cmi = new CheckMenuItem(title);
+    cmi.setSelected(true);
+    cmi.selectedProperty().addListener(new ChangeListener&lt;Boolean&gt;() {
+        public void changed(ObservableValue ov,
+        Boolean old_val, Boolean new_val) {
+            node.setVisible(new_val);
+        }
+    });
+    return cmi;
+}
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The <code>CheckMenuItem</code> class is an extension of the <code>MenuItem</code> class. It can be toggled between selected and deselected states. When selected, a check menu item shows a check mark.</p> 
+      <p><a href="#BABJBEEB">Example 23-6</a> creates four <code>CheckMenuItem</code> objects and processes the changing of their <code>selectedProperty</code> property. When, for example, a user deselects the <code>picView</code> item, the <code>setVisible</code> method receives the <code>false</code> value, the picture of the plant becomes invisible. When you add this code fragment to the application, compile, and run the application, you can experiment with selecting and deselecting the menu items. <a href="#BABEHIEI">Figure 23-4</a> shows the application in the moment when the title and picture of the plant are shown, but its binomial name and description are hidden.</p> 
+      <div class="figure">
+       <a id="BABEHIEI" name="BABEHIEI"></a> 
+       <p class="titleinfigure">Figure 23-4 Using Check Menu Items</p> 
+       <img src="img/menu-check.png" alt="Description of Figure 23-4 follows" title="Description of Figure 23-4 follows" longdesc="img_text/menu-check.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref206" name="sthref206"></a> 
+      <h2 class="sect1">Creating Submenus</h2> 
+      <p>For the Edit menu, define two menu items: Picture Effect and No Effects. The Picture Effect menu item is designed as a submenu with three items to set one of the three available visual effects. The No Effects menu item removes the selected effect and restores the initial state of the image.</p> 
+      <p>Use the <code>RadioMenuItem</code> class to create the items of the submenu. Add the radio menu buttons to a toggle group to make the selection mutually exclusive. <a href="#BABBHGCE">Example 23-7</a> implements these tasks.</p> 
+      <div class="example">
+       <a id="BABBHGCE" name="BABBHGCE"></a> 
+       <p class="titleinexample">Example 23-7 Creating a Submenu with Radio Menu Items</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+//Picture Effect menu
+Menu menuEffect = new Menu(&quot;Picture Effect&quot;);
+final ToggleGroup groupEffect = new ToggleGroup();
+for (Entry&lt;String, Effect&gt; effect : effects) {
+    RadioMenuItem itemEffect = new RadioMenuItem(effect.getKey());
+    itemEffect.setUserData(effect.getValue());
+    itemEffect.setToggleGroup(groupEffect);
+    menuEffect.getItems().add(itemEffect);
+}
+//No Effects menu
+final MenuItem noEffects = new MenuItem(&quot;No Effects&quot;);
+
+ noEffects.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+     public void handle(ActionEvent t) {
+         pic.setEffect(null);
+         groupEffect.getSelectedToggle().setSelected(false);
+     }
+});
+
+//Processing menu item selection
+groupEffect.selectedToggleProperty().addListener(new ChangeListener&lt;Toggle&gt;() {
+    public void changed(ObservableValue&lt;? extends Toggle&gt; ov,
+        Toggle old_toggle, Toggle new_toggle) {
+            if (groupEffect.getSelectedToggle() != null) {
+                Effect effect = 
+                    (Effect) groupEffect.getSelectedToggle().getUserData();
+                pic.setEffect(effect);
+            }
+        }
+ });
+//Adding items to the Edit menu
+menuEdit.getItems().addAll(menuEffect, noEffects);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The <code>setUserData</code> method defines a visual effect for a particular radio menu item. When one of the items in the toggle group is selected, the corresponding effect is applied to the picture. When the No Effects menu item is selected, the <code>setEffect</code> method specifies the <code>null</code> value and no effects are applied to the picture.</p> 
+      <p><a href="#BABGHDJB">Figure 23-5</a> captures a moment when a user is selecting a Shadow menu item.</p> 
+      <div class="figure">
+       <a id="BABGHDJB" name="BABGHDJB"></a> 
+       <p class="titleinfigure">Figure 23-5 Submenu with Three Radio Menu Items</p> 
+       <img src="img/menu-effect.png" alt="Description of Figure 23-5 follows" title="Description of Figure 23-5 follows" longdesc="img_text/menu-effect.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>When the <code>DropShadow</code> effect is applied to the picture, it looks as shown in <a href="#BABIEAJD">Figure 23-6</a>.</p> 
+      <div class="figure">
+       <a id="BABIEAJD" name="BABIEAJD"></a> 
+       <p class="titleinfigure">Figure 23-6 Picture of Quince with a DropShadow Effect Applied</p> 
+       <img src="img/menu-shadow.png" alt="Description of Figure 23-6 follows" title="Description of Figure 23-6 follows" longdesc="img_text/menu-shadow.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>You can use the <code>setDisable</code> method of the <code>MenuItem</code> class to disable the No Effects menu when none of the effects are selected in the Picture Effect submenu. Modify <a href="#BABBHGCE">Example 23-7</a> as shown in <a href="#BABBJBGF">Example 23-8</a>.</p> 
+      <div class="example">
+       <a id="BABBJBGF" name="BABBJBGF"></a> 
+       <p class="titleinexample">Example 23-8 Disabling a Menu Item</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Menu menuEffect = new Menu(&quot;Picture Effect&quot;);
+final ToggleGroup groupEffect = new ToggleGroup();
+for (Entry&lt;String, Effect&gt; effect : effects) {
+     RadioMenuItem itemEffect = new RadioMenuItem(effect.getKey());
+     itemEffect.setUserData(effect.getValue());
+     itemEffect.setToggleGroup(groupEffect);
+     menuEffect.getItems().add(itemEffect);
+}
+final MenuItem noEffects = new MenuItem(&quot;No Effects&quot;);
+<span class="bold">noEffects.setDisable(true); </span>     
+noEffects.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+    public void handle(ActionEvent t) {
+        pic.setEffect(null);
+        groupEffect.getSelectedToggle().setSelected(false);
+        <span class="bold">noEffects.setDisable(true);</span>
+    }
+});
+
+groupEffect.selectedToggleProperty().addListener(new ChangeListener&lt;Toggle&gt;() {
+    public void changed(ObservableValue&lt;? extends Toggle&gt; ov,
+        Toggle old_toggle, Toggle new_toggle) {
+            if (groupEffect.getSelectedToggle() != null) {
+                Effect effect = 
+                    (Effect) groupEffect.getSelectedToggle().getUserData();
+                pic.setEffect(effect);
+                <span class="bold">noEffects.setDisable(false);</span>
+            } else {
+                <span class="bold">noEffects.setDisable(true);</span>
+        }
+    }
+});
+menuEdit.getItems().addAll(menuEffect, noEffects);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When none of the <code>RadioMenuItem</code> options are selected, the No Effect menu item is disabled as shown in <a href="#BABJJDAF">Figure 23-7</a>. When a user selects one of the visual effects, the No Effects menu item is enabled.</p> 
+      <div class="figure">
+       <a id="BABJJDAF" name="BABJJDAF"></a> 
+       <p class="titleinfigure">Figure 23-7 Effect Menu Item Is Disabled</p> 
+       <img src="img/menu-disabled.png" alt="Description of Figure 23-7 follows" title="Description of Figure 23-7 follows" longdesc="img_text/menu-disabled.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref210" name="sthref210"></a> 
+      <h2 class="sect1">Adding Context Menus</h2> 
+      <p>When you cannot allocate any space of your user interface for a required functionality, you can use a context menu. A context menu is a pop-up window that appears in response to a mouse click. A context menu can contain one or more menu items.</p> 
+      <p>In the Menu Sample application, set a context menu for the picture of the plant, so that users can copy the image.</p> 
+      <p>Use the <code>ContextMenu</code> class to define the context menu as shown in <a href="#BABEIGGJ">Example 23-9</a>.</p> 
+      <div class="example">
+       <a id="BABEIGGJ" name="BABEIGGJ"></a> 
+       <p class="titleinexample">Example 23-9 Defining a Context Menu</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+final ContextMenu cm = new ContextMenu();
+MenuItem cmItem1 = new MenuItem(&quot;Copy Image&quot;);
+cmItem1.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+    public void handle(ActionEvent e) {
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        ClipboardContent content = new ClipboardContent();
+        content.putImage(pic.getImage());
+        clipboard.setContent(content);
+    }
+});
+
+cm.getItems().add(cmItem1);
+pic.addEventHandler(MouseEvent.MOUSE_CLICKED,
+    new EventHandler&lt;MouseEvent&gt;() {
+        @Override public void handle(MouseEvent e) {
+            if (e.getButton() == MouseButton.SECONDARY)  
+                cm.show(pic, e.getScreenX(), e.getScreenY());
+        }
+});
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When a user right clicks the <code>ImageView</code> object, the <code>show</code> method is called for the context menu to enable its showing.</p> 
+      <p>The <code>setOnAction</code> method defined for the Copy Image item of the context menu creates a <code>Clipboard</code> object and adds the image as its content. <a href="#BABJIHIA">Figure 23-8</a> captures a moment when a user is selecting the Copy Image context menu item.</p> 
+      <div class="figure">
+       <a id="BABJIHIA" name="BABJIHIA"></a> 
+       <p class="titleinfigure">Figure 23-8 Using the Context Menu</p> 
+       <img src="img/menu-context.png" alt="Description of Figure 23-8 follows" title="Description of Figure 23-8 follows" longdesc="img_text/menu-context.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>You can try to copy the image and paste it into in a graphical editor.</p> 
+      <p>For further enhancements, you can add more menu items to the context menu and specify different actions. You can also create a custom menu by using the <code>CustomMenuItem</code> class. With this class you can embed an arbitrary node within a menu and specify, for example, a button or a slider as a menu item.</p> 
+      <p class="itemizedlisttitle">Related API Documentation&nbsp;</p> 
+      <ul> 
+       <li> <p><code>Menu</code></p> </li> 
+       <li> <p><code>MenuItem</code></p> </li> 
+       <li> <p><code>RadioMenuItem</code></p> </li> 
+       <li> <p><code>CheckMenuItem</code></p> </li> 
+       <li> <p><code>ContextMenu</code></p> </li> 
+       <li> <p><code>SeparatorMenuItem</code></p> </li> 
+       <li> <p><code>CustomMenuItem</code></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-ui_controls.htm">About This Tutorial</a></li>
+      <li><a href="overview.htm">JavaFX UI Controls</a></li>
+      <li><a href="label.htm">Label</a></li>
+      <li><a href="button.htm">Button</a></li>
+      <li><a href="radio-button.htm">Radio Button</a></li>
+      <li><a href="toggle-button.htm">Toggle Button</a></li>
+      <li><a href="checkbox.htm">Checkbox</a></li>
+      <li><a href="choice-box.htm">Choice Box</a></li>
+      <li><a href="text-field.htm">Text Field</a></li>
+      <li><a href="password-field.htm">Password Field</a></li>
+      <li><a href="scrollbar.htm">Scroll Bar</a></li>
+      <li><a href="scrollpane.htm">Scroll Pane</a></li>
+      <li><a href="list-view.htm">List View</a></li>
+      <li><a href="table-view.htm">Table View</a></li>
+      <li><a href="tree-view.htm">Tree View</a></li>
+      <li><a href="combo-box.htm">Combo Box</a></li>
+      <li><a href="separator.htm">Separator</a></li>
+      <li><a href="slider.htm">Slider</a></li>
+      <li><a href="progress.htm">Progress Bar and Progress Indicator</a></li>
+      <li><a href="hyperlink.htm">Hyperlink</a></li>
+      <li><a href="tooltip.htm">Tooltip</a></li>
+      <li><a href="editor.htm">HTML Editor</a></li>
+      <li><a href="accordion-titledpane.htm">Titled Pane and Accordion</a></li>
+      <li class=" active"><a href="menu_controls.htm">Menu</a></li>
+      <li><a href="custom.htm">Customization of UI Controls</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/ui_controls/UIControlSamples.zip">UIControlSamples.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

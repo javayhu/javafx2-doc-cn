@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Button &middot; Using JavaFX UI Controls &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Using JavaFX UI Controls</h1>
+     <p class=" lead">Button</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="label.htm">←上一篇</a></li>
+      <li class=" next"><a href="radio-button.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="JFXUC134" name="JFXUC134"></a>
+     <a id="CJHEEACB" name="CJHEEACB"></a>  
+     <p>The <code>Button</code> class available through the JavaFX API enables developers to process an action when a user clicks a button. The <code>Button</code> class is an extension of the <code>Labeled</code> class. It can display text, an image, or both. <a href="#CJHDJAFD">Figure 3-1</a> shows buttons with various effects. In this chapter you will learn how to create each of these button types.</p> 
+     <div class="figure">
+      <a id="CJHDJAFD" name="CJHDJAFD"></a>
+      <a id="JFXUC135" name="JFXUC135"></a> 
+      <p class="titleinfigure">Figure 3-1 Types of Buttons</p> 
+      <img src="img/button-collections.png" alt="Buttons with graphical icons and text captions" title="Buttons with graphical icons and text captions" longdesc="img_text/button-collections.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <a id="JFXUC136" name="JFXUC136"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref24" name="sthref24"></a> 
+      <h2 class="sect1">Creating a Button</h2> 
+      <p>You can create a <code>Button</code> control in a JavaFX application by using three constructors of the Button class as shown on <a href="#CJHGGDCA">Example 3-1</a>.</p> 
+      <div class="example">
+       <a id="CJHGGDCA" name="CJHGGDCA"></a>
+       <a id="JFXUC137" name="JFXUC137"></a> 
+       <p class="titleinexample">Example 3-1 Creating a Button</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+//A button with an empty text caption.
+Button button1 = new Button();
+//A button with the specified text caption.
+Button button2 = new Button(&quot;Accept&quot;);
+//A button with the specified text caption and icon.
+Image imageOk = new Image(getClass().getResourceAsStream(&quot;ok.png&quot;));
+Button button3 = new Button(&quot;Accept&quot;, new ImageView(imageOk));
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>Because the <code>Button</code> class extends the <code>Labeled</code> class, you can use the following methods to specify content for a button that does not have an icon or text caption:</p> 
+      <ul> 
+       <li> <p>The <code>setText(String text)</code>method – specifies the text caption for the button</p> </li> 
+       <li> <p>The <code>setGraphic(Node graphic)</code>method – specifies the graphical icon</p> </li> 
+      </ul> 
+      <p><a href="#CJHGCGBI">Example 3-2</a> shows how to create a button with an icon but without a text caption.</p> 
+      <div class="example">
+       <a id="CJHGCGBI" name="CJHGCGBI"></a>
+       <a id="JFXUC138" name="JFXUC138"></a> 
+       <p class="titleinexample">Example 3-2 Adding an Icon to a Button</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+Image imageDecline = new Image(getClass().getResourceAsStream(&quot;not.png&quot;));
+Button button5 = new Button();
+button5.setGraphic(new ImageView(imageDecline));
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>When added to the application, this code fragment produces the button shown in <a href="#CJHHIBIG">Figure 3-2</a>.</p> 
+      <div class="figure">
+       <a id="CJHHIBIG" name="CJHHIBIG"></a>
+       <a id="JFXUC139" name="JFXUC139"></a> 
+       <p class="titleinfigure">Figure 3-2 Button with Icon</p> 
+       <img src="img/decline-button.png" alt="Description of Figure 3-2 follows" title="Description of Figure 3-2 follows" longdesc="img_text/decline-button.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p>In <a href="#CJHGCGBI">Example 3-2</a> and <a href="#CJHHIBIG">Figure 3-2</a>, the icon is an <code>ImageView</code> object. However, you can use other graphical objects, for example, shapes that reside in the <code>javafx.scene.shape</code> package. When defining both text and graphical content for your button, you can use the <code>setGraphicTextGap</code> method to set the gap between them.</p> 
+      <p>The default skin of the <code>Button</code> class distinguishes the following visual states of the button. <a href="#CJHEDGFJ">Figure 3-3</a> shows the default states of a button with an icon.</p> 
+      <div class="figure">
+       <a id="CJHEDGFJ" name="CJHEDGFJ"></a>
+       <a id="JFXUC140" name="JFXUC140"></a> 
+       <p class="titleinfigure">Figure 3-3 Button States</p> 
+       <img src="img/button-states.png" alt="Three states of the button" title="Three states of the button" longdesc="img_text/button-states.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC141" name="JFXUC141"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref27" name="sthref27"></a> 
+      <h2 class="sect1">Assigning an Action</h2> 
+      <p>The primary function of each button is to produce an action when it is clicked. Use the <code>setOnAction</code> method of the <code>Button</code> class to define what will happen when a user clicks the button. <a href="#CJHBIGFD">Example 3-3</a> shows a code fragment that defines an action for button2.</p> 
+      <div class="example">
+       <a id="CJHBIGFD" name="CJHBIGFD"></a>
+       <a id="JFXUC142" name="JFXUC142"></a> 
+       <p class="titleinexample">Example 3-3 Defining an Action for a Button</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+button2.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+    @Override public void handle(ActionEvent e) {
+        label.setText(&quot;Accepted&quot;);
+    }
+});
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p><code>ActionEvent</code> is an event type that is processed by <code>EventHandler</code>. An <code>EventHandler</code> object provides the <code>handle</code> method to process an action fired for a button. <a href="#CJHBIGFD">Example 3-3</a> shows how to override the <code>handle</code> method, so that when a user presses button2 the text caption for a label is set to &quot;Accepted.&quot;</p> 
+      <p>You can use the <code>Button</code> class to set as many event-handling methods as you need to cause the specific behavior or apply visual effects.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC143" name="JFXUC143"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref28" name="sthref28"></a> 
+      <h2 class="sect1">Applying Effects</h2> 
+      <p>Because the <code>Button</code> class extends the <code>Node</code> class, you can apply any of the effects in the <code>javafx.scene.effect</code> package to enhance the visual appearance of the button. In <a href="#CJHBFAGH">Example 3-4</a>, the <code>DropShadow</code> effect is applied to button3 when the <code>onMouseEntered</code> event occurs.</p> 
+      <div class="example">
+       <a id="CJHBFAGH" name="CJHBFAGH"></a>
+       <a id="JFXUC144" name="JFXUC144"></a> 
+       <p class="titleinexample">Example 3-4 Applying the DropShadow Effect</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+DropShadow shadow = new DropShadow();
+//Adding the shadow when the mouse cursor is on
+button3.addEventHandler(MouseEvent.MOUSE_ENTERED, 
+    new EventHandler&lt;MouseEvent&gt;() {
+        @Override public void handle(MouseEvent e) {
+            button3.setEffect(shadow);
+        }
+});
+//Removing the shadow when the mouse cursor is off
+button3.addEventHandler(MouseEvent.MOUSE_EXITED, 
+    new EventHandler&lt;MouseEvent&gt;() {
+        @Override public void handle(MouseEvent e) {
+            button3.setEffect(null);
+        }
+});
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p><a href="#CJHGCGDG">Figure 3-4</a> shows the states of button3 when the mouse cursor is on it and when it is off.</p> 
+      <div class="figure">
+       <a id="CJHGCGDG" name="CJHGCGDG"></a>
+       <a id="JFXUC145" name="JFXUC145"></a> 
+       <p class="titleinfigure">Figure 3-4 Button with Drop Shadow</p> 
+       <img src="img/button-with-shadow.png" alt="A button with the DropShadow effect applied" title="A button with the DropShadow effect applied" longdesc="img_text/button-with-shadow.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXUC146" name="JFXUC146"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref30" name="sthref30"></a> 
+      <h2 class="sect1">Styling a Button</h2> 
+      <p>The next step to enhance the visual appearance of a button is to apply CSS styles defined by the <code>Skin</code> class. Using CSS in JavaFX 2.0 applications is similar to using CSS in HTML, because each case is based on the same CSS specification.</p> 
+      <p>You can define styles in a separate CSS file and enable them in the application by using the <code>setStyleClass</code> method. This method is inherited from the <code>Node</code> class and is available for all UI controls. Alternatively, you can define the style of a button directly in the code by using the <code>setStyle</code> method. <a href="#CJHIGGJC">Example 3-5</a> and <a href="#CJHIGGJC">Figure 3-4</a> demonstrate the latter approach.</p> 
+      <div class="example">
+       <a id="CJHIGGJC" name="CJHIGGJC"></a>
+       <a id="JFXUC147" name="JFXUC147"></a> 
+       <p class="titleinexample">Example 3-5 Styling a Button</p> 
+       <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+button1.setStyle(&quot;-fx-font: 22 arial; -fx-base: #b6e7c9;&quot;);
+</pre>
+      </div> 
+      <!-- class="example" --> 
+      <p>The <code>-fx-font-size</code> property sets a font size for button1. The <code>-fx-base</code> property overrides the default color applied to the button. As the result, button1 is light green with lager text size, as shown in <a href="#CJHGDCCC">Figure 3-5</a>.</p> 
+      <div class="figure">
+       <a id="CJHGDCCC" name="CJHGDCCC"></a>
+       <a id="JFXUC148" name="JFXUC148"></a> 
+       <p class="titleinfigure">Figure 3-5 Button Styled with CSS</p> 
+       <img src="img/styled-button.png" alt="A button styled with CSS" title="A button styled with CSS" longdesc="img_text/styled-button.htm" />
+       <br /> 
+       <br /> 
+       <br />
+      </div> 
+      <!-- class="figure" --> 
+      <p class="itemizedlisttitle">Related API Documentation &nbsp;</p> 
+      <ul> 
+       <li> <p><code>Button</code></p> </li> 
+       <li> <p><code>Labeled</code></p> </li> 
+      </ul> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-ui_controls.htm">About This Tutorial</a></li>
+      <li><a href="overview.htm">JavaFX UI Controls</a></li>
+      <li><a href="label.htm">Label</a></li>
+      <li class=" active"><a href="button.htm">Button</a></li>
+      <li><a href="radio-button.htm">Radio Button</a></li>
+      <li><a href="toggle-button.htm">Toggle Button</a></li>
+      <li><a href="checkbox.htm">Checkbox</a></li>
+      <li><a href="choice-box.htm">Choice Box</a></li>
+      <li><a href="text-field.htm">Text Field</a></li>
+      <li><a href="password-field.htm">Password Field</a></li>
+      <li><a href="scrollbar.htm">Scroll Bar</a></li>
+      <li><a href="scrollpane.htm">Scroll Pane</a></li>
+      <li><a href="list-view.htm">List View</a></li>
+      <li><a href="table-view.htm">Table View</a></li>
+      <li><a href="tree-view.htm">Tree View</a></li>
+      <li><a href="combo-box.htm">Combo Box</a></li>
+      <li><a href="separator.htm">Separator</a></li>
+      <li><a href="slider.htm">Slider</a></li>
+      <li><a href="progress.htm">Progress Bar and Progress Indicator</a></li>
+      <li><a href="hyperlink.htm">Hyperlink</a></li>
+      <li><a href="tooltip.htm">Tooltip</a></li>
+      <li><a href="editor.htm">HTML Editor</a></li>
+      <li><a href="accordion-titledpane.htm">Titled Pane and Accordion</a></li>
+      <li><a href="menu_controls.htm">Menu</a></li>
+      <li><a href="custom.htm">Customization of UI Controls</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/ui_controls/UIControlSamples.zip">UIControlSamples.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

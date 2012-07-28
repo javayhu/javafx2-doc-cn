@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Embedding Media Into a Web Page &middot; Incorporating Media Assets Into JavaFX Applications &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Incorporating Media Assets Into JavaFX Applications</h1>
+     <p class=" lead">Embedding Media Into a Web Page</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="overview.htm">←上一篇</a></li>
+      <li class=" next"><a href="playercontrol.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CCHEJIBE" name="CCHEJIBE"></a>
+     <a id="JFXMD117" name="JFXMD117"></a>  
+     <p>In this section, you'll explore how to add an animated media content to your web page by creating a simple media panel. To create a media player you need to implement the structure of the three nested object that is shown in <a href="#BABIFFFJ">Figure 2-1</a>.</p> 
+     <div class="figure">
+      <a id="BABIFFFJ" name="BABIFFFJ"></a>
+      <a id="JFXMD118" name="JFXMD118"></a> 
+      <p class="titleinfigure">Figure 2-1 Structure of the Embedded Media Player</p> 
+      <img src="img/nested-structure.jpg" alt="Image to represent classes used to embed media in a browser" title="Image to represent classes used to embed media in a browser" longdesc="img_text/nested-structure.htm" />
+      <br /> 
+      <br /> 
+      <br />
+     </div> 
+     <!-- class="figure" --> 
+     <a id="JFXMD119" name="JFXMD119"></a> 
+     <div class="sect1">
+      <a id="sthref8" name="sthref8"></a> 
+      <h2 class="sect1">To Get Started</h2> 
+      <p>You can build a JavaFX application using any development tool designed for creating a Java application. The tool used in this document is the NetBeans IDE. Do the following steps before continuing to build this document's sample application that uses the JavaFX Media features:</p> 
+      <ol> 
+       <li> <p>Use the <a href="../../release-documentation.html">JavaFX Release Documentation</a> page to find the System Requirements document that you need to verify that your system meets the minimum requirements, including the version of NetBeans IDE.</p> </li> 
+       <li> <p>Use the Installation Guide on the <a href="../../release-documentation.html">JavaFX Release Documentation</a> page to get the information on how to install the version of JavaFX SDK software you plan to use.</p> </li> 
+       <li> <p>Install the required NetBeans IDE using the NetBeans information provided in the JavaFX System Requirements documents available from the <a href="../../release-documentation.html">JavaFX Release Documentation</a> page.</p> </li> 
+       <li> <p>If necessary, get acquainted with the following documents to get familiar with JavaFX:</p> 
+        <ul> 
+         <li> <p><a href="../overview/jfxpub-overview.htm">What Is JavaFX</a></p> </li> 
+         <li> <p><a href="../get_started/jfxpub-get_started.htm">Getting Started with JavaFX</a></p> </li> 
+         <li> <p><a href="../architecture/jfxpub-architecture.htm">JavaFX Architecture and Framework</a></p> </li> 
+        </ul> </li> 
+      </ol> 
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXMD120" name="JFXMD120"></a> 
+     <div class="sect1">
+      <a id="sthref9" name="sthref9"></a> 
+      <h2 class="sect1">Create the Application</h2> 
+      <ol> 
+       <li> <p>From the NetBeans IDE, set up your JavaFX project as follows:</p> 
+        <ol> 
+         <li> <p>From the <span class="bold">File</span> menu, choose <span class="bold">New Project</span>.</p> </li> 
+         <li> <p>In the JavaFX application category, choose <span class="bold">JavaFX Application</span>. Click <span class="bold">Next</span>.</p> </li> 
+         <li> <p>Name the project <code>EmbeddedMediaPlayer</code> and ensure the Create Application Class field has the value of <code>embeddedmediaplayer.EmbeddedMediaPlayer</code>. Click <span class="bold">Finish</span>.</p> </li> 
+        </ol> </li> 
+       <li> <p>Copy the <code>import</code> statements in <a href="#BABDCEBF">Example 2-1</a> and paste them in the <code>EmbeddedMediaPlayer.java</code> file, replacing all of the <code>import</code> statements that were automatically generated by the NetBeans IDE.</p> 
+        <div class="example">
+         <a id="BABDCEBF" name="BABDCEBF"></a>
+         <a id="JFXMD121" name="JFXMD121"></a> 
+         <p class="titleinexample">Example 2-1 Replace Default Import Statements</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
+import javafx.stage.Stage;
+</pre>
+        </div> 
+        <!-- class="example" --> <p>For now, ignore the warnings on the margin since the lines of code that use the Media classes will be added in the next few steps.</p> </li> 
+       <li> <p>Specify the media file source to be used and the String variable by adding the lines in bold in <a href="#BABDDGFH">Example 2-2</a>. For this example, use the animated video located at <code>download.oracle.com</code> or specify your own file. Add the lines after the <code>public class EmbeddedMediaPlayer</code> line.</p> 
+        <div class="example">
+         <a id="BABDDGFH" name="BABDDGFH"></a>
+         <a id="JFXMD122" name="JFXMD122"></a> 
+         <p class="titleinexample">Example 2-2 Specify the Media File Source</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+public class EmbeddedMediaPlayer extends Application {
+
+     <span class="bold">private static final String MEDIA_URL =<br /> &quot;http://download.oracle.com/otndocs/products/javafx/oow2010-2.flv&quot;;</span>
+     <span class="bold">private static String arg1;</span>
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Modify the <code>start</code> method so that it looks like <a href="#BABCJIAJ">Example 2-3</a>. This is will create an empty scene with a group root node and dimension of 540 wide by 210 height.</p> 
+        <div class="example">
+         <a id="BABCJIAJ" name="BABCJIAJ"></a>
+         <a id="JFXMD123" name="JFXMD123"></a> 
+         <p class="titleinexample">Example 2-3 Modify the <code>start</code> Method</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+@Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle(&quot;Embedded Media Player&quot;);
+        Group root = new Group();
+        Scene scene = new Scene(root, 540, 210);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Now, define the Media and the MediaPlayer objects by adding the code in <a href="#BABBIEDH">Example 2-4</a> before the <code>primaryStage.setScene(scene)</code> line. Set the <code>autoPlay</code> variable to <code>true</code> so that the video can start immediately.</p> 
+        <div class="example">
+         <a id="BABBIEDH" name="BABBIEDH"></a>
+         <a id="JFXMD124" name="JFXMD124"></a> 
+         <p class="titleinexample">Example 2-4 Add <code>media</code> and <code>mediaPlayer</code> Objects</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+// create media player
+Media media = new Media((arg1 != null) ? arg1 : MEDIA_URL);
+MediaPlayer mediaPlayer = new MediaPlayer(media);
+mediaPlayer.setAutoPlay(true);
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Define the MediaView object and add the media player to the Node-based viewer by copying the comment and two lines of code in <a href="#BABDIIEE">Example 2-5</a> and pasting it right after the <code>mediaPlayer.setAutoPlay(true)</code> line.</p> 
+        <div class="example">
+         <a id="BABDIIEE" name="BABDIIEE"></a>
+         <a id="JFXMD125" name="JFXMD125"></a> 
+         <p class="titleinexample">Example 2-5 Define MediaView Object</p> 
+         <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+// create mediaView and add media player to the viewer
+MediaView mediaView = new MediaView(mediaPlayer);
+((Group)scene.getRoot()).getChildren().add(mediaView);
+</pre>
+        </div> 
+        <!-- class="example" --></li> 
+       <li> <p>Right-click on any whitespace and select Format to fix the line formatting after adding the lines of code.</p> </li> 
+       <li> <p>Right-click the EmbeddedMediaPlayer project node in the Projects pane and select Clean and Build.</p> </li> 
+       <li> <p>After a successful build, run your application by right-clicking the project node and selecting Run.</p> 
+        <div align="center"> 
+         <div class="inftblnote">
+          <br /> 
+          <table class="Note oac_no_warn table table-bordered table-striped" summary="" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+           <tbody> 
+            <tr> 
+             <td align="left"> <p class="notep1">Note:</p> <p>If you are using the media file source used in this tutorial and you are running the application behind a firewall, you might need to set the application's proxy in order for the application to be able to access the media source file. Right-click the EmbeddedMediaPlayer project node in the Project window, select Properties, and in the Project Properties dialog, select Run. Set the VM Options field with something similar to <code>-Dhttp.proxyHost=</code><span class="italic">yourproxyhost.com</span> <code>-Dhttp.proxyPort=</code><span class="italic">somePort#</span>, where <span class="italic">yourproxyhost.com</span> is your company's proxy server and <span class="italic">somePort#</span> is a port number you are assigned to use.</p> </td> 
+            </tr> 
+           </tbody> 
+          </table> 
+          <br />
+         </div> 
+         <!-- class="inftblnote" -->
+        </div> </li> 
+       <li> <p>Deploy the sample application you just built to a browser by embedding it into your HTML content using the instructions in the <a href="../deployment/deployment_toolkit.htm">Deployment in the Browser documen</a>t. Copy the code from the EmbeddedMediaPlayer.html file that was automatically generated by the IDE to the target web page.</p> </li> 
+      </ol> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-media.htm">About This Tutorial</a></li>
+      <li><a href="overview.htm">Introduction to JavaFX Media</a></li>
+      <li class=" active"><a href="simpleplayer.htm">Embedding Media Into a Web Page</a></li>
+      <li><a href="playercontrol.htm">Controlling Media Player</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/media/EmbeddedMediaPlayer.zip">EmbeddedMediaPlayer.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Reference: JavaFX Ant Helper Parameters &middot; Deploying JavaFX Applications &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Deploying JavaFX Applications</h1>
+     <p class=" lead">Reference: JavaFX Ant Helper Parameters</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="javafx_ant_task_reference001.htm">←上一篇</a></li>
+      <li class=" next"><a href="troubleshooting.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CACCABFF" name="CACCABFF"></a>
+     <a id="JFXDP527" name="JFXDP527"></a> 
+     <hr /> 
+     <div class="refsect1">  
+      <p>Helper parameters are types that are used by the JavaFX tasks described in <a href="javafx_ant_task_reference001.htm#CIAJGAFH">Reference: JavaFX Ant Tasks</a>. This reference page contains the following elements:</p> 
+      <ul> 
+       <li> <p><a href="#CIAGCAFH">&lt;fx:application&gt;</a></p> </li> 
+       <li> <p><a href="#CACIJFHB">&lt;fx:argument&gt;</a></p> </li> 
+       <li> <p><a href="#CIABBIHI">&lt;fx:callback&gt;</a></p> </li> 
+       <li> <p><a href="#CIAJBBCD">&lt;fx:callbacks&gt;</a></p> </li> 
+       <li> <p><a href="#CIAIHFGI">&lt;fx:fileset&gt;</a></p> </li> 
+       <li> <p><a href="#CIACDFGB">&lt;fx:htmlparam&gt;</a></p> </li> 
+       <li> <p><a href="#CACFJBFJ">&lt;fx:icon&gt;</a></p> </li> 
+       <li> <p><a href="#CIAIEJHG">&lt;fx:info&gt;</a></p> </li> 
+       <li> <p><a href="#CIAHJIJG">&lt;fx:jvmarg&gt;</a></p> </li> 
+       <li> <p><a href="#CIACICCF">&lt;fx:param&gt;</a></p> </li> 
+       <li> <p><a href="#CIAHGJBH">&lt;fx:permissions&gt;</a></p> </li> 
+       <li> <p><a href="#CIAEEFCJ">&lt;fx:platform&gt;</a></p> </li> 
+       <li> <p><a href="#CIADDDAA">&lt;fx:preferences&gt;</a></p> </li> 
+       <li> <p><a href="#CIAHCIFJ">&lt;fx:property&gt;</a></p> </li> 
+       <li> <p><a href="#CIADIIEI">&lt;fx:resources&gt;</a></p> </li> 
+       <li> <p><a href="#CACDIDFE">&lt;fx:splash&gt;</a></p> </li> 
+       <li> <p><a href="#CIACACDA">&lt;fx:template&gt;</a></p> </li> 
+      </ul> 
+      <p>Items are in alphabetical order.</p> 
+      <a id="CIAGCAFH" name="CIAGCAFH"></a>
+      <a id="JFXDP216" name="JFXDP216"></a> 
+      <hr /> 
+      <h2 class="refsect2">&lt;fx:application&gt;</h2> 
+      <a id="sthref96" name="sthref96"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>Basic application descriptor. It defines the main components and default set of parameters of the application.</p> 
+      <a id="sthref97" name="sthref97"></a> 
+      <p class="titleinrefsubsect">Parent Elements</p> 
+      <ul> 
+       <li> <p><a href="javafx_ant_task_reference001.htm#CIABIFCI">&lt;fx:deploy&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref98" name="sthref98"></a> 
+      <p class="titleinrefsubsect">Parameters</p> 
+      <div class="tblformal">
+       <a id="JFXDP217" name="JFXDP217"></a>
+       <a id="sthref99" name="sthref99"></a>
+       <a id="sthref100" name="sthref100"></a> 
+       <p class="titleintable">Table 10-5 Attributes of the &lt;fx:application&gt; Element</p> 
+       <table class="Formal table table-bordered table-striped" title="Attributes of the &lt;fx:application&gt; Element" summary="Lists the attributes of the fx:application&gt; element, with a description, their data type, and whether they are required or not." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="25%" /> 
+         <col width="*" /> 
+         <col width="25%" /> 
+         <col width="15%" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t8">Attribute</th> 
+          <th align="left" valign="bottom" id="r1c2-t8">Description</th> 
+          <th align="left" valign="bottom" id="r1c3-t8">Type</th> 
+          <th align="left" valign="bottom" id="r1c4-t8">Required?</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t8" headers="r1c1-t8"> <p><code>name</code></p> </td> 
+          <td align="left" headers="r2c1-t8 r1c2-t8"> <p>--</p> </td> 
+          <td align="left" headers="r2c1-t8 r1c3-t8"> <p>String</p> </td> 
+          <td align="left" headers="r2c1-t8 r1c4-t8"> <p>--</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r3c1-t8" headers="r1c1-t8"> <p><code>fallbackclass</code></p> </td> 
+          <td align="left" headers="r3c1-t8 r1c2-t8"> <p>AWT-based applet to be used if application fails to launch due to missing FX runtime and installation of JavaFX is not possible.</p> </td> 
+          <td align="left" headers="r3c1-t8 r1c3-t8"> <p>String</p> </td> 
+          <td align="left" headers="r3c1-t8 r1c4-t8"> <p>No</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r4c1-t8" headers="r1c1-t8"> <p>id</p> </td> 
+          <td align="left" headers="r4c1-t8 r1c2-t8"> <p>Application ID that can be used to get a JavaScript reference to the application in HTML. The same ID can be used to refer to an application object in the Ant task (using <code>refid</code>).</p> </td> 
+          <td align="left" headers="r4c1-t8 r1c3-t8"> <p>String</p> </td> 
+          <td align="left" headers="r4c1-t8 r1c4-t8"> <p>No</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r5c1-t8" headers="r1c1-t8"> <p><code>mainclass</code></p> </td> 
+          <td align="left" headers="r5c1-t8 r1c2-t8"> <p>Qualified name of the main application class, which should extend <code>javafx.application.Application</code></p> </td> 
+          <td align="left" headers="r5c1-t8 r1c3-t8"> <p>String</p> </td> 
+          <td align="left" headers="r5c1-t8 r1c4-t8"> <p>Yes</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r6c1-t8" headers="r1c1-t8"> <p><code>preloaderclass</code></p> </td> 
+          <td align="left" headers="r6c1-t8 r1c2-t8"> <p>Qualified name of the preloader class, which should extend <code>javafx.application.Preloader</code></p> </td> 
+          <td align="left" headers="r6c1-t8 r1c3-t8"> <p>String</p> </td> 
+          <td align="left" headers="r6c1-t8 r1c4-t8"> <p>No</p> <p>Default is the preloader that is shipped with the JavaFX Runtime.</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r7c1-t8" headers="r1c1-t8"> <p><code>refid</code>*</p> </td> 
+          <td align="left" headers="r7c1-t8 r1c2-t8"> <p>--</p> </td> 
+          <td align="left" headers="r7c1-t8 r1c3-t8"> <p>Reference</p> </td> 
+          <td align="left" headers="r7c1-t8 r1c4-t8"> <p>No</p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblformal" --> 
+      <p>* If refid is used, then none of the other parameters can be specified.</p> 
+      <a id="sthref101" name="sthref101"></a> 
+      <p class="titleinrefsubsect">Parameters Accepted as Nested Elements</p> 
+      <ul> 
+       <li> <p><a href="#CACIJFHB">&lt;fx:argument&gt;</a></p> </li> 
+       <li> <p><a href="#CIACDFGB">&lt;fx:htmlparam&gt;</a></p> </li> 
+       <li> <p><a href="#CIACICCF">&lt;fx:param&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref102" name="sthref102"></a> 
+      <p class="titleinrefsubsect">&lt;fx:application&gt; Usage Examples</p> 
+      <p>See <a href="javafx_ant_task_reference.htm#CIAHEGJD">Example 10-2</a>.</p> 
+      <a id="CACIJFHB" name="CACIJFHB"></a>
+      <a id="JFXDP528" name="JFXDP528"></a> 
+      <hr /> 
+      <h2 class="refsect2">&lt;fx:argument&gt;</h2> 
+      <a id="sthref103" name="sthref103"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>An unnamed argument that is inserted in the <code>&lt;fx:argument&gt;</code> element in the deployment descriptor. Multiple arguments are added to the list of arguments in the same order as they are listed in the Ant script.</p> 
+      <a id="sthref104" name="sthref104"></a> 
+      <p class="titleinrefsubsect">Parent Elements</p> 
+      <ul> 
+       <li> <p><a href="#CIAGCAFH">&lt;fx:application&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref105" name="sthref105"></a> 
+      <p class="titleinrefsubsect">Parameters</p> 
+      <p>None.</p> 
+      <a id="sthref106" name="sthref106"></a> 
+      <p class="titleinrefsubsect">Parameters Accepted as Nested Elements</p> 
+      <p>None.</p> 
+      <a id="sthref107" name="sthref107"></a> 
+      <p class="titleinrefsubsect">&lt;fx:argument&gt; Usage Examples</p> 
+      <dl> 
+       <dd>
+        <a id="JFXDP529" name="JFXDP529"></a>
+        <a id="sthref108" name="sthref108"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 1&nbsp;&nbsp;&nbsp;Passing Various Unnamed Arguments
+       </dt> 
+       <dd> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:application name=&quot;Sample app&quot;
+        mainClass=&quot;test.MyApplication&quot;&gt;
+    &lt;!-- unnamed arguments --&gt;
+    &lt;fx:argument&gt;Something&lt;/fx:argument&gt;
+    &lt;!-- value with spaces that are generated at build time --&gt;
+    &lt;fx:argument&gt;JRE version: ${java.version}&lt;/fx:argument&gt;
+    &lt;!-- example of value using a special character --&gt;
+    &lt;fx:argument&gt;true &amp;amp; false&lt;/fx:argument&gt;
+&lt;/fx:application&gt; 
+</pre>
+       </dd> 
+      </dl> 
+      <a id="CIABBIHI" name="CIABBIHI"></a>
+      <a id="JFXDP221" name="JFXDP221"></a> 
+      <hr /> 
+      <h2 class="refsect2">&lt;fx:callback&gt;</h2> 
+      <a id="sthref109" name="sthref109"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>Defines a JavaScript callback that can be used to customize user experience.</p> 
+      <a id="sthref110" name="sthref110"></a> 
+      <p class="titleinrefsubsect">Parent Elements</p> 
+      <ul> 
+       <li> <p><a href="#CIAJBBCD">&lt;fx:callbacks&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref111" name="sthref111"></a> 
+      <p class="titleinrefsubsect">Parameters</p> 
+      <div class="tblformal">
+       <a id="JFXDP222" name="JFXDP222"></a>
+       <a id="sthref112" name="sthref112"></a>
+       <a id="sthref113" name="sthref113"></a> 
+       <p class="titleintable">Table 10-6 Attributes of the &lt;fx:callback&gt; Element</p> 
+       <table class="Formal table table-bordered table-striped" title="Attributes of the &lt;fx:callback&gt; Element" summary="Lists the attributes of the fx:callback&gt; element, with a description, their data type, and whether they are required or not." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="25%" /> 
+         <col width="*" /> 
+         <col width="25%" /> 
+         <col width="15%" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t9">Attribute</th> 
+          <th align="left" valign="bottom" id="r1c2-t9">Description</th> 
+          <th align="left" valign="bottom" id="r1c3-t9">Type</th> 
+          <th align="left" valign="bottom" id="r1c4-t9">Required?</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t9" headers="r1c1-t9"> <p><code>name</code></p> </td> 
+          <td align="left" headers="r2c1-t9 r1c2-t9"> <p>Name of the event for callback.</p> </td> 
+          <td align="left" headers="r2c1-t9 r1c3-t9"> <p>String</p> </td> 
+          <td align="left" headers="r2c1-t9 r1c4-t9"> <p>Yes</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r3c1-t9" headers="r1c1-t9"> <p><code>refid</code>*</p> </td> 
+          <td align="left" headers="r3c1-t9 r1c2-t9"> <p>--</p> </td> 
+          <td align="left" headers="r3c1-t9 r1c3-t9"> <p>Reference</p> </td> 
+          <td align="left" headers="r3c1-t9 r1c4-t9"> <p>No</p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblformal" --> 
+      <p>* If <code>refid</code> is used, then none of the other parameters can be specified.</p> 
+      <a id="sthref114" name="sthref114"></a> 
+      <p class="titleinrefsubsect">Parameters Accepted as Nested Elements</p> 
+      <p>&lt;TEXT&gt;</p> 
+      <a id="CIACIFHH" name="CIACIFHH"></a> 
+      <p class="titleinrefsubsect">&lt;fx:callback&gt; Usage Examples</p> 
+      <dl> 
+       <dd>
+        <a id="JFXDP223" name="JFXDP223"></a>
+        <a id="sthref115" name="sthref115"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 1&nbsp;&nbsp;&nbsp;A Callback Calling a JavaScript Function
+       </dt> 
+       <dd> 
+        <p>In this example, a callback is used to create an HTML splash screen for an application embedded in a web page. When the event <code>onGetSplash</code> is triggered, the JavaScript function <code>customGetSplash</code> is executed.</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:callbacks&gt;
+    &lt;fx:callback name=&quot;onGetSplash&quot;&gt;customGetSplash&lt;/fx:callback&gt;
+&lt;/fx:callbacks&gt;
+</pre>
+       </dd> 
+       <dd>
+        <a id="JFXDP224" name="JFXDP224"></a>
+        <a id="sthref116" name="sthref116"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 2&nbsp;&nbsp;&nbsp;A Callback with JavaScript Inserted
+       </dt> 
+       <dd> 
+        <p>In this example, the callback is defined with JavaScript code in the <code>&lt;fx:callback&gt;</code> element itself.</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:callbacks&gt;
+    &lt;fx:callback name=&quot;onLoadHandler&quot;&gt;
+        function () {perfLog(0, &quot;onLoad called&quot;);}
+    &lt;/fx:callback&gt;
+&lt;/fx:callbacks&gt;
+</pre>
+       </dd> 
+       <dd>
+        <a id="JFXDP508" name="JFXDP508"></a>
+        <a id="sthref117" name="sthref117"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 3&nbsp;&nbsp;&nbsp;Multiple Callbacks
+       </dt> 
+       <dd> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:callbacks&gt;
+    &lt;fx:callback name=&quot;onJavascriptReady&quot;&gt;callAppFunction&lt;/fx:callback&gt;
+    &lt;fx:callback name=&quot;onGetSplash&quot;&gt;function(id) {}&lt;/fx:callback&gt;
+ &lt;/fx:callbacks&gt;   
+</pre>
+       </dd> 
+      </dl> 
+      <a id="CIAJBBCD" name="CIAJBBCD"></a>
+      <a id="JFXDP225" name="JFXDP225"></a> 
+      <hr /> 
+      <h2 class="refsect2">&lt;fx:callbacks&gt;</h2> 
+      <a id="sthref118" name="sthref118"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>Collection of JavaScript callbacks to be used to customize the user experience.</p> 
+      <a id="sthref119" name="sthref119"></a> 
+      <p class="titleinrefsubsect">Parent Elements</p> 
+      <ul> 
+       <li> <p><a href="javafx_ant_task_reference001.htm#CIABIFCI">&lt;fx:deploy&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref120" name="sthref120"></a> 
+      <p class="titleinrefsubsect">Parameters</p> 
+      <div class="tblformal">
+       <a id="JFXDP226" name="JFXDP226"></a>
+       <a id="sthref121" name="sthref121"></a>
+       <a id="sthref122" name="sthref122"></a> 
+       <p class="titleintable">Table 10-7 Attributes of the &lt;fx:callbacks&gt; Element</p> 
+       <table class="Formal table table-bordered table-striped" title="Attributes of the &lt;fx:callbacks&gt; Element" summary="Lists the attributes of the fx:callbacks&gt; element, with a description, their data type, and whether they are required or not." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="25%" /> 
+         <col width="*" /> 
+         <col width="25%" /> 
+         <col width="15%" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t10">Attribute</th> 
+          <th align="left" valign="bottom" id="r1c2-t10">Description</th> 
+          <th align="left" valign="bottom" id="r1c3-t10">Type</th> 
+          <th align="left" valign="bottom" id="r1c4-t10">Required?</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t10" headers="r1c1-t10"> <p><code>refid</code>*</p> </td> 
+          <td align="left" headers="r2c1-t10 r1c2-t10"> <p>--</p> </td> 
+          <td align="left" headers="r2c1-t10 r1c3-t10"> <p>Reference</p> </td> 
+          <td align="left" headers="r2c1-t10 r1c4-t10"> <p>No</p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblformal" --> 
+      <p>* If <code>refid</code> is used, then none of the other parameters can be specified.</p> 
+      <a id="sthref123" name="sthref123"></a> 
+      <p class="titleinrefsubsect">Parameters Accepted as Nested Elements</p> 
+      <ul> 
+       <li> <p><a href="#CIABBIHI">&lt;fx:callback&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref124" name="sthref124"></a> 
+      <p class="titleinrefsubsect">&lt;fx:callbacks&gt; Usage Examples</p> 
+      <p>See the examples for <a href="#CIABBIHI">&lt;fx:callback&gt;</a>.</p> 
+      <a id="CIAIHFGI" name="CIAIHFGI"></a>
+      <a id="JFXDP257" name="JFXDP257"></a> 
+      <hr /> 
+      <h2 class="refsect2">&lt;fx:fileset&gt;</h2> 
+      <a id="sthref125" name="sthref125"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>Extension of the standard Ant <code>FileSet</code> type, which provides the means to specify optional meta information on a selected set of files. This includes:</p> 
+      <ul> 
+       <li> <p>Type or resource (for example JNLP, JAR)</p> </li> 
+       <li> <p>Operating system and architecture for which this resource is applicable</p> </li> 
+       <li> <p>When this resource is needed, which helps to optimize loading order</p> </li> 
+      </ul> 
+      <a id="sthref126" name="sthref126"></a> 
+      <p class="titleinrefsubsect">Parent Elements</p> 
+      <ul> 
+       <li> <p><a href="javafx_ant_task_reference001.htm#CIACICBG">&lt;fx:jar&gt;</a></p> </li> 
+       <li> <p><a href="#CIADIIEI">&lt;fx:resources&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref127" name="sthref127"></a> 
+      <p class="titleinrefsubsect">Parameters</p> 
+      <div class="tblformal">
+       <a id="JFXDP258" name="JFXDP258"></a>
+       <a id="sthref128" name="sthref128"></a>
+       <a id="CIACHAIA" name="CIACHAIA"></a> 
+       <p class="titleintable">Table 10-8 Attributes of the &lt;fx:fileset&gt; Element</p> 
+       <table class="Formal table table-bordered table-striped" title="Attributes of the &lt;fx:fileset&gt; Element" summary="Lists the attributes of the fx:fileset&gt; element, with a description, their data type, and whether they are required or not." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="25%" /> 
+         <col width="*" /> 
+         <col width="25%" /> 
+         <col width="15%" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t11">Attribute</th> 
+          <th align="left" valign="bottom" id="r1c2-t11">Description</th> 
+          <th align="left" valign="bottom" id="r1c3-t11">Type</th> 
+          <th align="left" valign="bottom" id="r1c4-t11">Required?</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t11" headers="r1c1-t11"> <p><code>arch</code></p> <p>(used only when <code>&lt;fx:fileset&gt;</code> is nested under <code>&lt;fx:resources&gt;</code></p> </td> 
+          <td align="left" headers="r2c1-t11 r1c2-t11"> <p>Specifies the architecture for which these resources should be considered.</p> </td> 
+          <td align="left" headers="r2c1-t11 r1c3-t11"> <p>String</p> </td> 
+          <td align="left" headers="r2c1-t11 r1c4-t11"> <p>No</p> <p>Default is <code>any</code>.</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r3c1-t11" headers="r1c1-t11"> <p><code>excludes</code></p> </td> 
+          <td align="left" headers="r3c1-t11 r1c2-t11"> <p>--</p> </td> 
+          <td align="left" headers="r3c1-t11 r1c3-t11"> <p>String</p> </td> 
+          <td align="left" headers="r3c1-t11 r1c4-t11"> <p>--</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r4c1-t11" headers="r1c1-t11"> <p><code>includes</code></p> </td> 
+          <td align="left" headers="r4c1-t11 r1c2-t11"> <p>--</p> </td> 
+          <td align="left" headers="r4c1-t11 r1c3-t11"> <p>String</p> </td> 
+          <td align="left" headers="r4c1-t11 r1c4-t11"> <p>--</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r5c1-t11" headers="r1c1-t11"> <p><code>os</code></p> <p>(used only when <code>&lt;fx:fileset&gt;</code> is nested under <code>&lt;fx:resources&gt;</code></p> </td> 
+          <td align="left" headers="r5c1-t11 r1c2-t11"> <p>Specifies the operating systems for which these resources should be considered.</p> </td> 
+          <td align="left" headers="r5c1-t11 r1c3-t11"> <p>String</p> </td> 
+          <td align="left" headers="r5c1-t11 r1c4-t11"> <p>No</p> <p>Default is <code>any</code>.</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r6c1-t11" headers="r1c1-t11"> <p><code>requiredfor</code></p> <p>(used only when <code>&lt;fx:fileset&gt;</code> is nested under <code>&lt;fx:resources&gt;</code></p> </td> 
+          <td align="left" headers="r6c1-t11 r1c2-t11"> <p>Defines when resources are needed (affects loading priority). Supported values are:</p> 
+           <ul> 
+            <li> <p><code>preloader</code> - resources are needed to launch the preloader (first thing to be executed)</p> </li> 
+            <li> <p><code>startup</code> - resources are needed to launch the application.</p> </li> 
+            <li> <p><code>runtime</code> - resources are not critical to launch the application but may be needed later.</p> </li> 
+           </ul> </td> 
+          <td align="left" headers="r6c1-t11 r1c3-t11"> <p>String</p> </td> 
+          <td align="left" headers="r6c1-t11 r1c4-t11"> <p>No</p> <p>Default is <code>startup</code>.</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r7c1-t11" headers="r1c1-t11"> <p><code>type</code></p> <p>(used only when <code>&lt;fx:fileset&gt;</code> is nested under <code>&lt;fx:resources&gt;</code></p> </td> 
+          <td align="left" headers="r7c1-t11 r1c2-t11"> <p>Type of the resources in the set. Supported values are:</p> 
+           <ul> 
+            <li> <p><code>auto</code> for autodetect</p> </li> 
+            <li> <p><code>jar</code></p> </li> 
+            <li> <p><code>jnlp</code></p> </li> 
+            <li> <p><code>native</code> for JAR files containing native libraries</p> </li> 
+            <li> <p><code>icon</code></p> </li> 
+           </ul> </td> 
+          <td align="left" headers="r7c1-t11 r1c3-t11"> <p>String</p> </td> 
+          <td align="left" headers="r7c1-t11 r1c4-t11"> <p>No</p> <p>Default is to guess based on extension.</p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblformal" --> 
+      <p>* If <code>refid</code> is used, then none of the other parameters can be specified.</p> 
+      <a id="sthref129" name="sthref129"></a> 
+      <p class="titleinrefsubsect">Parameters Accepted as Nested Elements</p> 
+      <p>None (except standard Ant elements).</p> 
+      <a id="CIACDFGB" name="CIACDFGB"></a>
+      <a id="JFXDP260" name="JFXDP260"></a> 
+      <hr /> 
+      <h2 class="refsect2">&lt;fx:htmlparam&gt;</h2> 
+      <a id="sthref130" name="sthref130"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>Parameter to be passed to the embedded application from the HTML page. This element can only be used to pass parameters to applications that are embedded in a web page. The value of the parameter can be calculated at runtime using JavaScript.</p> 
+      <a id="sthref131" name="sthref131"></a> 
+      <p class="titleinrefsubsect">Parent Elements</p> 
+      <ul> 
+       <li> <p><a href="#CIAGCAFH">&lt;fx:application&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref132" name="sthref132"></a> 
+      <p class="titleinrefsubsect">Parameters</p> 
+      <div class="tblformal">
+       <a id="JFXDP261" name="JFXDP261"></a>
+       <a id="sthref133" name="sthref133"></a>
+       <a id="sthref134" name="sthref134"></a> 
+       <p class="titleintable">Table 10-9 Attributes of the &lt;fx:htmlparam&gt; Element</p> 
+       <table class="Formal table table-bordered table-striped" title="Attributes of the &lt;fx:htmlparam&gt; Element" summary="Lists the attributes of the fx:htmlparam&gt; element, with a description, their data type, and whether they are required or not." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="25%" /> 
+         <col width="*" /> 
+         <col width="25%" /> 
+         <col width="15%" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t12">Attribute</th> 
+          <th align="left" valign="bottom" id="r1c2-t12">Description</th> 
+          <th align="left" valign="bottom" id="r1c3-t12">Type</th> 
+          <th align="left" valign="bottom" id="r1c4-t12">Required?</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t12" headers="r1c1-t12"> <p><code>escape</code></p> </td> 
+          <td align="left" headers="r2c1-t12 r1c2-t12"> <p>Defines how to interpret the value for the values that are passed—as string literal (true) or JavaScript variable (false).</p> </td> 
+          <td align="left" headers="r2c1-t12 r1c3-t12"> <p>Boolean</p> </td> 
+          <td align="left" headers="r2c1-t12 r1c4-t12"> <p>No</p> <p>Default is true, meaning value is treated as string literal.</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r3c1-t12" headers="r1c1-t12"> <p><code>name</code></p> </td> 
+          <td align="left" headers="r3c1-t12 r1c2-t12"> <p>Name of the parameter to be passed to the embedded application from the HTML page.</p> </td> 
+          <td align="left" headers="r3c1-t12 r1c3-t12"> <p>String</p> </td> 
+          <td align="left" headers="r3c1-t12 r1c4-t12"> <p>Yes</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r4c1-t12" headers="r1c1-t12"> <p><code>value</code></p> </td> 
+          <td align="left" headers="r4c1-t12 r1c2-t12"> <p>Value of the parameter. Could also be the name of a JavaScript variable whose value is expected to be passed as parameter.</p> <p>For JavaScript variables, ensure <code>escape</code> is set to false.</p> </td> 
+          <td align="left" headers="r4c1-t12 r1c3-t12"> <p>String</p> </td> 
+          <td align="left" headers="r4c1-t12 r1c4-t12"> <p>Yes</p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblformal" --> 
+      <a id="sthref135" name="sthref135"></a> 
+      <p class="titleinrefsubsect">Parameters Accepted as Nested Elements</p> 
+      <p>None</p> 
+      <a id="sthref136" name="sthref136"></a> 
+      <p class="titleinrefsubsect">&lt;fx:htmlparam&gt; Task Usage Examples</p> 
+      <dl> 
+       <dd>
+        <a id="JFXDP530" name="JFXDP530"></a>
+        <a id="sthref137" name="sthref137"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 1&nbsp;&nbsp;&nbsp;Various Parameters Passed from HTML Page
+       </dt> 
+       <dd> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:application name=&quot;Sample app&quot;
+        mainClass=&quot;test.MyApplication&quot;&gt;
+    &lt;!-- Parameters passed from HTML page. Only applicable 
+         to embedded applications and unused when
+         run in a non-embedded context.  --&gt;
+    &lt;!-- Parameter with name 'fixedParam', whose value is string 
+        '(new Date()).getTime()' --&gt;
+    &lt;htmlParam name=&quot;fixedParam&quot;
+           value=&quot;(new Date()).getTime()&quot;/&gt;
+    &lt;!-- Parameter with name 'dynamicParam', whose value will be 
+         the timestamp of the moment when the application is added  
+         to the web page (value will be assigned the result 
+         of execution of JavaScript code) --&gt;
+    &lt;htmlParam name=&quot;dynamicParam&quot; escape=&quot;false&quot;
+            value=&quot;(new Date()).getTime()&quot;/&gt;
+&lt;/fx:application&gt; 
+</pre>
+       </dd> 
+      </dl> 
+      <a id="CACFJBFJ" name="CACFJBFJ"></a>
+      <a id="JFXDP531" name="JFXDP531"></a> 
+      <hr /> 
+      <h2 class="refsect2">&lt;fx:icon&gt;</h2> 
+      <a id="sthref138" name="sthref138"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>Passes an icon to the <code>&lt;fx:deploy&gt;</code> task, other than a splash screen image.</p> 
+      <a id="sthref139" name="sthref139"></a> 
+      <p class="titleinrefsubsect">Parent Elements</p> 
+      <ul> 
+       <li> <p><a href="#CIAIEJHG">&lt;fx:info&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref140" name="sthref140"></a> 
+      <p class="titleinrefsubsect">Parameters</p> 
+      <div class="tblformal">
+       <a id="JFXDP532" name="JFXDP532"></a>
+       <a id="sthref141" name="sthref141"></a>
+       <a id="sthref142" name="sthref142"></a> 
+       <p class="titleintable">Table 10-10 Attributes of the &lt;fx:info&gt; Element</p> 
+       <table class="Formal table table-bordered table-striped" title="Attributes of the &lt;fx:info&gt; Element" summary="Lists the attributes of the fx:info&gt; element, with a description, their data type, and whether they are required or not." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="25%" /> 
+         <col width="*" /> 
+         <col width="25%" /> 
+         <col width="15%" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t13">Attribute</th> 
+          <th align="left" valign="bottom" id="r1c2-t13">Description</th> 
+          <th align="left" valign="bottom" id="r1c3-t13">Type</th> 
+          <th align="left" valign="bottom" id="r1c4-t13">Required?</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t13" headers="r1c1-t13"> <p><code>depth</code></p> </td> 
+          <td align="left" headers="r2c1-t13 r1c2-t13"> <p>Image depth</p> </td> 
+          <td align="left" headers="r2c1-t13 r1c3-t13"> <p>String</p> </td> 
+          <td align="left" headers="r2c1-t13 r1c4-t13"> <p>No</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r3c1-t13" headers="r1c1-t13"> <p><code>href</code></p> </td> 
+          <td align="left" headers="r3c1-t13 r1c2-t13"> <p>Location of image</p> </td> 
+          <td align="left" headers="r3c1-t13 r1c3-t13"> <p>String</p> </td> 
+          <td align="left" headers="r3c1-t13 r1c4-t13"> <p>Yes</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r4c1-t13" headers="r1c1-t13"> <p><code>height</code></p> </td> 
+          <td align="left" headers="r4c1-t13 r1c2-t13"> <p>Image height</p> </td> 
+          <td align="left" headers="r4c1-t13 r1c3-t13"> <p>String</p> </td> 
+          <td align="left" headers="r4c1-t13 r1c4-t13"> <p>No</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r5c1-t13" headers="r1c1-t13"> <p><code>kind</code></p> </td> 
+          <td align="left" headers="r5c1-t13 r1c2-t13"> <p>Icon type. Supported values are:</p> 
+           <ul> 
+            <li> <p><code>default</code></p> </li> 
+            <li> <p><code>disabled</code></p> </li> 
+            <li> <p><code>rollover</code></p> </li> 
+            <li> <p><code>selected</code></p> </li> 
+            <li> <p><code>shortcut</code></p> </li> 
+           </ul> </td> 
+          <td align="left" headers="r5c1-t13 r1c3-t13"> <p>String</p> </td> 
+          <td align="left" headers="r5c1-t13 r1c4-t13"> <p>No</p> <p>Default value is <code>default</code>.</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r6c1-t13" headers="r1c1-t13"> <p><code>width</code></p> </td> 
+          <td align="left" headers="r6c1-t13 r1c2-t13"> <p>Image width</p> </td> 
+          <td align="left" headers="r6c1-t13 r1c3-t13"> <p>String</p> </td> 
+          <td align="left" headers="r6c1-t13 r1c4-t13"> <p>No</p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblformal" --> 
+      <a id="sthref143" name="sthref143"></a> 
+      <p class="titleinrefsubsect">Parameters Accepted as Nested Elements</p> 
+      <p>None.</p> 
+      <a id="sthref144" name="sthref144"></a> 
+      <p class="titleinrefsubsect">&lt;fx:icon&gt; Usage Examples</p> 
+      <dl> 
+       <dd>
+        <a id="JFXDP533" name="JFXDP533"></a>
+        <a id="sthref145" name="sthref145"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 1&nbsp;&nbsp;&nbsp;Use of &lt;fx:icon&gt;
+       </dt> 
+       <dd> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:info title=&quot;Sample application&quot;&gt;
+    &lt;!-- icon to be used by default for anything but splash --&gt;
+    &lt;fx:icon href=&quot;shortcut.ico&quot; kind=&quot;shortcut&quot;
+            width=&quot;32&quot; height=&quot;32&quot; depth=&quot;8&quot;/&gt; 
+&lt;/fx:info&gt; 
+</pre>
+       </dd> 
+      </dl> 
+      <a id="CIAIEJHG" name="CIAIEJHG"></a>
+      <a id="JFXDP269" name="JFXDP269"></a> 
+      <hr /> 
+      <h2 class="refsect2">&lt;fx:info&gt;</h2> 
+      <a id="sthref146" name="sthref146"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>Application description for users. These details are shown in the system dialog boxes, if they need to be shown.</p> 
+      <a id="sthref147" name="sthref147"></a> 
+      <p class="titleinrefsubsect">Parent Elements</p> 
+      <ul> 
+       <li> <p><a href="javafx_ant_task_reference001.htm#CIABIFCI">&lt;fx:deploy&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref148" name="sthref148"></a> 
+      <p class="titleinrefsubsect">Parameters</p> 
+      <div class="tblformal">
+       <a id="JFXDP270" name="JFXDP270"></a>
+       <a id="sthref149" name="sthref149"></a>
+       <a id="sthref150" name="sthref150"></a> 
+       <p class="titleintable">Table 10-11 Attributes of the &lt;fx:info&gt; Element</p> 
+       <table class="Formal table table-bordered table-striped" title="Attributes of the &lt;fx:info&gt; Element" summary="Lists the attributes of the fx:info&gt; element, with a description, their data type, and whether they are required or not." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="25%" /> 
+         <col width="*" /> 
+         <col width="25%" /> 
+         <col width="15%" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t14">Attribute</th> 
+          <th align="left" valign="bottom" id="r1c2-t14">Description</th> 
+          <th align="left" valign="bottom" id="r1c3-t14">Type</th> 
+          <th align="left" valign="bottom" id="r1c4-t14">Required?</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t14" headers="r1c1-t14"> <p><code>description</code></p> </td> 
+          <td align="left" headers="r2c1-t14 r1c2-t14"> <p>A short statement describing the application.</p> </td> 
+          <td align="left" headers="r2c1-t14 r1c3-t14"> <p>String</p> </td> 
+          <td align="left" headers="r2c1-t14 r1c4-t14"> <p>No</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r3c1-t14" headers="r1c1-t14"> <p><code>title</code></p> </td> 
+          <td align="left" headers="r3c1-t14 r1c2-t14"> <p>Title of the application</p> </td> 
+          <td align="left" headers="r3c1-t14 r1c3-t14"> <p>String</p> </td> 
+          <td align="left" headers="r3c1-t14 r1c4-t14"> <p>Yes</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r4c1-t14" headers="r1c1-t14"> <p><code>vendor</code></p> </td> 
+          <td align="left" headers="r4c1-t14 r1c2-t14"> <p>Provider of the application</p> </td> 
+          <td align="left" headers="r4c1-t14 r1c3-t14"> <p>String</p> </td> 
+          <td align="left" headers="r4c1-t14 r1c4-t14"> <p>Yes</p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblformal" --> 
+      <a id="sthref151" name="sthref151"></a> 
+      <p class="titleinrefsubsect">Parameters Accepted as Nested Elements</p> 
+      <ul> 
+       <li> <p><a href="#CACFJBFJ">&lt;fx:icon&gt;</a></p> </li> 
+       <li> <p><a href="#CACDIDFE">&lt;fx:splash&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref152" name="sthref152"></a> 
+      <p class="titleinrefsubsect">&lt;fx:info&gt; Usage Examples</p> 
+      <dl> 
+       <dd>
+        <a id="JFXDP271" name="JFXDP271"></a>
+        <a id="sthref153" name="sthref153"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 1&nbsp;&nbsp;&nbsp;&lt;fx:info&gt; Parameter Used in &lt;fx:deploy&gt; Task
+       </dt> 
+       <dd> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:info vendor=&quot;Uncle Joe&quot; description=&quot;Test program&quot;/&gt;
+</pre>
+       </dd> 
+      </dl> 
+      <a id="CIAHJIJG" name="CIAHJIJG"></a>
+      <a id="JFXDP272" name="JFXDP272"></a> 
+      <hr /> 
+      <h2 class="refsect2">&lt;fx:jvmarg&gt;</h2> 
+      <a id="sthref154" name="sthref154"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>The JVM argument to be set in the JVM where the application is executed. Can be used multiple times.</p> 
+      <a id="sthref155" name="sthref155"></a> 
+      <p class="titleinrefsubsect">Parent Elements</p> 
+      <ul> 
+       <li> <p><a href="#CIAEEFCJ">&lt;fx:platform&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref156" name="sthref156"></a> 
+      <p class="titleinrefsubsect">Parameters</p> 
+      <div class="tblformal">
+       <a id="JFXDP273" name="JFXDP273"></a>
+       <a id="sthref157" name="sthref157"></a>
+       <a id="sthref158" name="sthref158"></a> 
+       <p class="titleintable">Table 10-12 Attributes of the &lt;fx:jvmarg&gt; Element</p> 
+       <table class="Formal table table-bordered table-striped" title="Attributes of the &lt;fx:jvmarg&gt; Element" summary="Lists the attributes of the fx:jvmarg&gt; element, with a description, their data type, and whether they are required or not.." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="25%" /> 
+         <col width="*" /> 
+         <col width="25%" /> 
+         <col width="15%" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t15">Attribute</th> 
+          <th align="left" valign="bottom" id="r1c2-t15">Description</th> 
+          <th align="left" valign="bottom" id="r1c3-t15">Type</th> 
+          <th align="left" valign="bottom" id="r1c4-t15">Required?</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t15" headers="r1c1-t15"> <p><code>value</code></p> </td> 
+          <td align="left" headers="r2c1-t15 r1c2-t15"> <p>Value of JVM argument.</p> </td> 
+          <td align="left" headers="r2c1-t15 r1c3-t15"> <p>String</p> </td> 
+          <td align="left" headers="r2c1-t15 r1c4-t15"> <p>Yes</p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblformal" --> 
+      <a id="sthref159" name="sthref159"></a> 
+      <p class="titleinrefsubsect">Parameters Accepted as Nested Elements</p> 
+      <p>None.</p> 
+      <a id="sthref160" name="sthref160"></a> 
+      <p class="titleinrefsubsect">&lt;fx:jvmarg&gt; Usage Examples</p> 
+      <p>See <a href="#CIAGFFIF">&lt;fx:platform&gt; Parameter to Specify JVM Options</a>.</p> 
+      <a id="CIACICCF" name="CIACICCF"></a>
+      <a id="JFXDP292" name="JFXDP292"></a> 
+      <hr /> 
+      <h2 class="refsect2">&lt;fx:param&gt;</h2> 
+      <a id="sthref161" name="sthref161"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>Parameter to be passed to the application (embedded into application package).</p> 
+      <a id="sthref162" name="sthref162"></a> 
+      <p class="titleinrefsubsect">Parent Elements</p> 
+      <ul> 
+       <li> <p><a href="#CIAGCAFH">&lt;fx:application&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref163" name="sthref163"></a> 
+      <p class="titleinrefsubsect">Parameters</p> 
+      <div class="tblformal">
+       <a id="JFXDP293" name="JFXDP293"></a>
+       <a id="sthref164" name="sthref164"></a>
+       <a id="sthref165" name="sthref165"></a> 
+       <p class="titleintable">Table 10-13 Attributes of the &lt;fx:param&gt; Element</p> 
+       <table class="Formal table table-bordered table-striped" title="Attributes of the &lt;fx:param&gt; Element" summary="Lists the attributes of the fx:param&gt; element, with a description, their data type, and whether they are required or not." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="25%" /> 
+         <col width="*" /> 
+         <col width="25%" /> 
+         <col width="15%" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t16">Attribute</th> 
+          <th align="left" valign="bottom" id="r1c2-t16">Description</th> 
+          <th align="left" valign="bottom" id="r1c3-t16">Type</th> 
+          <th align="left" valign="bottom" id="r1c4-t16">Required?</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t16" headers="r1c1-t16"> <p><code>name</code></p> </td> 
+          <td align="left" headers="r2c1-t16 r1c2-t16"> <p>Name of parameter</p> </td> 
+          <td align="left" headers="r2c1-t16 r1c3-t16"> <p>String</p> </td> 
+          <td align="left" headers="r2c1-t16 r1c4-t16"> <p>Yes</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r3c1-t16" headers="r1c1-t16"> <p><code>value</code></p> </td> 
+          <td align="left" headers="r3c1-t16 r1c2-t16"> <p>Value of parameter</p> </td> 
+          <td align="left" headers="r3c1-t16 r1c3-t16"> <p>String</p> </td> 
+          <td align="left" headers="r3c1-t16 r1c4-t16"> <p>Yes</p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblformal" --> 
+      <a id="sthref166" name="sthref166"></a> 
+      <p class="titleinrefsubsect">Parameters Accepted as Nested Elements</p> 
+      <p>None.</p> 
+      <a id="sthref167" name="sthref167"></a> 
+      <p class="titleinrefsubsect">&lt;fx:param&gt; Task Usage Examples</p> 
+      <dl> 
+       <dd>
+        <a id="JFXDP534" name="JFXDP534"></a>
+        <a id="sthref168" name="sthref168"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 1&nbsp;&nbsp;&nbsp;Passing Various Types of Parameters
+       </dt> 
+       <dd> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:application name=&quot;Sample app&quot;
+        mainClass=&quot;test.MyApplication&quot;&gt;
+    &lt;!-- parameter with name 'simpleParam' and fixed string value--&gt;
+    &lt;param name=&quot;simpleParam&quot; value=&quot;something&quot;/&gt;
+    &lt;!-- parameter with name 'complexParam' with value generated 
+         at build time --&gt;
+    &lt;param name=&quot;complexParam&quot; value=&quot;Compiled by ${java.version}&quot;/&gt;
+    &lt;!-- parameter with name 'novalueParam' and no value --&gt;
+    &lt;param name=&quot;novalueParam&quot;/&gt;
+&lt;/fx:application&gt; 
+</pre>
+       </dd> 
+      </dl> 
+      <a id="CIAHGJBH" name="CIAHGJBH"></a>
+      <a id="JFXDP298" name="JFXDP298"></a> 
+      <hr /> 
+      <h2 class="refsect2">&lt;fx:permissions&gt;</h2> 
+      <a id="sthref169" name="sthref169"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>Definition of security permissions needed by application. By default, the application runs in the sandbox. Requesting elevated permissions requires signing the application JAR files.</p> 
+      <a id="sthref170" name="sthref170"></a> 
+      <p class="titleinrefsubsect">Parent Elements</p> 
+      <ul> 
+       <li> <p><a href="javafx_ant_task_reference001.htm#CIABIFCI">&lt;fx:deploy&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref171" name="sthref171"></a> 
+      <p class="titleinrefsubsect">Parameters</p> 
+      <div class="tblformal">
+       <a id="JFXDP299" name="JFXDP299"></a>
+       <a id="sthref172" name="sthref172"></a>
+       <a id="sthref173" name="sthref173"></a> 
+       <p class="titleintable">Table 10-14 Attributes of the &lt;fx:permissions&gt; Element</p> 
+       <table class="Formal table table-bordered table-striped" title="Attributes of the &lt;fx:permissions&gt; Element" summary="Lists the attributes of the fx:permissions&gt; element, with a description, their data type, and whether they are required or not." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="25%" /> 
+         <col width="*" /> 
+         <col width="25%" /> 
+         <col width="15%" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t17">Attribute</th> 
+          <th align="left" valign="bottom" id="r1c2-t17">Description</th> 
+          <th align="left" valign="bottom" id="r1c3-t17">Type</th> 
+          <th align="left" valign="bottom" id="r1c4-t17">Required?</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t17" headers="r1c1-t17"> <p><code>cachecertificates</code></p> </td> 
+          <td align="left" headers="r2c1-t17 r1c2-t17"> <p>If set to true, then the certificate used to sign the JAR files are cached in the deployment descriptor. Caching enables the user to accept elevated permissions earlier in the startup process, which improves startup time.</p> <p>This setting has no effect if the application is run in the sandbox.</p> </td> 
+          <td align="left" headers="r2c1-t17 r1c3-t17"> <p>Boolean</p> </td> 
+          <td align="left" headers="r2c1-t17 r1c4-t17"> <p>No</p> <p>Default is false.</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r3c1-t17" headers="r1c1-t17"> <p><code>elevated</code></p> </td> 
+          <td align="left" headers="r3c1-t17 r1c2-t17"> <p>If set to false, the application runs in the sandbox.</p> </td> 
+          <td align="left" headers="r3c1-t17 r1c3-t17"> <p>Boolean</p> </td> 
+          <td align="left" headers="r3c1-t17 r1c4-t17"> <p>No</p> <p>Default is false.</p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblformal" --> 
+      <a id="sthref174" name="sthref174"></a> 
+      <p class="titleinrefsubsect">Parameters Accepted as Nested Elements</p> 
+      <p>None.</p> 
+      <a id="sthref175" name="sthref175"></a> 
+      <p class="titleinrefsubsect">&lt;fx:permissions&gt; Usage Examples</p> 
+      <dl> 
+       <dd>
+        <a id="JFXDP512" name="JFXDP512"></a>
+        <a id="sthref176" name="sthref176"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 1&nbsp;&nbsp;&nbsp;Embed Signing Certificate into Deployment Descriptor
+       </dt> 
+       <dd> 
+        <p>See <a href="packaging.htm#BABGGIHD">Embed Signing Certificate into Deployment Descriptor</a>.</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:permissions elevated=&quot;true&quot; cacheCertificates=&quot;true&quot;/&gt;
+</pre>
+       </dd> 
+      </dl> 
+      <a id="CIAEEFCJ" name="CIAEEFCJ"></a>
+      <a id="JFXDP301" name="JFXDP301"></a> 
+      <hr /> 
+      <h2 class="refsect2">&lt;fx:platform&gt;</h2> 
+      <a id="sthref177" name="sthref177"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>Defines application platform requirements.</p> 
+      <a id="sthref178" name="sthref178"></a> 
+      <p class="titleinrefsubsect">Parent Elements</p> 
+      <ul> 
+       <li> <p><a href="javafx_ant_task_reference001.htm#CIABIFCI">&lt;fx:deploy&gt;</a></p> </li> 
+       <li> <p><a href="javafx_ant_task_reference001.htm#CIACICBG">&lt;fx:jar&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref179" name="sthref179"></a> 
+      <p class="titleinrefsubsect">Parameters</p> 
+      <div class="tblformal">
+       <a id="JFXDP302" name="JFXDP302"></a>
+       <a id="sthref180" name="sthref180"></a>
+       <a id="sthref181" name="sthref181"></a> 
+       <p class="titleintable">Table 10-15 Attributes of the &lt;fx:platform&gt; Element</p> 
+       <table class="Formal table table-bordered table-striped" title="Attributes of the &lt;fx:platform&gt; Element" summary="Lists the attributes of the fx:platform&gt; element, with a description, their data type, and whether they are required or not." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="25%" /> 
+         <col width="*" /> 
+         <col width="25%" /> 
+         <col width="15%" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t18">Attribute</th> 
+          <th align="left" valign="bottom" id="r1c2-t18">Description</th> 
+          <th align="left" valign="bottom" id="r1c3-t18">Type</th> 
+          <th align="left" valign="bottom" id="r1c4-t18">Required?</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t18" headers="r1c1-t18"> <p><code>refid</code>*</p> </td> 
+          <td align="left" headers="r2c1-t18 r1c2-t18"> <p>--</p> </td> 
+          <td align="left" headers="r2c1-t18 r1c3-t18"> <p>Reference</p> </td> 
+          <td align="left" headers="r2c1-t18 r1c4-t18"> <p>No</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r3c1-t18" headers="r1c1-t18"> <p><code>javafx</code></p> </td> 
+          <td align="left" headers="r3c1-t18 r1c2-t18"> <p>Minimum version of JavaFX required by the application.</p> </td> 
+          <td align="left" headers="r3c1-t18 r1c3-t18"> <p>String</p> </td> 
+          <td align="left" headers="r3c1-t18 r1c4-t18"> <p>No</p> <p>Default value matches the release of the JavaFX SDK; for example, if you use the JavaFX 2.1 SDK, the default value is '2.1'.</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r4c1-t18" headers="r1c1-t18"> <p><code>j2se</code></p> </td> 
+          <td align="left" headers="r4c1-t18 r1c2-t18"> <p>Minimum version of JRE required by the application.</p> </td> 
+          <td align="left" headers="r4c1-t18 r1c3-t18"> <p>String</p> </td> 
+          <td align="left" headers="r4c1-t18 r1c4-t18"> <p>No</p> <p>Default is any JRE supporting JavaFX.</p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblformal" --> 
+      <p>* If <code>refid</code> is used, then none of the other parameters can be specified.</p> 
+      <a id="sthref182" name="sthref182"></a> 
+      <p class="titleinrefsubsect">Parameters Accepted as Nested Elements</p> 
+      <ul> 
+       <li> <p><a href="#CIAHJIJG">&lt;fx:jvmarg&gt;</a></p> </li> 
+       <li> <p><a href="#CIAHCIFJ">&lt;fx:property&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref183" name="sthref183"></a> 
+      <p class="titleinrefsubsect">&lt;fx:platform&gt; Usage Examples</p> 
+      <dl> 
+       <dd>
+        <a id="JFXDP305" name="JFXDP305"></a>
+        <a id="sthref184" name="sthref184"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 1&nbsp;&nbsp;&nbsp;&lt;fx:platform&gt; Parameter to Specify Version
+       </dt> 
+       <dd> 
+        <p>In this example, the application needs JavaFX Runtime version 2.1 or later and JRE version 7.0 or later.</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:platform javafx=&quot;2.1&quot; j2se=&quot;7.0&quot;/&gt;
+</pre>
+       </dd> 
+       <dd>
+        <a id="JFXDP306" name="JFXDP306"></a>
+        <a id="CIAGFFIF" name="CIAGFFIF"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 2&nbsp;&nbsp;&nbsp;&lt;fx:platform&gt; Parameter to Specify JVM Options
+       </dt> 
+       <dd> 
+        <p>In this example, the application needs JavaFX Runtime version 2.1 and needs to run in a JVM launched with <code>&quot;-Xmx400 -verbose:jni -Dpurpose=sample&quot;</code>.</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:platform javafx=&quot;2.1&quot;&gt;
+    &lt;fx:jvmarg value=&quot;-Xmx400m&quot;/&gt;
+    &lt;fx:jvmarg value=&quot;-verbose:jni&quot;/&gt;
+    &lt;property name=&quot;purpose&quot; value=&quot;sample&quot;/&gt;
+&lt;/fx:platform&gt;
+</pre>
+       </dd> 
+      </dl> 
+      <a id="CIADDDAA" name="CIADDDAA"></a>
+      <a id="JFXDP307" name="JFXDP307"></a> 
+      <hr /> 
+      <h2 class="refsect2">&lt;fx:preferences&gt;</h2> 
+      <a id="sthref185" name="sthref185"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>Deployment preferences of the application.</p> 
+      <a id="sthref186" name="sthref186"></a> 
+      <p class="titleinrefsubsect">Parent Elements</p> 
+      <ul> 
+       <li> <p><a href="javafx_ant_task_reference001.htm#CIABIFCI">&lt;fx:deploy&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref187" name="sthref187"></a> 
+      <p class="titleinrefsubsect">Parameters</p> 
+      <div class="tblformal">
+       <a id="JFXDP308" name="JFXDP308"></a>
+       <a id="sthref188" name="sthref188"></a>
+       <a id="sthref189" name="sthref189"></a> 
+       <p class="titleintable">Table 10-16 Attributes of the &lt;fx:preferences&gt; Element</p> 
+       <table class="Formal table table-bordered table-striped" title="Attributes of the &lt;fx:preferences&gt; Element" summary="Lists the attributes of the fx:preferences&gt; element, with a description, their data type, and whether they are required or not." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="25%" /> 
+         <col width="*" /> 
+         <col width="25%" /> 
+         <col width="15%" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t19">Attribute</th> 
+          <th align="left" valign="bottom" id="r1c2-t19">Description</th> 
+          <th align="left" valign="bottom" id="r1c3-t19">Type</th> 
+          <th align="left" valign="bottom" id="r1c4-t19">Required?</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t19" headers="r1c1-t19"> <p><code>install</code></p> </td> 
+          <td align="left" headers="r2c1-t19 r1c2-t19"> <p>If true then application requests to be installed.</p> </td> 
+          <td align="left" headers="r2c1-t19 r1c3-t19"> <p>Boolean</p> </td> 
+          <td align="left" headers="r2c1-t19 r1c4-t19"> <p>No</p> <p>Default is <code>false</code>.</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r3c1-t19" headers="r1c1-t19"> <p><code>menu</code></p> </td> 
+          <td align="left" headers="r3c1-t19 r1c2-t19"> <p>If true then application requests to add entry to the system Start Menu.</p> </td> 
+          <td align="left" headers="r3c1-t19 r1c3-t19"> <p>Boolean</p> </td> 
+          <td align="left" headers="r3c1-t19 r1c4-t19"> <p>No</p> <p>Default is <code>false</code>.</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r4c1-t19" headers="r1c1-t19"> <p><code>refid</code>*</p> </td> 
+          <td align="left" headers="r4c1-t19 r1c2-t19"> <p>--</p> </td> 
+          <td align="left" headers="r4c1-t19 r1c3-t19"> <p>Reference</p> </td> 
+          <td align="left" headers="r4c1-t19 r1c4-t19"> <p>No</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r5c1-t19" headers="r1c1-t19"> <p><code>shortcut</code></p> </td> 
+          <td align="left" headers="r5c1-t19 r1c2-t19"> <p>If true then application requests desktop shortcut to be created.</p> </td> 
+          <td align="left" headers="r5c1-t19 r1c3-t19"> <p>Boolean</p> </td> 
+          <td align="left" headers="r5c1-t19 r1c4-t19"> <p>No</p> <p>Default is <code>false</code>.</p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblformal" --> 
+      <p>* If <code>refid</code> is used, then none of the other parameters can be specified.</p> 
+      <a id="sthref190" name="sthref190"></a> 
+      <p class="titleinrefsubsect">Parameters Accepted as Nested Elements</p> 
+      <p>None.</p> 
+      <a id="CIADCBDC" name="CIADCBDC"></a> 
+      <p class="titleinrefsubsect">&lt;fx:preferences&gt; Usage Examples</p> 
+      <dl> 
+       <dd>
+        <a id="JFXDP309" name="JFXDP309"></a>
+        <a id="CIAIHHJF" name="CIAIHHJF"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 1&nbsp;&nbsp;&nbsp;&lt;fx:preferences&gt; Parameter to Add a Desktop Shortcut
+       </dt> 
+       <dd> 
+        <p>This example shows a request to create a desktop shortcut.</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:preferences id=&quot;p1&quot; shortcut=&quot;true&quot;/&gt;
+</pre>
+       </dd> 
+       <dd>
+        <a id="JFXDP310" name="JFXDP310"></a>
+        <a id="sthref191" name="sthref191"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 2&nbsp;&nbsp;&nbsp;&lt;fx:preferences&gt; Parameter to Mark as Installed
+       </dt> 
+       <dd> 
+        <p>This example shows a request to add a reference to the Windows Start menu and marks the application as installed, in which case it is added to the Add/Remove programs in Windows Control Panel. Applies to Web Start applications.</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:preferences shortcut=&quot;false&quot; install=&quot;true&quot; menu=&quot;true&quot;/&gt;
+</pre>
+       </dd> 
+       <dd>
+        <a id="JFXDP311" name="JFXDP311"></a>
+        <a id="sthref192" name="sthref192"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 3&nbsp;&nbsp;&nbsp;Using a refid to the &lt;fx:preferences&gt; Parameter
+       </dt> 
+       <dd> 
+        <p>This example uses a reference to the &lt;fx:preferences&gt; parameter in <a href="#CIAIHHJF">&lt;fx:preferences&gt; Parameter to Add a Desktop Shortcut</a> to create the shortcut.</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:resource refid=&quot;p1&quot;/&gt;
+</pre>
+       </dd> 
+      </dl> 
+      <a id="CIAHCIFJ" name="CIAHCIFJ"></a>
+      <a id="JFXDP315" name="JFXDP315"></a> 
+      <hr /> 
+      <h2 class="refsect2">&lt;fx:property&gt;</h2> 
+      <a id="sthref193" name="sthref193"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>Optional element and can be used multiple times. Java property to be set in the JVM where the application is executed.</p> 
+      <a id="sthref194" name="sthref194"></a> 
+      <p class="titleinrefsubsect">Parent Elements</p> 
+      <ul> 
+       <li> <p><a href="#CIAEEFCJ">&lt;fx:platform&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref195" name="sthref195"></a> 
+      <p class="titleinrefsubsect">Parameters</p> 
+      <div class="tblformal">
+       <a id="JFXDP316" name="JFXDP316"></a>
+       <a id="sthref196" name="sthref196"></a>
+       <a id="sthref197" name="sthref197"></a> 
+       <p class="titleintable">Table 10-17 Attributes of the &lt;fx:property&gt; Element</p> 
+       <table class="Formal table table-bordered table-striped" title="Attributes of the &lt;fx:property&gt; Element" summary="Lists the attributes of the fx:property&gt; element, with a description, their data type, and whether they are required or not." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="25%" /> 
+         <col width="*" /> 
+         <col width="25%" /> 
+         <col width="15%" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t20">Attribute</th> 
+          <th align="left" valign="bottom" id="r1c2-t20">Description</th> 
+          <th align="left" valign="bottom" id="r1c3-t20">Type</th> 
+          <th align="left" valign="bottom" id="r1c4-t20">Required?</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t20" headers="r1c1-t20"> <p><code>name</code></p> </td> 
+          <td align="left" headers="r2c1-t20 r1c2-t20"> <p>Name of property to be set.</p> </td> 
+          <td align="left" headers="r2c1-t20 r1c3-t20"> <p>String</p> </td> 
+          <td align="left" headers="r2c1-t20 r1c4-t20"> <p>Yes</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r3c1-t20" headers="r1c1-t20"> <p><code>value</code></p> </td> 
+          <td align="left" headers="r3c1-t20 r1c2-t20"> <p>Value of property to be set.</p> </td> 
+          <td align="left" headers="r3c1-t20 r1c3-t20"> <p>String</p> </td> 
+          <td align="left" headers="r3c1-t20 r1c4-t20"> <p>Yes</p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblformal" --> 
+      <a id="sthref198" name="sthref198"></a> 
+      <p class="titleinrefsubsect">Parameters Accepted as Nested Elements</p> 
+      <p>None.</p> 
+      <a id="CIADIIEI" name="CIADIIEI"></a>
+      <a id="JFXDP318" name="JFXDP318"></a> 
+      <hr /> 
+      <h2 class="refsect2">&lt;fx:resources&gt;</h2> 
+      <a id="sthref199" name="sthref199"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>The collection of resources used by the application. Defined as a set of JavaFX FileSet filters. Could be reused using <code>id</code> or <code>refid</code>.</p> 
+      <a id="sthref200" name="sthref200"></a> 
+      <p class="titleinrefsubsect">Parent Elements</p> 
+      <ul> 
+       <li> <p><a href="javafx_ant_task_reference001.htm#CIABIFCI">&lt;fx:deploy&gt;</a></p> </li> 
+       <li> <p><a href="javafx_ant_task_reference001.htm#CIACICBG">&lt;fx:jar&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref201" name="sthref201"></a> 
+      <p class="titleinrefsubsect">Parameters</p> 
+      <div class="tblformal">
+       <a id="JFXDP319" name="JFXDP319"></a>
+       <a id="sthref202" name="sthref202"></a>
+       <a id="sthref203" name="sthref203"></a> 
+       <p class="titleintable">Table 10-18 Attributes of the &lt;fx:resources&gt; Element</p> 
+       <table class="Formal table table-bordered table-striped" title="Attributes of the &lt;fx:resources&gt; Element" summary="Lists the attributes of the fx:resources&gt; element, with a description, their data type, and whether they are required or not." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="25%" /> 
+         <col width="*" /> 
+         <col width="25%" /> 
+         <col width="15%" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t21">Attribute</th> 
+          <th align="left" valign="bottom" id="r1c2-t21">Description</th> 
+          <th align="left" valign="bottom" id="r1c3-t21">Type</th> 
+          <th align="left" valign="bottom" id="r1c4-t21">Required?</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t21" headers="r1c1-t21"> <p><code>id</code></p> </td> 
+          <td align="left" headers="r2c1-t21 r1c2-t21"> <p>ID that can be referred from another element with a refid attribute.</p> </td> 
+          <td align="left" headers="r2c1-t21 r1c3-t21"> <p>String</p> </td> 
+          <td align="left" headers="r2c1-t21 r1c4-t21"> <p>No</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r3c1-t21" headers="r1c1-t21"> <p><code>refid</code>*</p> </td> 
+          <td align="left" headers="r3c1-t21 r1c2-t21"> <p>--</p> </td> 
+          <td align="left" headers="r3c1-t21 r1c3-t21"> <p>Reference</p> </td> 
+          <td align="left" headers="r3c1-t21 r1c4-t21"> <p>No</p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblformal" --> 
+      <p>* If <code>refid</code> is used, then none of the other parameters can be specified.</p> 
+      <a id="sthref204" name="sthref204"></a> 
+      <p class="titleinrefsubsect">Parameters Accepted as Nested Elements</p> 
+      <ul> 
+       <li> <p><a href="#CIAIHFGI">&lt;fx:fileset&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref205" name="sthref205"></a> 
+      <p class="titleinrefsubsect">&lt;fx:resources&gt; Usage Examples</p> 
+      <dl> 
+       <dd>
+        <a id="JFXDP320" name="JFXDP320"></a>
+        <a id="sthref206" name="sthref206"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 1&nbsp;&nbsp;&nbsp;&lt;fx:resources&gt; Parameters Used with id and refid Attributes
+       </dt> 
+       <dd> 
+        <p>In this example, both <code>&lt;fx:resources&gt;</code> elements define the collection, consisting of s.jar in the dist directory. The first <code>&lt;fx:resources&gt;</code> element uses an <code>id</code> attribute, and the second <code>&lt;fx:resources&gt;</code> element refers to the first with the <code>refid</code> attribute.</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:resources id=&quot;aaa&quot;&gt;
+    &lt;fx:fileset dir=&quot;dist&quot; includes=&quot;s.jar&quot;/&gt;
+&lt;/fx:resources&gt;
+&lt;fx:resources refid=&quot;aaa&quot;/&gt;
+</pre>
+       </dd> 
+       <dd>
+        <a id="JFXDP513" name="JFXDP513"></a>
+        <a id="CIABGCEE" name="CIABGCEE"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 2&nbsp;&nbsp;&nbsp;Using &lt;fx:resources&gt; for Extension Descriptors
+       </dt> 
+       <dd> 
+        <p>If you mix signed and unsigned JAR files, use an additional <a href="javafx_ant_task_reference001.htm#CIABIFCI">&lt;fx:deploy&gt;</a> Ant task to generate an extension descriptor for each JAR file, and refer to the extension descriptors by treating them as resources in the main file, as shown in this example.</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;!-- Prepare extension --&gt;
+&lt;fx:deploy extension=&quot;true&quot;
+        outdir=&quot;dist&quot; outfile=&quot;other&quot;&gt;
+    ...
+&lt;fx:deploy&gt;
+ 
+&lt;!-- Use it in the main descriptor --&gt;
+&lt;fx:deploy outdir=&quot;web-dist&quot; ...&gt;
+    ...
+    &lt;fx:resources&gt;
+        <span class="bold">&lt;fx:fileset dir=&quot;dist&quot; includes=&quot;other.jnlp&quot;/&gt;</span>
+            ...
+    &lt;/fx:resources&gt;
+&lt;fx:deploy&gt;
+</pre>
+       </dd> 
+      </dl> 
+      <a id="CACDIDFE" name="CACDIDFE"></a>
+      <a id="JFXDP535" name="JFXDP535"></a> 
+      <hr /> 
+      <h2 class="refsect2">&lt;fx:splash&gt;</h2> 
+      <a id="sthref207" name="sthref207"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>Passes the location of the image to be used as a splash screen. Currently custom splash images can only be passed to Web Start applications, and use of this parameter has no impact on standalone applications or applications embedded into web pages.</p> 
+      <a id="sthref208" name="sthref208"></a> 
+      <p class="titleinrefsubsect">Parent Elements</p> 
+      <ul> 
+       <li> <p><a href="#CIAIEJHG">&lt;fx:info&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref209" name="sthref209"></a> 
+      <p class="titleinrefsubsect">Parameters</p> 
+      <div class="tblformal">
+       <a id="JFXDP536" name="JFXDP536"></a>
+       <a id="sthref210" name="sthref210"></a>
+       <a id="sthref211" name="sthref211"></a> 
+       <p class="titleintable">Table 10-19 Attributes of the &lt;fx:splash&gt; Element</p> 
+       <table class="Formal table table-bordered table-striped" title="Attributes of the &lt;fx:splash&gt; Element" summary="Lists the attributes of the fx:info&gt; element, with a description, their data type, and whether they are required or not." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="25%" /> 
+         <col width="*" /> 
+         <col width="25%" /> 
+         <col width="15%" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t22">Attribute</th> 
+          <th align="left" valign="bottom" id="r1c2-t22">Description</th> 
+          <th align="left" valign="bottom" id="r1c3-t22">Type</th> 
+          <th align="left" valign="bottom" id="r1c4-t22">Required?</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t22" headers="r1c1-t22"> <p><code>href</code></p> </td> 
+          <td align="left" headers="r2c1-t22 r1c2-t22"> <p>Location of image</p> </td> 
+          <td align="left" headers="r2c1-t22 r1c3-t22"> <p>String</p> </td> 
+          <td align="left" headers="r2c1-t22 r1c4-t22"> <p>Yes</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r3c1-t22" headers="r1c1-t22"> <p><code>mode</code></p> </td> 
+          <td align="left" headers="r3c1-t22 r1c2-t22"> <p>Deployment mode. Supported values are:</p> 
+           <ul> 
+            <li> <p><code>any</code> (but currently only functional in Web Start mode)</p> </li> 
+            <li> <p><code>webstart</code></p> </li> 
+           </ul> </td> 
+          <td align="left" headers="r3c1-t22 r1c3-t22"> <p>String</p> </td> 
+          <td align="left" headers="r3c1-t22 r1c4-t22"> <p>No</p> <p>Default value is <code>any</code>.</p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblformal" --> 
+      <a id="sthref212" name="sthref212"></a> 
+      <p class="titleinrefsubsect">Parameters Accepted as Nested Elements</p> 
+      <p>None.</p> 
+      <a id="sthref213" name="sthref213"></a> 
+      <p class="titleinrefsubsect">&lt;fx:splash&gt; Usage Examples</p> 
+      <dl> 
+       <dd>
+        <a id="JFXDP537" name="JFXDP537"></a>
+        <a id="CACFGABA" name="CACFGABA"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 1&nbsp;&nbsp;&nbsp;Use of &lt;fx:splash&gt;
+       </dt> 
+       <dd> 
+        <p>In the following example, splash images of various types are passed.</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:info title=&quot;Sample application&quot;&gt;
+    &lt;fx:splash href=&quot;http://my.site/custom.gif&quot;/&gt; 
+&lt;/fx:info&gt; 
+</pre>
+       </dd> 
+      </dl> 
+      <a id="CIACACDA" name="CIACACDA"></a>
+      <a id="JFXDP327" name="JFXDP327"></a> 
+      <hr /> 
+      <h2 class="refsect2">&lt;fx:template&gt;</h2> 
+      <a id="sthref214" name="sthref214"></a> 
+      <p class="titleinrefsubsect">Description</p> 
+      <p>Template to preprocess. A template is an HTML file that contains markers to be replaced with the JavaScript or HTML snippets that are required for web deployment. Using templates enables you to deploy your application directly into your own web pages. This simplifies the development process, especially when the application is tightly integrated with the page, for example when the web page uses JavaScript to communicate to the application.</p> 
+      <p>Template markers have one of the following forms:</p> 
+      <ul> 
+       <li> <p><code>#</code><span class="variable">XXX</span><code>#</code></p> </li> 
+       <li> <p><code>#</code><span class="variable">XXX</span><code>(</code><span class="variable">id</span><code>)#</code></p> </li> 
+      </ul> 
+      <p><span class="variable">id</span> is the identifier of an application and <span class="variable">XXX</span> is one of following:</p> 
+      <ul> 
+       <li> <p><code>DT.SCRIPT.URL</code></p> <p>Location of dtjava.js in the Deployment Toolkit. By default, the location is</p> <p>http://java.com/js/dtjava.js</p> </li> 
+       <li> <p><code>DT.SCRIPT.CODE</code></p> <p>Script element to include dtjava.js of the Deployment Toolkit.</p> </li> 
+       <li> <p><code>DT.EMBED.CODE.DYNAMIC</code></p> <p>Code to embed the application into a given placeholder. It is expected that the code will be wrapped in the <code>function()</code> method.</p> </li> 
+       <li> <p><code>DT.EMBED.CODE.ONLOAD</code></p> <p>All the code needed to embed the application into a web page using the <code>onload</code> hook (except inclusion of dtjava.js).</p> </li> 
+       <li> <p><code>DT.LAUNCH.CODE</code></p> <p>Code needed to launch the application. It is expected that the code will be wrapped in the <code>function()</code> method.</p> </li> 
+      </ul> 
+      <p>A page with different applications can be processed multiple times, one per application. To avoid confusion, markers must use application IDs with an alphanumeric string and no spaces.</p> 
+      <p>If the input and output files are the same then the template is processed in place.</p> 
+      <a id="sthref215" name="sthref215"></a> 
+      <p class="titleinrefsubsect">Parent Elements</p> 
+      <ul> 
+       <li> <p><a href="javafx_ant_task_reference001.htm#CIABIFCI">&lt;fx:deploy&gt;</a></p> </li> 
+      </ul> 
+      <a id="sthref216" name="sthref216"></a> 
+      <p class="titleinrefsubsect">Parameters</p> 
+      <div class="tblformal">
+       <a id="JFXDP328" name="JFXDP328"></a>
+       <a id="sthref217" name="sthref217"></a>
+       <a id="sthref218" name="sthref218"></a> 
+       <p class="titleintable">Table 10-20 Attributes of the &lt;fx:template&gt; Element</p> 
+       <table class="Formal table table-bordered table-striped" title="Attributes of the &lt;fx:template&gt; Element" summary="Lists the attributes of the fx:template&gt; element, with a description, their data type, and whether they are required or not." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="25%" /> 
+         <col width="*" /> 
+         <col width="25%" /> 
+         <col width="15%" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t23">Attribute</th> 
+          <th align="left" valign="bottom" id="r1c2-t23">Description</th> 
+          <th align="left" valign="bottom" id="r1c3-t23">Type</th> 
+          <th align="left" valign="bottom" id="r1c4-t23">Required?</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t23" headers="r1c1-t23"> <p><code>file</code></p> </td> 
+          <td align="left" headers="r2c1-t23 r1c2-t23"> <p>Input template file.</p> </td> 
+          <td align="left" headers="r2c1-t23 r1c3-t23"> <p>File</p> </td> 
+          <td align="left" headers="r2c1-t23 r1c4-t23"> <p>Yes</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r3c1-t23" headers="r1c1-t23"> <p><code>tofile</code></p> </td> 
+          <td align="left" headers="r3c1-t23 r1c2-t23"> <p>Output file (after preprocessing).</p> </td> 
+          <td align="left" headers="r3c1-t23 r1c3-t23"> <p>File</p> </td> 
+          <td align="left" headers="r3c1-t23 r1c4-t23"> <p>No</p> <p>Default is the same as the input file.</p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblformal" --> 
+      <a id="sthref219" name="sthref219"></a> 
+      <p class="titleinrefsubsect">Parameters Accepted as Nested Elements</p> 
+      <p>None</p> 
+      <a id="CIABEFHB" name="CIABEFHB"></a> 
+      <p class="titleinrefsubsect">&lt;fx:template&gt; Usage Examples</p> 
+      <dl> 
+       <dd>
+        <a id="JFXDP329" name="JFXDP329"></a>
+        <a id="sthref220" name="sthref220"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 1&nbsp;&nbsp;&nbsp;&lt;fx:template&gt; Parameter Used in &lt;fx:deploy&gt; Task
+       </dt> 
+       <dd> 
+        <p>This example shows a <code>&lt;fx:template&gt;</code> parameter in which both input and output files are specified.</p> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:template file=&quot;App_template.html&quot; tofile=&quot;App.html&quot;/&gt;
+</pre>
+       </dd> 
+       <dd>
+        <a id="JFXDP515" name="JFXDP515"></a>
+        <a id="sthref221" name="sthref221"></a>
+       </dd> 
+       <dt class="seghead">
+        Example 2&nbsp;&nbsp;&nbsp;&lt;fx:template&gt; Parameter in Context
+       </dt> 
+       <dd> 
+        <pre xml:space="preserve" class="oac_no_warn prettyprint linenums">
+&lt;fx:deploy placeholderId=&quot;ZZZ&quot;
+        width=&quot;600&quot; height=&quot;400&quot;
+        outdir=&quot;dist-web&quot; outfile=&quot;App1&quot;&gt;
+    &lt;fx:application id=&quot;myApp&quot; name=&quot;Demo&quot;
+            mainClass=&quot;fish.FishApplication&quot;/&gt;
+    &lt;fx:template file=&quot;src/templates/EmbedApp_template.html&quot;
+            tofile=&quot;dist-web/EmbedApp.html&quot;/&gt;
+    &lt;fx:resources&gt;
+        &lt;fx:fileset requiredFor=&quot;startup&quot; dir=&quot;dist&quot; includes=&quot;*.jar&quot;/&gt;
+    &lt;/fx:resources&gt;
+&lt;/fx:deploy&gt;
+</pre>
+       </dd> 
+      </dl> 
+     </div> 
+     <!-- class="refsect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-deployment.htm">About This Guide</a></li>
+      <li><a href="deploy_quick_start.htm">Getting Started</a></li>
+      <li><a href="deploy_overview.htm">Application Execution Modes</a></li>
+      <li><a href="deploy_user_experience.htm">Application Startup</a></li>
+      <li><a href="packaging.htm">Packaging</a></li>
+      <li><a href="deployment_toolkit.htm">Deployment in the Browser</a></li>
+      <li><a href="javafx_javascript.htm">JavaFX and JavaScript</a></li>
+      <li><a href="preloaders.htm">Preloaders</a></li>
+      <li><a href="deploy_swing_apps.htm">JavaFX in Swing Applications</a></li>
+      <li><a href="packager.htm">The JavaFX Packager Tool</a></li>
+      <li><a href="packager001.htm">JavaFX Packager Command-Line Syntax</a></li>
+      <li><a href="javafx_ant_task_reference.htm">JavaFX Ant Tasks</a></li>
+      <li><a href="javafx_ant_task_reference001.htm">Reference: JavaFX Ant Tasks</a></li>
+      <li class=" active"><a href="javafx_ant_task_reference002.htm">Reference: JavaFX Ant Helper Parameters</a></li>
+      <li><a href="troubleshooting.htm">Troubleshooting</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>

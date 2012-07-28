@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Processing Events &middot; Handling JavaFX Events &middot; JavaFx 2 中文文档</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="keywords" content="JavaFx JavaFx2 JavaFx文档 JavaFx2文档 JavaFx2中文文档 JavaFx中文文档" /> 
+  <meta name="description" content="JavaFx 2 中文文档" /> 
+  <meta name="author" content="" /> 
+  <!-- Le styles --> 
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet" /> 
+  <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet" /> 
+  <link href="../../assets/css/docs.css" rel="stylesheet" /> 
+  <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet" /> 
+  <link media="screen,projection" href="../../assets/css/ui.totop.css" rel="stylesheet" /> 
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --> 
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--> 
+  <!-- Le fav and touch icons --> 
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../assets/ico/apple-touch-icon-114-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/ico/apple-touch-icon-72-precomposed.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="../../assets/ico/apple-touch-icon-57-precomposed.png" /> 
+  <script src="../../assets/js/ga.js"></script> 
+ </head> 
+ <body data-spy="scroll" data-target=".subnav" data-offset="50"> 
+  <!-- Navbar
+    ================================================== --> 
+  <div class="navbar navbar-fixed-top"> 
+   <div class="navbar-inner"> 
+    <div class="container"> 
+     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+     <a class="brand" href="../../index.html">JavaFx 2 中文文档</a> 
+     <div class="nav-collapse collapse"> 
+      <ul class="nav"> 
+       <li class=""><a href="../../index.html"><i class="icon icon-home icon-white"></i> 首页</a></li> 
+       <li class="divider-vertical"></li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">入门<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/overview/jfxpub-overview.htm">什么是JavaFx？</a></li> 
+         <li><a href="../../2/get_started/jfxpub-get_started.htm">开始使用JavaFx</a></li> 
+         <li><a href="../../2/fxml_get_started/jfxpub-fxml_get_started.htm">开始使用FXML</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户界面<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/layout/jfxpub-layout.htm">使用布局</a></li> 
+         <li><a href="../../2/text/jfxpub-text.htm">添加文本</a></li> 
+         <li><a href="../../2/ui_controls/jfxpub-ui_controls.htm">使用用户界面控件</a></li> 
+         <li><a href="../../2/events/jfxpub-events.htm">处理事件</a></li> 
+         <li><a href="../../2/charts/jfxpub-charts.htm">创建图表</a></li> 
+         <li><a href="../../2/webview/jfxpub-webview.htm">添加HTML内容</a></li> 
+         <li><a href="../../2/css_tutorial/jfxpub-css_tutorial.htm">使用CSS为应用程序设置皮肤</a></li> 
+         <li><a href="../../2/drag_drop/jfxpub-drag_drop.htm">拖放数据</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">效果&middot;动画&middot;媒体<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/visual_effects/jfxpub-visual_effects.htm">创建视觉效果</a></li> 
+         <li><a href="../../2/transformations/jfxpub-transformations.htm">添加二维和三维变形</a></li> 
+         <li><a href="../../2/animations/jfxpub-animations.htm">添加过渡和动画</a></li> 
+         <li><a href="../../2/media/jfxpub-media.htm">嵌入媒体</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">应用程序逻辑<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/architecture/jfxpub-architecture.htm">架构和框架</a></li> 
+         <li><a href="../../2/scenegraph/jfxpub-scenegraph.htm">使用场景图</a></li> 
+         <li><a href="../../2/binding/jfxpub-binding.htm">使用属性和绑定</a></li> 
+         <li><a href="../../2/collections/jfxpub-collections.htm">使用集合</a></li> 
+         <li><a href="../../2/threads/jfxpub-threads.htm">并发和线程</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">部署和更多<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="../../2/deployment/jfxpub-deployment.htm">打包和部署</a></li> 
+         <li><a href="../../2/swing/jfxpub-swing.htm">在Swing中使用JavaFx</a></li> 
+         <li><a href="../../2/swt_interoperability/jfxpub-swt_interoperability.htm">与SWT的互操作性</a></li> 
+         <li><a href="../../2/doclet/jfxpub-doclet.htm">使用Doclet</a></li> 
+        </ul> </li> 
+       <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">参考<b class="caret"></b></a> 
+        <ul class="dropdown-menu"> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/index.html" target="_blank"><i class="icon-share icon"></i> API文档</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" target="_blank"><i class="icon-share icon"></i> CSS参考指南</a></li> 
+         <li><a href="http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html" target="_blank"><i class="icon-share icon"></i> FXML简介</a></li> 
+        </ul> </li> 
+       <li class="divider-vertical"></li> 
+       <li class=""><a href="../../more.html"><i class="icon icon-plus-sign icon-white"></i> 更多精彩</a></li> 
+       <li class=""><a href="../../license.html"><i class="icon icon-book icon-white"></i> 许可说明</a></li> 
+       <li class=""><a href="../../about.html"><i class="icon icon-user icon-white"></i> 关于我们</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="row"> 
+   <div id="container" class="container span9 offset1"> 
+    <!-- Masthead
+================================================== --> 
+    <header class="jumbotron subhead" id="overview"> 
+     <!-- Insert Header Here! --> 
+     <h1>Handling JavaFX Events</h1>
+     <p class=" lead">Processing Events</p>
+     <ul class=" pager">
+      <li class=" previous"><a href="jfxpub-events.htm">←上一篇</a></li>
+      <li class=" next"><a href="convenience_methods.htm">下一篇→</a></li>
+     </ul>
+     <hr />
+    </header>
+    <div id="ind"> 
+     <!-- /////////////// Start content copied from DARB output ////////////// --> 
+     <a id="CEGJAAFD" name="CEGJAAFD"></a>
+     <a id="JFXEV118" name="JFXEV118"></a>  
+     <a id="JFXEV119" name="JFXEV119"></a> 
+     <p>This topic describes events and the handling of events in JavaFX applications. Learn about event types, event targets, event capturing, event bubbling, and the underlying architecture of the event processing system.</p> 
+     <p>Events are used to notify your application of actions taken by the user and enable the application to respond to the event. The JavaFX platform provides the structure for capturing an event, routing the event to its target, and enabling the application to handle the event as needed.</p> 
+     <a id="JFXEV120" name="JFXEV120"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref3" name="sthref3"></a> 
+      <h2 class="sect1">Events</h2> 
+      <p>An event represents an occurrence of something of interest to the application, such as a mouse being moved or a key being pressed. In JavaFX, an event is an instance of the <a href="../api/javafx/event/Event.html"><code>javafx.event.Event</code></a> class or any subclass of <code>Event</code>. JavaFX provides several events, including <code>DragEvent</code>, <code>KeyEvent</code>, <code>MouseEvent</code>, <code>ScrollEvent</code>, and others. You can define your own event by extending the <code>Event</code> class.</p> 
+      <p>Every event includes the information described in <a href="#CEGFDAAA">Table 1-1</a>.</p> 
+      <div class="tblformal">
+       <a id="JFXEV121" name="JFXEV121"></a>
+       <a id="sthref4" name="sthref4"></a>
+       <a id="CEGFDAAA" name="CEGFDAAA"></a> 
+       <p class="titleintable">Table 1-1 Event Properties</p> 
+       <table class="Formal table table-bordered table-striped" title="Event Properties" summary="This table describes the properties that are part of each event. Column one identifies the property. Column two describes the property." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0"> 
+        <colgroup>
+         <col width="23%" /> 
+         <col width="*" /> 
+        </colgroup>
+        <thead> 
+         <tr align="left" valign="top"> 
+          <th align="left" valign="bottom" id="r1c1-t2">Property</th> 
+          <th align="left" valign="bottom" id="r1c2-t2">Description</th> 
+         </tr> 
+        </thead> 
+        <tbody> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r2c1-t2" headers="r1c1-t2"> <p>Event type</p> </td> 
+          <td align="left" headers="r2c1-t2 r1c2-t2"> <p>Type of event that occurred.</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r3c1-t2" headers="r1c1-t2"> <p>Source</p> </td> 
+          <td align="left" headers="r3c1-t2 r1c2-t2"> <p>Origin of the event, with respect to the location of the event in the event dispatch chain. The source changes as the event is passed along the chain.</p> </td> 
+         </tr> 
+         <tr align="left" valign="top"> 
+          <td align="left" id="r4c1-t2" headers="r1c1-t2"> <p>Target</p> </td> 
+          <td align="left" headers="r4c1-t2 r1c2-t2"> <p>Node on which the action occurred and the end node in the event dispatch chain. The target does not change, however if an event filter consumes the event during the event capturing phase, the target will not receive the event.</p> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <br />
+      </div> 
+      <!-- class="tblformal" --> 
+      <p>Event subclasses provide additional information that is specific to the type of event. For example, the <a href="../api/javafx/scene/input/MouseEvent.html"><code>MouseEvent</code></a> class includes information such as which button was pushed, the number of times the button was pushed, and the position of the mouse.</p> 
+      <a id="CEGCHJDH" name="CEGCHJDH"></a>
+      <a id="JFXEV122" name="JFXEV122"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2">Event Types</h3> 
+       <p>An event type is an instance of the <a href="../api/javafx/event/EventType.html"><code>EventType</code></a> class. Event types further classify the events of a single event class. For example, the <code>KeyEvent</code> class contains the following event types:</p> 
+       <ul> 
+        <li> <p><code>KEY_PRESSED</code></p> </li> 
+        <li> <p><code>KEY_RELEASED</code></p> </li> 
+        <li> <p><code>KEY_TYPED</code></p> </li> 
+       </ul> 
+       <p>Event types are hierarchical. Every event type has a name and a super type. For example, the name of the event for a key being pressed is <code>KEY_PRESSED</code>, and the super type is <code>KeyEvent.ANY</code>. The super type of the top-level event type is null. <a href="#CEGHBEHG">Figure 1-1</a> shows a subset of the hierarchy.</p> 
+       <div class="figure">
+        <a id="CEGHBEHG" name="CEGHBEHG"></a>
+        <a id="JFXEV123" name="JFXEV123"></a> 
+        <p class="titleinfigure">Figure 1-1 Event Type Hierarchy</p> 
+        <img src="img/event_type_hierarchy.gif" alt="Description of Figure 1-1 follows" title="Description of Figure 1-1 follows" longdesc="img_text/event_type_hierarchy.htm" />
+        <br /> 
+        <br /> 
+        <br />
+       </div> 
+       <!-- class="figure" --> 
+       <p>The top-level event type in the hierarchy is <code>Event.ROOT</code>, which is equivalent to <code>Event.ANY</code>. In the subtypes, the event type <code>ANY</code> is used to mean any event type in the event class. For example, to provide the same response to any type of key event, use <code>KeyEvent.ANY</code> as the event type for the event filter or event handler. To respond only when a key is released, use the <code>KeyEvent.KEY_RELEASED</code> event type for the filter or handler.</p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXEV124" name="JFXEV124"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref6" name="sthref6"></a> 
+       <h3 class="sect2">Event Targets</h3> 
+       <p>The target of an event can be an instance of any class that implements the <a href="../api/javafx/event/EventTarget.html"><code>EventTarget</code></a> interface. The implementation of the <code>buildEventDispatchChain</code> creates the event dispatch chain that the event must travel to reach the target.</p> 
+       <p>The <code>Window</code>, <code>Scene</code>, and <code>Node</code> classes implement the <code>EventTarget</code> interface and subclasses of those classes inherit the implementation. Therefore, most of the elements in your user interface have their dispatch chain defined, enabling you to focus on responding to the events and not be concerned with creating the event dispatch chain.</p> 
+       <p>If you create a custom UI control that responds to user actions and that control is a subclass of <code>Window</code>, <code>Scene</code>, or <code>Node</code>, your control is an event target through inheritance. If your control or an element of your control is not a subclass of <code>Window</code>, <code>Scene</code>, or <code>Node</code>, you must implement the <code>EventTarget</code> interface for that control or element. For example, the <code>MenuBar</code> control is a target through inheritance, but the <code>MenuItem</code> element of a menu bar must implement the <code>EventTarget</code> interface so that it can receive events.</p> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXEV125" name="JFXEV125"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref7" name="sthref7"></a> 
+      <h2 class="sect1">Event Delivery Process</h2> 
+      <p>The event delivery process contains the following steps:</p> 
+      <ol> 
+       <li> <p>Target selection</p> </li> 
+       <li> <p>Route construction</p> </li> 
+       <li> <p>Event capturing</p> </li> 
+       <li> <p>Event bubbling</p> </li> 
+      </ol> 
+      <a id="JFXEV126" name="JFXEV126"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref8" name="sthref8"></a> 
+       <h3 class="sect2">Target Selection</h3> 
+       <p>When an action occurs, the system determines which node is the target based on internal rules. For key events, the target is the node that has focus. For mouse or scroll events, the target is the node at the location of the cursor. If more than one node is located at the cursor, the top-most node is considered the target. For example, if a user clicks the triangle shown in <a href="#CEGFEEEH">Figure 1-2</a>, the triangle is the target, not the rectangle that contains the circle and the triangle. When a mouse button is pressed and the target is selected, all subsequent mouse events are delivered to the same target until the button is released.</p> 
+       <div class="figure">
+        <a id="CEGFEEEH" name="CEGFEEEH"></a>
+        <a id="JFXEV127" name="JFXEV127"></a> 
+        <p class="titleinfigure">Figure 1-2 Sample User Interface Event Targets</p> 
+        <img src="img/node_image.png" alt="Description of Figure 1-2 follows" title="Description of Figure 1-2 follows" longdesc="img_text/node_image.htm" />
+        <br /> 
+        <br /> 
+        <br />
+       </div> 
+       <!-- class="figure" -->
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXEV128" name="JFXEV128"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref10" name="sthref10"></a> 
+       <h3 class="sect2">Route Construction</h3> 
+       <p>The initial event route is determined by the event dispatch chain that was created in the implementation of the <code>buildEventDispatchChain()</code> method of the selected event target. For example, if a user clicks the triangle shown in <a href="#CEGFEEEH">Figure 1-2</a>, the initial route is shown by the gray nodes in <a href="#CEGJCICG">Figure 1-3</a>. When a scene graph node is selected as an event target, the initial event route set in the default implementation of the <code>buildEventDispatchChain()</code> method in the <code>Node</code> class is a path from the stage to itself.</p> 
+       <div class="figure">
+        <a id="CEGJCICG" name="CEGJCICG"></a>
+        <a id="JFXEV129" name="JFXEV129"></a> 
+        <p class="titleinfigure">Figure 1-3 Event Dispatch Chain</p> 
+        <img src="img/dispatch_chain.png" alt="Description of Figure 1-3 follows" title="Description of Figure 1-3 follows" longdesc="img_text/dispatch_chain.htm" />
+        <br /> 
+        <br /> 
+        <br />
+       </div> 
+       <!-- class="figure" --> 
+       <p>The route can be modified as event filters and event handlers along the route process the event. Also, if an event filter or event handler consumes the event at any point, some nodes on the initial route might not receive the event.</p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXEV130" name="JFXEV130"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref12" name="sthref12"></a> 
+       <h3 class="sect2">Event Capturing Phase</h3> 
+       <p>In the event capturing phase, the event is dispatched by the root node of your application and passed down the event dispatch chain to the target node. Using the event dispatch chain shown in <a href="#CEGJCICG">Figure 1-3</a>, the event travels from the Stage node to the Triangle node during the event capturing phase.</p> 
+       <p>If any node in the chain has an event filter registered for the type of event that occurred, that filter is called. When the filter completes, the event is passed to the next node down the chain. If a filter is not registered for a node, the event is passed to the next node down the chain. If no filter consumes the event, the event target eventually receives and processes the event.</p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXEV131" name="JFXEV131"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref13" name="sthref13"></a> 
+       <h3 class="sect2">Event Bubbling Phase</h3> 
+       <p>After the event target is reached and all registered filters have processed the event, the event returns along the dispatch chain from the target to the root node. Using the event dispatch chain shown in <a href="#CEGJCICG">Figure 1-3</a>, the event travels from the Triangle node to the Stage node during the event bubbling phase.</p> 
+       <p>If any node in the chain has a handler registered for the type of event encountered, that handler is called. When the handler completes, the event is returned to the next node up the chain. If a handler is not registered for a node, the event is returned to the next node up the chain. If no handler consumes the event, the root node eventually receives the event and processing is completed.</p> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXEV132" name="JFXEV132"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref14" name="sthref14"></a> 
+      <h2 class="sect1">Event Handling</h2> 
+      <p>Event handling is provided by event filters and event handlers, which are implementations of the <a href="../api/javafx/event/EventHandler.html"><code>EventHandler</code></a> interface. If you want an application to be notified when an event occurs, register a filter or a handler for the event. The primary difference between a filter and a handler is when each one is executed.</p> 
+      <a id="CEGHAEAH" name="CEGHAEAH"></a>
+      <a id="JFXEV133" name="JFXEV133"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" --> 
+       <h3 class="sect2">Event Filters</h3> 
+       <p>An event filter is executed during the event capturing phase. An event filter for a parent node can provide common event processing for multiple child nodes and if desired, consume the event to prevent the child node from receiving the event. Filters that are registered for the type of event that occurred are executed as the event passes through the node that registered the filter.</p> 
+       <p>A node can register more than one filter. The order in which each filter is called is based on the hierarchy of event types. Filters for a specific event type are executed before filters for generic event types. For example, a filter for the <code>MouseEvent.MOUSE_PRESSED</code> event is called before the filter for the <code>InputEvent.ANY</code> event. The order in which two filters at the same level are executed is not specified.</p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXEV134" name="JFXEV134"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref15" name="sthref15"></a> 
+       <h3 class="sect2">Event Handlers</h3> 
+       <p>An event handler is executed during the event bubbling phase. If an event handler for a child node does not consume the event, an event handler for a parent node can act on the event after a child node processes it and can provide common event processing for multiple child nodes. Handlers that are registered for the type of event that occurred are executed as the event returns through the node that registered the handler.</p> 
+       <p>A node can register more than one handler. The order in which each handler is called is based on the hierarchy of event types. Handlers for a specific event type are executed before handlers for generic event types. For example, a handler for the <code>KeyEvent.KEY_TYPED</code> event is called before the handler for the <code>InputEvent.ANY</code> event. The order in which two handlers at the same level are executed is not specified, with the exception that handlers that are registered by the convenience methods described in <a href="convenience_methods.htm#BABCCIHI">Working with Convenience Methods</a> are executed last.</p> 
+      </div> 
+      <!-- class="sect2" --> 
+      <a id="JFXEV135" name="JFXEV135"></a> 
+      <div class="sect2">
+       <!-- infolevel="all" infotype="General" -->
+       <a id="sthref16" name="sthref16"></a> 
+       <h3 class="sect2">Consuming of an Event</h3> 
+       <p>An event can be consumed by an event filter or an event handler at any point in the event dispatch chain by calling the <code>consume()</code> method. This method signals that processing of the event is complete and traversal of the event dispatch chain ends.</p> 
+       <p>Consuming the event in an event filter prevents any child node on the event dispatch chain from acting on the event. Consuming the event in an event handler stops any further processing of the event by parent handlers on the event dispatch chain. However, if the node that consumes the event has more than one filter or handler registered for the event, the peer filters or handlers are still executed.</p> 
+       <p>For example, using the event dispatch chain shown in <a href="#CEGJCICG">Figure 1-3</a>, assume that the Pane node has an event filter registered for the <code>KeyEvent.KEY_PRESSED</code> event and an event filter registered for the <code>InputEvent.ANY</code> event. If the filter for the key pressed event consumes the event, the filter for the input event is executed and the Triangle node does not receive the event.</p> 
+       <p>Note that the default handlers for the JavaFX UI controls typically consume most of the input events.</p> 
+      </div> 
+      <!-- class="sect2" -->
+     </div> 
+     <!-- class="sect1" --> 
+     <a id="JFXEV136" name="JFXEV136"></a> 
+     <div class="sect1">
+      <!-- infolevel="all" infotype="General" -->
+      <a id="sthref17" name="sthref17"></a> 
+      <h2 class="sect1">Additional Resources</h2> 
+      <p>For more information on how events are processed, see the <a href="../api/index.html">JavaFX API documentation</a>.</p> 
+     </div> 
+     <!-- class="sect1" --> 
+     <!-- /////////////// End content copied from DARB output ////////////// --> 
+    </div> 
+    <!-- Insert Sections Here! --> 
+    <!-- Footer
+      ================================================== --> 
+    <footer class="footer"> 
+     <!-- UY BEGIN --> 
+     <div id="uyan_frame"></div> 
+     <script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1529249" async=""></script> 
+     <!-- UY END --> 
+    </footer> 
+   </div>
+   <div class=" span3" style="padding-top: 110px;">
+    <div class=" well">
+     <ul class=" nav nav-list">
+      <li class=" nav-header">本章目录</li>
+      <li><a href="jfxpub-events.htm">About This Tutorial</a></li>
+      <li class=" active"><a href="processing.htm">Processing Events</a></li>
+      <li><a href="convenience_methods.htm">Working with Convenience Methods</a></li>
+      <li><a href="filters.htm">Working with Event Filters</a></li>
+      <li><a href="handlers.htm">Working with Event Handlers</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">源码下载</li>
+      <li><a href="http://download.oracle.com/javafx/2/events/DraggablePanelsExample.zip">DraggablePanelsExample.zip</a></li>
+      <li><a href="http://download.oracle.com/javafx/2/events/KeyboardExample.zip">KeyboardExample.zip</a></li>
+      <li class=" divider"></li>
+      <li class=" nav-header">版本信息</li>
+      <li>平台版本：JavaFX 2.1</li>
+      <li>翻译编辑：(未翻译)</li>
+      <li>最后更新：2012年7月28日</li>
+     </ul>
+    </div>
+   </div>
+   <!-- /container --> 
+  </div> 
+  <!-- JiaThis Button BEGIN --> 
+  <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script> 
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;btn=l2.gif&amp;uid=1529249" charset="utf-8"></script> 
+  <!-- JiaThis Button END --> 
+  <!-- Le javascript
+    ================================================== --> 
+  <!-- Placed at the end of the document so the pages load faster --> 
+  <script src="../../assets/js/jquery.min.js"></script> 
+  <script src="../../assets/js/easing.js" type="text/javascript"></script> 
+  <script src="../../assets/js/jquery.ui.totop.min.js" type="text/javascript"></script> 
+  <script src="../../assets/js/google-code-prettify/prettify.js"></script> 
+  <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script> 
+  <script src="../../assets/js/bootstrap.min.js"></script> 
+  <script src="../../assets/js/application.js"></script>   
+ </body>
+</html>
